@@ -1,0 +1,60 @@
+<dialog class="p_areaSelect">
+  <form method="dialog">
+    <header class="p_header tit">
+      <h1>지역선택</h1>
+      <div class="tool_wrap">
+        <button type="button" class="btn_close" onclick="document.querySelector('dialog').close();">닫기</button>
+      </div>
+    </header>
+    <section class="p_body">
+      <div class="select_area">
+        <section class="sido">
+          <strong>시도</strong>
+          <ul>
+            <li><label for="1"><input type="checkbox" name="" id="1">강원</label></li>
+            <li><label for="2"><input type="checkbox" name="" id="2">경기</label></li>
+            <li><label for="3"><input type="checkbox" name="" id="3">경상북도</label></li>
+            <li><label for="4"><input type="checkbox" name="" id="4">경상남도</label></li>
+            <li><label for="5"><input type="checkbox" name="" id="5">대구</label></li>
+            <li><label for="6"><input type="checkbox" name="" id="6">대전</label></li>
+            <li><label for="7"><input type="checkbox" name="" id="7">부산</label></li>
+          </ul>
+        </section>
+        <section class="sigungu">
+          <strong>시군구</strong>
+          <ul>
+            <li><label for="01"><input type="checkbox" name="" id="01" checked>포항시 남구</label></li>
+            <li><label for="02"><input type="checkbox" name="" id="02">포항시 북구</label></li>
+            <li><label for="03"><input type="checkbox" name="" id="03">경산시</label></li>
+            <li><label for="04"><input type="checkbox" name="" id="04">경주시</label></li>
+            <li><label for="05"><input type="checkbox" name="" id="05">구미시</label></li>
+            <li><label for="06"><input type="checkbox" name="" id="06">김천시</label></li>
+            <li><label for="07"><input type="checkbox" name="" id="07">문경시</label></li>
+            <li><label for="08"><input type="checkbox" name="" id="08">고령군</label></li>
+            <li><label for="09"><input type="checkbox" name="" id="09">봉화군</label></li>
+            <li><label for="10"><input type="checkbox" name="" id="10">성주군</label></li>
+            <li><label for="11"><input type="checkbox" name="" id="11">명덕군</label></li>
+            <li><label for="12"><input type="checkbox" name="" id="12">영양군</label></li>
+            <li><label for="13"><input type="checkbox" name="" id="13">예천군</label></li>
+          </ul>
+        </section>
+      </div>
+      <section class="selected_area">
+        <div class="tit">
+          <h2>선택지역</h2>
+          <div class="tool_wrap">
+            <button type="button" class="btn_refresh">초기화</button>
+          </div>
+        </div>
+        <ul class="select_lst">
+          <li><p>경상북도 포항시 북구</p><button type="button" title="삭제">삭제</button></li>
+          <li><p>경상북도 포항시 남구</p><button type="button" title="삭제">삭제</button></li>
+        </ul>
+      </section>
+    </section>
+    <section class="p_foot">
+      <button type="submit" class="btn_foot_blue">적용</button>
+      <button type="button" class="btn_foot_gray" onclick="document.querySelector('dialog').close();">닫기</button>
+    </section>
+  </form>
+</dialog>
