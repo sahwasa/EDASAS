@@ -73,6 +73,7 @@ input:invalid {position:relative;outline:2px solid #e42b29;background-color: #fa
   .user_area::before{@include fontello('\eb2b');color:#057ffc;}
 }
 .flex_wrap{@include flex_between;}
+.figure_wrap{display:flex;align-items:flex-start;justify-content:space-between;}
 // layout
 $maingap:20px;
 $navH:280px;
@@ -91,7 +92,7 @@ $navH:280px;
 .nav_lst{display:flex;height:100%;align-items:center;
   & > li{width:175px;position:relative;height:100%;z-index:300;
     &:first-child .sub{border-left:1px solid #e4e5e9;}
-    & > a{position:relative;top:1px;display:flex;align-items:center;height:100%;font-weight:700;font-size:18px;padding:0 20px;border-bottom:3px solid transparent;
+    & > a{position:relative;top:1px;display:flex;align-items:center;justify-content:center;height:100%;font-weight:700;font-size:18px;padding:0 20px;border-bottom:3px solid transparent;
       &.on{color:$blue;border-color:$blue;}
       &:hover{color:$blue;}
     }  
@@ -104,8 +105,20 @@ $navH:280px;
     &.on{font-weight:700;color:$blue;}
   }
 }
-.main_container{flex:1;display:flex;}
-.footer{position:absolute;left:50%;bottom:20px;@include textStroke(2);transform:translateX(-50%);}
+.main_container{flex:1;display:flex;
+  &:has(.static_contents)+footer{position:static;transform:translate(0);text-align:center;margin-top:30px;padding:5px 0;background-color:#e4e4e4;}
+}
+.static_contents{width:1200px;margin:30px auto 0;
+  header{@include tit(h1);margin-bottom:60px;
+    h1{font-size:30px;}
+  }
+  article{@include tit(h2);margin-bottom:0;
+    h2{margin-bottom:20px;}
+  }
+  figure{text-align:center;margin:30px 0 20px;}
+  figcaption{margin-top:10px;font-size:14px;color:#555;}
+}
+.footer{position:absolute;left:50%;bottom:20px;@include textStroke(1);transform:translateX(-50%);}
 .util{height:inherit;}
 .profile{position:relative;width:150px;height:inherit;text-align:right;padding-right:5px;
   .account{position:relative;top:50%;transform:translateY(-50%);display:inline-flex;align-items:center;font-size:13px;letter-spacing:-.33px;
@@ -226,6 +239,13 @@ border:1px solid $border;border-left-width:0;border-radius:0 3px 3px 0;font-size
     &:first-of-type td{border-top-color: #035cd5;}    
   }
   tr:last-child td{border-bottom-width:1px;}
+}
+
+//lst
+.dot_lst{display:flex;flex-direction:column;gap:15px;
+  li{position:relative;padding-left:10px;font-size:16px;color:#555;letter-spacing:-.05em;
+    &::before{position:absolute;left:0;top:8px;@include shape(4px,4px);border-radius:50%;background-color:$blue;}
+  }
 }
 
 // map

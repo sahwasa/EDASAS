@@ -1,0 +1,57 @@
+@@include('../inc/top.html')
+<div id="wrap" class="wrap">
+  @@include('../inc/header.html')    
+  <main id="content" class="main_container">
+    <div class="static_contents">
+      <header>
+        <h1>시스템 평가 방법</h1>
+      </header>
+      <div>
+        <article>
+          <h2>지진재해 지역안전도 평가 방법</h2>
+          <div>
+            <section>
+              <h3>지반운동의 결정</h3>
+              <ul class="dot_lst">
+                <li>지진 발생 위치`의 불확실성 및 지역간의 상대비교를 위해서 기반암(지표 하부의 암반)에 내진설계기준에서 사용하는 국가지진위험지도(소방방재청, 2013)에 규정된 지반가속도를 적용하여 평가</li>
+                <li>다만 지역별로 지반특성 따른 지반운동 증폭효과를 고려하기 위하여 대상 지역을 0.5km x 0.5km 격자 단위로 분할하여 지반특성 DB를 구축<br>
+                (지반운동 증폭효과: 지표 하부의 암반에 비하여 토층으로 덮인 지표의 지반운동이 증폭되는 효과)</li>
+                <li>기반암의 지반가속도에 증폭표과를 곱하여 각 격자별로 지표에서의 대표 지반가속도를 산정하여 건축물 피해 평가에 적용
+                  <div class="figure_wrap">
+                    <figure>
+                      <img src="../images/system-img-03.png"  alt="[그림 3] 1000년 재현주기 국가지진위험지도" width="316px" height="438px">
+                      <figcaption>[그림 3] 1000년 재현주기 국가지진위험지도</figcaption>
+                    </figure>
+                    <figure>
+                      <img src="../images/system-img-04.png"  alt="[그림 4] 0.5km x 0.5km 격자별 지반분류
+(한국지질자원연구원, 2023)" width="439px" height="438px">
+                      <figcaption>[그림 4] 0.5km x 0.5km 격자별 지반분류 (한국지질자원연구원, 2023)</figcaption>
+                    </figure>
+                    <figure>
+                      <img src="../images/system-img-05.png"  alt="[그림 5] 지반증폭효과 (동경도도시정비국)
+toshiseibi.metro.tokyo.lg.jp/bosai/chousa_6/home.htm#data1" width="294px" height="438px">
+                      <figcaption>[그림 5] 지반증폭효과 (동경도도시정비국)<br>toshiseibi.metro.tokyo.lg.jp/bosai/chousa_6/home.htm#data1</figcaption>
+                    </figure>                  
+                  </div>
+                </li>
+              </ul>
+            </section>
+            <section>
+              <h3>건축물 피해의 결정</h3>
+              <ul class="dot_lst">
+                <li>건축물 대장 정보(구조, 규모, 용도)를 참고하여 각 건축물을 대표성을 갖는 구조유형으로 분류하고 건설연도와 해당 법령에 따라 내진설계 여부를 판단</li>
+                <li>각 건축물별로 해당되는 건축물 유형의 지진취약도함수를 이용하여 지표 지반가속도에 상응하는 피해율 산정(지진취약도함수: 지진동의 세기 증가에 따른 손상확률을 나타내는 확률분포함수). <br>여기서는 지진피해 반파(수리하지 않고는 사용할 수 없는 수준의 피해) 이상의 손상을 기준으로 함               
+                </li>
+              </ul>
+            </section>
+          </div>
+        </article>
+      </div>  
+    </div>      
+  </main>
+  @@include('../inc/footer.html')
+</div>
+@@include('../inc/script.html')
+<script src="../js/radar_chart.js"></script>
+</body>
+</html>
