@@ -1,10 +1,11 @@
 @import "./reset";
+$maingap:20px;
 :modal {position:absolute;min-width:300px;margin:auto;padding:20px;border:none;box-shadow: 1.4px 1.4px 29px 0 rgba(0, 0, 0, 0.08);font-size:13px;
   .p_header{@include tit(){h1{font-size:15px;}};
-    .btn_close{@include ico_only('\eb2e');cursor:pointer;
+    .btn_close{@include ico_only('\eb2e');cursor:pointer;margin-left:$maingap;
       &::before{font-size:16px;color:#000;};}
   }
-  .p_body{max-height:calc(100vh - 100px);overflow-y:auto;font-size:13px;letter-spacing:-0.33px;}
+  .p_body{max-height:calc(100vh - 140px);overflow-y:auto;font-size:13px;letter-spacing:-0.33px;}
   .p_foot{display: flex;justify-content: flex-end;align-items: center;gap:3px;margin-top:8px;}
 }
 .p_areaSelect{width:512px;$border_color:#cbcbcb;
@@ -30,4 +31,26 @@
       li{color:#2287f3;font-weight:700;}
     }
   }
+}
+.p_report{width:870px;}
+.p_body:has(.report_wrap){border:1px solid #000;}
+.report_wrap{padding:$maingap;
+  header{overflow:hidden;color:#000;letter-spacing:-1px;padding-top:15px;margin-bottom:40px;
+    h1{font-size:20px;font-weight:700;text-align:center;}
+    .date{float:right;font-size:14px;padding-right:1px;}
+  }
+  .report_body{display:flex;flex-direction:column;gap:25px;counter-reset:report_tit;color:#555;
+    & > section{@include tit(h2);padding-left:15px;
+      h2{font-size:14px;counter-increment:report_tit;text-indent:-15px;margin-bottom:10px;
+        &::before{content:counter(report_tit)'.';margin-right:5px;}
+      }
+    }
+  }
+  .graphs_wrap{display:flex;justify-content:start;align-items:center;gap:50px;
+    .pie_graphwrap,
+    .meter_wrap{flex:1;}
+  }
+  .heatmap_wrap{display:grid;grid-template-columns:1fr 1fr;gap:$maingap;margin-top:40px;}
+  .chartwrap{width:300px;margin:0 auto;}
+  .tbl_wrap{margin-top:$maingap;}
 }

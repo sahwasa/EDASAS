@@ -1,0 +1,51 @@
+<dialog class="p_report">
+  <form method="dialog">
+    <header class="p_header tit">
+      <h1>평가보고서</h1>
+      <div class="tool_wrap">
+        <button type="button" class="btn_pdf">PDF저장</button>
+        <button type="button" class="btn_print">인쇄</button>
+        <button type="button" class="btn_close" onclick="document.querySelector('.p_report').close();">닫기</button>
+      </div>
+    </header>
+    <section class="p_body">
+      <article class="report_wrap">
+        <header>
+          <h1>종합안전도 평가 보고서</h1>
+          <span class="date">평가일 2023-10-10</span>
+        </header>
+        <div class="report_body">
+          <section>
+            <h2>대상지역</h2>
+            <p>포항시 북구, 포항시 남구</p>
+          </section>
+          <section>
+            <h2>평가결과</h2>
+            <p>포항시 북구와 포항시 남구의 종합안전도 평가지수 등급은 <em>2등급(안전)</em>, <em>3등급(보통)</em> 입니다</p>
+            <div class="graphs_wrap">
+              @@include('../module/pie_graph.html')
+              @@include('../module/meter.html')
+            </div>
+            @@include('../module/heatmap.html')
+          </section>
+          <section>
+            <h2>세부내용</h2>            
+            <div class="chartwrap">
+              <canvas id="p_radarchart"></canvas>
+            </div>
+            @@include('../module/tbl_regional_idx.html')            
+          </section>
+          <section>
+            <h2>결과 요약 및 행동방안</h2>
+            <div class="conclusion">
+              <ul class="action_plan">
+                <li><em>포항시 북구</em>는 상대적으로 종합안전도 등급이 높으므로 현 상황을 잘 유지합니다.</li>
+                <li><em>포항시 남구</em>는 특히 송도동과 청림동의 종합안전도 등급이 낮게 나왔으므로 대응이 필요합니다.</li>
+              </ul>
+            </div>
+          </section>
+        </div>
+      </article>
+    </section>
+  </form>
+</dialog>

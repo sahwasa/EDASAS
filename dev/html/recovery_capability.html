@@ -8,7 +8,7 @@
       <section class="pannel sidePannel_wrap">
         <div class="pannel_wrap">
           <header>
-            <h1>종합안전도 평가</h1>
+            <h1>복구역량도 평가</h1>
             <section class="filter">
               <div class="flex_wrap">
                 <select name="" id="" title="시군구" class="sigungu"><option value="">포항시</option></select>
@@ -62,7 +62,7 @@
         <div class="map_wrap">
           <div class="temp_map">
             <img src="../images/temp/temp_map02.png" class="temp_map" alt="임시 지도배경">
-            @@include('../inc/module/symbols.html')    
+            @@include('../inc/module/symbols.html')
           </div>
           <div class="map_ctrl">            
             <ul class="map_tool">
@@ -81,14 +81,14 @@
               <li><input type="radio" id="map_type4" name="map_type"><label for="map_type4">내진 분포도</label></li>
               <li><input type="radio" id="map_type5" name="map_type"><label for="map_type5">인구 분포도</label></li>
             </ul>
-            @@include('../inc/module/s_legend.html')    
+            @@include('../inc/module/r_legend.html')    
             <ul class="map_style btn_switch">
               <li><input type="radio" id="default_view" name="map_style" checked><label for="default_view">일반지도</label></input></li>
               <li><input type="radio" id="sky_view" name="map_style"><label for="sky_view">위성지도</label></input></li>
               <li><input type="radio" id="2d_view" name="map_style"><label for="2d_view">2D지도</label></input></li>
             </ul>
           </div>
-        </div>
+        </div>             
       </section>
       <!-- 중앙__e -->
       <!-- 오른쪽패널 -->
@@ -103,14 +103,7 @@
           </header>
           <article class="pannel_body">
             <section>
-              <ul class="eval_result_lst">
-                <!-- <li class="grade0"><strong>-</strong>
-                  <p>포항시 북구 지역은 수집된 자료가 없습니다.</p>
-                </li>
-                <li class="grade1"><strong>안전</strong>
-                  <p>포항시 남구 지역은 <em>종합안전도 평가</em>에서 안전지수가 상대적으로 높은편이며, 포항시 남구 
-                  지역은 <em>종합안전도 평가</em>에서 안전지수가 상대적으로 보통입니다</p>
-                </li> -->
+              <ul class="eval_result_lst">                
                 <li class="grade2"><strong>보통</strong>
                   <p>포항시 북구 지역은 <em>종합안전도 평가</em>에서 안전지수가 상대적으로 높은편이며, 포항시 남구 
                   지역은 <em>종합안전도 평가</em>에서 안전지수가 상대적으로 높은편 입니다</p>
@@ -118,27 +111,72 @@
                 <li class="grade3"><strong>주의</strong>
                   <p>포항시 남구 지역은 <em>종합안전도 평가</em>에서 안전지수가 상대적으로 높은편이며, 포항시 남구 
                   지역은 <em>종합안전도 평가</em>에서 안전지수가 상대적으로 보통입니다</p>
-                </li>
-                <!-- <li class="grade4"><strong>경계</strong>
-                  <p>포항시 북구 지역은 <em>종합안전도 평가</em>에서 안전지수가 상대적으로 높은편이며, 포항시 남구 
-                  지역은 <em>종합안전도 평가</em>에서 안전지수가 상대적으로 높은편 입니다</p>
-                </li>
-                <li class="grade5"><strong>심각</strong>
-                  <p>포항시 남구 지역은 <em>종합안전도 평가</em>에서 안전지수가 상대적으로 높은편이며, 포항시 남구 
-                  지역은 <em>종합안전도 평가</em>에서 안전지수가 상대적으로 보통입니다</p>
-                </li> -->
+                </li>                
               </ul>
-              <div class="chartwrap divide">
-                <canvas id="radarchart"></canvas>
-              </div>
-              <!-- @@include('../inc/module/pyramid.html') -->
+              @@include('../inc/module/pyramid.html')
             </section>
             <section class="regional_idx">
               <div class="tit">
-                <h2>세부 지역별 지수</h2>
+                <h2>세부 지역별 역량도 등급</h2>
                 <span class="tool_wrap unit">(점수)</span>
               </div>
-              @@include('../inc/module/tbl_regional_idx.html')
+              <div class="tbl_wrap">                
+                <table class="tbl_default">
+                  <caption>세부 지역별 역량도 등급</caption>
+                  <thead>
+                    <tr>
+                      <th scope="col">구분</th>
+                      <th scope="col">예상손실비율(%)</th>
+                      <th scope="col">역량도 점수</th>
+                      <th scope="col">역량도 등급</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr class="rowgroup">
+                      <td>포항시 북구</td>
+                      <td>5</td>
+                      <td>65</td>
+                      <td>2</td>
+                    </tr>
+                    <tr>
+                      <td>흥해읍</td>
+                      <td>3</td>
+                      <td>48</td>
+                      <td>4</td>
+                    </tr>
+                    <tr>
+                      <td>흥해읍</td>
+                      <td>3</td>
+                      <td>48</td>
+                      <td>4</td>
+                    </tr>
+                    <tr>
+                      <td>흥해읍</td>
+                      <td>3</td>
+                      <td>48</td>
+                      <td>4</td>
+                    </tr>                    
+                    <tr class="rowgroup">
+                      <td>포항시 남구</td>
+                      <td>6</td>
+                      <td>45</td>
+                      <td>3</td>
+                    </tr>
+                    <tr>
+                      <td>흥해읍</td>
+                      <td>3</td>
+                      <td>48</td>
+                      <td>4</td>
+                    </tr>
+                    <tr>
+                      <td>흥해읍</td>
+                      <td>3</td>
+                      <td>48</td>
+                      <td>4</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
               @@include('../inc/module/meter_dtl.html')            
               <p class="txt_summary">선택하신 지역의 세부지역별 종합안전도평가 지수를 살펴보면 총 28개 지역에서 평균 이상은 16개 지역이며, 평균 이하는 12개 지역입니다.</p>
             </section>
@@ -162,6 +200,5 @@
   @@include('../inc/pop/p_report.html')
 </div>
 @@include('../inc/script.html')
-<script src="../js/radar_chart.js"></script>
 </body>
 </html>

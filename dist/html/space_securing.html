@@ -91,7 +91,7 @@
       <section class="pannel sidePannel_wrap">
         <div class="pannel_wrap">
           <header>
-            <h1>종합안전도 평가</h1>
+            <h1>긴급대응 도로 · 공간 확보계수 평가</h1>
             <section class="filter">
               <div class="flex_wrap">
                 <select name="" id="" title="시군구" class="sigungu"><option value="">포항시</option></select>
@@ -246,7 +246,7 @@
 <i class="symbol ico_3" style="--left:1450px;--top:850px;">병원</i>
 <div class="map_scale">
   <em>10㎞</em>
-</div>    
+</div>
           </div>
           <div class="map_ctrl">            
             <ul class="map_tool">
@@ -282,7 +282,7 @@
         </ul>
       </section>
       <section class="safety_grade">                
-        <strong>안전도 등급</strong>
+        <strong>복구역량도 등급</strong>
         <ul>
           <li class="grade1">1등급</li>
           <li class="grade2">2등급</li>
@@ -302,7 +302,7 @@
               <li><input type="radio" id="2d_view" name="map_style"><label for="2d_view">2D지도</label></input></li>
             </ul>
           </div>
-        </div>
+        </div>             
       </section>
       <!-- 중앙__e -->
       <!-- 오른쪽패널 -->
@@ -317,14 +317,7 @@
           </header>
           <article class="pannel_body">
             <section>
-              <ul class="eval_result_lst">
-                <!-- <li class="grade0"><strong>-</strong>
-                  <p>포항시 북구 지역은 수집된 자료가 없습니다.</p>
-                </li>
-                <li class="grade1"><strong>안전</strong>
-                  <p>포항시 남구 지역은 <em>종합안전도 평가</em>에서 안전지수가 상대적으로 높은편이며, 포항시 남구 
-                  지역은 <em>종합안전도 평가</em>에서 안전지수가 상대적으로 보통입니다</p>
-                </li> -->
+              <ul class="eval_result_lst">                
                 <li class="grade2"><strong>보통</strong>
                   <p>포항시 북구 지역은 <em>종합안전도 평가</em>에서 안전지수가 상대적으로 높은편이며, 포항시 남구 
                   지역은 <em>종합안전도 평가</em>에서 안전지수가 상대적으로 높은편 입니다</p>
@@ -332,20 +325,11 @@
                 <li class="grade3"><strong>주의</strong>
                   <p>포항시 남구 지역은 <em>종합안전도 평가</em>에서 안전지수가 상대적으로 높은편이며, 포항시 남구 
                   지역은 <em>종합안전도 평가</em>에서 안전지수가 상대적으로 보통입니다</p>
-                </li>
-                <!-- <li class="grade4"><strong>경계</strong>
-                  <p>포항시 북구 지역은 <em>종합안전도 평가</em>에서 안전지수가 상대적으로 높은편이며, 포항시 남구 
-                  지역은 <em>종합안전도 평가</em>에서 안전지수가 상대적으로 높은편 입니다</p>
-                </li>
-                <li class="grade5"><strong>심각</strong>
-                  <p>포항시 남구 지역은 <em>종합안전도 평가</em>에서 안전지수가 상대적으로 높은편이며, 포항시 남구 
-                  지역은 <em>종합안전도 평가</em>에서 안전지수가 상대적으로 보통입니다</p>
-                </li> -->
+                </li>                
               </ul>
               <div class="chartwrap divide">
                 <canvas id="radarchart"></canvas>
               </div>
-              
             </section>
             <section class="regional_idx">
               <div class="tit">
@@ -353,77 +337,111 @@
                 <span class="tool_wrap unit">(점수)</span>
               </div>
               <div class="tbl_wrap">                
-  <table class="tbl_default">
-    <caption>세부 지역별 지수</caption>
-    <thead>
-      <tr>
-        <th scope="col">구분</th>
-        <th scope="col">종합 안전도</th>
-        <th scope="col">건축물피해 위험도</th>
-        <th scope="col">지진화재 위험도</th>
-        <th scope="col">복구 안전도</th>
-        <th scope="col">대피 안전도</th>
-        <th scope="col">긴급대응 도로 · 공간 확보계수</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr class="rowgroup">
-        <td>포항시 북구</td>
-        <td>2/73</td>
-        <td>3/73</td>
-        <td>2/25</td>
-        <td>4/80</td>
-        <td>2/25</td>
-        <td>4/85</td>
-      </tr>
-      <tr>
-        <td>흥해읍</td>
-        <td>2/73</td>
-        <td>3/73</td>
-        <td>2/25</td>
-        <td>4/80</td>
-        <td>2/25</td>
-        <td>4/85</td>
-      </tr>
-      <tr>
-        <td>흥해읍</td>
-        <td>2/73</td>
-        <td>3/73</td>
-        <td>2/25</td>
-        <td>4/80</td>
-        <td>2/25</td>
-        <td>4/85</td>
-      </tr>
-      <tr class="rowgroup">
-        <td>포항시 남구</td>
-        <td>2/73</td>
-        <td>3/73</td>
-        <td>2/25</td>
-        <td>4/80</td>
-        <td>2/25</td>
-        <td>4/85</td>
-      </tr>
-      <tr>
-        <td>흥해읍</td>
-        <td>2/73</td>
-        <td>3/73</td>
-        <td>2/25</td>
-        <td>4/80</td>
-        <td>2/25</td>
-        <td>4/85</td>
-      </tr>
-      <tr>
-        <td>흥해읍</td>
-        <td>2/73</td>
-        <td>3/73</td>
-        <td>2/25</td>
-        <td>4/80</td>
-        <td>2/25</td>
-        <td>4/85</td>
-      </tr>
-    </tbody>
-  </table>
-</div>
+                <table class="tbl_default">
+                  <caption>세부 지역별 지수</caption>
+                  <thead>
+                    <tr>
+                      <th scope="col">구분</th>
+                      <th scope="col">긴급대응 도로 · 공간 확보계수</th>
+                      <th scope="col">활동공간 확보율</th>
+                      <th scope="col">지역 도로망 접근 계수</th>
+                      <th scope="col">광역 도로망 접근 계수</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr class="rowgroup">
+                      <td>포항시 북구</td>
+                      <td>0.60</td>
+                      <td>0.21</td>
+                      <td>-</td>
+                      <td>0.35</td>
+                    </tr>
+                    <tr>
+                      <td>흥해읍</td>
+                      <td>0.60</td>
+                      <td>0.21</td>
+                      <td>-</td>
+                      <td>0.35</td>
+                    </tr>
+                    <tr>
+                      <td>흥해읍</td>
+                      <td>0.60</td>
+                      <td>0.21</td>
+                      <td>-</td>
+                      <td>0.35</td>
+                    </tr>
+                    <tr class="rowgroup">
+                      <td>포항시 남구</td>
+                      <td>0.60</td>
+                      <td>0.21</td>
+                      <td>-</td>
+                      <td>0.35</td>
+                    </tr>
+                    <tr>
+                      <td>흥해읍</td>
+                      <td>0.60</td>
+                      <td>0.21</td>
+                      <td>-</td>
+                      <td>0.35</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </section>
+            <section>
+              <div class="tit">
+                <h2>방재거점시설 현황</h2>
+                <span class="tool_wrap unit">(개소)</span>
+              </div>
+              <div class="tbl_wrap">                
+                <table class="tbl_default">
+                  <caption>세부 지역별 지수</caption>
+                  <colgroup>
+                    <col />
+                    <col style="width:20%;" span="3">
+                  </colgroup>
+                  <thead>
+                    <tr>
+                      <th scope="col">구분</th>
+                      <th scope="col">병원</th>
+                      <th scope="col">소방서</th>
+                      <th scope="col">임시대피시설</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr class="rowgroup">
+                      <td>포항시 북구</td>
+                      <td>5</td>
+                      <td>21</td>
+                      <td>7</td>
+                    </tr>
+                    <tr>
+                      <td>흥해읍</td>
+                      <td>5</td>
+                      <td>21</td>
+                      <td>7</td>
+                    </tr>
+                    <tr>
+                      <td>흥해읍</td>
+                      <td>5</td>
+                      <td>21</td>
+                      <td>7</td>
+                    </tr>
+                    <tr class="rowgroup">
+                      <td>포항시 남구</td>
+                      <td>5</td>
+                      <td>21</td>
+                      <td>7</td>
+                    </tr>
+                    <tr>
+                      <td>흥해읍</td>
+                      <td>5</td>
+                      <td>21</td>
+                      <td>7</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
               <div class="meter_wrap dtl">
   <div class="meter_unit">
     <strong>(점수)</strong>
@@ -746,6 +764,6 @@ Copyright © 2023 행정안전부. All rights reserved.
 <script>
   commonInit();
 </script>
-<script src="../js/radar_chart.js"></script>
+<script src="../js/radar_chart2.js"></script>
 </body>
 </html>

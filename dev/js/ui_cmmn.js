@@ -16,7 +16,6 @@ const handleSelect = function (item) {
     }
   }
 }
-
 const handleClose = function(e, range){
   let clickTarget = e;
   let handleRange = range;
@@ -26,7 +25,6 @@ const handleClose = function(e, range){
     }    
   }
 }
-
 const addGrade = function(targetval, target) {
   if(targetval > 80 && targetval <= 100){
     target.addClass('grade1');
@@ -48,8 +46,64 @@ $('html').on('click',function(e){
   let range = ['.layer_tool'];
   handleClose(eTarget,range);
 })
+
+
 //로딩순서 때문에 수동실행
 function commonInit() {
+  	// nav
+	var $nav=$('.nav'),
+    	$deps1=$('.nav_lst>li'),
+    	$deps2=$('.nav .sub li'),
+      $snb = $('.snb_lst li'),
+    	preLocate,deps1Locate,deps2Locate,
+    	indexDeps1,getDeps,indexDeps2,
+    	locate=window.location.href;
+
+	menuInit();
+	function menuInit(){
+		$deps1.each(function(index, item){
+		var getAttr=$(this).children('a').attr('href');
+      index+=1;
+      indexDeps1=$(this).children('a').attr('href',getAttr + "#?index="+ index +',1');
+      indexDeps2=$(this).find($deps2);
+      getDeps=$(this).children('a').attr('href');
+      indexDeps2.each(function(index2, item){
+        getAttr=$(this).children('a').attr('href');
+        index2+=1;
+        indexDeps2=$(this).children('a').attr('href',getAttr + "#?index="+index+',' + index2);
+      });
+    });    
+
+		if(locate.indexOf("index=")>-1){
+			preLocate=locate.split("index=")[1].split(',');
+			deps1Locate=preLocate[0]-1;
+			deps2Locate=preLocate[1]-1;
+      $deps1.eq(deps1Locate).children('a').addClass('on');
+      $deps1.eq(deps1Locate).find($deps2).eq(deps2Locate).children('a').addClass('on');
+      $snb.eq(deps2Locate).addClass('on');
+      $snb.each(function(index){
+        getAttr = $(this).children('a').attr('href');
+        index += 1;
+        $(this).children('a').attr('href',getAttr + "#?index="+ preLocate[0]+','+index);
+      })      
+		}
+	};
+
+  function menuEvt(el){
+    var getAttr=el.attr('href').split("index=")[1].split(',');
+    deps1Locate=getAttr[0]-1;
+    deps2Locate=getAttr[1]-1;
+    console.log(deps1Locate,deps2Locate);
+    $deps1.find('a').removeClass('on');
+    $deps2.find('a').removeClass('on');
+    $snb.removeClass('on');
+    $deps1.eq(deps1Locate).children('a').addClass('on')
+    $deps1.eq(deps1Locate).find($deps2).eq(deps2Locate).children('a').addClass('on');
+    el.parent('li').addClass('on');
+  }
+  $deps1.on('click','a',function(){menuEvt($(this))});
+  $deps2.on('click','a',function(){menuEvt($(this))});
+  $snb.on('click','a',function(){menuEvt($(this))});
   //gnb
   $('.profile').on({
     click: function () {
