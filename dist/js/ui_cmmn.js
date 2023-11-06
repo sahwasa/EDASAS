@@ -209,14 +209,9 @@ function commonInit() {
     e.preventDefault()
     $(this).addClass('on').siblings().removeClass('on')
     var link = $(this).find('a').attr('href')
-    var link_num = link.substr(link.length - 1)
-    $('.m_tab option')
-      .eq(link_num - 1)
-      .prop('selected', 'selected')
     var findTarget = $(this).parents('.tab_wrap').next('.tab_container')
     findTarget.find('.tab_contents').hide()
     $(link).show();
-    if(typeof calendar !== 'undefined') calendar.updateSize();
   })
 
   //select_tab

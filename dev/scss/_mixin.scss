@@ -65,7 +65,7 @@
 }
 @mixin alignL($numbers){
   @each $num in $numbers{
-   &:nth-of-type(#{$num}){text-align:left;}
+   &:nth-of-type(#{$num}){text-align:left;@content}
   } 
 }
 @mixin flex_between{display:flex;justify-content:space-between;align-items:center;}
@@ -74,8 +74,7 @@
 color:#fff;font-size:12px;letter-spacing:-.3px;text-align:center;border-radius:5px;
 border:1px solid transparent;}
 @mixin shape($w_size,$h_size){
-  display:inline-block;content:"";@include f_blind;overflow:hidden;
-  width:$w_size;height:$h_size;
+  display:inline-block;content:"";overflow:hidden;font-size:0;width:$w_size;height:$h_size;
 }
 @mixin fontello($ic){
   display:inline-block;font-family:"fontello";font-weight:normal;content:$ic;line-height:1;
@@ -86,7 +85,7 @@ border:1px solid transparent;}
   }
 }
 @mixin btn($color:#bbb,$addTxt:false,$hover:true){  
-  display:inline-block;line-height:24px;border:1px solid $color;border-radius:6px;padding:0 10px;cursor:pointer;color:#555;font-weight:700;letter-spacing:-.6px;background-color:#fff;font-size:12px;
+  display:inline-block;line-height:24px;border:1px solid $color;border-radius:6px;padding:0 10px;cursor:pointer;color:#555;font-weight:700;letter-spacing:-.6px;background-color:#fff;font-size:12px;flex-shrink:0;
   @if($hover){
     &:hover,&:hover::before{color:#fff;background-color:$color;}
   }

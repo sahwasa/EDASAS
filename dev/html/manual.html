@@ -1,0 +1,84 @@
+@@include('../inc/top.html')
+<div id="wrap" class="wrap">
+  @@include('../inc/header.html')    
+  <main id="content" class="main_container">
+    <div class="static_contents">
+      <header>
+        <h1>매뉴얼 게시판</h1>
+      </header>
+      <div class="tbl_wrap">
+        <table class="tbl_notice tbl_hover manual">
+          <colgroup>
+            <col style="width:70px;" span="2">
+            <col style="width:auto;">
+            <col style="width:100px;" span="2">
+            <col style="width:70px;" span="3">            
+          </colgroup>
+          <thead>
+            <tr>
+              <th scope="col">선택</th>
+              <th scope="col">번호</th>
+              <th scope="col">제목</th>
+              <th scope="col">작성자</th>
+              <th scope="col">작성일</th>
+              <th scope="col">조회수</th>
+              <th scope="col">첨부파일</th>
+              <th scope="col">수정</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><input type="checkbox" id=""></td>
+              <td>100</td>
+              <td>지진재해 지역안전도 평가시스템 운영방법</td>
+              <td>관리자</td>
+              <td>2010.12.30</td>
+              <td>1,123</td>
+              <td><a href="#" download class="ico_pdf">파일명</a></td>
+              <td><button type="button" class="btn_gray_line">수정</button></td>
+            </tr>
+            <tr>
+              <td><input type="checkbox" id=""></td>
+              <td>99</td>
+              <td>지진재해 지역안전도 평가시스템 운영방법지진재해 지역안전도 평가시스템 운영방법해 지역안전도 평가시스템 운영방법해 지역안전도 평가시스템 운영방법</td>
+              <td>관리자</td>
+              <td>2010.12.30</td>
+              <td>1,123</td>
+              <td><a href="#" download class="ico_ppt">파일명</a></td>
+              <td><button type="button" class="btn_gray_line">수정</button></td>
+            </tr>
+            <tr>
+              <td><input type="checkbox" id=""></td>
+              <td>98</td>
+              <td>지진재해 지역안전도 평가시스템 운영방법</td>
+              <td>관리자</td>
+              <td>2010.12.30</td>
+              <td>1,123</td>
+              <td><a href="#" download class="ico_word">파일명</a></td>
+              <td><button type="button" class="btn_gray_line">수정</button></td>
+            </tr>
+            <tr>
+              <td><input type="checkbox" id=""></td>
+              <td>97</td>
+              <td>지진재해 지역안전도 평가시스템 운영방법</td>
+              <td>관리자</td>
+              <td>2010.12.30</td>
+              <td>1,123</td>
+              <td><a href="#" download class="ico_hwp">파일명</a></td>
+              <td><button type="button" class="btn_gray_line">수정</button></td>
+            </tr>
+          </tbody>
+        </table>        
+        <div class="bot_wrap">
+          <button type="button" class="btn_blue_line">추가</button>
+          <button type="button" class="btn_blue_line">선택 삭제</button>
+        </div>
+        @@include('../inc/paginate.html')
+      </div>
+    </div>      
+  </main>
+  @@include('../inc/footer.html')
+</div>
+@@include('../inc/script.html')
+</body>
+</html>
