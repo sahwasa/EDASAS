@@ -244,7 +244,7 @@ border:1px solid $border;border-left-width:0;border-radius:0 3px 3px 0;font-size
 //lst
 .dot_lst{display:flex;flex-direction:column;gap:15px;
   li{position:relative;padding-left:10px;font-size:16px;color:#555;letter-spacing:-.05em;
-    &::before{position:absolute;left:0;top:8px;@include shape(4px,4px);border-radius:50%;background-color:$blue;}
+    &::before{position:absolute;left:0;top:9px;@include shape(4px,4px);border-radius:50%;background-color:$blue;}
   }
 }
 
