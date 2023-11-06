@@ -1,0 +1,107 @@
+<form id="formKeyboard" autocomplete="off" novalidate="novalidate" class="keyboard pad_key">
+  <input type="hidden" id="kbdTargetInput">
+  <div id="divInput" class="header_ipt">
+    <div class="ipt_wrap">
+      <label id="kbdLabel" for="kbdInput">SERVER ID</label>      
+      <input class="input" id="kbdInput" placeholder="서버ID 입력" data-clear />
+      <button type="button" onclick="onClear()" class="ipt_clear">클리어</button>
+    </div>
+    <div class="invalid">
+      <p>형식이 맞지 않습니다.</p>
+    </div>
+  </div>        
+  <ul id="line1" class="key_line">
+    <li><button type="button" class="kbdButton">1</button></li>
+    <li><button type="button" class="kbdButton">2</button></li>
+    <li><button type="button" class="kbdButton">3</button></li>
+    <li><button type="button" class="kbdButton">4</button></li>
+    <li><button type="button" class="kbdButton">5</button></li>
+    <li><button type="button" class="kbdButton">6</button></li>
+    <li><button type="button" class="kbdButton">7</button></li>
+    <li><button type="button" class="kbdButton">8</button></li>
+    <li><button type="button" class="kbdButton">9</button></li>
+    <li><button type="button" class="kbdButton">0</button></li>          
+    <li class="lower">
+      <button type="button" class="kbdButton">-</button>
+    </li>
+    <li class="upper">
+      <button type="button" class="kbdButton">_</button>
+    </li>
+  </ul>
+    <ul class="lower key_line">
+      <li><button type="button" class="kbdButton">a</button></li>
+      <li><button type="button" class="kbdButton">b</button></li>
+      <li><button type="button" class="kbdButton">c</button></li>
+      <li><button type="button" class="kbdButton">d</button></li>
+      <li><button type="button" class="kbdButton">e</button></li>
+      <li><button type="button" class="kbdButton">f</button></li>
+      <li><button type="button" class="kbdButton">g</button></li>
+      <li><button type="button" class="kbdButton">h</button></li>
+      <li><button type="button" class="kbdButton">i</button></li>
+      <li><button type="button" class="kbdButton">j</button></li>
+    </ul>
+    <ul class="upper key_line">
+      <li><button type="button" class="kbdButton">A</button></li>
+      <li><button type="button" class="kbdButton">B</button></li>
+      <li><button type="button" class="kbdButton">C</button></li>
+      <li><button type="button" class="kbdButton">D</button></li>
+      <li><button type="button" class="kbdButton">E</button></li>
+      <li><button type="button" class="kbdButton">F</button></li>
+      <li><button type="button" class="kbdButton">G</button></li>
+      <li><button type="button" class="kbdButton">H</button></li>
+      <li><button type="button" class="kbdButton">I</button></li>
+      <li><button type="button" class="kbdButton">J</button></li>
+    </ul>
+    <ul class="lower key_line">
+      <li><button type="button" class="kbdButton">k</button></li>
+      <li><button type="button" class="kbdButton">l</button></li>
+      <li><button type="button" class="kbdButton">m</button></li>
+      <li><button type="button" class="kbdButton">n</button></li>
+      <li><button type="button" class="kbdButton">o</button></li>
+      <li><button type="button" class="kbdButton">p</button></li>
+      <li><button type="button" class="kbdButton">q</button></li>
+      <li><button type="button" class="kbdButton">r</button></li>
+      <li><button type="button" class="kbdButton">s</button></li>
+      <li><button type="button" class="kbdButton">t</button></li>
+    </ul>
+    <ul class="upper key_line">
+      <li><button type="button" class="kbdButton">K</button></li>
+      <li><button type="button" class="kbdButton">L</button></li>
+      <li><button type="button" class="kbdButton">M</button></li>
+      <li><button type="button" class="kbdButton">N</button></li>
+      <li><button type="button" class="kbdButton">O</button></li>
+      <li><button type="button" class="kbdButton">P</button></li>
+      <li><button type="button" class="kbdButton">Q</button></li>
+      <li><button type="button" class="kbdButton">R</button></li>
+      <li><button type="button" class="kbdButton">S</button></li>
+      <li><button type="button" class="kbdButton">T</button></li>
+    </ul>
+  <div class="line_wrap">
+    <ul class="lower key_line">
+      <li><button type="button" class="kbdButton">u</button></li>
+      <li><button type="button" class="kbdButton">v</button></li>
+      <li><button type="button" class="kbdButton">w</button></li>
+      <li><button type="button" class="kbdButton">x</button></li>
+      <li><button type="button" class="kbdButton">y</button></li>
+      <li><button type="button" class="kbdButton">z</button></li>
+    </ul>
+    <ul class="upper key_line">
+      <li><button type="button" class="kbdButton">U</button></li>
+      <li><button type="button" class="kbdButton">V</button></li>
+      <li><button type="button" class="kbdButton">W</button></li>
+      <li><button type="button" class="kbdButton">X</button></li>
+      <li><button type="button" class="kbdButton">Y</button></li>
+      <li><button type="button" class="kbdButton">Z</button></li>
+    </ul>
+    <ul class="key_line func">
+      <li><button type="button" class="kbdButton">.</button></li>
+      <li><button type="button" onclick="kbdShift()">Shift</button></li>
+      <li><button type="button" onclick="kbdBackspace()">← Del</button></li>
+    </ul>
+  </div>
+  <ul class="key_line space">
+    <li><button type="button" class="kbdButton">Space</button></li>
+    <li><button type="submit">확인</button></li>
+    <li><button type="button" onclick="kbdCancel()">취소</button></li>
+  </ul>
+</form>

@@ -5,7 +5,7 @@ const { src, dest, lastRun, watch, series, parallel } = require("gulp"),
       concat = require("gulp-concat"),                  // 파일 병합
       imgmin = require("gulp-imagemin"),                // 이미지압축
       sass = require('gulp-sass')(require('sass')),     // scss 컴파일
-      newer = require("gulp-newer"),                    // dist 폴더의 결과물보다 최신의 timestamp를 가진 경우만 실행
+      newer = require("gulp-newer"),                    // docs 폴더의 결과물보다 최신의 timestamp를 가진 경우만 실행
       del = require('del'),
       bs = require("browser-sync").create();            // browser-sync 호출, create 메서드로 생성을 먼저 해줘야 함(브라우저 자동 *refresh 어플리케이션)
 
@@ -16,7 +16,7 @@ const { src, dest, lastRun, watch, series, parallel } = require("gulp"),
 //const cleanCSS = require('gulp-clean-css');             // css minify -> gcmq 사용 시 sass outputStyle이 적용이 안되므로 css compressed를 위해 추가
 
 const dev = "dev";
-const dist = "dist";
+const docs = "docs";
 
 // 작업용 폴더 파일 path
 const path = {
@@ -37,7 +37,7 @@ const browserSyncFileName = "/html/login.html";
 
 // 배포 시 삭제할 폴더
 const cleanPaths = [
-  dist + '/**/temp' 
+  docs + '/**/temp' 
 ];
 
 // task start
@@ -48,15 +48,15 @@ function inc(){
       prefix : '@@',
       basepath : '@file'
     }))
-    .pipe(dest(dist + '/'))
+    .pipe(dest(docs + '/'))
     .pipe(bs.stream())
   )
 }
 function imgMin(){
   return src(path.images,)
-  .pipe(newer(dist + "/"))
+  .pipe(newer(docs + "/"))
   .pipe(imgmin())
-  .pipe(dest(dist + '/'))
+  .pipe(dest(docs + '/'))
   .pipe(bs.stream())
 }
 // scss options
@@ -73,7 +73,7 @@ function scss(){
     //.pipe(concat(mergefileName.style))
     .pipe(sass(scssOptions).on('error', sass.logError))
     //.pipe(sourcemaps.write('/maps'))
-    .pipe(dest(dist + '/css',{ sourcemaps: true }))
+    .pipe(dest(docs + '/css',{ sourcemaps: true }))
     .pipe(bs.stream())
   )
 }
@@ -81,14 +81,14 @@ function js(){
   return merge(
     src(path.js)
     //.pipe(babel())
-    .pipe(dest(dist + '/js'))
+    .pipe(dest(docs + '/js'))
     .pipe(bs.stream())
   )
 }
 function setBs(){
   bs.init({
     server :{
-      baseDir : 'dist/',
+      baseDir : 'docs/',
       index: browserSyncFileName
     }
   });
@@ -101,7 +101,7 @@ function watchs(){
 }
   
 
-// dist 폴더 정리
+// docs 폴더 정리
 function clean(cd){
   return del(cleanPaths,cd).then(paths => {
     console.log('Deleted files and folders:\n', paths.join('\n'));

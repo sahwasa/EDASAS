@@ -1,0 +1,59 @@
+<div class="map_wrap">
+  <i class="symbol ico_1" style="--left:300px;--top:150px;">소방서</i>
+  <i class="symbol ico_2" style="--left:400px;--top:350px;">임시대피시설</i>
+  <i class="symbol ico_3" style="--left:500px;--top:450px;">병원</i>
+  <div class="map_ctrl">            
+    <ul class="map_tool">
+      <li><button type="button" class="btn_refresh_square">새로고침</button></li>
+      <li>
+        <div class="vertical_group">
+          <button type="button" class="btn_zoomin_square">확대</button>
+          <button type="button" class="btn_zoomout_square">축소</button>
+        </div>
+      </li>
+    </ul>
+    <ul class="map_type btn_switch">
+      <li><input type="radio" id="map_type1" name="map_type" checked><label for="map_type1">지역위험도</label></li>
+      <li><input type="radio" id="map_type2" name="map_type"><label for="map_type2">지반(부지)분류도</label></li>
+      <li><input type="radio" id="map_type3" name="map_type"><label for="map_type3">건물 노후도</label></li>
+      <li><input type="radio" id="map_type4" name="map_type"><label for="map_type4">내진 분포도</label></li>
+      <li><input type="radio" id="map_type5" name="map_type"><label for="map_type5">인구 분포도</label></li>
+    </ul>
+    <div class="map_legend">
+  <details open>
+    <summary>
+      <h1>범례</h1>
+      <label for="opacity" class="blind">투명도</label>
+      <input type="range" id="opacity" name="opacity" min="0" max="100" title="투명도" />
+    </summary>
+    <div class="legend_body">
+      <section class="symbols">
+        <strong class="blind">기호</strong>
+        <ul>
+          <li><label for=""><input type="checkbox" id="" name="" checked />소방서</label></li>
+          <li><label for=""><input type="checkbox" id="" name="" checked />임시대피시설</label></li>
+          <li><label for=""><input type="checkbox" id="" name="" checked />병원</label></li>
+        </ul>
+      </section>
+      <section class="safety_grade">                
+        <strong>안전도 등급</strong>
+        <ul>
+          <li class="grade1">1등급</li>
+          <li class="grade2">2등급</li>
+          <li class="grade3">3등급</li>
+          <li class="grade4">4등급</li>
+          <li class="grade5">5등급</li>
+          <li class="grade0">자료없음</li>
+        </ul>
+      </section>
+    </div>
+  </details>
+</div>
+      
+    <ul class="map_style btn_switch">
+      <li><input type="radio" id="default_view" name="map_style" checked><label for="default_view">일반지도</label></input></li>
+      <li><input type="radio" id="sky_view" name="map_style"><label for="sky_view">위성지도</label></input></li>
+      <li><input type="radio" id="2d_view" name="map_style"><label for="2d_view">2D지도</label></input></li>
+    </ul>
+  </div>
+</div>
