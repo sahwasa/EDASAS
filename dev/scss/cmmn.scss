@@ -73,7 +73,14 @@ input:invalid {position:relative;outline:2px solid #e42b29;background-color: #fa
   .user_area::before{@include fontello('\eb2b');color:#057ffc;}
 }
 .flex_wrap{@include flex_between;}
-.figure_wrap{display:flex;align-items:flex-start;justify-content:space-between;}
+.figure_wrap{display:flex;align-items:stretch;justify-content:space-between;margin:30px 0 20px;text-align:center;
+  figure:only-child{margin:0 auto;}
+  figure{flex-shrink:0;}
+  .inner_wrap{display:flex;flex-wrap:wrap;
+    figure{flex:1 1 auto;margin:0;img{display:block;}}
+    figcaption{display:inline-block;font-size:12px;color:#000;background-color:#ebebeb;margin-top:5px;padding:3px 7px;border-radius:5px;}
+  }
+}
 // layout
 $maingap:20px;
 $navH:280px;
@@ -114,9 +121,18 @@ $navH:280px;
   }
   article{@include tit(h2);margin-bottom:0;
     h2{margin-bottom:20px;}
+    &>section{padding-left:20px;margin-bottom:80px;
+      h3{font-weight:700;color:#555;font-size:18px;margin-bottom:15px;letter-spacing:-.45px;text-indent:-15px;
+        &::before{@include shape(12px,12px);border:3px solid $blue;border-radius:50%;margin-right:7px;}
+      }
+    }
   }
-  figure{text-align:center;margin:30px 0 20px;}
-  figcaption{margin-top:10px;font-size:14px;color:#555;}
+  figure{text-align:center;}
+  .figcaption,
+  figcaption{margin-top:10px;font-size:14px;color:#555;font-weight:normal;
+    span{display:block;font-size:11px;}
+  }
+ 
 }
 .footer{position:absolute;left:50%;bottom:20px;@include textStroke(1);transform:translateX(-50%);}
 .util{height:inherit;}
@@ -466,5 +482,13 @@ border:1px solid $border;border-left-width:0;border-radius:0 3px 3px 0;font-size
 }
 .conclusion{
   .action_plan{display:flex;flex-direction:column;gap:20px;border-radius:5px;border:1px solid #e4e4e4;background-color:#f2f2f2;padding:20px;}
+}
+.emergency_shelter{position:relative;flex:1;margin-right:54px;
+  figure:last-of-type{position:absolute;right:0;bottom:38px;display:flex;align-items:flex-end;
+    figcaption{order:-1;margin-right:9px;}
+  }
+  figure{text-align:left;}
+  figcaption{font-size:12px;margin-top:0;text-align:left;font-weight:700;color: #000;}
+  .figcaption{position:absolute;bottom:0;display:block;width:100%;text-align:center;}
 }
 
