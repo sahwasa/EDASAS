@@ -191,6 +191,17 @@ border:1px solid #ccc;border-radius:5px;background-color: #fff; z-index:100;box-
   &:last-child a span{min-width:122px;white-space:initial;}
 }
 .cont_body{flex:1;display:flex;justify-content:space-between;position:relative;min-height:366px;overflow:hidden;}
+.bredcrumb{margin-bottom:20px;
+  ul{display:flex;justify-content:flex-end;}
+  li{letter-spacing:-.65px;color:#888;font-weight:normal;
+    &:first-child{
+      &::before{top:0;@include fontello('\e81f');color:#888;margin:0;font-size:15px;}
+      a{@include f_blind;}
+    }
+    &:last-child{font-weight:bold;color:#000;}
+    &::before{position:relative;top:-1px;@include fontello('\f105');margin:0 5px;color:#888;font-weight:normal;}
+  }
+}
 .pannel{position:relative;height:100%;max-height:calc(100vh - 75px);min-height:480px;background-color: #fff;z-index:10;overflow:hidden;
   .pannel_wrap{width:400px;height:100%;border-right:1px solid $border;overflow-y:auto;}
   header{border-bottom:1px solid $border;padding:$maingap;@include tit;margin-bottom:0;}
