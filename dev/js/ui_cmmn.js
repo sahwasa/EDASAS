@@ -257,13 +257,13 @@ function commonInit() {
   $("[name='ipt_year']").val(getYear.getFullYear())
 
 
-  // add file
-  $('.upFile').on('change', function () {
-    $(this)
-      .prev()
-      .val(this.value.replace(/c:\\fakepath\\/i, ''))
-    console.log($(this))
-  })
+   /* fileDeco */
+  var filePath = $('[role="filePath"]');
+  filePath.val('선택된 파일이 없습니다.');
+  $('[role="fileAdd"]').on('change',function(){
+    var fileAdd = $(this);
+    fileAdd.parent('.file_ipt').find('[role="filePath"]').val(fileAdd.val());
+  });
 
   // toggle button
   $('.evt_tgl')

@@ -6,7 +6,7 @@
 html, body {height:100%;}
 img, picture, video, canvas, svg {display:block;max-width:100%;}
 img, a, label{display:inline-block;}
-button {background:none;border:0;vertical-align:middle;}
+button {background:none;border:0;vertical-align:middle;cursor:pointer;}
 a {text-decoration:none;}
 table {border-collapse:collapse;border-spacing:0}
 caption{@include blind;}

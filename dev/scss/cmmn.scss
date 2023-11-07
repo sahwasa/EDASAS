@@ -61,6 +61,7 @@ input:invalid {position:relative;outline:2px solid #e42b29;background-color: #fa
 .btn_refresh{@include btn(#cbcbcb,'\e84c');color:#939393;padding:0 8px;line-height:20px;
   &::before{font-size:12px;}
 }
+.btn_del{@include ico_only('\eb2e');}
 .btn_pdf{@include btn($addTxt:'\f1c1');}
 .btn_print{@include btn($addTxt:'\e833');}
 .select_lst{display:flex;flex-wrap:wrap;justify-content:flex-start;gap:9px;
@@ -304,6 +305,21 @@ border:1px solid $border;border-left-width:0;border-radius:0 3px 3px 0;font-size
   }
   dd::before{background-color:#999;}
 }
+.ipt_lst{display:flex;flex-direction:column;gap:30px;
+  .label,label{font-size:16px;color:$blue;margin-bottom:10px;font-weight:700;}
+  input[type="text"],textarea,[contenteditable]{width:100%;font-size:14px;border:1px solid #d6d6d6;line-height:28px;color:#555;box-shadow:none;padding:5px 15px;}
+  [contenteditable]{min-height:var(--h);max-height:430px;overflow-y:auto;}
+}
+
+// file
+.file_ipt{position:relative;display:flex;align-items:stretch;gap:5px;}
+.file_wrap{display:inline-block;position:relative;width:90px;cursor:pointer;padding:0!important;text-align:center;border-radius:0;line-height:38px;font-size:14px;}
+.file_add{opacity:0;position:absolute;top:0;left:0;bottom:0;right:0;width:100%;height:100%;padding:0;border:0;cursor:pointer;}
+.file_text{width:380px;background-color:#fff!important;border:none;}
+.lst_attach{margin-top:5px;padding:5px 10px;
+  .attach{max-width:calc(100% - 35px);text-overflow:ellipsis;overflow:hidden;white-space:nowrap;vertical-align:middle;}
+}
+
 // tab
 .tab{display: flex;gap:4px;border-bottom:1px solid #a8a8a8;
   li{flex:1 0 auto;border:1px solid #e4e4e4;border-bottom-width:0;border-radius:3px 3px 0 0;

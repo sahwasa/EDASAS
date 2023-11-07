@@ -119,7 +119,7 @@
           </tbody>
         </table>        
         <div class="bot_wrap">
-          <button type="button" class="btn_blue_line">추가</button>
+          <button type="button" class="btn_blue_line" onclick="document.querySelector('.p_addFAQ').showModal();">추가</button>
           <button type="button" class="btn_blue_line">선택 삭제</button>
         </div>
       </div>
@@ -129,6 +129,26 @@
 Copyright © 2023 국립재난안전연구원. All rights reserved.
 </footer>
 </div>
+<dialog class="p_addFAQ line_style">
+  <form method="dialog">
+    <header class="p_header tit">
+      <h1>FAQ 추가</h1>
+      <div class="tool_wrap">
+        <button type="button" class="btn_close" onclick="document.querySelector('dialog').close();">닫기</button>
+      </div>
+    </header>
+    <section class="p_body">
+      <ul class="ipt_lst">
+        <li><label for="">Q 질문</label><input type="text" placeholder="자주묻는 질문"></li>
+        <li><label for="">A 답변</label><div contenteditable="true" style="--h:180px"></div></li>
+      </ul>
+    </section>
+    <section class="p_foot">
+      <button type="submit" class="btn_foot_blue">저장</button>
+      <button type="button" class="btn_foot_gray" onclick="document.querySelector('dialog').close();">취소</button>
+    </section>
+  </form>
+</dialog> 
 <script src="../plugins/jquery.min.js"></script>
 <script src="../plugins/chart.js/dist/chart.umd.js"></script>
 <script src="../js/ui_cmmn.js"></script>
