@@ -1,0 +1,84 @@
+@@include('../inc/top.html')
+<div id="wrap" class="wrap">
+  @@include('../inc/header.html')    
+  <main id="content" class="main_container">
+    <div class="static_contents">
+      <header>
+        <section class="bredcrumb">
+          <ul>
+            <li><a href="#">Home</a></li>
+            <li>시스템 설정</li>
+            <li>사용자 관리</li>
+          </ul>
+        </section>
+        <h1>사용자 관리</h1>
+      </header>
+      <div class="search">
+        <ul class="search_lst">
+          <li>
+            <select name="" id="" title="부서선택"><option value="">부서선택</option></select>
+          </li>
+          <li>
+            <select name="" id="" title="검색조건"><option value="">검색조건</option></select>
+            <input type="text" title="검색어" placeholder="검색어">
+          </li>
+        </ul>
+        <button type="button" class="btn_blue_line">검색</button>
+      </div>
+      <div class="tbl_wrap">
+        <table class="tbl_set tbl_hover">
+          <colgroup>
+            <col style="width:70px;">                
+          </colgroup>
+          <thead>
+            <tr>
+              <th scope="col">선택</th>
+              <th scope="col">권한</th>
+              <th scope="col">사용자ID</th>
+              <th scope="col">사용자명</th>
+              <th scope="col">소속기관</th>
+              <th scope="col">부서</th>
+              <th scope="col">직급</th>
+              <th scope="col">등록일</th>
+              <th scope="col">수정</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><input type="checkbox" id=""></td>
+              <td>관리자</td>
+              <td>admin</td>
+              <td>홍길동</td>
+              <td>-</td>
+              <td>-</td>
+              <td>-</td>
+              <td>2010.12.30</td>
+              <td><button type="button" class="btn_gray_line">수정</button></td>
+            </tr>            
+            <tr>
+              <td><input type="checkbox" id=""></td>
+              <td>관리자</td>
+              <td>admin</td>
+              <td>홍길동</td>
+              <td>-</td>
+              <td>-</td>
+              <td>-</td>
+              <td>2010.12.30</td>
+              <td><button type="button" class="btn_gray_line">수정</button></td>
+            </tr>            
+          </tbody>
+        </table>        
+        <div class="bot_wrap">
+          <button type="button" class="btn_blue_line" onclick="document.querySelector('.p_addManual').showModal();">추가</button>
+          <button type="button" class="btn_blue_line">선택 삭제</button>
+        </div>
+        @@include('../inc/paginate.html')
+      </div>
+    </div>      
+  </main>
+  @@include('../inc/footer.html')
+  @@include('../inc/pop/p_addManual.html') 
+</div>
+@@include('../inc/script.html')
+</body>
+</html>

@@ -34,6 +34,7 @@
               <div class="tit">
                 <h1>평가결과</h1>
                 <div class="tool_wrap">
+                  <button type="button" class="btn_blue simul">시뮬레이션</button>
                   <button type="button" class="btn_gray" onclick="document.querySelector('.p_report').showModal();">평가보고서</button>
                 </div>
               </div>
@@ -58,7 +59,7 @@
       <!-- 중앙 -->
       <section class="contents">
         <button type="button" class="evt_tgl sidePannel_fold" data-value="off" data-foldtarget="sidePannel_wrap" data-on="왼쪽패널 열기" data-off="왼쪽패널 닫기" title="왼쪽패널 닫기">왼쪽패널 닫기</button>
-        <button type="button" class="evt_tgl sidePannel_fold right_pannel" data-value="off" data-foldtarget="dtlPannel_wrap" data-on="오른쪽패널 열기" data-off="오른쪽패널 닫기" title="오른쪽패널 열기">오른쪽패널 열기</button>
+        <button type="button" class="evt_tgl sidePannel_fold right_pannel" data-value="on" data-foldtarget="dtlPannel_wrap" data-on="오른쪽패널 열기" data-off="오른쪽패널 닫기" title="오른쪽패널 열기">오른쪽패널 열기</button>
         <div class="map_wrap">
           <div class="temp_map">
             <img src="../images/temp/temp_map02.png" class="temp_map" alt="임시 지도배경">
@@ -92,7 +93,7 @@
       </section>
       <!-- 중앙__e -->
       <!-- 오른쪽패널 -->
-      <section class="pannel dtl_contents dtlPannel_wrap">
+      <section class="pannel dtl_contents dtlPannel_wrap" style="width:0;">
         <div class="pannel_wrap">
           <header class="tit">
             <h1>평가결과 상세</h1>
@@ -160,8 +161,23 @@
   @@include('../inc/footer.html')
   @@include('../inc/pop/p_areaSelect.html')
   @@include('../inc/pop/p_report.html')
+  @@include('../inc/pop/p_simul.html')
 </div>
 @@include('../inc/script.html')
 <script src="../js/radar_chart.js"></script>
+<script>
+$('.simul').on('click',function(){
+  const pop = document.querySelector('.p_simul');
+  const btn = $(this);  
+    btn.addClass('on');
+    pop.showModal();
+    setTimeout(()=>{
+      btn.removeClass('on');
+      pop.classList.add('fin');
+      $('.right_pannel').trigger('click');
+      setTimeout(() => {pop.close();}, 3000);
+    }, 5000);
+})
+</script>
 </body>
 </html>

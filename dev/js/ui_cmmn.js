@@ -218,8 +218,9 @@ function commonInit() {
   $('.seltab_wrap').find('.seltab_opt:not(:first)').hide().find('.seltab_opt:first').show();
   $('[data-seltab]').on('change',function(e){
     e.preventDefault();
-    var link = $(this).val();
-    $(this).next('.seltab_wrap').find('.seltab_opt').hide();
+    const link = $(this).val(),
+          target = e.target.dataset.seltab;
+    $('#'+target).find('.seltab_opt').hide();
     $('#'+link).show();    
   });
 

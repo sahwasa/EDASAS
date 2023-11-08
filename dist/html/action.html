@@ -51,11 +51,11 @@
           <li><a href="#">시스템 DB관리</a></li>
         </ul>
       </li>
-      <li><a href="#">시스템 설정</a>
+      <li><a href="../html/admin_user.html">시스템 설정</a>
         <ul class="sub">
-          <li><a href="#">사용자관리</a></li>
-          <li><a href="#">메뉴 관리</a></li>
-          <li><a href="#">코드 관리</a></li>
+          <li><a href="../html/admin_user.html">사용자관리</a></li>
+          <li><a href="../html/admin_menu.html">메뉴 관리</a></li>
+          <li><a href="../html/admin_code.html">코드 관리</a></li>
         </ul>
       </li>
     </ul>
@@ -82,70 +82,86 @@
       </header>
       <div>
         <article>
-          <h2>지진재해 지역안전도 평가 등급별 행동 방안</h2>
-          <div class="tab_wrap">
-            <ul class="tab">
-              <li class="on"><a href="#tab01">1등급</a></li>
-              <li><a href="#tab02">2등급</a></li>
-              <li><a href="#tab03">3등급</a></li>
-              <li><a href="#tab04">4등급</a></li>
-              <li><a href="#tab05">5등급</a></li>
-            </ul>
-          </div>
-          <div class="tab_container">
-            <article class="tab_contents" id="tab01">
-              <h1>1등급</h1>
-              <section>
-                <h2>- 기본방침</h2>
-                <ul class="dot_lst">
-                  <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation</li>
-                  <li>llamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                  </li>
+          <header class="tit">
+            <h2>지진재해 지역안전도 평가 등급별 행동 방안</h2>
+            <span class="tool_wrap">
+              <select name="" id="" style="--w:300px;" data-seltab="opt_wrap">
+                <option value="opt0">종합안전도</option>
+                <option value="opt1">건축물피해위험도 평가</option>
+                <option value="opt2">지진화재위험도 평가</option>
+                <option value="opt3">복구역량도 평가</option>
+                <option value="opt4">대피안전도 평가</option>
+                <option value="opt5">긴급대응 도로·공간 확보계수 평가</option>
+              </select>
+            </span>
+          </header>
+          <div id="opt_wrap" class="seltab_wrap">
+            <div id="opt0" class="seltab_opt">
+              <div class="tab_wrap">
+                <ul class="tab">
+                  <li class="on"><a href="#tab01">1등급</a></li>
+                  <li><a href="#tab02">2등급</a></li>
+                  <li><a href="#tab03">3등급</a></li>
+                  <li><a href="#tab04">4등급</a></li>
+                  <li><a href="#tab05">5등급</a></li>
                 </ul>
-              </section>
-              <section>
-                <h2>- 구성 및 행동 방안</h2>
-                <div class="organization">
-                  <ul class="main">
-                    <li><strong>본부장</strong><p>소속기관장</p></li>
-                    <li><strong>부본부장</strong><p>소속기관장 지명</p></li>
-                    <li>
-                      <ul class="inner">
-                        <li><strong>상황총괄반</strong></li>
-                        <li><strong>사고처리반</strong></li>
-                        <li><strong>복구지원반</strong></li>
-                        <li><strong>홍보행정지원반</strong></li>
+              </div>
+              <div class="tab_container">
+                <article class="tab_contents" id="tab01">
+                  <h1>1등급</h1>
+                  <section>
+                    <h2>- 기본방침</h2>
+                    <ul class="dot_lst">
+                      <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation</li>
+                      <li>llamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                      </li>
+                    </ul>
+                  </section>
+                  <section>
+                    <h2>- 구성 및 행동 방안</h2>
+                    <div class="organization">
+                      <ul class="main">
+                        <li><strong>본부장</strong><p>소속기관장</p></li>
+                        <li><strong>부본부장</strong><p>소속기관장 지명</p></li>
+                        <li>
+                          <ul class="inner">
+                            <li><strong>상황총괄반</strong></li>
+                            <li><strong>사고처리반</strong></li>
+                            <li><strong>복구지원반</strong></li>
+                            <li><strong>홍보행정지원반</strong></li>
+                          </ul>
+                        </li>
                       </ul>
-                    </li>
-                  </ul>
-                </div>
-                <div class="actions">
-                  <dl class="dot_lst">
-                    <dt>초동상황 대응 · 지휘</dt>
-                    <dd>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam</dd>
-                    <dd>quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</dd>                    
-                  </dl>
-                  <dl class="dot_lst">
-                    <dt>대응조직 구성 · 운영</dt>
-                    <dd>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam</dd>
-                    <dd>quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</dd>                    
-                  </dl>
-                  <dl class="dot_lst">
-                    <dt>긴급대응 조치</dt>
-                    <dd>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam</dd>
-                    <dd>quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</dd>                    
-                  </dl>
-                  <dl class="dot_lst">
-                    <dt>수습 · 복구 활동</dt>
-                    <dd>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam</dd>
-                    <dd>quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</dd>                    
-                  </dl>
-                </div>              
-              </section>              
-            </article>
-            <article class="tab_contents" id="tab02">
-              <h1>2등급</h1>
-            </article>
+                    </div>
+                    <div class="actions">
+                      <dl class="dot_lst">
+                        <dt>초동상황 대응 · 지휘</dt>
+                        <dd>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam</dd>
+                        <dd>quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</dd>                    
+                      </dl>
+                      <dl class="dot_lst">
+                        <dt>대응조직 구성 · 운영</dt>
+                        <dd>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam</dd>
+                        <dd>quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</dd>                    
+                      </dl>
+                      <dl class="dot_lst">
+                        <dt>긴급대응 조치</dt>
+                        <dd>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam</dd>
+                        <dd>quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</dd>                    
+                      </dl>
+                      <dl class="dot_lst">
+                        <dt>수습 · 복구 활동</dt>
+                        <dd>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam</dd>
+                        <dd>quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</dd>                    
+                      </dl>
+                    </div>              
+                  </section>              
+                </article>
+                <article class="tab_contents" id="tab02">
+                  <h1>2등급</h1>
+                </article>
+              </div>
+            </div>
           </div>
         </article>
       </div>  

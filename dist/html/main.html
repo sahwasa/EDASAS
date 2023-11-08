@@ -51,11 +51,11 @@
           <li><a href="#">시스템 DB관리</a></li>
         </ul>
       </li>
-      <li><a href="#">시스템 설정</a>
+      <li><a href="../html/admin_user.html">시스템 설정</a>
         <ul class="sub">
-          <li><a href="#">사용자관리</a></li>
-          <li><a href="#">메뉴 관리</a></li>
-          <li><a href="#">코드 관리</a></li>
+          <li><a href="../html/admin_user.html">사용자관리</a></li>
+          <li><a href="../html/admin_menu.html">메뉴 관리</a></li>
+          <li><a href="../html/admin_code.html">코드 관리</a></li>
         </ul>
       </li>
     </ul>
@@ -117,6 +117,7 @@
               <div class="tit">
                 <h1>평가결과</h1>
                 <div class="tool_wrap">
+                  <button type="button" class="btn_blue simul">시뮬레이션</button>
                   <button type="button" class="btn_gray" onclick="document.querySelector('.p_report').showModal();">평가보고서</button>
                 </div>
               </div>
@@ -215,7 +216,7 @@
       <!-- 중앙 -->
       <section class="contents">
         <button type="button" class="evt_tgl sidePannel_fold" data-value="off" data-foldtarget="sidePannel_wrap" data-on="왼쪽패널 열기" data-off="왼쪽패널 닫기" title="왼쪽패널 닫기">왼쪽패널 닫기</button>
-        <button type="button" class="evt_tgl sidePannel_fold right_pannel" data-value="off" data-foldtarget="dtlPannel_wrap" data-on="오른쪽패널 열기" data-off="오른쪽패널 닫기" title="오른쪽패널 열기">오른쪽패널 열기</button>
+        <button type="button" class="evt_tgl sidePannel_fold right_pannel" data-value="on" data-foldtarget="dtlPannel_wrap" data-on="오른쪽패널 열기" data-off="오른쪽패널 닫기" title="오른쪽패널 열기">오른쪽패널 열기</button>
         <div class="map_wrap">
           <div class="temp_map">
             <img src="../images/temp/temp_map02.png" class="temp_map" alt="임시 지도배경">
@@ -306,7 +307,7 @@
       </section>
       <!-- 중앙__e -->
       <!-- 오른쪽패널 -->
-      <section class="pannel dtl_contents dtlPannel_wrap">
+      <section class="pannel dtl_contents dtlPannel_wrap" style="width:0;">
         <div class="pannel_wrap">
           <header class="tit">
             <h1>평가결과 상세</h1>
@@ -361,7 +362,7 @@
         <th scope="col">종합 안전도</th>
         <th scope="col">건축물피해 위험도</th>
         <th scope="col">지진화재 위험도</th>
-        <th scope="col">복구 안전도</th>
+        <th scope="col">복구 역량도</th>
         <th scope="col">대피 안전도</th>
         <th scope="col">긴급대응 도로 · 공간 확보계수</th>
       </tr>
@@ -661,7 +662,7 @@ Copyright © 2023 국립재난안전연구원. All rights reserved.
         <th scope="col">종합 안전도</th>
         <th scope="col">건축물피해 위험도</th>
         <th scope="col">지진화재 위험도</th>
-        <th scope="col">복구 안전도</th>
+        <th scope="col">복구 역량도</th>
         <th scope="col">대피 안전도</th>
         <th scope="col">긴급대응 도로 · 공간 확보계수</th>
       </tr>
@@ -739,6 +740,15 @@ Copyright © 2023 국립재난안전연구원. All rights reserved.
     </section>
   </form>
 </dialog>
+  <dialog class="p_simul" style="--width:600px">
+  <form method="dialog">
+    <p class="txt">
+      <strong>종합안전도 평가에 대한 시뮬레이션 중입니다.</strong>
+      잠시만 기다려 주시기 바랍니다.
+    </p>
+    <p class="fin_txt">시뮬레이션이 완료되었습니다.</p>
+  </form>
+</dialog>
 </div>
 <script src="../plugins/jquery.min.js"></script>
 <script src="../plugins/chart.js/dist/chart.umd.js"></script>
@@ -747,5 +757,19 @@ Copyright © 2023 국립재난안전연구원. All rights reserved.
   commonInit();
 </script>
 <script src="../js/radar_chart.js"></script>
+<script>
+$('.simul').on('click',function(){
+  const pop = document.querySelector('.p_simul');
+  const btn = $(this);  
+    btn.addClass('on');
+    pop.showModal();
+    setTimeout(()=>{
+      btn.removeClass('on');
+      pop.classList.add('fin');
+      $('.right_pannel').trigger('click');
+      setTimeout(() => {pop.close();}, 3000);
+    }, 5000);
+})
+</script>
 </body>
 </html>

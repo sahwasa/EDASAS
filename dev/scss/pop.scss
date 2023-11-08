@@ -62,3 +62,11 @@ dialog{width:var(--width);}
   .chartwrap{width:300px;margin:0 auto;}
   .tbl_wrap{margin-top:$maingap;}
 }
+.p_simul{border:1px solid $blue;border-radius:10px;box-shadow:1px 1px 4px 0 rgba(0, 0, 0, .2);
+  .txt,.fin_txt{display:flex;flex-direction:column;justify-content:center;align-items:center;font-weight:700;font-size:16px;}
+  .txt{gap:5px;background:url(../images/ico_loading.gif) 50% 0 no-repeat;padding:60px 0 10px;
+    strong{display:block;color:$blue;;}
+  }
+  .fin_txt{display:none;padding:50px 0;}
+  &.fin{.txt{display:none;}.fin_txt{display:flex;}} 
+}
