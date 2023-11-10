@@ -112,12 +112,15 @@
               </ul>
             </section>
           </header>
-          <article class="pannel_body">
+          <div class="btn_area">
+            <button type="button" class="btn_blue simul">선택 지역 시뮬레이션</button>
+          </div>
+          <article class="pannel_body main_result">
             <section>
               <div class="tit">
                 <h1>평가결과</h1>
                 <div class="tool_wrap">
-                  <button type="button" class="btn_blue simul">시뮬레이션</button>
+                  <!-- <button type="button" class="btn_blue">시뮬레이션</button> -->
                   <button type="button" class="btn_gray" onclick="document.querySelector('.p_report').showModal();">평가보고서</button>
                 </div>
               </div>
@@ -764,10 +767,12 @@ $('.simul').on('click',function(){
     btn.addClass('on');
     pop.showModal();
     setTimeout(()=>{
+      $('.main_result').show();
+      $('.btn_area').hide();
       btn.removeClass('on');
       pop.classList.add('fin');
       $('.right_pannel').trigger('click');
-      setTimeout(() => {pop.close();}, 3000);
+      setTimeout(() => {pop.close();}, 2000);
     }, 5000);
 })
 </script>

@@ -26,15 +26,15 @@ const handleClose = function(e, range){
   }
 }
 const addGrade = function(targetval, target) {
-  if(targetval > 80 && targetval <= 100){
+  if(targetval >= 90 && targetval <= 100){
     target.addClass('grade1');
-  }else if(targetval > 60 && targetval <= 80){
+  }else if(targetval >= 80 && targetval <= 89){
     target.addClass('grade2');
-  }else if(targetval > 40 && targetval <= 60){
+  }else if(targetval >= 70 && targetval <= 79){
     target.addClass('grade3');
-  }else if((targetval > 20 && targetval <= 40)){
+  }else if((targetval >= 60 && targetval <= 69)){
     target.addClass('grade4');
-  }else if((targetval > 0 && targetval <= 20)) {
+  }else if((targetval < 60)) {
     target.addClass('grade5');
   }else{
     target.addClass('grade0');
