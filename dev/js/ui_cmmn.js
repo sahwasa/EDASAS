@@ -25,19 +25,39 @@ const handleClose = function(e, range){
     }    
   }
 }
-const addGrade = function(targetval, target) {
-  if(targetval >= 90 && targetval <= 100){
-    target.addClass('grade1');
-  }else if(targetval >= 80 && targetval <= 89){
-    target.addClass('grade2');
-  }else if(targetval >= 70 && targetval <= 79){
-    target.addClass('grade3');
-  }else if((targetval >= 60 && targetval <= 69)){
-    target.addClass('grade4');
-  }else if((targetval < 60)) {
-    target.addClass('grade5');
-  }else{
-    target.addClass('grade0');
+const addGrade = function(targetval, target, page){
+
+  switch (page) {
+    case '4'://복구역량도
+      if(targetval >= 85){
+        target.addClass('grade1');
+      }else if(targetval >= 75 && targetval <= 84){
+        target.addClass('grade2');
+      }else if(targetval >= 65 && targetval <= 74){
+        target.addClass('grade3');
+      }else if((targetval >= 55 && targetval <= 64)){
+        target.addClass('grade4');
+      }else if((targetval < 54)) {
+        target.addClass('grade5');
+      }else{
+        target.addClass('grade0');
+      }
+      break;  
+    default://종합안전도,건축물
+      if(targetval >= 90){
+        target.addClass('grade1');
+      }else if(targetval >= 80 && targetval <= 89){
+        target.addClass('grade2');
+      }else if(targetval >= 70 && targetval <= 79){
+        target.addClass('grade3');
+      }else if((targetval >= 60 && targetval <= 69)){
+        target.addClass('grade4');
+      }else if((targetval < 60)) {
+        target.addClass('grade5');
+      }else{
+        target.addClass('grade0');
+      }   
+    break;
   }
 }
 //focusout close
@@ -99,7 +119,7 @@ function commonInit() {
     $snb.removeClass('on');
     $deps1.eq(deps1Locate).children('a').addClass('on')
     $deps1.eq(deps1Locate).find($deps2).eq(deps2Locate).children('a').addClass('on');
-    el.parent('li').addClass('on');
+    el.parent('li').addClass('on');    
   }
   $deps1.on('click','a',function(){menuEvt($(this))});
   $deps2.on('click','a',function(){menuEvt($(this))});
@@ -320,27 +340,33 @@ function commonInit() {
   $('select').on('change', function () {
     $(this).css('color', 'inherit')
   })
-  const meters = $('.meter_wrap').find('meter');
-  meters.each(function(idx,el){
-    let targetval = $(this).val();
-    addGrade(targetval, $(this));
-    if(targetval < 10) targetval += 5;
-    $(this).attr('style',`--val:${targetval}%`)
-  })
-  const pies = $('.pie_graphwrap').find('.pie');
-  pies.each(function(idx,el){
-    let targetval = parseFloat($(this).css('--val').trim());
-    addGrade(targetval, $(this));
-  })
-  const heatmapH = $('.heatmap').find('strong');
-  heatmapH.each(function(idx,el){
-    let targetval = parseFloat($(this).find('.score').text().trim());
-    addGrade(targetval, $(this));
-  })
-  const heatmap = $('.heatmap').find('li');
-  heatmap.each(function(idx,el){
-    let targetval = parseFloat($(this).find('.score').text().trim());
-    addGrade(targetval, $(this));
-  })
+
+  function grade(){
+    const loc = window.location.href.split("index=")[1].split(',')[1];
+    console.log(loc);
+    const meters = $('.meter_wrap').find('meter');
+    const pies = $('.pie_graphwrap').find('.pie');
+    const heatmapH = $('.heatmap').find('strong');
+    const heatmap = $('.heatmap').find('li');
+    meters.each(function(idx,el){
+      let targetval = $(this).val();
+      addGrade(targetval, $(this), loc);
+      if(targetval < 10) targetval += 5;
+      $(this).attr('style',`--val:${targetval}%`)
+    })
+    pies.each(function(idx,el){
+      let targetval = parseFloat($(this).css('--val').trim());
+      addGrade(targetval, $(this), loc);
+    })
+    heatmapH.each(function(idx,el){
+      let targetval = parseFloat($(this).find('.score').text().trim());
+      addGrade(targetval, $(this), loc);
+    })
+    heatmap.each(function(idx,el){
+      let targetval = parseFloat($(this).find('.score').text().trim());
+      addGrade(targetval, $(this), loc);
+    })
+  }
+  grade();
 
 }
