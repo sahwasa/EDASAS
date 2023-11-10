@@ -28,31 +28,91 @@ const handleClose = function(e, range){
 const addGrade = function(targetval, target, page){
 
   switch (page) {
-    case '4'://복구역량도
-      if(targetval >= 85){
+    case '2'://건축물
+      if(targetval >= 90 && targetval <= 100){
         target.addClass('grade1');
-      }else if(targetval >= 75 && targetval <= 84){
+      }else if(targetval >= 80 && targetval < 90){
         target.addClass('grade2');
-      }else if(targetval >= 65 && targetval <= 74){
+      }else if(targetval >= 70 && targetval < 80){
         target.addClass('grade3');
-      }else if((targetval >= 55 && targetval <= 64)){
+      }else if(targetval >= 60 && targetval < 70){
         target.addClass('grade4');
-      }else if((targetval < 54)) {
+      }else if(targetval < 60 && targetval == 0) {
         target.addClass('grade5');
       }else{
         target.addClass('grade0');
       }
       break;  
-    default://종합안전도,건축물
-      if(targetval >= 90){
+    case '3'://지진화재 위험도
+      if(targetval <= 20 && targetval == 0){
         target.addClass('grade1');
-      }else if(targetval >= 80 && targetval <= 89){
+      }else if(targetval > 20 && targetval <= 40){
         target.addClass('grade2');
-      }else if(targetval >= 70 && targetval <= 79){
+      }else if(targetval > 40 && targetval <= 60){
         target.addClass('grade3');
-      }else if((targetval >= 60 && targetval <= 69)){
+      }else if(targetval > 60 && targetval <= 80){
         target.addClass('grade4');
-      }else if((targetval < 60)) {
+      }else if(targetval > 80 && targetval <= 100) {
+        target.addClass('grade5');
+      }else{
+        target.addClass('grade0');
+      }
+      break;  
+    case '4'://복구역량도
+      if(targetval >= 85 && targetval <= 100){
+        target.addClass('grade1');
+      }else if(targetval >= 75 && targetval < 85){
+        target.addClass('grade2');
+      }else if(targetval >= 65 && targetval < 75){
+        target.addClass('grade3');
+      }else if(targetval >= 55 && targetval < 65){
+        target.addClass('grade4');
+      }else if(targetval < 55 && targetval == 0) {
+        target.addClass('grade5');
+      }else{
+        target.addClass('grade0');
+      }
+      break;
+    case '5'://대피안전도
+      if(targetval >= 80 && targetval <= 100){
+        target.addClass('grade1');
+      }else if(targetval >= 60 && targetval < 80){
+        target.addClass('grade2');
+      }else if(targetval >= 40 && targetval < 60){
+        target.addClass('grade3');
+      }else if(targetval >= 20 && targetval < 40){
+        target.addClass('grade4');
+      }else if(targetval < 20 && targetval == 0) {
+        target.addClass('grade5');
+      }else{
+        target.addClass('grade0');
+      }
+      break;
+    case '6'://긴급대응 도로〮공간 확보계수 평가
+      if(targetval >= 57.1 && targetval <= 100){
+        target.addClass('grade1');
+      }else if(targetval >= 52.1 && targetval < 57.1){
+        target.addClass('grade2');
+      }else if(targetval >= 47.1 && targetval < 52.1){
+        target.addClass('grade3');
+      }else if(targetval >= 40.1 && targetval < 47.1){
+        target.addClass('grade4');
+      }else if(targetval < 40.1 && targetval == 0) {
+        target.addClass('grade5');
+      }else{
+        target.addClass('grade0');
+      }
+      break;  
+    default://종합안전도      
+      if(targetval >= 80 && targetval <= 100){
+        target.addClass('grade1');
+      }else if(targetval >= 60 && targetval < 80){
+        target.addClass('grade2');
+      }else if(targetval >= 40 && targetval < 60){
+        target.addClass('grade3');
+      }else if(targetval >= 20 && targetval < 40){
+        target.addClass('grade4');
+      }else if(targetval < 20 && targetval == 0) {
         target.addClass('grade5');
       }else{
         target.addClass('grade0');

@@ -81,9 +81,9 @@
   <ul class="snb_lst">
     <li><a href="../html/main.html"><span>종합안전도 평가</span></a></li>
     <li><a href="../html/bdh.html"><span>건축물피해위험도 평가</span></a></li>
-    <li><a href="#"><span>지진화재위험도 평가</span></a></li>
+    <li><a href="../html/eq_fire.html"><span>지진화재위험도 평가</span></a></li>
     <li><a href="../html/recovery_capability.html"><span>복구역량도 평가</span></a></li>
-    <li><a href="#"><span>대피안전도 평가</span></a></li>
+    <li><a href="../html/sheltering.html"><span>대피안전도 평가</span></a></li>
     <li><a href="../html/space_securing.html"><span>긴급대응 도로〮공간 확보계수 평가</span></a></li>
   </ul>
 </nav>
@@ -273,36 +273,35 @@
               <li><input type="radio" id="map_type5" name="map_type"><label for="map_type5">인구 분포도</label></li>
             </ul>
             <div class="map_legend">
-  <details open>
-    <summary>
-      <h1>범례</h1>
-      <label for="opacity" class="blind">투명도</label>
-      <input type="range" id="opacity" name="opacity" min="0" max="100" title="투명도" />
-    </summary>
-    <div class="legend_body">
-      <section class="symbols">
-        <strong class="blind">기호</strong>
-        <ul>
-          <li><label for=""><input type="checkbox" id="" name="" checked />소방서</label></li>
-          <li><label for=""><input type="checkbox" id="" name="" checked />임시대피시설</label></li>
-          <li><label for=""><input type="checkbox" id="" name="" checked />병원</label></li>
-        </ul>
-      </section>
-      <section class="safety_grade">                
-        <strong>복구역량도 등급</strong>
-        <ul>
-          <li class="grade1">1등급</li>
-          <li class="grade2">2등급</li>
-          <li class="grade3">3등급</li>
-          <li class="grade4">4등급</li>
-          <li class="grade5">5등급</li>
-          <li class="grade0">자료없음</li>
-        </ul>
-      </section>
-    </div>
-  </details>
-</div>
-      
+              <details open>
+                <summary>
+                  <h1>범례</h1>
+                  <label for="opacity" class="blind">투명도</label>
+                  <input type="range" id="opacity" name="opacity" min="0" max="100" title="투명도" />
+                </summary>
+                <div class="legend_body">
+                  <section class="symbols">
+                    <strong class="blind">기호</strong>
+                    <ul>
+                      <li><label for=""><input type="checkbox" id="" name="" checked />소방서</label></li>
+                      <li><label for=""><input type="checkbox" id="" name="" checked />임시대피시설</label></li>
+                      <li><label for=""><input type="checkbox" id="" name="" checked />병원</label></li>
+                    </ul>
+                  </section>
+                  <section class="safety_grade">                
+                    <strong>계수 등급</strong>
+                    <ul>
+                      <li class="grade1">1등급</li>
+                      <li class="grade2">2등급</li>
+                      <li class="grade3">3등급</li>
+                      <li class="grade4">4등급</li>
+                      <li class="grade5">5등급</li>
+                      <li class="grade0">자료없음</li>
+                    </ul>
+                  </section>
+                </div>
+              </details>
+            </div>              
             <ul class="map_style btn_switch">
               <li><input type="radio" id="default_view" name="map_style" checked><label for="default_view">일반지도</label></input></li>
               <li><input type="radio" id="sky_view" name="map_style"><label for="sky_view">위성지도</label></input></li>

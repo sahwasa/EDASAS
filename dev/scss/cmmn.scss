@@ -126,6 +126,7 @@ $navH:280px;
   }
   article{@include tit(h2);margin-bottom:0;
     h2{margin-bottom:20px;}
+    .seltab_opt > section,
     &>section{padding-left:20px;margin-bottom:80px;@include tit_bullet('h3');
       h3{margin-bottom:15px;text-indent:-15px;}
     }
