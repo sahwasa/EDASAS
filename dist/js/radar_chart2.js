@@ -2,7 +2,7 @@ const data = {
   labels: ['활동공간 확보율', ['광역 도로망', '  접근 계수'],['지역도로망','접근 계수 ']],
   datasets: [{
     label: '포항시 북구',
-    data: [80, 80, 80],
+    data: [50.6, 47.6, 50.7],
     fill: true,
     backgroundColor: '#16c87220',
     borderColor: '#16c872',
@@ -12,7 +12,7 @@ const data = {
     pointHoverBorderColor: '#16c872'
   }, {
     label: '포항시 남구',
-    data: [28, 48, 96],
+    data: [49.4, 52.6, 49.3],
     fill: true,
     backgroundColor: '#fbc90020',
     borderColor: '#fbc900',
