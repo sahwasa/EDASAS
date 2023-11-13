@@ -37,22 +37,22 @@ const addGrade = function(targetval, target, page){
         target.addClass('grade3');
       }else if(targetval >= 60 && targetval < 70){
         target.addClass('grade4');
-      }else if(targetval < 60 && targetval == 0) {
+      }else if(targetval < 60 && targetval >= 0) {
         target.addClass('grade5');
       }else{
         target.addClass('grade0');
       }
       break;  
     case '3'://지진화재 위험도
-      if(targetval <= 20 && targetval == 0){
+      if(targetval <= 20 && targetval >= 0){
         target.addClass('grade1');
-      }else if(targetval > 20 && targetval <= 40){
+      }else if(targetval > 20 && targetval <= 50){
         target.addClass('grade2');
-      }else if(targetval > 40 && targetval <= 60){
+      }else if(targetval > 50 && targetval <= 70){
         target.addClass('grade3');
-      }else if(targetval > 60 && targetval <= 80){
+      }else if(targetval > 70 && targetval <= 90){
         target.addClass('grade4');
-      }else if(targetval > 80 && targetval <= 100) {
+      }else if(targetval > 90 && targetval <= 100) {
         target.addClass('grade5');
       }else{
         target.addClass('grade0');
@@ -67,22 +67,22 @@ const addGrade = function(targetval, target, page){
         target.addClass('grade3');
       }else if(targetval >= 55 && targetval < 65){
         target.addClass('grade4');
-      }else if(targetval < 55 && targetval == 0) {
+      }else if(targetval < 55 && targetval >= 0) {
         target.addClass('grade5');
       }else{
         target.addClass('grade0');
       }
       break;
     case '5'://대피안전도
-      if(targetval >= 80 && targetval <= 100){
+      if(targetval >= 85 && targetval <= 100){
         target.addClass('grade1');
-      }else if(targetval >= 60 && targetval < 80){
+      }else if(targetval >= 75 && targetval < 85){
         target.addClass('grade2');
-      }else if(targetval >= 40 && targetval < 60){
+      }else if(targetval >= 65 && targetval < 75){
         target.addClass('grade3');
-      }else if(targetval >= 20 && targetval < 40){
+      }else if(targetval >= 55 && targetval < 65){
         target.addClass('grade4');
-      }else if(targetval < 20 && targetval == 0) {
+      }else if(targetval < 55 && targetval >= 0) {
         target.addClass('grade5');
       }else{
         target.addClass('grade0');
@@ -97,7 +97,7 @@ const addGrade = function(targetval, target, page){
         target.addClass('grade3');
       }else if(targetval >= 40.1 && targetval < 47.1){
         target.addClass('grade4');
-      }else if(targetval < 40.1 && targetval == 0) {
+      }else if(targetval < 40.1 && targetval >= 0) {
         target.addClass('grade5');
       }else{
         target.addClass('grade0');
@@ -112,7 +112,7 @@ const addGrade = function(targetval, target, page){
         target.addClass('grade3');
       }else if(targetval >= 20 && targetval < 40){
         target.addClass('grade4');
-      }else if(targetval < 20 && targetval == 0) {
+      }else if(targetval < 20 && targetval >= 0) {
         target.addClass('grade5');
       }else{
         target.addClass('grade0');
