@@ -1,8 +1,8 @@
 const data = {
-  labels: ['건축물피해 위험도', '복구안전도', ['긴급대응 도로·공간','         확보계수'], '대피 안전도', ['지진화재','위험도  ']],
+  labels: ['건축물피해 위험도', '복구역량도', ['긴급대응 도로·공간','         확보계수'], '대피 안전도', ['지진화재','위험도  ']],
   datasets: [{
     label: '포항시 북구',
-    data: [80, 80, 80, 95, 70],
+    data: [83.1, 78.3, 49.4, 99.5, 38.9],
     fill: true,
     backgroundColor: '#16c87220',
     borderColor: '#16c872',
@@ -12,7 +12,7 @@ const data = {
     pointHoverBorderColor: '#16c872'
   }, {
     label: '포항시 남구',
-    data: [28, 48, 96, 27, 100],
+    data: [84.7, 72.6, 50.7, 100, 44.2],
     fill: true,
     backgroundColor: '#fbc90020',
     borderColor: '#fbc900',

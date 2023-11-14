@@ -320,6 +320,10 @@ border:1px solid $border;border-left-width:0;border-radius:0 3px 3px 0;font-size
 .ico_pdf{@extend %attach;background-position-y:-37px;}
 .ico_ppt{@extend %attach;background-position-y:-74px;}
 .ico_word{@extend %attach;background-position-y:-112px;}
+.tbl_comprehensive_safety{
+  td{width:calc((100% - 80px) / 6);white-space:10px;letter-spacing:0.05em;}
+  td:first-child{width:80px;letter-spacing:-.05em;}
+}
 
 //lst
 .dot_lst{display:flex;flex-direction:column;gap:15px;
@@ -551,9 +555,9 @@ border:1px solid $border;border-left-width:0;border-radius:0 3px 3px 0;font-size
 }
 .pyramidwrap{position:relative;padding:0 10px;margin-top:40px;
   .txt_lst{position:absolute;left:0;top:0;display:flex;width:50%;height:100%;flex-direction:column;padding-top:30px;
-    li{position:relative;flex:1;text-align:right;font-size:12px;color:#818181;line-height:1.2;word-break:keep-all;background:url('../images/red-line.png') 100% -12px no-repeat;padding-right:20px;
+    li{position:relative;flex:1;text-align:right;font-size:12px;color:#818181;line-height:1.2;letter-spacing:-.08em;word-break:keep-all;background:url('../images/red-line.png') 100% -12px no-repeat;padding-right:23px;
       &::before,
-      &::after{position:absolute;right:20px;top:-14px;display:block;font-weight:700;color:#000;font-size:11px;line-height:1;}
+      &::after{position:absolute;right:20px;top:-14px;display:block;font-weight:700;color:#000;font-size:11px;line-height:1;letter-spacing:0;}
        &::before{font-size:25px;right:40px;top:-25px;}
       @for $i from 1 to 6{
         &:nth-child(#{$i}){width:calc(100% - ($i * 8%));

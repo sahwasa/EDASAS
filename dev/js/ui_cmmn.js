@@ -44,15 +44,15 @@ const addGrade = function(targetval, target, page){
       }
       break;  
     case '3'://지진화재 위험도
-      if(targetval <= 20 && targetval >= 0){
+      if(targetval >= 81 && targetval <= 100){
         target.addClass('grade1');
-      }else if(targetval > 20 && targetval <= 50){
+      }else if(targetval >= 61 && targetval < 81){
         target.addClass('grade2');
-      }else if(targetval > 50 && targetval <= 70){
+      }else if(targetval >= 41 && targetval < 61){
         target.addClass('grade3');
-      }else if(targetval > 70 && targetval <= 90){
+      }else if(targetval >= 21 && targetval < 41){
         target.addClass('grade4');
-      }else if(targetval > 90 && targetval <= 100) {
+      }else if(targetval < 21 && targetval >= 0) {
         target.addClass('grade5');
       }else{
         target.addClass('grade0');
@@ -376,7 +376,6 @@ function commonInit() {
       fold_wrap = $('.' + snbBtn.foldtarget),
       snbWidth = fold_wrap.children('.pannel_wrap').width(),
       speed = 500;
-      console.log(fold_wrap);
     snbBtn.value == 'on'
       ? fold_wrap.animate({ width: 0 }, speed)
       : fold_wrap.animate({ width: snbWidth }, speed)
@@ -403,7 +402,6 @@ function commonInit() {
 
   function grade(){
     const loc = window.location.href.split("index=")[1].split(',')[1];
-    console.log(loc);
     const meters = $('.meter_wrap').find('meter');
     const pies = $('.pie_graphwrap').find('.pie');
     const heatmapH = $('.heatmap').find('strong');
