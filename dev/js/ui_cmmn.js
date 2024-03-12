@@ -26,7 +26,6 @@ const handleClose = function(e, range){
   }
 }
 const addGrade = function(targetval, target, page){
-
   switch (page) {
     case '2'://건축물
       if(targetval >= 90 && targetval <= 100){
@@ -285,7 +284,7 @@ function commonInit() {
   //tab
   $('.tab').find('li:first').addClass('on')
   $('.tab_container').find('.tab_contents:not(:first)').hide()
-  $('.tab li').on('click', function (e) {
+  $('.tab li').off('click').on('click', function (e) {
     e.preventDefault()
     $(this).addClass('on').siblings().removeClass('on')
     var link = $(this).find('a').attr('href')
