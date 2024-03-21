@@ -427,15 +427,21 @@ function commonInit() {
   grade();
 }
 const path = "../images/temp/",
-      distribution = 'distribution_map.png';
+      distribution = 'distribution_map.png',
+      distribution_legend = $('.distribution_legend'),
+      origin_legend = $('.safety_grade');
 function mapTgl(gradeMap){
   $('[name="map_type"]').on('change',function(){
     let type = $(this).prop('id'),
         map = $('.temp_map').children('img');
     if(type == 'map_type2'){
       map.prop('src',path + distribution)
+      origin_legend.hide();
+      distribution_legend.show();
     }else{
       map.prop('src',path + gradeMap);
+      origin_legend.show();
+      distribution_legend.hide();
     }
   })
 }
