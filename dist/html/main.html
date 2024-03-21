@@ -338,12 +338,7 @@
                   지역은 <em>종합안전도 평가</em>에서 안전지수가 상대적으로 보통입니다</p>
                 </li> -->
                 <li class="grade2"><strong>보통</strong>
-                  <p>포항시 북구 지역은 <em>종합안전도 평가</em>에서 안전지수가 상대적으로 높은편이며, 포항시 남구 
-                  지역은 <em>종합안전도 평가</em>에서 안전지수가 상대적으로 높은편 입니다</p>
-                </li>
-                <li class="grade2"><strong>보통</strong>
-                  <p>포항시 남구 지역은 <em>종합안전도 평가</em>에서 안전지수가 상대적으로 높은편이며, 포항시 남구 
-                  지역은 <em>종합안전도 평가</em>에서 안전지수가 상대적으로 높은편 입니다</p>
+                  <p><em>포항시 북구</em> 지역은 <em>종합안전도 평가</em>에서 안전지수 등급이 2등급으로 보통에 해당하며, <em>포항시 남구</em> 지역 또한 종합안전도 평가에서 안전지수 등급이 2등급으로 보통에 해당합니다.</p>
                 </li>
                 <!-- <li class="grade3"><strong>주의</strong>
                   <p>포항시 남구 지역은 <em>종합안전도 평가</em>에서 안전지수가 상대적으로 높은편이며, 포항시 남구 
@@ -493,7 +488,7 @@
               </div>
               <ul class="action_plan">
                 <li><em>포항시 북구</em>는 상대적으로 종합안전도 등급이 높으므로 현 상황을 잘 유지합니다.</li>
-                <li><em>포항시 남구</em>는 특히 송도동과 청림동의 종합안전도 등급이 낮게 나왔으므로 대응이 필요합니다.</li>
+                <li><em>포항시 남구</em>는 특히 <em>송도동, 청림동</em>의 종합안전도 등급이 낮게 나왔으므로 단위안전도 결과에 따른 대응이 필요합니다.</li>
               </ul>
             </section>
           </article>
@@ -846,12 +841,13 @@ $('.simul').on('click',function(){
       btn.removeClass('on');
       pop.classList.add('fin');
       $('.right_pannel').trigger('click');
-      $('#temp_map').attr('src','../images/temp/temp_map_2_2.png')
+      $('#temp_map').attr('src',path + 'temp_map_2_2.png')
       timer = new Date();
       console.log('시뮬레이션 완료 : '+timer);
       setTimeout(() => {pop.close();}, 2000);
     }, 5000);
 })
+  mapTgl('temp_map_2_2.png');
 </script>
 </body>
 </html>

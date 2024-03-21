@@ -90,95 +90,453 @@
       </header>
       <div>
         <article>
-          <header class="tit">
-            <h2>지진재해 지역안전도 평가 방법</h2>
-            <span class="tool_wrap">
-              <select name="" id="" style="--w:300px;" data-seltab="opt_wrap">
-                <option value="opt1">건축물피해위험도 평가</option>
-                <option value="opt2">지진화재위험도 평가</option>
-                <option value="opt3">복구역량도 평가</option>
-                <option value="opt4">대피안전도 평가</option>
-                <option value="opt5">긴급대응 도로·공간 확보계수 평가</option>
-              </select>
-            </span>
-          </header>
-          <div id="opt_wrap" class="seltab_wrap">
-            <div id="opt1" class="seltab_opt">
+          <ul class="tab tab_wrap">
+            <li class="on"><a href="#opt1">건축물피해위험도 평가</a></li>
+            <li><a href="#opt2">지진화재위험도 평가</a></li>
+            <li><a href="#opt3">복구역량도 평가</a></li>
+            <li><a href="#opt4">대피안전도 평가</a></li>
+            <li><a href="#opt5">긴급대응 도로·공간 확보계수 평가</a></li>
+          </ul>
+         
+          <div id="opt_wrap" class="tab_container">
+            <article id="opt1" class="tab_contents">
               <section>
-                <h3>지반운동의 결정</h3>
-                <ul class="dot_lst">
-                  <li>지진 발생 위치`의 불확실성 및 지역간의 상대비교를 위해서 기반암(지표 하부의 암반)에 내진설계기준에서 사용하는 국가지진위험지도(소방방재청, 2013)에 규정된 지반가속도를 적용하여 평가</li>
-                  <li>다만 지역별로 지반특성 따른 지반운동 증폭효과를 고려하기 위하여 대상 지역을 0.5km x 0.5km 격자 단위로 분할하여 지반특성 DB를 구축<br>
-                  (지반운동 증폭효과: 지표 하부의 암반에 비하여 토층으로 덮인 지표의 지반운동이 증폭되는 효과)</li>
-                  <li>기반암의 지반가속도에 증폭표과를 곱하여 각 격자별로 지표에서의 대표 지반가속도를 산정하여 건축물 피해 평가에 적용
+                <h1>건축물 지진동피해 위험도 평가기준</h1>
+                <ul>
+                  <li>
+                    행정구역간의 지진피해를 비교하여 상대적으로 위험한 지역을 선정하기 위해 최종 평가결과는 건축물 피해율을 토대로 대상 행정구역들을 5단계 위험도 등급으로 분류하였다. 이는 전체 연면적대비 반파 이상 피해율 5%이상 발생시 5등급 위험도에 해당하며, 건축물 지진동피해 위험도 환산점수는 식 (1)과 같다.                  
+                    <div class="equation">
+                      <dl>
+                        <dt>식 (1)</dt>
+                        <dd>건축물 피해 위험도 평가지수 = 100 - 8 × (연면적 기준 반파위험도)</dd>
+                        <dd><strong>1등급</strong> 90 ≤ 건축물 지진동 피해위험도 환산점수 ≤ 100</dd>
+                        <dd><strong>2등급</strong> 80 ≤ 건축물 지진동 피해위험도 환산점수 ≤ 89</dd>
+                        <dd><strong>3등급</strong> 70 ≤ 건축물 지진동 피해위험도 환산점수 ≤ 79</dd>
+                        <dd><strong>4등급</strong> 60 ≤ 건축물 지진동 피해위험도 환산점수 ≤ 69</dd>
+                        <dd><strong>5등급</strong> 건축물 지진동 피해위험도 환산점수 ≺ 60</dd>
+                      </dl>                      
+                    </div>
+                  </li>
+                  <li>
+                    연면적 기준 반파위험도는 반파 이상의 피해연면적 백분율을 의미하며 식 (2)와 같이 반파이상 피해연면적을 전체 연면적으로 나누어 산정한다.                  
+                    <div class="equation">
+                      <dl>
+                        <dt>식 (2)</dt>
+                        <dd><img src="../images/intro/img_sys1_01.jpg" alt=""></dd>
+                        <dt>식 (3)</dt>
+                        <dd><img src="../images/intro/img_sys1_02.jpg" alt=""></dd>
+                      </dl>
+                    </div>
                   </li>
                 </ul>
-                <div class="figure_wrap">
+                  여기서, <span class="eq middle"><img src="../images/intro/img_sys1_02_parts01.jpg" alt=""></span>는 행정구역 내 <span class="eq"><img src="../images/intro/img_sys1_02_parts03.jpg" alt=""></span>번째 건축물 구조형식의 이고, <span class="eq"><img src="../images/intro/img_sys1_02_parts02.jpg" alt=""></span>는 <span class="eq"><img src="../images/intro/img_sys1_02_parts03.jpg" alt=""></span>번째 건축물 구조형식의 구성비이며, <span class="eq"><img src="../images/intro/img_sys1_02_parts05.jpg" alt=""></span>는 행정구역 내 건축물의 총 연면적이다.
+                </p>
+              </section>
+            </article>
+            <article id="opt2" class="tab_contents">
+              <section>
+                <h1>건축물의 내화구조유형 분류 및 클러스터 구성</h1>
+                <ul class="dot_lst">
+                  <li>지역 특성을 반영한 지진화재위험도 추정 및 지역 특성에 적합한 대비방안 제시를 위하여, 클러스터 기반 정적 화재 확산 해석법과 국내 건축물 관련 데이터베이스를 연계한 지진화재평가방법론을 적용하여 평가</li>
+                  <li>지진화재위험도 평가에 활용되는 클러스터 구성을 위하여, 건축물대장의 데이터(사용승인일, 층수, 용도, 구조재료 그리고 연면적)를 고려하여 건축물의 내화구조유형 분류</li>
+                  <li>다만, 기구축된 건축물 관련 데이터베이스 중 건축물의 내화구조유형을 분류하고 있지 않으므로, 건축법 시행령 제56조 내화구조 개정 이력 정보와 건축물대장의 데이터를 바탕으로 건축물의 내화구조유형을 분류하는 방법론 개발</li>
+                  <li>여기서, 건축물대장의 데이터가 부분적으로 누락되어 완전하지  않으므로, 완전한 데이터 확보를 위해 데이터 역추적 방법론을   개발하였으며, 이를 바탕으로 누락률 0%인 건축물대장 확보 가능</li>
+                  <li>건축물대장의 데이터와 내화구조유형 분류 방법론을 활용하여  건축물의 내화구조유형을 분류하고, 이에 따른 화재확산거리와  건축물간 인접거리의 비교를 통해 내화특성이 유사한 건축물을 그룹화하여 클러스터 구성</li>
+                </ul>
+                <div class="figure_wrap flex_figure">                 
                   <figure>
-                    <img src="../images/system-img-03.png"  alt="[그림 3] 1000년 재현주기 국가지진위험지도" width="316px" height="438px">
-                    <figcaption>[그림 3] 1000년 재현주기 국가지진위험지도</figcaption>
-                  </figure>
+                    <img src="../images/intro/img_sys2_01.jpg"  alt="[그림 1] 데이터 역추적">
+                    <figcaption>[그림 1] 데이터 역추적</figcaption>
+                  </figure>              
                   <figure>
-                    <img src="../images/system-img-04.png"  alt="[그림 4] 0.5km x 0.5km 격자별 지반분류
-    (한국지질자원연구원, 2023)" width="439px" height="438px">
-                    <figcaption>[그림 4] 0.5km x 0.5km 격자별 지반분류 (한국지질자원연구원, 2023)</figcaption>
-                  </figure>
+                    <img src="../images/intro/img_sys2_02.jpg"  alt="[그림 2] 내화구조유형 분류 방법론">
+                    <figcaption>[그림 2] 내화구조유형 분류 방법론</figcaption>
+                  </figure>              
                   <figure>
-                    <img src="../images/system-img-05.png"  alt="[그림 5] 지반증폭효과 (동경도도시정비국)
-    toshiseibi.metro.tokyo.lg.jp/bosai/chousa_6/home.htm#data1" width="294px" height="438px">
-                    <figcaption>[그림 5] 지반증폭효과 (동경도도시정비국)<span>toshiseibi.metro.tokyo.lg.jp/bosai/chousa_6/home.htm#data1</span></figcaption>
-                  </figure>                  
+                    <img src="../images/intro/img_sys2_03.jpg"  alt="[그림 3] 클러스터 개념">
+                    <figcaption>[그림 3] 클러스터 개념</figcaption>
+                  </figure>              
                 </div>
               </section>
               <section>
-                <h3>건축물 피해의 결정</h3>
+                <h1>지역단위 출화건수 및 지진화재위험도 평가</h1>
+                <ul class="dot_lst">
+                  <li>최대지반가속도(PGA)와 건축물의 연면적 정보를 활용하여 지역단위의 출화건수 추정</li>
+                  <li>클러스터 단위의 평균소실율을 활용하여 지진화재에 의한 지역단위의 소실율(소실된 연면적의 비율) 산정</li>
+                  <li>지역 특성을 반영한 지진화재위험도 평가를 위하여, 지역단위의 건축물의 내화구조유형(목조, 내화조) 구성 비율, 밀집도 그리고 소실율을 활용하여<br />
+                   𝐼<sub>𝑅</sub> 그리고 𝐼<sub>𝑇</sub>를 계산하고, 이를 활용하여 지역단위 지진화재위험도 비교
+                    <ul class="dash_lst">
+                      <li> 𝐼<sub>𝑅</sub> : 내화조 중심 지역 특성 반영 소실율</li>
+                      <li>𝐼<sub>𝑇</sub> : 목조 중심 지역특성 반영 소실율</li>
+                    </ul>
+                  </li>
+                </ul>
+                <div class="figure_wrap flex_figure">                 
+                  <figure>
+                    <img src="../images/intro/img_sys2_04.jpg"  alt="[그림 4] 𝐼𝑅 을 통한 지진화재위험도 평가결과">
+                    <figcaption>[그림 4] 𝐼<sub>𝑅</sub>을 통한 지진화재위험도 평가결과</figcaption>
+                  </figure>              
+                  <figure>
+                    <img src="../images/intro/img_sys2_05.jpg"  alt="[그림 5] 𝐼𝑇 을 통한 지진화재위험도 평가 결과">
+                    <figcaption>[그림 5]  𝐼<sub>𝑇</sub>을 통한 지진화재위험도 평가 결과</figcaption>
+                  </figure>              
+                </div>
+              </section>
+              <section>
+                <h1>평가지수 산정</h1>
+                <ul class="dot_lst">
+                  <li>행정구역별 건축물의 내화구조유형 중 내화조 그리고 목조 구성 비율과 밀집도 그리고 소실율을 활용하여 지진화재위험도 평가지표 산정</li>
+                </ul>
+                <div class="equation">
+                  <div>
+                    내화조중심 지역 특성 반영 소실율 = 𝐼<sub>𝑅</sub> = 1 / (연면적 기준 반파위험도)
+                  </div>
+                  <div class="fraction">
+                    <span>밀집도 × 소실율</span>
+                    <span>내화조 구성 비율</span>
+                  </div>
+                </div>
+                <div class="equation">
+                  <div>목조중심 지역 특성 반영 소실율 = 𝐼<sub>𝑇</sub> = 1 / 밀집도 × 목조 구성 비율 × 소실율</div>
+                </div>
+              </section>
+              <section>
+                <h1>방재역량 평가</h1>
+                <ul class="dot_lst">
+                  <li>PGA와 건축물의 연면적을 고려한 지역단위 출화건수 예측</li>
+                  <li>지역 특성(건축물 내화구조유형 구성 비율 그리고 밀집도)을 반영한 지진화재위험도 평가 및 위험지역 선정</li>                  
+                  <li>지역 특성을 고려하여 지진화재에 대한 합리적인 대비방안 평가
+                    <ul class="dash_lst">
+                      <li>밀집도가 높은 지역: 화재 발생 시 신속한 소방 및 구급활동을 위한 소방차량 등의 접근성 평가</li>
+                      <li>목조 구성 비율이 높은 지역: 긴급 소방시설 등의 설치 필요여부 평가
+                        <p>※ 목조 특성상 화재에 의한 위험성 및 확산 가능성이 높음을 고려</p>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>                
+              </section>
+            </article>
+            <article id="opt3" class="tab_contents opt3">
+              <section>
+                <h1>복구역량도 평가지수</h1>
+                <ul class="dot_lst">
+                  <li>개념: 지진에 의한 직접적인 피해액(건축물의 신축 혹은 보수비용)을 지역의 복구능력을 보정한 값</li>
+                </ul>
+                <div class="equation">
+                  <div>
+                    복구역량도 = 100 -
+                  </div>
+                  <div class="fraction">
+                    <span>건물가치의 손실비율</span>
+                    <span>지역의 사회경제적 복구능력</span>
+                  </div>
+                  <div>
+                  (&percnt;)
+                  </div>
+                </div>
+              </section>
+              <section>
+                <h1>건물가치 손실비율 산정</h1>
+                <ul class="dot_lst">
+                  <li>건축물 대장 → 건물별 구조형식, 용도, 내진설계여부 판정 → 취약도 함수를 통한 건물별 손상확률 산정</li>
+                  <li>손상확률별 감가율에 용도별 건축단가 (한국부동산원 자료)를 고려하여 피해액 산정</li>
+                  <li>손실비율 = 피해액의 합 / 건물 가치의 합</li>
+                </ul>
+              </section>
+              <section>
+                <h1>지역의 사회경제적 복구능력 산정</h1>
+                <ul class="dot_lst">
+                  <li>복구능력과 관련된 지역별 통계데이터 확보 : 지역내 총생산, 경제활동참가율, 노후주택비율 등</li>
+                  <li>지역간 상대비교에 근거한 복구능력지수 산정</li>
+                </ul>
+                <div class="figure_wrap flex_wrap">                 
+                  <figure>
+                    <img src="../images/intro/img_sys3_01.jpg"  alt="2021 건물신축단가표">
+                  </figure>              
+                  <div class="tbl_wrap">
+                    <table class="tbl_set tbl_intro">
+                      <thead>
+                        <tr>
+                          <th scope="col">번호</th>
+                          <th scope="col">대표 건축물</th>
+                          <th scope="col">건물 단가</th>
+                          <th scope="col">전기 설비</th>
+                          <th scope="col">위생 설비</th>
+                          <th scope="col">냉난방 설비</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>1</td>
+                          <td>일반주택</td>
+                          <td>209</td>
+                          <td>24</td>
+                          <td>84.5</td>
+                          <td>100.5</td>
+                        </tr>
+                        <tr>
+                          <td>2</td>
+                          <td>고급주택</td>
+                          <td>271</td>
+                          <td>24</td>
+                          <td>127.5</td>
+                          <td>119.5</td>
+                        </tr>
+                        <tr>
+                          <td>3</td>
+                          <td>다가구주택</td>
+                          <td>209</td>
+                          <td>24</td>
+                          <td>84.5</td>
+                          <td>100.5</td>
+                        </tr>
+                        <tr>
+                          <td>4</td>
+                          <td>다중주택</td>
+                          <td>209</td>
+                          <td>24</td>
+                          <td>84.5</td>
+                          <td>100.5</td>
+                        </tr>
+                        <tr>
+                          <td>5</td>
+                          <td>아파트</td>
+                          <td>227.5</td>
+                          <td>61</td>
+                          <td>94</td>
+                          <td>72.5</td>
+                        </tr>
+                        <tr>
+                          <td>6</td>
+                          <td>연립주택</td>
+                          <td>162.5</td>
+                          <td>24</td>
+                          <td>70.5</td>
+                          <td>68</td>
+                        </tr>
+                        <tr>
+                          <td>7</td>
+                          <td>다세대주택</td>
+                          <td>162.5</td>
+                          <td>24</td>
+                          <td>70.5</td>
+                          <td>68</td>
+                        </tr>
+                        <tr>
+                          <td>⋯</td>
+                          <td>⋯</td>
+                          <td>⋯</td>
+                          <td>⋯</td>
+                          <td>⋯</td>
+                          <td>⋯</td>
+                        </tr>
+                        <tr>
+                          <td>45</td>
+                          <td>유치원</td>
+                          <td>279</td>
+                          <td>30</td>
+                          <td>75.5</td>
+                          <td>173.5</td>
+                        </tr>                   
+                      </tbody>
+                    </table>
+                  </div>       
+                  <div class="tbl_wrap">
+                    <table class="tbl_set tbl_intro">
+                      <thead>
+                        <tr>
+                          <th scope="col">번호</th>
+                          <th scope="col">통계데이터</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>1</td>
+                          <td>경제활동참가율</td>
+                        </tr>
+                        <tr>
+                          <td>2</td>
+                          <td>등록 장애인 수</td>
+                        </tr>
+                        <tr>
+                          <td>3</td>
+                          <td>지역내총생산(GRDP)</td>
+                        </tr>
+                        <tr>
+                          <td>4</td>
+                          <td>1인 가구비율</td>
+                        </tr>
+                        <tr>
+                          <td>5</td>
+                          <td>독거노인 가구비율</td>
+                        </tr>
+                        <tr>
+                          <td>6</td>
+                          <td>무주택 가구비율</td>
+                        </tr>
+                        <tr>
+                          <td>7</td>
+                          <td>노후 주택비율</td>
+                        </tr>
+                        <tr>
+                          <td>8</td>
+                          <td>재정자립도</td>
+                        </tr>
+                        <tr>
+                          <td>9</td>
+                          <td>재정자주도</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>       
+                </div>
+              </section>
+              <section>
+                <h1>대피안전도 평가지수</h1>
+                <ul class="dot_lst">
+                  <li>개념: 지진에 의한 직접적인 피해액(건축물의 신축 혹은 보수비용)을 지역의 복구능력을 보정한 값
+                    <div class="equation">
+                      <div>
+                        복구역량도 = 100 -
+                      </div>
+                      <div class="fraction">
+                        <span>대피자 희망자 중 미수용인원</span>
+                        <span>대피시설의 수용능력</span>
+                      </div>
+                      <div>
+                      (&percnt;)
+                      </div>
+                    </div>
+                  </li>
+                  <li>확보된 옥외대피소 면적(수용능력)의 적절성 판단을 위해 활용가능</li>
+                </ul>
+              </section>
+              <section>
+                <h1>긴급대피자 추정절차 건물가치 손실비율 산정</h1>
+                <ul class="dot_lst">
+                  <li>긴급대피자 = 주택피해로 인한 대피자 + 심리적 불안에 의한 대피자</li>
+                  <li>주책피해로 인한 대피자 = 전체인구 × (전파주택면적 + 반파주택면적 × 0.5) ÷ 전체주택면적</li>
+                  <li>심리적불안에 의한 대피자 = 0.2g이상의 가속도가 작용한 지역의 주택면적 ÷ 전체주택면적 × 0.0053</li>
+                </ul>
+              </section>
+              <section>
+                <h1>대피시설의 수용능력</h1>
+                <ul class="dot_lst">
+                  <li>수용능력 = 대피시설의 면적 ÷ 0.825㎡ (민방위 기준 1인당 점유면적)</li>
+                </ul>
+                <div class="figure_wrap flex_figure">
+                    <figure>
+                      <img src="../images/intro/img_sys3_02.jpg"  alt="지진 옥외대피장소 안내표지">
+                      <figcaption class="blind">지진 옥외대피장소 안내표지</figcaption>
+                    </figure>
+                    <figure>
+                      <img src="../images/intro/img_sys3_03.jpg"  alt="재난대응 안전한국훈련">
+                      <figcaption class="blind">재난대응 안전한국훈련</figcaption>
+                    </figure>                  
+                  <figure>
+                    <img src="../images/intro/img_sys3_04.jpg"  alt="마포구 지진옥외 대피장소 지도">
+                    <figcaption class="blind">마포구 지진옥외 대피장소 지도</figcaption>
+                  </figure>                  
+                </div>             
+              </section>
+            </article>
+            <article id="opt5" class="tab_contents opt5">
+              <section>
+                <h1>활동 공간 확보율</h1>
+                <ul class="dot_lst">
+                  <li>활동 공간 확보율(α)은 동경도 도시정비국에서 제안한 지표인 활동 유효 공간 부족률을 안전도 관점에서 평가한 지표</li>
+                  <li>활동 유효 공간 부족률은 폭 4m 이상의 도로 등에 해당하는 긴급 대응 활동을 용이하게 할 수 있는 면적 대비 그렇지 않은 공간의 비율로 평가</li>
+                  <li>지역 내 긴급 대응 공간으로 확보된 면적의 지역 전체 면적에 대한 비율로 활동 공간 확보율 평가 가능</li>
+                </ul>
+                <figure class="figure_wrap flex_figure">
+                  <div class="inner_wrap">
+                    <div>
+                      <img src="../images/intro/img_sys5_01.jpg"  alt="활동 공간 확보율이 높은 예">
+                      <em>활동 공간 확보율이 높은 예</em>
+                    </div>
+                    <div>
+                      <img src="../images/intro/img_sys5_02.jpg"  alt="활동 공간 확보율이 낮은 예">
+                      <em>활동 공간 확보율이 낮은 예</em>
+                    </div>
+                  </div>
+                  <figcaption>[그림1] 활동 공간 확보율 예시(동경도 도시정비국, 2022)</figcaption>                  
+                </figure>               
+              </section>
+              <section>
+                <h1>지역 도로망 접근 계수</h1>
+                <ul class="dot_lst">
+                  <li>지역 도로망 접근 계수(β)는 동경도 도시정비국에서 제안한 지표인 도로 네트워크 밀도 부족률을 안전도 관점에서 평가한 지표</li>
+                  <li>폭 12m 이상의 도로로 연결되는 폭 6m 이상의 도로에 접근할 수 있는 도로 네트워크의 밀도를 평가</li>
+                  <li>지역 내 여러 재해지로부터 지역 수준의 구호지점까지의 평균 도달 시간으로 지역 도로망 접근 계수 평가 가능</li>
+                </ul>
+                <figure class="figure_wrap flex_figure">
+                  <div class="inner_wrap">
+                    <div>
+                      <img src="../images/intro/img_sys5_03.jpg"  alt="지역 도로망 접근 계수가 높은 예">
+                      <em>지역 도로망 접근 계수가 높은 예</em>
+                    </div>              
+                    <div>
+                      <img src="../images/intro/img_sys5_04.jpg"  alt="지역 도로망 접근 계수가 낮은 예">
+                      <em>지역 도로망 접근 계수가 낮은 예</em>
+                    </div>              
+                  </div>
+                  <figcaption>[그림2] 지역 도로망 접근 계수 예시(동경도 도시정비국, 2022)</figcaption>
+                </figure>
+              </section>
+              <section>
+                <h1>광역 도로망 접근 계수</h1>
+                <ul class="dot_lst">
+                  <li>광역 도로망 접근 계수(γ)는 광역 단위 도로망을 이용하여 지역 간 접근성을 평가한 지표</li>
+                  <li>네트워크 중심성 평가 지표를 도로망에 적용하여 광역 도로망 접근 계수 평가 가능</li>
+                </ul>
+                <div class="figure_wrap flex_figure">                 
+                  <figure>
+                    <img src="../images/intro/img_sys5_05.jpg"  alt="도로 네트워크 중심성 평가 예시(QGIS)">
+                    <figcaption>[그림 3] 도로 네트워크 중심성 평가 예시(QGIS)
+                      <p>(https://plugins.qgis.org/planet/user/4/tag/openstreetmap/)</p>
+                    </figcaption>
+                  </figure>                          
+                </div>
+              </section>
+              <section>
+                <h1>긴급 대응 도로·공간 확보 계수(ER)</h1>
+                <ul class="dot_lst">
+                  <li>지진 발생 직후 긴급 대응 활동의 수월한 정도를 재해 시 대응 공간의 확보 정도와 도로망 접근 관점에서 평가한 지수</li>
+                  <li>활동 공간 확보율, 지역 도로망 접근 계수, 그리고 광역 도로망 접근 계수의 기하평균으로 긴급 대응 도로·공간 확보 계수 산출 가능</li>
+                </ul>
+                <div class="figure_wrap flex_figure">                 
+                  <figure>
+                    <img src="../images/intro/img_sys5_06.jpg"  alt="수식">
+                  </figure>                          
+                </div>
+              </section>
+            </article>
+            <article id="opt0" class="tab_contents">
+              <section>
+                <h1>건축물 피해의 결정</h1>
                 <ul class="dot_lst">
                   <li>건축물 대장 정보(구조, 규모, 용도)를 참고하여 각 건축물을 대표성을 갖는 구조유형으로 분류하고 건설연도와 해당 법령에 따라 내진설계 여부를 판단</li>
                   <li>각 건축물별로 해당되는 건축물 유형의 지진취약도함수를 이용하여 지표 지반가속도에 상응하는 피해율 산정(지진취약도함수: 지진동의 세기 증가에 따른 손상확률을 나타내는 확률분포함수). <br>여기서는 지진피해 반파(수리하지 않고는 사용할 수 없는 수준의 피해) 이상의 손상을 기준으로 함               
                   </li>
                 </ul>
                 <div class="figure_wrap">
-                  <div class="inner_wrap">
-                    <figure>
-                      <img src="../images/system-img-06.png"  alt="콘크리트모멘트골조(C1)" width="271px" height="218px">
-                      <figcaption>콘크리트모멘트골조(C1)</figcaption>
-                    </figure>
-                    <figure>
-                      <img src="../images/system-img-07.png"  alt="조적채움벽이 있는 콘크리트모멘트골조(C2)" width="271px" height="218px">
-                      <figcaption>조적채움벽이 있는 콘크리트모멘트골조(C2)</figcaption>
-                    </figure>
-                    <figure>
-                      <img src="../images/system-img-08.png"  alt="콘크리트전단벽(C3)" width="271px" height="218px">
-                      <figcaption>콘크리트전단벽(C3)</figcaption>
-                    </figure>
-                    <figure>
-                      <img src="../images/system-img-09.png"  alt="콘크리트전단벽이 있는 콘크리트모멘트골조(C4)" width="271px" height="218px">
-                      <figcaption>콘크리트전단벽이 있는 콘크리트모멘트골조(C4)</figcaption>
-                    </figure>
-                  </div>                
                   <figure>
-                    <img src="../images/system-img-10.png"  alt="[그림 7] 조적조 건축물 지진취약도함수" width="623px" height="456px">
-                    <figcaption>[그림 7] 조적조 건축물 지진취약도함수</figcaption>
+                    <img src="../images/system-img-06.png"  alt="콘크리트모멘트골조(C1)" width="271px" height="218px">
+                    <figcaption>콘크리트모멘트골조(C1)</figcaption>
+                  </figure>
+                  <figure>
+                    <img src="../images/system-img-07.png"  alt="조적채움벽이 있는 콘크리트모멘트골조(C2)" width="271px" height="218px">
+                    <figcaption>조적채움벽이 있는 콘크리트모멘트골조(C2)</figcaption>
                   </figure>                  
-                </div>
+                  <figure>
+                    <img src="../images/system-img-10.png"  alt="마포구 지진옥외 대피장소 지도">
+                    <figcaption>마포구 지진옥외 대피장소 지도</figcaption>
+                  </figure>                  
+                </div>                
               </section>
+              
               <section>
-                <h3>평가지수 산정</h3>
-                <ul class="dot_lst">
-                  <li>행정구역별로 예상되는 건축물 피해 연면적을 집계하여 전체 연면적 합계로 나눈 건축물 피해 위험도 평가지수를 산정</li>
-                </ul>
-                <div class="equation">
-                  <div>
-                    건축물 피해 위험도 평가지수 = 건축물 피해율 = 100 ×
-                  </div>
-                  <div class="fraction">
-                    <span>지역별 반파 이상 피해 건축물 연면적</span>
-                    <span>지역별 건축물 연면적 합계</span>
-                  </div>
-                </div>
-              </section>
-              <section>
-                <h3>방재역량 평가</h3>
+                <h1>방재역량 평가</h1>
                 <ul class="dot_lst">
                   <li>주요 방재거점시설(소방서, 병원, 임시거주시설)의 지진피해를 내진보강여부 및 내진등급을 반영하여 평가</li>
                   <li>정상운영 가능한 시설(소파 이하의 피해)을 집계하여 가용 소방차량 수, 병상 수, 임시거주시설 수용인원을 산출</li>
@@ -203,7 +561,7 @@
                   </figure> 
                 </div>
               </section>
-            </div>
+            </article>
           </div>
         </article>
       </div>  

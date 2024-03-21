@@ -425,5 +425,17 @@ function commonInit() {
     })
   }
   grade();
-
+}
+const path = "../images/temp/",
+      distribution = 'distribution_map.png';
+function mapTgl(gradeMap){
+  $('[name="map_type"]').on('change',function(){
+    let type = $(this).prop('id'),
+        map = $('.temp_map').children('img');
+    if(type == 'map_type2'){
+      map.prop('src',path + distribution)
+    }else{
+      map.prop('src',path + gradeMap);
+    }
+  })
 }
