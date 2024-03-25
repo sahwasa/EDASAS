@@ -58,7 +58,7 @@
 }
 @mixin alignL($numbers){
   @each $num in $numbers{
-   &:nth-of-type(#{$num}){text-align:left;@content}
+   &:nth-of-type(#{$num}){text-align:left;@content;}
   } 
 }
 @mixin flex_between{display:flex;justify-content:space-between;align-items:center;}
