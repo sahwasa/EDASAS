@@ -33,12 +33,7 @@
           <li><a href="../html/sys_method.html">시스템 평가 방법</a></li>
           <li><a href="#">시스템 DB현황</a></li>
         </ul>
-      </li>
-      <li><a href="../html/action.html">행동 방안</a>
-        <ul class="sub">
-          <li><a href="../html/action.html">평가 결과별 행동 방안</a></li>
-        </ul>
-      </li>
+      </li>     
       <li><a href="../html/faq.html">자료실</a>
         <ul class="sub">
           <li><a href="../html/faq.html">FAQ</a></li>
@@ -119,11 +114,18 @@
                 <h1>평가결과</h1>
                 <div class="tool_wrap">
                   <button type="button" class="btn_gray" onclick="document.querySelector('.p_report').showModal();">평가보고서</button>
+                  <button type="button" class="btn_pdf">PDF저장</button>
+                  <button type="button" class="btn_print">인쇄</button>
                 </div>
               </div>
               <div class="summary">
-                <p>포항시 북구와 포항시 남구의 건축물피해 위험도 평가지수 등급은 <b>2등급(안전)</b> 입니다.</p>
                 <span class="date">평가일 2023-10-10</span>
+                <ul class="eval_result_lst">
+                  <li class="grade2"><strong>보통</strong>
+                    <p>포항시 외곽에 위치한 <em>송도동, 양학동</em>은 지진동에 의한 <em>건축물 피해위험도 등급</em>이 낮은 편이며, 포항시 중심부에 위치한 <em>죽장면, 구룡포읍</em>은 상대적으로 등급이 높은 편입니다.</p>
+                  </li>                
+                </ul>
+                <p>포항시 북구와 포항시 남구의 건축물피해 위험도 평가지수 등급은 <b>2등급(안전)</b> 입니다.</p>
               </div>
               <div class="pie_graphwrap">
                 <div class="pie" style="--val:81;">
@@ -215,248 +217,6 @@
                   </ul>
                 </div>
               </div>
-            </section>
-          </article>
-        </div>
-      </section>
-      <!-- 왼쪽패널__e -->
-      <!-- 중앙 -->
-      <section class="contents">
-        <button type="button" class="evt_tgl sidePannel_fold" data-value="off" data-foldtarget="sidePannel_wrap" data-on="왼쪽패널 열기" data-off="왼쪽패널 닫기" title="왼쪽패널 닫기">왼쪽패널 닫기</button>
-        <button type="button" class="evt_tgl sidePannel_fold right_pannel" data-value="off" data-foldtarget="dtlPannel_wrap" data-on="오른쪽패널 열기" data-off="오른쪽패널 닫기" title="오른쪽패널 열기">오른쪽패널 열기</button>
-        <div class="map_wrap">
-          <div class="temp_map">
-            <img src="../images/temp/temp_map_2_2.png" class="temp_map" alt="임시 지도배경">
-            <i class="symbol ico_1" style="--left:1200px;--top:520px;">소방서</i>
-            <i class="symbol ico_1" style="--left:1140px;--top:350px;">소방서</i>
-            <i class="symbol ico_1" style="--left:1100px;--top:620px;">소방서</i>
-            <i class="symbol ico_1" style="--left:1080px;--top:450px;">소방서</i>
-            <i class="symbol ico_1" style="--left:1300px;--top:550px;">소방서</i>
-            <i class="symbol ico_1" style="--left:1200px;--top:390px;">소방서</i>
-            <i class="symbol ico_2" style="--left:1000px;--top:370px;">임시대피시설</i>
-            <i class="symbol ico_2" style="--left:1200px;--top:350px;">임시대피시설</i>
-            <i class="symbol ico_2" style="--left:970px;--top:430px;">임시대피시설</i>
-            <i class="symbol ico_2" style="--left:1050px;--top:450px;">임시대피시설</i>
-            <i class="symbol ico_2" style="--left:1100px;--top:350px;">임시대피시설</i>
-            <i class="symbol ico_3" style="--left:1150px;--top:270px;">병원</i>
-            <i class="symbol ico_3" style="--left:1150px;--top:450px;">병원</i>
-            <i class="symbol ico_3" style="--left:1000px;--top:350px;">병원</i>
-            <i class="symbol ico_3" style="--left:1050px;--top:470px;">병원</i>
-            <div class="map_scale">
-              <em>10㎞</em>
-            </div>
-          </div>
-          <div class="map_ctrl">            
-            <ul class="map_tool">
-              <li><button type="button" class="btn_refresh_square">새로고침</button></li>
-              <li>
-                <div class="vertical_group">
-                  <button type="button" class="btn_zoomin_square">확대</button>
-                  <button type="button" class="btn_zoomout_square">축소</button>
-                </div>
-              </li>
-            </ul>
-            <ul class="map_type btn_switch">
-              <li><input type="radio" id="map_type1" name="map_type" checked><label for="map_type1">지역위험도</label></li>
-              <li><input type="radio" id="map_type2" name="map_type"><label for="map_type2">지반(부지)분류도</label></li>
-              <li><input type="radio" id="map_type3" name="map_type"><label for="map_type3">건물 노후도</label></li>
-              <li><input type="radio" id="map_type4" name="map_type"><label for="map_type4">내진 분포도</label></li>
-              <li><input type="radio" id="map_type5" name="map_type"><label for="map_type5">인구 분포도</label></li>
-            </ul>
-            <div class="map_legend">
-  <details open>
-    <summary>
-      <h1>범례</h1>
-      <label for="opacity" class="blind">투명도</label>
-      <input type="range" id="opacity" name="opacity" min="0" max="100" title="투명도" />
-    </summary>
-    <div class="legend_body">
-      <section class="symbols">
-        <strong class="blind">기호</strong>
-        <ul>
-          <li><label for=""><input type="checkbox" id="" name="" checked />소방서</label></li>
-          <li><label for=""><input type="checkbox" id="" name="" checked />임시대피시설</label></li>
-          <li><label for=""><input type="checkbox" id="" name="" checked />병원</label></li>
-        </ul>
-      </section>
-      <section class="safety_grade">                
-        <strong>위험도 등급</strong>
-        <ul>
-          <li class="grade1">1등급</li>
-          <li class="grade2">2등급</li>
-          <li class="grade3">3등급</li>
-          <li class="grade4">4등급</li>
-          <li class="grade5">5등급</li>
-          <li class="grade0">자료없음</li>
-        </ul>
-      </section>
-      <section class="distribution_legend">                
-        <strong>지반 분류</strong>
-        <ul>
-          <li class="s1"><i>S1</i>암반 지반</li>
-          <li class="s2"><i>S1</i>얕고 단단한 지반</li>
-          <li class="s3"><i>S3</i>얕고 연약한 지반</li>
-          <li class="s4"><i>S4</i>깊고 단단한 지반</li>
-        </ul>
-      </section>
-    </div>
-  </details>
-</div>
-      
-            <ul class="map_style btn_switch">
-              <li><input type="radio" id="default_view" name="map_style" checked><label for="default_view">일반지도</label></input></li>
-              <li><input type="radio" id="sky_view" name="map_style"><label for="sky_view">위성지도</label></input></li>
-              <li><input type="radio" id="2d_view" name="map_style"><label for="2d_view">2D지도</label></input></li>
-            </ul>
-          </div>
-        </div>             
-      </section>
-      <!-- 중앙__e -->
-      <!-- 오른쪽패널 -->
-      <section class="pannel dtl_contents dtlPannel_wrap">
-        <div class="pannel_wrap">
-          <header class="tit">
-            <h1>평가결과 상세</h1>
-            <div class="tool_wrap">
-              <button type="button" class="btn_pdf">PDF저장</button>
-              <button type="button" class="btn_print">인쇄</button>
-            </div>
-          </header>
-          <article class="pannel_body">
-            <section>
-              <ul class="eval_result_lst">
-                <li class="grade2"><strong>보통</strong>
-                  <p>포항시 외곽에 위치한 <em>송도동, 양학동</em>은 지진동에 의한 <em>건축물 피해위험도 등급</em>이 낮은 편이며, 포항시 중심부에 위치한 <em>죽장면, 구룡포읍</em>은 상대적으로 등급이 높은 편입니다.</p>
-                </li>                
-              </ul>
-              <div class="pyramidwrap divide">
-                <div class="pyramid">
-                  <div class="grade1"><span class="range">90~100</span></div>
-                  <div class="grade2"><span class="range">80~90</span></div>
-                  <div class="grade3"><span class="range">70~80</span></div>
-                  <div class="grade4"><span class="range">60~70</span></div>
-                  <div class="grade5"><span class="range">0~60</span></div>
-                </div>
-                <ul class="txt_lst">
-                  <li></li>
-                  <li>포항시 북구, 포항시 남구</li>
-                  <li></li>
-                  <li></li>
-                  <li></li>
-                </ul>                
-              </div>
-            </section>
-            <section class="regional_idx">
-              <div class="tit">
-                <h2>세부 지역별 건축물피해위험도 점수 및 등급</h2>
-                <!-- <span class="tool_wrap unit">(점수)</span> -->
-              </div>
-              <div class="tbl_wrap">                
-                <table class="tbl_default">
-                  <caption>세부 지역별 위험도 등급</caption>
-                  <thead>
-                    <tr>
-                      <th scope="col">구분</th>
-                      <th scope="col">위험도 점수</th>
-                      <th scope="col">위험도 등급</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr class="rowgroup">
-                      <td>포항시 북구</td>
-                      <td>80.6</td>
-                      <td>2</td>
-                    </tr>
-                    <tr><td>기계면</td><td>85.3</td><td>2</td></tr>
-                    <tr><td>기북면</td><td>87.5</td><td>2</td></tr>
-                    <tr><td>두호동</td><td>76.1</td><td>3</td></tr>
-                    <tr><td>송라면</td><td>89.4</td><td>2</td></tr> 
-                    <tr><td>신광면</td><td>90.0</td><td>1</td></tr> 
-                    <tr><td>양학동</td><td>64.8</td><td>4</td></tr> 
-                    <tr><td>용흥동</td><td>74.9</td><td>3</td></tr> 
-                    <tr><td>우창동</td><td>72.2</td><td>3</td></tr> 
-                    <tr><td>장량동</td><td>73.2</td><td>3</td></tr> 
-                    <tr><td>죽도동</td><td>76.6</td><td>3</td></tr>
-                    <tr><td>죽장면</td><td>93.9</td><td>1</td></tr>
-                    <tr><td>중앙동</td><td>78.0</td><td>3</td></tr>
-                    <tr><td>청하면</td><td>90.4</td><td>1</td></tr>
-                    <tr><td>환여동</td><td>75.1</td><td>3</td></tr>
-                    <tr><td>흥해읍</td><td>81.5</td><td>2</td></tr>
-                    <tr class="rowgroup">
-                      <td>포항시 남구</td>
-                      <td>84.7</td>
-                      <td>2</td>
-                    </tr>
-                    <tr><td>구룡포읍</td><td>93.9</td><td>1</td></tr>
-                    <tr><td>대송면</td>  <td>87.1</td><td>2</td></tr>
-                    <tr><td>대이동</td>  <td>77.7</td><td>3</td></tr>
-                    <tr><td>동해면</td>  <td>84.9</td><td>2</td></tr>
-                    <tr><td>상대동</td>  <td>77.4</td><td>3</td></tr>
-                    <tr><td>송도동</td>  <td>64.0</td><td>4</td></tr>
-                    <tr><td>연일읍</td>  <td>70.6</td><td>3</td></tr>
-                    <tr><td>오천읍</td>  <td>82.8</td><td>2</td></tr>
-                    <tr><td>장기면</td>  <td>89.6</td><td>2</td></tr>
-                    <tr><td>제철동</td>  <td>83.6</td><td>2</td></tr>
-                    <tr><td>청림동</td>  <td>86.3</td><td>2</td></tr>
-                    <tr><td>해도동</td>  <td>79.0</td><td>3</td></tr>
-                    <tr><td>호미곶면</td><td>92.0</td><td>1</td></tr>
-                    <tr><td>효곡동</td>  <td>87.1</td><td>2</td></tr>
-                  </tbody>
-                </table>
-              </div>
-              <div class="meter_wrap dtl">
-                <div class="meter_unit">
-                  <strong>(점수)</strong>
-                  <ul>
-                    <li><span>0</span></li>
-                    <li><span>20</span></li>
-                    <li><span>40</span></li>
-                    <li><span>60</span></li>
-                    <li><span>80</span></li>
-                    <li><span>100</span></li>
-                  </ul>
-                </div>
-                <ul class="area_lst meter_wrap">
-                  <li class="sigungu">
-                    <label for="area1">포항시 북구</label>
-                    <meter id="area1" value="80.6" min="0" max="100"></meter>
-                  </li>
-                  <li><label for="area1-1"> 기계면</label><meter id="area1-1"  value="85.3" min="0" max="100"></meter></li>
-                  <li><label for="area1-2"> 기북면</label><meter id="area1-2"  value="87.5" min="0" max="100"></meter></li>
-                  <li><label for="area1-3"> 두호동</label><meter id="area1-3"  value="76.1" min="0" max="100"></meter></li>
-                  <li><label for="area1-4"> 송라면</label><meter id="area1-4"  value="89.4" min="0" max="100"></meter></li>
-                  <li><label for="area1-5"> 신광면</label><meter id="area1-5"  value="90.0" min="0" max="100"></meter></li>
-                  <li><label for="area1-6"> 양학동</label><meter id="area1-6"  value="64.8" min="0" max="100"></meter></li>
-                  <li><label for="area1-7"> 용흥동</label><meter id="area1-7"  value="74.9" min="0" max="100"></meter></li>
-                  <li><label for="area1-8"> 우창동</label><meter id="area1-8"  value="72.2" min="0" max="100"></meter></li>
-                  <li><label for="area1-9"> 장량동</label><meter id="area1-9"  value="73.2" min="0" max="100"></meter></li>
-                  <li><label for="area1-10">죽도동</label><meter id="area1-10" value="76.6" min="0" max="100"></meter></li>
-                  <li><label for="area1-11">죽장면</label><meter id="area1-11" value="93.9" min="0" max="100"></meter></li>
-                  <li><label for="area1-12">중앙동</label><meter id="area1-12" value="78.0" min="0" max="100"></meter></li>
-                  <li><label for="area1-13">청하면</label><meter id="area1-13" value="90.4" min="0" max="100"></meter></li>
-                  <li><label for="area1-14">환여동</label><meter id="area1-14" value="75.1" min="0" max="100"></meter></li>
-                  <li><label for="area1-15">흥해읍</label><meter id="area1-15" value="81.5" min="0" max="100"></meter></li>
-                  <li class="sigungu">
-                    <label for="area2">포항시 남구</label>
-                    <meter id="area2" value="82.6" min="0" max="100"></meter>
-                  </li>
-                  <li><label for="area2-1"> 구룡포읍</label><meter id="area2-1"  value="93.9" min="0" max="100"></meter></li>
-                  <li><label for="area2-2"> 대송면  </label><meter id="area2-2"  value="87.1" min="0" max="100"></meter></li>
-                  <li><label for="area2-3"> 대이동  </label><meter id="area2-3"  value="77.7" min="0" max="100"></meter></li>
-                  <li><label for="area2-4"> 동해면  </label><meter id="area2-4"  value="84.9" min="0" max="100"></meter></li>
-                  <li><label for="area2-5"> 상대동  </label><meter id="area2-5"  value="77.4" min="0" max="100"></meter></li>
-                  <li><label for="area2-6"> 송도동  </label><meter id="area2-6"  value="64.0" min="0" max="100"></meter></li>
-                  <li><label for="area2-7"> 연일읍  </label><meter id="area2-7"  value="70.6" min="0" max="100"></meter></li>
-                  <li><label for="area2-8"> 오천읍  </label><meter id="area2-8"  value="82.8" min="0" max="100"></meter></li>
-                  <li><label for="area2-9"> 장기면  </label><meter id="area2-9"  value="89.6" min="0" max="100"></meter></li>
-                  <li><label for="area2-10">제철동  </label><meter id="area2-10" value="83.6" min="0" max="100"></meter></li>
-                  <li><label for="area2-11">청림동  </label><meter id="area2-11" value="86.3" min="0" max="100"></meter></li>
-                  <li><label for="area2-12">해도동  </label><meter id="area2-12" value="79.0" min="0" max="100"></meter></li>
-                  <li><label for="area2-13">호미곶면</label><meter id="area2-13" value="92.0" min="0" max="100"></meter></li>
-                  <li><label for="area2-14">효곡동  </label><meter id="area2-14" value="87.1" min="0" max="100"></meter></li>
-                </ul>
-              </div>              
-              <p class="txt_summary">선택하신 지역의 세부지역별 종합안전도평가 지수를 살펴보면 총 28개 지역에서 평균 이상은 16개 지역이며, 평균 이하는 12개 지역입니다.</p>
             </section>
             <section>
               <div class="tit">
@@ -674,7 +434,100 @@
           </article>
         </div>
       </section>
-      <!-- 오른쪽패널__e -->
+      <!-- 왼쪽패널__e -->
+      <!-- 중앙 -->
+      <section class="contents">
+        <button type="button" class="evt_tgl sidePannel_fold" data-value="off" data-foldtarget="sidePannel_wrap" data-on="왼쪽패널 열기" data-off="왼쪽패널 닫기" title="왼쪽패널 닫기">왼쪽패널 닫기</button>
+        <!-- <button type="button" class="evt_tgl sidePannel_fold right_pannel" data-value="off" data-foldtarget="dtlPannel_wrap" data-on="오른쪽패널 열기" data-off="오른쪽패널 닫기" title="오른쪽패널 열기">오른쪽패널 열기</button> -->
+        <div class="map_wrap">
+          <div class="temp_map">
+            <img src="../images/temp/temp_map_2_2.png" class="temp_map" alt="임시 지도배경">
+            <i class="symbol ico_1" style="--left:1200px;--top:520px;">소방서</i>
+            <i class="symbol ico_1" style="--left:1140px;--top:350px;">소방서</i>
+            <i class="symbol ico_1" style="--left:1100px;--top:620px;">소방서</i>
+            <i class="symbol ico_1" style="--left:1080px;--top:450px;">소방서</i>
+            <i class="symbol ico_1" style="--left:1300px;--top:550px;">소방서</i>
+            <i class="symbol ico_1" style="--left:1200px;--top:390px;">소방서</i>
+            <i class="symbol ico_2" style="--left:1000px;--top:370px;">임시대피시설</i>
+            <i class="symbol ico_2" style="--left:1200px;--top:350px;">임시대피시설</i>
+            <i class="symbol ico_2" style="--left:970px;--top:430px;">임시대피시설</i>
+            <i class="symbol ico_2" style="--left:1050px;--top:450px;">임시대피시설</i>
+            <i class="symbol ico_2" style="--left:1100px;--top:350px;">임시대피시설</i>
+            <i class="symbol ico_3" style="--left:1150px;--top:270px;">병원</i>
+            <i class="symbol ico_3" style="--left:1150px;--top:450px;">병원</i>
+            <i class="symbol ico_3" style="--left:1000px;--top:350px;">병원</i>
+            <i class="symbol ico_3" style="--left:1050px;--top:470px;">병원</i>
+            <div class="map_scale">
+              <em>10㎞</em>
+            </div>
+          </div>
+          <div class="map_ctrl">            
+            <ul class="map_tool">
+              <li><button type="button" class="btn_refresh_square">새로고침</button></li>
+              <li>
+                <div class="vertical_group">
+                  <button type="button" class="btn_zoomin_square">확대</button>
+                  <button type="button" class="btn_zoomout_square">축소</button>
+                </div>
+              </li>
+            </ul>
+            <ul class="map_type btn_switch">
+              <li><input type="radio" id="map_type1" name="map_type" checked><label for="map_type1">지역위험도</label></li>
+              <li><input type="radio" id="map_type2" name="map_type"><label for="map_type2">지반(부지)분류도</label></li>
+              <li><input type="radio" id="map_type3" name="map_type"><label for="map_type3">건물 노후도</label></li>
+              <li><input type="radio" id="map_type4" name="map_type"><label for="map_type4">내진 분포도</label></li>
+              <li><input type="radio" id="map_type5" name="map_type"><label for="map_type5">인구 분포도</label></li>
+            </ul>
+            <div class="map_legend">
+  <details open>
+    <summary>
+      <h1>범례</h1>
+      <label for="opacity" class="blind">투명도</label>
+      <input type="range" id="opacity" name="opacity" min="0" max="100" title="투명도" />
+    </summary>
+    <div class="legend_body">
+      <section class="symbols">
+        <strong class="blind">기호</strong>
+        <ul>
+          <li><label for=""><input type="checkbox" id="" name="" checked />소방서</label></li>
+          <li><label for=""><input type="checkbox" id="" name="" checked />임시대피시설</label></li>
+          <li><label for=""><input type="checkbox" id="" name="" checked />병원</label></li>
+        </ul>
+      </section>
+      <section class="safety_grade">                
+        <strong>위험도 등급</strong>
+        <ul>
+          <li class="grade1">1등급</li>
+          <li class="grade2">2등급</li>
+          <li class="grade3">3등급</li>
+          <li class="grade4">4등급</li>
+          <li class="grade5">5등급</li>
+          <li class="grade0">자료없음</li>
+        </ul>
+      </section>
+      <section class="distribution_legend">                
+        <strong>지반 분류</strong>
+        <ul>
+          <li class="s1"><i>S1</i>암반 지반</li>
+          <li class="s2"><i>S1</i>얕고 단단한 지반</li>
+          <li class="s3"><i>S3</i>얕고 연약한 지반</li>
+          <li class="s4"><i>S4</i>깊고 단단한 지반</li>
+        </ul>
+      </section>
+    </div>
+  </details>
+</div>
+      
+            <ul class="map_style btn_switch">
+              <li><input type="radio" id="default_view" name="map_style" checked><label for="default_view">일반지도</label></input></li>
+              <li><input type="radio" id="sky_view" name="map_style"><label for="sky_view">위성지도</label></input></li>
+              <li><input type="radio" id="2d_view" name="map_style"><label for="2d_view">2D지도</label></input></li>
+            </ul>
+          </div>
+        </div>             
+      </section>
+      <!-- 중앙__e -->
+      
     </div>  
   </main>
   <footer class="footer">

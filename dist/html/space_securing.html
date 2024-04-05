@@ -33,12 +33,7 @@
           <li><a href="../html/sys_method.html">시스템 평가 방법</a></li>
           <li><a href="#">시스템 DB현황</a></li>
         </ul>
-      </li>
-      <li><a href="../html/action.html">행동 방안</a>
-        <ul class="sub">
-          <li><a href="../html/action.html">평가 결과별 행동 방안</a></li>
-        </ul>
-      </li>
+      </li>     
       <li><a href="../html/faq.html">자료실</a>
         <ul class="sub">
           <li><a href="../html/faq.html">FAQ</a></li>
@@ -119,11 +114,18 @@
                 <h1>평가결과</h1>
                 <div class="tool_wrap">
                   <button type="button" class="btn_gray" onclick="document.querySelector('.p_report').showModal();">평가보고서</button>
+                  <button type="button" class="btn_pdf">PDF저장</button>
+                  <button type="button" class="btn_print">인쇄</button>
                 </div>
               </div>
               <div class="summary">
-                <p>포항시 북구와 포항시 남구의 긴급대응 도로 · 공간 확보계수 평가지수 등급은 <b>3등급(주의)</b> 입니다.</p>
                 <span class="date">평가일 2023-10-10</span>
+                <ul class="eval_result_lst">                
+                  <li class="grade2"><strong>보통</strong>
+                    <p>포항시 읍·면·동 내에서 상대적으로 도로가 잘 발달되어 있는 <em>죽장면, 장기면, 송라면</em>은 긴급대응 도로·공간 확보계수 등급이 낮은 편이며, 도로 및 공원 등의 긴급대응 공간이 잘 확보된 <em>용흥동, 우창동, 중앙동</em>은 상대적으로 등급이 높은 편입니다.</p>
+                  </li>                
+                </ul>
+                <p>포항시 북구와 포항시 남구의 긴급대응 도로 · 공간 확보계수 평가지수 등급은 <b>3등급(주의)</b> 입니다.</p>
               </div>
               <div class="pie_graphwrap">
                 <div class="pie" style="--val:50;">
@@ -223,7 +225,7 @@
       <!-- 중앙 -->
       <section class="contents">
         <button type="button" class="evt_tgl sidePannel_fold" data-value="off" data-foldtarget="sidePannel_wrap" data-on="왼쪽패널 열기" data-off="왼쪽패널 닫기" title="왼쪽패널 닫기">왼쪽패널 닫기</button>
-        <button type="button" class="evt_tgl sidePannel_fold right_pannel" data-value="off" data-foldtarget="dtlPannel_wrap" data-on="오른쪽패널 열기" data-off="오른쪽패널 닫기" title="오른쪽패널 열기">오른쪽패널 열기</button>
+        <!-- <button type="button" class="evt_tgl sidePannel_fold right_pannel" data-value="off" data-foldtarget="dtlPannel_wrap" data-on="오른쪽패널 열기" data-off="오른쪽패널 닫기" title="오른쪽패널 열기">오른쪽패널 열기</button> -->
         <div class="map_wrap">
           <div class="temp_map">
             <img src="../images/temp/temp_map_3_3.png" class="temp_map" alt="임시 지도배경">
@@ -321,157 +323,6 @@
         </div>             
       </section>
       <!-- 중앙__e -->
-      <!-- 오른쪽패널 -->
-      <section class="pannel dtl_contents dtlPannel_wrap">
-        <div class="pannel_wrap">
-          <header class="tit">
-            <h1>평가결과 상세</h1>
-            <div class="tool_wrap">
-              <button type="button" class="btn_pdf">PDF저장</button>
-              <button type="button" class="btn_print">인쇄</button>
-            </div>
-          </header>
-          <article class="pannel_body">
-            <section>
-              <ul class="eval_result_lst">                
-                <li class="grade2"><strong>보통</strong>
-                  <p>포항시 읍·면·동 내에서 상대적으로 도로가 잘 발달되어 있는 <em>죽장면, 장기면, 송라면</em>은 긴급대응 도로·공간 확보계수 등급이 낮은 편이며, 도로 및 공원 등의 긴급대응 공간이 잘 확보된 <em>용흥동, 우창동, 중앙동</em>은 상대적으로 등급이 높은 편입니다.</p>
-                </li>                
-              </ul>
-              <div class="chartwrap divide">
-                <canvas id="radarchart"></canvas>
-              </div>
-            </section>
-            <section class="regional_idx">
-              <div class="tit">
-                <h2>세부 지역별 지수</h2>
-                <span class="tool_wrap unit">(점수)</span>
-              </div>
-              <div class="tbl_wrap">                
-                <table class="tbl_default">
-                  <caption>세부 지역별 지수</caption>
-                  <thead>
-                    <tr>
-                      <th scope="col">구분</th>
-                      <th scope="col">활동 공간<br/>확보율</th>
-                      <th scope="col">지역 도로망<br/>접근 계수</th>
-                      <th scope="col">광역 도로망<br/>접근 계수</th>
-                      <th scope="col">긴급대응<br/>도로·공간<br/>확보계수</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr class="rowgroup">
-                      <td>포항시 북구</td>
-                      <td>50.6</td>
-                      <td>47.6</td>
-                      <td>50.7</td>
-                      <td>49.4</td>
-                    </tr>
-                    <tr><td>기계면</td><td>48.7</td><td>34.8</td><td>68.5</td><td>56.3</td></tr>
-                    <tr><td>기북면</td><td>35.5</td><td>37.5</td><td>56.1</td><td>45.3</td></tr>
-                    <tr><td>두호동</td><td>59.7</td><td>57.4</td><td>43.5</td><td>52.2</td></tr>
-                    <tr><td>송라면</td><td>33.4</td><td>33.5</td><td>47.7</td><td>37.7</td></tr>
-                    <tr><td>신광면</td><td>36.9</td><td>37.1</td><td>74.6</td><td>53.3</td></tr>
-                    <tr><td>양학동</td><td>60.4</td><td>57.4</td><td>38.9</td><td>43.6</td></tr>
-                    <tr><td>용흥동</td><td>59.0</td><td>56.6</td><td>48.6</td><td>58.1</td></tr>
-                    <tr><td>우창동</td><td>58.4</td><td>55.2</td><td>49.0</td><td>57.7</td></tr>
-                    <tr><td>장량동</td><td>63.2</td><td>56.6</td><td>39.1</td><td>44.6</td></tr>
-                    <tr><td>죽도동</td><td>56.3</td><td>57.9</td><td>45.6</td><td>54.1</td></tr>
-                    <tr><td>죽장면</td><td>43.1</td><td>14.9</td><td>54.0</td><td>23.0</td></tr>
-                    <tr><td>중앙동</td><td>55.6</td><td>57.0</td><td>49.5</td><td>57.8</td></tr>
-                    <tr><td>청하면</td><td>41.1</td><td>49.5</td><td>48.7</td><td>48.2</td></tr>
-                    <tr><td>환여동</td><td>55.6</td><td>55.7</td><td>44.4</td><td>51.6</td></tr>
-                    <tr><td>흥해읍</td><td>51.4</td><td>53.0</td><td>51.9</td><td>57.0</td></tr>
-                    <tr class="rowgroup">
-                      <td>포항시 남구</td>
-                      <td>49.4</td>
-                      <td>52.6</td>
-                      <td>49.3</td>
-                      <td>50.7</td>
-                    </tr>
-                    <tr><td>구룡포읍</td><td>45.9</td><td>49.5</td><td>51.1</td><td>52.5</td></tr>
-                    <tr><td>대송면</td>  <td>42.4</td><td>52.6</td><td>56.3</td><td>55.6</td></tr>
-                    <tr><td>대이동</td>  <td>59.7</td><td>56.6</td><td>40.7</td><td>47.3</td></tr>
-                    <tr><td>동해면</td>  <td>56.3</td><td>52.6</td><td>55.8</td><td>62.0</td></tr>
-                    <tr><td>상대동</td>  <td>56.3</td><td>57.9</td><td>40.1</td><td>45.5</td></tr>
-                    <tr><td>송도동</td>  <td>54.9</td><td>57.0</td><td>36.8</td><td>36.1</td></tr>
-                    <tr><td>연일읍</td>  <td>50.7</td><td>52.1</td><td>74.3</td><td>70.1</td></tr>
-                    <tr><td>오천읍</td>  <td>57.7</td><td>53.9</td><td>45.7</td><td>53.3</td></tr>
-                    <tr><td>장기면</td>  <td>39.0</td><td>41.0</td><td>44.0</td><td>40.3</td></tr>
-                    <tr><td>제철동</td>  <td>28.6</td><td>47.7</td><td>43.9</td><td>36.4</td></tr>
-                    <tr><td>청림동</td>  <td>31.4</td><td>50.4</td><td>54.7</td><td>46.4</td></tr>
-                    <tr><td>해도동</td>  <td>57.0</td><td>57.4</td><td>63.1</td><td>69.5</td></tr>
-                    <tr><td>호미곶면</td><td>54.2</td><td>51.2</td><td>41.0</td><td>44.9</td></tr>
-                    <tr><td>효곡동</td>  <td>57.7</td><td>56.1</td><td>42.4</td><td>49.5</td></tr>
-                  </tbody>
-                </table>
-              </div>
-              <div class="meter_wrap dtl">
-                <div class="meter_unit">
-                  <strong>(점수)</strong>
-                  <ul>
-                    <li><span>0</span></li>
-                    <li><span>20</span></li>
-                    <li><span>40</span></li>
-                    <li><span>60</span></li>
-                    <li><span>80</span></li>
-                    <li><span>100</span></li>
-                  </ul>
-                </div>
-                <ul class="area_lst meter_wrap">
-                  <li class="sigungu">
-                    <label for="area1">포항시 북구</label>
-                    <meter id="area1" value="49.4" min="0" max="100"></meter>
-                  </li>
-                  <li><label for="area1-1"> 기계면</label><meter id="area1-1"  value="56.3" min="0" max="100"></meter></li>
-                  <li><label for="area1-2"> 기북면</label><meter id="area1-2"  value="45.3" min="0" max="100"></meter></li>
-                  <li><label for="area1-3"> 두호동</label><meter id="area1-3"  value="52.2" min="0" max="100"></meter></li>
-                  <li><label for="area1-4"> 송라면</label><meter id="area1-4"  value="37.7" min="0" max="100"></meter></li>
-                  <li><label for="area1-5"> 신광면</label><meter id="area1-5"  value="53.3" min="0" max="100"></meter></li>
-                  <li><label for="area1-6"> 양학동</label><meter id="area1-6"  value="43.6" min="0" max="100"></meter></li>
-                  <li><label for="area1-7"> 용흥동</label><meter id="area1-7"  value="58.1" min="0" max="100"></meter></li>
-                  <li><label for="area1-8"> 우창동</label><meter id="area1-8"  value="57.7" min="0" max="100"></meter></li>
-                  <li><label for="area1-9"> 장량동</label><meter id="area1-9"  value="44.6" min="0" max="100"></meter></li>
-                  <li><label for="area1-10">죽도동</label><meter id="area1-10" value="54.1" min="0" max="100"></meter></li>
-                  <li><label for="area1-11">죽장면</label><meter id="area1-11" value="23.0" min="0" max="100"></meter></li>
-                  <li><label for="area1-12">중앙동</label><meter id="area1-12" value="57.8" min="0" max="100"></meter></li>
-                  <li><label for="area1-13">청하면</label><meter id="area1-13" value="48.2" min="0" max="100"></meter></li>
-                  <li><label for="area1-14">환여동</label><meter id="area1-14" value="51.6" min="0" max="100"></meter></li>
-                  <li><label for="area1-15">흥해읍</label><meter id="area1-15" value="57.0" min="0" max="100"></meter></li>
-                  <li class="sigungu">
-                    <label for="area2">포항시 남구</label>
-                    <meter id="area2" value="50.7" min="0" max="100"></meter>
-                  </li>
-                  <li><label for="area2-1"> 구룡포읍</label><meter id="area2-1"  value="52.5" min="0" max="100"></meter></li>
-                  <li><label for="area2-2"> 대송면</label><meter id="area2-2"    value="55.6" min="0" max="100"></meter></li>
-                  <li><label for="area2-3"> 대이동</label><meter id="area2-3"    value="47.3" min="0" max="100"></meter></li>
-                  <li><label for="area2-4"> 동해면</label><meter id="area2-4"    value="62.0" min="0" max="100"></meter></li>
-                  <li><label for="area2-5"> 상대동</label><meter id="area2-5"    value="45.5" min="0" max="100"></meter></li>
-                  <li><label for="area2-6"> 송도동</label><meter id="area2-6"    value="36.1" min="0" max="100"></meter></li>
-                  <li><label for="area2-7"> 연일읍</label><meter id="area2-7"    value="70.1" min="0" max="100"></meter></li>
-                  <li><label for="area2-8"> 오천읍</label><meter id="area2-8"    value="53.3" min="0" max="100"></meter></li>
-                  <li><label for="area2-9"> 장기면</label><meter id="area2-9"    value="40.3" min="0" max="100"></meter></li>
-                  <li><label for="area2-10">제철동</label><meter id="area2-10"   value="36.4" min="0" max="100"></meter></li>
-                  <li><label for="area2-11">청림동</label><meter id="area2-11"   value="46.4" min="0" max="100"></meter></li>
-                  <li><label for="area2-12">해도동</label><meter id="area2-12"   value="69.5" min="0" max="100"></meter></li>
-                  <li><label for="area2-13">호미곶면</label><meter id="area2-13" value="44.9" min="0" max="100"></meter></li>
-                  <li><label for="area2-14">효곡동</label><meter id="area2-14"   value="49.5" min="0" max="100"></meter></li>
-                </ul>                
-              </div>
-              <p class="txt_summary">선택하신 지역의 세부지역별 종합안전도평가 지수를 살펴보면 총 28개 지역에서 평균 이상은 16개 지역이며, 평균 이하는 12개 지역입니다.</p>
-            </section>
-            <section class="conclusion divide">
-              <div class="tit">
-                <h2>결과 요약 및 행동방안</h2>
-              </div>
-              <ul class="action_plan">
-                <li>포항시 외곽에 있으며 상대적으로 등급이 낮은 <em>죽장면, 장기면, 송라면</em> 등은 대피에 활용할 수 있는 도로의 추가 확보가 필요하며, 비교적 도로가 잘 개발되어 있음에도 불구하고 등급이 낮은 <em>제철동, 송도동</em> 등은 공원 등의 긴급대응 공간이 필요합니다.</li>
-              </ul>
-            </section>
-          </article>
-        </div>
-      </section>
-      <!-- 오른쪽패널__e -->
     </div>  
   </main>
   <footer class="footer">

@@ -1,0 +1,178 @@
+<!-- 오른쪽패널 -->
+      <section class="pannel dtl_contents dtlPannel_wrap" style="width:0;">
+        <div class="pannel_wrap">
+          <header class="tit">
+            <h1>평가결과 상세</h1>
+            <div class="tool_wrap">
+              <button type="button" class="btn_pdf">PDF저장</button>
+              <button type="button" class="btn_print">인쇄</button>
+            </div>
+          </header>
+          <article class="pannel_body">
+            <section>
+              <ul class="eval_result_lst">
+                <!-- <li class="grade0"><strong>-</strong>
+                  <p>포항시 북구 지역은 수집된 자료가 없습니다.</p>
+                </li>
+                <li class="grade1"><strong>안전</strong>
+                  <p>포항시 남구 지역은 <em>종합안전도 평가</em>에서 안전지수가 상대적으로 높은편이며, 포항시 남구 
+                  지역은 <em>종합안전도 평가</em>에서 안전지수가 상대적으로 보통입니다</p>
+                </li> -->
+                <li class="grade2"><strong>보통</strong>
+                  <p><em>포항시 북구</em> 지역은 <em>종합안전도 평가</em>에서 안전지수 등급이 2등급으로 보통에 해당하며, <em>포항시 남구</em> 지역 또한 종합안전도 평가에서 안전지수 등급이 2등급으로 보통에 해당합니다.</p>
+                </li>
+                <!-- <li class="grade3"><strong>주의</strong>
+                  <p>포항시 남구 지역은 <em>종합안전도 평가</em>에서 안전지수가 상대적으로 높은편이며, 포항시 남구 
+                  지역은 <em>종합안전도 평가</em>에서 안전지수가 상대적으로 보통입니다</p>
+                </li> -->
+                <!-- <li class="grade4"><strong>경계</strong>
+                  <p>포항시 북구 지역은 <em>종합안전도 평가</em>에서 안전지수가 상대적으로 높은편이며, 포항시 남구 
+                  지역은 <em>종합안전도 평가</em>에서 안전지수가 상대적으로 높은편 입니다</p>
+                </li>
+                <li class="grade5"><strong>심각</strong>
+                  <p>포항시 남구 지역은 <em>종합안전도 평가</em>에서 안전지수가 상대적으로 높은편이며, 포항시 남구 
+                  지역은 <em>종합안전도 평가</em>에서 안전지수가 상대적으로 보통입니다</p>
+                </li> -->
+              </ul>
+              <div class="chartwrap divide">
+                <canvas id="radarchart"></canvas>
+              </div>
+              
+            </section>
+            <section class="regional_idx">
+              <div class="tit">
+                <h2>세부 지역별 지수</h2>
+                <span class="tool_wrap unit">점수 (등급)</span>
+              </div>
+              <div class="tbl_wrap">                
+                <table class="tbl_default tbl_comprehensive_safety">
+                  <caption>세부 지역별 지수</caption>
+                  <thead>
+                    <tr>
+                      <th scope="col">구분</th>
+                      <th scope="col">종합 안전도</th>
+                      <th scope="col">건축물 피해 위험도</th>
+                      <th scope="col">지진화재 위험도</th>
+                      <th scope="col">복구 역량도</th>
+                      <th scope="col">대피 안전도</th>
+                      <th scope="col">긴급대응 도로·공간 확보계수</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr class="rowgroup">
+                      <td>포항시 북구</td>
+                      <td>62.3 (2)</td>
+                      <td>83.1 (2)</td>
+                      <td>38.9 (4)</td>
+                      <td>78.3 (2)</td>
+                      <td>99.5 (1)</td>
+                      <td>49.4 (3)</td>
+                    </tr>
+                    <tr><td>기계면</td><td>63.4 (2)</td><td>86.2 (2)</td><td>41.5 (3)</td><td>72.1 (3)</td><td>100 (1)</td><td> 56.3 (2)</td></tr>
+                    <tr><td>기북면</td><td>64.2 (2)</td><td>88.4 (2)</td><td>5.5 (5)</td> <td>74.4 (3)</td><td>100 (1)</td><td> 45.3 (4)</td></tr>
+                    <tr><td>두호동</td><td>66.8 (2)</td><td>74.5 (3)</td><td>22.1 (4)</td><td>84.3 (2)</td><td>100 (1)</td><td> 52.2 (3)</td></tr>
+                    <tr><td>송라면</td><td>57.7 (3)</td><td>92.3 (1)</td><td>35.9 (4)</td><td>72.9 (3)</td><td>100 (1)</td><td> 37.7 (5)</td></tr> 
+                    <tr><td>신광면</td><td>63.0 (2)</td><td>92.0 (1)</td><td>49.8 (3)</td><td>79.2 (2)</td><td>100 (1)</td><td> 53.3 (2)</td></tr> 
+                    <tr><td>양학동</td><td>66.3 (2)</td><td>67.3 (4)</td><td>2.8 (5)</td> <td>84.8 (2)</td><td>100 (1)</td><td> 43.6 (4)</td></tr> 
+                    <tr><td>용흥동</td><td>63.3 (2)</td><td>77.5 (3)</td><td>52.5 (3)</td><td>78.6 (2)</td><td>100 (1)</td><td> 58.1 (1)</td></tr> 
+                    <tr><td>우창동</td><td>68.5 (2)</td><td>73.7 (3)</td><td>13.8 (5)</td><td>86.1 (1)</td><td>100 (1)</td><td> 57.7 (1)</td></tr> 
+                    <tr><td>장량동</td><td>60.3 (2)</td><td>73.7 (3)</td><td>55.3 (3)</td><td>85.4 (1)</td><td>92.8 (1)</td><td>44.6 (4)</td></tr> 
+                    <tr><td>죽도동</td><td>58.6 (3)</td><td>84.9 (2)</td><td>63.6 (2)</td><td>59.0 (4)</td><td>100 (1)</td><td>54.1 (2)</td></tr>
+                    <tr><td>죽장면</td><td>59.8 (3)</td><td>96.9 (1)</td><td>19.4 (5)</td><td>85.8 (1)</td><td>100 (1)</td><td>23.0 (5)</td></tr>
+                    <tr><td>중앙동</td><td>59.1 (3)</td><td>85.5 (2)</td><td>77.4 (2)</td><td>69.8 (3)</td><td>100 (1)</td><td>57.8 (1)</td></tr>
+                    <tr><td>청하면</td><td>62.5 (2)</td><td>92.5 (1)</td><td>38.7 (4)</td><td>78.1 (2)</td><td>100 (1)</td><td>48.2 (3)</td></tr>
+                    <tr><td>환여동</td><td>64.4 (2)</td><td>77.8 (3)</td><td>30.4 (4)</td><td>80.5 (2)</td><td>100 (1)</td><td>51.6 (3)</td></tr>
+                    <tr><td>흥해읍</td><td>60.9 (2)</td><td>83.4 (2)</td><td>74.7 (2)</td><td>84.2 (2)</td><td>100 (1)</td><td>57.0 (2)</td></tr>
+                    <tr class="rowgroup">
+                      <td>포항시 남구</td>
+                      <td>62.9 (2)</td>
+                      <td>84.7 (2)</td>
+                      <td>44.2 (3)</td>
+                      <td>72.6 (3)</td>
+                      <td>100  (1)</td>
+                      <td>50.7 (3)</td>
+                    </tr>
+                    <tr><td>구룡포읍</td><td>62.1 (2)</td><td>97.2 (1)</td><td>66.4 (2)</td><td>87.4 (1)</td><td>100 (1)</td><td>52.5 (3)</td></tr>
+                    <tr><td>대송면</td>  <td>65.5 (2)</td><td>87.2 (2)</td><td>33.2 (4)</td><td>80.4 (2)</td><td>100 (1)</td><td>55.6 (2)</td></tr>
+                    <tr><td>대이동</td>  <td>67.4 (2)</td><td>78.4 (3)</td><td>8.3 (5)</td><td>82.9 (2)</td><td>100 (1)</td><td>47.3 (3)</td></tr>
+                    <tr><td>동해면</td>  <td>65.8 (2)</td><td>86.7 (2)</td><td>47.0 (3)</td><td>79.1 (2)</td><td>100 (1)</td><td>62.0 (1)</td></tr>
+                    <tr><td>상대동</td>  <td>59.9 (3)</td><td>84.4 (2)</td><td>44.2 (3)</td><td>63.5 (4)</td><td>100 (1)</td><td>45.5 (4)</td></tr>
+                    <tr><td>송도동</td>  <td>53.6 (3)</td><td>75.8 (3)</td><td>24.9 (4)</td><td>21.7 (5)</td><td>100 (1)</td><td>36.1 (5)</td></tr>
+                    <tr><td>연일읍</td>  <td>63.2 (2)</td><td>70.4 (3)</td><td>69.1 (2)</td><td>73.8 (3)</td><td>100 (1)</td><td>70.1 (1)</td></tr>
+                    <tr><td>오천읍</td>  <td>60.4 (2)</td><td>84.3 (2)</td><td>71.9 (2)</td><td>78.8 (2)</td><td>100 (1)</td><td>53.3 (2)</td></tr>
+                    <tr><td>장기면</td>  <td>56.8 (3)</td><td>94.7 (1)</td><td>58.1 (3)</td><td>75.3 (2)</td><td>100 (1)</td><td>40.3 (5)</td></tr>
+                    <tr><td>제철동</td>  <td>53.6 (3)</td><td>71.1 (3)</td><td>80.2 (1)</td><td>86.1 (1)</td><td>100 (1)</td><td>36.4 (5)</td></tr>
+                    <tr><td>청림동</td>  <td>57.4 (3)</td><td>86.4 (2)</td><td>60.8 (2)</td><td>68.0 (3)</td><td>100 (1)</td><td>46.4 (4)</td></tr>
+                    <tr><td>해도동</td>  <td>68.5 (2)</td><td>87.3 (2)</td><td>16.6 (5)</td><td>55.4 (4)</td><td>100 (1)</td><td>69.5 (1)</td></tr>
+                    <tr><td>호미곶면</td><td>66.3 (2)</td><td>95.5 (1)</td><td>11.1 (5)</td><td>75.4 (2)</td><td>100 (1)</td><td>44.9 (4)</td></tr>
+                    <tr><td>효곡동</td>  <td>67.0 (2)</td><td>86.5 (2)</td><td>27.7 (4)</td><td>88.3 (1)</td><td>100 (1)</td><td>49.5 (3)</td></tr>
+                  </tbody>
+                </table>
+              </div>
+              <div class="meter_wrap dtl">
+                <div class="meter_unit">
+                  <strong>(점수)</strong>
+                  <ul>
+                    <li><span>0</span></li>
+                    <li><span>20</span></li>
+                    <li><span>40</span></li>
+                    <li><span>60</span></li>
+                    <li><span>80</span></li>
+                    <li><span>100</span></li>
+                  </ul>
+                </div>
+                <ul class="area_lst meter_wrap">
+                  <li class="sigungu">
+                    <label for="area1">포항시 북구</label>
+                    <meter id="area1" value="62.6" min="0" max="100"></meter>
+                  </li>
+                  <li><label for="area1-1"> 기계면</label><meter id="area1-1"  value="63.4" min="0" max="100"></meter></li>
+                  <li><label for="area1-2"> 기북면</label><meter id="area1-2"  value="64.2" min="0" max="100"></meter></li>
+                  <li><label for="area1-3"> 두호동</label><meter id="area1-3"  value="66.8" min="0" max="100"></meter></li>
+                  <li><label for="area1-4"> 송라면</label><meter id="area1-4"  value="57.7" min="0" max="100"></meter></li>
+                  <li><label for="area1-5"> 신광면</label><meter id="area1-5"  value="63.0" min="0" max="100"></meter></li>
+                  <li><label for="area1-6"> 양학동</label><meter id="area1-6"  value="66.3" min="0" max="100"></meter></li>
+                  <li><label for="area1-7"> 용흥동</label><meter id="area1-7"  value="63.3" min="0" max="100"></meter></li>
+                  <li><label for="area1-8"> 우창동</label><meter id="area1-8"  value="68.5" min="0" max="100"></meter></li>
+                  <li><label for="area1-9"> 장량동</label><meter id="area1-9"  value="60.3" min="0" max="100"></meter></li>
+                  <li><label for="area1-10">죽도동</label><meter id="area1-10" value="58.6" min="0" max="100"></meter></li>
+                  <li><label for="area1-11">죽장면</label><meter id="area1-11" value="59.8" min="0" max="100"></meter></li>
+                  <li><label for="area1-12">중앙동</label><meter id="area1-12" value="59.1" min="0" max="100"></meter></li>
+                  <li><label for="area1-13">청하면</label><meter id="area1-13" value="62.5" min="0" max="100"></meter></li>
+                  <li><label for="area1-14">환여동</label><meter id="area1-14" value="64.4" min="0" max="100"></meter></li>
+                  <li><label for="area1-15">흥해읍</label><meter id="area1-15" value="60.9" min="0" max="100"></meter></li>
+                  <li class="sigungu">
+                    <label for="area2">포항시 남구</label>
+                    <meter id="area2" value="62.0" min="0" max="100"></meter>
+                  </li>
+                  <li><label for="area2-1"> 구룡포읍</label><meter id="area2-1"  value="62.1" min="0" max="100"></meter></li>
+                  <li><label for="area2-2"> 대송면  </label><meter id="area2-2"  value="65.5" min="0" max="100"></meter></li>
+                  <li><label for="area2-3"> 대이동  </label><meter id="area2-3"  value="67.4" min="0" max="100"></meter></li>
+                  <li><label for="area2-4"> 동해면  </label><meter id="area2-4"  value="65.8" min="0" max="100"></meter></li>
+                  <li><label for="area2-5"> 상대동  </label><meter id="area2-5"  value="59.9" min="0" max="100"></meter></li>
+                  <li><label for="area2-6"> 송도동  </label><meter id="area2-6"  value="53.6" min="0" max="100"></meter></li>
+                  <li><label for="area2-7"> 연일읍  </label><meter id="area2-7"  value="63.2" min="0" max="100"></meter></li>
+                  <li><label for="area2-8"> 오천읍  </label><meter id="area2-8"  value="60.4" min="0" max="100"></meter></li>
+                  <li><label for="area2-9"> 장기면  </label><meter id="area2-9"  value="56.8" min="0" max="100"></meter></li>
+                  <li><label for="area2-10">제철동  </label><meter id="area2-10" value="53.6" min="0" max="100"></meter></li>
+                  <li><label for="area2-11">청림동  </label><meter id="area2-11" value="57.4" min="0" max="100"></meter></li>
+                  <li><label for="area2-12">해도동  </label><meter id="area2-12" value="68.5" min="0" max="100"></meter></li>
+                  <li><label for="area2-13">호미곶면</label><meter id="area2-13" value="66.3" min="0" max="100"></meter></li>
+                  <li><label for="area2-14">효곡동  </label><meter id="area2-14" value="67.0" min="0" max="100"></meter></li>
+                </ul>                
+              </div>
+              <p class="txt_summary">선택하신 지역의 세부지역별 종합안전도평가 지수를 살펴보면 총 28개 지역에서 평균 이상은 16개 지역이며, 평균 이하는 12개 지역입니다.</p>
+            </section>
+            <section class="conclusion divide">
+              <div class="tit">
+                <h2>결과 요약 및 행동방안</h2>
+              </div>
+              <ul class="action_plan">
+                <li><em>포항시 북구</em>는 상대적으로 종합안전도 등급이 높으므로 현 상황을 잘 유지합니다.</li>
+                <li><em>포항시 남구</em>는 특히 <em>송도동, 청림동</em>의 종합안전도 등급이 낮게 나왔으므로 단위안전도 결과에 따른 대응이 필요합니다.</li>
+              </ul>
+            </section>
+          </article>
+        </div>
+      </section>
+      <!-- 오른쪽패널__e -->

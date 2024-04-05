@@ -249,7 +249,10 @@ border:1px solid #ccc;border-radius:5px;background-color: #fff; z-index:100;box-
     }
     .select_lst{margin-top:10px;}
   }
-  .pannel_body{display:flex;flex-direction:column;gap:20px;padding:$maingap;}
+  .pannel_body{display:flex;flex-direction:column;gap:20px;padding:$maingap;
+    .tab li a{line-height:30px;}
+    .tab_container{margin-top:5px;}
+  }
   .main_result{display:none;}
 }
 .btn_area{text-align: center;margin-top:15px;}
@@ -270,9 +273,11 @@ border:1px solid $border;border-left-width:0;border-radius:0 3px 3px 0;font-size
   &[data-value="on"]::before{@include fontello('\e86c')}
   &[data-value="off"]::before{@include fontello('\e86d')}
 }
-.summary{overflow:hidden;
-  p{@include explanation;border:1px solid #eaeaea;border-width:1px 0;color:#555;letter-spacing:-.13px;padding-top:5px;padding-bottom:5px;}
-  .date{float:right;margin-top:5px;font-size:11px;color:#8b8b8b;letter-spacing:-.5px;}
+.summary{overflow:hidden;border-top:1px solid #eaeaea;
+  & > p{@include explanation;color:#555;letter-spacing:-.13px;background-color:#f5f5f5;margin:15px 0;padding:5px 5px 5px 25px;border-radius:5px;
+    &::before{left:7px;}
+  }
+  .date{display:block;margin:5px 0;font-size:11px;color:#8b8b8b;letter-spacing:-.5px;text-align:right;}
 }
 .contents{position:relative;flex:1;background-color:gray;}
 
@@ -542,7 +547,7 @@ border:1px solid $border;border-left-width:0;border-radius:0 3px 3px 0;font-size
     }
     &.grade5 strong{color:#fff;}
     &.grade0 strong{border-color:#eee;}
-    p{flex:1;color:#555;line-height:1.5;text-align:justify;letter-spacing:-.02em;}
+    p{flex:1;color:#555;line-height:1.5;letter-spacing:-.02em;}
   }
 }
 .pie_graphwrap{display: flex;flex-wrap:wrap;justify-content:space-around;margin-top:10px;}
