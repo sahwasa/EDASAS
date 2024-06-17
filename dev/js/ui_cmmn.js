@@ -284,6 +284,7 @@ function commonInit() {
   //tab
   $('.tab').find('li:first').addClass('on')
   $('.tab_container').find('.tab_contents:not(:first)').hide()
+  $('.tab_contents').find('.tab_container').children('.tab_contents').first().show();
   $('.tab li').off('click').on('click', function (e) {
     e.preventDefault()
     $(this).addClass('on').siblings().removeClass('on')

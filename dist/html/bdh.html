@@ -90,6 +90,12 @@
             <h1>건축물피해 위험도 평가</h1>
             <section class="filter">
               <div class="flex_wrap">
+                <select name="" id="" title="분류" class="">
+                  <option value="">선택</option>
+                  <option value="">시도</option>
+                  <option value="">시군구</option>
+                  <option value="">읍면동</option>
+                </select>                
                 <select name="" id="" title="시군구" class="sigungu"><option value="">포항시</option></select>
                 <span class="ipt_wrap">
                   <input type="text" id="form_referrer" placeholder="지역검색" list="areaLst" autocomplete="off">
@@ -171,274 +177,318 @@
                 </ul>                
               </div>             
             </section>
-            <section>
-              <div class="tit">
-                <h2>세부결과</h2>
-                <span class="tool_wrap unit">(점수)</span>
-              </div>
-              <div class="heatmap_wrap">
-                <div class="heatmap">
-                  <strong>포항시 북구<span class="score">81</span></strong>
-                  <ul>                    
-                    <li>기계면<span class="score">85</span></li>
-                    <li>기북면<span class="score">88</span></li>
-                    <li>두호동<span class="score">76</span></li>
-                    <li>송라면<span class="score">89</span></li>
-                    <li>신광면<span class="score">90</span></li>
-                    <li>양학동<span class="score">65</span></li>
-                    <li>용흥동<span class="score">75</span></li>
-                    <li>우창동<span class="score">72</span></li>
-                    <li>장량동<span class="score">73</span></li>
-                    <li>죽도동<span class="score">77</span></li>
-                    <li>죽장면<span class="score">94</span></li>
-                    <li>중앙동<span class="score">78</span></li>
-                    <li>청하면<span class="score">90</span></li>
-                    <li>환여동<span class="score">75</span></li>
-                    <li>흥해읍<span class="score">82</span></li>
+            <ul class="tab tab_wrap tab_m">
+              <li class="on"><a href="#bdh">일반건축물</a></li>
+              <li><a href="#structure">설계구조별</a></li>
+              <li><a href="#purpose">용도별</a></li>
+            </ul>
+            <div class="tab_container">
+              <section class="tab_contents" id="bdh">
+                <section>
+                  <div class="tit">
+                    <h2>세부결과</h2>
+                    <span class="tool_wrap unit">(점수)</span>
+                  </div>
+                  <div class="heatmap_wrap">
+                    <div class="heatmap">
+                      <strong>포항시 북구<span class="score">81</span></strong>
+                      <ul>                    
+                        <li>기계면<span class="score">85</span></li>
+                        <li>기북면<span class="score">88</span></li>
+                        <li>두호동<span class="score">76</span></li>
+                        <li>송라면<span class="score">89</span></li>
+                        <li>신광면<span class="score">90</span></li>
+                        <li>양학동<span class="score">65</span></li>
+                        <li>용흥동<span class="score">75</span></li>
+                        <li>우창동<span class="score">72</span></li>
+                        <li>장량동<span class="score">73</span></li>
+                        <li>죽도동<span class="score">77</span></li>
+                        <li>죽장면<span class="score">94</span></li>
+                        <li>중앙동<span class="score">78</span></li>
+                        <li>청하면<span class="score">90</span></li>
+                        <li>환여동<span class="score">75</span></li>
+                        <li>흥해읍<span class="score">82</span></li>
+                      </ul>
+                    </div>
+                    <div class="heatmap">
+                      <strong>포항시 남구<span class="score">83</span></strong>
+                      <ul>
+                        <li>구룡포읍<span class="score">94</span></li>
+                        <li>대송면<span class="score">87</span></li>
+                        <li>대이동<span class="score">78</span></li>
+                        <li>동해면<span class="score">85</span></li>
+                        <li>상대동<span class="score">77</span></li>
+                        <li>송도동<span class="score">64</span></li>
+                        <li>연일읍<span class="score">71</span></li>
+                        <li>오천읍<span class="score">83</span></li>
+                        <li>장기면<span class="score">90</span></li>
+                        <li>제철동<span class="score">84</span></li>
+                        <li>청림동<span class="score">86</span></li>
+                        <li>해도동<span class="score">79</span></li>
+                        <li>호미곶면<span class="score">92</span></li>
+                        <li>효곡동<span class="score">87</span></li>
+                      </ul>
+                    </div>
+                  </div>
+                </section>
+                <section>
+                  <div class="tit">
+                    <h2>방재거점시설별 점수 및 등급</h2>
+                    <!-- <span class="tool_wrap unit">(점수)</span> -->
+                  </div>
+                  <ul class="tab tab_wrap tab_s">
+                    <li class="on"><a href="#bdh01">임시거주시설</a></li>
+                    <li><a href="#bdh02">소방서</a></li>
+                    <li><a href="#bdh03">병원</a></li>
                   </ul>
-                </div>
-                <div class="heatmap">
-                  <strong>포항시 남구<span class="score">83</span></strong>
-                  <ul>
-                    <li>구룡포읍<span class="score">94</span></li>
-                    <li>대송면<span class="score">87</span></li>
-                    <li>대이동<span class="score">78</span></li>
-                    <li>동해면<span class="score">85</span></li>
-                    <li>상대동<span class="score">77</span></li>
-                    <li>송도동<span class="score">64</span></li>
-                    <li>연일읍<span class="score">71</span></li>
-                    <li>오천읍<span class="score">83</span></li>
-                    <li>장기면<span class="score">90</span></li>
-                    <li>제철동<span class="score">84</span></li>
-                    <li>청림동<span class="score">86</span></li>
-                    <li>해도동<span class="score">79</span></li>
-                    <li>호미곶면<span class="score">92</span></li>
-                    <li>효곡동<span class="score">87</span></li>
+                  <div class="tab_container">
+                    <section class="tab_contents" id="bdh01">
+                      <div class="tbl_wrap">                
+                        <table class="tbl_default">
+                          <caption>임시거주시설 위험도 등급</caption>
+                          <thead>
+                            <tr>
+                              <th scope="col">구분</th>
+                              <th scope="col">수용 가능인원</th>
+                              <th scope="col">이재민 수</th>
+                              <th scope="col">방재안전도</th>
+                              <th scope="col">점수</th>
+                              <th scope="col">등급</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr class="rowgroup">
+                              <td>포항시 북구</td>
+                              <td>208</td>
+                              <td>312</td>
+                              <td>244%</td>
+                              <td>71.4</td>
+                              <td>4</td>
+                            </tr>
+                            <tr><td>기계면</td><td>37 </td><td>58  </td><td>64% </td><td>64 </td><td>5</td></tr>
+                            <tr><td>기북면</td><td>72 </td><td>13  </td><td>542%</td><td>100</td><td>1</td></tr>
+                            <tr><td>두호동</td><td>65 </td><td>380 </td><td>17% </td><td>17 </td><td>5</td></tr>
+                            <tr><td>송라면</td><td>57 </td><td>22  </td><td>264%</td><td>100</td><td>1</td></tr> 
+                            <tr><td>신광면</td><td>181</td><td>22  </td><td>810%</td><td>100</td><td>1</td></tr> 
+                            <tr><td>양학동</td><td>183</td><td>423 </td><td>43% </td><td>43 </td><td>5</td></tr> 
+                            <tr><td>용흥동</td><td>285</td><td>388 </td><td>74% </td><td>74 </td><td>4</td></tr> 
+                            <tr><td>우창동</td><td>319</td><td>653 </td><td>49% </td><td>49 </td><td>5</td></tr> 
+                            <tr><td>장량동</td><td>435</td><td>1356</td><td>32% </td><td>32 </td><td>5</td></tr> 
+                            <tr><td>죽도동</td><td>541</td><td>357 </td><td>152%</td><td>100</td><td>1</td></tr>
+                            <tr><td>죽장면</td><td>82 </td><td>11  </td><td>738%</td><td>100</td><td>1</td></tr>
+                            <tr><td>중앙동</td><td>139</td><td>250 </td><td>55% </td><td>55 </td><td>5</td></tr>
+                            <tr><td>청하면</td><td>208</td><td>35  </td><td>590%</td><td>100</td><td>1</td></tr>
+                            <tr><td>환여동</td><td>311</td><td>167 </td><td>186%</td><td>100</td><td>1</td></tr>
+                            <tr><td>흥해읍</td><td>199</td><td>538 </td><td>37% </td><td>37 </td><td>5</td></tr>
+                            <tr class="rowgroup">
+                              <td>포항시 남구</td>
+                              <td>203</td>
+                              <td>241</td>
+                              <td>230%</td>
+                              <td>68.9</td>
+                              <td>5</td>
+                            </tr>
+                            <tr><td>구룡포읍</td><td>307</td><td>36 </td><td>860%</td><td>100</td><td>1</td></tr>
+                            <tr><td>대송면</td>  <td>214</td><td>30 </td><td>708%</td><td>100</td><td>1</td></tr>
+                            <tr><td>대이동</td>  <td>376</td><td>398</td><td>95% </td><td>95 </td><td>2</td></tr>
+                            <tr><td>동해면</td>  <td>229</td><td>108</td><td>212%</td><td>100</td><td>1</td></tr>
+                            <tr><td>상대동</td>  <td>153</td><td>430</td><td>36% </td><td>36 </td><td>5</td></tr>
+                            <tr><td>송도동</td>  <td>119</td><td>333</td><td>36% </td><td>36 </td><td>5</td></tr>
+                            <tr><td>연일읍</td>  <td>231</td><td>635</td><td>36% </td><td>36 </td><td>5</td></tr>
+                            <tr><td>오천읍</td>  <td>435</td><td>710</td><td>61% </td><td>61 </td><td>5</td></tr>
+                            <tr><td>장기면</td>  <td>204</td><td>36 </td><td>570%</td><td>100</td><td>1</td></tr>
+                            <tr><td>제철동</td>  <td>129</td><td>39 </td><td>332%</td><td>100</td><td>1</td></tr>
+                            <tr><td>청림동</td>  <td>74 </td><td>54 </td><td>137%</td><td>100</td><td>1</td></tr>
+                            <tr><td>해도동</td>  <td>0  </td><td>282</td><td>0%  </td><td>0  </td><td>5</td></tr>
+                            <tr><td>호미곶면</td><td>0  </td><td>12 </td><td>0%  </td><td>0  </td><td>5</td></tr>
+                            <tr><td>효곡동</td>  <td>367</td><td>278</td><td>132%</td><td>100</td><td>1</td></tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                    <section class="tab_contents" id="bdh02">
+                      <div class="tbl_wrap">                
+                        <table class="tbl_default">
+                          <caption>소방서 위험도 등급</caption>
+                          <thead>
+                            <tr>
+                              <th scope="col">구분</th>
+                              <th scope="col">가용 소방차 수</th>
+                              <th scope="col">화재 수</th>
+                              <th scope="col">방재안전도</th>
+                              <th scope="col">점수</th>
+                              <th scope="col">등급</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr class="rowgroup">
+                              <td>포항시 북구</td>
+                              <td>0.8</td>
+                              <td>0</td>
+                              <td>100</td>
+                              <td>100</td>
+                              <td>1</td>
+                            </tr>
+                            <tr><td>기계면</td><td>0.7</td><td>0</td><td>100</td><td>100 </td><td>1</td></tr>
+                            <tr><td>기북면</td><td>0  </td><td>0</td><td>100</td><td>100</td><td>1</td></tr>
+                            <tr><td>두호동</td><td>1.9</td><td>0</td><td>100</td><td>100 </td><td>1</td></tr>
+                            <tr><td>송라면</td><td>0  </td><td>0</td><td>100</td><td>100</td><td>1</td></tr> 
+                            <tr><td>신광면</td><td>0  </td><td>0</td><td>100</td><td>100</td><td>1</td></tr> 
+                            <tr><td>양학동</td><td>0  </td><td>0</td><td>100</td><td>100</td><td>1</td></tr> 
+                            <tr><td>용흥동</td><td>0  </td><td>0</td><td>100</td><td>100</td><td>1</td></tr> 
+                            <tr><td>우창동</td><td>0  </td><td>0</td><td>100</td><td>100</td><td>1</td></tr> 
+                            <tr><td>장량동</td><td>1.9</td><td>0</td><td>100</td><td>100</td><td>1</td></tr> 
+                            <tr><td>죽도동</td><td>0  </td><td>0</td><td>100</td><td>100</td><td>1</td></tr>
+                            <tr><td>죽장면</td><td>0  </td><td>0</td><td>100</td><td>100</td><td>1</td></tr>
+                            <tr><td>중앙동</td><td>5.0</td><td>0</td><td>100</td><td>100</td><td>1</td></tr>
+                            <tr><td>청하면</td><td>0  </td><td>0</td><td>100</td><td>100</td><td>1</td></tr>
+                            <tr><td>환여동</td><td>0  </td><td>0</td><td>100</td><td>100</td><td>1</td></tr>
+                            <tr><td>흥해읍</td><td>1.9</td><td>0</td><td>100</td><td>100</td><td>1</td></tr>
+                            <tr class="rowgroup">
+                              <td>포항시 남구</td>
+                              <td>1.7</td>
+                              <td>0.1</td>
+                              <td>96.8</td>
+                              <td>96.8</td>
+                              <td>5</td>
+                            </tr>
+                            <tr><td>구룡포읍</td><td>4.9</td><td>0  </td><td>100</td> <td>100</td><td>1</td></tr>
+                            <tr><td>대송면</td>  <td>0  </td><td>0  </td><td>100</td> <td>100</td><td>1</td></tr>
+                            <tr><td>대이동</td>  <td>0  </td><td>0  </td><td>100</td> <td>100</td><td>1</td></tr>
+                            <tr><td>동해면</td>  <td>0  </td><td>0  </td><td>100</td> <td>100</td><td>1</td></tr>
+                            <tr><td>상대동</td>  <td>0  </td><td>0  </td><td>100</td> <td>100</td><td>1</td></tr>
+                            <tr><td>송도동</td>  <td>0  </td><td>0  </td><td>100</td> <td>100</td><td>1</td></tr>
+                            <tr><td>연일읍</td>  <td>0  </td><td>0  </td><td>100</td> <td>100</td><td>1</td></tr>
+                            <tr><td>오천읍</td>  <td>3.8</td><td>0  </td><td>100</td> <td>100</td><td>1</td></tr>
+                            <tr><td>장기면</td>  <td>0  </td><td>0  </td><td>100</td> <td>100</td><td>1</td></tr>
+                            <tr><td>제철동</td>  <td>1.9</td><td>1.2</td><td>54.7</td><td>54.7</td><td>5</td></tr>
+                            <tr><td>청림동</td>  <td>5.3</td><td>0  </td><td>100</td> <td>100</td><td>1</td></tr>
+                            <tr><td>해도동</td>  <td>3.8</td><td>0  </td><td>100</td> <td>100</td><td>1</td></tr>
+                            <tr><td>호미곶면</td><td>0  </td><td>0  </td><td>100</td> <td>100</td><td>1</td></tr>
+                            <tr><td>효곡동</td>  <td>3.8</td><td>0  </td><td>100</td> <td>100</td><td>1</td></tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                    <section class="tab_contents" id="bdh03">
+                      <div class="tbl_wrap">                
+                        <table class="tbl_default">
+                          <caption>병원 위험도 등급</caption>
+                          <thead>
+                            <tr>
+                              <th scope="col">구분</th>
+                              <th scope="col">이용가능 병상 수</th>
+                              <th scope="col">인명피해</th>
+                              <th scope="col">방재안전도</th>
+                              <th scope="col">점수</th>
+                              <th scope="col">등급</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr class="rowgroup">
+                              <td>포항시 북구</td>
+                              <td>64</td>
+                              <td>24</td>
+                              <td>252%</td>
+                              <td>62.3</td>
+                              <td>5</td>
+                            </tr>
+                            <tr><td>기계면</td><td>13</td><td>7</td><td>185%</td><td>100</td><td>1</td></tr>
+                            <tr><td>기북면</td><td>0</td><td>2</td><td>0%</td><td>0.0</td><td>5</td></tr>
+                            <tr><td>두호동</td><td>27</td><td>29</td><td>92%</td><td>92.0</td><td>2</td></tr>
+                            <tr><td>송라면</td><td>3</td><td>2</td><td>117%</td><td>100</td><td>1</td></tr> 
+                            <tr><td>신광면</td><td>0</td><td>3</td><td>0%</td><td>0.0</td><td>5</td></tr> 
+                            <tr><td>양학동</td><td>5</td><td>28</td><td>17%</td><td>17.0</td><td>5</td></tr> 
+                            <tr><td>용흥동</td><td>191</td><td>28</td><td>669%</td><td>100</td><td>1</td></tr> 
+                            <tr><td>우창동</td><td>11</td><td>46</td><td>25%</td><td>25.0</td><td>5</td></tr> 
+                            <tr><td>장량동</td><td>100</td><td>94</td><td>106%</td><td>100</td><td>1</td></tr> 
+                            <tr><td>죽도동</td><td>244</td><td>30</td><td>824%</td><td>100</td><td>1</td></tr>
+                            <tr><td>죽장면</td><td>0</td><td>1</td><td>0%</td><td>0.0</td><td>5</td></tr>
+                            <tr><td>중앙동</td><td>247</td><td>19</td><td>1285%</td><td>100</td><td>1</td></tr>
+                            <tr><td>청하면</td><td>10</td><td>4</td><td>239%</td><td>100</td><td>1</td></tr>
+                            <tr><td>환여동</td><td>0</td><td>12</td><td>0%</td><td>0.0</td><td>5</td></tr>
+                            <tr><td>흥해읍</td><td>106</td><td>50</td><td>213%</td><td>100</td><td>1</td></tr>
+                            <tr class="rowgroup">
+                              <td>포항시 남구</td>
+                              <td>87</td>
+                              <td>20</td>
+                              <td>316%</td>
+                              <td>73.3</td>
+                              <td>4</td>
+                            </tr>
+                            <tr><td>구룡포읍</td><td>8</td><td>4</td><td>197%</td><td>100</td><td>1</td></tr>
+                            <tr><td>대송면</td>  <td>0</td><td>4</td><td>0%</td><td>0</td><td>5</td></tr>
+                            <tr><td>대이동</td>  <td>320</td><td>30</td><td>1085%</td><td>100</td><td>1</td></tr>
+                            <tr><td>동해면</td>  <td>0</td><td>10</td><td>0%</td><td>0</td><td>5</td></tr>
+                            <tr><td>상대동</td>  <td>464</td><td>34</td><td>1354%</td><td>100</td><td>1</td></tr>
+                            <tr><td>송도동</td>  <td>20</td><td>24</td><td>82%</td><td>82</td><td>3</td></tr>
+                            <tr><td>연일읍</td>  <td>35</td><td>52</td><td>68%</td><td>68</td><td>5</td></tr>
+                            <tr><td>오천읍</td>  <td>170</td><td>61</td><td>280%</td><td>100</td><td>1</td></tr>
+                            <tr><td>장기면</td>  <td>4</td><td>4</td><td>104%</td><td>100</td><td>1</td></tr>
+                            <tr><td>제철동</td>  <td>4</td><td>5</td><td>76%</td><td>76</td><td>4</td></tr>
+                            <tr><td>청림동</td>  <td>0</td><td>6</td><td>0%</td><td>0</td><td>5</td></tr>
+                            <tr><td>해도동</td>  <td>35</td><td>23</td><td>150%</td><td>100</td><td>1</td></tr>
+                            <tr><td>호미곶면</td><td>5</td><td>1</td><td>362%</td><td>100</td><td>1</td></tr>
+                            <tr><td>효곡동</td>  <td>152</td><td>23</td><td>662%</td><td>100</td><td>1</td></tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </section>
+                <section class="conclusion divide">
+                  <div class="tit">
+                    <h2>결과 요약 및 행동방안</h2>
+                  </div>
+                  <ul class="action_plan">
+                    <li>포항시 중심부에 위치하여 지반조건이 상대적으로 안 좋은 <em>송도동, 연일읍</em> 및 대형 취약 건축물 큰 비중을 차지하는 <em>양학동</em> 등은 방재거점시설을 잘 갖출 필요성이 있습니다.</li>
                   </ul>
+                </section>
+              </section>
+              <section class="tab_contents" id="structure">
+                <ul class="tab tab_wrap tab_s">
+                  <li><a href="#structure1">조적조</a></li>
+                  <li><a href="#structure2">목조</a></li>
+                  <li><a href="#structure3">전단벽</a></li>
+                </ul>
+                <div class="tab_container">
+                  <section class="tab_contents" id="structure1">
+                    조적조
+                  </section>
+                  <section class="tab_contents" id="structure2">
+                    목조
+                  </section>
+                  <section class="tab_contents" id="structure3">
+                    전단벽
+                  </section>
                 </div>
-              </div>
-            </section>
-            <section>
-              <div class="tit">
-                <h2>방재거점시설별 점수 및 등급</h2>
-                <!-- <span class="tool_wrap unit">(점수)</span> -->
-              </div>
-              <ul class="tab tab_wrap">
-                <li class="on"><a href="#tab01">임시거주시설</a></li>
-                <li><a href="#tab02">소방서</a></li>
-                <li><a href="#tab03">병원</a></li>
-              </ul>
-              <div class="tab_container">
-                <section class="tab_contents" id="tab01">
-                  <div class="tbl_wrap">                
-                    <table class="tbl_default">
-                      <caption>임시거주시설 위험도 등급</caption>
-                      <thead>
-                        <tr>
-                          <th scope="col">구분</th>
-                          <th scope="col">수용 가능인원</th>
-                          <th scope="col">이재민 수</th>
-                          <th scope="col">방재안전도</th>
-                          <th scope="col">점수</th>
-                          <th scope="col">등급</th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                        <tr class="rowgroup">
-                          <td>포항시 북구</td>
-                          <td>208</td>
-                          <td>312</td>
-                          <td>244%</td>
-                          <td>71.4</td>
-                          <td>4</td>
-                        </tr>
-                        <tr><td>기계면</td><td>37 </td><td>58  </td><td>64% </td><td>64 </td><td>5</td></tr>
-                        <tr><td>기북면</td><td>72 </td><td>13  </td><td>542%</td><td>100</td><td>1</td></tr>
-                        <tr><td>두호동</td><td>65 </td><td>380 </td><td>17% </td><td>17 </td><td>5</td></tr>
-                        <tr><td>송라면</td><td>57 </td><td>22  </td><td>264%</td><td>100</td><td>1</td></tr> 
-                        <tr><td>신광면</td><td>181</td><td>22  </td><td>810%</td><td>100</td><td>1</td></tr> 
-                        <tr><td>양학동</td><td>183</td><td>423 </td><td>43% </td><td>43 </td><td>5</td></tr> 
-                        <tr><td>용흥동</td><td>285</td><td>388 </td><td>74% </td><td>74 </td><td>4</td></tr> 
-                        <tr><td>우창동</td><td>319</td><td>653 </td><td>49% </td><td>49 </td><td>5</td></tr> 
-                        <tr><td>장량동</td><td>435</td><td>1356</td><td>32% </td><td>32 </td><td>5</td></tr> 
-                        <tr><td>죽도동</td><td>541</td><td>357 </td><td>152%</td><td>100</td><td>1</td></tr>
-                        <tr><td>죽장면</td><td>82 </td><td>11  </td><td>738%</td><td>100</td><td>1</td></tr>
-                        <tr><td>중앙동</td><td>139</td><td>250 </td><td>55% </td><td>55 </td><td>5</td></tr>
-                        <tr><td>청하면</td><td>208</td><td>35  </td><td>590%</td><td>100</td><td>1</td></tr>
-                        <tr><td>환여동</td><td>311</td><td>167 </td><td>186%</td><td>100</td><td>1</td></tr>
-                        <tr><td>흥해읍</td><td>199</td><td>538 </td><td>37% </td><td>37 </td><td>5</td></tr>
-                        <tr class="rowgroup">
-                          <td>포항시 남구</td>
-                          <td>203</td>
-                          <td>241</td>
-                          <td>230%</td>
-                          <td>68.9</td>
-                          <td>5</td>
-                        </tr>
-                        <tr><td>구룡포읍</td><td>307</td><td>36 </td><td>860%</td><td>100</td><td>1</td></tr>
-                        <tr><td>대송면</td>  <td>214</td><td>30 </td><td>708%</td><td>100</td><td>1</td></tr>
-                        <tr><td>대이동</td>  <td>376</td><td>398</td><td>95% </td><td>95 </td><td>2</td></tr>
-                        <tr><td>동해면</td>  <td>229</td><td>108</td><td>212%</td><td>100</td><td>1</td></tr>
-                        <tr><td>상대동</td>  <td>153</td><td>430</td><td>36% </td><td>36 </td><td>5</td></tr>
-                        <tr><td>송도동</td>  <td>119</td><td>333</td><td>36% </td><td>36 </td><td>5</td></tr>
-                        <tr><td>연일읍</td>  <td>231</td><td>635</td><td>36% </td><td>36 </td><td>5</td></tr>
-                        <tr><td>오천읍</td>  <td>435</td><td>710</td><td>61% </td><td>61 </td><td>5</td></tr>
-                        <tr><td>장기면</td>  <td>204</td><td>36 </td><td>570%</td><td>100</td><td>1</td></tr>
-                        <tr><td>제철동</td>  <td>129</td><td>39 </td><td>332%</td><td>100</td><td>1</td></tr>
-                        <tr><td>청림동</td>  <td>74 </td><td>54 </td><td>137%</td><td>100</td><td>1</td></tr>
-                        <tr><td>해도동</td>  <td>0  </td><td>282</td><td>0%  </td><td>0  </td><td>5</td></tr>
-                        <tr><td>호미곶면</td><td>0  </td><td>12 </td><td>0%  </td><td>0  </td><td>5</td></tr>
-                        <tr><td>효곡동</td>  <td>367</td><td>278</td><td>132%</td><td>100</td><td>1</td></tr>
-                      </tbody>
-                    </table>
-                  </div>
-                </section>
-                <section class="tab_contents" id="tab02">
-                  <div class="tbl_wrap">                
-                    <table class="tbl_default">
-                      <caption>소방서 위험도 등급</caption>
-                      <thead>
-                        <tr>
-                          <th scope="col">구분</th>
-                          <th scope="col">가용 소방차 수</th>
-                          <th scope="col">화재 수</th>
-                          <th scope="col">방재안전도</th>
-                          <th scope="col">점수</th>
-                          <th scope="col">등급</th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                        <tr class="rowgroup">
-                          <td>포항시 북구</td>
-                          <td>0.8</td>
-                          <td>0</td>
-                          <td>100</td>
-                          <td>100</td>
-                          <td>1</td>
-                        </tr>
-                        <tr><td>기계면</td><td>0.7</td><td>0</td><td>100</td><td>100 </td><td>1</td></tr>
-                        <tr><td>기북면</td><td>0  </td><td>0</td><td>100</td><td>100</td><td>1</td></tr>
-                        <tr><td>두호동</td><td>1.9</td><td>0</td><td>100</td><td>100 </td><td>1</td></tr>
-                        <tr><td>송라면</td><td>0  </td><td>0</td><td>100</td><td>100</td><td>1</td></tr> 
-                        <tr><td>신광면</td><td>0  </td><td>0</td><td>100</td><td>100</td><td>1</td></tr> 
-                        <tr><td>양학동</td><td>0  </td><td>0</td><td>100</td><td>100</td><td>1</td></tr> 
-                        <tr><td>용흥동</td><td>0  </td><td>0</td><td>100</td><td>100</td><td>1</td></tr> 
-                        <tr><td>우창동</td><td>0  </td><td>0</td><td>100</td><td>100</td><td>1</td></tr> 
-                        <tr><td>장량동</td><td>1.9</td><td>0</td><td>100</td><td>100</td><td>1</td></tr> 
-                        <tr><td>죽도동</td><td>0  </td><td>0</td><td>100</td><td>100</td><td>1</td></tr>
-                        <tr><td>죽장면</td><td>0  </td><td>0</td><td>100</td><td>100</td><td>1</td></tr>
-                        <tr><td>중앙동</td><td>5.0</td><td>0</td><td>100</td><td>100</td><td>1</td></tr>
-                        <tr><td>청하면</td><td>0  </td><td>0</td><td>100</td><td>100</td><td>1</td></tr>
-                        <tr><td>환여동</td><td>0  </td><td>0</td><td>100</td><td>100</td><td>1</td></tr>
-                        <tr><td>흥해읍</td><td>1.9</td><td>0</td><td>100</td><td>100</td><td>1</td></tr>
-                        <tr class="rowgroup">
-                          <td>포항시 남구</td>
-                          <td>1.7</td>
-                          <td>0.1</td>
-                          <td>96.8</td>
-                          <td>96.8</td>
-                          <td>5</td>
-                        </tr>
-                        <tr><td>구룡포읍</td><td>4.9</td><td>0  </td><td>100</td> <td>100</td><td>1</td></tr>
-                        <tr><td>대송면</td>  <td>0  </td><td>0  </td><td>100</td> <td>100</td><td>1</td></tr>
-                        <tr><td>대이동</td>  <td>0  </td><td>0  </td><td>100</td> <td>100</td><td>1</td></tr>
-                        <tr><td>동해면</td>  <td>0  </td><td>0  </td><td>100</td> <td>100</td><td>1</td></tr>
-                        <tr><td>상대동</td>  <td>0  </td><td>0  </td><td>100</td> <td>100</td><td>1</td></tr>
-                        <tr><td>송도동</td>  <td>0  </td><td>0  </td><td>100</td> <td>100</td><td>1</td></tr>
-                        <tr><td>연일읍</td>  <td>0  </td><td>0  </td><td>100</td> <td>100</td><td>1</td></tr>
-                        <tr><td>오천읍</td>  <td>3.8</td><td>0  </td><td>100</td> <td>100</td><td>1</td></tr>
-                        <tr><td>장기면</td>  <td>0  </td><td>0  </td><td>100</td> <td>100</td><td>1</td></tr>
-                        <tr><td>제철동</td>  <td>1.9</td><td>1.2</td><td>54.7</td><td>54.7</td><td>5</td></tr>
-                        <tr><td>청림동</td>  <td>5.3</td><td>0  </td><td>100</td> <td>100</td><td>1</td></tr>
-                        <tr><td>해도동</td>  <td>3.8</td><td>0  </td><td>100</td> <td>100</td><td>1</td></tr>
-                        <tr><td>호미곶면</td><td>0  </td><td>0  </td><td>100</td> <td>100</td><td>1</td></tr>
-                        <tr><td>효곡동</td>  <td>3.8</td><td>0  </td><td>100</td> <td>100</td><td>1</td></tr>
-                      </tbody>
-                    </table>
-                  </div>
-                </section>
-                <section class="tab_contents" id="tab03">
-                  <div class="tbl_wrap">                
-                    <table class="tbl_default">
-                      <caption>병원 위험도 등급</caption>
-                      <thead>
-                        <tr>
-                          <th scope="col">구분</th>
-                          <th scope="col">이용가능 병상 수</th>
-                          <th scope="col">인명피해</th>
-                          <th scope="col">방재안전도</th>
-                          <th scope="col">점수</th>
-                          <th scope="col">등급</th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                        <tr class="rowgroup">
-                          <td>포항시 북구</td>
-                          <td>64</td>
-                          <td>24</td>
-                          <td>252%</td>
-                          <td>62.3</td>
-                          <td>5</td>
-                        </tr>
-                        <tr><td>기계면</td><td>13</td><td>7</td><td>185%</td><td>100</td><td>1</td></tr>
-                        <tr><td>기북면</td><td>0</td><td>2</td><td>0%</td><td>0.0</td><td>5</td></tr>
-                        <tr><td>두호동</td><td>27</td><td>29</td><td>92%</td><td>92.0</td><td>2</td></tr>
-                        <tr><td>송라면</td><td>3</td><td>2</td><td>117%</td><td>100</td><td>1</td></tr> 
-                        <tr><td>신광면</td><td>0</td><td>3</td><td>0%</td><td>0.0</td><td>5</td></tr> 
-                        <tr><td>양학동</td><td>5</td><td>28</td><td>17%</td><td>17.0</td><td>5</td></tr> 
-                        <tr><td>용흥동</td><td>191</td><td>28</td><td>669%</td><td>100</td><td>1</td></tr> 
-                        <tr><td>우창동</td><td>11</td><td>46</td><td>25%</td><td>25.0</td><td>5</td></tr> 
-                        <tr><td>장량동</td><td>100</td><td>94</td><td>106%</td><td>100</td><td>1</td></tr> 
-                        <tr><td>죽도동</td><td>244</td><td>30</td><td>824%</td><td>100</td><td>1</td></tr>
-                        <tr><td>죽장면</td><td>0</td><td>1</td><td>0%</td><td>0.0</td><td>5</td></tr>
-                        <tr><td>중앙동</td><td>247</td><td>19</td><td>1285%</td><td>100</td><td>1</td></tr>
-                        <tr><td>청하면</td><td>10</td><td>4</td><td>239%</td><td>100</td><td>1</td></tr>
-                        <tr><td>환여동</td><td>0</td><td>12</td><td>0%</td><td>0.0</td><td>5</td></tr>
-                        <tr><td>흥해읍</td><td>106</td><td>50</td><td>213%</td><td>100</td><td>1</td></tr>
-                        <tr class="rowgroup">
-                          <td>포항시 남구</td>
-                          <td>87</td>
-                          <td>20</td>
-                          <td>316%</td>
-                          <td>73.3</td>
-                          <td>4</td>
-                        </tr>
-                        <tr><td>구룡포읍</td><td>8</td><td>4</td><td>197%</td><td>100</td><td>1</td></tr>
-                        <tr><td>대송면</td>  <td>0</td><td>4</td><td>0%</td><td>0</td><td>5</td></tr>
-                        <tr><td>대이동</td>  <td>320</td><td>30</td><td>1085%</td><td>100</td><td>1</td></tr>
-                        <tr><td>동해면</td>  <td>0</td><td>10</td><td>0%</td><td>0</td><td>5</td></tr>
-                        <tr><td>상대동</td>  <td>464</td><td>34</td><td>1354%</td><td>100</td><td>1</td></tr>
-                        <tr><td>송도동</td>  <td>20</td><td>24</td><td>82%</td><td>82</td><td>3</td></tr>
-                        <tr><td>연일읍</td>  <td>35</td><td>52</td><td>68%</td><td>68</td><td>5</td></tr>
-                        <tr><td>오천읍</td>  <td>170</td><td>61</td><td>280%</td><td>100</td><td>1</td></tr>
-                        <tr><td>장기면</td>  <td>4</td><td>4</td><td>104%</td><td>100</td><td>1</td></tr>
-                        <tr><td>제철동</td>  <td>4</td><td>5</td><td>76%</td><td>76</td><td>4</td></tr>
-                        <tr><td>청림동</td>  <td>0</td><td>6</td><td>0%</td><td>0</td><td>5</td></tr>
-                        <tr><td>해도동</td>  <td>35</td><td>23</td><td>150%</td><td>100</td><td>1</td></tr>
-                        <tr><td>호미곶면</td><td>5</td><td>1</td><td>362%</td><td>100</td><td>1</td></tr>
-                        <tr><td>효곡동</td>  <td>152</td><td>23</td><td>662%</td><td>100</td><td>1</td></tr>
-                      </tbody>
-                    </table>
-                  </div>
-                </section>
-              </div>
-            </section>
-            <section class="conclusion divide">
-              <div class="tit">
-                <h2>결과 요약 및 행동방안</h2>
-              </div>
-              <ul class="action_plan">
-                <li>포항시 중심부에 위치하여 지반조건이 상대적으로 안 좋은 <em>송도동, 연일읍</em> 및 대형 취약 건축물 큰 비중을 차지하는 <em>양학동</em> 등은 방재거점시설을 잘 갖출 필요성이 있습니다.</li>
-              </ul>
-            </section>
-          </article>
+              </section>
+              <section class="tab_contents" id="purpose">
+                <ul class="tab tab_wrap tab_s">
+                  <li class="on"><a href="#structure1">주택</a></li>
+                  <li><a href="#structure2">근린생활시설</a></li>
+                  <li><a href="#structure3">교육시설</a></li>
+                </ul>
+                <div class="tab_container">
+                  <section class="tab_contents" id="structure1">
+                    주택
+                  </section>
+                  <section class="tab_contents" id="structure2">
+                    근린생활시설
+                  </section>
+                  <section class="tab_contents" id="structure3">
+                    교육시설
+                  </section>
+              </section>
+            </div>        
+          </article>          
         </div>
       </section>
       <!-- 왼쪽패널__e -->
       <!-- 중앙 -->
       <section class="contents">
         <button type="button" class="evt_tgl sidePannel_fold" data-value="off" data-foldtarget="sidePannel_wrap" data-on="왼쪽패널 열기" data-off="왼쪽패널 닫기" title="왼쪽패널 닫기">왼쪽패널 닫기</button>
-        <!-- <button type="button" class="evt_tgl sidePannel_fold right_pannel" data-value="off" data-foldtarget="dtlPannel_wrap" data-on="오른쪽패널 열기" data-off="오른쪽패널 닫기" title="오른쪽패널 열기">오른쪽패널 열기</button> -->
+        <button type="button" class="evt_tgl sidePannel_fold right_pannel" data-value="off" data-foldtarget="dtlPannel_wrap" data-on="오른쪽패널 열기" data-off="오른쪽패널 닫기" title="오른쪽패널 열기">오른쪽패널 열기</button>
         <div class="map_wrap">
           <div class="temp_map">
             <img src="../images/temp/temp_map_2_2.png" class="temp_map" alt="임시 지도배경">
@@ -471,53 +521,14 @@
                 </div>
               </li>
             </ul>
-            <ul class="map_type btn_switch">
+            <!-- <ul class="map_type btn_switch">
               <li><input type="radio" id="map_type1" name="map_type" checked><label for="map_type1">지역위험도</label></li>
               <li><input type="radio" id="map_type2" name="map_type"><label for="map_type2">지반(부지)분류도</label></li>
               <li><input type="radio" id="map_type3" name="map_type"><label for="map_type3">건물 노후도</label></li>
               <li><input type="radio" id="map_type4" name="map_type"><label for="map_type4">내진 분포도</label></li>
               <li><input type="radio" id="map_type5" name="map_type"><label for="map_type5">인구 분포도</label></li>
-            </ul>
-            <div class="map_legend">
-  <details open>
-    <summary>
-      <h1>범례</h1>
-      <label for="opacity" class="blind">투명도</label>
-      <input type="range" id="opacity" name="opacity" min="0" max="100" title="투명도" />
-    </summary>
-    <div class="legend_body">
-      <section class="symbols">
-        <strong class="blind">기호</strong>
-        <ul>
-          <li><label for=""><input type="checkbox" id="" name="" checked />소방서</label></li>
-          <li><label for=""><input type="checkbox" id="" name="" checked />임시대피시설</label></li>
-          <li><label for=""><input type="checkbox" id="" name="" checked />병원</label></li>
-        </ul>
-      </section>
-      <section class="safety_grade">                
-        <strong>위험도 등급</strong>
-        <ul>
-          <li class="grade1">1등급</li>
-          <li class="grade2">2등급</li>
-          <li class="grade3">3등급</li>
-          <li class="grade4">4등급</li>
-          <li class="grade5">5등급</li>
-          <li class="grade0">자료없음</li>
-        </ul>
-      </section>
-      <section class="distribution_legend">                
-        <strong>지반 분류</strong>
-        <ul>
-          <li class="s1"><i>S1</i>암반 지반</li>
-          <li class="s2"><i>S1</i>얕고 단단한 지반</li>
-          <li class="s3"><i>S3</i>얕고 연약한 지반</li>
-          <li class="s4"><i>S4</i>깊고 단단한 지반</li>
-        </ul>
-      </section>
-    </div>
-  </details>
-</div>
-      
+            </ul> -->
+            
             <ul class="map_style btn_switch">
               <li><input type="radio" id="default_view" name="map_style" checked><label for="default_view">일반지도</label></input></li>
               <li><input type="radio" id="sky_view" name="map_style"><label for="sky_view">위성지도</label></input></li>
@@ -527,7 +538,67 @@
         </div>             
       </section>
       <!-- 중앙__e -->
-      
+      <!-- 오른쪽패널 -->
+      <section class="pannel dtl_contents dtlPannel_wrap">
+        <div class="pannel_wrap">          
+          <article class="pannel_body">
+            <details open>
+              <summary class="sub_tit">
+                <h1>지도 선택</h1>              
+              </summary>   
+              <ul class="map_type btn_switch">
+                <li><input type="radio" id="map_type1" name="map_type" checked><label for="map_type1">지역위험도</label></li>
+                <li><input type="radio" id="map_type2" name="map_type"><label for="map_type2">지반(부지)분류도</label></li>
+                <li><input type="radio" id="map_type3" name="map_type"><label for="map_type3">건물 노후도</label></li>
+                <li><input type="radio" id="map_type4" name="map_type"><label for="map_type4">내진 분포도</label></li>
+                <li><input type="radio" id="map_type5" name="map_type"><label for="map_type5">인구 분포도</label></li>
+              </ul>
+            </details>
+            <details open>
+              <summary class="sub_tit">
+                <h1>범례 및 레이어</h1>
+              </summary>
+              <div class="map_legend">
+                <div class="legend_body">
+                  <section class="symbols">
+                    <strong class="blind">기호</strong>
+                    <ul>
+                      <li><label for=""><input type="checkbox" id="" name="" checked />소방서</label></li>
+                      <li><label for=""><input type="checkbox" id="" name="" checked />임시대피시설</label></li>
+                      <li><label for=""><input type="checkbox" id="" name="" checked />병원</label></li>
+                    </ul>
+                  </section>
+                  <section class="opacity">
+                    <label for="opacity">투명도</label>
+                    <input type="range" id="opacity" name="opacity" min="0" max="100" title="투명도" />
+                  </section>
+                  <section class="safety_grade">                
+                    <strong>위험도 등급</strong>
+                    <ul>
+                      <li class="grade1">1등급</li>
+                      <li class="grade2">2등급</li>
+                      <li class="grade3">3등급</li>
+                      <li class="grade4">4등급</li>
+                      <li class="grade5">5등급</li>
+                      <li class="grade0">자료없음</li>
+                    </ul>
+                  </section>
+                  <section class="distribution_legend">                
+                    <strong>지반 분류</strong>
+                    <ul>
+                      <li class="s1"><i>S1</i>암반 지반</li>
+                      <li class="s2"><i>S1</i>얕고 단단한 지반</li>
+                      <li class="s3"><i>S3</i>얕고 연약한 지반</li>
+                      <li class="s4"><i>S4</i>깊고 단단한 지반</li>
+                    </ul>
+                  </section>
+                </div>
+              </div>  
+            </details>
+          </article>
+        </div>
+      </section>
+      <!-- 오른쪽패널__e -->
     </div>  
   </main>
   <footer class="footer">
