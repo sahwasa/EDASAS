@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0">
+  <link rel="icon" href="../images/favicon.png" type="image/x-icon" />
+  <title>지진재해 지역안전도 평가 시스템</title>
+  <link rel="stylesheet" href="../font/fontello/css/fontello.css">
+  <link rel="stylesheet" href="../css/cmmn.css">
+  <link rel="stylesheet" href="../css/pop.css">
+</head>
+<body>
+
+<div id="wrap" class="wrap">
+  <header class="header">  
+  <h1 class="main_logo"><a href="">지진재해 지역안전도 평가 시스템</a></h1>
+  <nav class="nav">
+    <ul class="nav_lst">
+      <li><a href="../html/main.html">지역안전도 평가</a>
+        <ul class="sub">
+          <li><a href="../html/main.html">종합안전도 평가</a></li>
+          <li><a href="../html/bdh.html">건축물피해위험도 평가</a></li>
+          <li><a href="../html/eq_fire.html">지진화재위험도 평가</a></li>
+          <li><a href="../html/recovery_capability.html">복구역량도 평가</a></li>
+          <li><a href="../html/sheltering.html">대피안전도 평가</a></li>
+          <li><a href="../html/dis_prevention.html">방재안전도 평가</a></li>
+          <li><a href="../html/space_securing.html">긴급대응 도로〮공간 확보계수 평가</a></li>
+        </ul>
+      </li>
+      <li><a href="../html/sys_purpose.html">시스템 소개</a>
+        <ul class="sub">
+          <li><a href="../html/sys_purpose.html">시스템 평가 목적</a></li>
+          <li><a href="../html/sys_method.html">시스템 평가 방법</a></li>
+          <li><a href="#">시스템 DB현황</a></li>
+        </ul>
+      </li>     
+      <li><a href="../html/faq.html">자료실</a>
+        <ul class="sub">
+          <li><a href="../html/faq.html">FAQ</a></li>
+          <li><a href="../html/manual.html">매뉴얼 게시판</a></li>
+        </ul>
+      </li>
+      <li><a href="#">환경 설정</a>
+        <ul class="sub">
+          <li><a href="#">지역안전도 평가 가중치 설정/시뮬레이션</a></li>
+          <li><a href="#">시스템 DB관리</a></li>
+        </ul>
+      </li>
+      <li><a href="../html/admin_user.html">시스템 설정</a>
+        <ul class="sub">
+          <li><a href="../html/admin_user.html">사용자관리</a></li>
+          <li><a href="../html/admin_code.html">코드 관리</a></li>
+        </ul>
+      </li>
+    </ul>
+  </nav>
+  <div class="util">
+    <div class="profile">
+      <button type="button" class="account">
+        <img src="../images/ico_user.png" width="32px" height="32px" alt="프로필사진">
+        <b>시스템 운영자님</b>
+      </button>
+      <div class="my_layer">
+        <ul class="my_svc">
+          <li><a href="#">내 정보</a></li>
+          <li><a href="#">로그아웃</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</header>    
+  <main id="content" class="main_container">
+    <div class="static_contents">
+      <header>
+        <section class="bredcrumb">
+          <ul>
+            <li><a href="#">Home</a></li>
+            <li>시스템 설정</li>
+            <li>코드 관리</li>
+          </ul>
+        </section>
+        <h1>코드 관리</h1>
+      </header>
+      <div class="mngCode">
+        <section>
+          <header class="tit">
+            <h1>그룹코드</h1>
+            <div class="tool_wrap">
+              <button type="button" class="btn_blue" popovertarget="p_addCode">추가</button>
+              <button type="button" class="btn_blue_line">수정</button>
+              <button type="button" class="btn_blue_line">삭제</button>
+            </div>
+          </header>
+          <div class="section_body">
+            <div class="tbl_wrap_scroll">
+              <table class="tbl_set tbl_hover">
+                <caption>그룹코드 테이블</caption>
+                <thead>
+                  <tr>
+                    <th scope="col">선택</th>
+                    <th scope="col">그룹코드</th>
+                    <th scope="col">코드명</th>
+                    <th scope="col">설명</th>
+                    <th scope="col">사용여부</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>
+                      <input type="radio" name="group_code" class="row_check" title="코드선택">
+                    </td>
+                    <td>L001</td>
+                    <td>권한그룹</td>
+                    <td></td>
+                    <td><span class="btn_tgl evt_tgl" data-on="사용" data-off="미사용"></span></td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <input type="radio" name="group_code" class="row_check" title="코드선택">
+                    </td>
+                    <td>L001</td>
+                    <td>권한그룹</td>
+                    <td></td>
+                    <td><span class="btn_tgl evt_tgl" data-on="사용" data-off="미사용"></span></td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <input type="radio" name="group_code" class="row_check" title="코드선택">
+                    </td>
+                    <td>L001</td>
+                    <td>권한그룹</td>
+                    <td></td>
+                    <td><span class="btn_tgl evt_tgl" data-on="사용" data-off="미사용"></span></td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <input type="radio" name="group_code" class="row_check" title="코드선택">
+                    </td>
+                    <td>L001</td>
+                    <td>권한그룹</td>
+                    <td></td>
+                    <td><span class="btn_tgl evt_tgl" data-on="사용" data-off="미사용"></span></td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <input type="radio" name="group_code" class="row_check" title="코드선택">
+                    </td>
+                    <td>L001</td>
+                    <td>권한그룹</td>
+                    <td></td>
+                    <td><span class="btn_tgl evt_tgl" data-on="사용" data-off="미사용" datavalue="on"></span></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </section>     
+        <section>
+          <header class="tit">
+            <h1>상세코드</h1>
+            <div class="tool_wrap">
+              <button type="button" class="btn_blue" popovertarget="p_addCode">추가</button>
+              <button type="button" class="btn_blue_line">수정</button>
+              <button type="button" class="btn_blue_line">삭제</button>
+            </div>
+          </header>
+          <div class="section_body">
+            <div class="tbl_wrap_scroll">
+              <table class="tbl_set tbl_hover">
+                <caption>상세코드 테이블</caption>
+                <thead>
+                  <tr>
+                    <th scope="col">선택</th>
+                    <th scope="col">그룹코드</th>
+                    <th scope="col">코드명</th>
+                    <th scope="col">설명</th>
+                    <th scope="col">순서</th>
+                    <th scope="col">사용여부</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>
+                      <input type="radio" name="detail_code" class="row_check" title="코드선택">
+                    </td>
+                    <td>L001</td>
+                    <td>권한그룹</td>
+                    <td></td>
+                    <td>1</td>
+                    <td><span class="btn_tgl evt_tgl" data-on="사용" data-off="미사용"></span></td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <input type="radio" name="detail_code" class="row_check" title="코드선택">
+                    </td>
+                    <td>L001</td>
+                    <td>권한그룹</td>
+                    <td></td>
+                    <td>1</td>
+                    <td><span class="btn_tgl evt_tgl" data-on="사용" data-off="미사용"></span></td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <input type="radio" name="detail_code" class="row_check" title="코드선택">
+                    </td>
+                    <td>L001</td>
+                    <td>권한그룹</td>
+                    <td></td>
+                    <td>1</td>
+                    <td><span class="btn_tgl evt_tgl" data-on="사용" data-off="미사용"></span></td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <input type="radio" name="detail_code" class="row_check" title="코드선택">
+                    </td>
+                    <td>L001</td>
+                    <td>권한그룹</td>
+                    <td></td>
+                    <td>1</td>
+                    <td><span class="btn_tgl evt_tgl" data-on="사용" data-off="미사용"></span></td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <input type="radio" name="detail_code" class="row_check" title="코드선택">
+                    </td>
+                    <td>L001</td>
+                    <td>권한그룹</td>
+                    <td></td>
+                    <td>1</td>
+                    <td><span class="btn_tgl evt_tgl" data-on="사용" data-off="미사용"></span></td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <input type="radio" name="detail_code" class="row_check" title="코드선택">
+                    </td>
+                    <td>L001</td>
+                    <td>권한그룹</td>
+                    <td></td>
+                    <td>1</td>
+                    <td><span class="btn_tgl evt_tgl" data-on="사용" data-off="미사용"></span></td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <input type="radio" name="detail_code" class="row_check" title="코드선택">
+                    </td>
+                    <td>L001</td>
+                    <td>권한그룹</td>
+                    <td></td>
+                    <td>1</td>
+                    <td><span class="btn_tgl evt_tgl" data-on="사용" data-off="미사용"></span></td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <input type="radio" name="detail_code" class="row_check" title="코드선택">
+                    </td>
+                    <td>L001</td>
+                    <td>권한그룹</td>
+                    <td></td>
+                    <td>1</td>
+                    <td><span class="btn_tgl evt_tgl" data-on="사용" data-off="미사용"></span></td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <input type="radio" name="detail_code" class="row_check" title="코드선택">
+                    </td>
+                    <td>L001</td>
+                    <td>권한그룹</td>
+                    <td></td>
+                    <td>1</td>
+                    <td><span class="btn_tgl evt_tgl" data-on="사용" data-off="미사용"></span></td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <input type="radio" name="detail_code" class="row_check" title="코드선택">
+                    </td>
+                    <td>L001</td>
+                    <td>권한그룹</td>
+                    <td></td>
+                    <td>1</td>
+                    <td><span class="btn_tgl evt_tgl" data-on="사용" data-off="미사용" datavalue="on"></span></td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <input type="radio" name="detail_code" class="row_check" title="코드선택">
+                    </td>
+                    <td>L001</td>
+                    <td>권한그룹</td>
+                    <td></td>
+                    <td>1</td>
+                    <td><span class="btn_tgl evt_tgl" data-on="사용" data-off="미사용" datavalue="on"></span></td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <input type="radio" name="detail_code" class="row_check" title="코드선택">
+                    </td>
+                    <td>L001</td>
+                    <td>권한그룹</td>
+                    <td></td>
+                    <td>1</td>
+                    <td><span class="btn_tgl evt_tgl" data-on="사용" data-off="미사용" datavalue="on"></span></td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <input type="radio" name="detail_code" class="row_check" title="코드선택">
+                    </td>
+                    <td>L001</td>
+                    <td>권한그룹</td>
+                    <td></td>
+                    <td>1</td>
+                    <td><span class="btn_tgl evt_tgl" data-on="사용" data-off="미사용"></span></td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <input type="radio" name="detail_code" class="row_check" title="코드선택">
+                    </td>
+                    <td>L001</td>
+                    <td>권한그룹</td>
+                    <td></td>
+                    <td>1</td>
+                    <td><span class="btn_tgl evt_tgl" data-on="사용" data-off="미사용"></span></td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <input type="radio" name="detail_code" class="row_check" title="코드선택">
+                    </td>
+                    <td>L001</td>
+                    <td>권한그룹</td>
+                    <td></td>
+                    <td>1</td>
+                    <td><span class="btn_tgl evt_tgl" data-on="사용" data-off="미사용"></span></td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <input type="radio" name="detail_code" class="row_check" title="코드선택">
+                    </td>
+                    <td>L001</td>
+                    <td>권한그룹</td>
+                    <td></td>
+                    <td>1</td>
+                    <td><span class="btn_tgl evt_tgl" data-on="사용" data-off="미사용"></span></td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <input type="radio" name="detail_code" class="row_check" title="코드선택">
+                    </td>
+                    <td>L001</td>
+                    <td>권한그룹</td>
+                    <td></td>
+                    <td>1</td>
+                    <td><span class="btn_tgl evt_tgl" data-on="사용" data-off="미사용" datavalue="on"></span></td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <input type="radio" name="detail_code" class="row_check" title="코드선택">
+                    </td>
+                    <td>L001</td>
+                    <td>권한그룹</td>
+                    <td></td>
+                    <td>1</td>
+                    <td><span class="btn_tgl evt_tgl" data-on="사용" data-off="미사용"></span></td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <input type="radio" name="detail_code" class="row_check" title="코드선택">
+                    </td>
+                    <td>L001</td>
+                    <td>권한그룹</td>
+                    <td></td>
+                    <td>1</td>
+                    <td><span class="btn_tgl evt_tgl" data-on="사용" data-off="미사용"></span></td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <input type="radio" name="detail_code" class="row_check" title="코드선택">
+                    </td>
+                    <td>L001</td>
+                    <td>권한그룹</td>
+                    <td></td>
+                    <td>1</td>
+                    <td><span class="btn_tgl evt_tgl" data-on="사용" data-off="미사용"></span></td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <input type="radio" name="detail_code" class="row_check" title="코드선택">
+                    </td>
+                    <td>L001</td>
+                    <td>권한그룹</td>
+                    <td></td>
+                    <td>1</td>
+                    <td><span class="btn_tgl evt_tgl" data-on="사용" data-off="미사용"></span></td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <input type="radio" name="detail_code" class="row_check" title="코드선택">
+                    </td>
+                    <td>L001</td>
+                    <td>권한그룹</td>
+                    <td></td>
+                    <td>1</td>
+                    <td><span class="btn_tgl evt_tgl" data-on="사용" data-off="미사용" datavalue="on"></span></td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <input type="radio" name="detail_code" class="row_check" title="코드선택">
+                    </td>
+                    <td>L001</td>
+                    <td>권한그룹</td>
+                    <td></td>
+                    <td>1</td>
+                    <td><span class="btn_tgl evt_tgl" data-on="사용" data-off="미사용"></span></td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <input type="radio" name="detail_code" class="row_check" title="코드선택">
+                    </td>
+                    <td>L001</td>
+                    <td>권한그룹</td>
+                    <td></td>
+                    <td>1</td>
+                    <td><span class="btn_tgl evt_tgl" data-on="사용" data-off="미사용"></span></td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <input type="radio" name="detail_code" class="row_check" title="코드선택">
+                    </td>
+                    <td>L001</td>
+                    <td>권한그룹</td>
+                    <td></td>
+                    <td>1</td>
+                    <td><span class="btn_tgl evt_tgl" data-on="사용" data-off="미사용"></span></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+      </div>      
+    </div>      
+  </main>
+  <footer class="footer">
+Copyright © 2024 국립재난안전연구원. All rights reserved.
+</footer>
+  <dialog id="p_addCode" class="p_addCode line_style" style="--width:450px" popover="manual">
+  <form method="dialog">
+    <header class="p_header tit">
+      <h1>그룹코드(상세코드) 추가</h1>
+      <div class="tool_wrap">
+        <button type="button" class="btn_close" popovertarget="p_addCode" popvertargetaction="hide">닫기</button>
+      </div>
+    </header>
+    <section class="p_body">
+      <ul class="ipt_lst inline">
+        <li class="required">
+          <label for="">그룹코드</label>
+          <input type="text" placeholder="그룹코드">
+          <button type="button" class="btn btn_gray">중복체크</button>
+          <p class="invalid">중복된 코드입니다</p>
+        </li>
+        <li class="required"><label for="">코드명</label><input type="text" placeholder="코드명"></li>
+        <li><label for="">설명</label><input type="text" placeholder="설명"></li>
+        <li><label for="">순서</label><input type="text" placeholder="순서"></li>
+        <li><strong class="label">사용여부</strong>
+          <ul class="btn_switch">
+            <li><input type="radio" id="use" name="useYN" checked><label for="use">사용</label></li>
+            <li><input type="radio" id="notuse" name="useYN"><label for="notuse">사용안함</label></li>
+          </ul>
+        </li>       
+      </ul>
+    </section>
+    <section class="p_foot">
+      <button type="submit" class="btn_foot_blue">저장</button>
+      <button type="button" class="btn_foot_gray" popovertarget="p_addCode" popvertargetaction="hide">닫기</button>
+    </section>
+  </form>
+</dialog>
+</div>
+<script src="../plugins/jquery.min.js"></script>
+<script src="../plugins/chart.js/dist/chart.umd.js"></script>
+<script src="../js/ui_cmmn.js"></script>
+<script>
+  commonInit();
+</script>
+</body>
+</html>

@@ -11,37 +11,56 @@
             <h1>건축물피해 위험도 평가</h1>            
             <section class="filter">
               <div>
-                <h2>지역선택</h2>
                 <div class="flex_wrap">
-                  <select name="" id="" title="시군구" class="sigungu"><option value="">포항시</option></select>
-                  <span class="ipt_wrap">
-                    <input type="text" id="form_referrer" placeholder="지역검색" list="areaLst" autocomplete="off">
-                    <button type="button" class="btn_add" popovertarget="p_areaSelect">추가</button>
-                  </span>
-                  <datalist id="areaLst">
-                    <optgroup label="포항시">
-                      <option value="북구">포항시 북구</option>
-                      <option value="남구">포항시 남구</option>
-                    </optgroup>
-                  </datalist>
+                  <h2>지역선택</h2>
+                  <div class="flex_wrap">
+                    <select name="" id="" title="시군구" class="sigungu">
+                      <option value="">경북</option>
+                      <option value="">경남</option>
+                      <option value="">부산</option>
+                      <option value="">울산</option>
+                    </select>
+                    <span class="ipt_wrap">
+                      <input type="text" id="form_referrer" placeholder="지역검색" list="areaLst" autocomplete="off">
+                      <button type="button" class="btn_add" popovertarget="p_areaSelect">추가</button>
+                    </span>
+                    <datalist id="areaLst">
+                      <option value="전체">전체</option>
+                      <optgroup label="포항시">
+                        <option value="포항시 북구">포항시 북구</option>
+                        <option value="포항시 남구">포항시 남구</option>
+                      </optgroup>
+                    </datalist>
+                  </div>
                 </div>
                 <ul class="select_lst">
+                  <!-- 로그인 사용자 담당지역 user_area 추가 -->
                   <li class="user_area"><p>포항시 북구</p><button type="button" title="삭제">삭제</button></li>
                   <li><p>포항시 남구</p><button type="button" title="삭제">삭제</button></li>
+                  <li><p>경남 창원</p><button type="button" title="삭제">삭제</button></li>
+                  <li><p>경북 경주</p><button type="button" title="삭제">삭제</button></li>
                 </ul>
               </div>
-              <div>
-                <h2>지역단위 선택</h2>
+              <div class="flex_wrap">
+                <h2>표출 형식</h2>
                 <ul class="areaUnit btn_switch">
-                  <li><input type="radio" id="areaUnit1" name="areaUnit" disabled><label for="areaUnit1" title="선택한 지역 단위보다 상위 단위는 선택할 수 없습니다.">시도</label></li>
-                  <li><input type="radio" id="areaUnit2" name="areaUnit" checked><label for="areaUnit2">시군구</label></li>
-                  <li><input type="radio" id="areaUnit3" name="areaUnit"><label for="areaUnit3">읍면동</label></li>
+                  <li><input type="radio" id="areaUnit1" name="areaUnit" checked><label for="areaUnit1">시군구</label></li>
+                  <li><input type="radio" id="areaUnit2" name="areaUnit"><label for="areaUnit2">읍면동</label></li>
                 </ul>
               </div>              
+              <!-- 새로운 검색 내용이 없다면 class disalbed 추가 -->
+              <!-- <button type="button" class="btn_search disabled">조회</button> -->
               <button type="button" class="btn_search">조회</button>
             </section>
           </header>
-          <article class="pannel_body">            
+          <article class="pannel_body">
+            <header class="tit">
+              <h1 class="blind">평가결과 요약</h1>
+              <div class="date">평가일 : 2024-01-30</div>
+              <div class="tool_wrap">
+                <button type="button" class="btn_gray" popovertarget="p_report">평가보고서</button>
+              </div>
+            </header>        
             <ul class="tab tab_wrap tab_m">
               <li class="on"><a href="#bdh">일반건축물</a></li>
               <li><a href="#structure">설계구조별</a></li>
@@ -50,14 +69,7 @@
             <div class="tab_container">
               <section class="tab_contents" id="bdh">
                 <section>
-                  <div class="summary">
-                    <header class="tit">
-                      <h1 class="blind">평가결과 요약</h1>
-                      <div class="date">평가일 : 2024-01-30</div>
-                      <div class="tool_wrap">
-                        <button type="button" class="btn_gray" popovertarget="p_report">평가보고서</button>
-                      </div>
-                    </header>
+                  <div class="summary">                    
                     <ul class="eval_result_lst">
                       <li class="grade2"><strong>보통</strong>
                         <p>포항시 외곽에 위치한 <em>송도동, 양학동</em>은 지진동에 의한 <em>건축물 피해위험도 등급</em>이 낮은 편이며, 포항시 중심부에 위치한 <em>죽장면, 구룡포읍</em>은 상대적으로 등급이 높은 편입니다.</p>
@@ -348,10 +360,11 @@
             <div class="layer" style="display:block;left:1300px;top:400px">
               <button type="button" class="btn_del">close</button>
               <strong>포항시 북구</strong>
-              <ul class="dot_lst">
-                <li>위험지수 등급<em>2등급</em></li>
-                <li>위험지수 점수<em>81점</em></li>
-              </ul>              
+              <dl class="dot_lst">
+                <dt><span>건축물피해 위험도 평가</span>일반건축물</dt>
+                <dd>위험도 등급<em>2등급</em></dd>
+                <dd>위험도 점수<em>81점</em></dd>
+              </dl>              
               <ul class="area_lst">
                 <li class="average">
                   <label for="average">전국</label>

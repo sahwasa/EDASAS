@@ -85,6 +85,7 @@ border:1px solid transparent;}
   @if($addTxt){display:inline-flex;align-items:center;gap:5px;
     &::before{@include fontello($addTxt);vertical-align:middle;font-size:14px;}
   }
+  &.disabled{background:$lightgray!important;}
 }
 @mixin btn_foot($color:#0e7efc){
   display:inline-block;line-height:33px;background-color:$color;padding:0 16px;cursor:pointer;color:#fff;font-weight:700;letter-spacing:-.65px;border-radius:3px;
