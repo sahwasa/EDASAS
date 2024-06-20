@@ -1,9 +1,9 @@
-<dialog class="p_addFAQ line_style" style="--width:700px">
+<dialog id="p_addFAQ" class="p_addFAQ line_style" style="--width:700px" popover="manual">
   <form method="dialog">
     <header class="p_header tit">
       <h1>FAQ 추가</h1>
       <div class="tool_wrap">
-        <button type="button" class="btn_close" onclick="document.querySelector('dialog').close();">닫기</button>
+        <button type="button" class="btn_close" popovertarget="p_addFAQ" popvertargetaction="hide">닫기</button>
       </div>
     </header>
     <section class="p_body">
@@ -14,7 +14,7 @@
     </section>
     <section class="p_foot">
       <button type="submit" class="btn_foot_blue">저장</button>
-      <button type="button" class="btn_foot_gray" onclick="document.querySelector('dialog').close();">취소</button>
+      <button type="button" class="btn_foot_gray" popovertarget="p_addFAQ" popvertargetaction="hide">취소</button>
     </section>
   </form>
 </dialog>

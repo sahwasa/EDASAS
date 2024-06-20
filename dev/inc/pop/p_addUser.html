@@ -1,0 +1,38 @@
+<dialog id="p_addUser" class="p_addUser line_style" style="--width:450px" popover="manual">
+  <form method="dialog">
+    <header class="p_header tit">
+      <h1>사용자 추가</h1>
+      <div class="tool_wrap">
+        <button type="button" class="btn_close" popovertarget="p_addUser" popvertargetaction="hide">닫기</button>
+      </div>
+    </header>
+    <section class="p_body">
+      <ul class="ipt_lst inline">
+        <li class="required">
+          <label for="">사용자ID</label>
+          <input type="text" placeholder="사용자ID">
+          <button type="button" class="btn btn_gray">중복체크</button>
+          <p class="invalid">중복이다 인마</p>
+        </li>
+        <li class="required"><label for="">비밀번호</label><input type="password" placeholder="비밀번호"></li>
+        <li class="required"><label for="">비밀번호 확인</label><input type="password" placeholder="비밀번호 확인"></li>
+        <li class="required"><label for="">사용자명</label><input type="text" placeholder="사용자명"></li>
+        <li class="required"><label for="">소속기관</label><input type="text" placeholder="소속기관"></li>
+        <li><label for="">직급</label><input type="text" placeholder="직급"></li>
+        <li class="required"><label for="">담당지역</label><button type="button" class="btn_gray"  popovertarget="p_areaSelect">선택</button></li>
+        <li class="required">
+          <label for="">담당지역</label>
+          <p>경상북도 포항시 북구</p>
+          <button type="button" class="btn_gray"  popovertarget="p_areaSelect">변경</button>
+        </li>
+        <li><label for="">권한</label>
+          <select name="" id=""><option value="">관리자</option></select>
+        </li>
+      </ul>
+    </section>
+    <section class="p_foot">
+      <button type="submit" class="btn_foot_blue">저장</button>
+      <button type="button" class="btn_foot_gray" popovertarget="p_addUser" popvertargetaction="hide">닫기</button>
+    </section>
+  </form>
+</dialog>

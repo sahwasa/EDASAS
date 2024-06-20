@@ -1,9 +1,9 @@
-<dialog class="p_areaSelect" style="--width:512px">
+<dialog id="p_areaSelect" class="p_areaSelect" style="--width:512px" popover="manual">
   <form method="dialog">
     <header class="p_header tit">
       <h1>지역선택</h1>
       <div class="tool_wrap">
-        <button type="button" class="btn_close" onclick="document.querySelector('dialog').close();">닫기</button>
+        <button type="button" class="btn_close" popovertarget="p_areaSelect" popvertargetaction="hide">닫기</button>
       </div>
     </header>
     <section class="p_body">
@@ -54,7 +54,7 @@
     </section>
     <section class="p_foot">
       <button type="submit" class="btn_foot_blue">적용</button>
-      <button type="button" class="btn_foot_gray" onclick="document.querySelector('dialog').close();">닫기</button>
+      <button type="button" class="btn_foot_gray" popovertarget="p_areaSelect" popvertargetaction="hide">닫기</button>
     </section>
   </form>
 </dialog>

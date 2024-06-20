@@ -14,7 +14,7 @@
                 <select name="" id="" title="시군구" class="sigungu"><option value="">포항시</option></select>
                 <span class="ipt_wrap">
                   <input type="text" id="form_referrer" placeholder="지역검색" list="areaLst" autocomplete="off">
-                  <button type="button" class="btn_add" onclick="document.querySelector('.p_areaSelect').showModal();">추가</button>
+                  <button type="button" class="btn_add" popovertarget="p_areaSelect">추가</button>
                 </span>
                 <datalist id="areaLst">
                   <optgroup label="포항시">
@@ -34,7 +34,7 @@
               <div class="tit">
                 <h1>평가결과</h1>
                 <div class="tool_wrap">
-                  <button type="button" class="btn_gray" onclick="document.querySelector('.p_report').showModal();">평가보고서</button>
+                  <button type="button" class="btn_gray" popovertarget="p_report">평가보고서</button>
                   <button type="button" class="btn_pdf">PDF저장</button>
                   <button type="button" class="btn_print">인쇄</button>
                 </div>

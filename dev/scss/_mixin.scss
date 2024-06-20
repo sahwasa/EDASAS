@@ -111,3 +111,8 @@ border:1px solid transparent;}
   text-shadow:#{$weight}px 0 0 $color, -#{$weight}px 0 0 $color, 0 #{$weight}px 0 $color,0 -#{$weight}px 0 $color;
 }
 @mixin text_ellipsis($line:1){text-overflow:ellipsis;white-space:normal;overflow:hidden;display:-webkit-box;-webkit-line-clamp:$line;-webkit-box-orient:vertical;}
+@mixin down_arrow($size:15px,$col:#fff,$center:false,$border:false){
+  position:absolute;@include shape($size,$size);transform:scaleX(1.2) rotate(45deg);background-color:$col;@content;
+  @if($border){border:1px solid $border;border-width:0 0 1px 1px;}
+  @if($center){left:50%;margin-left:calc((#{$size} / 2) * -1);}
+}

@@ -254,9 +254,15 @@ function commonInit() {
     var thisP = el.parents('.lst_ctrl'),
       checkSize = thisP.find('input:checked').length,
       allCtrl = thisP.prev('.all_lst_ctrl').find('input:checkbox')
-    thisP.find('input:checkbox').length <= checkSize
-      ? allCtrl.prop('checked', true)
-      : allCtrl.prop('checked', false)
+      if(thisP.prev('.all_lst_ctrl').hasClass('sub_tit')){
+        (checkSize >= 1)
+        ? allCtrl.prop('checked',true)
+        : allCtrl.prop('checked',false);
+      }else{
+      thisP.find('input:checkbox').length <= checkSize
+        ? allCtrl.prop('checked', true)
+        : allCtrl.prop('checked', false)
+      }
   }
   $('.all_lst_ctrl').on('click change', 'input:checkbox', function () {
     all_check_evt($(this))
@@ -268,7 +274,29 @@ function commonInit() {
     .find('input:checkbox')
     .each(function (index, item) {
       all_check($(item))
-    })
+  })
+  //dtlPannel
+  $('.sub_tit').on('click change','input:radio',function(){    
+    if($(this).parents('details').find('ul').length >= 1){
+      var wrap = $(this).parents('details');
+      wrap.prop('open',true);
+      if (wrap.find('ul input:checked').length === 0){
+        wrap.find('ul input:first').prop('checked',true);
+      }    
+    }else{
+      $('.dtlPannel_wrap').find('ul input:radio').prop('checked',false);
+    }
+  })
+  $('.map_type').on('click change','input:radio',function(){
+    var thisP = $(this).parents('.map_type'),
+        checkSize = thisP.find('input:radio').length,
+        allCtrl = thisP.prev('.sub_tit').find('input:radio');
+    if(checkSize >= 1){
+      allCtrl.prop('checked',true)
+    }else{
+      allCtrl.prop('checked',false);      
+    }
+  })
 
   //layer_tool
   $(':has(.hasLayer)')
@@ -292,6 +320,11 @@ function commonInit() {
     var findTarget = $(this).parents('.tab_wrap').next('.tab_container')
     findTarget.find('.tab_contents').hide()
     $(link).show();
+    // console.log($(link).find('.tab_s').length)
+    if($(link).find('.tab_s').length >= 1){
+      var innerLink = $(link).find('.tab_s .on a').attr('href');
+      $(innerLink).show();
+    }
   })
 
   //select_tab

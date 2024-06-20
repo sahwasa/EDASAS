@@ -1,11 +1,11 @@
-<dialog class="p_report" style="--width:870px">
+<dialog id="p_report" class="p_report" style="--width:870px" popover="manual">
   <form method="dialog">
     <header class="p_header tit">
       <h1>평가보고서</h1>
       <div class="tool_wrap">
         <button type="button" class="btn_pdf">PDF저장</button>
         <button type="button" class="btn_print">인쇄</button>
-        <button type="button" class="btn_close" onclick="document.querySelector('.p_report').close();">닫기</button>
+        <button type="button" class="btn_close" popovertarget="p_report" popvertargetaction="hide">닫기</button>
       </div>
     </header>
     <section class="p_body">

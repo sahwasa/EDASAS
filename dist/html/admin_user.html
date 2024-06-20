@@ -21,9 +21,10 @@
         <ul class="sub">
           <li><a href="../html/main.html">종합안전도 평가</a></li>
           <li><a href="../html/bdh.html">건축물피해위험도 평가</a></li>
-          <li><a href="#">지진화재위험도 평가</a></li>
+          <li><a href="../html/eq_fire.html">지진화재위험도 평가</a></li>
           <li><a href="../html/recovery_capability.html">복구역량도 평가</a></li>
-          <li><a href="#">대피안전도 평가</a></li>
+          <li><a href="../html/sheltering.html">대피안전도 평가</a></li>
+          <li><a href="../html/dis_prevention.html">방재안전도 평가</a></li>
           <li><a href="../html/space_securing.html">긴급대응 도로〮공간 확보계수 평가</a></li>
         </ul>
       </li>
@@ -94,6 +95,9 @@
           </li>
         </ul>
         <button type="button" class="btn_blue_line">검색</button>
+        <div class="tool">
+          <button type="button" class="btn_blue" popovertarget="p_addUser">추가</button>
+        </div>
       </div>
       <div class="tbl_wrap">
         <table class="tbl_set tbl_hover">
@@ -106,11 +110,11 @@
               <th scope="col">권한</th>
               <th scope="col">사용자ID</th>
               <th scope="col">사용자명</th>
+              <th scope="col">담당지역</th>
               <th scope="col">소속기관</th>
-              <th scope="col">부서</th>
               <th scope="col">직급</th>
               <th scope="col">등록일</th>
-              <th scope="col">수정</th>
+              <th scope="col">관리</th>
             </tr>
           </thead>
           <tbody>
@@ -123,7 +127,10 @@
               <td>-</td>
               <td>-</td>
               <td>2010.12.30</td>
-              <td><button type="button" class="btn_gray_line">수정</button></td>
+              <td>
+                <button type="button" class="btn_gray_line">수정</button>
+                <button type="button" class="btn_gray_line">삭제</button>
+              </td>
             </tr>            
             <tr>
               <td><input type="checkbox" id=""></td>
@@ -134,14 +141,13 @@
               <td>-</td>
               <td>-</td>
               <td>2010.12.30</td>
-              <td><button type="button" class="btn_gray_line">수정</button></td>
+              <td>
+                <button type="button" class="btn_gray_line">수정</button>
+                <button type="button" class="btn_gray_line">삭제</button>
+              </td>
             </tr>            
           </tbody>
-        </table>        
-        <div class="bot_wrap">
-          <button type="button" class="btn_blue_line" onclick="document.querySelector('.p_addManual').showModal();">추가</button>
-          <button type="button" class="btn_blue_line">선택 삭제</button>
-        </div>
+        </table>       
         <div class="paginate tui-pagination" id="pagination">
   <span class="tui-page-btn tui-is-disabled tui-first">
     <span class="tui-ico-first">first</span>
@@ -164,35 +170,104 @@
   <footer class="footer">
 Copyright © 2023 국립재난안전연구원. All rights reserved.
 </footer>
-  <dialog class="p_addManual line_style" style="--width:700px">
+  <dialog id="p_addUser" class="p_addUser line_style" style="--width:450px" popover="manual">
   <form method="dialog">
     <header class="p_header tit">
-      <h1>매뉴얼 추가</h1>
+      <h1>사용자 추가</h1>
       <div class="tool_wrap">
-        <button type="button" class="btn_close" onclick="document.querySelector('dialog').close();">닫기</button>
+        <button type="button" class="btn_close" popovertarget="p_addUser" popvertargetaction="hide">닫기</button>
       </div>
     </header>
     <section class="p_body">
-      <ul class="ipt_lst">
-        <li><label for="">제목</label><input type="text" placeholder="제목"></li>
-        <li><label for="">내용</label><div contenteditable="true" style="--h:180px"></div></li>
-        <li><label for="">첨부파일</label>
-          <div>
-            <div class="file_ipt">
-              <input type="text" id="" name="" class="file_text" readonly="" role="filePath" title="첨부폴더 경로" placeholder="사진파일 첨부">              
-              <span class="file_wrap btn_blue_line">파일선택</span>
-              <input type="file" role="fileAdd" class="file_add">
-            </div>            
-          </div>
+      <ul class="ipt_lst inline">
+        <li class="required">
+          <label for="">사용자ID</label>
+          <input type="text" placeholder="사용자ID">
+          <button type="button" class="btn btn_gray">중복체크</button>
+          <p class="invalid">중복이다 인마</p>
+        </li>
+        <li class="required"><label for="">비밀번호</label><input type="password" placeholder="비밀번호"></li>
+        <li class="required"><label for="">비밀번호 확인</label><input type="password" placeholder="비밀번호 확인"></li>
+        <li class="required"><label for="">사용자명</label><input type="text" placeholder="사용자명"></li>
+        <li class="required"><label for="">소속기관</label><input type="text" placeholder="소속기관"></li>
+        <li><label for="">직급</label><input type="text" placeholder="직급"></li>
+        <li class="required"><label for="">담당지역</label><button type="button" class="btn_gray"  popovertarget="p_areaSelect">선택</button></li>
+        <li class="required">
+          <label for="">담당지역</label>
+          <p>경상북도 포항시 북구</p>
+          <button type="button" class="btn_gray"  popovertarget="p_areaSelect">변경</button>
+        </li>
+        <li><label for="">권한</label>
+          <select name="" id=""><option value="">관리자</option></select>
         </li>
       </ul>
     </section>
     <section class="p_foot">
       <button type="submit" class="btn_foot_blue">저장</button>
-      <button type="button" class="btn_foot_gray" onclick="document.querySelector('dialog').close();">닫기</button>
+      <button type="button" class="btn_foot_gray" popovertarget="p_addUser" popvertargetaction="hide">닫기</button>
     </section>
   </form>
 </dialog> 
+  <dialog id="p_areaSelect" class="p_areaSelect" style="--width:512px" popover="manual">
+  <form method="dialog">
+    <header class="p_header tit">
+      <h1>지역선택</h1>
+      <div class="tool_wrap">
+        <button type="button" class="btn_close" popovertarget="p_areaSelect" popvertargetaction="hide">닫기</button>
+      </div>
+    </header>
+    <section class="p_body">
+      <div class="select_area">
+        <section class="sido">
+          <strong>시도</strong>
+          <ul>
+            <li><label for="1"><input type="checkbox" name="" id="1">강원</label></li>
+            <li><label for="2"><input type="checkbox" name="" id="2">경기</label></li>
+            <li><label for="3"><input type="checkbox" name="" id="3">경상북도</label></li>
+            <li><label for="4"><input type="checkbox" name="" id="4">경상남도</label></li>
+            <li><label for="5"><input type="checkbox" name="" id="5">대구</label></li>
+            <li><label for="6"><input type="checkbox" name="" id="6">대전</label></li>
+            <li><label for="7"><input type="checkbox" name="" id="7">부산</label></li>
+          </ul>
+        </section>
+        <section class="sigungu">
+          <strong>시군구</strong>
+          <ul>
+            <li><label for="01"><input type="checkbox" name="" id="01" checked>포항시 남구</label></li>
+            <li><label for="02"><input type="checkbox" name="" id="02">포항시 북구</label></li>
+            <li><label for="03"><input type="checkbox" name="" id="03">경산시</label></li>
+            <li><label for="04"><input type="checkbox" name="" id="04">경주시</label></li>
+            <li><label for="05"><input type="checkbox" name="" id="05">구미시</label></li>
+            <li><label for="06"><input type="checkbox" name="" id="06">김천시</label></li>
+            <li><label for="07"><input type="checkbox" name="" id="07">문경시</label></li>
+            <li><label for="08"><input type="checkbox" name="" id="08">고령군</label></li>
+            <li><label for="09"><input type="checkbox" name="" id="09">봉화군</label></li>
+            <li><label for="10"><input type="checkbox" name="" id="10">성주군</label></li>
+            <li><label for="11"><input type="checkbox" name="" id="11">명덕군</label></li>
+            <li><label for="12"><input type="checkbox" name="" id="12">영양군</label></li>
+            <li><label for="13"><input type="checkbox" name="" id="13">예천군</label></li>
+          </ul>
+        </section>
+      </div>
+      <section class="selected_area">
+        <div class="tit">
+          <h2>선택지역</h2>
+          <div class="tool_wrap">
+            <button type="button" class="btn_refresh">초기화</button>
+          </div>
+        </div>
+        <ul class="select_lst">
+          <li><p>경상북도 포항시 북구</p><button type="button" title="삭제">삭제</button></li>
+          <li><p>경상북도 포항시 남구</p><button type="button" title="삭제">삭제</button></li>
+        </ul>
+      </section>
+    </section>
+    <section class="p_foot">
+      <button type="submit" class="btn_foot_blue">적용</button>
+      <button type="button" class="btn_foot_gray" popovertarget="p_areaSelect" popvertargetaction="hide">닫기</button>
+    </section>
+  </form>
+</dialog>
 </div>
 <script src="../plugins/jquery.min.js"></script>
 <script src="../plugins/chart.js/dist/chart.umd.js"></script>

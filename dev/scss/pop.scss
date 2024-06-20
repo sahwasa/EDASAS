@@ -1,7 +1,7 @@
 @import "./reset";
 $maingap:20px;
 dialog{width:var(--width);}
-:modal {margin:auto;padding:20px;border:none;box-shadow: 1.4px 1.4px 29px 0 rgba(0, 0, 0, 0.08);font-size:13px;
+dialog,:modal {margin:auto;padding:20px;border:none;box-shadow: 1.4px 1.4px 29px 0 rgba(0, 0, 0, 0.08);font-size:13px;
   .p_header{@include tit(){h1{font-size:15px;}};
     .btn_close{@include ico_only('\eb2e');cursor:pointer;margin-left:$maingap;
       &::before{font-size:16px;color:#000;};
@@ -9,6 +9,7 @@ dialog{width:var(--width);}
   }
   .p_body{max-height:calc(100vh - 240px);overflow-y:auto;font-size:13px;letter-spacing:-0.33px;}
   .p_foot{display: flex;justify-content: flex-end;align-items: center;gap:3px;margin-top:8px;}
+  &::backdrop{background:rgb(190 190 190 / 50%);}
 }
 .line_style{
   .p_header{border-bottom:2px solid $blue;padding-bottom:10px;margin-bottom:20px;

@@ -21,9 +21,10 @@
         <ul class="sub">
           <li><a href="../html/main.html">종합안전도 평가</a></li>
           <li><a href="../html/bdh.html">건축물피해위험도 평가</a></li>
-          <li><a href="#">지진화재위험도 평가</a></li>
+          <li><a href="../html/eq_fire.html">지진화재위험도 평가</a></li>
           <li><a href="../html/recovery_capability.html">복구역량도 평가</a></li>
-          <li><a href="#">대피안전도 평가</a></li>
+          <li><a href="../html/sheltering.html">대피안전도 평가</a></li>
+          <li><a href="../html/dis_prevention.html">방재안전도 평가</a></li>
           <li><a href="../html/space_securing.html">긴급대응 도로〮공간 확보계수 평가</a></li>
         </ul>
       </li>
@@ -147,7 +148,7 @@
           </tbody>
         </table>        
         <div class="bot_wrap">
-          <button type="button" class="btn_blue_line" onclick="document.querySelector('.p_addManual').showModal();">추가</button>
+          <button type="button" class="btn_blue_line" popovertarget="p_addManual">추가</button>
           <button type="button" class="btn_blue_line">선택 삭제</button>
         </div>
         <div class="paginate tui-pagination" id="pagination">
@@ -172,12 +173,12 @@
   <footer class="footer">
 Copyright © 2023 국립재난안전연구원. All rights reserved.
 </footer>
-  <dialog class="p_addManual line_style" style="--width:700px">
+  <dialog id="p_addManual" class="p_addManual line_style" style="--width:700px" popover="manual">
   <form method="dialog">
     <header class="p_header tit">
       <h1>매뉴얼 추가</h1>
       <div class="tool_wrap">
-        <button type="button" class="btn_close" onclick="document.querySelector('dialog').close();">닫기</button>
+        <button type="button" class="btn_close" popovertarget="p_addManual" popvertargetaction="hide">닫기</button>
       </div>
     </header>
     <section class="p_body">
@@ -197,7 +198,7 @@ Copyright © 2023 국립재난안전연구원. All rights reserved.
     </section>
     <section class="p_foot">
       <button type="submit" class="btn_foot_blue">저장</button>
-      <button type="button" class="btn_foot_gray" onclick="document.querySelector('dialog').close();">닫기</button>
+      <button type="button" class="btn_foot_gray" popovertarget="p_addManual" popvertargetaction="hide">닫기</button>
     </section>
   </form>
 </dialog> 

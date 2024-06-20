@@ -21,9 +21,10 @@
         <ul class="sub">
           <li><a href="../html/main.html">종합안전도 평가</a></li>
           <li><a href="../html/bdh.html">건축물피해위험도 평가</a></li>
-          <li><a href="#">지진화재위험도 평가</a></li>
+          <li><a href="../html/eq_fire.html">지진화재위험도 평가</a></li>
           <li><a href="../html/recovery_capability.html">복구역량도 평가</a></li>
-          <li><a href="#">대피안전도 평가</a></li>
+          <li><a href="../html/sheltering.html">대피안전도 평가</a></li>
+          <li><a href="../html/dis_prevention.html">방재안전도 평가</a></li>
           <li><a href="../html/space_securing.html">긴급대응 도로〮공간 확보계수 평가</a></li>
         </ul>
       </li>
@@ -79,6 +80,7 @@
     <li><a href="../html/eq_fire.html"><span>지진화재위험도 평가</span></a></li>
     <li><a href="../html/recovery_capability.html"><span>복구역량도 평가</span></a></li>
     <li><a href="../html/sheltering.html"><span>대피안전도 평가</span></a></li>
+    <li><a href="../html/dis_prevention.html"><span>방재안전도 평가</span></a></li>
     <li><a href="../html/space_securing.html"><span>긴급대응 도로·공간 확보계수 평가</span></a></li>
   </ul>
 </nav>
@@ -93,7 +95,7 @@
                 <select name="" id="" title="시군구" class="sigungu"><option value="">포항시</option></select>
                 <span class="ipt_wrap">
                   <input type="text" id="form_referrer" placeholder="지역검색" list="areaLst" autocomplete="off">
-                  <button type="button" class="btn_add" onclick="document.querySelector('.p_areaSelect').showModal();">추가</button>
+                  <button type="button" class="btn_add" popovertarget="p_areaSelect">추가</button>
                 </span>
                 <datalist id="areaLst">
                   <optgroup label="포항시">
@@ -113,7 +115,7 @@
               <div class="tit">
                 <h1>평가결과</h1>
                 <div class="tool_wrap">
-                  <button type="button" class="btn_gray" onclick="document.querySelector('.p_report').showModal();">평가보고서</button>
+                  <button type="button" class="btn_gray" popovertarget="p_report">평가보고서</button>
                   <button type="button" class="btn_pdf">PDF저장</button>
                   <button type="button" class="btn_print">인쇄</button>
                 </div>
@@ -337,12 +339,12 @@
   <footer class="footer">
 Copyright © 2023 국립재난안전연구원. All rights reserved.
 </footer>
-  <dialog class="p_areaSelect" style="--width:512px">
+  <dialog id="p_areaSelect" class="p_areaSelect" style="--width:512px" popover="manual">
   <form method="dialog">
     <header class="p_header tit">
       <h1>지역선택</h1>
       <div class="tool_wrap">
-        <button type="button" class="btn_close" onclick="document.querySelector('dialog').close();">닫기</button>
+        <button type="button" class="btn_close" popovertarget="p_areaSelect" popvertargetaction="hide">닫기</button>
       </div>
     </header>
     <section class="p_body">
@@ -393,18 +395,18 @@ Copyright © 2023 국립재난안전연구원. All rights reserved.
     </section>
     <section class="p_foot">
       <button type="submit" class="btn_foot_blue">적용</button>
-      <button type="button" class="btn_foot_gray" onclick="document.querySelector('dialog').close();">닫기</button>
+      <button type="button" class="btn_foot_gray" popovertarget="p_areaSelect" popvertargetaction="hide">닫기</button>
     </section>
   </form>
 </dialog>
-  <dialog class="p_report" style="--width:870px">
+  <dialog id="p_report" class="p_report" style="--width:870px" popover="manual">
   <form method="dialog">
     <header class="p_header tit">
       <h1>평가보고서</h1>
       <div class="tool_wrap">
         <button type="button" class="btn_pdf">PDF저장</button>
         <button type="button" class="btn_print">인쇄</button>
-        <button type="button" class="btn_close" onclick="document.querySelector('.p_report').close();">닫기</button>
+        <button type="button" class="btn_close" popovertarget="p_report" popvertargetaction="hide">닫기</button>
       </div>
     </header>
     <section class="p_body">
