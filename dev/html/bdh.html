@@ -10,37 +10,16 @@
           <header>
             <h1>건축물피해 위험도 평가</h1>            
             <section class="filter">
-              <div>
-                <div class="flex_wrap">
-                  <h2>지역선택</h2>
-                  <div class="flex_wrap">
-                    <select name="" id="" title="시군구" class="sigungu">
-                      <option value="">경북</option>
-                      <option value="">경남</option>
-                      <option value="">부산</option>
-                      <option value="">울산</option>
-                    </select>
-                    <span class="ipt_wrap">
-                      <input type="text" id="form_referrer" placeholder="지역검색" list="areaLst" autocomplete="off">
-                      <button type="button" class="btn_add" popovertarget="p_areaSelect">추가</button>
-                    </span>
-                    <datalist id="areaLst">
-                      <option value="전체">전체</option>
-                      <optgroup label="포항시">
-                        <option value="포항시 북구">포항시 북구</option>
-                        <option value="포항시 남구">포항시 남구</option>
-                      </optgroup>
-                    </datalist>
-                  </div>
-                </div>
-                <ul class="select_lst">
-                  <!-- 로그인 사용자 담당지역 user_area 추가 -->
-                  <li class="user_area"><p>포항시 북구</p><button type="button" title="삭제">삭제</button></li>
-                  <li><p>포항시 남구</p><button type="button" title="삭제">삭제</button></li>
-                  <li><p>경남 창원</p><button type="button" title="삭제">삭제</button></li>
-                  <li><p>경북 경주</p><button type="button" title="삭제">삭제</button></li>
+              <div class="flex_wrap">
+                <h2>지역 선택</h2>
+                <ul class="areaUnit btn_switch">
+                  <li><input type="checkbox" id="area1" name="area" checked><label for="area1">부산</label></li>
+                  <li><input type="checkbox" id="area2" name="area"><label for="area2">울산</label></li>
+                  <li><input type="checkbox" id="area3" name="area" checked><label for="area3">경주</label></li>
+                  <li><input type="checkbox" id="area4" name="area" checked><label for="area4">포항</label></li>
+                  <li><input type="checkbox" id="area5" name="area"><label for="area5">창원</label></li>
                 </ul>
-              </div>
+              </div>              
               <div class="flex_wrap">
                 <h2>표출 형식</h2>
                 <ul class="areaUnit btn_switch">
@@ -48,9 +27,6 @@
                   <li><input type="radio" id="areaUnit2" name="areaUnit"><label for="areaUnit2">읍면동</label></li>
                 </ul>
               </div>              
-              <!-- 새로운 검색 내용이 없다면 class disalbed 추가 -->
-              <!-- <button type="button" class="btn_search disabled">조회</button> -->
-              <button type="button" class="btn_search">조회</button>
             </section>
           </header>
           <article class="pannel_body">
@@ -71,22 +47,21 @@
                 <section>
                   <div class="summary">                    
                     <ul class="eval_result_lst">
-                      <li class="grade2"><strong>보통</strong>
-                        <p>포항시 외곽에 위치한 <em>송도동, 양학동</em>은 지진동에 의한 <em>건축물 피해위험도 등급</em>이 낮은 편이며, 포항시 중심부에 위치한 <em>죽장면, 구룡포읍</em>은 상대적으로 등급이 높은 편입니다.</p>
+                      <li class="grade2"><strong>2등급</strong>
+                        <p>포항시 외곽에 위치한 <em>송도동, 양학동</em>은 지진동에 의한 <em>건축물 피해위험도 등급</em>이 낮은 편이며, 포항시 중심부에 위치한 <em>죽장면, 구룡포읍</em>은 상대적으로 등급이 높은 편입니다.</p>                        
                       </li>                
                     </ul>
-                    <p>포항시 북구와 포항시 남구의 건축물피해 위험도 평가지수 등급은 <b>2등급(안전)</b> 입니다.</p>
                   </div>
                   <div class="pie_graphwrap">
                     <div class="pie" style="--val:81;">
-                      <strong>포항시 북구</strong>
+                      <strong>부산</strong>
                       <div class="pie_txt">
                         <span><em>2</em>등급</span>
                         <p class="score">(81점)</p>
                       </div>
                     </div>
                     <div class="pie" style="--val:83;">
-                      <strong>포항시 남구</strong>
+                      <strong>경북(포항,경주)</strong>
                       <div class="pie_txt">
                         <span><em>2</em>등급</span>
                         <p class="score">(83점)</p>
@@ -111,11 +86,11 @@
                         <meter id="average" value="81.5" min="0" max="100"></meter>
                       </li>
                       <li>
-                        <label for="area1">포항시 북구</label>
+                        <label for="area1">부산</label>
                         <meter id="area1" value="80.6" min="0" max="100"></meter>
                       </li>
                       <li>
-                        <label for="area1">포항시 남구</label>
+                        <label for="area1">경북(포항, 경주)</label>
                         <meter id="area1" value="82.6" min="0" max="100"></meter>
                       </li>
                     </ul>                
@@ -129,6 +104,25 @@
                     </span>
                   </div>
                   <div class="heatmap_wrap">
+                    <!-- 표출형식 시군구일때 -->
+                    <div class="heatmap">
+                      <strong>부산시<span class="score">81</span></strong>
+                      <ul>                    
+                        <li>중구<span class="score">85</span></li>
+                        <li>해운대구<span class="score">88</span></li>
+                        <li>수영구<span class="score">76</span></li>
+                        <li>기장군<span class="score">89</span></li>                        
+                      </ul>
+                    </div>
+                    <div class="heatmap">
+                      <strong>경북(포항,경주)<span class="score">81</span></strong>
+                      <ul>                    
+                        <li>포항 북구<span class="score">85</span></li>
+                        <li>포항 남구<span class="score">88</span></li>
+                        <li>경주시<span class="score">76</span></li>
+                      </ul>
+                    </div>
+                    <!-- 표출형식 읍면동일때 -->
                     <div class="heatmap">
                       <strong>포항시 북구<span class="score">81</span></strong>
                       <ul>                    
@@ -170,14 +164,6 @@
                     </div>
                   </div>
                 </section>                
-                <section class="conclusion divide">
-                  <div class="tit">
-                    <h2>결과 요약 및 행동방안</h2>
-                  </div>
-                  <ul class="action_plan">
-                    <li>포항시 중심부에 위치하여 지반조건이 상대적으로 안 좋은 <em>송도동, 연일읍</em> 및 대형 취약 건축물 큰 비중을 차지하는 <em>양학동</em> 등은 방재거점시설을 잘 갖출 필요성이 있습니다.</li>
-                  </ul>
-                </section>
               </section>
               <section class="tab_contents" id="structure">
                 <ul class="tab tab_wrap tab_s">
@@ -189,19 +175,11 @@
                   <section class="tab_contents" id="structure1">
                     <section>                    
                       <div class="summary">
-                        <header class="tit">
-                          <h1 class="blind">평가결과 요약</h1>
-                          <div class="date">평가일 : 2024-01-30</div>
-                          <div class="tool_wrap">
-                            <button type="button" class="btn_gray" popovertarget="p_report">평가보고서</button>
-                          </div>
-                        </header>
                         <ul class="eval_result_lst">
                           <li class="grade2"><strong>보통</strong>
                             <p>포항시 외곽에 위치한 <em>송도동, 양학동</em>은 지진동에 의한 <em>건축물 피해위험도 등급</em>이 낮은 편이며, 포항시 중심부에 위치한 <em>죽장면, 구룡포읍</em>은 상대적으로 등급이 높은 편입니다.</p>
                           </li>                
-                        </ul>
-                        <p>포항시 북구와 포항시 남구의 건축물피해 위험도 평가지수 등급은 <b>2등급(안전)</b> 입니다.</p>
+                        </ul>                        
                       </div>
                       <div class="pie_graphwrap">
                         <div class="pie" style="--val:81;">
@@ -359,23 +337,22 @@
             <i class="symbol ico_3" style="--left:1050px;--top:470px;">병원</i>
             <div class="layer" style="display:block;left:1300px;top:400px">
               <button type="button" class="btn_del">close</button>
-              <strong>포항시 북구</strong>
+              <strong>포항 북구</strong>
               <dl class="dot_lst">
                 <dt><span>건축물피해 위험도 평가</span>일반건축물</dt>
-                <dd>위험도 등급<em>2등급</em></dd>
-                <dd>위험도 점수<em>81점</em></dd>
+                <dd>안전도 등급<em>2등급</em></dd>
+                <dd>안전도 점수<em>81점</em></dd>
               </dl>              
               <ul class="area_lst">
                 <li class="average">
                   <label for="average">전국</label>
                   <meter id="average" value="81.5" min="0" max="100" class="grade2" style="--val:81.5%"></meter>
                 </li>
-                <li>
-                  <label for="area1">경상북도</label>
+                <li>경북(경주,포항)</label>
                   <meter id="area1" value="80.6" min="0" max="100" class="grade2" style="--val:80.6%"></meter>
                 </li>
                 <li>
-                  <label for="area1">포항시 북구</label>
+                  <label for="area1">포항 북구</label>
                   <meter id="area1" value="82.6" min="0" max="100" class="grade2" style="--val:82.6%"></meter>
                 </li>
               </ul>
@@ -384,8 +361,7 @@
             <div class="map_scale">
               <em>10㎞</em>
             </div>
-          </div>
-          
+          </div>          
           <div class="map_ctrl">            
             <ul class="map_tool">
               <li><button type="button" class="btn_refresh_square">새로고침</button></li>
@@ -395,15 +371,8 @@
                   <button type="button" class="btn_zoomout_square">축소</button>
                 </div>
               </li>
-            </ul>
-            <!-- <ul class="map_type btn_switch">
-              <li><input type="radio" id="map_type1" name="map_type" checked><label for="map_type1">지역위험도</label></li>
-              <li><input type="radio" id="map_type2" name="map_type"><label for="map_type2">지반(부지)분류도</label></li>
-              <li><input type="radio" id="map_type3" name="map_type"><label for="map_type3">건물 노후도</label></li>
-              <li><input type="radio" id="map_type4" name="map_type"><label for="map_type4">내진 분포도</label></li>
-              <li><input type="radio" id="map_type5" name="map_type"><label for="map_type5">인구 분포도</label></li>
-            </ul> -->
-            @@include('../inc/module/h_legend.html')    
+            </ul>            
+            @@include('../inc/module/s_legend.html')    
             <ul class="map_style btn_switch">
               <li><input type="radio" id="default_view" name="map_style" checked><label for="default_view">일반지도</label></input></li>
               <li><input type="radio" id="sky_view" name="map_style"><label for="sky_view">위성지도</label></input></li>
@@ -419,36 +388,30 @@
           <article class="pannel_body">
             <section class="sub_tit">
               <label for="safety"><input type="radio" name="layer" id="safety" checked>지역안전도</label>
-              <div class="tool_wrap">
-                <button type="button" class="btn btn_excel">다운로드</button>
-              </div>
             </section>
             <details open>
               <summary class="sub_tit">
-                <label for="basic"><input type="radio" name="layer" id="basic">기초데이터</label>
-                <div class="tool_wrap">
-                  <button type="button" class="btn btn_excel">다운로드</button>
-                </div>
+                <em class="label">기초데이터</em>
               </summary>   
               <ul class="map_type">
                 <li><strong>지반(부지)분류도</strong>
                   <ul class="sub_type">
-                    <li><label for="map_type2_1"><input type="radio" id="map_type2_1" name="map_type">기반암 심도(H)</label></li>
-                    <li><label for="map_type2_2"><input type="radio" id="map_type2_2" name="map_type">토층 평균 전단파속도 (VS,Soil)</label></li>
-                    <li><label for="map_type2_3"><input type="radio" id="map_type2_3" name="map_type">심도 30m까지 평균 전단파속도 (VS30)</label></li>
-                    <li><label for="map_type2_4"><input type="radio" id="map_type2_4" name="map_type">부지주기 (TG)</label></li>
-                    <li><label for="map_type2_5"><input type="radio" id="map_type2_5" name="map_type">기반암 심도(H)</label></li>
-                    <li><label for="map_type2_6"><input type="radio" id="map_type2_6" name="map_type">기반암 심도(H)</label></li>
+                    <li><label for="map_type2_1"><input type="radio" id="map_type2_1" name="layer">기반암 심도(H)</label></li>
+                    <li><label for="map_type2_2"><input type="radio" id="map_type2_2" name="layer">토층 평균 전단파속도 (VS,Soil)</label></li>
+                    <li><label for="map_type2_3"><input type="radio" id="map_type2_3" name="layer">심도 30m까지 평균 전단파속도 (VS30)</label></li>
+                    <li><label for="map_type2_4"><input type="radio" id="map_type2_4" name="layer">부지주기 (TG)</label></li>
+                    <li><label for="map_type2_5"><input type="radio" id="map_type2_5" name="layer">기반암 심도(H)</label></li>
+                    <li><label for="map_type2_6"><input type="radio" id="map_type2_6" name="layer">기반암 심도(H)</label></li>
                   </ul>
                 </li>
-                <li><label for="map_type3"><input type="radio" id="map_type3" name="map_type">건물 노후도</label></li>
-                <li><label for="map_type4"><input type="radio" id="map_type4" name="map_type">내진 분포도</label></li>
-                <li><label for="map_type5"><input type="radio" id="map_type5" name="map_type">인구 분포도</label></li>
+                <li><label for="map_type3"><input type="radio" id="map_type3" name="layer">건물 노후도</label></li>
+                <li><label for="map_type4"><input type="radio" id="map_type4" name="layer">내진 분포도</label></li>
+                <li><label for="map_type5"><input type="radio" id="map_type5" name="layer">인구 분포도</label></li>
               </ul>
             </details>
             <details open>
               <summary class="sub_tit all_lst_ctrl">
-                <label for="fac"><input type="checkbox" id="fac" checked>주요시설 분포도</label>
+                <label for="fac">주요시설 분포도<input type="checkbox" id="fac" checked></label>
               </summary>
               <div class="lst_ctrl">                 
                 <ul class="symbols">
