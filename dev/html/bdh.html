@@ -176,7 +176,7 @@
                     <section>                    
                       <div class="summary">
                         <ul class="eval_result_lst">
-                          <li class="grade2"><strong>보통</strong>
+                          <li class="grade2"><strong>2등급</strong>
                             <p>포항시 외곽에 위치한 <em>송도동, 양학동</em>은 지진동에 의한 <em>건축물 피해위험도 등급</em>이 낮은 편이며, 포항시 중심부에 위치한 <em>죽장면, 구룡포읍</em>은 상대적으로 등급이 높은 편입니다.</p>
                           </li>                
                         </ul>                        
@@ -273,15 +273,7 @@
                           </ul>
                         </div>
                       </div>
-                    </section>                
-                    <section class="conclusion divide">
-                      <div class="tit">
-                        <h2>결과 요약 및 행동방안</h2>
-                      </div>
-                      <ul class="action_plan">
-                        <li>포항시 중심부에 위치하여 지반조건이 상대적으로 안 좋은 <em>송도동, 연일읍</em> 및 대형 취약 건축물 큰 비중을 차지하는 <em>양학동</em> 등은 방재거점시설을 잘 갖출 필요성이 있습니다.</li>
-                      </ul>
-                    </section>
+                    </section>                   
                   </section>
                   <section class="tab_contents" id="structure2">
                     목조
@@ -389,10 +381,10 @@
             <section class="sub_tit">
               <label for="safety"><input type="radio" name="layer" id="safety" checked>지역안전도</label>
             </section>
-            <details open>
-              <summary class="sub_tit">
+            <section>
+              <header class="sub_tit">
                 <em class="label">기초데이터</em>
-              </summary>   
+              </header>   
               <ul class="map_type">
                 <li><strong>지반(부지)분류도</strong>
                   <ul class="sub_type">
@@ -408,19 +400,17 @@
                 <li><label for="map_type4"><input type="radio" id="map_type4" name="layer">내진 분포도</label></li>
                 <li><label for="map_type5"><input type="radio" id="map_type5" name="layer">인구 분포도</label></li>
               </ul>
-            </details>
-            <details open>
-              <summary class="sub_tit all_lst_ctrl">
-                <label for="fac">주요시설 분포도<input type="checkbox" id="fac" checked></label>
-              </summary>
-              <div class="lst_ctrl">                 
-                <ul class="symbols">
-                  <li><label for="fac1"><input type="checkbox" id="fac1" name="" checked />소방서</label></li>
-                  <li><label for="fac2"><input type="checkbox" id="fac2" name="" checked />임시대피시설</label></li>
-                  <li><label for="fac3"><input type="checkbox" id="fac3" name="" checked />병원</label></li>
-                </ul>
-              </div>  
-            </details>
+            </section>
+            <section>
+              <header class="sub_tit">
+                <em class="label">주요시설 분포도</em>
+              </header>              
+              <ul class="symbols">
+                <li><label for="fac1"><input type="checkbox" id="fac1" name="" checked />소방서</label></li>
+                <li><label for="fac2"><input type="checkbox" id="fac2" name="" checked />임시대피시설</label></li>
+                <li><label for="fac3"><input type="checkbox" id="fac3" name="" checked />병원</label></li>
+              </ul>
+            </section>
           </article>
         </div>
       </section>
@@ -432,6 +422,7 @@
   @@include('../inc/pop/p_report.html')
 </div>
 @@include('../inc/script.html')
+<script src="../js/radar_chart.js"></script>
 <script>
   mapTgl('temp_map_2_2.png');
 </script>

@@ -685,27 +685,43 @@ Copyright © 2024 국립재난안전연구원. All rights reserved.
         <div class="report_body">
           <section>
             <h2>대상지역</h2>
-            <p>포항시 북구, 포항시 남구</p>
+            <p>부산, 경주, 포항</p>
           </section>
           <section>
             <h2>평가결과</h2>
             <p>포항시 북구와 포항시 남구의 종합안전도 평가지수 등급은 <em>2등급(보통)</em> 입니다</p>
             <div class="graphs_wrap">
+              <div class="chartwrap radar">
+                <canvas id="p_radarchart"></canvas>
+              </div>
+              <div class="legend_body">
+                <section class="safety_grade">
+                  <strong>안전도 등급</strong>
+                  <ul>
+                    <li class="grade1">1등급</li>
+                    <li class="grade2">2등급</li>
+                    <li class="grade3">3등급</li>
+                    <li class="grade4">4등급</li>
+                    <li class="grade5">5등급</li>
+                    <li class="grade0">자료없음</li>
+                  </ul>
+                </section>
+              </div>
               <div class="pie_graphwrap">
                 <div class="pie" style="--val:70;">
-                  <strong>포항시 북구</strong>
+                  <strong>부산</strong>
                   <div class="pie_txt">
                     <span><em>2</em>등급</span>
                     <p class="score">(62점)</p>
                   </div>
                 </div>
                 <div class="pie" style="--val:70;">
-                  <strong>포항시 남구</strong>
+                  <strong>경북(경주,포항)</strong>
                   <div class="pie_txt">
                     <span><em>2</em>등급</span>
                     <p class="score">(63점)</p>
                   </div>
-                </div>                
+                </div>               
               </div>
               <div class="meter_wrap">
                 <div class="meter_unit">
@@ -725,19 +741,56 @@ Copyright © 2024 국립재난안전연구원. All rights reserved.
                     <meter id="average" value="62.6" min="0" max="100"></meter>
                   </li>
                   <li>
-                    <label for="area1">포항시 북구</label>
+                    <label for="area1">부산</label>
                     <meter id="area1" value="62.3" min="0" max="100"></meter>
                   </li>
                   <li>
-                    <label for="area2">포항시 남구</label>
+                    <label for="area2">경북(포항,경주)</label>
                     <meter id="area2" value="62.9" min="0" max="100"></meter>
                   </li>
-                </ul>                
+                </ul>
               </div>
-            </div>
+            </div>            
+          </section>
+          <section>
+            <!-- (읍면동단위 고정) -->
+            <h2>세부결과</h2>            
             <div class="heatmap_wrap">
               <div class="heatmap">
-                <strong>포항시 북구<span class="score">62</span></strong>
+                <strong>부산 서구<span class="score">62</span></strong>
+                <ul>
+                  <li>부민동<span class="score">64</span></li>
+                  <li>남부민동<span class="score">55</span></li>
+                  <li>동대신동<span class="score">62</span></li>
+                  <li>서대신동<span class="score">57</span></li>
+                  <li>아미동<span class="score">65</span></li>
+                  <li>암남동<span class="score">57</span></li>
+                  <li>초장동<span class="score">66</span></li>
+                  <li>충무동<span class="score">62</span></li>                  
+                </ul>
+              </div>
+              <div class="heatmap">
+                <strong>부산 동구<span class="score">62</span></strong>
+                <ul>
+                  <li>범일동<span class="score">64</span></li>
+                  <li>좌천동<span class="score">55</span></li>
+                  <li>수정동<span class="score">62</span></li>
+                  <li>초량동<span class="score">57</span></li>
+                </ul>
+              </div>
+              <div class="heatmap">
+                <strong>부산 영도구<span class="score">62</span></strong>
+                <ul>
+                  <li>남항동<span class="score">64</span></li>
+                  <li>동삼동<span class="score">55</span></li>
+                  <li>봉래동<span class="score">62</span></li>
+                  <li>신선동<span class="score">57</span></li>
+                  <li>영선동<span class="score">57</span></li>
+                  <li>청학동<span class="score">57</span></li>
+                </ul>
+              </div>
+              <div class="heatmap">
+                <strong>포항 북구<span class="score">62</span></strong>
                 <ul>
                   <li>기계면<span class="score">64</span></li>
                   <li>기북면<span class="score">55</span></li>
@@ -757,7 +810,7 @@ Copyright © 2024 국립재난안전연구원. All rights reserved.
                 </ul>
               </div>
               <div class="heatmap">
-                <strong>포항시 남구<span class="score">63</span></strong>
+                <strong>포항 남구<span class="score">63</span></strong>
                 <ul>                    
                   <li>구룡포읍<span class="score">69</span></li>
                   <li>대송면<span class="score">64</span></li>
@@ -776,23 +829,18 @@ Copyright © 2024 국립재난안전연구원. All rights reserved.
                 </ul>
               </div>                                
             </div>
-          </section>
-          <section>
-            <h2>세부내용</h2>            
-            <div class="chartwrap">
-              <canvas id="p_radarchart"></canvas>
-            </div>
             <div class="tbl_wrap">                
               <table class="tbl_default tbl_comprehensive_safety">
                 <caption>세부 지역별 지수</caption>
                 <thead>
                   <tr>
                     <th scope="col">구분</th>
-                    <th scope="col">종합 안전도</th>
-                    <th scope="col">건축물 피해 위험도</th>
+                    <th scope="col">종합안전도</th>
+                    <th scope="col">건축물피해 위험도</th>
                     <th scope="col">지진화재 위험도</th>
-                    <th scope="col">복구 역량도</th>
-                    <th scope="col">대피 안전도</th>
+                    <th scope="col">복구역량도</th>
+                    <th scope="col">대피안전도</th>
+                    <th scope="col">방재안전도</th>
                     <th scope="col">긴급대응 도로·공간 확보계수</th>
                   </tr>
                 </thead>
@@ -900,7 +948,7 @@ Copyright © 2024 국립재난안전연구원. All rights reserved.
               </ul>                
             </div>
           </section>
-          <section>
+          <!-- <section>
             <h2>결과 요약 및 행동방안</h2>
             <div class="conclusion">
               <ul class="action_plan">
@@ -908,7 +956,7 @@ Copyright © 2024 국립재난안전연구원. All rights reserved.
                 <li><em>포항시 남구</em>는 특히 송도동과 청림동의 종합안전도 등급이 낮게 나왔으므로 대응이 필요합니다.</li>
               </ul>
             </div>
-          </section>
+          </section> -->
         </div>
       </article>
     </section>

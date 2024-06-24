@@ -17,8 +17,8 @@ input[type="time"],
 input[type="datetime-local"],
 input[type="email"],
 input[type="tel"]{@include ipt_common;min-height:28px;}
-input[type="radio"]{border-radius:50%;vertical-align:middle;}
-input[type="checkbox"]{border-radius:2px;vertical-align:middle;accent-color:#1571d3;}
+input[type="radio"]{border-radius:50%;vertical-align:middle;accent-color:$blue;}
+input[type="checkbox"]{border-radius:2px;vertical-align:middle;accent-color:$blue;}
 input[type="datetime-local"],
 input[type="time"],
 input[type="date"]{position:relative;}
@@ -416,7 +416,7 @@ border:1px solid $border;border-left-width:0;border-radius:0 3px 3px 0;font-size
   }
   .btn_switch{flex:1;gap:5px;
     li{flex:1;}
-    label{width:100%;}
+    label{width:100%;min-width:auto;}
   }
 }
 .dash_lst{gap:2px;
@@ -456,11 +456,11 @@ border:1px solid $border;border-left-width:0;border-radius:0 3px 3px 0;font-size
     .tab_contents{display:flex;flex-direction:column;gap:25px;}
   }
 }
-.tab_s{
-  li{border-width:0;border-bottom:2px solid transparent;
-    a{font-size:12px;line-height:25px;}
-    &.on{position:relative;bottom:-1px;border-bottom-color:$blue;
-      a{margin-top:-1px;}
+.tab_s{border-width:0;
+  li{border-width:0;border-radius:3px;
+    a{font-size:14px;line-height:30px;font-weight:700;}
+    &.on{position:relative;background-color:$blue;
+      a{color:#fff;}
     }
   }
   & + .tab_container{margin-top:5px;}
@@ -608,7 +608,7 @@ details[open]>summary::after{margin:0 2px;content:'\e86a';}
     }
     &.grade5 strong{color:#fff;}
     &.grade0 strong{border-color:#eee;}
-    p{flex:1;color:#555;line-height:1.5;letter-spacing:-.02em;}
+    p{flex:1;color:#555;line-height:1.5;letter-spacing:-.02em;border:1px solid $border;background-color:$bggray;padding:5px;border-radius:3px;}
   }
 }
 .pie_graphwrap{display: flex;flex-wrap:wrap;justify-content:space-around;margin-top:10px;}
@@ -779,23 +779,16 @@ details[open]>summary::after{margin:0 2px;content:'\e86a';}
 }
 .dtlPannel_wrap{background-color:#f9f9f9;
   .pannel_wrap{width:300px;}
-  .pannel_body{padding:20px 10px;gap:5px;
-    &>:is(details,.sub_tit){
-      & > label,
-      .sub_tit .label{display:flex;align-items:center;font-size:15px;color:$blue;font-weight:700;gap:5px;}
-      &::after{color:$blue;}
-      &>:has(:checked),
-      &:has(:checked) .sub_tit{background-color:$blue;
-        .label,label{color:#fff;}
-        &::after{color:#fff;}
-      }
+  .pannel_body{padding:20px 10px;gap:5px;         
+    .sub_tit :is(.label,label){display:flex;align-items:center;width:100%;font-size:15px;color:$blue;font-weight:700;gap:5px;padding-left:5px;}
+    label:hover{cursor:pointer;font-weight:600;color:#000;}
+    .sub_tit:has(:checked),
+    section:has(:checked) .sub_tit{background-color:$blue;
+      .label,label{color:#fff;}
+      &::after{color:#fff;}
     }
   }
-  summary::after{color:$blue;order:-1;}
-  section.sub_tit{padding-left:34px;
-    input[type="radio"]{@include blind;}
-  }
-  
+  section.sub_tit input[type="radio"]{@include blind;}  
   .map_type{flex-wrap:wrap;gap:2px;padding:5px 10px;
     & > li{flex:0 1 calc(50% - 1px);white-space:nowrap;font-weight:700;line-height:2.2;
       &:not(:first-child){border-top:1px dashed #d3d3d3;}
