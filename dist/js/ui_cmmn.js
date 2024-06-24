@@ -184,17 +184,17 @@ function commonInit() {
   $deps2.on('click','a',function(){menuEvt($(this))});
   $snb.on('click','a',function(){menuEvt($(this))});
   //gnb
-  $('.profile').on({
-    click: function () {
-      $(this).addClass('on')
-    },
-    focusin: function () {
-      $(this).addClass('on')
-    },
-    focusout: function () {
-      $(this).removeClass('on')
-    },
-  })
+  // $('.profile').on({
+  //   click: function () {
+  //     $(this).addClass('on')
+  //   },
+  //   focusin: function () {
+  //     $(this).addClass('on')
+  //   },
+  //   focusout: function () {
+  //     $(this).removeClass('on')
+  //   },
+  // })
 
   // table_row checked
   $('.row_check').on({

@@ -187,10 +187,10 @@ $navH:315px;
     }
   }
   &:hover b::before{outline:4px solid rgba(60,64,67,.08);transition: outline .25s ease-in-out;}
-  &.on{
+  &:focus-within{
     b::after{content:"\e86b"}
     .my_layer{display:block;}
-  }
+  }  
 }
 .my_layer{display:none;position:absolute;top:63px;right:0;width:100%; 
 border:1px solid #ccc;border-radius:5px;background-color: #fff; z-index:100;box-shadow:0 0 7px rgba(0, 0, 0, .2);
