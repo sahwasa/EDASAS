@@ -333,6 +333,7 @@ function commonInit() {
     e.preventDefault();
     const link = $(this).val(),
           target = e.target.dataset.seltab;
+    console.log(link);
     $('#'+target).find('.seltab_opt').hide();
     $('#'+link).show();    
   });

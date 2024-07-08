@@ -90,6 +90,32 @@
             <h1>건축물피해 위험도 평가</h1>            
             <section class="filter">
               <div class="flex_wrap">
+                <select name="" id="" title="단위 선택" class="lv" data-seltab="lv_opt">
+                  <option value="sido">시도</option><option value="sigungu">시군구</option>
+                </select>
+                <div class="seltab_wrap" id="lv_opt">
+                  <div class="seltab_opt" id="sido">
+                    <ul class="areaLst btn_switch">
+                      <li><input type="checkbox" id="area1" name="area" checked><label for="area1">부산</label></li>
+                      <li><input type="checkbox" id="area2" name="area" checked><label for="area2">울산</label></li>
+                    </ul>
+                  </div>
+                  <div class="seltab_opt ipt_wrap" id="sigungu">
+                    <select name="" id="">
+                      <option value="">부산</option>
+                      <option value="">울산</option>
+                      <option value="">경북</option>
+                      <option value="">경남</option>
+                    </select>
+                    <input type="text" id="form_referrer" placeholder="지역검색" list="areaLst" autocomplete="off">
+                  </div>
+                </div>
+              </div>
+              <ul class="select_lst">
+                <li class="user_area"><p>부산</p><button type="button" title="삭제">삭제</button></li>
+                <li><p>울산</p><button type="button" title="삭제">삭제</button></li>
+              </ul>
+              <!-- <div class="flex_wrap">
                 <h2>지역 선택</h2>
                 <ul class="areaUnit btn_switch">
                   <li><input type="checkbox" id="area1" name="area" checked><label for="area1">부산</label></li>
@@ -98,14 +124,15 @@
                   <li><input type="checkbox" id="area4" name="area" checked><label for="area4">포항</label></li>
                   <li><input type="checkbox" id="area5" name="area"><label for="area5">창원</label></li>
                 </ul>
-              </div>              
+              </div>               -->
               <div class="flex_wrap">
                 <h2>표출 형식</h2>
-                <ul class="areaUnit btn_switch">
+                <ul class="areaUnit">
                   <li><input type="radio" id="areaUnit1" name="areaUnit" checked><label for="areaUnit1">시군구</label></li>
                   <li><input type="radio" id="areaUnit2" name="areaUnit"><label for="areaUnit2">읍면동</label></li>
                 </ul>
-              </div>              
+              </div>  
+              <button type="button" class="btn_search">검색</button>            
             </section>
           </header>
           <article class="pannel_body">
@@ -126,27 +153,32 @@
                 <section>
                   <div class="summary">                    
                     <ul class="eval_result_lst">
-                      <li class="grade2"><strong>2등급</strong>
-                        <p>포항시 외곽에 위치한 <em>송도동, 양학동</em>은 지진동에 의한 <em>건축물 피해위험도 등급</em>이 낮은 편이며, 포항시 중심부에 위치한 <em>죽장면, 구룡포읍</em>은 상대적으로 등급이 높은 편입니다.</p>                        
+                      <li class="grade2">
+                        <div class="pie" style="--val:81;">
+                          <div class="pie_txt">
+                            <span><em>2</em>등급</span>
+                            <p class="score">(81점)</p>
+                          </div>
+                        </div>
+                        <div class="desc">
+                          <em>부산</em>
+                          <p>포항시 외곽에 위치한 <em>송도동, 양학동</em>은 지진동에 의한 <em>건축물 피해위험도 등급</em>이 낮은 편이며, 포항시 중심부에 위치한 <em>죽장면, 구룡포읍</em>은 상대적으로 등급이 높은 편입니다.</p>                        
+                        </div>
+                      </li>                
+                      <li class="grade3">
+                        <div class="pie" style="--val:81;">
+                          <div class="pie_txt">
+                            <span><em>3</em>등급</span>
+                            <p class="score">(81점)</p>
+                          </div>
+                        </div>
+                        <div class="desc">
+                          <em>울산</em>
+                          <p>포항시 외곽에 위치한 <em>송도동, 양학동</em>은 지진동에 의한 <em>건축물 피해위험도 등급</em>이 낮은 편이며, 포항시 중심부에 위치한 <em>죽장면, 구룡포읍</em>은 상대적으로 등급이 높은 편입니다.</p>                        
+                        </div>
                       </li>                
                     </ul>
-                  </div>
-                  <div class="pie_graphwrap">
-                    <div class="pie" style="--val:81;">
-                      <strong>부산</strong>
-                      <div class="pie_txt">
-                        <span><em>2</em>등급</span>
-                        <p class="score">(81점)</p>
-                      </div>
-                    </div>
-                    <div class="pie" style="--val:83;">
-                      <strong>경북(포항,경주)</strong>
-                      <div class="pie_txt">
-                        <span><em>2</em>등급</span>
-                        <p class="score">(83점)</p>
-                      </div>
-                    </div>
-                  </div>
+                  </div>                  
                   <div class="meter_wrap">
                     <div class="meter_unit">
                       <strong>(점수)</strong>

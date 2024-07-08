@@ -252,21 +252,26 @@ border:1px solid #ccc;border-radius:5px;background-color: #fff; z-index:100;box-
     h2{min-width:70px;margin-bottom:0;}
   }
   select,
-  .ipt_wrap{border:2px solid $blue;border-radius:3px;height:38px;
-    select,input{border:none;width:100%;}
+  .ipt_wrap input,
+  .ipt_wrap select{border:2px solid $blue;border-radius:3px;height:38px;}
+  .lv{width:111px;}
+  .seltab_wrap{position: relative; flex:1;display:flex;align-items:stretch;}
+  .ipt_wrap{flex:1;display:flex;gap:5px;
+    select{width:80px;}
+    input{flex:1;}
   }
-  .sigungu{width:111px;}
-  .ipt_wrap{flex:1;display:flex;align-items:stretch;}
   .btn_add{@include btn_square('\e92c');width:38px;height:auto;border:none;background-color:$blue;border-radius:0;
     &::before{color:#fff;font-size:16px;}
   }
-  .select_lst{margin-top:10px;padding-left:75px;}
-  .areaUnit{flex:1;gap:5px;
-    li{flex:1;}
-    label{width:100%;};
+  .areaLst{gap:5px;
+    li{min-width:100px;}
+    label{width:100%;line-height:34px;}
     :disabled + label:hover{cursor:not-allowed;}
   }
-  .btn_search{@include btn;width:100%;color:#fff;background:linear-gradient(to right,  rgba(21,88,211,1) 0%,rgba(0,3,150,1) 97%);border-width:0;font-size:16px;letter-spacing:.5em;line-height:2.2;}
+  .areaUnit{display:flex;gap:10px;flex:1;
+    input{margin-right:5px;}
+  }
+  .btn_search{@include btn;color:#fff;background:linear-gradient(to right,  rgba(21,88,211,1) 0%,rgba(0,3,150,1) 97%);border-width:0;font-size:16px;letter-spacing:.5em;line-height:2.2;}
 }
 .btn_area{text-align: center;margin-top:15px;}
 .tit{display:flex;align-items:center;@include tit('h1,h2');
@@ -599,16 +604,18 @@ details[open]>summary::after{margin:0 2px;content:'\e86a';}
   .divide{border-top:1px solid #eaeaea;margin-top:10px;padding-top:30px;}
   .chartwrap{margin-top:30px;padding-top:10px;}
 }
-.eval_result_lst{display:flex;flex-direction:column;gap:35px;
+.eval_result_lst{display:flex;flex-direction:column;gap:5px;
   li{display:flex;gap:12px;align-items:flex-start;
-    strong{flex-shrink:0;display:flex;align-items:center;justify-content:center;width:72px;aspect-ratio:1;border-width:10px;border-style:solid;border-radius:50%;font-size:16px;white-space:nowrap
-    ;}
-    @each $type, $col in $_safetyGrade{    
-      &.#{$type} strong{background-color:$col;border-color:lighten($color:$col, $amount:33);}
+    // strong{flex-shrink:0;display:flex;align-items:center;justify-content:center;width:72px;aspect-ratio:1;border-width:10px;border-style:solid;border-radius:50%;font-size:16px;white-space:nowrap;}
+    .pie{--w:90px;--b:6px;
+      strong{display:none;}
+    }
+    @each $type, $color in $_safetyGrade{
+      &.#{$type} .pie{--c : #{$color};}
     }
     &.grade5 strong{color:#fff;}
     &.grade0 strong{border-color:#eee;}
-    p{flex:1;color:#555;line-height:1.5;letter-spacing:-.02em;border:1px solid $border;background-color:$bggray;padding:5px;border-radius:3px;}
+    .desc{flex:1;color:#555;line-height:1.5;letter-spacing:-.02em;border:1px solid $border;background-color:$bggray;padding:5px;border-radius:3px;}
   }
 }
 .pie_graphwrap{display: flex;flex-wrap:wrap;justify-content:space-around;margin-top:10px;}
@@ -634,8 +641,9 @@ details[open]>summary::after{margin:0 2px;content:'\e86a';}
   &:after{inset:calc(50% - var(--b)/2);
     background:var(--c);transform:rotate(calc(var(--p)*3.6deg)) translateY(calc(50% - var(--w)/2));}
   .pie_txt{display:flex;flex-direction:column;align-items:center;justify-content:center; background-color:#fff;border-radius:50%;border:var(--b) solid var(--bg);
-    span,em{font-weight:800;font-size:16px;line-height:1;}
-    em{font-size:30px;}
+    span,em{font-weight:800;font-size:14px;line-height:1;}
+    em{font-size:26px;}
+    .score{font-size:14px;}
   }
   strong{position:absolute;bottom:-25px;left:0;width:100%;text-align:center;font-size:13px;font-weight:normal;}
 }
