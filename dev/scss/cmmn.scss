@@ -243,7 +243,9 @@ border:1px solid #ccc;border-radius:5px;background-color: #fff; z-index:100;box-
   .pannel_wrap{width:500px;height:100%;border-right:1px solid $border;overflow-y:auto;
     & > header{border-bottom:1px solid $border;padding:$maingap;@include tit;margin-bottom:0;}
   }  
-  .pannel_body{display:flex;flex-direction:column;gap:20px;padding:$maingap;}
+  .pannel_body{display:flex;flex-direction:column;gap:20px;padding:$maingap;
+    .heatmap_wrap + .tbl_wrap{margin-top:20px;}
+  }
   .main_result{display:none;}
 }
 .filter{display:flex;flex-direction:column;gap:15px;margin-top:15px;
