@@ -94,7 +94,7 @@
             </section>
             <section>
               <div class="tit">
-                <h2>세부결과</h2>
+                <h2>지역별 평가결과</h2>
                 <span class="tool_wrap unit">(점수)</span>
               </div>
               <div class="heatmap_wrap">
@@ -137,6 +137,11 @@
                     <li>효곡동  <span class="score">50</span></li>              
                   </ul>
                 </div>                
+              </div>                            
+            </section>
+            <section>
+              <div class="tit">
+                <h2>요소별 평가결과</h2>
               </div>
               <div class="tbl_wrap">                
                 <table class="tbl_default">
@@ -196,7 +201,7 @@
                     <tr><td>효곡동</td>  <td>57.7</td><td>56.1</td><td>42.4</td><td>49.5</td></tr>
                   </tbody>
                 </table>
-              </div>              
+              </div>
             </section>
           </article>
         </div>
@@ -228,59 +233,19 @@
               <li><input type="radio" id="map_type4" name="map_type"><label for="map_type4">내진 분포도</label></li>
               <li><input type="radio" id="map_type5" name="map_type"><label for="map_type5">인구 분포도</label></li>
             </ul>
-            <div class="map_legend">
-              <details open>
-                <summary>
-                  <h1>범례</h1>
-                  <label for="opacity" class="blind">투명도</label>
-                  <input type="range" id="opacity" name="opacity" min="0" max="100" title="투명도" />
-                </summary>
-                <div class="legend_body">
-                  <section class="symbols">
-                    <strong class="blind">기호</strong>
-                    <ul>
-                      <li><label for=""><input type="checkbox" id="" name="" checked />소방서</label></li>
-                      <li><label for=""><input type="checkbox" id="" name="" checked />임시대피시설</label></li>
-                      <li><label for=""><input type="checkbox" id="" name="" checked />병원</label></li>
-                    </ul>
-                  </section>
-                  <section class="safety_grade">                
-                    <strong>계수 등급</strong>
-                    <ul>
-                      <li class="grade1">1등급</li>
-                      <li class="grade2">2등급</li>
-                      <li class="grade3">3등급</li>
-                      <li class="grade4">4등급</li>
-                      <li class="grade5">5등급</li>
-                      <li class="grade0">자료없음</li>
-                    </ul>
-                  </section>
-                  <section class="distribution_legend">                
-                    <strong>지반 분류</strong>
-                    <ul>
-                      <li class="s1"><i>S1</i>암반 지반</li>
-                      <li class="s2"><i>S1</i>얕고 단단한 지반</li>
-                      <li class="s3"><i>S3</i>얕고 연약한 지반</li>
-                      <li class="s4"><i>S4</i>깊고 단단한 지반</li>
-                    </ul>
-                  </section>
-                </div>
-              </details>
-            </div>              
-            <ul class="map_style btn_switch">
-              <li><input type="radio" id="default_view" name="map_style" checked><label for="default_view">일반지도</label></input></li>
-              <li><input type="radio" id="sky_view" name="map_style"><label for="sky_view">위성지도</label></input></li>
-              <li><input type="radio" id="2d_view" name="map_style"><label for="2d_view">2D지도</label></input></li>
-            </ul>
+            @@include('../inc/module/h_legend.html')             
+            @@include('../inc/module/map_style.html')
           </div>
         </div>             
       </section>
       <!-- 중앙__e -->
+      <!-- 오른쪽패널 -->
+      @@include('../inc/module/right_pannel.html')
+      <!-- 오른쪽패널__e -->
     </div>  
   </main>
   @@include('../inc/footer.html')
   @@include('../inc/pop/p_areaSelect.html')
-  @@include('../inc/pop/p_report.html')
 </div>
 @@include('../inc/script.html')
 <script src="../js/radar_chart2.js"></script>

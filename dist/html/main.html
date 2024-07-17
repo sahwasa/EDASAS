@@ -90,81 +90,72 @@
             <h1>종합안전도 평가</h1>
             <section class="filter">
               <div class="flex_wrap">
-                <select name="" id="" title="시군구" class="sigungu"><option value="">포항시</option></select>
-                <span class="ipt_wrap">
-                  <input type="text" id="form_referrer" placeholder="지역검색" list="areaLst" autocomplete="off">
-                  <button type="button" class="btn_add"  popovertarget="p_areaSelect">추가</button>
-                </span>
-                <datalist id="areaLst">
-                  <optgroup label="포항시">
-                    <option value="북구">포항시 북구</option>
-                    <option value="남구">포항시 남구</option>
-                  </optgroup>
-                </datalist>
+                <select name="" id="" title="단위 선택" class="lv" data-seltab="lv_opt">
+                  <option value="sido">시도</option><option value="sigungu">시군구</option>
+                </select>
+                <div class="seltab_wrap" id="lv_opt">
+                  <div class="seltab_opt" id="sido">
+                    <ul class="areaLst btn_switch">
+                      <li><input type="checkbox" id="area1" name="area" checked><label for="area1">부산</label></li>
+                      <li><input type="checkbox" id="area2" name="area" checked><label for="area2">울산</label></li>
+                    </ul>
+                  </div>
+                  <div class="seltab_opt ipt_wrap" id="sigungu">
+                    <select name="" id="">
+                      <option value="">부산</option>
+                      <option value="">울산</option>
+                      <option value="">경북</option>
+                      <option value="">경남</option>
+                    </select>
+                    <input type="text" id="form_referrer" placeholder="지역검색" list="areaLst" autocomplete="off">
+                  </div>
+                </div>
               </div>
               <ul class="select_lst">
-                <li class="user_area"><p>포항시 북구</p><button type="button" title="삭제">삭제</button></li>
-                <li><p>포항시 남구</p><button type="button" title="삭제">삭제</button></li>
+                <li class="user_area"><p>부산</p><button type="button" title="삭제">삭제</button></li>
+                <li><p>울산</p><button type="button" title="삭제">삭제</button></li>
               </ul>
             </section>
           </header>
-          <div class="btn_area">
-            <button type="button" class="btn_blue simul">선택 지역 시뮬레이션</button>
-          </div>
-          <article class="pannel_body main_result">
+          
+          <article class="pannel_body">
             <section>
               <div class="tit">
                 <h1>평가결과</h1>
                 <div class="tool_wrap">
-                  <!-- <button type="button" class="btn_blue">시뮬레이션</button> -->
-                  <button type="button" class="btn_gray" popovertarget="p_report">평가보고서</button>
-                  <button type="button" class="btn_pdf">PDF저장</button>
-                  <button type="button" class="btn_print">인쇄</button>
+                  <button type="button" class="btn_gray" popovertarget="p_report">종합 안전도 평가결과</button>
                 </div>
               </div>
               <div class="summary">
-                <span class="date">평가일 2023-10-10</span>
+                <div class="chartwrap">
+                  <canvas id="radarchart"></canvas>
+                </div>                   
                 <ul class="eval_result_lst">
-                  <!-- <li class="grade0"><strong>-</strong>
-                    <p>포항시 북구 지역은 수집된 자료가 없습니다.</p>
-                  </li>
-                  <li class="grade1"><strong>안전</strong>
-                    <p>포항시 남구 지역은 <em>종합안전도 평가</em>에서 안전지수가 상대적으로 높은편이며, 포항시 남구 
-                    지역은 <em>종합안전도 평가</em>에서 안전지수가 상대적으로 보통입니다</p>
-                  </li> -->
-                  <li class="grade2"><strong>보통</strong>
-                    <p><em>포항시 북구</em> 지역은 <em>종합안전도 평가</em>에서 안전지수 등급이 2등급으로 보통에 해당하며, <em>포항시 남구</em> 지역 또한 종합안전도 평가에서 안전지수 등급이 2등급으로 보통에 해당합니다.</p>
-                  </li>
-                  <!-- <li class="grade3"><strong>주의</strong>
-                    <p>포항시 남구 지역은 <em>종합안전도 평가</em>에서 안전지수가 상대적으로 높은편이며, 포항시 남구 
-                    지역은 <em>종합안전도 평가</em>에서 안전지수가 상대적으로 보통입니다</p>
-                  </li> -->
-                  <!-- <li class="grade4"><strong>경계</strong>
-                    <p>포항시 북구 지역은 <em>종합안전도 평가</em>에서 안전지수가 상대적으로 높은편이며, 포항시 남구 
-                    지역은 <em>종합안전도 평가</em>에서 안전지수가 상대적으로 높은편 입니다</p>
-                  </li>
-                  <li class="grade5"><strong>심각</strong>
-                    <p>포항시 남구 지역은 <em>종합안전도 평가</em>에서 안전지수가 상대적으로 높은편이며, 포항시 남구 
-                    지역은 <em>종합안전도 평가</em>에서 안전지수가 상대적으로 보통입니다</p>
-                  </li> -->
+                  <li class="grade2">
+                    <div class="pie" style="--val:81;">
+                      <div class="pie_txt">
+                        <span><em>2</em>등급</span>
+                        <p class="score">(81점)</p>
+                      </div>
+                    </div>
+                    <div class="desc">
+                      <em>부산</em>
+                      <p>포항시 외곽에 위치한 <em>송도동, 양학동</em>은 지진동에 의한 <em>건축물 피해위험도 등급</em>이 낮은 편이며, 포항시 중심부에 위치한 <em>죽장면, 구룡포읍</em>은 상대적으로 등급이 높은 편입니다.</p>                        
+                    </div>
+                  </li>                
+                  <li class="grade3">
+                    <div class="pie" style="--val:81;">
+                      <div class="pie_txt">
+                        <span><em>3</em>등급</span>
+                        <p class="score">(81점)</p>
+                      </div>
+                    </div>
+                    <div class="desc">
+                      <em>울산</em>
+                      <p>포항시 외곽에 위치한 <em>송도동, 양학동</em>은 지진동에 의한 <em>건축물 피해위험도 등급</em>이 낮은 편이며, 포항시 중심부에 위치한 <em>죽장면, 구룡포읍</em>은 상대적으로 등급이 높은 편입니다.</p>                        
+                    </div>
+                  </li>                
                 </ul>
-                <p>포항시 북구와 포항시 남구의 종합안전도 평가지수 등급은 <b>2등급(보통)</b> 입니다.</p>
-              </div>
-              <div class="pie_graphwrap">
-                <div class="pie" style="--val:63;">
-                  <strong>포항시 북구</strong>
-                  <div class="pie_txt">
-                    <span><em>2</em>등급</span>
-                    <p class="score">(63점)</p>
-                  </div>
-                </div>
-                <div class="pie" style="--val:62;">
-                  <strong>포항시 남구</strong>
-                  <div class="pie_txt">
-                    <span><em>2</em>등급</span>
-                    <p class="score">(62점)</p>
-                  </div>
-                </div>                
               </div>
               <div class="meter_wrap">
                 <div class="meter_unit">
@@ -184,11 +175,11 @@
                     <meter id="average" value="62.3" min="0" max="100"></meter>
                   </li>
                   <li>
-                    <label for="area1">포항시 북구</label>
+                    <label for="area1">포항 북구</label>
                     <meter id="area1" value="62.6" min="0" max="100"></meter>
                   </li>
                   <li>
-                    <label for="area2">포항시 남구</label>
+                    <label for="area2">포항 남구</label>
                     <meter id="area2" value="62.0" min="0" max="100"></meter>
                   </li>
                 </ul>                
@@ -196,7 +187,7 @@
             </section>
             <section>
               <div class="tit">
-                <h2>세부결과</h2>
+                <h2>지역별 평가결과</h2>
                 <span class="tool_wrap unit">(점수)</span>
               </div>
               <div class="heatmap_wrap">
@@ -241,14 +232,70 @@
                 </div>                                
               </div>
             </section>
-            <section class="conclusion divide">
+            <section>
               <div class="tit">
-                <h2>결과 요약 및 행동방안</h2>
+                <h2>단위위험도별 평가결과</h2>
+                <span class="tool_wrap unit">등급 (점수)</span>
               </div>
-              <ul class="action_plan">
-                <li><em>포항시 북구</em>는 상대적으로 종합안전도 등급이 높으므로 현 상황을 잘 유지합니다.</li>
-                <li><em>포항시 남구</em>는 특히 <em>송도동, 청림동</em>의 종합안전도 등급이 낮게 나왔으므로 단위안전도 결과에 따른 대응이 필요합니다.</li>
-              </ul>
+              <div class="tbl_wrap">                
+                <table class="tbl_default tbl_comprehensive_safety">
+                  <caption>세부 지역별 지수</caption>
+                  <thead>
+                    <tr>
+                      <th scope="col">구분</th>
+                      <th scope="col">종합 안전도</th>
+                      <th scope="col">건축물 피해 위험도</th>
+                      <th scope="col">지진화재 위험도</th>
+                      <th scope="col">복구 역량도</th>
+                      <th scope="col">대피 안전도</th>
+                      <th scope="col">긴급대응 도로·공간 확보계수</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr class="rowgroup">
+                      <td>포항 북구</td>
+                      <td>2<span>83.1</span></td>
+                      <td>2<span>62.3</span></td>
+                      <td>4<span>38.9</span></td>
+                      <td>2<span>78.3</span></td>
+                      <td>1<span>99.5</span></td>
+                      <td>3<span>49.4</span></td>
+                    </tr>
+                    <tr><td>기계면</td><td>2<span>63.4</span></td><td>2<span>86.2</span></td><td>3<span>41.5</span></td><td>3<span>72.1</span></td><td>1<span>100</span></td><td>2<span> 56.3</span></td></tr>
+                    <tr><td>기북면</td><td>2<span>64.2</span></td><td>2<span>88.4</span></td><td>5<span>5.5 </span></td><td>3<span>74.4</span></td><td>1<span>100</span></td><td>4<span> 45.3</span></td></tr>
+                    <tr><td>두호동</td><td>2<span>66.8</span></td><td>3<span>74.5</span></td><td>4<span>22.1</span></td><td>2<span>84.3</span></td><td>1<span>100</span></td><td>3<span> 52.2</span></td></tr>
+                    <tr><td>송라면</td><td>3<span>57.7</span></td><td>1<span>92.3</span></td><td>4<span>35.9</span></td><td>3<span>72.9</span></td><td>1<span>100</span></td><td>5<span> 37.7</span></td></tr> 
+                    <tr><td>신광면</td><td>2<span>63.0</span></td><td>1<span>92.0</span></td><td>3<span>49.8</span></td><td>2<span>79.2</span></td><td>1<span>100</span></td><td>2<span> 53.3</span></td></tr> 
+                    <tr><td>양학동</td><td>2<span>66.3</span></td><td>4<span>67.3</span></td><td>5<span>2.8 </span></td><td>2<span>84.8</span></td><td>1<span>100</span></td><td>4<span> 43.6</span></td></tr> 
+                    <tr><td>용흥동</td><td>2<span>63.3</span></td><td>3<span>77.5</span></td><td>3<span>52.5</span></td><td>2<span>78.6</span></td><td>1<span>100</span></td><td>1<span> 58.1</span></td></tr> 
+                    <tr><td>우창동</td><td>2<span>68.5</span></td><td>3<span>73.7</span></td><td>5<span>13.8</span></td><td>1<span>86.1</span></td><td>1<span>100</span></td><td>1<span> 57.7</span></td></tr> 
+                    <tr><td>장량동</td><td>2<span>60.3</span></td><td>3<span>73.7</span></td><td>3<span>55.3</span></td><td>1<span>85.4</span></td><td>1<span>92.8</span</td><td>1<span>44.6</span></td></tr> 
+                    <tr class="rowgroup">
+                      <td>포항 남구</td>
+                      <td>2<span>62.9</span></td>
+                      <td>2<span>84.7</span></td>
+                      <td>3<span>44.2</span></td>
+                      <td>3<span>72.6</span></td>
+                      <td>1<span>100 </span></td>
+                      <td>3<span>50.7</span></td>
+                    </tr>
+                    <tr><td>구룡포읍</td><td>2<span>62.1</span></td><td>1<span>97.2</span></td><td>2<span>66.4</span></td><td>1<span>87.4</span></td><td>1<span>100</span></td><td>3<span>52.5</span></td></tr>
+                    <tr><td>대송면</td>  <td>2<span>65.5</span></td><td>2<span>87.2</span></td><td>4<span>33.2</span></td><td>2<span>80.4</span></td><td>1<span>100</span></td><td>2<span>55.6</span></td></tr>
+                    <tr><td>대이동</td>  <td>2<span>67.4</span></td><td>3<span>78.4</span></td><td>5<span>8.3</span> </td><td>2<span>82.9</span></td><td>1<span>100</span></td><td>3<span>47.3</span></td></tr>
+                    <tr><td>동해면</td>  <td>2<span>65.8</span></td><td>2<span>86.7</span></td><td>3<span>47.0</span></td><td>2<span>79.1</span></td><td>1<span>100</span></td><td>1<span>62.0</span></td></tr>
+                    <tr><td>상대동</td>  <td>3<span>59.9</span></td><td>2<span>84.4</span></td><td>3<span>44.2</span></td><td>4<span>63.5</span></td><td>1<span>100</span></td><td>4<span>45.5</span></td></tr>
+                    <tr><td>송도동</td>  <td>3<span>53.6</span></td><td>3<span>75.8</span></td><td>4<span>24.9</span></td><td>5<span>21.7</span></td><td>1<span>100</span></td><td>5<span>36.1</span></td></tr>
+                    <tr><td>연일읍</td>  <td>2<span>63.2</span></td><td>3<span>70.4</span></td><td>2<span>69.1</span></td><td>3<span>73.8</span></td><td>1<span>100</span></td><td>1<span>70.1</span></td></tr>
+                    <tr><td>오천읍</td>  <td>2<span>60.4</span></td><td>2<span>84.3</span></td><td>2<span>71.9</span></td><td>2<span>78.8</span></td><td>1<span>100</span></td><td>2<span>53.3</span></td></tr>
+                    <tr><td>장기면</td>  <td>3<span>56.8</span></td><td>1<span>94.7</span></td><td>3<span>58.1</span></td><td>2<span>75.3</span></td><td>1<span>100</span></td><td>5<span>40.3</span></td></tr>
+                    <tr><td>제철동</td>  <td>3<span>53.6</span></td><td>3<span>71.1</span></td><td>1<span>80.2</span></td><td>1<span>86.1</span></td><td>1<span>100</span></td><td>5<span>36.4</span></td></tr>
+                    <tr><td>청림동</td>  <td>3<span>57.4</span></td><td>2<span>86.4</span></td><td>2<span>60.8</span></td><td>3<span>68.0</span></td><td>1<span>100</span></td><td>4<span>46.4</span></td></tr>
+                    <tr><td>해도동</td>  <td>2<span>68.5</span></td><td>2<span>87.3</span></td><td>5<span>16.6</span></td><td>4<span>55.4</span></td><td>1<span>100</span></td><td>1<span>69.5</span></td></tr>
+                    <tr><td>호미곶면</td><td>2<span>66.3</span></td><td>1<span>95.5</span></td><td>5<span>11.1</span></td><td>2<span>75.4</span></td><td>1<span>100</span></td><td>4<span>44.9</span></td></tr>
+                    <tr><td>효곡동</td>  <td>2<span>67.0</span></td><td>2<span>86.5</span></td><td>4<span>27.7</span></td><td>1<span>88.3</span></td><td>1<span>100</span></td><td>3<span>49.5</span></td></tr>
+                  </tbody>
+                </table>
+              </div>
             </section>
           </article>
         </div>
@@ -257,7 +304,7 @@
       <!-- 중앙 -->
       <section class="contents">
         <button type="button" class="evt_tgl sidePannel_fold" data-value="off" data-foldtarget="sidePannel_wrap" data-on="왼쪽패널 열기" data-off="왼쪽패널 닫기" title="왼쪽패널 닫기">왼쪽패널 닫기</button>
-        <!-- <button type="button" class="evt_tgl sidePannel_fold right_pannel" data-value="on" data-foldtarget="dtlPannel_wrap" data-on="오른쪽패널 열기" data-off="오른쪽패널 닫기" title="오른쪽패널 열기">오른쪽패널 열기</button> -->
+        <button type="button" class="evt_tgl sidePannel_fold right_pannel" data-value="on" data-foldtarget="dtlPannel_wrap" data-on="오른쪽패널 열기" data-off="오른쪽패널 닫기" title="오른쪽패널 열기">오른쪽패널 열기</button>
         <div class="map_wrap">
           <div class="temp_map">
             <img src="../images/temp/temp_map_default.png" id="temp_map" class="temp_map" alt="임시 지도배경">
@@ -300,13 +347,6 @@
                 </div>
               </li>
             </ul>
-            <ul class="map_type btn_switch">
-              <li><input type="radio" id="map_type1" name="map_type" checked><label for="map_type1">지역위험도</label></li>
-              <li><input type="radio" id="map_type2" name="map_type"><label for="map_type2">지반(부지)분류도</label></li>
-              <li><input type="radio" id="map_type3" name="map_type"><label for="map_type3">건물 노후도</label></li>
-              <li><input type="radio" id="map_type4" name="map_type"><label for="map_type4">내진 분포도</label></li>
-              <li><input type="radio" id="map_type5" name="map_type"><label for="map_type5">인구 분포도</label></li>
-            </ul>
             <div class="map_legend">
   <details open>
     <summary>
@@ -323,7 +363,6 @@
           <li class="grade3">3등급</li>
           <li class="grade4">4등급</li>
           <li class="grade5">5등급</li>
-          <li class="grade0">자료없음</li>
         </ul>
       </section>
       <section class="distribution_legend">                
@@ -340,14 +379,55 @@
 </div>
       
             <ul class="map_style btn_switch">
-              <li><input type="radio" id="default_view" name="map_style" checked><label for="default_view">일반지도</label></input></li>
-              <li><input type="radio" id="sky_view" name="map_style"><label for="sky_view">위성지도</label></input></li>
-              <li><input type="radio" id="2d_view" name="map_style"><label for="2d_view">2D지도</label></input></li>
-            </ul>
+  <li><input type="radio" id="default_view" name="map_style" checked><label for="default_view">일반지도</label></input></li>
+  <li><input type="radio" id="sky_view" name="map_style"><label for="sky_view">위성지도</label></input></li>
+  <li><input type="radio" id="2d_view" name="map_style"><label for="2d_view">2D지도</label></input></li>
+</ul>    
           </div>
         </div>
       </section>
-      <!-- 중앙__e -->      
+      <!-- 중앙__e -->
+      <!-- 오른쪽패널 -->
+      <section class="pannel dtl_contents dtlPannel_wrap">
+  <div class="pannel_wrap">          
+    <article class="pannel_body">
+      <section class="sub_tit">
+        <label for="safety"><input type="radio" name="layer" id="safety" checked>지역안전도</label>
+      </section>
+      <section>
+        <header class="sub_tit">
+          <em class="label">기초데이터</em>
+        </header>   
+        <ul class="map_type">
+          <li><strong>지반정보</strong>
+            <ul class="sub_type">
+              <li><label for="map_type2_1"><input type="radio" id="map_type2_1" name="layer">기반암 심도(H)</label></li>
+              <li><label for="map_type2_2"><input type="radio" id="map_type2_2" name="layer">토층 평균 전단파속도 (VS,Soil)</label></li>
+              <li><label for="map_type2_3"><input type="radio" id="map_type2_3" name="layer">심도 30m까지 평균 전단파속도 (VS30)</label></li>
+              <li><label for="map_type2_4"><input type="radio" id="map_type2_4" name="layer">부지주기 (TG)</label></li>
+              <li><label for="map_type2_5"><input type="radio" id="map_type2_5" name="layer">기반암 심도(H)</label></li>
+              <li><label for="map_type2_6"><input type="radio" id="map_type2_6" name="layer">기반암 심도(H)</label></li>
+            </ul>
+          </li>
+          <li><label for="map_type3"><input type="radio" id="map_type3" name="layer">건물 노후도</label></li>
+          <li><label for="map_type4"><input type="radio" id="map_type4" name="layer">내진 분포도</label></li>
+          <li><label for="map_type5"><input type="radio" id="map_type5" name="layer">인구 분포도</label></li>
+        </ul>
+      </section>
+      <section>
+        <header class="sub_tit">
+          <em class="label">주요시설 분포도</em>
+        </header>              
+        <ul class="symbols">
+          <li><label for="fac1"><input type="checkbox" id="fac1" name="" />소방서</label></li>
+          <li><label for="fac2"><input type="checkbox" id="fac2" name="" />임시대피시설</label></li>
+          <li><label for="fac3"><input type="checkbox" id="fac3" name="" />병원</label></li>
+        </ul>
+      </section>
+    </article>
+  </div>
+</section>
+      <!-- 오른쪽패널__e -->
     </div>  
   </main>
   <footer class="footer">
@@ -417,17 +497,17 @@ Copyright © 2024 국립재난안전연구원. All rights reserved.
   <dialog id="p_report" class="p_report" style="--width:870px" popover="manual">
   <form method="dialog">
     <header class="p_header tit">
-      <h1>평가보고서</h1>
+      <h1 class="blind">종합 안전도 평가결과</h1>
       <div class="tool_wrap">
         <button type="button" class="btn_pdf">PDF저장</button>
-        <button type="button" class="btn_print">인쇄</button>
+        <button type="button" class="btn_print" onclick="printElement('printArea')">인쇄</button>
         <button type="button" class="btn_close" popovertarget="p_report" popvertargetaction="hide">닫기</button>
       </div>
     </header>
     <section class="p_body">
-      <article class="report_wrap">
+      <article id="printArea" class="report_wrap">
         <header>
-          <h1>종합 평가 보고서</h1>
+          <h1>종합 안전도 평가결과</h1>
           <span class="date">평가일 2023-10-10</span>
         </header>
         <div class="report_body">
@@ -436,11 +516,75 @@ Copyright © 2024 국립재난안전연구원. All rights reserved.
             <p>부산, 경주, 포항</p>
           </section>
           <section>
-            <h2>평가결과</h2>
-            <p>포항시 북구와 포항시 남구의 종합안전도 평가지수 등급은 <em>2등급(보통)</em> 입니다</p>
+            <h2>종합안전도</h2>
+            <p>포항시 북구와 포항시 남구의 종합안전도 평가지수 등급은 <em>2등급(보통)</em> 
             <div class="graphs_wrap">
               <div class="chartwrap radar">
                 <canvas id="p_radarchart"></canvas>
+              </div>
+              <div class="summary pie_graphwrap">                    
+                <ul class="eval_result_lst">
+                  <li class="grade2">
+                    <div class="pie" style="--val:81;">
+                      <div class="pie_txt">
+                        <span><em>2</em>등급</span>
+                        <p class="score">(81점)</p>
+                      </div>
+                    </div>
+                    <div class="desc">
+                      <em>부산</em>
+                      <p>포항시 외곽에 위치한 <em>송도동, 양학동</em>은 지진동에 의한 <em>건축물 피해위험도 등급</em>이 낮은 편이며, 포항시 중심부에 위치한 <em>죽장면, 구룡포읍</em>은 상대적으로 등급이 높은 편입니다.</p>                        
+                    </div>
+                  </li>                
+                  <li class="grade2">
+                    <div class="pie" style="--val:81;">
+                      <div class="pie_txt">
+                        <span><em>2</em>등급</span>
+                        <p class="score">(81점)</p>
+                      </div>
+                    </div>
+                    <div class="desc">
+                      <em>부산</em>
+                      <p>포항시 외곽에 위치한 <em>송도동, 양학동</em>은 지진동에 의한 <em>건축물 피해위험도 등급</em>이 낮은 편이며, 포항시 중심부에 위치한 <em>죽장면, 구룡포읍</em>은 상대적으로 등급이 높은 편입니다.</p>                        
+                    </div>
+                  </li>                
+                  <li class="grade2">
+                    <div class="pie" style="--val:81;">
+                      <div class="pie_txt">
+                        <span><em>2</em>등급</span>
+                        <p class="score">(81점)</p>
+                      </div>
+                    </div>
+                    <div class="desc">
+                      <em>부산</em>
+                      <p>포항시 외곽에 위치한 <em>송도동, 양학동</em>은 지진동에 의한 <em>건축물 피해위험도 등급</em>이 낮은 편이며, 포항시 중심부에 위치한 <em>죽장면, 구룡포읍</em>은 상대적으로 등급이 높은 편입니다.</p>                        
+                    </div>
+                  </li>                
+                  <li class="grade2">
+                    <div class="pie" style="--val:81;">
+                      <div class="pie_txt">
+                        <span><em>2</em>등급</span>
+                        <p class="score">(81점)</p>
+                      </div>
+                    </div>
+                    <div class="desc">
+                      <em>부산</em>
+                      <p>포항시 외곽에 위치한 <em>송도동, 양학동</em>은 지진동에 의한 <em>건축물 피해위험도 등급</em>이 낮은 편이며, 포항시 중심부에 위치한 <em>죽장면, 구룡포읍</em>은 상대적으로 등급이 높은 편입니다.</p>                        
+                    </div>
+                  </li>                
+                  <li class="grade3">
+                    <div class="pie" style="--val:81;">
+                      <div class="pie_txt">
+                        <span><em>3</em>등급</span>
+                        <p class="score">(81점)</p>
+                      </div>
+                    </div>
+                    <div class="desc">
+                      <em>울산</em>
+                      <p>포항시 외곽에 위치한 <em>송도동, 양학동</em>은 지진동에 의한 <em>건축물 피해위험도 등급</em>이 낮은 편이며, 포항시 중심부에 위치한 <em>죽장면, 구룡포읍</em>은 상대적으로 등급이 높은 편입니다.</p>                        
+                    </div>
+                  </li>                
+                </ul>
               </div>
               <div class="legend_body">
                 <section class="safety_grade">
@@ -454,23 +598,7 @@ Copyright © 2024 국립재난안전연구원. All rights reserved.
                     <li class="grade0">자료없음</li>
                   </ul>
                 </section>
-              </div>
-              <div class="pie_graphwrap">
-                <div class="pie" style="--val:70;">
-                  <strong>부산</strong>
-                  <div class="pie_txt">
-                    <span><em>2</em>등급</span>
-                    <p class="score">(62점)</p>
-                  </div>
-                </div>
-                <div class="pie" style="--val:70;">
-                  <strong>경북(경주,포항)</strong>
-                  <div class="pie_txt">
-                    <span><em>2</em>등급</span>
-                    <p class="score">(63점)</p>
-                  </div>
-                </div>               
-              </div>
+              </div>              
               <div class="meter_wrap">
                 <div class="meter_unit">
                   <strong>(점수)</strong>
@@ -502,147 +630,7 @@ Copyright © 2024 국립재난안전연구원. All rights reserved.
           </section>
           <section>
             <!-- (읍면동단위 고정) -->
-            <h2>세부결과</h2>            
-            <div class="heatmap_wrap">
-              <div class="heatmap">
-                <strong>부산 서구<span class="score">62</span></strong>
-                <ul>
-                  <li>부민동<span class="score">64</span></li>
-                  <li>남부민동<span class="score">55</span></li>
-                  <li>동대신동<span class="score">62</span></li>
-                  <li>서대신동<span class="score">57</span></li>
-                  <li>아미동<span class="score">65</span></li>
-                  <li>암남동<span class="score">57</span></li>
-                  <li>초장동<span class="score">66</span></li>
-                  <li>충무동<span class="score">62</span></li>                  
-                </ul>
-              </div>
-              <div class="heatmap">
-                <strong>부산 동구<span class="score">62</span></strong>
-                <ul>
-                  <li>범일동<span class="score">64</span></li>
-                  <li>좌천동<span class="score">55</span></li>
-                  <li>수정동<span class="score">62</span></li>
-                  <li>초량동<span class="score">57</span></li>
-                </ul>
-              </div>
-              <div class="heatmap">
-                <strong>부산 영도구<span class="score">62</span></strong>
-                <ul>
-                  <li>남항동<span class="score">64</span></li>
-                  <li>동삼동<span class="score">55</span></li>
-                  <li>봉래동<span class="score">62</span></li>
-                  <li>신선동<span class="score">57</span></li>
-                  <li>영선동<span class="score">57</span></li>
-                  <li>청학동<span class="score">57</span></li>
-                </ul>
-              </div>
-              <div class="heatmap">
-                <strong>포항 북구<span class="score">62</span></strong>
-                <ul>
-                  <li>기계면<span class="score">64</span></li>
-                  <li>기북면<span class="score">55</span></li>
-                  <li>두호동<span class="score">62</span></li>
-                  <li>송라면<span class="score">57</span></li>
-                  <li>신광면<span class="score">65</span></li>
-                  <li>양학동<span class="score">57</span></li>
-                  <li>용흥동<span class="score">66</span></li>
-                  <li>우창동<span class="score">62</span></li>
-                  <li>장량동<span class="score">64</span></li>
-                  <li>죽도동<span class="score">65</span></li>
-                  <li>죽장면<span class="score">55</span></li>
-                  <li>중앙동<span class="score">69</span></li>
-                  <li>청하면<span class="score">62</span></li>
-                  <li>환여동<span class="score">62</span></li>
-                  <li>흥해읍<span class="score">69</span></li>
-                </ul>
-              </div>
-              <div class="heatmap">
-                <strong>포항 남구<span class="score">63</span></strong>
-                <ul>                    
-                  <li>구룡포읍<span class="score">69</span></li>
-                  <li>대송면<span class="score">64</span></li>
-                  <li>대이동<span class="score">59</span></li>
-                  <li>동해면<span class="score">67</span></li>
-                  <li>상대동<span class="score">62</span></li>
-                  <li>송도동<span class="score">51</span></li>
-                  <li>연일읍<span class="score">70</span></li>
-                  <li>오천읍<span class="score">68</span></li>
-                  <li>장기면<span class="score">62</span></li>
-                  <li>제철동<span class="score">62</span></li>
-                  <li>청림동<span class="score">62</span></li>
-                  <li>해도동<span class="score">63</span></li>
-                  <li>호미곶면<span class="score">59</span></li>
-                  <li>효곡동<span class="score">64</span></li>
-                </ul>
-              </div>                                
-            </div>
-            <div class="tbl_wrap">                
-              <table class="tbl_default tbl_comprehensive_safety">
-                <caption>세부 지역별 지수</caption>
-                <thead>
-                  <tr>
-                    <th scope="col">구분</th>
-                    <th scope="col">종합안전도</th>
-                    <th scope="col">건축물피해 위험도</th>
-                    <th scope="col">지진화재 위험도</th>
-                    <th scope="col">복구역량도</th>
-                    <th scope="col">대피안전도</th>
-                    <th scope="col">방재안전도</th>
-                    <th scope="col">긴급대응 도로·공간 확보계수</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr class="rowgroup">
-                    <td>포항시 북구</td>
-                    <td>62.3 (2)</td>
-                    <td>83.1 (2)</td>
-                    <td>38.9 (4)</td>
-                    <td>78.3 (2)</td>
-                    <td>99.5 (1)</td>
-                    <td>49.4 (3)</td>
-                  </tr>
-                  <tr><td>기계면</td><td>63.5 (2)</td><td>86.2 (2)</td><td>41.5 (3)</td><td>72.1 (3)</td><td>100 (1)</td><td>56.3 (2)</td></tr>
-                  <tr><td>기북면</td><td>55.3 (3)</td><td>88.4 (2)</td><td>5.5 (5)</td> <td>74.4 (3)</td><td>100 (1)</td><td>45.3 (4)</td></tr>
-                  <tr><td>두호동</td><td>61.7 (2)</td><td>74.5 (3)</td><td>22.1 (4)</td><td>84.3 (2)</td><td>100 (1)</td><td>52.2 (3)</td></tr>
-                  <tr><td>송라면</td><td>56.7 (3)</td><td>92.3 (1)</td><td>35.9 (4)</td><td>72.9 (3)</td><td>100 (1)</td><td>37.7 (5)</td></tr> 
-                  <tr><td>신광면</td><td>65.4 (2)</td><td>92.0 (1)</td><td>49.8 (3)</td><td>79.2 (2)</td><td>100 (1)</td><td>53.3 (2)</td></tr> 
-                  <tr><td>양학동</td><td>56.9 (3)</td><td>67.3 (4)</td><td>2.8 (5)</td> <td>84.8 (2)</td><td>100 (1)</td><td>43.6 (4)</td></tr> 
-                  <tr><td>용흥동</td><td>66.4 (2)</td><td>77.5 (3)</td><td>52.5 (3)</td><td>78.6 (2)</td><td>100 (1)</td><td>58.1 (1)</td></tr> 
-                  <tr><td>우창동</td><td>61.7 (2)</td><td>73.7 (3)</td><td>13.8 (5)</td><td>86.1 (1)</td><td>100 (1)</td><td>57.7 (1)</td></tr> 
-                  <tr><td>장량동</td><td>63.8 (2)</td><td>73.7 (3)</td><td>55.3 (3)</td><td>85.4 (1)</td><td>92.8 (1)</td><td>44.6 (4)</td></tr> 
-                  <tr><td>죽도동</td><td>65.2 (2)</td><td>84.9 (2)</td><td>63.6 (2)</td><td>59.0 (4)</td><td>100 (1)</td><td>54.1 (2)</td></tr>
-                  <tr><td>죽장면</td><td>54.6 (3)</td><td>96.9 (1)</td><td>19.4 (5)</td><td>85.8 (1)</td><td>100 (1)</td><td>23.0 (5)</td></tr>
-                  <tr><td>중앙동</td><td>69.1 (2)</td><td>85.5 (2)</td><td>77.4 (2)</td><td>69.8 (3)</td><td>100 (1)</td><td>57.8 (1)</td></tr>
-                  <tr><td>청하면</td><td>62.1 (2)</td><td>92.5 (1)</td><td>38.7 (4)</td><td>78.1 (2)</td><td>100 (1)</td><td>48.2 (3)</td></tr>
-                  <tr><td>환여동</td><td>62.0 (2)</td><td>77.8 (3)</td><td>30.4 (4)</td><td>80.5 (2)</td><td>100 (1)</td><td>51.6 (3)</td></tr>
-                  <tr><td>흥해읍</td><td>69.4 (2)</td><td>83.4 (2)</td><td>74.7 (2)</td><td>84.2 (2)</td><td>100 (1)</td><td>57.0 (2)</td></tr>
-                  <tr class="rowgroup">
-                    <td>포항시 남구</td>
-                    <td>62.9 (2)</td>
-                    <td>84.7 (2)</td>
-                    <td>44.2 (3)</td>
-                    <td>72.6 (3)</td>
-                    <td>100  (1)</td>
-                    <td>50.7 (3)</td>
-                  </tr>
-                  <tr><td>구룡포읍</td><td>68.8 (2)</td><td>97.2 (1)</td><td>66.4 (2)</td><td>87.4 (1)</td><td>100 (1)</td><td>52.5 (3)</td></tr>
-                  <tr><td>대송면</td>  <td>63.5 (2)</td><td>87.2 (2)</td><td>33.2 (4)</td><td>80.4 (2)</td><td>100 (1)</td><td>55.6 (2)</td></tr>
-                  <tr><td>대이동</td>  <td>59.2 (3)</td><td>78.4 (3)</td><td>8.3 (5)</td><td>82.9 (2)</td><td>100 (1)</td><td>47.3 (3)</td></tr>
-                  <tr><td>동해면</td>  <td>67.4 (2)</td><td>86.7 (2)</td><td>47.0 (3)</td><td>79.1 (2)</td><td>100 (1)</td><td>62.0 (1)</td></tr>
-                  <tr><td>상대동</td>  <td>61.5 (2)</td><td>84.4 (2)</td><td>44.2 (3)</td><td>63.5 (4)</td><td>100 (1)</td><td>45.5 (4)</td></tr>
-                  <tr><td>송도동</td>  <td>50.9 (3)</td><td>75.8 (3)</td><td>24.9 (4)</td><td>21.7 (5)</td><td>100 (1)</td><td>36.1 (5)</td></tr>
-                  <tr><td>연일읍</td>  <td>70.1 (2)</td><td>70.4 (3)</td><td>69.1 (2)</td><td>73.8 (3)</td><td>100 (1)</td><td>70.1 (1)</td></tr>
-                  <tr><td>오천읍</td>  <td>68.2 (2)</td><td>84.3 (2)</td><td>71.9 (2)</td><td>78.8 (2)</td><td>100 (1)</td><td>53.3 (2)</td></tr>
-                  <tr><td>장기면</td>  <td>61.5 (2)</td><td>94.7 (1)</td><td>58.1 (3)</td><td>75.3 (2)</td><td>100 (1)</td><td>40.3 (5)</td></tr>
-                  <tr><td>제철동</td>  <td>61.8 (2)</td><td>71.1 (3)</td><td>80.2 (1)</td><td>86.1 (1)</td><td>100 (1)</td><td>36.4 (5)</td></tr>
-                  <tr><td>청림동</td>  <td>62.3 (2)</td><td>86.4 (2)</td><td>60.8 (2)</td><td>68.0 (3)</td><td>100 (1)</td><td>46.4 (4)</td></tr>
-                  <tr><td>해도동</td>  <td>63.3 (2)</td><td>87.3 (2)</td><td>16.6 (5)</td><td>55.4 (4)</td><td>100 (1)</td><td>69.5 (1)</td></tr>
-                  <tr><td>호미곶면</td><td>59.2 (3)</td><td>95.5 (1)</td><td>11.1 (5)</td><td>75.4 (2)</td><td>100 (1)</td><td>44.9 (4)</td></tr>
-                  <tr><td>효곡동</td>  <td>63.5 (2)</td><td>86.5 (2)</td><td>27.7 (4)</td><td>88.3 (1)</td><td>100 (1)</td><td>49.5 (3)</td></tr>
-                </tbody>
-              </table>
-            </div>
+            <h2>지역별 평가결과</h2>
             <div class="meter_wrap dtl">
               <div class="meter_unit">
                 <strong>(점수)</strong>
@@ -696,15 +684,54 @@ Copyright © 2024 국립재난안전연구원. All rights reserved.
               </ul>                
             </div>
           </section>
-          <!-- <section>
-            <h2>결과 요약 및 행동방안</h2>
-            <div class="conclusion">
-              <ul class="action_plan">
-                <li><em>포항시 북구</em>는 상대적으로 종합안전도 등급이 높으므로 현 상황을 잘 유지합니다.</li>
-                <li><em>포항시 남구</em>는 특히 송도동과 청림동의 종합안전도 등급이 낮게 나왔으므로 대응이 필요합니다.</li>
-              </ul>
+          <section>
+            <h2>단위 위험도별 평가결과</h2>
+            <div class="tbl_wrap">                
+              <table class="tbl_default tbl_comprehensive_safety">
+                <caption>단위 위험도별 평가결과</caption>
+                <thead>
+                  <tr>
+                    <th scope="col">구분</th>
+                    <th scope="col">종합안전도</th>
+                    <th scope="col">건축물피해 위험도</th>
+                    <th scope="col">지진화재 위험도</th>
+                    <th scope="col">복구역량도</th>
+                    <th scope="col">대피안전도</th>
+                    <th scope="col">긴급대응 도로·공간 확보계수</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr class="rowgroup">
+                    <td>포항시 북구</td>
+                    <td>2<span>62.3</span></td>
+                    <td>2<span>83.1</span></td>
+                    <td>4<span>38.9</span></td>
+                    <td>2<span>78.3</span></td>
+                    <td>1<span>99.5</span></td>
+                    <td>3<span>49.4</span></td>
+                  </tr>
+                  <tr><td>기계면</td><td>2<span>63.5</span></td><td>2<span>86.2</span></td><td>3<span>41.5</span></td><td>3<span>72.1</span></td><td>1<span>100</span></td><td>2<span>56.3</span></td></tr>
+                  <tr><td>기북면</td><td>3<span>55.3</span></td><td>2<span>88.4</span></td><td>5<span>5.5</span></td> <td>3<span>74.4</span></td><td>1<span>100</span></td><td>4<span>45.3</span></td></tr>
+                  <tr><td>두호동</td><td>2<span>61.7</span></td><td>3<span>74.5</span></td><td>4<span>22.1</span></td><td>2<span>84.3</span></td><td>1<span>100</span></td><td>3<span>52.2</span></td></tr>
+                  <tr><td>송라면</td><td>3<span>56.7</span></td><td>1<span>92.3</span></td><td>4<span>35.9</span></td><td>3<span>72.9</span></td><td>1<span>100</span></td><td>5<span>37.7</span></td></tr>
+                  <tr class="rowgroup">
+                    <td>포항시 남구</td>
+                    <td>2<span>62.9</span></td>
+                    <td>2<span>84.7</span></td>
+                    <td>3<span>44.2</span></td>
+                    <td>3<span>72.6</span></td>
+                    <td>1<span>100 </span></td>
+                    <td>3<span>50.7</span></td>
+                  </tr>
+                  <tr><td>기계면</td><td>2<span>63.5</span></td><td>2<span>86.2</span></td><td>3<span>41.5</span></td><td>3<span>72.1</span></td><td>1<span>100</span></td><td>2<span>56.3</span></td></tr>
+                  <tr><td>기북면</td><td>3<span>55.3</span></td><td>2<span>88.4</span></td><td>5<span>5.5</span></td> <td>3<span>74.4</span></td><td>1<span>100</span></td><td>4<span>45.3</span></td></tr>
+                  <tr><td>두호동</td><td>2<span>61.7</span></td><td>3<span>74.5</span></td><td>4<span>22.1</span></td><td>2<span>84.3</span></td><td>1<span>100</span></td><td>3<span>52.2</span></td></tr>
+                  <tr><td>송라면</td><td>3<span>56.7</span></td><td>1<span>92.3</span></td><td>4<span>35.9</span></td><td>3<span>72.9</span></td><td>1<span>100</span></td><td>5<span>37.7</span></td></tr>
+                </tbody>
+              </table>
             </div>
-          </section> -->
+            
+          </section>          
         </div>
       </article>
     </section>
@@ -728,28 +755,27 @@ Copyright © 2024 국립재난안전연구원. All rights reserved.
 </script>
 <script src="../js/radar_chart.js"></script>
 <script>
-$('.simul').on('click',function(){
-  const pop = document.querySelector('.p_simul');
-  const btn = $(this);  
-  let timer;
-    btn.addClass('on');
-    pop.showModal();
-    timer = new Date();
-    console.log('시뮬레이션 시작 : ' + timer);
+// 방사형 그래프가 안나오네요 -ㅅ-;;?? ctrl + p 누르면 되는데...ㅠㅠ?
+function printElement(elem) {
+  var el = document.getElementById(elem);
+    var domClone = el.cloneNode(true);
+    var printSection = document.getElementById("printSection");    
     
-    setTimeout(()=>{
-      $('.main_result').css('display','flex');
-      $('.btn_area').hide();
-      btn.removeClass('on');
-      pop.classList.add('fin');
-      $('.right_pannel').trigger('click');
-      $('#temp_map').attr('src',path + 'temp_map_2_2.png')
-      timer = new Date();
-      console.log('시뮬레이션 완료 : '+timer);
-      setTimeout(() => {pop.close();}, 2000);
-    }, 5000);
-})
-  mapTgl('temp_map_2_2.png');
+    var chart = domClone.querySelector('#p_radarchart');
+    chart.id = 'cloneChart';
+    cloneChart = new Chart(chart,{
+      type: 'radar',
+      data: data,
+      options:options });
+    if (!printSection) {
+      var printSection = document.createElement("div");
+      printSection.id = "printSection";
+      document.body.appendChild(printSection);
+    }
+    printSection.innerHTML = "";
+    printSection.appendChild(domClone);
+    setTimeout(window.print(), 300);
+}
 </script>
 </body>
 </html>

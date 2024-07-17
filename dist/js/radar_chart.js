@@ -1,8 +1,8 @@
 const data = {
-  labels: ['종합안전도','건축물피해 위험도', '복구역량도', ['긴급대응 도로·공간','         확보계수'], '대피안전도','방재안전도', ['지진화재','위험도  ']],
+  labels: ['건축물피해 위험도', '복구역량도', ['긴급대응 도로·공간','         확보계수'], '대피안전도', ['지진화재','위험도  ']],
   datasets: [{
     label: '부산',
-    data: [80.5,20.1,83.1, 78.3, 49.4, 99.5, 38.9],
+    data: [80.5,20.1,83.1, 78.3, 49.4 ],
     fill: true,
     backgroundColor: '#16c87220',
     borderColor: '#16c872',
@@ -11,22 +11,12 @@ const data = {
     pointHoverBackgroundColor: '#fff',
     pointHoverBorderColor: '#16c872'
   }, {
-    label: '경북(경주,포항)',
-    data: [76.2,45.6,84.7, 72.6, 50.7, 100, 44.2],
+    label: '울산',
+    data: [76.2,45.6,84.7, 72.6, 50.7],
     fill: true,
     backgroundColor: '#fbc90020',
     borderColor: '#fbc900',
     pointBackgroundColor: '#fbc900',
-    pointBorderColor: '#fff',
-    pointHoverBackgroundColor: '#fff',
-    pointHoverBorderColor: '#fbc900'
-  }, {
-    label: '평균',
-    data: [96.2,75.6,54.7, 62.6, 90.7, 100, 84.2],
-    fill: true,
-    backgroundColor: '#00000008',
-    borderColor: '#ccc',
-    pointBackgroundColor: '#ccc',
     pointBorderColor: '#fff',
     pointHoverBackgroundColor: '#fff',
     pointHoverBorderColor: '#fbc900'
