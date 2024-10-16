@@ -136,19 +136,21 @@
             </section>
           </header>
           <article class="pannel_body">
-            <header class="tit">
-              <h1 class="blind">평가결과 요약</h1>
-              <div class="date">평가일 : 2024-01-30</div>              
-            </header>        
+            <div class="tit">
+              <h1>평가결과</h1>
+              <div class="tool_wrap">
+                <button type="button" class="btn_gray" popovertarget="p_report">평가보고서</button>
+              </div>
+            </div>      
             <ul class="tab tab_wrap tab_m">
               <li class="on"><a href="#bdh">일반건축물</a></li>
-              <li><a href="#structure">설계구조별</a></li>
-              <li><a href="#purpose">용도별</a></li>
+              <li><a href="#user_select">사용자선택</a></li>
             </ul>
             <div class="tab_container">
               <section class="tab_contents" id="bdh">
                 <section>
-                  <div class="summary">                    
+                  <div class="summary">         
+                    <span class="date">평가일 2023-10-10</span>
                     <ul class="eval_result_lst">
                       <li class="grade2">
                         <div class="pie" style="--val:81;">
@@ -265,40 +267,190 @@
                   </div>
                 </section>                
               </section>
-              <section class="tab_contents" id="structure">
-                <ul class="tab tab_wrap tab_s">
-                  <li><a href="#structure1">조적조</a></li>
-                  <li><a href="#structure2">목조</a></li>
-                  <li><a href="#structure3">필로티</a></li>
-                </ul>
-                <div class="tab_container">
-                  <section class="tab_contents" id="structure1">
-                    조적조
-                  </section>
-                  <section class="tab_contents" id="structure2">
-                    목조
-                  </section>
-                  <section class="tab_contents" id="structure3">
-                    필로티
-                  </section>
-                </div>
-              </section>
-              <section class="tab_contents" id="purpose">
-                <ul class="tab tab_wrap tab_s">
-                  <li class="on"><a href="#purpose1">주택</a></li>
-                  <li><a href="#purpose2">근린생활시설</a></li>
-                  <li><a href="#purpose3">교육시설</a></li>
-                </ul>
-                <div class="tab_container">
-                  <section class="tab_contents" id="purpose1">
-                    주택
-                  </section>
-                  <section class="tab_contents" id="purpose2">
-                    근린생활시설
-                  </section>
-                  <section class="tab_contents" id="purpose3">
-                    교육시설
-                  </section>
+              <section class="tab_contents" id="user_select">
+                <section class="select_structure">
+                  <div class="tit blind">
+                    <h2>설계구조 및 용도 선택</h2>
+                  </div>
+                  <dl>
+                    <dt>건축 설계구조</dt>
+                    <dd>
+                      <select name="" id="" multiple>
+                        <option value="C1">콘크리트모멘트골조</option>
+                        <option value="C2">무보강조적채움벽이 있는 콘크리트모멘트골조</option>
+                        <option value="C3">콘크리트전단벽</option>
+                        <option value="C4">콘크리트전단벽이 있는 콘크리트모멘트골조</option>
+                        <option value="PC1">프리캐스트 콘크리트전단벽</option>
+                        <option value="PC2">콘크리트전단벽이 있는 프리캐스트콘크리트모멘트골조</option>
+                        <option value="S1">철골모멘트골조</option>
+                        <option value="S2">철골가새가 있는 철골모멘트골조</option>
+                        <option value="S3">콘크리트전단벽이 있는 철골모멘트골조</option>
+                        <option value="S4">철골철근콘크리트구조</option>
+                        <option value="C5">필로티형 콘크리트전단벽</option>
+                        <option value="URM">무보강조적전단벽</option>
+                        <option value="W1">전통목구조</option>
+                        <option value="W2">서양식목구조</option>
+                      </select>
+                    </dd>
+                    <dt>건축물 용도</dt>
+                    <dd>
+                      <select name="" id="" multiple>
+                        <option value="">단독주택</option>
+                        <option value="">공동주택</option>
+                        <option value="">제1종근린생활시설</option>
+                        <option value="">문화 및 집회시설</option>
+                        <option value="">종교시설</option>
+                        <option value="">방송통신시설</option>
+                        <option value="">제2종근린생활시설</option>
+                        <option value="">판매시설</option>
+                        <option value="">운수시설</option>
+                        <option value="">의료시설</option>
+                        <option value="">교육연구시설</option>
+                        <option value="">노유자시설</option>
+                        <option value="">수련시설</option>
+                        <option value="">운동시설</option>
+                        <option value="">업무시설</option>
+                        <option value="">숙박시설</option>
+                        <option value="">위락시설</option>
+                        <option value="">공장</option>
+                        <option value="">창고시설</option>
+                        <option value="">위험물저장 및 처리시설</option>
+                        <option value="">자동차 관련</option>
+                        <option value="">동·식물 관려시설</option>
+                        <option value="">분뇨·쓰레기처리시설</option>
+                        <option value="">교정 및 군사시설</option>
+                        <option value="">발전시설</option>
+                        <option value="">묘지관련시설</option>
+                        <option value="">관광휴게시설</option>
+                        <option value="">가설건축물</option>
+                        <option value="">장례식장</option>
+                        <option value="">자원순환관련시설</option>
+                        <option value="">야영장시설</option>
+                      </select>
+                    </dd>
+                  </dl>
+                  <div class="btn_area">
+                    <button type="button" class="btn_blue_line">선택 적용</button>
+                  </div>
+                </section>
+                <section>
+                  <div class="summary">         
+                    <span class="date">평가일 2023-10-10</span>
+                    <ul class="eval_result_lst">
+                      <li class="grade2">
+                        <div class="pie" style="--val:81;">
+                          <div class="pie_txt">
+                            <span><em>2</em>등급</span>
+                            <p class="score">(81점)</p>
+                          </div>
+                        </div>
+                        <div class="desc">
+                          <em>부산</em>
+                          <p>포항시 외곽에 위치한 <em>송도동, 양학동</em>은 지진동에 의한 <em>건축물 피해위험도 등급</em>이 낮은 편이며, 포항시 중심부에 위치한 <em>죽장면, 구룡포읍</em>은 상대적으로 등급이 높은 편입니다.</p>                        
+                        </div>
+                      </li>                
+                      <li class="grade3">
+                        <div class="pie" style="--val:81;">
+                          <div class="pie_txt">
+                            <span><em>3</em>등급</span>
+                            <p class="score">(81점)</p>
+                          </div>
+                        </div>
+                        <div class="desc">
+                          <em>울산</em>
+                          <p>포항시 외곽에 위치한 <em>송도동, 양학동</em>은 지진동에 의한 <em>건축물 피해위험도 등급</em>이 낮은 편이며, 포항시 중심부에 위치한 <em>죽장면, 구룡포읍</em>은 상대적으로 등급이 높은 편입니다.</p>                        
+                        </div>
+                      </li>                
+                    </ul>
+                  </div>                  
+                  <div class="meter_wrap">
+                    <div class="meter_unit">
+                      <strong>(점수)</strong>
+                      <ul>
+                        <li><span>0</span></li>
+                        <li><span>20</span></li>
+                        <li><span>40</span></li>
+                        <li><span>60</span></li>
+                        <li><span>80</span></li>
+                        <li><span>100</span></li>
+                      </ul>
+                    </div>
+                    <ul class="area_lst">
+                      <li class="average">
+                        <label for="average">평균</label>
+                        <meter id="average" value="81.5" min="0" max="100"></meter>
+                      </li>
+                      <li>
+                        <label for="area1">부산</label>
+                        <meter id="area1" value="80.6" min="0" max="100"></meter>
+                      </li>
+                      <li>
+                        <label for="area1">경북(포항, 경주)</label>
+                        <meter id="area1" value="82.6" min="0" max="100"></meter>
+                      </li>
+                    </ul>                
+                  </div>             
+                </section>
+                <section>
+                  <div class="tit">
+                    <h2>지역별 평가결과</h2>
+                    <span class="tool_wrap">
+                      <button type="button" class="btn_excel">엑셀 다운로드</button>
+                    </span>
+                  </div>
+                  <div class="heatmap_wrap">
+                    <!-- 표출형식 시군구일때 -->
+                    <div class="heatmap">
+                      <strong>부산<span class="score">81</span></strong>
+                      <ul>                    
+                        <li>중구<span class="score">85</span></li>
+                        <li>해운대구<span class="score">88</span></li>
+                        <li>수영구<span class="score">76</span></li>
+                        <li>기장군<span class="score">89</span></li>                        
+                      </ul>
+                    </div>
+                    <!-- 표출형식 읍면동일때 -->
+                    <div class="heatmap">
+                      <strong>포항 북구<span class="score">81</span></strong>
+                      <ul>                    
+                        <li>야음장생포동<span class="score">85</span></li>
+                        <li>기북면<span class="score">88</span></li>
+                        <li>두호동<span class="score">76</span></li>
+                        <li>송라면<span class="score">89</span></li>
+                        <li>신광면<span class="score">90</span></li>
+                        <li>양학동<span class="score">65</span></li>
+                        <li>용흥동<span class="score">75</span></li>
+                        <li>우창동<span class="score">72</span></li>
+                        <li>장량동<span class="score">73</span></li>
+                        <li>죽도동<span class="score">77</span></li>
+                        <li>죽장면<span class="score">94</span></li>
+                        <li>중앙동<span class="score">78</span></li>
+                        <li>청하면<span class="score">90</span></li>
+                        <li>환여동<span class="score">75</span></li>
+                        <li>흥해읍<span class="score">82</span></li>
+                      </ul>
+                    </div>
+                    <div class="heatmap">
+                      <strong>포항 남구<span class="score">83</span></strong>
+                      <ul>
+                        <li>구룡포읍<span class="score">94</span></li>
+                        <li>대송면<span class="score">87</span></li>
+                        <li>대이동<span class="score">78</span></li>
+                        <li>동해면<span class="score">85</span></li>
+                        <li>상대동<span class="score">77</span></li>
+                        <li>송도동<span class="score">64</span></li>
+                        <li>연일읍<span class="score">71</span></li>
+                        <li>오천읍<span class="score">83</span></li>
+                        <li>장기면<span class="score">90</span></li>
+                        <li>제철동<span class="score">84</span></li>
+                        <li>청림동<span class="score">86</span></li>
+                        <li>해도동<span class="score">79</span></li>
+                        <li>호미곶면<span class="score">92</span></li>
+                        <li>효곡동<span class="score">87</span></li>
+                      </ul>
+                    </div>
+                  </div>
+                </section>
               </section>
             </div>        
           </article>          
@@ -393,11 +545,17 @@
   </details>
 </div>
       
-            <ul class="map_style btn_switch">
-  <li><input type="radio" id="default_view" name="map_style" checked><label for="default_view">일반지도</label></input></li>
-  <li><input type="radio" id="sky_view" name="map_style"><label for="sky_view">위성지도</label></input></li>
-  <li><input type="radio" id="2d_view" name="map_style"><label for="2d_view">2D지도</label></input></li>
-</ul>                
+            <div class="map_style">
+  <div class="divide">
+    <button type="button" class="btn_img">이미지저장</button>
+  </div>
+  <ul class="btn_switch">
+    <li><label for="area_name"><input type="checkbox" id="area_name" name="area_name" checked>행정명 보기</label></li>
+    <li><label for="default_view"><input type="radio" id="default_view" name="map_style" checked>일반지도</label></li>
+    <li><label for="sky_view"><input type="radio" id="sky_view" name="map_style">위성지도</label></li>
+    <li><label for="2d_view"><input type="radio" id="2d_view" name="map_style">2D지도</label></li>
+  </ul>
+</div>
           </div>          
       </section>
       <!-- 중앙__e -->

@@ -378,11 +378,17 @@
   </details>
 </div>
       
-            <ul class="map_style btn_switch">
-  <li><input type="radio" id="default_view" name="map_style" checked><label for="default_view">일반지도</label></input></li>
-  <li><input type="radio" id="sky_view" name="map_style"><label for="sky_view">위성지도</label></input></li>
-  <li><input type="radio" id="2d_view" name="map_style"><label for="2d_view">2D지도</label></input></li>
-</ul>    
+            <div class="map_style">
+  <div class="divide">
+    <button type="button" class="btn_img">이미지저장</button>
+  </div>
+  <ul class="btn_switch">
+    <li><label for="area_name"><input type="checkbox" id="area_name" name="area_name" checked>행정명 보기</label></li>
+    <li><label for="default_view"><input type="radio" id="default_view" name="map_style" checked>일반지도</label></li>
+    <li><label for="sky_view"><input type="radio" id="sky_view" name="map_style">위성지도</label></li>
+    <li><label for="2d_view"><input type="radio" id="2d_view" name="map_style">2D지도</label></li>
+  </ul>
+</div>    
           </div>
         </div>
       </section>

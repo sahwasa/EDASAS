@@ -70,6 +70,7 @@ input:invalid {position:relative;outline:2px solid #e42b29;background-color: #fa
 .btn_del{@include ico_only('\eb2e');}
 .btn_pdf{@include btn($addTxt:'\f1c1');}
 .btn_excel{@include btn($addTxt:'\f1c3');}
+.btn_img{@include btn($addTxt:'\eb63');}
 .btn_print{@include btn($addTxt:'\e833');}
 .select_lst{display:flex;flex-wrap:wrap;justify-content:flex-start;gap:9px;
   li{display:flex;align-items:center;gap:3px;position:relative;background-color:#fff;border-radius:11px;overflow:hidden;border:1px solid #9fc9ff;font-size:12px;color:#555;transition:.3s;padding:2px 9px;
@@ -529,10 +530,21 @@ border:1px solid $border;border-left-width:0;border-radius:0 3px 3px 0;font-size
     label{width:110px;margin-left:-1px;}
   } 
   .map_style{top:15px;right:15px;left:auto;
-    label{@include f_blind;width:55px;height:37px;background:url(../images/map_general.png) 0 0 no-repeat;border:none;}
-    input:checked+label{background-image:url(../images/map_general_on.png);background-color:transparent;border-color:$blue;color:#fff;font-weight:700;}
-    @for $i from 1 to 7{
-      li:nth-child(#{$i}) label{background-position-x:-65px * ($i - 1);}
+    .divide{@include divide($target:'after');align-self:flex-start;margin-top:3px;}
+    li{
+      &:first-child{margin-right:5px;
+        label{padding:0 10px;cursor:pointer;box-shadow:1px 2px 2px rgba(0, 0, 0, .2);
+          &:has(:checked){color:$blue;}
+        }
+        input[type="checkbox"]{appearance:auto;margin-right:5px;}
+      }
+      &:not(:first-child){
+        label{@include f_blind;width:55px;height:37px;background:url(../images/map_general.png) 0 0 no-repeat;border:none;}
+        input:checked+label{background-image:url(../images/map_general_on.png);background-color:transparent;border-color:$blue;color:#fff;font-weight:700;}
+      }
+      @for $i from 2 through 4{
+        &:nth-child(#{$i}) label{background-position-x:-65px * ($i - 2);}
+      }
     }
   }
 }
@@ -844,5 +856,15 @@ details[open]>summary::after{margin:0 2px;content:'\e86a';}
   span{font-size:11px;color:#999;
     &::before{content:"(";}
     &::after{content:")";}
+  }
+}
+.select_structure{
+  dl{display:grid;grid-template-columns:repeat(2, calc(50% - 10px));grid-template-rows:auto 1fr;column-gap:20px;row-gap:5px;}
+  dt{font-weight:600;color:#000;}
+  dd{grid-row-start:2;}
+  select{width:100%;height:250px;background:none;padding:0;
+    option{padding:5px 15px;}
+    :hover{background-color:$lightgray;}
+    :checked{background-color:#1967d2;color:#fff;}
   }
 }

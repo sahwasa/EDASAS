@@ -117,3 +117,7 @@ border:1px solid transparent;}
   @if($border){border:1px solid $border;border-width:0 0 1px 1px;}
   @if($center){left:50%;margin-left:calc((#{$size} / 2) * -1);}
 }
+@mixin divide($h:10px,$gap:5px,$target:'before'){
+  position:relative;display:inline-flex;align-items:center;vertical-align:middle;
+  &::#{$target}{@include shape(1px,$h);background-color:$gray;margin:0 15px 0 #{15 - $gap};}
+}
