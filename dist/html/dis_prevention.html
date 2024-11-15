@@ -41,10 +41,16 @@
           <li><a href="../html/manual.html">매뉴얼 게시판</a></li>
         </ul>
       </li>
-      <li><a href="#">환경 설정</a>
+      <li><a href="../html/set_order.html">환경 설정</a>
         <ul class="sub">
           <li><a href="#">지역안전도 평가 가중치 설정/시뮬레이션</a></li>
-          <li><a href="#">시스템 DB관리</a></li>
+          <li><a href="#">시스템 DB관리</a>
+            <ul>
+              <li><a href="../html/set_order.html">차수 관리</a></li>
+              <li><a href="#">기초데이터관리</a></li>
+              <li><a href="#">시스템 DB관리</a></li>            
+            </ul>
+          </li>
         </ul>
       </li>
       <li><a href="../html/admin_user.html">시스템 설정</a>
@@ -514,7 +520,7 @@
           <li class="grade3">3등급</li>
           <li class="grade4">4등급</li>
           <li class="grade5">5등급</li>
-          <li class="grade0">자료없음</li>
+          <!-- <li class="grade0">자료없음</li> -->
         </ul>
       </section>
       <section class="distribution_legend">                
@@ -532,10 +538,11 @@
       
             <div class="map_style">
   <div class="divide">
-    <button type="button" class="btn_img">이미지저장</button>
+    <button type="button" class="btn_img">지도 이미지</button>
+    <button type="button" class="btn_excel">데이터</button>
   </div>
   <ul class="btn_switch">
-    <li><label for="area_name"><input type="checkbox" id="area_name" name="area_name" checked>행정명 보기</label></li>
+    <li><label for="area_name"><input type="checkbox" id="area_name" name="area_name">배경지도</label></li>
     <li><label for="default_view"><input type="radio" id="default_view" name="map_style" checked>일반지도</label></li>
     <li><label for="sky_view"><input type="radio" id="sky_view" name="map_style">위성지도</label></li>
     <li><label for="2d_view"><input type="radio" id="2d_view" name="map_style">2D지도</label></li>
@@ -555,6 +562,9 @@
       <section>
         <header class="sub_tit">
           <em class="label">기초데이터</em>
+          <div class="tool_wrap">
+            <label for="all_area"><input type="checkbox" id="all_area">전체 지역</label>
+          </div>
         </header>   
         <ul class="map_type">
           <li><strong>지반정보</strong>
@@ -570,16 +580,13 @@
           <li><label for="map_type3"><input type="radio" id="map_type3" name="layer">건물 노후도</label></li>
           <li><label for="map_type4"><input type="radio" id="map_type4" name="layer">내진 분포도</label></li>
           <li><label for="map_type5"><input type="radio" id="map_type5" name="layer">인구 분포도</label></li>
-        </ul>
-      </section>
-      <section>
-        <header class="sub_tit">
-          <em class="label">주요시설 분포도</em>
-        </header>              
-        <ul class="symbols">
-          <li><label for="fac1"><input type="checkbox" id="fac1" name="" />소방서</label></li>
-          <li><label for="fac2"><input type="checkbox" id="fac2" name="" />임시대피시설</label></li>
-          <li><label for="fac3"><input type="checkbox" id="fac3" name="" />병원</label></li>
+          <li><strong>주요시설 분포도</strong>
+            <ul class="symbols">
+              <li><label for="fac1"><input type="checkbox" id="fac1" name="" />소방서</label></li>
+              <li><label for="fac2"><input type="checkbox" id="fac2" name="" />임시대피시설</label></li>
+              <li><label for="fac3"><input type="checkbox" id="fac3" name="" />병원</label></li>
+            </ul>
+          </li>
         </ul>
       </section>
     </article>

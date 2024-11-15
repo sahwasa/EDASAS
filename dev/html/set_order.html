@@ -1,0 +1,86 @@
+@@include('../inc/top.html')
+<div id="wrap" class="wrap">
+  @@include('../inc/header.html')    
+  <main id="content" class="main_container">
+    @@include('../inc/sub_set.html')
+    <div class="flex_body">
+      <header>
+        <section class="bredcrumb">
+          <ul>
+            <li><a href="#">Home</a></li>
+            <li>시스템 DB관리</li>
+            <li>환경 설정</li>
+            <li>차수 관리</li>
+          </ul>
+        </section>
+        <h1>차수 관리</h1>
+      </header>
+      <div class="search">
+        <ul class="search_lst">         
+          <li>
+            <select name="" id="" title="검색조건"><option value="">검색조건</option></select>
+            <input type="text" title="검색어" placeholder="검색어">
+          </li>
+        </ul>
+        <button type="button" class="btn_blue_line">검색</button>
+        <div class="tool">
+          <button type="button" class="btn_blue" popovertarget="p_addUser">추가</button>
+        </div>
+      </div>
+      <div class="tbl_wrap">
+        <table class="tbl_set tbl_hover">
+          <colgroup>
+            <col style="width:70px;">                
+          </colgroup>
+          <thead>
+            <tr>
+              <th scope="col">권한</th>
+              <th scope="col">사용자ID</th>
+              <th scope="col">사용자명</th>
+              <th scope="col">담당지역</th>
+              <th scope="col">소속기관</th>
+              <th scope="col">직급</th>
+              <th scope="col">등록일</th>
+              <th scope="col">관리</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>             
+              <td>관리자</td>
+              <td>admin</td>
+              <td>홍길동</td>
+              <td>부산,울산,경주</td>
+              <td>-</td>
+              <td>-</td>
+              <td>2010.12.30</td>
+              <td>
+                <button type="button" class="btn_gray_line">수정</button>
+                <button type="button" class="btn_gray_line">삭제</button>
+              </td>
+            </tr>            
+            <tr>             
+              <td>관리자</td>
+              <td>admin</td>
+              <td>홍길동</td>
+              <td>-</td>
+              <td>-</td>
+              <td>-</td>
+              <td>2010.12.30</td>
+              <td>
+                <button type="button" class="btn_gray_line">수정</button>
+                <button type="button" class="btn_gray_line">삭제</button>
+              </td>
+            </tr>            
+          </tbody>
+        </table>       
+        @@include('../inc/paginate.html')
+      </div>
+    </div>
+  </main>
+  @@include('../inc/footer.html')
+  @@include('../inc/pop/p_addUser.html') 
+  @@include('../inc/pop/p_areaSelect.html')
+</div>
+@@include('../inc/script.html')
+</body>
+</html>
