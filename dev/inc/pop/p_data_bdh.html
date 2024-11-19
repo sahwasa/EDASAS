@@ -1,0 +1,92 @@
+<dialog id="p_regist_upload" class="p_regist_upload line_style" style="--width:600px" popover="manual">
+  <form method="dialog">
+    <header class="p_header tit">
+      <h1>건축물대장(표제부) 업로드</h1>
+      <div class="tool_wrap">
+        <button type="button" class="btn_close" popovertarget="p_regist_upload" popvertargetaction="hide">닫기</button>
+      </div>
+    </header>
+    <section class="p_body">
+      <ul class="ipt_lst">
+        <li><label for="">원시자료 구축일</label><input type="text" placeholder="연월일 or 연월 직접입력" /></li>
+        <li><label for="">파일</label>
+          <div class="file_ipt">
+            <input type="text" id="" name="" class="file_text" readonly="" role="filePath" title="첨부폴더 경로" placeholder="사진파일 첨부">              
+            <span class="file_wrap btn_blue_line">파일선택</span>
+            <input type="file" role="fileAdd" class="file_add">
+          </div>          
+          <div class="file_lst"> 
+            <ul id="doc" class="attach_list ">
+              <li id="fItem_0"><a href="" download="">아빠.png</a><button type="button" class="file_del" title="삭제">삭제</button></li>
+              <li id="fItem_1"><a href="" download="">엄마.png</a><button type="button" class="file_del" title="삭제">삭제</button></li>
+            </ul>
+          </div>
+        </li>
+      </ul>
+    </section>
+    <section class="p_foot">
+      <button type="submit" class="btn_foot_blue">업로드</button>
+      <button type="button" class="btn_foot_gray" popovertarget="p_regist_upload" popvertargetaction="hide">취소</button>
+    </section>
+  </form>
+</dialog>
+<dialog id="p_db_save" class="p_db_save line_style" style="--width:700px" popover="manual">
+  <form method="dialog">
+    <header class="p_header tit">
+      <h1>차수 추가 및 수정</h1>
+      <div class="tool_wrap">
+        <button type="button" class="btn_close" popovertarget="p_db_save" popvertargetaction="hide">닫기</button>
+      </div>
+    </header>
+    <section class="p_body">
+      <div class="tbl_top">
+        <div class="tool_wrap">
+          <button type="button" class="btn_orange">DB 저장</button>
+        </div>
+      </div>
+      <div class="tbl_wrap dark">
+        <table class="tbl_set">
+          <thead>
+            <tr>
+              <th scope="col">원본 파일명</th>
+              <th scope="col">파일크기</th>
+              <th scope="col">확장자</th>
+              <th scope="col">업로드 일시</th>
+              <th scope="col">상태</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>shp파일명</td>
+              <td></td>
+              <td></td>
+              <td>2024-11-13 12:34</td>
+              <td>정상</td>
+            </tr>
+            <tr>
+              <td>def파일명</td>
+              <td></td>
+              <td></td>
+              <td>2024-11-13 12:34</td>
+              <td>정상</td>
+            </tr>
+            <tr>
+              <td>prj파일명</td>
+              <td></td>
+              <td></td>
+              <td>2024-11-13 12:34</td>
+              <td>정상</td>
+            </tr>
+            <tr>
+              <td>dfg파일명</td>
+              <td></td>
+              <td></td>
+              <td>2024-11-13 12:34</td>
+              <td>정상</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+  </form>
+</dialog>

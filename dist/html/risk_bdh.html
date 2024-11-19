@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0">
+  <link rel="icon" href="../images/favicon.png" type="image/x-icon" />
+  <title>지진재해 지역안전도 평가 시스템</title>
+  <link rel="stylesheet" href="../font/fontello/css/fontello.css">
+  <link rel="stylesheet" href="../css/cmmn.css">
+  <link rel="stylesheet" href="../css/pop.css">
+</head>
+<body>
+
+<div id="wrap" class="wrap">
+  <header class="header">  
+  <h1 class="main_logo"><a href="">지진재해 지역위험도 평가 시스템</a></h1>
+  <nav class="nav">
+    <ul class="nav_lst">
+      <li><a href="../html/main.html">지역위험도 평가</a>
+        <ul class="sub">
+          <li><a href="../html/main.html">종합위험도 평가</a></li>
+          <li><a href="../html/bdh.html">건축물피해위험도 평가</a></li>
+          <li><a href="../html/eq_fire.html">지진화재위험도 평가</a></li>
+          <li><a href="../html/recovery_capability.html">복구역량도 평가</a></li>
+          <li><a href="../html/sheltering.html">대피위험도 평가</a></li>
+          <!-- <li><a href="../html/dis_prevention.html">방재위험도 평가</a></li> -->
+          <li><a href="../html/space_securing.html">긴급대응 도로〮공간 확보계수 평가</a></li>
+        </ul>
+      </li>
+      <li><a href="../html/sys_purpose.html">시스템 소개</a>
+        <ul class="sub">
+          <li><a href="../html/sys_purpose.html">시스템 평가 목적</a></li>
+          <li><a href="../html/sys_method.html">시스템 평가 방법</a></li>
+          <li><a href="#">시스템 DB현황</a></li>
+        </ul>
+      </li>     
+      <li><a href="../html/faq.html">자료실</a>
+        <ul class="sub">
+          <li><a href="../html/faq.html">FAQ</a></li>
+          <li><a href="../html/manual.html">매뉴얼 게시판</a></li>
+        </ul>
+      </li>
+      <li><a href="../html/set_order.html">환경 설정</a>
+        <ul class="sub">
+          <li><a href="#">지역위험도 평가 가중치 설정/시뮬레이션</a></li>
+          <li><a href="../html/set_order.html">시스템 DB관리</a></li>
+        </ul>
+      </li>
+      <li><a href="../html/admin_user.html">시스템 설정</a>
+        <ul class="sub">
+          <li><a href="../html/admin_user.html">사용자관리</a></li>
+          <li><a href="../html/admin_code.html">코드 관리</a></li>
+        </ul>
+      </li>
+    </ul>
+  </nav>
+  <div class="util">
+    <div class="profile">
+      <button type="button" class="account">
+        <img src="../images/ico_user.png" width="32px" height="32px" alt="프로필사진">
+        <b>시스템 운영자님</b>
+      </button>
+      <div class="my_layer">
+        <ul class="my_svc">
+          <li><a href="javascript:();">내 정보</a></li>
+          <li><a href="javascript:(console.log('logout'));">로그아웃</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</header>    
+  <main id="content" class="main_container">
+    <nav class="snb sub_default">
+  <h1>시스템 DB관리</h1>
+  <ul class="snb_lst">
+    <li><a href="../html/set_order.html">차수 관리</a></li>
+    <li><a href="../html/data_bdh.html">기초데이터 관리</a>
+      <ul>
+        <li><a href="../html/data_area.html">행정구역</a></li>
+        <li><a href="../html/data_grid.html">격자정보</a></li>
+        <li><a href="../html/data_geotech.html">지반정보</a></li>
+        <li class="on"><a href="../html/data_bdh.html">건축물 DB</a></li>
+        <li><a href="../html/data_fire.html">화재 DB</a></li>
+      </ul>
+    </li>
+    <li><a href="../html/risk_bdh.html">지역위험도 관리</a>
+      <ul>
+        <li><a href="../html/risk_bdh.html">건축물피해 위험도</a></li>
+        <li><a href="../html/risk_fire.html">지진화재위험도</a></li>
+        <li><a href="../html/risk_recovery.html">복구역량위험도</a></li>
+        <li><a href="../html/risk_sheltering.html">대피위험도</a></li>
+        <li><a href="../html/risk_space_securing.html">긴급대응위험도</a></li>
+        <li><a href="../html/risk_total.html">종합안전위험도</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+    <div class="flex_body">
+      <header>
+        <section class="bredcrumb">
+          <ul>
+            <li><a href="#">Home</a></li>
+            <li>환경 설정</li>
+            <li>시스템 DB관리</li>
+            <li>지역위험도 관리</li>
+            <li>건축물피해 위험도</li>
+          </ul>
+        </section>
+        <h1>건축물피해 위험도 <strong>지역위험도 관리</strong></h1>
+      </header>
+      <div class="search">
+        <ul class="search_lst">         
+          <li>
+            <label for="">차수</label>
+            <select name="" id=""><option value="">차수</option></select>
+          </li>
+          <li>
+            <label for="">대상지역</label>
+            <select name="" id=""><option value="">부산</option></select>
+          </li>
+          <li>
+            <label for="">지진 재현주기</label>
+            <select name="" id="">
+              <option value="">2400년</option>
+              <option value="">1000년</option>
+              <option value="">500년</option>
+            </select>
+          </li>
+        </ul>
+        <button type="button" class="btn_blue_line">검색</button>        
+      </div>
+      <ul class="tab tab_wrap">
+        <li class="on"><a href="#risk">위험도</a></li>
+        <li><a href="#simulation">시뮬레이션</a></li>
+      </ul>
+      <div class="tab_container">
+        <section class="tab_contents" id="risk">
+          <div class="tbl_top">
+            <div class="tool_wrap">
+              <button type="button" class="btn_blue">다운로드</button>
+              <button type="button" class="btn_blue" popovertarget="p_upload">업로드</button>
+            </div>
+          </div>
+          <div class="tbl_wrap">
+            <table class="tbl_set">           
+              <thead>
+                <tr>
+                  <th scope="col">차수</th>
+                  <th scope="col">지진주기</th>
+                  <th scope="col">행정구역명</th>
+                  <th scope="col">연면젹</th>
+                  <th scope="col">피해면적</th>
+                  <th scope="col">전체 동 수</th>
+                  <th scope="col">피해 동 수</th>
+                  <th scope="col">피해율(반파)</th>
+                  <th scope="col">점수</th>
+                  <th scope="col">등급</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>            
+              </tbody>
+            </table>       
+            <div class="paginate tui-pagination" id="pagination">
+  <span class="tui-page-btn tui-is-disabled tui-first">
+    <span class="tui-ico-first">first</span>
+  </span>
+  <span class="tui-page-btn tui-is-disabled tui-prev">
+    <span class="tui-ico-prev">prev</span>
+  </span>
+  <strong class="tui-page-btn tui-is-selected tui-first-child">1</strong>
+  <a href="#" class="tui-page-btn tui-last-child">2</a>
+  <a href="#" class="tui-page-btn tui-next">
+    <span class="tui-ico-next">next</span>
+  </a>
+  <a href="#" class="tui-page-btn tui-last">
+    <span class="tui-ico-last">last</span>
+  </a>
+</div>
+          </div>
+        </section>
+        <section class="tab_contents" id="simulation">
+          <div class="tbl_wrap">
+            <table class="tbl_set">           
+              <thead>
+                <tr>
+                  <th scope="col">대상지역</th>
+                  <th scope="col">작업 구분</th>
+                  <th scope="col">시뮬레이션 일자</th>
+                  <th scope="col">진행 상태</th>
+                  <th scope="col">비고</th>
+                  <th scope="col">시뮬레이션</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>부산</td>
+                  <td>격자별 SMEC 산출</td>
+                  <td>-</td>
+                  <td><span class="status_fin">완료</span></td>
+                  <td>-</td>
+                  <td><button type="button" class="btn_gray_line" popovertarget="p_simul">시뮬레이션</button></td>
+                </tr>
+                <tr>
+                  <td>부산</td>
+                  <td>건축물 피해 추정</td>
+                  <td>-</td>
+                  <td class="status_wait">대기중</td>
+                  <td>-</td>
+                  <td><button type="button" class="btn_gray_line" popovertarget="p_simul">시뮬레이션</button></td>
+                </tr>
+              </tbody>
+            </table>       
+            <div class="paginate tui-pagination" id="pagination">
+  <span class="tui-page-btn tui-is-disabled tui-first">
+    <span class="tui-ico-first">first</span>
+  </span>
+  <span class="tui-page-btn tui-is-disabled tui-prev">
+    <span class="tui-ico-prev">prev</span>
+  </span>
+  <strong class="tui-page-btn tui-is-selected tui-first-child">1</strong>
+  <a href="#" class="tui-page-btn tui-last-child">2</a>
+  <a href="#" class="tui-page-btn tui-next">
+    <span class="tui-ico-next">next</span>
+  </a>
+  <a href="#" class="tui-page-btn tui-last">
+    <span class="tui-ico-last">last</span>
+  </a>
+</div>
+          </div>
+        </section>
+      </div>
+    </div>
+  </main>
+  <footer class="footer">
+Copyright © 2024 국립재난안전연구원. All rights reserved.
+</footer>
+</div>
+<dialog id="p_upload" class="p_upload line_style" style="--width:900px" popover="manual">
+  <form method="dialog">
+    <header class="p_header tit">
+      <h1>건축물 피해 위험도 업로드</h1>
+      <div class="tool_wrap">
+        <button type="button" class="btn_close" popovertarget="p_upload" popvertargetaction="hide">닫기</button>
+      </div>
+    </header>
+    <section class="p_body">
+      <ul class="ipt_lst inline">          
+        <li><strong class="label">대상지역</strong>
+          <select name="" id=""><option value="">시도</option></select>
+        </li>
+        <li><strong class="label">지진 재현주기</strong>
+          <ul class="check_lst">
+            <li><label for=""><input type="checkbox">2400년</label></li>
+            <li><label for=""><input type="checkbox">1000년</label></li>
+            <li><label for=""><input type="checkbox">500년</label></li>
+          </ul>
+        </li>
+        <li><label for="">파일</label>
+          <div class="file_ipt">
+            <input type="text" id="" name="" class="file_text" readonly="" role="filePath" title="첨부폴더 경로" placeholder="사진파일 첨부">              
+            <span class="file_wrap btn_blue_line">파일선택</span>
+            <input type="file" role="fileAdd" class="file_add">
+          </div>
+          <button type="button" class="btn_gray_line">미리보기</button>
+        </li>         
+      </ul>
+      <div class="tbl_wrap tbl_preview">
+        <table class="tbl_set">   
+          <caption>지반정보 데이터</caption>
+          <thead>
+            <tr>
+              <th scope="col">차수</th>
+              <th scope="col">지진주기</th>
+              <th scope="col">행정구역명</th>
+              <th scope="col">연면젹</th>
+              <th scope="col">피해면적</th>
+              <th scope="col">전체 동 수</th>
+              <th scope="col">피해 동 수</th>
+              <th scope="col">피해율(반파)</th>
+              <th scope="col">점수</th>
+              <th scope="col">등급</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td></td>       
+              <td></td>       
+              <td></td>       
+              <td></td>       
+              <td></td>       
+              <td></td>       
+              <td></td>       
+              <td></td>       
+              <td></td>       
+              <td></td>       
+            </tr>   
+          </tbody>
+        </table>       
+      </div>
+    </section>
+    <section class="p_foot">
+      <button type="submit" class="btn_foot_blue">적용</button>
+      <button type="button" class="btn_foot_gray" popovertarget="p_upload" popvertargetaction="hide">취소</button>
+    </section>
+  </form>
+</dialog>
+<dialog id="p_simul" class="p_simul line_style" style="--width:400px" popover="manual">
+  <form method="dialog">
+    <header class="p_header tit">
+      <h1>시뮬레이션</h1>
+      <div class="tool_wrap">
+        <button type="button" class="btn_close" popovertarget="p_simul" popvertargetaction="hide">닫기</button>
+      </div>
+    </header>
+    <section class="p_body">
+      <ul class="ipt_lst inline">          
+        <li><strong class="label">차수</strong>
+          <select name="" id=""><option value="">차수</option></select>
+        </li>
+        <li><strong class="label">대상지역</strong>
+          <select name="" id=""><option value="">시도</option></select>
+        </li>
+        <li><strong class="label">지진 재현주기</strong>
+          <ul class="check_lst">
+            <li><label for=""><input type="checkbox">2400년</label></li>
+            <li><label for=""><input type="checkbox">1000년</label></li>
+            <li><label for=""><input type="checkbox">500년</label></li>
+          </ul>
+        </li>
+        <li><strong class="label">작업구분</strong>
+        <span>건축물 피해 위험도 산정</span>
+        </li>
+      </ul>
+    </section>
+    <section class="p_foot">
+      <button type="submit" class="btn_foot_blue">적용</button>
+      <button type="button" class="btn_foot_gray" popovertarget="p_simul" popvertargetaction="hide">취소</button>
+    </section>
+  </form>
+</dialog>
+<script src="../plugins/jquery.min.js"></script>
+<script src="../plugins/chart.js/dist/chart.umd.js"></script>
+<script src="../js/ui_cmmn.js"></script>
+<script>
+  commonInit();
+</script>
+</body>
+</html>

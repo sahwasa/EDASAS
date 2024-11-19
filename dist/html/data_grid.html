@@ -103,60 +103,61 @@
             <li><a href="#">Home</a></li>
             <li>환경 설정</li>
             <li>시스템 DB관리</li>
-            <li>차수 관리</li>
+            <li>기초데이터 관리</li>
+            <li>격자정보</li>
           </ul>
         </section>
-        <h1>차수 관리</h1>
+        <h1>격자정보 <strong>기초데이터 관리</strong></h1>
       </header>
       <div class="search">
         <ul class="search_lst">         
           <li>
-            <select name="" id="" title="검색조건"><option value="">검색조건</option></select>
-            <input type="text" title="검색어" placeholder="검색어">
+            <select name="" id=""><option value="">시도</option></select>
+            <select name="" id=""><option value="">시군구</option></select>
+            <select name="" id=""><option value="">읍면동</option></select>
           </li>
         </ul>
         <button type="button" class="btn_blue_line">검색</button>
         <div class="tool">
-          <!-- 마지막 차수까지 확정일자가 있어야만 활성화 -->
-          <button type="button" class="btn_blue" popovertarget="p_addOrder">추가</button>
+          <button type="button" class="btn_blue">다운로드</button>
         </div>
       </div>
+      <div class="tbl_top">
+        <span class="renewal">갱신일자 (2024-05-06)</span>
+      </div>
       <div class="tbl_wrap">
-        <table class="tbl_set tbl_hover">
-          <colgroup>
-            <col style="width:70px;">                
-          </colgroup>
+        <table class="tbl_set">   
+          <caption>지반정보 데이터</caption>
           <thead>
             <tr>
-              <th scope="col">차수</th>
-              <th scope="col">확정일자</th>
-              <th scope="col">대상지역</th>
-              <th scope="col">지진 재현주기</th>
-              <th scope="col">갱신일자</th>
-              <th scope="col">진행상태</th>
-              <th scope="col">사용여부</th>
+              <th scope="col">격자ID</th>
+              <th scope="col">행정구역 코드</th>
+              <th scope="col">행정구역명</th>
+              <th scope="col">위도</th>
+              <th scope="col">경도</th>
             </tr>
           </thead>
           <tbody>
             <tr>             
-              <td>관리자</td>
-              <td>admin</td>
-              <td>홍길동</td>
-              <td>부산,울산,경주</td>
-              <td>-</td>
-              <td>-</td>
-              <td>2010.12.30</td>
-              
+              <td>0010010101</td>
+              <td>4700000000</td>
+              <td></td>
+              <td></td>
+              <td></td>
             </tr>            
             <tr>             
-              <td>관리자</td>
-              <td>admin</td>
-              <td>홍길동</td>
-              <td>-</td>
-              <td>-</td>
-              <td>-</td>
-              <td>2010.12.30</td>
-             
+              <td>0010010101</td>
+              <td>4700000000</td>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>            
+            <tr>             
+              <td>0010010101</td>
+              <td>4700000000</td>
+              <td></td>
+              <td></td>
+              <td></td>
             </tr>            
           </tbody>
         </table>       
@@ -182,55 +183,6 @@
   <footer class="footer">
 Copyright © 2024 국립재난안전연구원. All rights reserved.
 </footer>
-  <dialog id="p_addOrder" class="p_addOrder line_style" style="--width:600px" popover="manual">
-    <form method="dialog">
-      <header class="p_header tit">
-        <h1>차수 추가 및 수정</h1>
-        <div class="tool_wrap">
-          <button type="button" class="btn_close" popovertarget="p_addOrder" popvertargetaction="hide">닫기</button>
-        </div>
-      </header>
-      <section class="p_body">
-        <ul class="ipt_lst inline">
-          <li><label for="">차수</label><input type="text" placeholder="자동부여" disabled></li>
-          <li><strong class="label">행정구역</strong>
-            <select name="" id=""><option value="">시도</option></select>
-            <select name="" id=""><option value="">시군구</option></select>
-            <button type="button" class="btn_gray_line">추가</button>
-          </li>
-          <li>
-            <ul class="select_lst">
-              <li><p>경북 포항</p><button type="button" title="삭제">삭제</button></li>
-              <li><p>경북 경주</p><button type="button" title="삭제">삭제</button></li>
-              <li><p>부산</p><button type="button" title="삭제">삭제</button></li>
-              <li><p>울산</p><button type="button" title="삭제">삭제</button></li>
-              <li><p>경남 창원</p><button type="button" title="삭제">삭제</button></li>
-            </ul>            
-          </li>
-          <li><strong class="label">지진 재현주기</strong>
-            <ul class="check_lst">
-              <li><label for=""><input type="checkbox">2400년</label></li>
-              <li><label for=""><input type="checkbox">1000년</label></li>
-              <li><label for=""><input type="checkbox">500년</label></li>
-            </ul>
-          </li>
-          <li><label for="">확정일자</label><input type="date" min="0000-01-01"><button type="button" class="btn_orange">확정</button> </li>
-          <li><strong class="label">사용여부</strong>
-            <ul class="btn_switch useYN">
-              <li><input type="radio" id="use" name="useYN" checked><label for="use">사용</label></li>
-              <li><input type="radio" id="notuse" name="useYN"><label for="notuse">사용안함</label></li>
-            </ul>
-          </li>
-        </ul>
-      </section>
-      <section class="p_foot">
-        <button type="submit" class="btn_foot_blue">저장</button>
-        <!-- 마지막 차수만 수정가능 -->
-        <button type="submit" class="btn_foot_blue">수정</button>
-        <button type="button" class="btn_foot_gray" popovertarget="p_addOrder" popvertargetaction="hide">닫기</button>
-      </section>
-    </form>
-  </dialog>
 </div>
 <script src="../plugins/jquery.min.js"></script>
 <script src="../plugins/chart.js/dist/chart.umd.js"></script>

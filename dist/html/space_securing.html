@@ -14,17 +14,17 @@
 
 <div id="wrap" class="wrap">
   <header class="header">  
-  <h1 class="main_logo"><a href="">지진재해 지역안전도 평가 시스템</a></h1>
+  <h1 class="main_logo"><a href="">지진재해 지역위험도 평가 시스템</a></h1>
   <nav class="nav">
     <ul class="nav_lst">
-      <li><a href="../html/main.html">지역안전도 평가</a>
+      <li><a href="../html/main.html">지역위험도 평가</a>
         <ul class="sub">
-          <li><a href="../html/main.html">종합안전도 평가</a></li>
+          <li><a href="../html/main.html">종합위험도 평가</a></li>
           <li><a href="../html/bdh.html">건축물피해위험도 평가</a></li>
           <li><a href="../html/eq_fire.html">지진화재위험도 평가</a></li>
           <li><a href="../html/recovery_capability.html">복구역량도 평가</a></li>
-          <li><a href="../html/sheltering.html">대피안전도 평가</a></li>
-          <li><a href="../html/dis_prevention.html">방재안전도 평가</a></li>
+          <li><a href="../html/sheltering.html">대피위험도 평가</a></li>
+          <!-- <li><a href="../html/dis_prevention.html">방재위험도 평가</a></li> -->
           <li><a href="../html/space_securing.html">긴급대응 도로〮공간 확보계수 평가</a></li>
         </ul>
       </li>
@@ -43,14 +43,8 @@
       </li>
       <li><a href="../html/set_order.html">환경 설정</a>
         <ul class="sub">
-          <li><a href="#">지역안전도 평가 가중치 설정/시뮬레이션</a></li>
-          <li><a href="#">시스템 DB관리</a>
-            <ul>
-              <li><a href="../html/set_order.html">차수 관리</a></li>
-              <li><a href="#">기초데이터관리</a></li>
-              <li><a href="#">시스템 DB관리</a></li>            
-            </ul>
-          </li>
+          <li><a href="#">지역위험도 평가 가중치 설정/시뮬레이션</a></li>
+          <li><a href="../html/set_order.html">시스템 DB관리</a></li>
         </ul>
       </li>
       <li><a href="../html/admin_user.html">시스템 설정</a>
@@ -79,12 +73,12 @@
   <main id="content" class="main_container">
     <nav class="snb sub_assessment">
   <ul class="snb_lst">
-    <li><a href="../html/main.html"><span>종합안전도 평가</span></a></li>
+    <li><a href="../html/main.html"><span>종합위험도 평가</span></a></li>
     <li><a href="../html/bdh.html"><span>건축물피해위험도 평가</span></a></li>
     <li><a href="../html/eq_fire.html"><span>지진화재위험도 평가</span></a></li>
     <li><a href="../html/recovery_capability.html"><span>복구역량도 평가</span></a></li>
-    <li><a href="../html/sheltering.html"><span>대피안전도 평가</span></a></li>
-    <li><a href="../html/dis_prevention.html"><span>방재안전도 평가</span></a></li>
+    <li><a href="../html/sheltering.html"><span>대피위험도 평가</span></a></li>
+    <!-- <li><a href="../html/dis_prevention.html"><span>방재위험도 평가</span></a></li> -->
     <li><a href="../html/space_securing.html"><span>긴급대응 도로·공간 확보계수 평가</span></a></li>
   </ul>
 </nav>
@@ -408,19 +402,56 @@
           </div>
         </header>   
         <ul class="map_type">
-          <li><strong>지반정보</strong>
+          <li><strong>지반특성 및 지반분류정보</strong>
             <ul class="sub_type">
-              <li><label for="map_type2_1"><input type="radio" id="map_type2_1" name="layer">기반암 심도(H)</label></li>
+              <li><label for="map_type2_1"><input type="radio" id="map_type2_1" name="layer">기반암 심도 (H)</label></li>
               <li><label for="map_type2_2"><input type="radio" id="map_type2_2" name="layer">토층 평균 전단파속도 (VS,Soil)</label></li>
               <li><label for="map_type2_3"><input type="radio" id="map_type2_3" name="layer">심도 30m까지 평균 전단파속도 (VS30)</label></li>
-              <li><label for="map_type2_4"><input type="radio" id="map_type2_4" name="layer">부지주기 (TG)</label></li>
-              <li><label for="map_type2_5"><input type="radio" id="map_type2_5" name="layer">기반암 심도(H)</label></li>
-              <li><label for="map_type2_6"><input type="radio" id="map_type2_6" name="layer">기반암 심도(H)</label></li>
+              <li><label for="map_type2_4"><input type="radio" id="map_type2_4" name="layer">내진설계 일반(KDS 17 10 00)</label></li>
+              <li><label for="map_type2_5"><input type="radio" id="map_type2_5" name="layer">건축물 내진설계기준(KDS 41 71 00)</label></li>
             </ul>
           </li>
-          <li><label for="map_type3"><input type="radio" id="map_type3" name="layer">건물 노후도</label></li>
-          <li><label for="map_type4"><input type="radio" id="map_type4" name="layer">내진 분포도</label></li>
-          <li><label for="map_type5"><input type="radio" id="map_type5" name="layer">인구 분포도</label></li>
+          <li><strong>건축물 위험도 평가</strong>
+            <ul class="sub_type">
+              <li><label for=""><input type="radio" id="" name="layer">건축물 분포(동)</label></li>
+              <li><label for=""><input type="radio" id="" name="layer">건축물 분포(연면적)</label></li>
+              <li><label for=""><input type="radio" id="" name="layer">취약건축물 분포(동)</label></li>
+              <li><label for=""><input type="radio" id="" name="layer">취약건축물 분포(연면적)</label></li>
+              <li><label for=""><input type="radio" id="" name="layer">비내진 건축물 분포(동)</label></li>
+              <li><label for=""><input type="radio" id="" name="layer">비내진 건축물 분포(연면적)</label></li>
+              <li><label for=""><input type="radio" id="" name="layer">인구</label></li>
+              <li><label for=""><input type="radio" id="" name="layer">인구밀집도</label></li>
+              <li><label for=""><input type="radio" id="" name="layer">노후건축물 분포(동)</label></li>
+              <li><label for=""><input type="radio" id="" name="layer">노후건축물 분포(연면적)</label></li>
+              <li><label for=""><input type="radio" id="" name="layer">소방시설 분포</label></li>
+              <li><label for=""><input type="radio" id="" name="layer">의료시설 분포</label></li>
+              <li><label for=""><input type="radio" id="" name="layer">재난안전대책본부 분포</label></li>
+            </ul>
+          </li>
+          <li><strong>지진화재 위험도 평가</strong>
+            <ul class="sub_type">
+              <li><label for="map_type4_1"><input type="radio" id="map_type4_1" name="layer">건물 밀집도</label></li>
+              <li><label for="map_type4_2"><input type="radio" id="map_type4_2" name="layer">건물 내화조 구성비율</label></li>
+              <li><label for="map_type4_3"><input type="radio" id="map_type4_3" name="layer">건물 목조 구성비율</label></li>
+              <li><label for="map_type4_4"><input type="radio" id="map_type4_4" name="layer">지진화재 소실율</label></li>
+            </ul>
+          </li>
+          <li><strong>복구 및 대피 평가</strong>
+            <ul class="sub_type">
+              <li><label for="map_type5_1"><input type="radio" id="map_type5_1" name="layer">물적피해 분포율</label></li>
+              <li><label for="map_type5_2"><input type="radio" id="map_type5_2" name="layer">건물가치평가 분포율</label></li>
+              <li><label for="map_type5_3"><input type="radio" id="map_type5_3" name="layer">복구능력 분포율</label></li>
+              <li><label for="map_type5_4"><input type="radio" id="map_type5_4" name="layer">긴급대피 수용능력</label></li>
+              <li><label for="map_type5_5"><input type="radio" id="map_type5_5" name="layer">주거밀집도</label></li>
+            </ul>
+          </li>
+          <li><strong>긴급대응 도로·공간 평가</strong>
+            <ul class="sub_type">
+              <li><label for=""><input type="radio" id="" name="layer">활동공간 확보율</label></li>
+              <li><label for=""><input type="radio" id="" name="layer">지역 도로망 접근 계수</label></li>
+              <li><label for=""><input type="radio" id="" name="layer">광역 도로망 접근 계수</label></li>
+            </ul>
+          </li>         
           <li><strong>주요시설 분포도</strong>
             <ul class="symbols">
               <li><label for="fac1"><input type="checkbox" id="fac1" name="" />소방서</label></li>

@@ -1,0 +1,873 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0">
+  <link rel="icon" href="../images/favicon.png" type="image/x-icon" />
+  <title>지진재해 지역안전도 평가 시스템</title>
+  <link rel="stylesheet" href="../font/fontello/css/fontello.css">
+  <link rel="stylesheet" href="../css/cmmn.css">
+  <link rel="stylesheet" href="../css/pop.css">
+</head>
+<body>
+
+<div id="wrap" class="wrap">
+  <header class="header">  
+  <h1 class="main_logo"><a href="">지진재해 지역위험도 평가 시스템</a></h1>
+  <nav class="nav">
+    <ul class="nav_lst">
+      <li><a href="../html/main.html">지역위험도 평가</a>
+        <ul class="sub">
+          <li><a href="../html/main.html">종합위험도 평가</a></li>
+          <li><a href="../html/bdh.html">건축물피해위험도 평가</a></li>
+          <li><a href="../html/eq_fire.html">지진화재위험도 평가</a></li>
+          <li><a href="../html/recovery_capability.html">복구역량도 평가</a></li>
+          <li><a href="../html/sheltering.html">대피위험도 평가</a></li>
+          <!-- <li><a href="../html/dis_prevention.html">방재위험도 평가</a></li> -->
+          <li><a href="../html/space_securing.html">긴급대응 도로〮공간 확보계수 평가</a></li>
+        </ul>
+      </li>
+      <li><a href="../html/sys_purpose.html">시스템 소개</a>
+        <ul class="sub">
+          <li><a href="../html/sys_purpose.html">시스템 평가 목적</a></li>
+          <li><a href="../html/sys_method.html">시스템 평가 방법</a></li>
+          <li><a href="#">시스템 DB현황</a></li>
+        </ul>
+      </li>     
+      <li><a href="../html/faq.html">자료실</a>
+        <ul class="sub">
+          <li><a href="../html/faq.html">FAQ</a></li>
+          <li><a href="../html/manual.html">매뉴얼 게시판</a></li>
+        </ul>
+      </li>
+      <li><a href="../html/set_order.html">환경 설정</a>
+        <ul class="sub">
+          <li><a href="#">지역위험도 평가 가중치 설정/시뮬레이션</a></li>
+          <li><a href="../html/set_order.html">시스템 DB관리</a></li>
+        </ul>
+      </li>
+      <li><a href="../html/admin_user.html">시스템 설정</a>
+        <ul class="sub">
+          <li><a href="../html/admin_user.html">사용자관리</a></li>
+          <li><a href="../html/admin_code.html">코드 관리</a></li>
+        </ul>
+      </li>
+    </ul>
+  </nav>
+  <div class="util">
+    <div class="profile">
+      <button type="button" class="account">
+        <img src="../images/ico_user.png" width="32px" height="32px" alt="프로필사진">
+        <b>시스템 운영자님</b>
+      </button>
+      <div class="my_layer">
+        <ul class="my_svc">
+          <li><a href="javascript:();">내 정보</a></li>
+          <li><a href="javascript:(console.log('logout'));">로그아웃</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</header>    
+  <main id="content" class="main_container">
+    <nav class="snb sub_default">
+  <h1>시스템 DB관리</h1>
+  <ul class="snb_lst">
+    <li><a href="../html/set_order.html">차수 관리</a></li>
+    <li><a href="../html/data_bdh.html">기초데이터 관리</a>
+      <ul>
+        <li><a href="../html/data_area.html">행정구역</a></li>
+        <li><a href="../html/data_grid.html">격자정보</a></li>
+        <li><a href="../html/data_geotech.html">지반정보</a></li>
+        <li class="on"><a href="../html/data_bdh.html">건축물 DB</a></li>
+        <li><a href="../html/data_fire.html">화재 DB</a></li>
+      </ul>
+    </li>
+    <li><a href="../html/risk_bdh.html">지역위험도 관리</a>
+      <ul>
+        <li><a href="../html/risk_bdh.html">건축물피해 위험도</a></li>
+        <li><a href="../html/risk_fire.html">지진화재위험도</a></li>
+        <li><a href="../html/risk_recovery.html">복구역량위험도</a></li>
+        <li><a href="../html/risk_sheltering.html">대피위험도</a></li>
+        <li><a href="../html/risk_space_securing.html">긴급대응위험도</a></li>
+        <li><a href="../html/risk_total.html">종합안전위험도</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+    <div class="flex_body">
+      <header>
+        <section class="bredcrumb">
+          <ul>
+            <li><a href="#">Home</a></li>
+            <li>환경 설정</li>
+            <li>시스템 DB관리</li>
+            <li>기초데이터 관리</li>
+            <li>건축물 DB</li>
+          </ul>
+        </section>
+        <h1>건축물 DB <strong>기초데이터 관리</strong></h1>
+      </header>
+      <div class="search_min">        
+        <select name="" id="" title="차수(0) 2022년"><option value="">차수(0) 2022년</option></select>
+        <button type="button" class="btn_blue_line">검색</button>
+        <!-- 홈화면 -->
+        <button type="button" class="btn_gray">현황보기</button>
+      </div>
+      <div class="step_area">
+        <ul class="step_lst step_bdh">
+          <li class="on"><a href="#step01"><i class="step_fin">완료</i> DB업로드</a></li>
+          <li><a href="#step02"><i class="step_ing">진행중</i> 건축물대장 매핑</a></li>
+          <li><a href="#step03"><i class="step_wait">진행대기</i> 자료보정</a></li>
+          <li><a href="#step04">내진구조 분류</a></li>
+          <li><a href="#step05">완료</a></li>
+        </ul>
+      </div>
+      <div class="tab_container">
+        <!-- 건축물 DB 홈 -->
+        <section id="step00"  class="step_content tab_contents">
+          <section>
+            <header class="tit">
+              <h2>건축물 DB처리 이력</h2>
+            </header>
+            <div class="tbl_wrap">
+              <table class="tbl_set">
+                <caption>건축물 DB처리 이력</caption>
+                <thead>
+                  <tr>
+                    <th scope="col" rowspan="2">파일 구분</th>
+                    <th scope="col" rowspan="2">원시자료 구축일</th>
+                    <th scope="col" colspan="4">원시파일 업로드</th>
+                    <th scope="col" colspan="3">DB저장</th>
+                  </tr>
+                  <tr>
+                    <th scope="col">지역</th>
+                    <th scope="col">상태</th>
+                    <th scope="col">최종일시</th>
+                    <th scope="col">비고</th>
+                    <th scope="col">지역</th>
+                    <th scope="col">건 수</th>
+                    <th scope="col">작업일시</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>건축물대장(표제부)</td>
+                    <td>24-02</td>
+                    <td>전국</td>
+                    <td>업로드 중</td>
+                    <td>-</td>
+                    <td>-</td>
+                    <td>-</td>
+                    <td>-</td>
+                    <td>-</td>              
+                  </tr>            
+                  <tr>
+                    <td>건축물대장(층별개요)</td>
+                    <td>24-02-23</td>
+                    <td>전국</td>
+                    <td>완료</td>
+                    <td>24-12-31 11:11</td>
+                    <td>-</td>
+                    <td>-</td>
+                    <td>-</td>
+                    <td>-</td>              
+                  </tr>            
+                  <tr>
+                    <td rowspan="5">토지대장</td>
+                    <td>24-02-23</td>
+                    <td>부산</td>
+                    <td>완료</td>
+                    <td>24-12-31 11:11</td>
+                    <td>-</td>
+                    <td>-</td>
+                    <td>-</td>
+                    <td>-</td>              
+                  </tr>            
+                  <tr>
+                    <td>24-02-23</td>
+                    <td>울산</td>
+                    <td>완료</td>
+                    <td>24-12-31 11:11</td>
+                    <td>-</td>
+                    <td>-</td>
+                    <td>-</td>
+                    <td>-</td>              
+                  </tr>
+                  <tr>
+                    <td>24-02-23</td>
+                    <td>경북 포함</td>
+                    <td>완료</td>
+                    <td>24-12-31 11:11</td>
+                    <td>-</td>
+                    <td>-</td>
+                    <td>-</td>
+                    <td>-</td>              
+                  </tr>
+                  <tr>
+                    <td>24-02-23</td>
+                    <td>경북 경주</td>
+                    <td>완료</td>
+                    <td>24-12-31 11:11</td>
+                    <td>-</td>
+                    <td>-</td>
+                    <td>-</td>
+                    <td>-</td>              
+                  </tr>
+                  <tr>
+                    <td>24-02-23</td>
+                    <td>경남 창원</td>
+                    <td>완료</td>
+                    <td>24-12-31 11:11</td>
+                    <td>-</td>
+                    <td>-</td>
+                    <td>-</td>
+                    <td>-</td>              
+                  </tr>
+                  <tr>
+                    <td rowspan="5">GIS건물일반집합정보</td>
+                    <td>24-02-23</td>
+                    <td>부산</td>
+                    <td>완료</td>
+                    <td>24-12-31 11:11</td>
+                    <td>-</td>
+                    <td>-</td>
+                    <td>-</td>
+                    <td>-</td>              
+                  </tr>            
+                  <tr>
+                    <td>24-02-23</td>
+                    <td>울산</td>
+                    <td>완료</td>
+                    <td>24-12-31 11:11</td>
+                    <td>-</td>
+                    <td>-</td>
+                    <td>-</td>
+                    <td>-</td>              
+                  </tr>
+                  <tr>
+                    <td>24-02-23</td>
+                    <td>경북 포함</td>
+                    <td>완료</td>
+                    <td>24-12-31 11:11</td>
+                    <td>-</td>
+                    <td>-</td>
+                    <td>-</td>
+                    <td>-</td>              
+                  </tr>
+                  <tr>
+                    <td>24-02-23</td>
+                    <td>경북 경주</td>
+                    <td>완료</td>
+                    <td>24-12-31 11:11</td>
+                    <td>-</td>
+                    <td>-</td>
+                    <td>-</td>
+                    <td>-</td>              
+                  </tr>
+                  <tr>
+                    <td>24-02-23</td>
+                    <td>경남 창원</td>
+                    <td>완료</td>
+                    <td>24-12-31 11:11</td>
+                    <td>-</td>
+                    <td>-</td>
+                    <td>-</td>
+                    <td>-</td>              
+                  </tr>
+                </tbody>
+              </table>       
+            </div>
+          </section>
+          <section>
+            <header class="tit">
+              <h2>건축물 DB구축 현황</h2>
+            </header>
+            <div class="tbl_wrap">
+              <table class="tbl_set">
+                <caption>건축물 DB구축 현황</caption>
+                <thead>
+                  <tr>
+                    <th scope="col">지역</th>
+                    <th scope="col">구축일자</th>
+                    <th scope="col">건 수</th>
+                    <th scope="col">진행상태</th>
+                    <th scope="col">비고</th>
+                    <th scope="col">다운로드</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>부산</td>
+                    <td>24-02</td>
+                    <td>전국</td>
+                    <td>업로드 중</td>
+                    <td>-</td>
+                    <td><button type="button" class="btn_blue_line">다운로드</button></td>              
+                  </tr>
+                </tbody>
+              </table>       
+            </div>
+          </section>
+        </section>
+        <!-- 건축물 DB 홈__e -->
+        <!-- 건축물 DB 업로드 -->
+        <section id="step01" class="tab_contents">
+          <header class="tit">
+            <h1 class="arrow">DB업로드</h1>
+            <div class="tool_wrap">
+              <p class="info">본 작업은 건축물 기초 DB를 구축하기 위하여 건축물대장(표제부,층별개요), 토지대장,  GIS(일반집합건물정보)의 파일을 업로드 한다</p>
+            </div>
+          </header>
+          <div class="tbl_wrap">
+            <table class="tbl_set">
+              <thead>
+                <tr>
+                  <th scope="col" rowspan="2">파일구분</th>
+                  <th scope="col" rowspan="2">원시자료 구축일</th>
+                  <th scope="col" rowspan="2">지역</th>
+                  <th scope="col" colspan="3">원시 파일 업로드</th>
+                  <th scope="col" colspan="3">DB저장</th>
+                  <th scope="col" rowspan="2">관리</th>
+                </tr>
+                <tr>
+                  <th scope="col">상태</th>
+                  <th scope="col">최종일시</th>
+                  <th scope="col">비고</th>
+                  <th scope="col">지역</th>
+                  <th scope="col">건 수</th>
+                  <th scope="col">작업일시</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>건축물대장(표제부)</td>
+                  <td>24-02</td>
+                  <td>전국</td>
+                  <td>
+                    <div class="progress_wrap">
+                      <progress id="load" class="loading_progress" value="32" max="100"></progress>
+                      <label for="load">(<strong>32</strong> &sol; 100)</label>
+                    </div>
+                  </td>
+                  <td>-</td>
+                  <td>-</td>
+                  <td>-</td>
+                  <td>-</td>
+                  <td>-</td>
+                  <td>
+                    <button type="button" class="btn_blue_line" popovertarget="p_regist_upload">업로드</button>
+                    <button type="button" class="btn_orange_line" popovertarget="p_db_save">DB저장</button>
+                  </td>
+                </tr>            
+                <tr>
+                  <td>건축물대장(층별개요)</td>
+                  <td>24-02-23</td>
+                  <td>전국</td>
+                  <td>
+                    <div class="progress_wrap">
+                      <progress id="load" class="loading_progress" value="100" max="100"></progress>
+                      <label for="load">완료</label>
+                    </div>
+                  </td>
+                  <td>24-12-31 11:11</td>
+                  <td>-</td>
+                  <td>-</td>
+                  <td>-</td>
+                  <td>-</td>
+                  <td>
+                    <button type="button" class="btn_blue_line">업로드</button>
+                    <button type="button" class="btn_orange_line">DB저장</button>
+                  </td>       
+                </tr>            
+                <tr>
+                  <td rowspan="5">토지대장</td>
+                  <td>24-02-23</td>
+                  <td>부산</td>
+                  <td>
+                    <div class="progress_wrap">
+                      <progress id="load" class="loading_progress" value="60" max="100"></progress>
+                      <label for="load">(<strong>60</strong> &sol; 100)</label>
+                    </div>
+                  </td>
+                  <td>24-12-31 11:11</td>
+                  <td>-</td>
+                  <td>-</td>
+                  <td>-</td>
+                  <td>-</td>
+                  <td>
+                    <button type="button" class="btn_blue_line">업로드</button>
+                    <button type="button" class="btn_orange_line">DB저장</button>
+                  </td>
+                </tr>            
+                <tr>
+                  <td>24-02-23</td>
+                  <td>울산</td>
+                  <td><span class="status_wait">진행중</span></td>
+                  <td>24-12-31 11:11</td>
+                  <td>-</td>
+                  <td>-</td>
+                  <td>-</td>
+                  <td>-</td>
+                  <td>
+                    <button type="button" class="btn_blue_line">업로드</button>
+                    <button type="button" class="btn_orange_line">DB저장</button>
+                  </td>
+                </tr>
+                <tr>
+                  <td>24-02-23</td>
+                  <td>경북 포함</td>
+                  <td><span class="status_fin">완료</span></td>
+                  <td>24-12-31 11:11</td>
+                  <td>-</td>
+                  <td>-</td>
+                  <td>-</td>
+                  <td>-</td>
+                  <td>
+                    <button type="button" class="btn_blue_line">업로드</button>
+                    <button type="button" class="btn_orange_line">DB저장</button>
+                  </td>
+                </tr>
+                <tr>
+                  <td>24-02-23</td>
+                  <td>경북 경주</td>
+                  <td><span class="status_fin">완료</span></td>
+                  <td>24-12-31 11:11</td>
+                  <td>-</td>
+                  <td>-</td>
+                  <td>-</td>
+                  <td>-</td>
+                  <td>
+                    <button type="button" class="btn_blue_line">업로드</button>
+                    <button type="button" class="btn_orange_line">DB저장</button>
+                  </td>     
+                </tr>
+                <tr>
+                  <td>24-02-23</td>
+                  <td>경남 창원</td>
+                  <td><span class="status_fin">완료</span></td>
+                  <td>24-12-31 11:11</td>
+                  <td>-</td>
+                  <td>-</td>
+                  <td>-</td>
+                  <td>-</td>
+                  <td>
+                    <button type="button" class="btn_blue_line">업로드</button>
+                    <button type="button" class="btn_orange_line">DB저장</button>
+                  </td>
+                </tr>
+                <tr>
+                  <td rowspan="5">GIS건물일반집합정보</td>
+                  <td>24-02-23</td>
+                  <td>부산</td>
+                  <td><span class="status_fin">완료</span></td>
+                  <td>24-12-31 11:11</td>
+                  <td>-</td>
+                  <td>-</td>
+                  <td>-</td>
+                  <td>-</td>
+                  <td>
+                    <button type="button" class="btn_blue_line">업로드</button>
+                    <button type="button" class="btn_orange_line">DB저장</button>
+                  </td>    
+                </tr>            
+                <tr>
+                  <td>24-02-23</td>
+                  <td>울산</td>
+                  <td><span class="status_fin">완료</span></td>
+                  <td>24-12-31 11:11</td>
+                  <td>-</td>
+                  <td>-</td>
+                  <td>-</td>
+                  <td>-</td>
+                  <td>
+                    <button type="button" class="btn_blue_line">업로드</button>
+                    <button type="button" class="btn_orange_line">DB저장</button>
+                  </td>     
+                </tr>
+                <tr>
+                  <td>24-02-23</td>
+                  <td>경북 포함</td>
+                  <td><span class="status_fin">완료</span></td>
+                  <td>24-12-31 11:11</td>
+                  <td>-</td>
+                  <td>-</td>
+                  <td>-</td>
+                  <td>-</td>
+                  <td>
+                    <button type="button" class="btn_blue_line">업로드</button>
+                    <button type="button" class="btn_orange_line">DB저장</button>
+                  </td>              
+                </tr>
+                <tr>
+                  <td>24-02-23</td>
+                  <td>경북 경주</td>
+                  <td><span class="status_fin">완료</span></td>
+                  <td>24-12-31 11:11</td>
+                  <td>-</td>
+                  <td>-</td>
+                  <td>-</td>
+                  <td>-</td>
+                  <td>
+                    <button type="button" class="btn_blue_line">업로드</button>
+                    <button type="button" class="btn_orange_line">DB저장</button>
+                  </td>              
+                </tr>
+                <tr>
+                  <td>24-02-23</td>
+                  <td>경남 창원</td>
+                  <td><span class="status_fin">완료</span></td>
+                  <td>24-12-31 11:11</td>
+                  <td>-</td>
+                  <td>-</td>
+                  <td>-</td>
+                  <td>-</td>
+                  <td>
+                    <button type="button" class="btn_blue_line">업로드</button>
+                    <button type="button" class="btn_orange_line">DB저장</button>
+                  </td>             
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+        <!-- 건축물 DB 업로드__e -->
+        <!-- 건축물대장 매핑 -->
+        <section id="step02" class="tab_contents">
+          <header class="tit">
+            <h1 class="arrow">건축물대장 매핑</h1>
+            <div class="tool_wrap">
+              <p class="info">본 작업은 건축물 (표제부,층별개요), 와 GIS일반집합건물정보를 매핑하고, 개별 건축물의 행정구역과 격자를 반영한다.</p>
+              <button type="button" class="btn_blue">다운로드</button>
+              <button type="button" class="btn_orange">매핑시작</button>
+              <button type="button" class="btn_orange blink" disabled>매핑중</button>
+              <button type="button" class="btn_gray" disabled>매핑완료</button>
+            </div>
+          </header>
+          <div class="tbl_wrap tbl_scroll_x">
+            <table class="tbl_set">
+              <caption>건축물대장 매핑</caption>
+              <colgroup><col style="width:50px;" span="50"/></colgroup>
+              <thead>             
+                <tr>
+                  <th scope="col">번호</th>
+                  <th scope="col">식별번호</th>
+                  <th scope="col">고유번호</th>
+                  <th scope="col">...</th><th scope="col">...</th><th scope="col">...</th><th scope="col">...</th><th scope="col">...</th><th scope="col">...</th><th scope="col">...</th><th scope="col">...</th><th scope="col">...</th><th scope="col">...</th><th scope="col">...</th><th scope="col">...</th><th scope="col">...</th><th scope="col">...</th><th scope="col">...</th><th scope="col">...</th><th scope="col">...</th><th scope="col">...</th><th scope="col">...</th><th scope="col">...</th><th scope="col">...</th><th scope="col">...</th><th scope="col">...</th><th scope="col">...</th>
+                  <th scope="col">...</th><th scope="col">...</th><th scope="col">...</th><th scope="col">...</th><th scope="col">...</th><th scope="col">...</th><th scope="col">...</th><th scope="col">...</th><th scope="col">...</th><th scope="col">...</th><th scope="col">...</th><th scope="col">...</th><th scope="col">...</th><th scope="col">...</th><th scope="col">...</th><th scope="col">...</th><th scope="col">...</th><th scope="col">...</th><th scope="col">...</th><th scope="col">...</th><th scope="col">...</th><th scope="col">...</th><th scope="col">...</th><th scope="col">...</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+                </tr>                
+                <tr>
+                  <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+                </tr>                
+                <tr>
+                  <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+                </tr>                
+              </tbody>
+            </table>
+          </div>
+          <div class="paginate tui-pagination" id="pagination">
+  <span class="tui-page-btn tui-is-disabled tui-first">
+    <span class="tui-ico-first">first</span>
+  </span>
+  <span class="tui-page-btn tui-is-disabled tui-prev">
+    <span class="tui-ico-prev">prev</span>
+  </span>
+  <strong class="tui-page-btn tui-is-selected tui-first-child">1</strong>
+  <a href="#" class="tui-page-btn tui-last-child">2</a>
+  <a href="#" class="tui-page-btn tui-next">
+    <span class="tui-ico-next">next</span>
+  </a>
+  <a href="#" class="tui-page-btn tui-last">
+    <span class="tui-ico-last">last</span>
+  </a>
+</div>
+        </section>
+        <!-- 건축물대장 매핑__e -->
+        <!-- 자료보정 -->
+        <section id="step03" class="tab_contents">
+          <header class="tit">
+            <h1 class="arrow">자료보정</h1>
+            <div class="tool_wrap">
+              <p class="info">본 작업은 건축물의 대지면적을 토재대장과 매핑하고 각종 속성들을 규칙에 의거 보정하는 작업을 진행 한다.</p>
+              <button type="button" class="btn_blue">다운로드</button>
+              <button type="button" class="btn_orange">자료보정</button>
+              <button type="button" class="btn_orange blink" disabled>진행중</button>
+              <button type="button" class="btn_gray" disabled>보정완료</button>
+            </div>
+          </header>
+          <div class="tbl_wrap tbl_scroll_x">
+            <table class="tbl_set">
+              <caption>자료보정</caption>
+              <colgroup><col style="width:50px;" span="50"/></colgroup>
+              <thead>             
+                <tr>
+                  <th scope="col">번호</th>
+                  <th scope="col">식별번호</th>
+                  <th scope="col">고유번호</th>
+                  <th scope="col">...</th><th scope="col">...</th><th scope="col">...</th><th scope="col">...</th><th scope="col">...</th><th scope="col">...</th><th scope="col">...</th><th scope="col">...</th><th scope="col">...</th><th scope="col">...</th><th scope="col">...</th><th scope="col">...</th><th scope="col">...</th><th scope="col">...</th><th scope="col">...</th><th scope="col">...</th><th scope="col">...</th><th scope="col">...</th><th scope="col">...</th><th scope="col">...</th><th scope="col">...</th><th scope="col">...</th><th scope="col">...</th><th scope="col">...</th>
+                  <th scope="col">...</th><th scope="col">...</th><th scope="col">...</th><th scope="col">...</th><th scope="col">...</th><th scope="col">...</th><th scope="col">...</th><th scope="col">...</th><th scope="col">...</th><th scope="col">...</th><th scope="col">...</th><th scope="col">...</th><th scope="col">...</th><th scope="col">...</th><th scope="col">...</th><th scope="col">...</th><th scope="col">...</th><th scope="col">...</th><th scope="col">...</th><th scope="col">...</th><th scope="col">...</th><th scope="col">...</th><th scope="col">...</th><th scope="col">...</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+                </tr>                
+                <tr>
+                  <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+                </tr>                
+                <tr>
+                  <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+                </tr>                
+              </tbody>
+            </table>
+          </div>
+          <div class="paginate tui-pagination" id="pagination">
+  <span class="tui-page-btn tui-is-disabled tui-first">
+    <span class="tui-ico-first">first</span>
+  </span>
+  <span class="tui-page-btn tui-is-disabled tui-prev">
+    <span class="tui-ico-prev">prev</span>
+  </span>
+  <strong class="tui-page-btn tui-is-selected tui-first-child">1</strong>
+  <a href="#" class="tui-page-btn tui-last-child">2</a>
+  <a href="#" class="tui-page-btn tui-next">
+    <span class="tui-ico-next">next</span>
+  </a>
+  <a href="#" class="tui-page-btn tui-last">
+    <span class="tui-ico-last">last</span>
+  </a>
+</div>
+        </section>
+        <!-- 자료보정__e -->
+        <!-- 내진구조 분류 -->
+        <section id="step04" class="tab_contents">
+          <header class="tit">
+            <h1 class="arrow">내진구조 분류</h1>
+            <div class="tool_wrap">
+              <p class="info">본 작업은 건축물의 대지면적을 토재대장과 매핑하고 각종 속성들을 규칙에 의거 보정하는 작업을 진행 한다.</p>
+              <button type="button" class="btn_blue">다운로드</button>
+              <button type="button" class="btn_orange">내진구조 분류</button>
+              <button type="button" class="btn_orange blink" disabled>진행중</button>
+              <button type="button" class="btn_gray" disabled>분류완료</button>
+            </div>
+          </header>
+          <div class="tbl_wrap tbl_scroll_x">
+            <table class="tbl_set">
+              <caption>내진구조 분류</caption>
+              <colgroup><col style="width:50px;" span="50"/></colgroup>
+              <thead>             
+                <tr>
+                  <th scope="col">번호</th>
+                  <th scope="col">식별번호</th>
+                  <th scope="col">고유번호</th>
+                  <th scope="col">...</th><th scope="col">...</th><th scope="col">...</th><th scope="col">...</th><th scope="col">...</th><th scope="col">...</th><th scope="col">...</th><th scope="col">...</th><th scope="col">...</th><th scope="col">...</th><th scope="col">...</th><th scope="col">...</th><th scope="col">...</th><th scope="col">...</th><th scope="col">...</th><th scope="col">...</th><th scope="col">...</th><th scope="col">...</th><th scope="col">...</th><th scope="col">...</th><th scope="col">...</th><th scope="col">...</th><th scope="col">...</th><th scope="col">...</th>
+                  <th scope="col">...</th><th scope="col">...</th><th scope="col">...</th><th scope="col">...</th><th scope="col">...</th><th scope="col">...</th><th scope="col">...</th><th scope="col">...</th><th scope="col">...</th><th scope="col">...</th><th scope="col">...</th><th scope="col">...</th><th scope="col">...</th><th scope="col">...</th><th scope="col">...</th><th scope="col">...</th><th scope="col">...</th><th scope="col">...</th><th scope="col">...</th><th scope="col">...</th><th scope="col">...</th><th scope="col">...</th><th scope="col">...</th><th scope="col">...</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+                </tr>                
+                <tr>
+                  <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+                </tr>                
+                <tr>
+                  <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+                </tr>                
+              </tbody>
+            </table>
+          </div>
+          <div class="paginate tui-pagination" id="pagination">
+  <span class="tui-page-btn tui-is-disabled tui-first">
+    <span class="tui-ico-first">first</span>
+  </span>
+  <span class="tui-page-btn tui-is-disabled tui-prev">
+    <span class="tui-ico-prev">prev</span>
+  </span>
+  <strong class="tui-page-btn tui-is-selected tui-first-child">1</strong>
+  <a href="#" class="tui-page-btn tui-last-child">2</a>
+  <a href="#" class="tui-page-btn tui-next">
+    <span class="tui-ico-next">next</span>
+  </a>
+  <a href="#" class="tui-page-btn tui-last">
+    <span class="tui-ico-last">last</span>
+  </a>
+</div>
+        </section>
+        <!-- 내진구조 분류__e -->
+        <!-- 완료 -->
+        <section id="step05" class="tab_contents">
+          <header class="tit">
+            <h1 class="arrow">완료</h1>
+            <div class="tool_wrap">
+              <p class="info">본 페이지는 건축물 DB 구축을 완료한 내역을 조회 및 다운로드하여 점검을 하기위한 페이지다.</p>
+              <button type="button" class="btn_blue">다운로드</button>
+            </div>
+          </header>
+          <div class="tbl_wrap tbl_scroll_x">
+            <table class="tbl_set">
+              <caption>완료</caption>
+              <colgroup><col style="width:50px;" span="50"/></colgroup>
+              <thead>             
+                <tr>
+                  <th scope="col">번호</th>
+                  <th scope="col">식별번호</th>
+                  <th scope="col">고유번호</th>
+                  <th scope="col">...</th><th scope="col">...</th><th scope="col">...</th><th scope="col">...</th><th scope="col">...</th><th scope="col">...</th><th scope="col">...</th><th scope="col">...</th><th scope="col">...</th><th scope="col">...</th><th scope="col">...</th><th scope="col">...</th><th scope="col">...</th><th scope="col">...</th><th scope="col">...</th><th scope="col">...</th><th scope="col">...</th><th scope="col">...</th><th scope="col">...</th><th scope="col">...</th><th scope="col">...</th><th scope="col">...</th><th scope="col">...</th><th scope="col">...</th>
+                  <th scope="col">...</th><th scope="col">...</th><th scope="col">...</th><th scope="col">...</th><th scope="col">...</th><th scope="col">...</th><th scope="col">...</th><th scope="col">...</th><th scope="col">...</th><th scope="col">...</th><th scope="col">...</th><th scope="col">...</th><th scope="col">...</th><th scope="col">...</th><th scope="col">...</th><th scope="col">...</th><th scope="col">...</th><th scope="col">...</th><th scope="col">...</th><th scope="col">...</th><th scope="col">...</th><th scope="col">...</th><th scope="col">...</th><th scope="col">...</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+                </tr>                
+                <tr>
+                  <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+                </tr>                
+                <tr>
+                  <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+                </tr>                
+              </tbody>
+            </table>
+          </div>
+          <div class="paginate tui-pagination" id="pagination">
+  <span class="tui-page-btn tui-is-disabled tui-first">
+    <span class="tui-ico-first">first</span>
+  </span>
+  <span class="tui-page-btn tui-is-disabled tui-prev">
+    <span class="tui-ico-prev">prev</span>
+  </span>
+  <strong class="tui-page-btn tui-is-selected tui-first-child">1</strong>
+  <a href="#" class="tui-page-btn tui-last-child">2</a>
+  <a href="#" class="tui-page-btn tui-next">
+    <span class="tui-ico-next">next</span>
+  </a>
+  <a href="#" class="tui-page-btn tui-last">
+    <span class="tui-ico-last">last</span>
+  </a>
+</div>
+        </section>
+        <!-- 완료__e -->
+      </div>
+    </div>
+  </main>
+  <footer class="footer">
+Copyright © 2024 국립재난안전연구원. All rights reserved.
+</footer>
+  <dialog id="p_regist_upload" class="p_regist_upload line_style" style="--width:600px" popover="manual">
+  <form method="dialog">
+    <header class="p_header tit">
+      <h1>건축물대장(표제부) 업로드</h1>
+      <div class="tool_wrap">
+        <button type="button" class="btn_close" popovertarget="p_regist_upload" popvertargetaction="hide">닫기</button>
+      </div>
+    </header>
+    <section class="p_body">
+      <ul class="ipt_lst">
+        <li><label for="">원시자료 구축일</label><input type="text" placeholder="연월일 or 연월 직접입력" /></li>
+        <li><label for="">파일</label>
+          <div class="file_ipt">
+            <input type="text" id="" name="" class="file_text" readonly="" role="filePath" title="첨부폴더 경로" placeholder="사진파일 첨부">              
+            <span class="file_wrap btn_blue_line">파일선택</span>
+            <input type="file" role="fileAdd" class="file_add">
+          </div>          
+          <div class="file_lst"> 
+            <ul id="doc" class="attach_list ">
+              <li id="fItem_0"><a href="" download="">아빠.png</a><button type="button" class="file_del" title="삭제">삭제</button></li>
+              <li id="fItem_1"><a href="" download="">엄마.png</a><button type="button" class="file_del" title="삭제">삭제</button></li>
+            </ul>
+          </div>
+        </li>
+      </ul>
+    </section>
+    <section class="p_foot">
+      <button type="submit" class="btn_foot_blue">업로드</button>
+      <button type="button" class="btn_foot_gray" popovertarget="p_regist_upload" popvertargetaction="hide">취소</button>
+    </section>
+  </form>
+</dialog>
+<dialog id="p_db_save" class="p_db_save line_style" style="--width:700px" popover="manual">
+  <form method="dialog">
+    <header class="p_header tit">
+      <h1>차수 추가 및 수정</h1>
+      <div class="tool_wrap">
+        <button type="button" class="btn_close" popovertarget="p_db_save" popvertargetaction="hide">닫기</button>
+      </div>
+    </header>
+    <section class="p_body">
+      <div class="tbl_top">
+        <div class="tool_wrap">
+          <button type="button" class="btn_orange">DB 저장</button>
+        </div>
+      </div>
+      <div class="tbl_wrap dark">
+        <table class="tbl_set">
+          <thead>
+            <tr>
+              <th scope="col">원본 파일명</th>
+              <th scope="col">파일크기</th>
+              <th scope="col">확장자</th>
+              <th scope="col">업로드 일시</th>
+              <th scope="col">상태</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>shp파일명</td>
+              <td></td>
+              <td></td>
+              <td>2024-11-13 12:34</td>
+              <td>정상</td>
+            </tr>
+            <tr>
+              <td>def파일명</td>
+              <td></td>
+              <td></td>
+              <td>2024-11-13 12:34</td>
+              <td>정상</td>
+            </tr>
+            <tr>
+              <td>prj파일명</td>
+              <td></td>
+              <td></td>
+              <td>2024-11-13 12:34</td>
+              <td>정상</td>
+            </tr>
+            <tr>
+              <td>dfg파일명</td>
+              <td></td>
+              <td></td>
+              <td>2024-11-13 12:34</td>
+              <td>정상</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+  </form>
+</dialog>  
+</div>
+<script src="../plugins/jquery.min.js"></script>
+<script src="../plugins/chart.js/dist/chart.umd.js"></script>
+<script src="../js/ui_cmmn.js"></script>
+<script>
+  commonInit();
+</script>
+<script>
+$('.step_lst li').off('click').on('click', function (e) {
+  e.preventDefault()
+  $(this).addClass('on').siblings().removeClass('on')
+  var link = $(this).find('a').attr('href')
+  var findTarget = $(this).parents('.step_area').next('.tab_container')
+  findTarget.find('.tab_contents').hide()
+  $(link).show();
+});
+</script>
+</body>
+</html>

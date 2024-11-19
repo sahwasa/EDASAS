@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0">
+  <link rel="icon" href="../images/favicon.png" type="image/x-icon" />
+  <title>지진재해 지역안전도 평가 시스템</title>
+  <link rel="stylesheet" href="../font/fontello/css/fontello.css">
+  <link rel="stylesheet" href="../css/cmmn.css">
+  <link rel="stylesheet" href="../css/pop.css">
+</head>
+<body>
+
+<div id="wrap" class="wrap">
+  <header class="header">  
+  <h1 class="main_logo"><a href="">지진재해 지역위험도 평가 시스템</a></h1>
+  <nav class="nav">
+    <ul class="nav_lst">
+      <li><a href="../html/main.html">지역위험도 평가</a>
+        <ul class="sub">
+          <li><a href="../html/main.html">종합위험도 평가</a></li>
+          <li><a href="../html/bdh.html">건축물피해위험도 평가</a></li>
+          <li><a href="../html/eq_fire.html">지진화재위험도 평가</a></li>
+          <li><a href="../html/recovery_capability.html">복구역량도 평가</a></li>
+          <li><a href="../html/sheltering.html">대피위험도 평가</a></li>
+          <!-- <li><a href="../html/dis_prevention.html">방재위험도 평가</a></li> -->
+          <li><a href="../html/space_securing.html">긴급대응 도로〮공간 확보계수 평가</a></li>
+        </ul>
+      </li>
+      <li><a href="../html/sys_purpose.html">시스템 소개</a>
+        <ul class="sub">
+          <li><a href="../html/sys_purpose.html">시스템 평가 목적</a></li>
+          <li><a href="../html/sys_method.html">시스템 평가 방법</a></li>
+          <li><a href="#">시스템 DB현황</a></li>
+        </ul>
+      </li>     
+      <li><a href="../html/faq.html">자료실</a>
+        <ul class="sub">
+          <li><a href="../html/faq.html">FAQ</a></li>
+          <li><a href="../html/manual.html">매뉴얼 게시판</a></li>
+        </ul>
+      </li>
+      <li><a href="../html/set_order.html">환경 설정</a>
+        <ul class="sub">
+          <li><a href="#">지역위험도 평가 가중치 설정/시뮬레이션</a></li>
+          <li><a href="../html/set_order.html">시스템 DB관리</a></li>
+        </ul>
+      </li>
+      <li><a href="../html/admin_user.html">시스템 설정</a>
+        <ul class="sub">
+          <li><a href="../html/admin_user.html">사용자관리</a></li>
+          <li><a href="../html/admin_code.html">코드 관리</a></li>
+        </ul>
+      </li>
+    </ul>
+  </nav>
+  <div class="util">
+    <div class="profile">
+      <button type="button" class="account">
+        <img src="../images/ico_user.png" width="32px" height="32px" alt="프로필사진">
+        <b>시스템 운영자님</b>
+      </button>
+      <div class="my_layer">
+        <ul class="my_svc">
+          <li><a href="javascript:();">내 정보</a></li>
+          <li><a href="javascript:(console.log('logout'));">로그아웃</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</header>    
+  <main id="content" class="main_container">
+    <nav class="snb sub_default">
+  <h1>시스템 DB관리</h1>
+  <ul class="snb_lst">
+    <li><a href="../html/set_order.html">차수 관리</a></li>
+    <li><a href="../html/data_bdh.html">기초데이터 관리</a>
+      <ul>
+        <li><a href="../html/data_area.html">행정구역</a></li>
+        <li><a href="../html/data_grid.html">격자정보</a></li>
+        <li><a href="../html/data_geotech.html">지반정보</a></li>
+        <li class="on"><a href="../html/data_bdh.html">건축물 DB</a></li>
+        <li><a href="../html/data_fire.html">화재 DB</a></li>
+      </ul>
+    </li>
+    <li><a href="../html/risk_bdh.html">지역위험도 관리</a>
+      <ul>
+        <li><a href="../html/risk_bdh.html">건축물피해 위험도</a></li>
+        <li><a href="../html/risk_fire.html">지진화재위험도</a></li>
+        <li><a href="../html/risk_recovery.html">복구역량위험도</a></li>
+        <li><a href="../html/risk_sheltering.html">대피위험도</a></li>
+        <li><a href="../html/risk_space_securing.html">긴급대응위험도</a></li>
+        <li><a href="../html/risk_total.html">종합안전위험도</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+    <div class="flex_body">
+      <header>
+        <section class="bredcrumb">
+          <ul>
+            <li><a href="#">Home</a></li>
+            <li>환경 설정</li>
+            <li>시스템 DB관리</li>
+            <li>기초데이터 관리</li>
+            <li>화재 DB</li>
+          </ul>
+        </section>
+        <h1>화재 DB <strong>기초데이터 관리</strong></h1>
+      </header>
+      <div class="search_min">        
+        <select name="" id="" title="차수(0) 2022년"><option value="">차수(0) 2022년</option></select>
+        <button type="button" class="btn_blue_line">검색</button>
+        <!-- 홈화면 -->
+        <button type="button" class="btn_gray">현황보기</button>
+      </div>
+      <div class="step_area">
+        <ul class="step_lst">
+          <li><a href="#step01"><i class="step_fin">완료</i> 방화구조분류</a></li>
+          <li><a href="#step02"><i class="step_ing">진행중</i> 클러스터 구성</a></li>
+          <li><a href="#step03"><i class="step_wait">진행대기</i> 완료</a></li>
+        </ul>
+      </div>
+      <div class="tab_container">
+        <!-- 화재 DB 홈 -->
+        <section id="step00" class="tab_contents">
+          <header class="tit">
+            <h2>화재 DB구축 현황</h2>
+            <div class="tool_wrap">
+              <p class="info">본 작업은 건축물의 인접거리를 구하여 화재 클러스터를 구축하기 위한 작업을 진행 한다.</p>
+            </div>
+          </header>
+          <div class="tbl_wrap">
+            <table class="tbl_set">
+              <caption>건축물 DB구축 현황</caption>
+              <thead>
+                <tr>
+                  <th scope="col">지역</th>
+                  <th scope="col">구축일자</th>
+                  <th scope="col">건 수</th>
+                  <th scope="col">진행상태</th>
+                  <th scope="col">비고</th>
+                  <th scope="col">다운로드</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>부산</td>
+                  <td>24-02</td>
+                  <td>전국</td>
+                  <td>업로드 중</td>
+                  <td>-</td>
+                  <td><button type="button" class="btn_blue_line">다운로드</button></td>              
+                </tr>
+              </tbody>
+            </table>       
+          </div>
+          <div class="paginate tui-pagination" id="pagination">
+  <span class="tui-page-btn tui-is-disabled tui-first">
+    <span class="tui-ico-first">first</span>
+  </span>
+  <span class="tui-page-btn tui-is-disabled tui-prev">
+    <span class="tui-ico-prev">prev</span>
+  </span>
+  <strong class="tui-page-btn tui-is-selected tui-first-child">1</strong>
+  <a href="#" class="tui-page-btn tui-last-child">2</a>
+  <a href="#" class="tui-page-btn tui-next">
+    <span class="tui-ico-next">next</span>
+  </a>
+  <a href="#" class="tui-page-btn tui-last">
+    <span class="tui-ico-last">last</span>
+  </a>
+</div>
+        </section>
+        <!-- 건축물 DB 홈__e -->
+        <!-- 방화구조분류 -->
+        <section id="step01" class="tab_contents">
+          <header class="tit">
+            <h1 class="arrow">방화구조분류</h1>
+            <div class="tool_wrap">
+              <p class="info">본 작업은 건축물 구조 및 용도, 건축일자 등을 반영하여 반화 구조를 생성하는 작업을 한다.</p>
+              <button type="button" class="btn_blue">다운로드</button>
+              <button type="button" class="btn_orange">방화구조 분류</button>
+              <button type="button" class="btn_orange blink" disabled>진행중</button>
+              <button type="button" class="btn_gray" disabled>분류완료</button>
+            </div>
+          </header>
+          <div class="tbl_wrap">
+            <table class="tbl_set">
+              <thead>
+                <tr>
+                  <th scope="col">번호</th>
+                  <th scope="col">식별번호</th>
+                  <th scope="col">고유번호</th>
+                  <th scope="col">건축구조</th>
+                  <th scope="col">용도</th>
+                  <th scope="col">층</th>
+                  <th scope="col">연면적</th>
+                  <th scope="col">대지면적</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>       
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="paginate tui-pagination" id="pagination">
+  <span class="tui-page-btn tui-is-disabled tui-first">
+    <span class="tui-ico-first">first</span>
+  </span>
+  <span class="tui-page-btn tui-is-disabled tui-prev">
+    <span class="tui-ico-prev">prev</span>
+  </span>
+  <strong class="tui-page-btn tui-is-selected tui-first-child">1</strong>
+  <a href="#" class="tui-page-btn tui-last-child">2</a>
+  <a href="#" class="tui-page-btn tui-next">
+    <span class="tui-ico-next">next</span>
+  </a>
+  <a href="#" class="tui-page-btn tui-last">
+    <span class="tui-ico-last">last</span>
+  </a>
+</div>
+        </section>
+        <!-- 방화구조분류__e -->
+        <!-- 클러스터 구성 -->
+        <section id="step02" class="tab_contents">
+          <header class="tit">
+            <h1 class="arrow">클러스터 구성</h1>
+            <div class="tool_wrap">
+              <p class="info">본 작업은 행정구역별 건축물의 인동거리 와 방화구조의 연소한계거리를 구하여 인동거리가 연소한계거리에 속한 건축물의 클러스터를 구성한다.</p>
+              <button type="button" class="btn_blue">다운로드</button>
+              <button type="button" class="btn_orange">클러스터 구성</button>
+              <button type="button" class="btn_orange blink" disabled>진행중</button>
+              <button type="button" class="btn_gray" disabled>완료</button>
+            </div>
+          </header>
+          <div class="tbl_wrap">
+            <table class="tbl_set">
+              <caption>클러스터 구성</caption>
+              <thead>             
+                <tr>
+                  <th scope="col">번호</th>
+                  <th scope="col">클러스터ID</th>
+                  <th scope="col">건축물 번호</th>
+                  <th scope="col">위도</th>
+                  <th scope="col">경도</th>                  
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>                
+                <tr>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>                
+              </tbody>
+            </table>
+          </div>
+          <div class="paginate tui-pagination" id="pagination">
+  <span class="tui-page-btn tui-is-disabled tui-first">
+    <span class="tui-ico-first">first</span>
+  </span>
+  <span class="tui-page-btn tui-is-disabled tui-prev">
+    <span class="tui-ico-prev">prev</span>
+  </span>
+  <strong class="tui-page-btn tui-is-selected tui-first-child">1</strong>
+  <a href="#" class="tui-page-btn tui-last-child">2</a>
+  <a href="#" class="tui-page-btn tui-next">
+    <span class="tui-ico-next">next</span>
+  </a>
+  <a href="#" class="tui-page-btn tui-last">
+    <span class="tui-ico-last">last</span>
+  </a>
+</div>
+        </section>
+        <!-- 클러스터 구성 매핑__e -->
+        <!-- 완료 -->
+        <section id="step03" class="tab_contents">
+          <header class="tit">
+            <h1 class="arrow">완료</h1>
+            <div class="tool_wrap">
+              <p class="info">본 페이지는 건축물 클러스터 구축을 완료 후 내역 조회 및 다운로드하여 점검을 하기위한 페이지다.</p>
+              <button type="button" class="btn_blue">다운로드</button>
+            </div>
+          </header>
+          <div class="tbl_wrap">
+            <table class="tbl_set">
+              <caption>완료</caption>
+              <thead>             
+                <tr>
+                   <tr>
+                  <th scope="col">번호</th>
+                  <th scope="col">클러스터ID</th>
+                  <th scope="col">건축물 번호</th>
+                  <th scope="col">위도</th>
+                  <th scope="col">경도</th>                  
+                </tr>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>                      
+              </tbody>
+            </table>
+          </div>
+          <div class="paginate tui-pagination" id="pagination">
+  <span class="tui-page-btn tui-is-disabled tui-first">
+    <span class="tui-ico-first">first</span>
+  </span>
+  <span class="tui-page-btn tui-is-disabled tui-prev">
+    <span class="tui-ico-prev">prev</span>
+  </span>
+  <strong class="tui-page-btn tui-is-selected tui-first-child">1</strong>
+  <a href="#" class="tui-page-btn tui-last-child">2</a>
+  <a href="#" class="tui-page-btn tui-next">
+    <span class="tui-ico-next">next</span>
+  </a>
+  <a href="#" class="tui-page-btn tui-last">
+    <span class="tui-ico-last">last</span>
+  </a>
+</div>
+        </section>
+        <!-- 완료__e -->       
+      </div>
+    </div>
+  </main>
+  <footer class="footer">
+Copyright © 2024 국립재난안전연구원. All rights reserved.
+</footer>
+  
+</div>
+<script src="../plugins/jquery.min.js"></script>
+<script src="../plugins/chart.js/dist/chart.umd.js"></script>
+<script src="../js/ui_cmmn.js"></script>
+<script>
+  commonInit();
+</script>
+<script>
+$('.step_lst li').off('click').on('click', function (e) {
+  e.preventDefault()
+  $(this).addClass('on').siblings().removeClass('on')
+  var link = $(this).find('a').attr('href')
+  var findTarget = $(this).parents('.step_area').next('.tab_container')
+  findTarget.find('.tab_contents').hide()
+  $(link).show();
+});
+</script>
+</body>
+</html>

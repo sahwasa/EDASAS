@@ -8,8 +8,8 @@
         <section class="bredcrumb">
           <ul>
             <li><a href="#">Home</a></li>
-            <li>시스템 DB관리</li>
             <li>환경 설정</li>
+            <li>시스템 DB관리</li>
             <li>차수 관리</li>
           </ul>
         </section>
@@ -24,7 +24,8 @@
         </ul>
         <button type="button" class="btn_blue_line">검색</button>
         <div class="tool">
-          <button type="button" class="btn_blue" popovertarget="p_addUser">추가</button>
+          <!-- 마지막 차수까지 확정일자가 있어야만 활성화 -->
+          <button type="button" class="btn_blue" popovertarget="p_addOrder">추가</button>
         </div>
       </div>
       <div class="tbl_wrap">
@@ -34,14 +35,13 @@
           </colgroup>
           <thead>
             <tr>
-              <th scope="col">권한</th>
-              <th scope="col">사용자ID</th>
-              <th scope="col">사용자명</th>
-              <th scope="col">담당지역</th>
-              <th scope="col">소속기관</th>
-              <th scope="col">직급</th>
-              <th scope="col">등록일</th>
-              <th scope="col">관리</th>
+              <th scope="col">차수</th>
+              <th scope="col">확정일자</th>
+              <th scope="col">대상지역</th>
+              <th scope="col">지진 재현주기</th>
+              <th scope="col">갱신일자</th>
+              <th scope="col">진행상태</th>
+              <th scope="col">사용여부</th>
             </tr>
           </thead>
           <tbody>
@@ -53,10 +53,7 @@
               <td>-</td>
               <td>-</td>
               <td>2010.12.30</td>
-              <td>
-                <button type="button" class="btn_gray_line">수정</button>
-                <button type="button" class="btn_gray_line">삭제</button>
-              </td>
+              
             </tr>            
             <tr>             
               <td>관리자</td>
@@ -66,10 +63,7 @@
               <td>-</td>
               <td>-</td>
               <td>2010.12.30</td>
-              <td>
-                <button type="button" class="btn_gray_line">수정</button>
-                <button type="button" class="btn_gray_line">삭제</button>
-              </td>
+             
             </tr>            
           </tbody>
         </table>       
@@ -78,8 +72,55 @@
     </div>
   </main>
   @@include('../inc/footer.html')
-  @@include('../inc/pop/p_addUser.html') 
-  @@include('../inc/pop/p_areaSelect.html')
+  <dialog id="p_addOrder" class="p_addOrder line_style" style="--width:600px" popover="manual">
+    <form method="dialog">
+      <header class="p_header tit">
+        <h1>차수 추가 및 수정</h1>
+        <div class="tool_wrap">
+          <button type="button" class="btn_close" popovertarget="p_addOrder" popvertargetaction="hide">닫기</button>
+        </div>
+      </header>
+      <section class="p_body">
+        <ul class="ipt_lst inline">
+          <li><label for="">차수</label><input type="text" placeholder="자동부여" disabled></li>
+          <li><strong class="label">행정구역</strong>
+            <select name="" id=""><option value="">시도</option></select>
+            <select name="" id=""><option value="">시군구</option></select>
+            <button type="button" class="btn_gray_line">추가</button>
+          </li>
+          <li>
+            <ul class="select_lst">
+              <li><p>경북 포항</p><button type="button" title="삭제">삭제</button></li>
+              <li><p>경북 경주</p><button type="button" title="삭제">삭제</button></li>
+              <li><p>부산</p><button type="button" title="삭제">삭제</button></li>
+              <li><p>울산</p><button type="button" title="삭제">삭제</button></li>
+              <li><p>경남 창원</p><button type="button" title="삭제">삭제</button></li>
+            </ul>            
+          </li>
+          <li><strong class="label">지진 재현주기</strong>
+            <ul class="check_lst">
+              <li><label for=""><input type="checkbox">2400년</label></li>
+              <li><label for=""><input type="checkbox">1000년</label></li>
+              <li><label for=""><input type="checkbox">500년</label></li>
+            </ul>
+          </li>
+          <li><label for="">확정일자</label><input type="date" min="0000-01-01"><button type="button" class="btn_orange">확정</button> </li>
+          <li><strong class="label">사용여부</strong>
+            <ul class="btn_switch useYN">
+              <li><input type="radio" id="use" name="useYN" checked><label for="use">사용</label></li>
+              <li><input type="radio" id="notuse" name="useYN"><label for="notuse">사용안함</label></li>
+            </ul>
+          </li>
+        </ul>
+      </section>
+      <section class="p_foot">
+        <button type="submit" class="btn_foot_blue">저장</button>
+        <!-- 마지막 차수만 수정가능 -->
+        <button type="submit" class="btn_foot_blue">수정</button>
+        <button type="button" class="btn_foot_gray" popovertarget="p_addOrder" popvertargetaction="hide">닫기</button>
+      </section>
+    </form>
+  </dialog>
 </div>
 @@include('../inc/script.html')
 </body>

@@ -1,0 +1,212 @@
+@@include('../inc/top.html')
+<div id="wrap" class="wrap">
+  @@include('../inc/header.html')    
+  <main id="content" class="main_container">
+    @@include('../inc/sub_set.html')
+    <div class="flex_body">
+      <header>
+        <section class="bredcrumb">
+          <ul>
+            <li><a href="#">Home</a></li>
+            <li>환경 설정</li>
+            <li>시스템 DB관리</li>
+            <li>기초데이터 관리</li>
+            <li>화재 DB</li>
+          </ul>
+        </section>
+        <h1>화재 DB <strong>기초데이터 관리</strong></h1>
+      </header>
+      <div class="search_min">        
+        <select name="" id="" title="차수(0) 2022년"><option value="">차수(0) 2022년</option></select>
+        <button type="button" class="btn_blue_line">검색</button>
+        <!-- 홈화면 -->
+        <button type="button" class="btn_gray">현황보기</button>
+      </div>
+      <div class="step_area">
+        <ul class="step_lst">
+          <li><a href="#step01"><i class="step_fin">완료</i> 방화구조분류</a></li>
+          <li><a href="#step02"><i class="step_ing">진행중</i> 클러스터 구성</a></li>
+          <li><a href="#step03"><i class="step_wait">진행대기</i> 완료</a></li>
+        </ul>
+      </div>
+      <div class="tab_container">
+        <!-- 화재 DB 홈 -->
+        <section id="step00" class="tab_contents">
+          <header class="tit">
+            <h2>화재 DB구축 현황</h2>
+            <div class="tool_wrap">
+              <p class="info">본 작업은 건축물의 인접거리를 구하여 화재 클러스터를 구축하기 위한 작업을 진행 한다.</p>
+            </div>
+          </header>
+          <div class="tbl_wrap">
+            <table class="tbl_set">
+              <caption>건축물 DB구축 현황</caption>
+              <thead>
+                <tr>
+                  <th scope="col">지역</th>
+                  <th scope="col">구축일자</th>
+                  <th scope="col">건 수</th>
+                  <th scope="col">진행상태</th>
+                  <th scope="col">비고</th>
+                  <th scope="col">다운로드</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>부산</td>
+                  <td>24-02</td>
+                  <td>전국</td>
+                  <td>업로드 중</td>
+                  <td>-</td>
+                  <td><button type="button" class="btn_blue_line">다운로드</button></td>              
+                </tr>
+              </tbody>
+            </table>       
+          </div>
+          @@include('../inc/paginate.html')
+        </section>
+        <!-- 건축물 DB 홈__e -->
+        <!-- 방화구조분류 -->
+        <section id="step01" class="tab_contents">
+          <header class="tit">
+            <h1 class="arrow">방화구조분류</h1>
+            <div class="tool_wrap">
+              <p class="info">본 작업은 건축물 구조 및 용도, 건축일자 등을 반영하여 반화 구조를 생성하는 작업을 한다.</p>
+              <button type="button" class="btn_blue">다운로드</button>
+              <button type="button" class="btn_orange">방화구조 분류</button>
+              <button type="button" class="btn_orange blink" disabled>진행중</button>
+              <button type="button" class="btn_gray" disabled>분류완료</button>
+            </div>
+          </header>
+          <div class="tbl_wrap">
+            <table class="tbl_set">
+              <thead>
+                <tr>
+                  <th scope="col">번호</th>
+                  <th scope="col">식별번호</th>
+                  <th scope="col">고유번호</th>
+                  <th scope="col">건축구조</th>
+                  <th scope="col">용도</th>
+                  <th scope="col">층</th>
+                  <th scope="col">연면적</th>
+                  <th scope="col">대지면적</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>       
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          @@include('../inc/paginate.html')
+        </section>
+        <!-- 방화구조분류__e -->
+        <!-- 클러스터 구성 -->
+        <section id="step02" class="tab_contents">
+          <header class="tit">
+            <h1 class="arrow">클러스터 구성</h1>
+            <div class="tool_wrap">
+              <p class="info">본 작업은 행정구역별 건축물의 인동거리 와 방화구조의 연소한계거리를 구하여 인동거리가 연소한계거리에 속한 건축물의 클러스터를 구성한다.</p>
+              <button type="button" class="btn_blue">다운로드</button>
+              <button type="button" class="btn_orange">클러스터 구성</button>
+              <button type="button" class="btn_orange blink" disabled>진행중</button>
+              <button type="button" class="btn_gray" disabled>완료</button>
+            </div>
+          </header>
+          <div class="tbl_wrap">
+            <table class="tbl_set">
+              <caption>클러스터 구성</caption>
+              <thead>             
+                <tr>
+                  <th scope="col">번호</th>
+                  <th scope="col">클러스터ID</th>
+                  <th scope="col">건축물 번호</th>
+                  <th scope="col">위도</th>
+                  <th scope="col">경도</th>                  
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>                
+                <tr>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>                
+              </tbody>
+            </table>
+          </div>
+          @@include('../inc/paginate.html')
+        </section>
+        <!-- 클러스터 구성 매핑__e -->
+        <!-- 완료 -->
+        <section id="step03" class="tab_contents">
+          <header class="tit">
+            <h1 class="arrow">완료</h1>
+            <div class="tool_wrap">
+              <p class="info">본 페이지는 건축물 클러스터 구축을 완료 후 내역 조회 및 다운로드하여 점검을 하기위한 페이지다.</p>
+              <button type="button" class="btn_blue">다운로드</button>
+            </div>
+          </header>
+          <div class="tbl_wrap">
+            <table class="tbl_set">
+              <caption>완료</caption>
+              <thead>             
+                <tr>
+                   <tr>
+                  <th scope="col">번호</th>
+                  <th scope="col">클러스터ID</th>
+                  <th scope="col">건축물 번호</th>
+                  <th scope="col">위도</th>
+                  <th scope="col">경도</th>                  
+                </tr>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>                      
+              </tbody>
+            </table>
+          </div>
+          @@include('../inc/paginate.html')
+        </section>
+        <!-- 완료__e -->       
+      </div>
+    </div>
+  </main>
+  @@include('../inc/footer.html')
+  
+</div>
+@@include('../inc/script.html')
+<script>
+$('.step_lst li').off('click').on('click', function (e) {
+  e.preventDefault()
+  $(this).addClass('on').siblings().removeClass('on')
+  var link = $(this).find('a').attr('href')
+  var findTarget = $(this).parents('.step_area').next('.tab_container')
+  findTarget.find('.tab_contents').hide()
+  $(link).show();
+});
+</script>
+</body>
+</html>

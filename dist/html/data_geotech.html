@@ -103,60 +103,87 @@
             <li><a href="#">Home</a></li>
             <li>환경 설정</li>
             <li>시스템 DB관리</li>
-            <li>차수 관리</li>
+            <li>기초데이터 관리</li>
+            <li>지반정보</li>
           </ul>
         </section>
-        <h1>차수 관리</h1>
+        <h1>지반정보 <strong>기초데이터 관리</strong></h1>
       </header>
       <div class="search">
         <ul class="search_lst">         
           <li>
-            <select name="" id="" title="검색조건"><option value="">검색조건</option></select>
-            <input type="text" title="검색어" placeholder="검색어">
+            <label for="">대상지역</label>
+            <select name="" id=""><option value="">부산</option></select>
+          </li>
+          <li>
+            <label for="">지진 재현주기</label>
+            <select name="" id="">
+              <option value="">2400년</option>
+              <option value="">1000년</option>
+              <option value="">500년</option>
+            </select>
           </li>
         </ul>
         <button type="button" class="btn_blue_line">검색</button>
         <div class="tool">
           <!-- 마지막 차수까지 확정일자가 있어야만 활성화 -->
-          <button type="button" class="btn_blue" popovertarget="p_addOrder">추가</button>
+          <button type="button" class="btn_blue">다운로드</button>
+          <button type="button" class="btn_blue" popovertarget="p_upload">업로드</button>
         </div>
       </div>
+      <div class="tbl_top">
+        <span class="renewal">갱신일자 (2024-05-06)</span>
+      </div>
       <div class="tbl_wrap">
-        <table class="tbl_set tbl_hover">
-          <colgroup>
-            <col style="width:70px;">                
-          </colgroup>
+        <table class="tbl_set">   
+          <caption>지반정보 데이터</caption>
           <thead>
             <tr>
-              <th scope="col">차수</th>
-              <th scope="col">확정일자</th>
-              <th scope="col">대상지역</th>
-              <th scope="col">지진 재현주기</th>
-              <th scope="col">갱신일자</th>
-              <th scope="col">진행상태</th>
-              <th scope="col">사용여부</th>
+              <th scope="col" rowspan="2">격자ID</th>
+              <th scope="col" colspan="7">두께</th>
+              <th scope="col" rowspan="2">기반 암심도 (m)</th>
+              <th scope="col" rowspan="2">유효 수평지반 가속도</th>
+              <th scope="col" rowspan="2">토층 평균 전단파속도 (m/s)</th>
+              <th scope="col" rowspan="2">30m심도 까지의 평균 전단파속도 (m/s)</th>
+              <th scope="col" colspan="3">KDS 41 17</th>
+              <th scope="col" colspan="3">가속도</th>
+            </tr>
+            <tr>
+              <th scope="col">매립토층</th>
+              <th scope="col">퇴적토층</th>
+              <th scope="col">풍화토층</th>
+              <th scope="col">풍화암층</th>
+              <th scope="col">연암층</th>
+              <th scope="col">보통암층</th>
+              <th scope="col">경암층</th>
+              <th scope="col">부지분류</th>
+              <th scope="col">단주기지반증 폭계수(Fa)</th>
+              <th scope="col">장주기지반 증폭계수(Fv)</th>
+              <th scope="col">최대지반</th>
+              <th scope="col">0.3초 설계 스펙트럼</th>
+              <th scope="col">1초 설계 스펙트럼</th>
             </tr>
           </thead>
           <tbody>
             <tr>             
-              <td>관리자</td>
-              <td>admin</td>
-              <td>홍길동</td>
-              <td>부산,울산,경주</td>
-              <td>-</td>
-              <td>-</td>
-              <td>2010.12.30</td>
-              
-            </tr>            
-            <tr>             
-              <td>관리자</td>
-              <td>admin</td>
-              <td>홍길동</td>
-              <td>-</td>
-              <td>-</td>
-              <td>-</td>
-              <td>2010.12.30</td>
-             
+              <td>0010010101</td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>       
             </tr>            
           </tbody>
         </table>       
@@ -182,21 +209,20 @@
   <footer class="footer">
 Copyright © 2024 국립재난안전연구원. All rights reserved.
 </footer>
-  <dialog id="p_addOrder" class="p_addOrder line_style" style="--width:600px" popover="manual">
+  <dialog id="p_upload" class="p_upload line_style" style="--width:900px" popover="manual">
     <form method="dialog">
       <header class="p_header tit">
-        <h1>차수 추가 및 수정</h1>
+        <h1>지반 정보 업로드</h1>
         <div class="tool_wrap">
-          <button type="button" class="btn_close" popovertarget="p_addOrder" popvertargetaction="hide">닫기</button>
+          <button type="button" class="btn_close" popovertarget="p_upload" popvertargetaction="hide">닫기</button>
         </div>
       </header>
       <section class="p_body">
-        <ul class="ipt_lst inline">
-          <li><label for="">차수</label><input type="text" placeholder="자동부여" disabled></li>
-          <li><strong class="label">행정구역</strong>
+        <ul class="ipt_lst inline">          
+          <li><strong class="label">대상지역</strong>
             <select name="" id=""><option value="">시도</option></select>
             <select name="" id=""><option value="">시군구</option></select>
-            <button type="button" class="btn_gray_line">추가</button>
+            <button type="button" class="btn_blue_line">추가</button>
           </li>
           <li>
             <ul class="select_lst">
@@ -205,6 +231,8 @@ Copyright © 2024 국립재난안전연구원. All rights reserved.
               <li><p>부산</p><button type="button" title="삭제">삭제</button></li>
               <li><p>울산</p><button type="button" title="삭제">삭제</button></li>
               <li><p>경남 창원</p><button type="button" title="삭제">삭제</button></li>
+              <li><p>포항시 남구</p><button type="button" title="삭제">삭제</button></li>
+              <li><p>포항시 남구</p><button type="button" title="삭제">삭제</button></li>
             </ul>            
           </li>
           <li><strong class="label">지진 재현주기</strong>
@@ -214,20 +242,113 @@ Copyright © 2024 국립재난안전연구원. All rights reserved.
               <li><label for=""><input type="checkbox">500년</label></li>
             </ul>
           </li>
-          <li><label for="">확정일자</label><input type="date" min="0000-01-01"><button type="button" class="btn_orange">확정</button> </li>
-          <li><strong class="label">사용여부</strong>
-            <ul class="btn_switch useYN">
-              <li><input type="radio" id="use" name="useYN" checked><label for="use">사용</label></li>
-              <li><input type="radio" id="notuse" name="useYN"><label for="notuse">사용안함</label></li>
-            </ul>
-          </li>
+          <li><label for="">파일</label>
+            <div class="file_ipt">
+              <input type="text" id="" name="" class="file_text" readonly="" role="filePath" title="첨부폴더 경로" placeholder="사진파일 첨부">              
+              <span class="file_wrap btn_blue_line">파일선택</span>
+              <input type="file" role="fileAdd" class="file_add">
+            </div>
+            <button type="button" class="btn_gray_line">미리보기</button>
+          </li>         
         </ul>
+        <div class="tbl_wrap tbl_scroll_x tbl_preview">
+          <table class="tbl_set">   
+            <caption>지반정보 데이터</caption>
+            <thead>
+              <tr>
+                <th scope="col" rowspan="2">격자ID</th>
+                <th scope="col" colspan="7">두께</th>
+                <th scope="col" rowspan="2">기반 암심도 (m)</th>
+                <th scope="col" rowspan="2">유효 수평지반 가속도</th>
+                <th scope="col" rowspan="2">토층 평균 전단파속도 (m/s)</th>
+                <th scope="col" rowspan="2">30m심도 까지의 평균 전단파속도 (m/s)</th>
+                <th scope="col" colspan="3">KDS 41 17</th>
+                <th scope="col" colspan="3">가속도</th>
+              </tr>
+              <tr>
+                <th scope="col">매립토층</th>
+                <th scope="col">퇴적토층</th>
+                <th scope="col">풍화토층</th>
+                <th scope="col">풍화암층</th>
+                <th scope="col">연암층</th>
+                <th scope="col">보통암층</th>
+                <th scope="col">경암층</th>
+                <th scope="col">부지분류</th>
+                <th scope="col">단주기지반증 폭계수(Fa)</th>
+                <th scope="col">장주기지반 증폭계수(Fv)</th>
+                <th scope="col">최대지반</th>
+                <th scope="col">0.3초 설계 스펙트럼</th>
+                <th scope="col">1초 설계 스펙트럼</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>             
+                <td>0010010101</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>       
+              </tr>   
+              <tr>             
+                <td>0010010101</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>       
+              </tr>   
+              <tr>             
+                <td>0010010101</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>       
+              </tr>   
+            </tbody>
+          </table>       
+        </div>
       </section>
       <section class="p_foot">
-        <button type="submit" class="btn_foot_blue">저장</button>
-        <!-- 마지막 차수만 수정가능 -->
-        <button type="submit" class="btn_foot_blue">수정</button>
-        <button type="button" class="btn_foot_gray" popovertarget="p_addOrder" popvertargetaction="hide">닫기</button>
+        <button type="submit" class="btn_foot_blue">적용</button>
+        <button type="button" class="btn_foot_gray" popovertarget="p_upload" popvertargetaction="hide">취소</button>
       </section>
     </form>
   </dialog>

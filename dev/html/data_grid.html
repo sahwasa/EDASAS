@@ -1,0 +1,79 @@
+@@include('../inc/top.html')
+<div id="wrap" class="wrap">
+  @@include('../inc/header.html')    
+  <main id="content" class="main_container">
+    @@include('../inc/sub_set.html')
+    <div class="flex_body">
+      <header>
+        <section class="bredcrumb">
+          <ul>
+            <li><a href="#">Home</a></li>
+            <li>환경 설정</li>
+            <li>시스템 DB관리</li>
+            <li>기초데이터 관리</li>
+            <li>격자정보</li>
+          </ul>
+        </section>
+        <h1>격자정보 <strong>기초데이터 관리</strong></h1>
+      </header>
+      <div class="search">
+        <ul class="search_lst">         
+          <li>
+            <select name="" id=""><option value="">시도</option></select>
+            <select name="" id=""><option value="">시군구</option></select>
+            <select name="" id=""><option value="">읍면동</option></select>
+          </li>
+        </ul>
+        <button type="button" class="btn_blue_line">검색</button>
+        <div class="tool">
+          <button type="button" class="btn_blue">다운로드</button>
+        </div>
+      </div>
+      <div class="tbl_top">
+        <span class="renewal">갱신일자 (2024-05-06)</span>
+      </div>
+      <div class="tbl_wrap">
+        <table class="tbl_set">   
+          <caption>지반정보 데이터</caption>
+          <thead>
+            <tr>
+              <th scope="col">격자ID</th>
+              <th scope="col">행정구역 코드</th>
+              <th scope="col">행정구역명</th>
+              <th scope="col">위도</th>
+              <th scope="col">경도</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>             
+              <td>0010010101</td>
+              <td>4700000000</td>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>            
+            <tr>             
+              <td>0010010101</td>
+              <td>4700000000</td>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>            
+            <tr>             
+              <td>0010010101</td>
+              <td>4700000000</td>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>            
+          </tbody>
+        </table>       
+        @@include('../inc/paginate.html')
+      </div>
+    </div>
+  </main>
+  @@include('../inc/footer.html')
+</div>
+@@include('../inc/script.html')
+</body>
+</html>
