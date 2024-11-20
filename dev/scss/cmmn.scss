@@ -247,8 +247,12 @@ border:1px solid #ccc;border-radius:5px;background-color: #fff; z-index:100;box-
   h1{color:#fff;font-size:20px;font-weight:600;padding:24px;}
   .snb_lst > li{
     & > a{background-color:#0b42a7;padding:15px 24px;}
+    &:has(ul .on),
     &.on{background-color:#0D57D4;
       & > a{background-color:#478BFF;color:#fff;}
+    }
+    &.on:not(:has(ul .on)){
+      ul li:first-child a{color:#fff;}
     }
   } 
 }
