@@ -20,7 +20,7 @@
         <select name="" id="" title="차수(0) 2022년"><option value="">차수(0) 2022년</option></select>
         <button type="button" class="btn_blue_line">검색</button>
         <!-- 홈화면 -->
-        <button type="button" class="btn_gray">현황보기</button>
+        <a href="data_bdh.html" class="btn_gray">현황보기</a>
       </div>
       <div class="step_area">
         <ul class="step_lst step_bdh">
@@ -63,7 +63,7 @@
                     <td>건축물대장(표제부)</td>
                     <td>24-02</td>
                     <td>전국</td>
-                    <td>업로드 중</td>
+                    <td><span class="status_ing">업로드 중</span></td>
                     <td>-</td>
                     <td>-</td>
                     <td>-</td>
@@ -74,7 +74,7 @@
                     <td>건축물대장(층별개요)</td>
                     <td>24-02-23</td>
                     <td>전국</td>
-                    <td>완료</td>
+                    <td><span class="status_wait">대기중</span></td>
                     <td>24-12-31 11:11</td>
                     <td>-</td>
                     <td>-</td>
@@ -85,7 +85,7 @@
                     <td rowspan="5">토지대장</td>
                     <td>24-02-23</td>
                     <td>부산</td>
-                    <td>완료</td>
+                    <td><span class="status_fin">완료</span></td>
                     <td>24-12-31 11:11</td>
                     <td>-</td>
                     <td>-</td>
@@ -95,7 +95,7 @@
                   <tr>
                     <td>24-02-23</td>
                     <td>울산</td>
-                    <td>완료</td>
+                    <td><span class="status_fin">완료</span></td>
                     <td>24-12-31 11:11</td>
                     <td>-</td>
                     <td>-</td>
@@ -105,7 +105,7 @@
                   <tr>
                     <td>24-02-23</td>
                     <td>경북 포함</td>
-                    <td>완료</td>
+                    <td><span class="status_fin">완료</span></td>
                     <td>24-12-31 11:11</td>
                     <td>-</td>
                     <td>-</td>
@@ -115,7 +115,7 @@
                   <tr>
                     <td>24-02-23</td>
                     <td>경북 경주</td>
-                    <td>완료</td>
+                    <td><span class="status_fin">완료</span></td>
                     <td>24-12-31 11:11</td>
                     <td>-</td>
                     <td>-</td>
@@ -125,7 +125,7 @@
                   <tr>
                     <td>24-02-23</td>
                     <td>경남 창원</td>
-                    <td>완료</td>
+                    <td><span class="status_fin">완료</span></td>
                     <td>24-12-31 11:11</td>
                     <td>-</td>
                     <td>-</td>
@@ -136,7 +136,7 @@
                     <td rowspan="5">GIS건물일반집합정보</td>
                     <td>24-02-23</td>
                     <td>부산</td>
-                    <td>완료</td>
+                    <td><span class="status_fin">완료</span></td>
                     <td>24-12-31 11:11</td>
                     <td>-</td>
                     <td>-</td>
@@ -146,7 +146,7 @@
                   <tr>
                     <td>24-02-23</td>
                     <td>울산</td>
-                    <td>완료</td>
+                    <td><span class="status_fin">완료</span></td>
                     <td>24-12-31 11:11</td>
                     <td>-</td>
                     <td>-</td>
@@ -156,7 +156,7 @@
                   <tr>
                     <td>24-02-23</td>
                     <td>경북 포함</td>
-                    <td>완료</td>
+                    <td><span class="status_fin">완료</span></td>
                     <td>24-12-31 11:11</td>
                     <td>-</td>
                     <td>-</td>
@@ -166,7 +166,7 @@
                   <tr>
                     <td>24-02-23</td>
                     <td>경북 경주</td>
-                    <td>완료</td>
+                    <td><span class="status_fin">완료</span></td>
                     <td>24-12-31 11:11</td>
                     <td>-</td>
                     <td>-</td>
@@ -176,7 +176,7 @@
                   <tr>
                     <td>24-02-23</td>
                     <td>경남 창원</td>
-                    <td>완료</td>
+                    <td><span class="status_fin">완료</span></td>
                     <td>24-12-31 11:11</td>
                     <td>-</td>
                     <td>-</td>
@@ -209,7 +209,7 @@
                     <td>부산</td>
                     <td>24-02</td>
                     <td>전국</td>
-                    <td>업로드 중</td>
+                    <td><span class="status_fin">완료</span></td>
                     <td>-</td>
                     <td><button type="button" class="btn_blue_line">다운로드</button></td>              
                   </tr>
@@ -252,12 +252,7 @@
                   <td>건축물대장(표제부)</td>
                   <td>24-02</td>
                   <td>전국</td>
-                  <td>
-                    <div class="progress_wrap">
-                      <progress id="load" class="loading_progress" value="32" max="100"></progress>
-                      <label for="load">(<strong>32</strong> &sol; 100)</label>
-                    </div>
-                  </td>
+                  <td><span class="status_fin">완료</span></td>
                   <td>-</td>
                   <td>-</td>
                   <td>-</td>
@@ -272,12 +267,7 @@
                   <td>건축물대장(층별개요)</td>
                   <td>24-02-23</td>
                   <td>전국</td>
-                  <td>
-                    <div class="progress_wrap">
-                      <progress id="load" class="loading_progress" value="100" max="100"></progress>
-                      <label for="load">완료</label>
-                    </div>
-                  </td>
+                  <td><span class="status_fin">완료</span></td>
                   <td>24-12-31 11:11</td>
                   <td>-</td>
                   <td>-</td>
@@ -292,12 +282,7 @@
                   <td rowspan="5">토지대장</td>
                   <td>24-02-23</td>
                   <td>부산</td>
-                  <td>
-                    <div class="progress_wrap">
-                      <progress id="load" class="loading_progress" value="60" max="100"></progress>
-                      <label for="load">(<strong>60</strong> &sol; 100)</label>
-                    </div>
-                  </td>
+                  <td><span class="status_ing">업로드중</span></td>
                   <td>24-12-31 11:11</td>
                   <td>-</td>
                   <td>-</td>
@@ -311,7 +296,7 @@
                 <tr>
                   <td>24-02-23</td>
                   <td>울산</td>
-                  <td><span class="status_wait">진행중</span></td>
+                  <td><span class="status_wait">대기중</span></td>
                   <td>24-12-31 11:11</td>
                   <td>-</td>
                   <td>-</td>
@@ -368,7 +353,12 @@
                   <td rowspan="5">GIS건물일반집합정보</td>
                   <td>24-02-23</td>
                   <td>부산</td>
-                  <td><span class="status_fin">완료</span></td>
+                  <td>
+                    <div class="progress_wrap">
+                      <progress id="load" class="loading_progress" value="3" max="5"></progress>
+                      <label for="load">(<strong>3</strong> &sol; 5)</label>
+                    </div>
+                  </td>
                   <td>24-12-31 11:11</td>
                   <td>-</td>
                   <td>-</td>
@@ -382,7 +372,12 @@
                 <tr>
                   <td>24-02-23</td>
                   <td>울산</td>
-                  <td><span class="status_fin">완료</span></td>
+                  <td>
+                    <div class="progress_wrap">
+                      <progress id="load" class="loading_progress" value="1" max="5"></progress>
+                      <label for="load">(<strong>1</strong> &sol; 5)</label>
+                    </div>
+                  </td>
                   <td>24-12-31 11:11</td>
                   <td>-</td>
                   <td>-</td>
@@ -396,7 +391,12 @@
                 <tr>
                   <td>24-02-23</td>
                   <td>경북 포함</td>
-                  <td><span class="status_fin">완료</span></td>
+                  <td>
+                    <div class="progress_wrap">
+                      <progress id="load" class="loading_progress" value="5" max="5"></progress>
+                      <label for="load">완료</label>
+                    </div>
+                  </td>
                   <td>24-12-31 11:11</td>
                   <td>-</td>
                   <td>-</td>
@@ -410,7 +410,12 @@
                 <tr>
                   <td>24-02-23</td>
                   <td>경북 경주</td>
-                  <td><span class="status_fin">완료</span></td>
+                  <td>
+                    <div class="progress_wrap">
+                      <progress id="load" class="loading_progress" value="0" max="5"></progress>
+                      <label for="load">(<strong>0</strong> &sol; 5)</label>
+                    </div>
+                  </td>
                   <td>24-12-31 11:11</td>
                   <td>-</td>
                   <td>-</td>
@@ -424,7 +429,12 @@
                 <tr>
                   <td>24-02-23</td>
                   <td>경남 창원</td>
-                  <td><span class="status_fin">완료</span></td>
+                  <td>
+                    <div class="progress_wrap">
+                      <progress id="load" class="loading_progress" value="0" max="5"></progress>
+                      <label for="load">(<strong>0</strong> &sol; 5)</label>
+                    </div>
+                  </td>
                   <td>24-12-31 11:11</td>
                   <td>-</td>
                   <td>-</td>

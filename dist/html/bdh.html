@@ -185,7 +185,10 @@
                 </section>
                 <section>
                   <div class="tit">
-                    <h2>건축물 위험도</h2>
+                    <h2>건축물 피해 상세정보</h2>
+                    <div class="tool_wrap unit">
+                      (피해율 = 피해면적 / 총 유효면적)
+                    </div>
                   </div>
                   <div class="tbl_wrap">
                   <table class="tbl_default">
@@ -264,37 +267,36 @@
                     </dd>
                     <dt>건축물 용도</dt>
                     <dd>
-                      <label for=""><input type="checkbox" id="">단독주택</label>
-                      <label for=""><input type="checkbox" id="">공동주택</label>
-                      <label for=""><input type="checkbox" id="">제1종근린생활시설</label>
-                      <label for=""><input type="checkbox" id="">문화 및 집회시설</label>
-                      <label for=""><input type="checkbox" id="">종교시설</label>
-                      <label for=""><input type="checkbox" id="">방송통신시설</label>
-                      <label for=""><input type="checkbox" id="">제2종근린생활시설</label>
-                      <label for=""><input type="checkbox" id="">판매시설</label>
-                      <label for=""><input type="checkbox" id="">운수시설</label>
-                      <label for=""><input type="checkbox" id="">의료시설</label>
-                      <label for=""><input type="checkbox" id="">교육연구시설</label>
-                      <label for=""><input type="checkbox" id="">노유자시설</label>
-                      <label for=""><input type="checkbox" id="">수련시설</label>
-                      <label for=""><input type="checkbox" id="">운동시설</label>
-                      <label for=""><input type="checkbox" id="">업무시설</label>
-                      <label for=""><input type="checkbox" id="">숙박시설</label>
-                      <label for=""><input type="checkbox" id="">위락시설</label>
-                      <label for=""><input type="checkbox" id="">공장</label>
-                      <label for=""><input type="checkbox" id="">창고시설</label>
-                      <label for=""><input type="checkbox" id="">위험물저장 및 처리시설</label>
-                      <label for=""><input type="checkbox" id="">자동차 관련</label>
-                      <label for=""><input type="checkbox" id="">동·식물 관려시설</label>
-                      <label for=""><input type="checkbox" id="">분뇨·쓰레기처리시설</label>
-                      <label for=""><input type="checkbox" id="">교정 및 군사시설</label>
-                      <label for=""><input type="checkbox" id="">발전시설</label>
-                      <label for=""><input type="checkbox" id="">묘지관련시설</label>
-                      <label for=""><input type="checkbox" id="">관광휴게시설</label>
-                      <label for=""><input type="checkbox" id="">가설건축물</label>
-                      <label for=""><input type="checkbox" id="">장례식장</label>
-                      <label for=""><input type="checkbox" id="">자원순환관련시설</label>
-                      <label for=""><input type="checkbox" id="">야영장시설</label>
+                      <label for="" title="자동차 관련 시설군"><input type="checkbox" id="">자동차 관련 시설</label>
+                      <label for="" title="산업 등의 시설군"><input type="checkbox" id="">운수 시설</label>
+                      <label for="" title="산업 등의 시설군"><input type="checkbox" id="">창고 시설</label>
+                      <label for="" title="산업 등의 시설군"><input type="checkbox" id="">공장</label>
+                      <label for="" title="산업 등의 시설군"><input type="checkbox" id="">위험물저장 및 처리 시설</label>
+                      <label for="" title="산업 등의 시설군"><input type="checkbox" id="">자원 순환 관련 시설</label>
+                      <label for="" title="산업 등의 시설군"><input type="checkbox" id="">묘지 관련 시설</label>
+                      <label for="" title="산업 등의 시설군"><input type="checkbox" id="">장례시설</label>
+                      <label for="" title="전기통신시설군"><input type="checkbox" id="">방송 통신 시설</label>
+                      <label for="" title="전기통신시설군"><input type="checkbox" id="">발전 시설</label>
+                      <label for="" title="문화 및 집회시설군"><input type="checkbox" id="">문화 및 집회 시설</label>
+                      <label for="" title="문화 및 집회시설군"><input type="checkbox" id="">종교 시설</label>
+                      <label for="" title="문화 및 집회시설군"><input type="checkbox" id="">위락 시설</label>
+                      <label for="" title="문화 및 집회시설군"><input type="checkbox" id="">관공휴계시설</label>
+                      <label for="" title="영업시설군"><input type="checkbox" id="">판매 시설</label>
+                      <label for="" title="영업시설군"><input type="checkbox" id="">운동 시설</label>
+                      <label for="" title="영업시설군"><input type="checkbox" id="">숙박 시설</label>
+                      <label for="" title="영업시설군"><input type="checkbox" id="">제2종 근린생활시설 중<br /> 다중생활시설</label>
+                      <label for="" title="교육 및 복지시설군"><input type="checkbox" id="">의료 시설</label>
+                      <label for="" title="교육 및 복지시설군"><input type="checkbox" id="">교육연구시설</label>
+                      <label for="" title="교육 및 복지시설군"><input type="checkbox" id="">노유자시설</label>
+                      <label for="" title="교육 및 복지시설군"><input type="checkbox" id="">수련 시설</label>
+                      <label for="" title="교육 및 복지시설군"><input type="checkbox" id="">야영장 시설</label>
+                      <label for="" title="근린생활시설군"><input type="checkbox" id="">제1종 근린생활시설</label>
+                      <label for="" title="근린생활시설군"><input type="checkbox" id="">제2종 근린생활시설<br />(대중생활시설은 제외함)</label>
+                      <label for="" title="주거업무시설군"><input type="checkbox" id="">단독주택</label>
+                      <label for="" title="주거업무시설군"><input type="checkbox" id="">공동주택</label>
+                      <label for="" title="주거업무시설군"><input type="checkbox" id="">업무 시설</label>
+                      <label for="" title="주거업무시설군"><input type="checkbox" id="">교정 및 군사시설</label>
+                      <label for="" title="그 밖의 시설군"><input type="checkbox" id="">동물 및 식물 관련 시설</label>
                     </dd>
                   </dl>
                   <div class="btn_area">
@@ -358,6 +360,64 @@
                         <li>기장군<span class="score">89</span></li>                        
                       </ul>
                     </div>                    
+                  </div>
+                </section>
+                <section>
+                  <div class="tit">
+                    <h2>건축물 피해 상세정보</h2>
+                    <div class="tool_wrap unit">
+                      (피해율 = 피해면적 / 총 유효면적)
+                    </div>
+                  </div>
+                  <div class="tbl_wrap">
+                  <table class="tbl_default">
+                    <thead>
+                      <tr>
+                        <th scope="col">지역</th>
+                        <th scope="col">피해수량 &sol; 전체(동)</th>
+                        <th scope="col">피해면적(㎢) &sol; 피해율(%)</th>
+                        <th scope="col">등급</th>
+                        <th scope="col">점수</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr class="rowgroup">
+                        <td>부산 해운대구</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>1(99)</td>
+                      </tr>
+                      <tr>
+                        <td>반송동</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>1(99)</td>
+                      </tr>
+                      <tr>
+                        <td>석대동</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>1(99)</td>
+                      </tr>
+                      <tr>
+                        <td>우동</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>1(99)</td>
+                      </tr>
+                      <tr>
+                        <td>재송동</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>1(99)</td>
+                      </tr>
+                    </tbody>
+                  </table>
                   </div>
                 </section>
               </section>
