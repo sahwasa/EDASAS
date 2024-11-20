@@ -363,7 +363,7 @@ border:1px solid $border;border-left-width:0;border-radius:0 3px 3px 0;font-size
   & > p{@include explanation;color:#555;letter-spacing:-.13px;background-color:#f5f5f5;margin:15px 0;padding:5px 5px 5px 25px;border-radius:5px;
     &::before{left:7px;}
   }
-  .date{display:block;margin:5px 0;font-size:11px;color:#8b8b8b;letter-spacing:-.5px;text-align:right;}
+  .date{display:block;margin:5px 0 5px auto;font-size:11px;color:#8b8b8b;letter-spacing:-.5px;text-align:right;}
 }
 .contents{position:relative;flex:1;background-color:gray;}
 
