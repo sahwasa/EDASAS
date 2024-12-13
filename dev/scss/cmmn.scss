@@ -407,7 +407,7 @@ border:1px solid $border;border-left-width:0;border-radius:0 3px 3px 0;font-size
   }
 }
 .tbl_scroll_x{overflow-x:auto;
-  table{table-layout:fixed;}
+  table{table-layout:fixed;width:auto;min-width:100%;}
   th,td{white-space:nowrap;padding:3px;}
 }
 .tbl_hover tbody tr:hover{cursor:pointer;background-color:#f6f6f6;}
