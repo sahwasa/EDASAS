@@ -16,25 +16,24 @@
         <h1>차수 관리</h1>
       </header>
       <div class="search">
-        <ul class="search_lst">         
+        <!-- <ul class="search_lst">         
           <li>
             <select name="" id="" title="검색조건"><option value="">검색조건</option></select>
             <input type="text" title="검색어" placeholder="검색어">
           </li>
         </ul>
-        <button type="button" class="btn_blue_line">검색</button>
+        <button type="button" class="btn_blue_line">검색</button> -->
         <div class="tool">
           <!-- 마지막 차수까지 확정일자가 있어야만 활성화 -->
           <button type="button" class="btn_blue" popovertarget="p_addOrder">추가</button>
+          <button type="button" class="btn_blue_line">선택삭제</button>
         </div>
       </div>
       <div class="tbl_wrap">
-        <table class="tbl_set tbl_hover">
-          <colgroup>
-            <col style="width:70px;">                
-          </colgroup>
+        <table class="tbl_set tbl_hover">          
           <thead>
             <tr>
+              <th scope="col">선택</th>
               <th scope="col">차수</th>
               <th scope="col">확정일자</th>
               <th scope="col">대상지역</th>
@@ -46,23 +45,24 @@
           </thead>
           <tbody>
             <tr onclick="document.querySelector('#p_addOrder').showPopover();">             
-              <td>관리자</td>
-              <td>admin</td>
-              <td>홍길동</td>
+              <td><input type="checkbox" title="줄선택"></td>
+              <td>차수명</td>
+              <td>미확정</td>              
               <td>부산,울산,경주</td>
-              <td>-</td>
-              <td>-</td>
+              <td>2400년,1000년,500년</td>
               <td>2010.12.30</td>              
+              <td>데이터 작업중</td>
+              <td>Y</td>
             </tr>            
-            <tr>             
-              <td>관리자</td>
-              <td>admin</td>
-              <td>홍길동</td>
-              <td>-</td>
-              <td>-</td>
-              <td>-</td>
-              <td>2010.12.30</td>
-             
+            <tr onclick="document.querySelector('#p_addOrder').showPopover();">             
+              <td><input type="checkbox" title="줄선택"></td>
+              <td>차수명</td>
+              <td>2010.12.30</td>              
+              <td>부산,울산,경주</td>
+              <td>2400년</td>
+              <td>2010.12.30</td>              
+              <td>현행화 완료</td>
+              <td>Y</td>
             </tr>            
           </tbody>
         </table>       
@@ -81,7 +81,7 @@
       </header>
       <section class="p_body">
         <ul class="ipt_lst inline">
-          <li><label for="">차수</label><input type="text" placeholder="자동부여" disabled></li>
+          <li><label for="">차수</label><input type="text"></li>
           <li><strong class="label">행정구역</strong>
             <select name="" id=""><option value="">시도</option></select>
             <select name="" id=""><option value="">시군구</option></select>
@@ -103,7 +103,7 @@
               <li><label for=""><input type="checkbox">500년</label></li>
             </ul>
           </li>
-          <li><label for="">확정일자</label><input type="date" min="0000-01-01"><button type="button" class="btn_orange">확정</button> </li>
+          <li><label for="">확정일자</label><input type="date" min="0000-01-01"><button type="button" class="btn_orange">확정</button><button type="button" class="btn_orange_line">확정취소</button></li>
           <li><strong class="label">사용여부</strong>
             <ul class="btn_switch useYN">
               <li><input type="radio" id="use" name="useYN" checked><label for="use">사용</label></li>

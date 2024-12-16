@@ -17,8 +17,8 @@ input[type="date"]{position:relative;}
 input[type="datetime-local"]::-webkit-calendar-picker-indicator,
 input[type='time']::-webkit-calendar-picker-indicator,
 input[type="date"]::-webkit-inner-spin-button,
-input[type="date"]::-webkit-calendar-picker-indicator{position:relative;z-index:2;right:0;width:13px;height:14px;background:transparent;}
-textarea{min-height:100px;max-height:300px;resize:none;}
+input[type="date"]::-webkit-calendar-picker-indicator{position:relative;width:16px;height:15px;}
+textarea{min-height:100px;max-height:300px;resize:none;background:transparent;@include fontello('\e872');}
 input[list]::-webkit-calendar-picker-indicator,
 select{-webkit-appearance:none;-moz-appearance:none;appearance:none;padding:2px 30px 2px 10px;background:url(../images/btn_select.png) right 8px center no-repeat, rgba(255,255,255,.9);list-style:none!important;
   option:nth-of-type(1){color:#989898;}
@@ -291,7 +291,7 @@ border:1px solid #ccc;border-radius:5px;background-color: #fff; z-index:100;box-
   .pannel_body{display:flex;flex-direction:column;gap:20px;padding:$maingap;
     .heatmap_wrap + .tbl_wrap{margin-top:20px;}
     .heatmap_wrap li:hover{cursor:pointer;border-color:$navy;background-color:$blue;color:#fff;}
-    .summary{display:flex;flex-direction:column;align-items:center;}
+    .summary{display:flex;flex-direction:column;align-items:center;gap:15px;}
     .chartwrap{width:280px;}
   }
   .main_result{display:none;}
@@ -428,8 +428,8 @@ border:1px solid $border;border-left-width:0;border-radius:0 3px 3px 0;font-size
 }
 .tbl_notice,
 .tbl_set{width:100%;text-align:center;color:#555;background-color:#fff;
-  thead{
-    th{border-bottom:1px solid #6a90d5;border-left:1px solid $lightgray;font-weight:700;color:#000;background-color:#fff;padding:3px;}
+  thead{background-color:#fff;
+    th{border-bottom:1px solid #6a90d5;border-left:1px solid $lightgray;font-weight:700;color:#000;;padding:3px;}
     tr:first-of-type{
       th:first-of-type{border-left-width:0;}
     }
@@ -441,6 +441,7 @@ border:1px solid $border;border-left-width:0;border-radius:0 3px 3px 0;font-size
   }
   input[type="checkbox"]{accent-color:#848890;}
   tr:has(:checked){background-color:lighten($color:$blue, $amount: 50);}
+  .highlight{background-color:#fffbe4;}
 }
 .tbl_notice{font-size:16px;
   thead th{height:57px;}
@@ -627,7 +628,7 @@ border:1px solid $border;border-left-width:0;border-radius:0 3px 3px 0;font-size
   &::after{@include shape(2px,5px);background-color:#000;position:absolute;bottom:0;left:0;}
   &::after{left:auto;right:0;}
 }
-.map_wrap{
+.map_wrap{background-color:#fff;
   .map_tool,
   .map_type,
   .map_legend,
@@ -1019,7 +1020,7 @@ details[open]>summary::after{margin:0 2px;content:'\e86a';}
     &.step_fin{color:#555;}  
   }
   $status:('fin':#EEF0F1,'ing':#66BD43,'wait':#F2661C);
-  @each $key, $val  in $status{
+  @each $key, $val in $status{
     .step_#{$key}{background-color:$val;}
   }
 }
@@ -1029,5 +1030,4 @@ details[open]>summary::after{margin:0 2px;content:'\e86a';}
   &::before{bottom:-20px;border-top-width:0;border-radius:0 0 20px 20px;@include shape(60%, 20px);}
   &::after{width:20%;bottom:-37px;background-color:#fff;content:'DB가공';font-style:16px;padding:5px 0;text-align:center;border-radius:15px;font-weight:600;color:#9ca9bd;}  
 }
-.step_content{display:flex;flex-direction:column;gap:50px;
-}
+.step_content{display:flex;flex-direction:column;gap:50px;}
