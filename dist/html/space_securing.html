@@ -347,7 +347,7 @@
       <input type="range" id="opacity" name="opacity" min="0" max="100" title="투명도" />
     </summary>
     <div class="legend_body">     
-      <section class="safety_grade">                
+      <section class="safety_grade" style="display: none;">                
         <strong>위험도 등급</strong>
         <ul>
           <li class="grade1">1등급</li>
@@ -365,6 +365,16 @@
           <li class="s2"><i>S1</i>얕고 단단한 지반</li>
           <li class="s3"><i>S3</i>얕고 연약한 지반</li>
           <li class="s4"><i>S4</i>깊고 단단한 지반</li>
+        </ul>
+      </section>
+      <section class="bdh_legend">                
+        <strong>건축물 위험도 평가</strong>
+        <ul>
+          <li class="grade1" id="grade1">63,798.04~16,946,013.75</li>
+          <li class="grade2" id="grade2">16,946,013.76~33,828,229.45</li>
+          <li class="grade3" id="grade3">33,828,229.46~50,710,445.15</li>
+          <li class="grade4" id="grade4">50,710,445.16~67,592,660.85</li>
+          <li class="grade5" id="grade5">67,592,660.86~84,474,876.56</li>
         </ul>
       </section>
     </div>

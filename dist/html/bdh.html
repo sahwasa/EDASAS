@@ -115,9 +115,10 @@
           <article class="pannel_body">
             <div class="tit">
               <h1>평가결과</h1>
-              <div class="tool_wrap">
+              <span class="date">평가일 2023-10-10</span>
+              <!-- <div class="tool_wrap">
                 <button type="button" class="btn_gray" popovertarget="p_report">평가보고서</button>
-              </div>
+              </div> -->
             </div>      
             <ul class="tab tab_wrap tab_m">
               <li class="on"><a href="#bdh">일반건축물</a></li>
@@ -127,7 +128,7 @@
               <section class="tab_contents" id="bdh">
                 <section>
                   <div class="summary">         
-                    <span class="date">평가일 2023-10-10</span>
+                    
                     <ul class="eval_result_lst">
                       <li class="grade2">
                         <div class="pie" style="--val:81;">
@@ -491,7 +492,7 @@
       <input type="range" id="opacity" name="opacity" min="0" max="100" title="투명도" />
     </summary>
     <div class="legend_body">     
-      <section class="safety_grade">                
+      <section class="safety_grade" style="display: none;">                
         <strong>위험도 등급</strong>
         <ul>
           <li class="grade1">1등급</li>
@@ -509,6 +510,16 @@
           <li class="s2"><i>S1</i>얕고 단단한 지반</li>
           <li class="s3"><i>S3</i>얕고 연약한 지반</li>
           <li class="s4"><i>S4</i>깊고 단단한 지반</li>
+        </ul>
+      </section>
+      <section class="bdh_legend">                
+        <strong>건축물 위험도 평가</strong>
+        <ul>
+          <li class="grade1" id="grade1">63,798.04~16,946,013.75</li>
+          <li class="grade2" id="grade2">16,946,013.76~33,828,229.45</li>
+          <li class="grade3" id="grade3">33,828,229.46~50,710,445.15</li>
+          <li class="grade4" id="grade4">50,710,445.16~67,592,660.85</li>
+          <li class="grade5" id="grade5">67,592,660.86~84,474,876.56</li>
         </ul>
       </section>
     </div>
