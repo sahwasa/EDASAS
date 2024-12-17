@@ -719,8 +719,8 @@ details[open]>summary::after{margin:0 2px;content:'\e86a';}
   li{letter-spacing:-.05em;
     &::before{position:relative;top:2px;@include shape(30px, 11px);margin-right:5px;}
     $col : #d24600;
-    @for $i from 1 through 5{
-      &:nth-child(#{$i})::before{background-color:lighten($col, $i * 10);} 
+    @for $i from 1 through 5{      
+      &:nth-child(#{$i})::before{background-color:lighten($col,  10 * (6 - $i));} 
     }
   }
 }
