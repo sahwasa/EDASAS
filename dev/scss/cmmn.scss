@@ -218,7 +218,7 @@ $navH:315px;
 border:1px solid #ccc;border-radius:5px;background-color: #fff; z-index:100;box-shadow:0 0 7px rgba(0, 0, 0, .2);
   &::before{position:absolute;right:15px;top:0;@include shape(7px, 7px);border-color:#bec6d6;border-width:1px 0 0 1px;border-style:solid;background-color:#fff;transform:rotate(45deg);margin-top:-5px;}
   .my_svc{padding:10px 0;
-    & a{display:flex;align-items:center;padding-left:26px;line-height:32px;font-size:13px;color:#a4a3a3;
+    a,button{display:flex;width:100%;align-items:center;padding-left:26px;line-height:32px;font-size:13px;color:#a4a3a3;
       &::before{@include shape(16px,16px);background:url(../images/my_layer.png) 0 0 no-repeat;margin-right:17px;}
       &:hover{background-color:#f1f1f1;color:#000;
         &::before{background-image:url(../images/my_layer_on.png);}
@@ -533,6 +533,7 @@ border:1px solid $border;border-left-width:0;border-radius:0 3px 3px 0;font-size
     label{width:100%;min-width:auto;white-space:nowrap;padding:0 10px;}
   }
   .select_lst{padding-left:125px;}
+  .label + .select_lst{padding-left:0;}
 }
 .dash_lst{gap:2px;
   li::before{height:1px;background-color:#555;}

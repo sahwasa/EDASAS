@@ -63,13 +63,80 @@
       </button>
       <div class="my_layer">
         <ul class="my_svc">
-          <li><a href="javascript:();">내 정보</a></li>
+          <li><button type="button" popovertarget="p_userInfo">내 정보</button></li>
           <li><a href="javascript:(console.log('logout'));">로그아웃</a></li>
         </ul>
       </div>
     </div>
   </div>
-</header>    
+</header>
+<dialog id="p_userInfo" class="p_userInfo line_style" style="--width:450px" popover="manual">
+  <form method="dialog">
+    <header class="p_header tit">
+      <h1>내정보</h1>
+      <div class="tool_wrap">
+        <button type="button" class="btn_close" popovertarget="p_userInfo" popvertargetaction="hide">닫기</button>
+      </div>
+    </header>
+    <section class="p_body">
+      <ul class="ipt_lst inline">
+        <li>
+          <strong class="label">사용자ID</strong>
+          <span>사용자ID</span>
+        </li>
+        <li>
+          <strong class="label">비밀번호</strong>
+          <span>******</span>
+          <button type="button" class="btn btn_gray">변경</button>
+        </li>
+        <li>
+          <strong class="label">사용자명</strong>
+          <span>홍길동</span>
+        </li>
+        <li>
+          <strong class="label">소속기관</strong>
+          <span>케이아이티밸리</span>
+        </li>
+        <li>
+          <strong class="label">직급</strong>
+          <span>연구원</span>
+        </li>
+        <li>
+          <strong class="label">담당지역</strong>
+          <ul class="select_lst">
+            <li><p>부산</p></li>
+            <li><p>울산</p></li>
+          </ul>
+        </li>
+        ---------------수정시------------------
+        <li class="required"><label for="">비밀번호</label><input type="password" placeholder="비밀번호"></li>
+        <li class="required">
+          <label for="">비밀번호 확인</label><input type="password" placeholder="비밀번호 확인">
+          <p class="invalid">비밀번호가 일치하지 않습니다.</p>
+        </li>
+        <li class="required"><label for="">사용자명</label><input type="text" placeholder="사용자명"></li>
+        <li class="required"><label for="">소속기관</label><input type="text" placeholder="소속기관"></li>
+        <li><label for="">직급</label><input type="text" placeholder="직급"></li>
+        <li class="required"><label for="">담당지역</label>
+          <!-- 한개만 선택되도록 -->
+          <ul class="areaUnit btn_switch">
+            <li><input type="checkbox" id="area1" name="area" checked><label for="area1">부산</label></li>
+            <li><input type="checkbox" id="area2" name="area"><label for="area2">울산</label></li>
+            <li><input type="checkbox" id="area3" name="area"><label for="area3">경주</label></li>
+            <li><input type="checkbox" id="area4" name="area"><label for="area4">포항</label></li>
+            <li><input type="checkbox" id="area5" name="area"><label for="area5">창원</label></li>
+          </ul>
+        </li>       
+        <li><strong class="label">권한</strong><span>관리자</span></li>
+      </ul>
+    </section>
+    <section class="p_foot">
+      <button type="submit" class="btn_foot_blue">저장</button>
+      <button type="submit" class="btn_foot_blue">수정</button>
+      <button type="button" class="btn_foot_gray" popovertarget="p_userInfo" popvertargetaction="hide">닫기</button>
+    </section>
+  </form>
+</dialog>    
   <main id="content" class="main_container">
     <div class="static_contents">
       <header>
