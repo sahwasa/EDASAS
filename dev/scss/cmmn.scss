@@ -490,13 +490,14 @@ border:1px solid $border;border-left-width:0;border-radius:0 3px 3px 0;font-size
   .btn_gray_line{border-radius:13px;}
 }
 .manual{table-layout:fixed;
-  td{@include alignL(3){text-overflow:ellipsis;overflow:hidden;}white-space:nowrap;}
+  td{@include alignL(2){text-overflow:ellipsis;overflow:hidden;}white-space:nowrap;}
 }
 %attach{@include shape(24px,28px);background:url(../images/ico_attach.png) 0 0 no-repeat;}
 .ico_hwp{@extend %attach;background-position-y:0;}
 .ico_pdf{@extend %attach;background-position-y:-37px;}
 .ico_ppt{@extend %attach;background-position-y:-74px;}
 .ico_word{@extend %attach;background-position-y:-112px;}
+.ico_etc{@extend %attach;background-position-y:-150px;}
 .tbl_comprehensive_safety{
   td{width:calc((100% - 80px) / 6);white-space:10px;letter-spacing:0.05em;}
   td:first-child{width:80px;letter-spacing:-.05em;}

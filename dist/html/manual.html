@@ -105,10 +105,9 @@
           <strong class="label">담당지역</strong>
           <ul class="select_lst">
             <li><p>부산</p></li>
-            <li><p>울산</p></li>
           </ul>
         </li>
-        ---------------수정시------------------
+        <!-- ---------------수정시------------------ -->
         <li class="required"><label for="">비밀번호</label><input type="password" placeholder="비밀번호"></li>
         <li class="required">
           <label for="">비밀번호 확인</label><input type="password" placeholder="비밀번호 확인">
@@ -152,63 +151,64 @@
       <div class="tbl_wrap">
         <table class="tbl_notice tbl_hover manual">
           <colgroup>
-            <col style="width:70px;" span="2">
+            <col style="width:70px;">
             <col style="width:auto;">
             <col style="width:100px;" span="2">
-            <col style="width:70px;" span="3">            
+            <col style="width:70px;" span="2">            
           </colgroup>
           <thead>
             <tr>
-              <th scope="col">선택</th>
+              <!-- <th scope="col">선택</th> -->
               <th scope="col">번호</th>
               <th scope="col">제목</th>
               <th scope="col">작성자</th>
               <th scope="col">작성일</th>
               <th scope="col">조회수</th>
               <th scope="col">첨부파일</th>
-              <th scope="col">수정</th>
             </tr>
           </thead>
           <tbody>
             <tr>
-              <td><input type="checkbox" id=""></td>
               <td>100</td>
               <td>지진재해 지역안전도 평가시스템 운영방법</td>
               <td>관리자</td>
               <td>2010.12.30</td>
               <td>1,123</td>
               <td><a href="#" download class="ico_pdf">파일명</a></td>
-              <td><button type="button" class="btn_gray_line">수정</button></td>
             </tr>
             <tr>
-              <td><input type="checkbox" id=""></td>
               <td>99</td>
               <td>지진재해 지역안전도 평가시스템 운영방법지진재해 지역안전도 평가시스템 운영방법해 지역안전도 평가시스템 운영방법해 지역안전도 평가시스템 운영방법</td>
               <td>관리자</td>
               <td>2010.12.30</td>
               <td>1,123</td>
               <td><a href="#" download class="ico_ppt">파일명</a></td>
-              <td><button type="button" class="btn_gray_line">수정</button></td>
             </tr>
             <tr>
-              <td><input type="checkbox" id=""></td>
               <td>98</td>
               <td>지진재해 지역안전도 평가시스템 운영방법</td>
               <td>관리자</td>
               <td>2010.12.30</td>
               <td>1,123</td>
               <td><a href="#" download class="ico_word">파일명</a></td>
-              <td><button type="button" class="btn_gray_line">수정</button></td>
             </tr>
             <tr>
-              <td><input type="checkbox" id=""></td>
               <td>97</td>
               <td>지진재해 지역안전도 평가시스템 운영방법</td>
               <td>관리자</td>
               <td>2010.12.30</td>
               <td>1,123</td>
               <td><a href="#" download class="ico_hwp">파일명</a></td>
-              <td><button type="button" class="btn_gray_line">수정</button></td>
+            </tr>
+            <tr>
+              <!-- <td><input type="checkbox" id=""></td> -->
+              <td>97</td>
+              <td>지진재해 지역안전도 평가시스템 운영방법</td>
+              <td>관리자</td>
+              <td>2010.12.30</td>
+              <td>1,123</td>
+              <td><a href="#" download class="ico_etc">파일명</a></td>
+              <!-- <td><button type="button" class="btn_gray_line">수정</button></td> -->
             </tr>
           </tbody>
         </table>        
@@ -263,6 +263,7 @@ Copyright © 2024 국립재난안전연구원. All rights reserved.
     </section>
     <section class="p_foot">
       <button type="submit" class="btn_foot_blue">저장</button>
+      <button type="submit" class="btn_foot_blue">수정</button>
       <button type="button" class="btn_foot_gray" popovertarget="p_addManual" popvertargetaction="hide">닫기</button>
     </section>
   </form>
