@@ -238,7 +238,7 @@
   <footer class="footer">
 Copyright © 2024 국립재난안전연구원. All rights reserved.
 </footer>
-  <dialog id="p_addManual" class="p_addManual line_style" style="--width:700px" popover="manual">
+  <dialog id="p_addManual" class="p_addManual line_style" style="--width:700px" popover="manual" open>
   <form method="dialog">
     <header class="p_header tit">
       <h1>매뉴얼 추가</h1>
@@ -257,6 +257,25 @@ Copyright © 2024 국립재난안전연구원. All rights reserved.
               <span class="file_wrap btn_blue_line">파일선택</span>
               <input type="file" role="fileAdd" class="file_add">
             </div>            
+            <div class="file_lst">
+              <ul class="attach_list" id="view_file">                             
+                <li>
+                  <a href="javascript:fileDownload('bbs','undefined','변경사항.pptx','6');"><i class="ico_ppt"></i>변경사항.pptx(1.97 MB)</a><button type="button" class="file_del">삭제</button>
+                </li>              
+              </ul>                      
+            </div>
+          </div>
+        </li>
+        <li><label for="">첨부파일</label>
+          <div>
+            <ul class="attach_list" id="view_file">
+              <li>
+                <a href="javascript:fileDownload('bbs','undefined','변경사항.pptx','6');"><i class="ico_ppt"></i>변경사항.pptx(1.97 MB)</a>
+              </li>              
+              <li>
+                <a href="javascript:fileDownload('bbs','undefined','변경사항.pptx','6');"><i class="ico_ppt"></i>변경사항.pptx(1.97 MB)</a>
+              </li>                                
+            </ul>                      
           </div>
         </li>
       </ul>

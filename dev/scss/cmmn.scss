@@ -555,8 +555,8 @@ border:1px solid $border;border-left-width:0;border-radius:0 3px 3px 0;font-size
 .lst_attach{margin-top:5px;padding:5px 10px;
   .attach{max-width:calc(100% - 35px);text-overflow:ellipsis;overflow:hidden;white-space:nowrap;vertical-align:middle;}
 }
-.attach_list{border:1px solid #d6d6d6;padding:10px;
-  li{display:flex;align-items:center;gap:7px;}
+.attach_list{display:flex;flex-direction:column;gap:3px;border:1px solid #d6d6d6;padding:10px;
+  li,li > a{display:flex;align-items:center;gap:7px;}  
   a:hover{text-decoration:underline;}
 }
 .file_del{flex-shrink:0;@include ico_only('\e817',$tomato);
