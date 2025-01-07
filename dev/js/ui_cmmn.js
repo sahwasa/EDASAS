@@ -141,30 +141,33 @@ function commonInit() {
 	menuInit();
 	function menuInit(){
 		$deps1.each(function(index, item){
-		var getAttr=$(this).children('a').attr('href');
-      index+=1;
-      indexDeps1=$(this).children('a').attr('href',getAttr + "#?index="+ index +',1');
-      indexDeps2=$(this).find($deps2);
-      getDeps=$(this).children('a').attr('href');
-      indexDeps2.each(function(index2, item){
-        getAttr=$(this).children('a').attr('href');
-        index2+=1;
-        indexDeps2=$(this).children('a').attr('href',getAttr + "#?index="+index+',' + index2);
-      });
-    });    
+            var getAttr=$(this).children('a').attr('href');
+            index+=1;
+            if(getAttr.indexOf('?index=')===-1)
+              indexDeps1=$(this).children('a').attr('href',getAttr + "?index="+ index +',1');
+            indexDeps2=$(this).find($deps2);
+            getDeps=$(this).children('a').attr('href');
+            indexDeps2.each(function(index2, item){
+                getAttr=$(this).children('a').attr('href');
+                index2+=1;
+                if(getAttr.indexOf('?index=')===-1)
+                  indexDeps2=$(this).children('a').attr('href',getAttr + "?index="+index+',' + index2);
+            });
+        });
 
 		if(locate.indexOf("index=")>-1){
 			preLocate=locate.split("index=")[1].split(',');
 			deps1Locate=preLocate[0]-1;
 			deps2Locate=preLocate[1]-1;
-      $deps1.eq(deps1Locate).children('a').addClass('on');
-      $deps1.eq(deps1Locate).find($deps2).eq(deps2Locate).children('a').addClass('on');
-      $snb.eq(deps2Locate).addClass('on');
-      $snb.each(function(index){
-        getAttr = $(this).children('a').attr('href');
-        index += 1;
-        $(this).children('a').attr('href',getAttr + "#?index="+ preLocate[0]+','+index);
-      })      
+            $deps1.eq(deps1Locate).children('a').addClass('on');
+            $deps1.eq(deps1Locate).find($deps2).eq(deps2Locate).children('a').addClass('on');
+            $snb.eq(deps2Locate).addClass('on');
+            $snb.each(function(index){
+                getAttr = $(this).children('a').attr('href');
+                index += 1;
+                if(getAttr.indexOf('?index=')===-1)
+                    $(this).children('a').attr('href',getAttr + "?index="+ preLocate[0]+','+index);
+            })
 		}
 	};
 
@@ -276,7 +279,7 @@ function commonInit() {
       all_check($(item))
   })
   //dtlPannel
-  $('.sub_tit').on('click change','input:radio',function(){    
+  $('.sub_tit').on('click change','input:radio',function(evt){
     if($(this).parents('details').find('ul').length >= 1){
       var wrap = $(this).parents('details');
       wrap.prop('open',true);
@@ -286,8 +289,10 @@ function commonInit() {
     }else{
       $('.dtlPannel_wrap').find('ul input:radio').prop('checked',false);
     }
+    if(evt.type==='click')
+      setMapLayer()
   })
-  $('.map_type').on('click change','input:radio',function(){
+  $('.map_type').on('change','input:radio',function(){
     var thisP = $(this).parents('.map_type'),
         checkSize = thisP.find('input:radio').length,
         allCtrl = thisP.prev('.sub_tit').find('input:radio');
@@ -296,6 +301,7 @@ function commonInit() {
     }else{
       allCtrl.prop('checked',false);      
     }
+    setMapLayer()
   })
 
   //layer_tool
@@ -333,7 +339,6 @@ function commonInit() {
     e.preventDefault();
     const link = $(this).val(),
           target = e.target.dataset.seltab;
-    console.log(link);
     $('#'+target).find('.seltab_opt').hide();
     $('#'+link).show();    
   });
@@ -377,7 +382,7 @@ function commonInit() {
   filePath.val('선택된 파일이 없습니다.');
   $('[role="fileAdd"]').on('change',function(){
     var fileAdd = $(this);
-    fileAdd.parent('.file_ipt').find('[role="filePath"]').val(fileAdd.val());
+    fileAdd.parent('.file_ipt').find('[role="filePath"]').val(fileAdd[0].files[0].name);
   });
 
   // toggle button
@@ -434,7 +439,11 @@ function commonInit() {
     $(this).css('color', 'inherit')
   })
 
+}
+
   function grade(){
+    if(!window.location.pathname.startsWith('/m1'))
+      return;
     const loc = window.location.href.split("index=")[1].split(',')[1];
     const meters = $('.meter_wrap').find('meter');
     const pies = $('.pie_graphwrap').find('.pie');
@@ -460,7 +469,6 @@ function commonInit() {
     })
   }
   grade();
-}
 const path = "../images/temp/",
       distribution = 'distribution_map.png',
       distribution_legend = $('.distribution_legend'),
@@ -479,4 +487,38 @@ function mapTgl(gradeMap){
       distribution_legend.hide();
     }
   })
+}
+
+//인쇄관련
+function printElement(elem) {
+  var el = document.getElementById(elem);
+  var domClone = el.cloneNode(true);
+  var printSection = document.getElementById("printSection");
+
+  var chartCanvas = el.querySelector('#p_radarchart');
+  var chartDataUrl = chartCanvas.toDataURL();
+
+  var chartImage = new Image();
+  chartImage.src = chartDataUrl;
+  chartImage.id = 'cloneChart';
+
+  var clonedChartCanvas = domClone.querySelector('#p_radarchart');
+  clonedChartCanvas.parentNode.replaceChild(chartImage, clonedChartCanvas);
+
+  if (!printSection) {
+    printSection = document.createElement("div");
+    printSection.id = "printSection";
+    document.body.appendChild(printSection);
+  }
+
+  printSection.innerHTML = "";
+  printSection.appendChild(domClone);
+
+  setTimeout(window.print, 100);
+}
+
+//pdf인쇄
+function saveElementAsPDF() {
+  var element = document.getElementById('printArea');
+  html2pdf().from(element).save();
 }
