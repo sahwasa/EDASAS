@@ -382,7 +382,11 @@ function commonInit() {
   filePath.val('선택된 파일이 없습니다.');
   $('[role="fileAdd"]').on('change',function(){
     var fileAdd = $(this);
-    fileAdd.parent('.file_ipt').find('[role="filePath"]').val(fileAdd[0].files[0].name);
+    if ($('#atchmnfl')[0].files.length > 0) {
+      fileAdd.parent('.file_ipt').find('[role="filePath"]').val(fileAdd[0].files[0].name);
+    } else {
+      fileAdd.parent('.file_ipt').find('[role="filePath"]').val('선택된 파일이 없습니다.');
+    }
   });
 
   // toggle button
