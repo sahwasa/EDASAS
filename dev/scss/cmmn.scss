@@ -514,8 +514,7 @@ border:1px solid $border;border-left-width:0;border-radius:0 3px 3px 0;font-size
   & > dd::before{background-color:#999;}
 }
 .ipt_lst{display:flex;flex-direction:column;gap:30px;
-  & > li {& >.label, & >label{font-size:16px;color:$blue;margin-bottom:10px;font-weight:700;}}
- 
+  & > li {& >.label, & >label{font-size:16px;color:$blue;margin-bottom:10px;font-weight:700;}} 
   input:not(:is([size],[min],[type="checkbox"],[type="radio"])){width:100%;}
   [contenteditable]{min-height:var(--h);max-height:430px;overflow-y:auto;}
   &.inline{gap:15px;
@@ -535,6 +534,12 @@ border:1px solid $border;border-left-width:0;border-radius:0 3px 3px 0;font-size
   }
   .select_lst{padding-left:125px;}
   .label + .select_lst{padding-left:0;}
+  li:has(.info){flex-wrap:wrap;
+    .info{flex:1 0 100%;display:flex;align-items:center;gap:5px;color:#555;font-size:14px;padding-left:125px;
+
+      &::before{@include fontello('\e877');color:#89A6D6;}
+    }
+  }
 }
 .dash_lst{gap:2px;
   li::before{height:1px;background-color:#555;}

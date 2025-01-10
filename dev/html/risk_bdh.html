@@ -123,7 +123,7 @@
   </main>
   @@include('../inc/footer.html')
 </div>
-<dialog id="p_upload" class="p_upload line_style" style="--width:900px" popover="manual">
+<dialog id="p_upload" class="p_upload line_style" style="--width:900px" popover="manual" open>
   <form method="dialog">
     <header class="p_header tit">
       <h1>건축물 피해 위험도 업로드</h1>
@@ -150,7 +150,10 @@
             <input type="file" role="fileAdd" class="file_add">
           </div>
           <button type="button" class="btn_gray_line">미리보기</button>
-        </li>         
+          <div class="info">양식에 맞는 파일을 업로드해주시길 바랍니다. 처음 작성 시 양식을 다운받아 진행해주세요.
+            <button type="button" class="btn_gray">파일양식 다운로드</button>          
+          </div>
+        </li>
       </ul>
       <div class="tbl_wrap tbl_preview">
         <table class="tbl_set">   
