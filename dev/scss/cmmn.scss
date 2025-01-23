@@ -135,25 +135,24 @@ $navH:315px;
   &:has(.flex_body) + footer{margin-top:0;}
 }
 .static_contents{width:1200px;margin:30px auto 0;
-  &>header{@include tit(h1);margin-bottom:60px;
+  & > header{@include tit(h1);margin-bottom:60px;
     h1{font-size:30px;}
     strong{color:#555;font-size:16px;font-weight:normal;@include divide;
       &::before{background-color:#777;}
-    }
-   
+    }   
   }
   article{@include tit(h2);margin-bottom:0;
+    h1{margin-bottom:15px;
+      &.arrow{position:relative;padding-left:20px;margin-bottom:0;
+        &::before,&::after{position:absolute;left:3px;top:5px;@include shape(5px, 12px);background-color:$blue;opacity:.6;transform:rotate(-45deg);border-radius:5px;border:none;}
+        &::after{top:10px;transform:rotate(45deg);}
+      }
+    }
     h2{margin-bottom:20px;}
     .tab_contents > section,
     &>section{padding-left:20px;margin-bottom:80px;@include tit_bullet('h3');
       h3{margin-bottom:15px;text-indent:-15px;}
       .dot_lst{padding-left:10px;}
-    }
-  }
-  .tab_contents h1{margin-bottom:15px;
-    &.arrow{position:relative;padding-left:20px;margin-bottom:0;
-      &::before,&::after{position:absolute;left:3px;top:5px;@include shape(5px, 12px);background-color:$blue;opacity:.6;transform:rotate(-45deg);border-radius:5px;border:none;}
-      &::after{top:10px;transform:rotate(45deg);}
     }
   }
   p{font-size:16px;color:#555;letter-spacing:-.05em;}
@@ -186,8 +185,39 @@ $navH:315px;
 .flex_body{@extend .static_contents;flex:1;padding:30px;margin:0;
   .tab li{flex:0 0 150px;}
 }
-
-.equation{display:flex;align-items:center;gap:8px;padding:0 30px;margin-top:50px;font-size:16px;
+.sys_method{display:flex;flex-direction:row-reverse;gap:55px;
+  .chapter{position:sticky;left:0;top:0;flex-shrink:0;height:calc(100vh - 60px);overflow-y:auto;color:#707275;
+    h2{border-bottom:1px solid #D5D6D7;font-size:16px;margin-bottom:10px;padding-bottom:5px;}
+    a:hover{color:$navy;font-weight: 600;}
+  }
+  .chapter_body{counter-reset:chapter_body;
+    &>article h1{font-size:22px;font-weight:600;color:#000; counter-reset:section2;margin-bottom:40px;
+      &::before{counter-increment:chapter_body;content:counter(chapter_body)'.';margin-right:20px;}
+    }
+    .section2{display:flex;flex-direction:column;gap:25px;
+      & > h2{margin-bottom:0;text-indent:-20px;
+       &::before{counter-increment:section2;content:counter(chapter_body)'.'counter(section2);margin-right:15px;}
+       & + .tbl_wrap{margin-top:0;}
+      }      
+    }
+    .section3{display:flex;flex-direction:column;gap:15px;
+      h3{margin-bottom:0;}
+    }
+    p{font-size:14px;text-align:justify;text-indent:10px;}
+  }
+  .lst_default{display:flex;flex-direction:column;gap:10px;
+    li ul{padding-left:10px;}
+  }
+  .flex_1{flex:1;}
+  .flex_1-5{flex:1.5;}
+  .flex_wrap:has(.flex_1){gap:25px;align-items:start;}
+}
+.strong_tit{display: block;text-align:center;}
+sup,sub{font-size:.63em;}
+.fn_lst{font-size:12px;
+  li{display:flex;gap:5px;word-break:keep-all;padding-left:15px;text-indent:-15px;}
+}
+.equation{display:flex;align-items:center;gap:8px;padding:0 30px;font-size:16px;margin:20px 0;
   .fraction{display:flex;flex-direction:column;text-align:center;line-height:2;
     span{padding:0 10px;
       &:first-of-type{border-bottom:1px solid #555;}
@@ -393,7 +423,7 @@ border:1px solid $border;border-left-width:0;border-radius:0 3px 3px 0;font-size
     &::before{@include shape(3px, 3px);background-color:#777;border-radius:50%;}
   }
 }
-.tbl_wrap{
+.tbl_wrap{position:relative;
   &:not(:has(.tbl_default)){border-top:2px solid $blue;}
   .bot_wrap{display:flex;gap:4px;margin-top:20px;
     button{width:100px;line-height:40px;font-size:14px;}
@@ -455,6 +485,13 @@ border:1px solid $border;border-left-width:0;border-radius:0 3px 3px 0;font-size
   thead th{height:24px;border:1px solid #999;background-color:#f5f5f5;}
   td{height:19px;border:1px solid #ccc;}
   th,td{padding:0 8px;}
+}
+.tbl_wrap:has(.tbl_method){margin-top:25px;}
+.tbl_method{width:100%;font-size:12px;text-align:center;
+  caption{top:-25px;display:block;font-size:13px;text-indent:0;visibility:visible;line-height:1;}
+  th,td{border:1px solid $lightgray;border-top-width:0;padding:3px;}
+  th{color:#000;font-weight:600;background-color:#f5f5f5;padding:5px;word-break:keep-all;}
+  td li{text-align:left;font-size:13px;}
 }
 
 .status_wait{color:$blue;}
@@ -536,16 +573,36 @@ border:1px solid $border;border-left-width:0;border-radius:0 3px 3px 0;font-size
   .label + .select_lst{padding-left:0;}
   li:has(.info){flex-wrap:wrap;
     .info{flex:1 0 100%;display:flex;align-items:center;gap:5px;color:#555;font-size:14px;padding-left:125px;
-
       &::before{@include fontello('\e877');color:#89A6D6;}
     }
   }
 }
 .dash_lst{gap:2px;
   li::before{height:1px;background-color:#555;}
+  .dot_lst{gap:0;
+    & > li::before{width:2px;height:2px;}
+  } 
 }
 .check_lst{display:flex;gap:15px;
   label{display:inline-flex;flex-shrink:0;gap:5px;}  
+}
+.num_lst{counter-reset:chapter1;display:flex;flex-direction:column;gap:15px;
+  li{font-size:12px;
+    &::before{margin-right:5px;}
+  }
+  & > li{font-size:16px;
+    &::before{counter-increment:chapter1;content:counter(chapter1)'.';}
+    & > ol{counter-reset:chapter2;padding-left:10px;
+      & > li{
+        &::before{counter-increment:chapter2;content:counter(chapter1)'.'counter(chapter2) ;}
+        & > ol{counter-reset:chapter3;
+          & > li{
+            &::before{counter-increment:chapter3;content:counter(chapter1)'.'counter(chapter2)'.'counter(chapter3) ;}
+          }
+        }
+      }
+    }
+  }
 }
 
 
@@ -560,6 +617,8 @@ border:1px solid $border;border-left-width:0;border-radius:0 3px 3px 0;font-size
 .lst_attach{margin-top:5px;padding:5px 10px;
   .attach{max-width:calc(100% - 35px);text-overflow:ellipsis;overflow:hidden;white-space:nowrap;vertical-align:middle;}
 }
+#dropArea .attach_list{border-color:transparent;}
+#dropArea
 .attach_list{display:flex;flex-direction:column;gap:3px;border:1px solid #d6d6d6;padding:10px;
   li,li > a{display:flex;align-items:center;gap:7px;}  
   a:hover{text-decoration:underline;}
