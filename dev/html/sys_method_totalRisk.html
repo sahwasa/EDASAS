@@ -1,0 +1,733 @@
+@@include('../inc/top.html')
+<div id="wrap" class="wrap">
+  @@include('../inc/header.html')    
+  <main id="content" class="main_container">
+    @@include('../inc/sub_method.html')
+    <div class="flex_body">
+      <header>
+        <section class="bredcrumb">
+          <ul>
+            <li><a href="#">Home</a></li>
+            <li>시스템 소개</li>
+            <li>시스템 평가 방법</li>
+            <li>종합위험도</li>
+          </ul>
+        </section>
+        <h1>종합위험도</h1>
+      </header>
+      <div class="sys_method">
+        <section class="chapter">
+          <h2>절차서 목차</h2>
+          <ol class="num_lst">
+            <li><a href="#1">총칙</a>
+              <ol>
+                <li><a href="#1-1">일반 사항</a></li>
+                <li><a href="#1-2">용어 정의</a></li>
+                <li><a href="#1-3">필요 데이터</a></li>
+              </ol>
+            </li>
+            <li><a href="#2">지역특성을 고려한 종합위험도 평가</a>
+              <ol>
+                <li><a href="#2-1">종합위험도의 중요성</a></li>
+                <li><a href="#2-2">고려되는 위험도 선정</a></li>
+                <li><a href="#2-3">위험도의 등급 분포</a></li>
+              </ol>
+            </li>
+            <li><a href="#3">종합위험도 평가 방식</a>
+              <ol>
+                <li><a href="#3-1">종합위험도 평가시스템 구축</a></li>
+                <li><a href="#3-2">일반 데이터를 사용한 방법</a></li>
+                <li><a href="#3-3">환산 데이터를 사용한 방법</a></li>
+              </ol>
+            </li>
+            <li><a href="#4">종합위험도 평가 결과</a>
+              <ol>
+                <li><a href="#4-1">종합위험도 평가 결과 확인 및 분석</a></li>
+              </ol>
+            </li>
+          </ol>
+        </section>
+        <section class="chapter_body">
+          <article>
+            <h1 id="1">총칙</h1>
+            <section class="section2">
+              <h2 id="1-1">일반 사항</h2>
+              <ul class="lst_default">
+                <li>
+                  <strong>(1) 절차서 제작 목적</strong>
+                  <p>본 절차서는 일본 도쿄도 도시정비국의 지역위험도 측정 조사에서 제시한 지역안전도를 기반으로, 종합위험도 평가에 있어 표준화된 절차를 확립하는 것을 목적으로 한다.</p>                  
+                </li>
+                <li>
+                  <strong>(2) 절차서 배경</strong>
+                  <p>공익 목적 실현을 위해 개인 또는 단체에서 종합위험도를 평가할 때 본 절차서를 활용할 수 있다. 다만, 본 절차서 외에 종합위험도를 평가하는 다른 절차서나 기준이 존재하는 경우, 해당 절차서 및 기준을 활용할 수 있다.</p>
+                </li>                
+                <li>
+                  <strong>(3) 종합위험도</strong>
+                  <p>지진재해 발생 시 건축물의 붕괴와 화재가 발생할 가능성이 있으며, 대피 및 복구 활동의 어려움이 인명과 재산 피해에 영향을 미칠 수 있다. 종합위험도는 지진재해 발생 시 특정 행정구역의 위험성을 쉽게 파악하기 위해 고안된 평가지표로, 건축물 피해, 화재, 긴급 대응과 관련된 각 위험도를 종합하여 순위와 등급으로 나타낸다.</p>
+                </li>                
+              </ul>
+            </section>
+            <section class="section2">
+              <h2 id="1-2">용어 정의</h2>
+              <div class="tbl_wrap">
+                <table class="tbl_method">
+                  <caption>[표 1-1] 지반분류 데이터 처리 관련 주요 용어</caption>
+                  <thead>
+                    <tr>
+                      <th scope="col">용어명</th>
+                      <th scope="col">설명</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>건축물 피해위험도</td>
+                      <td>건축물 피해위험도는 지진으로 인한 흔들림에 의해 발생하는 건축물 손상의 지역별 규모를 나타내는 지표이다.</td>
+                    </tr>
+                    <tr>
+                      <td>지진화재 위험도</td>
+                      <td>지진화재란 지진에 의해 발생하는 화재로, 건축물 및 지역 특성을 복합적으로 고려하여 지역 단위의 화재 위험성을 나타내는 지표이다.</td>
+                    </tr>
+                    <tr>
+                      <td>긴급대응 난이도</td>
+                      <td>긴급대응 난이도는 대피와 구조 등 긴급대응 활동에 필요한 도로와 공간이 얼마나 잘 확보되고 발달되어 있는지를 바탕으로, 지역의 지진재난 긴급대응 역량을 평가하는 지표이다.</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </section>    
+            <section class="section2">
+              <h2 id="1-3">필요 데이터</h2>
+              <p>종합위험도를 평가하기 위해서는 건축물 피해위험도, 지진화재 위험도, 긴급대응 난이도의 결과가 필요하며, 해당 데이터는 각 위험도의 절차서와 매뉴얼을 참고하여 계산할 수 있다.</p>
+            </section>              
+          </article>
+          <article>
+            <h1 id="2">지역특성을 고려한 종합위험도 평가</h1>
+            <section class="section2">
+              <h2 id="2-1">종합위험도의 중요성</h2>
+              <p>최근 국내에서는 2016년 9월 경주지진(규모 5.8), 2017년 11월 포항지진(규모 5.4)과 같은 대규모 지진뿐만 아니라 중·소규모 지진도 꾸준히 증가하는 추세를 보이고 있다. 이에 따라 국내에서는 내진설계 대상과 기준이 점차 강화되고 있으나, 여전히 내진설계가 적용되지 않은 건물이 많이 존재한다. 또한, 포항지진으로 인한 지진 피해 건축물의 구조 형식, 용도, 건축 연대 등이 전국의 시설물 현황과 유사하다는 점에서, 유사한 재해 발생 시 대규모 피해가 발생할 가능성이 크다. 이는 구조물의 심각한 손상으로 이어져 붕괴와 화재를 유발하고, 나아가 큰 인명 피해를 초래할 수 있다.</p>
+              <figure class="figure_wrap flex_figure">
+                <div class="inner_wrap">
+                  <div>
+                    <img src="../images/intro/totalRisk/img_fic_2.1-1_a.gif" alt="(a) 연도별 국내 지진 발생 추이 그래프">
+                    <em>(a) 연도별 국내 지진 발생 추이 그래프</em>
+                  </div>
+                  <div>
+                    <img src="../images/intro/totalRisk/img_fic_2.1-1_b.gif" alt="(b) 내진설계 된 건축물 비율">
+                    <em>(b) 내진설계 된 건축물 비율</em>
+                  </div>
+                </div>
+                <figcaption>[그림 2.1-1] 포항 지진으로 인한 피해</figcaption>                  
+              </figure>
+              <figure class="figure_wrap flex_figure">
+                <div class="inner_wrap">
+                  <div>
+                    <img src="../images/intro/totalRisk/img_fic_2.1-2_a.gif" alt="(a) 공동주택의 피해사례(경림 뉴소망타운)">
+                    <em>(a) 공동주택의 피해사례(경림 뉴소망타운)</em>
+                  </div>
+                  <div>
+                    <img src="../images/intro/totalRisk/img_fic_2.1-2_b.gif" alt="(b) 가스 배관의 변형으로 인한 피해">
+                    <em>(b) 가스 배관의 변형으로 인한 피해</em>
+                  </div>
+                  <div>
+                    <img src="../images/intro/totalRisk/img_fic_2.1-2_a.gif" alt="(c) 학교의 피해사례(흥해초등학교)">
+                    <em>(c) 학교의 피해사례(흥해초등학교)</em>
+                  </div>
+                  <div>
+                    <img src="../images/intro/totalRisk/img_fic_2.1-2_b.gif" alt="(b) 가스 배관의 변형으로 인한 피해">
+                    <em>(b) 가스 배관의 변형으로 인한 피해</em>
+                  </div>
+                </div>
+                <figcaption>[그림 2.1-2] 포항 지진으로 인한 피해</figcaption>                  
+              </figure>
+              <p>포항지진 피해를 기반으로 한 분석 결과, 지역별 건축물의 구조 형식, 용도, 건축 연대 등에 따라 피해 규모가 다르게 나타났으며, 건축물 붕괴와 구조 부재의 균열 외에도 기계 및 전기 설비, 가스 설비 등에서 피해가 발생한 것으로 나타났다. 따라서 지역 특성에 따라 지진재해 취약 지역이 달라질 수 있으므로, 인명 및 재산 피해를 최소화하기 위해서는 지역별 위험 요소를 파악하고, 이를 바탕으로 각 지역의 지진재해 종합위험도를 구축하는 것이 필요하다.</p>
+            </section>
+            <section class="section2">
+              <h2 id="2-2">고려되는 위험도 선정</h2>
+              <p>지진재해가 발생했을 때 가장 많이 나타나는 피해는 건축물 피해이다. 포항시를 대상으로 지진피해를 조사한 결과, 일반적으로 단주 효과로 인한 기둥의 전단파괴, 비틀림 또는 이축휨 효과에 의한 코너 기둥의 취성파괴, 그리고 보·기둥 접합부의 전단균열과 같은 파괴 형태가 나타났다. 또한, [그림 2.1-2]와 같이 전기 및 가스 설비 등이 손상되어 화재로 이어질 가능성도 고려해야 한다. 만약 화재가 발생한다면 도로에 영향을 미쳐 긴급대응 활동에 어려움을 초래할 가능성도 배제할 수 없다.</p>
+              <p>따라서 본 연구에서는 지역별 건축물 피해위험도, 지진화재위험도, 긴급대응 난이도를 종합적으로 고려하여 종합위험도 평가를 실시하고자 한다. 각 위험도에 대한 정의는 [표 2.2-1]에 제시되어 있다.</p>              
+              <div class="tbl_wrap">
+                <table class="tbl_method">
+                  <caption>[표 2.2-1] 각 위험도의 정의 </caption>
+                  <thead>
+                    <tr>
+                      <th scope="col">건축물 피해위험도(C)</th>
+                      <th scope="col">지진화재위험도(F)</th>
+                      <th scope="col">긴급대응 난이도(Z)</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>건축물 피해위험도는 지진으로 인한 흔들림에 의해 발생하는 건축물 손상의 지역별 규모를 나타내는 지표이다.</td>
+                      <td>지진화재란 지진에 의해 발생하는 화재로, 건축물 및 지역 특성을 복합적으로 고려하여 지역 단위의 화재 위험성을 나타내는 지표이다.</td>
+                      <td>긴급대응 난이도는 대피와 구조 등 긴급대응 활동에 필요한 도로와 공간이 얼마나 잘 확보되고 발달되어 있는지를 바탕으로, 지역의 지진재난 긴급대응 역량을 평가하는 지표이다.</td>
+                    </tr>
+                  </tbody>
+                </table>              
+              </div>              
+            </section> 
+            <section class="section2">
+              <h2 id="2-3">위험도의 등급 분포</h2>
+              <p>지역위험도의 등급 분류는 상대평가 방식으로 진행되었으며, 평균값에 표준편차(σ)의 2.5배를 적용한 약 98.7% 신뢰구간에서 5개의 등급으로 나눠 평가를 실시하였다. 각 위험도에 대한 점수는 등급 기준에 따라 순위로 표시하여 위험도가 높은 지역을 쉽게 파악할 수 있도록 하였다. 포항시를 대상으로 한 각 위험도의 등급 분포는 [표 2.3-1], [표 2.3-2], [표 2.3-3]에 제시되어 있다.</p>
+              <figure class="figure_wrap flex_figure">
+                <div class="inner_wrap">
+                  <div>
+                    <img src="../images/intro/totalRisk/img_fic_2.3-1_a.gif" alt="(a) 등급 기준">
+                    <em>&lt;(a) 등급 기준&gt;</em>
+                  </div>
+                  <div>
+                    <img src="../images/intro/totalRisk/img_fic_2.3-1_b.gif" alt="(b) 위험도 등급에 따른 지역의 수  ">
+                    <em>&lt;(b) 위험도 등급에 따른 지역의 수  &gt;</em>
+                  </div>
+                </div>
+                <figcaption>[그림 2.3-1] 위험도 등급의 기준 및 수</figcaption>                  
+              </figure>
+              <div class="tbl_wrap">
+                <table class="tbl_method">
+                  <caption>[표 2.3-1] 건축물 피해위험도의 등급 분포</caption>
+                  <thead>
+                    <tr> <th scope="col">순위</th> <th scope="col">시군구</th> <th scope="col">행정동</th> <th scope="col">점수</th> <th scope="col">등급</th> </tr>
+                  </thead>
+                  <tbody>
+                    <tr><td>1</td><td>북구</td> <td>두호동</td>  <td>16.31</td> <td>5</td></tr>
+                    <tr><td>2</td><td>북구</td> <td>양학동</td>  <td>15.21</td> <td>4</td></tr>
+                    <tr><td>3</td><td>북구</td> <td>용흥동</td>  <td>15.05</td> <td>4</td></tr>
+                    <tr><td>4</td><td>북구</td> <td>죽도동</td>  <td>15.04</td> <td>4</td></tr>
+                    <tr><td>5</td><td>남구</td> <td>상대동</td>  <td>12.8</td> <td>3</td></tr>
+                    <tr><td>6</td><td>남구</td> <td>해도동</td>  <td>12.25</td> <td>3</td></tr>
+                    <tr><td>7</td><td>북구</td> <td>중앙동</td>  <td>11.57</td> <td>3</td></tr>
+                    <tr><td>8</td><td>북구</td> <td>장량동</td>  <td>10.38</td> <td>3</td></tr>
+                    <tr><td>9</td><td>남구</td> <td>송도동</td>  <td>9.75</td> <td>3</td></tr>
+                    <tr><td>10</td><td>남구</td> <td>대이동</td>  <td>9.73</td> <td>2</td></tr>
+                    <tr><td>11</td><td>북구</td> <td>우창동</td>  <td>9.58</td> <td>2</td></tr>
+                    <tr><td>12</td><td>남구</td> <td>효곡동</td>  <td>9.35</td> <td>2</td></tr>
+                    <tr><td>13</td><td>북구</td> <td>환여동</td>  <td>8.02</td> <td>2</td></tr>
+                    <tr><td>14</td><td>남구</td> <td>연일읍</td>  <td>3.42</td> <td>2</td></tr>
+                    <tr><td>15</td><td>남구</td> <td>오천읍</td>  <td>3.21</td> <td>2</td></tr>
+                    <tr><td>16</td><td>남구</td> <td>청림동</td>  <td>1.23</td> <td>2</td></tr>
+                    <tr><td>17</td><td>북구</td> <td>흥해읍</td>  <td>0.93</td> <td>2</td></tr>
+                    <tr><td>18</td><td>남구</td> <td>동해면</td>  <td>0.77</td> <td>2</td></tr>
+                    <tr><td>19</td><td>남구</td> <td>대송면</td>  <td>0.68</td> <td>1</td></tr>
+                    <tr><td>20</td><td>남구</td> <td>구룡포읍</td>  <td>0.5</td> <td>1</td></tr>
+                    <tr><td>21</td><td>남구</td> <td>호미곶면</td>  <td>0.5</td> <td>1</td></tr>
+                    <tr><td>22</td><td>남구</td> <td>제철동</td>  <td>0.3</td> <td>1</td></tr>
+                    <tr><td>23</td><td>북구</td> <td>송라면</td>  <td>0.29</td> <td>1</td></tr>
+                    <tr><td>24</td><td>북구</td> <td>기북면</td>  <td>0.27</td> <td>1</td></tr>
+                    <tr><td>25</td><td>북구</td> <td>기계면</td>  <td>0.26</td> <td>1</td></tr>
+                    <tr><td>26</td><td>북구</td> <td>청하면</td>  <td>0.23</td> <td>1</td></tr>
+                    <tr><td>27</td><td>남구</td> <td>장기면</td>  <td>0.13</td> <td>1</td></tr>
+                    <tr><td>28</td><td>북구</td> <td>신광면</td>  <td>0.13</td> <td>1</td></tr>
+                    <tr><td>29</td><td>북구</td> <td>죽장면</td>  <td>0.08</td> <td>1</td></tr>
+                  </tbody>
+                </table>              
+              </div>
+              <div class="tbl_wrap">
+                <table class="tbl_method">
+                  <caption>[표 2.3-1] 건축물 피해위험도의 등급 분포</caption>
+                  <thead>
+                    <tr> <th scope="col">순위</th> <th scope="col">시군구</th> <th scope="col">행정동</th> <th scope="col">점수</th> <th scope="col">등급</th> </tr>
+                  </thead>
+                  <tbody>
+                    <tr><td>1</td> <td>남구</td> <td>제철동</td>  <td>100</td> <td>5</td></tr>
+                    <tr><td>2</td> <td>북구</td> <td>중앙동</td>  <td>96.6</td> <td>4</td></tr>
+                    <tr><td>3</td> <td>북구</td> <td>흥해읍</td>  <td>93.1</td> <td>4</td></tr>
+                    <tr><td>4</td> <td>남구</td> <td>오천읍</td>  <td>89.7</td> <td>4</td></tr>
+                    <tr><td>5</td> <td>남구</td> <td>연일읍</td>  <td>86.2</td>  <td>3</td></tr>
+                    <tr><td>6</td> <td>남구</td> <td>구룡포읍</td><td>82.8</td> <td>3</td></tr>
+                    <tr><td>7</td> <td>북구</td> <td>죽도동</td>  <td>79.3</td> <td>3</td></tr>
+                    <tr><td>8</td> <td>남구</td> <td>청림동</td>  <td>75.9</td> <td>3</td></tr>
+                    <tr><td>9</td> <td>남구</td> <td>장기면</td>  <td>72.4</td>  <td>3</td></tr>
+                    <tr><td>10</td><td>북구</td> <td>장량동</td>  <td>69</td>  <td>2</td></tr>
+                    <tr><td>11</td><td>북구</td> <td>용흥동</td>  <td>65.5</td>  <td>2</td></tr>
+                    <tr><td>12</td><td>북구</td> <td>신광면</td>  <td>62.1</td>  <td>2</td></tr>
+                    <tr><td>13</td><td>남구</td> <td>동해면</td>  <td>58.6</td>  <td>2</td></tr>
+                    <tr><td>14</td><td>남구</td> <td>상대동</td>  <td>55.2</td>  <td>2</td></tr>
+                    <tr><td>15</td><td>북구</td> <td>기계면</td>  <td>51.7</td>  <td>2</td></tr>
+                    <tr><td>16</td><td>북구</td> <td>청하면</td>  <td>48.3</td>  <td>2</td></tr>
+                    <tr><td>17</td><td>북구</td> <td>송라면</td>  <td>44.8</td>  <td>2</td></tr>
+                    <tr><td>18</td><td>남구</td> <td>대송면</td>  <td>41.4</td>  <td>2</td></tr>
+                    <tr><td>19</td><td>북구</td> <td>환여동</td>  <td>37.9</td>  <td>1</td></tr>
+                    <tr><td>20</td><td>남구</td> <td>효곡동</td>  <td>34.5</td>   <td>1</td></tr>
+                    <tr><td>21</td><td>남구</td> <td>송도동</td>  <td>31</td>   <td>1</td></tr>
+                    <tr><td>22</td><td>북구</td> <td>두호동</td>  <td>27.6</td>   <td>1</td></tr>
+                    <tr><td>23</td><td>북구</td> <td>죽장면</td>  <td>24.1</td>  <td>1</td></tr>
+                    <tr><td>24</td><td>남구</td> <td>해도동</td>  <td>20.7</td>  <td>1</td></tr>
+                    <tr><td>25</td><td>북구</td> <td>우창동</td>  <td>17.2</td>  <td>1</td></tr>
+                    <tr><td>26</td><td>남구</td> <td>호미곶면</td><td>13.8</td><td>1</td></tr>
+                    <tr><td>27</td><td>남구</td> <td>대이동</td>  <td>10.3</td>  <td>1</td></tr>
+                    <tr><td>28</td><td>북구</td> <td>기북면</td>  <td>6.9</td>  <td>1</td></tr>
+                    <tr><td>29</td><td>북구</td> <td>양학동</td>  <td>3.4</td>  <td>1</td></tr>
+                  </tbody>
+                </table>              
+              </div>
+              <div class="tbl_wrap">
+                <table class="tbl_method">
+                  <caption>[표 2.3-3] 긴급대응 난이도의 등급 분포</caption>
+                  <thead>
+                    <tr> <th scope="col">순위</th> <th scope="col">시군구</th> <th scope="col">행정동</th> <th scope="col">점수</th> <th scope="col">등급</th> </tr>
+                  </thead>
+                  <tbody>
+                    <tr><td>1</td> <td>북구</td> <td>기북면</td>  <td>12.6</td> <td>5</td></tr>
+                    <tr><td>2</td> <td>북구</td> <td>송라면</td>  <td>23.8</td> <td>4</td></tr>
+                    <tr><td>3</td> <td>남구</td> <td>제철동</td>  <td>34.7</td> <td>4</td></tr>
+                    <tr><td>4</td> <td>남구</td> <td>청림동</td>  <td>36.7</td> <td>4</td></tr>
+                    <tr><td>5</td> <td>남구</td> <td>장기면</td>  <td>42.9</td> <td>3</td></tr>
+                    <tr><td>6</td> <td>북구</td> <td>죽장면</td>  <td>45.4</td> <td>3</td></tr>
+                    <tr><td>7</td> <td>북구</td> <td>청하면</td>  <td>53.9</td> <td>3</td></tr>
+                    <tr><td>8</td> <td>북구</td> <td>신광면</td>  <td>55.1</td> <td>3</td></tr>
+                    <tr><td>9</td> <td>남구</td> <td>호미곶면</td><td>58.2</td>  <td>3</td></tr>
+                    <tr><td>10</td><td>남구</td> <td>구룡포읍</td><td>61</td>  <td>2</td></tr>
+                    <tr><td>11</td><td>북구</td> <td>기계면</td>  <td>64.2</td>  <td>2</td></tr>
+                    <tr><td>12</td><td>남구</td> <td>대송면</td>  <td>64.4</td>  <td>2</td></tr>
+                    <tr><td>13</td><td>북구</td> <td>환여동</td>  <td>70.4</td>  <td>2</td></tr>
+                    <tr><td>14</td><td>남구</td> <td>동해면</td>  <td>71.1</td>  <td>2</td></tr>
+                    <tr><td>15</td><td>남구</td> <td>송도동</td>  <td>75.2</td>  <td>2</td></tr>
+                    <tr><td>16</td><td>남구</td> <td>효곡동</td>  <td>76.8</td>  <td>2</td></tr>
+                    <tr><td>17</td><td>북구</td> <td>우창동</td>  <td>77.4</td>  <td>2</td></tr>
+                    <tr><td>18</td><td>북구</td> <td>양학동</td>  <td>77.5</td>  <td>2</td></tr>
+                    <tr><td>19</td><td>북구</td> <td>용흥동</td>  <td>81.2</td>  <td>1</td></tr>
+                    <tr><td>20</td><td>북구</td> <td>중앙동</td>  <td>81.5</td>  <td>1</td></tr>
+                    <tr><td>21</td><td>북구</td> <td>두호동</td>  <td>85.4</td>  <td>1</td></tr>
+                    <tr><td>22</td><td>남구</td> <td>해도동</td>  <td>86</td>  <td>1</td></tr>
+                    <tr><td>23</td><td>남구</td> <td>상대동</td>  <td>88</td>  <td>1</td></tr>
+                    <tr><td>24</td><td>북구</td> <td>죽도동</td>  <td>93</td>  <td>1</td></tr>
+                    <tr><td>25</td><td>남구</td> <td>연일읍</td>  <td>93.6</td>  <td>1</td></tr>
+                    <tr><td>26</td><td>남구</td> <td>오천읍</td>  <td>94.5</td>  <td>1</td></tr>
+                    <tr><td>27</td><td>북구</td> <td>장량동</td>  <td>96.1</td>  <td>1</td></tr>
+                    <tr><td>28</td><td>남구</td> <td>대이동</td>  <td>97.5</td>  <td>1</td></tr>
+                    <tr><td>29</td><td>북구</td> <td>흥해읍</td>  <td>98.2</td>  <td>1</td></tr>
+                  </tbody>
+                </table>              
+              </div>
+              <p>각 위험도의 등급 분포는 평균값에 2.5σ를 적용한 결과를 바탕으로 작성되었다. 건축물 피해위험도에서는 두호동, 양학동, 용흥동 순으로 위험한 것으로 나타났다. 지진화재위험도에서는 제철동, 중앙동, 흥해읍이 위험 지역으로 나타났으며, 긴급대응 난이도에서는 기북면, 송라면, 제철동이 위험한 지역으로 확인되었다.</p>              
+            </section>            
+          </article>
+          <article>
+            <h1 id="3">종합위험도 평가 방식</h1>
+            <section class="section2">
+              <h2 id="3-1">종합위험도 평가시스템 구축</h2>
+              <p>종합위험도 평가시스템을 구축하기 위해 해외의 재난 위험도 평가시스템 사례를 조사하였다.</p>
+              <ul class="lst_default">
+                <li>
+                  <p>① 일본의 경우, 지역 특성을 고려한 지진 방지 대책을 수립하기 위해 1975년부터 도쿄도 재해대책 조례 제12조에 의거하여 ｢지진에 관한 지역 위험도 측정 조사｣를 실시하였다. 이 조사는 모든 지역에서 동일한 지진이 발생한다는 가정하에 4가지 위험도를 5개 등급으로 평가하여 위험 지역을 직관적으로 파악할 수 있도록 한 것이 특징이다. 최근에는 건축물 붕괴위험도, 화재위험도, 재해 시 활동 난이도, 도시의 종합위험도 등 총 4가지 위험도로 분류하고, 이를 5개 등급으로 평가하는 방식으로 발전하였다.</p>
+                  <figure class="figure_wrap flex_figure">
+                    <div class="inner_wrap">
+                      <div>
+                        <img src="../images/intro/totalRisk/img_fic_3.1-1_a.gif" alt="(a) 일본 동경도의 종합위험도">
+                        <em>(a) 일본 동경도의 종합위험도</em>
+                      </div>
+                      <div>
+                        <img src="../images/intro/totalRisk/img_fic_3.1-1_b.gif" alt="(b) 종합위험도의 산정방법">
+                        <em>(b) 종합위험도의 산정방법</em>
+                      </div>
+                    </div>
+                    <figcaption>[그림 3.1-1] 일본의 종합위험도 사례</figcaption>                  
+                  </figure>
+                </li>
+                <li>
+                  <p>② 미국 재난관리청(FEMA)의 경우, 재해 경감 사업의 일환으로 재해 예방, 대응, 시설물 복구 등 전반적인 재해 관리를 효율적으로 수행하기 위해 HAZUS를 개발하였다. FEMA P-366에서는 HAZUS의 방법을 적용하여 [그림 3.1-2]와 같이 5단계 절차를 통해 지진 시 위험 지수를 산정하고 있다. 이를 통해 지진을 포함한 18개의 재해 유형(홍수, 산사태, 가뭄, 허리케인, 토네이도 등)에 대해 지방자치단체의 재난 관리자가 재난 발생 시 대응 계획 작성 등 의사결정을 내리는 데 도움을 줄 수 있다.</p>
+                  <figure class="figure_wrap flex_figure">
+                    <div class="inner_wrap">
+                      <div>
+                        <img src="../images/intro/totalRisk/img_fic_3.1-2_a.gif" alt="(a) 지진에 대한 위험지수의 산정절차">
+                        <em>(a) 지진에 대한 위험지수의 산정절차</em>
+                      </div>
+                      <div>
+                        <img src="../images/intro/totalRisk/img_fic_3.1-2_b.gif" alt="(b) 지진 시 손실액으로 표현된미국 전역의 위험지도 ">
+                        <em>(b) 지진 시 손실액으로 표현된미국 전역의 위험지도 </em>
+                      </div>
+                    </div>
+                    <figcaption>[그림 3.1-2] 미국의 종합위험도 사례</figcaption>                  
+                  </figure>
+                  <p>지진재해로 인한 종합위험도를 평가할 때, 일반적인 방식인 평균값을 사용하면 하나의 위험도가 높더라도 각 위험도 점수의 평균값으로 등급이 결정되어 전체적인 위험도가 낮게 나타날 수 있다. 이러한 문제를 개선하기 위해 국내와 유사한 조건을 가진 일본의 종합위험도를 참고하였으며, 각 위험도별 등급 및 점수 데이터를 활용하여 위험도가 높은 지역에 가중치를 반영한 새로운 조합 시나리오(R<sub>T</sub>)를 생성하였다.</p>
+                  <div class="equation">
+                    <dl>
+                      <dt>(3.1-1)</dt>
+                      <dd><img src="../images/intro/totalRisk/img_method3.1-1.gif" alt=""></dd>
+                      <dd>여기서,</dd>
+                      <dd>C=건축물 피해위험도, F=지진화재위험도, Z=긴급대응 난이도</dd>
+                    </dl>
+                  </div>
+                  <div class="figure_wrap flex_figure">                 
+                    <figure>
+                      <img src="../images/intro/totalRisk/img_fic_3.1-3.gif"  alt="[그림 3.1-] 지역별 종합위험도 평가 계획">
+                      <figcaption>[그림 3.1-] 지역별 종합위험도 평가 계획</figcaption>
+                    </figure>              
+                  </div>              
+                  <p>R<sub>T</sub>는 시나리오별 위험도의 조합을 나타내며, 교집합 방식을 사용하여 계산을 진행한다. 각 위험도 결과는 지역 간 특성에 따라 달라질 수 있으므로, 실제 데이터와 전문가 설문을 기반으로 지역 및 행정구역별 가중치를 각 위험도에 적용할 수 있다. 특히 중요하게 고려되는 위험도가 높게 나타날 경우, 가중치와 교집합 방식을 적용함으로써 해당 위험도를 더욱 효과적으로 반영할 수 있다.</p>
+                  <p>종합적인 위험도를 평가하기 위해서는 3가지 위험도를 모두 고려하는 것이 효과적이지만, 사용자가 중요하게 생각하는 특정 위험도만 고려한 결과를 도출할 수도 있다. 추후 추가적인 위험도를 고려해야 할 경우, 실제 데이터를 기반으로 해당 위험도의 가중치를 선정하여 동일한 방식으로 계산할 수 있다.</p>
+                  <div class="figure_wrap flex_figure">                 
+                    <figure>
+                      <img src="../images/intro/totalRisk/img_fic_3.1-4.gif"  alt="[그림 3.1-4] 지역 특성을 고려한 종합위험도 연구절차">
+                      <figcaption>[그림 3.1-4] 지역 특성을 고려한 종합위험도 연구절차</figcaption>
+                    </figure>              
+                  </div>
+                  <p>작성된 종합위험도 평가는 포항시를 대상으로 엑셀 프로그램을 사용하여 수행되었으며, 건축물 피해위험도, 지진화재위험도, 긴급대응 난이도가 동일한 중요도를 갖는다고 가정하였다. 만약 중요도를 다르게 설정할 경우, 각 위험도에 가중치를 적용한 뒤 해당 평가 과정을 수행하면, 중요도가 반영된 결과를 도출할 수 있다.</p>
+                </li>
+              </ul>
+            </section>
+            <section class="section2">
+              <h2 id="3-2">일반 데이터를 사용한 방법</h2>
+              <ul class="lst_default">
+                <li>
+                  <strong>① 지역별 각 위험도에 대한 점수와 등급 데이터를 불러오기</strong>
+                  <p> 일반 데이터는 각 위험도의 계산 방법에 따라 도출된 결과값을 의미하며, [그림 3.2-1]에 제시된 것처럼, 지역별 위험도 데이터를 불러와야 한다. 포항시를 대상으로 한 건축물 피해위험도, 지진화재위험도, 긴급대응 난이도에 대한 데이터는 [표 3.2-1]에 제시되어 있다.</p>
+                  <figure class="figure_wrap flex_figure">
+                    <div class="inner_wrap">
+                      <div>
+                        <img src="../images/intro/totalRisk/img_fic_3.2-1_a.gif" alt="(a) 각 위험도 데이터를 가져오기">
+                        <em>(a) 각 위험도 데이터를 가져오기</em>
+                      </div>
+                      <div>
+                        <img src="../images/intro/totalRisk/img_fic_3.2-1_b.gif" alt="(b) 대상 지역에 대한 위험도 데이터 붙여넣기">
+                        <em>(b) 대상 지역에 대한 위험도 데이터 붙여넣기</em>
+                      </div>
+                    </div>
+                    <figcaption>[그림 3.2-1] 엑셀 프로그램을 통한 각 위험도 데이터 불러오기</figcaption>                  
+                  </figure>
+                  <div class="tbl_wrap">
+                    <table class="tbl_method">
+                      <caption>[표 3.2-1] 각 위험도 데이터(포항시 대상)</caption>
+                      <thead>
+                        <tr>
+                          <th scope="col" colspan="2">&nbsp;</th>
+                          <th scope="col" colspan="2">건축물 피해위험도</th>
+                          <th scope="col" colspan="2">지진화재위험도</th>
+                          <th scope="col" colspan="2">긴급대응 난이도</th>
+                        </tr>
+                        <tr>
+                          <th scope="col">시군구</th> <th scope="col">행정동</th>
+                          <th scope="col">점수</th> <th scope="col">등급</th> <th scope="col">점수</th> <th scope="col">등급</th> <th scope="col">점수</th> <th scope="col">등급</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr><td>남구</td><td>구룡포읍</td><td>0.5</td><td>1</td><td>66.4</td><td>3</td><td>61</td><td>2</td></tr>
+                        <tr><td>남구</td><td>대송면</td><td>0.68</td><td>1</td><td>33.2</td><td>2</td><td>64.4</td><td>2</td></tr>
+                        <tr><td>남구</td><td>대이동</td><td>9.73</td><td>2</td><td>8.3</td><td>1</td><td>97.5</td><td>1</td></tr>
+                        <tr><td>남구</td><td>동해면</td><td>0.77</td><td>2</td><td>47</td><td>2</td><td>71.1</td><td>2</td></tr>
+                        <tr><td>남구</td><td>상대동</td><td>12.8</td><td>3</td><td>44.2</td><td>2</td><td>88</td><td>1</td></tr>
+                        <tr><td>남구</td><td>송도동</td><td>9.75</td><td>3</td><td>24.9</td><td>1</td><td>75.2</td><td>2</td></tr>
+                        <tr><td>남구</td><td>연일읍</td><td>3.42</td><td>2</td><td>69.1</td><td>3</td><td>93.6</td><td>1</td></tr>
+                        <tr><td>남구</td><td>오천읍</td><td>3.21</td><td>2</td><td>71.9</td><td>4</td><td>94.5</td><td>1</td></tr>
+                        <tr><td>남구</td><td>장기면</td><td>0.13</td><td>1</td><td>58.1</td><td>3</td><td>42.9</td><td>3</td></tr>
+                        <tr><td>남구</td><td>제철동</td><td>0.3</td><td>1</td><td>80.2</td><td>5</td><td>34.7</td><td>4</td></tr>
+                        <tr><td>남구</td><td>청림동</td><td>1.23</td><td>2</td><td>60.8</td><td>3</td><td>36.7</td><td>4</td></tr>
+                        <tr><td>남구</td><td>해도동</td><td>12.25</td><td>3</td><td>16.6</td><td>1</td><td>86</td><td>1</td></tr>
+                        <tr><td>남구</td><td>호미곶면</td><td>0.5</td><td>1</td><td>11.1</td><td>1</td><td>58.2</td><td>3</td></tr>
+                        <tr><td>남구</td><td>효곡동</td><td>9.35</td><td>2</td><td>27.7</td><td>1</td><td>76.8</td><td>2</td></tr>
+                        <tr><td>북구</td><td>기계면</td><td>0.26</td><td>1</td><td>41.5</td><td>2</td><td>64.2</td><td>2</td></tr>
+                        <tr><td>북구</td><td>기북면</td><td>0.27</td><td>1</td><td>5.5</td><td>1</td><td>12.6</td><td>5</td></tr>
+                        <tr><td>북구</td><td>두호동</td><td>16.31</td><td>5</td><td>22.1</td><td>1</td><td>85.4</td><td>1</td></tr>
+                        <tr><td>북구</td><td>송라면</td><td>0.29</td><td>1</td><td>35.9</td><td>2</td><td>23.8</td><td>4</td></tr>
+                        <tr><td>북구</td><td>신광면</td><td>0.13</td><td>1</td><td>49.8</td><td>2</td><td>55.1</td><td>3</td></tr>
+                        <tr><td>북구</td><td>양학동</td><td>15.21</td><td>4</td><td>2.8</td><td>1</td><td>77.5</td><td>2</td></tr>
+                        <tr><td>북구</td><td>용흥동</td><td>15.05</td><td>4</td><td>52.5</td><td>2</td><td>81.2</td><td>1</td></tr>
+                        <tr><td>북구</td><td>우창동</td><td>9.58</td><td>2</td><td>13.8</td><td>1</td><td>77.4</td><td>2</td></tr>
+                        <tr><td>북구</td><td>장량동</td><td>10.38</td><td>3</td><td>55.3</td><td>2</td><td>96.1</td><td>1</td></tr>
+                        <tr><td>북구</td><td>죽도동</td><td>15.04</td><td>4</td><td>63.6</td><td>3</td><td>93</td><td>1</td></tr>
+                        <tr><td>북구</td><td>죽장면</td><td>0.08</td><td>1</td><td>19.4</td><td>1</td><td>45.4</td><td>3</td></tr>
+                        <tr><td>북구</td><td>중앙동</td><td>11.57</td><td>3</td><td>77.4</td><td>4</td><td>81.5</td><td>1</td></tr>
+                        <tr><td>북구</td><td>청하면</td><td>0.23</td><td>1</td><td>38.7</td><td>2</td><td>53.9</td><td>3</td></tr>
+                        <tr><td>북구</td><td>환여동</td><td>8.02</td><td>2</td><td>30.4</td><td>1</td><td>70.4</td><td>2</td></tr>
+                        <tr><td>북구</td><td>흥해읍</td><td>0.93</td><td>2</td><td>74.7</td><td>4</td><td>98.2</td><td>1</td></tr>
+                      </tbody>
+                    </table>
+                    <ul class="fn_lst">
+                      <li>* 현재 긴급대응 난이도의 점수 기준이 반대로 작성되어 있어 수정 예정</li>
+                    </ul>
+                  </div>                             
+                </li>
+                <li>
+                  <strong>② 각 위험도에 대한 중요도 선정 및 적용</strong>
+                  <p>각 위험도가 동일한 중요도를 가질 경우, 가중치가 동일하므로 이를 생략할 수 있다. 결과를 보다 명확히 제시하기 위해 점수는 소수점 둘째 자리까지 표기하는 것이 권장된다. 중요도가 다를 경우, 각 위험도에 따른 가중치를 실제 데이터를 기반으로 산출해야 한다. 산출된 가중치는 각 위험도에 적용한 뒤, 위험도 간 교집합 방식을 사용하여 종합위험도 점수를 계산할 수 있다. 식 (3.2-2)는 가중치를 적용하지 않은 경우를, 식 (3.2-3)은 가중치를 적용한 경우를 나타낸다. [그림 3.2-2]를 통해 종합위험도 계산 방식을 적용한 결과를 나타내는 방법을 확인할 수 있다.</p>
+                  <div class="equation">
+                    <dl>
+                      <dt>(3.2-2)</dt>
+                      <dd><img src="../images/intro/totalRisk/img_method3.2-2.gif" alt=""></dd>
+                      <dd>C=건축물 피해위험도, F=지진화재위험도, Z=긴급대응 난이도, 10<sup>n</sup>=결과값의 가독성을 위한 변수</dd>
+                      <dt>(3.2-2)</dt>
+                      <dd><img src="../images/intro/totalRisk/img_method3.2-3.gif" alt=""></dd>
+                      <dd>C=건축물 피해위험도, F=지진화재위험도, Z=긴급대응 난이도, 10<sup>n</sup>=결과값의 가독성을 위한 변수,<br />
+                       a=건축물 피해위험도의 가중치, b=지진화재위험도의 가중치, c=긴급대응 난이도의 가중치</dd>
+                    </dl>
+                  </div>
+                  <figure class="figure_wrap flex_figure">
+                    <div class="inner_wrap">
+                      <div>
+                        <img src="../images/intro/totalRisk/img_fic_3.2-2_a.gif" alt="(a) 종합위험도 계산 방법">
+                        <em>(a) 종합위험도 계산 방법</em>
+                      </div>
+                      <div>
+                        <img src="../images/intro/totalRisk/img_fic_3.2-2_b.gif" alt="(b) 셀 서식에서 소수 자리수 설정">
+                        <em>(b) 셀 서식에서 소수 자리수 설정</em>
+                      </div>
+                    </div>
+                    <figcaption>[그림 3.2-] 종합위험도 계산 및 결과 표시</figcaption>                  
+                  </figure>
+                </li>
+                <li>
+                  <strong>③ 계산 결과 확인 및 등급 재분류</strong>
+                  <p>식 (3.2-2) 또는 식 (3.2-3)을 적용하여 지역별 종합위험도 결과를 도출할 수 있다. 결과는 점수와 등급을 계산한 순서대로 내림차순으로 정렬한 뒤, 평균값에 2.5σ를 적용하여 5개 등급으로 재분류할 수 있다. 엑셀 프로그램의 사용자 지정 정렬을 활용하여 순위를 나타내는 방법은 [그림 3.2-3]에 제시되어 있으며, 이를 통해 등급을 재분류할 수 있다. 정렬할 열을 선택한 후, 정렬 기준, 정렬 방식 및 기준값을 다음과 같이 설정하면 위험도가 높은 행정동부터 순위를 매길 수 있다. 
+                  포항시의 29개 행정동은 1등급 11개, 2등급 9개, 3등급 5개, 4등급 3개, 5등급 1개로 분류되며, [표 3.2-2]에 일반 데이터를 사용한 결과가 제시되어 있다. 순위는 위험도가 높은 순서대로 나타내었다.</p>
+                  <div class="figure_wrap flex_figure">                 
+                    <figure>
+                      <img src="../images/intro/totalRisk/img_fic_3.2-3.gif"  alt="[그림 3.2-] 사용자 지정 정렬을 통한 순위 표출">
+                      <figcaption>[그림 3.2-3] 사용자 지정 정렬을 통한 순위 표출</figcaption>
+                    </figure>              
+                  </div>
+                  <div class="tbl_wrap">
+                    <table class="tbl_method">
+                      <caption>[표 3.2-2] 종합위험도 계산 결과(일반 데이터)</caption>
+                      <thead>
+                        <tr>
+                          <th scope="col">순위</th> <th scope="col">시군구</th> <th scope="col">행정동</th>
+                          <th scope="col">점수</th> <th scope="col">등급</th> <th scope="col">등급(재)</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr><td>1</td><td>북구</td><td>중앙동</td><td>109.92</td><td>12</td><td>5</td></tr>
+                        <tr><td>2</td><td>북구</td><td>죽도동</td><td>102.85</td><td>12</td><td>4</td></tr>
+                        <tr><td>3</td><td>북구</td><td>용흥동</td><td>97.38</td><td>8</td><td>4</td></tr>
+                        <tr><td>4</td><td>남구</td><td>상대동</td><td>64.35</td><td>6</td><td>4</td></tr>
+                        <tr><td>5</td><td>북구</td><td>장량동</td><td>59.74</td><td>6</td><td>3</td></tr>
+                        <tr><td>6</td><td>북구</td><td>두호동</td><td>42.25</td><td>5</td><td>3</td></tr>
+                        <tr><td>7</td><td>북구</td><td>환여동</td><td>34.65</td><td>1</td><td>3</td></tr>
+                        <tr><td>8</td><td>남구</td><td>효곡동</td><td>33.66</td><td>1</td><td>3</td></tr>
+                        <tr><td>9</td><td>남구</td><td>송도동</td><td>32.27</td><td>1.5</td><td>3</td></tr>
+                        <tr><td>10</td><td>남구</td><td>연일읍</td><td>25.26</td><td>6</td><td>2</td></tr>
+                        <tr><td>11</td><td>남구</td><td>오천읍</td><td>24.42</td><td>8</td><td>2</td></tr>
+                        <tr><td>12</td><td>남구</td><td>해도동</td><td>23.63</td><td>3</td><td>2</td></tr>
+                        <tr><td>13</td><td>남구</td><td>청림동</td><td>20.39</td><td>1.5</td><td>2</td></tr>
+                        <tr><td>14</td><td>북구</td><td>우창동</td><td>17.11</td><td>1</td><td>2</td></tr>
+                        <tr><td>15</td><td>남구</td><td>대이동</td><td>8.28</td><td>2</td><td>2</td></tr>
+                        <tr><td>16</td><td>북구</td><td>흥해읍</td><td>7.07</td><td>8</td><td>2</td></tr>
+                        <tr><td>17</td><td>남구</td><td>제철동</td><td>6.93</td><td>1.3</td><td>2</td></tr>
+                        <tr><td>18</td><td>남구</td><td>구룡포읍</td><td>5.44</td><td>1.5</td><td>2</td></tr>
+                        <tr><td>19</td><td>북구</td><td>양학동</td><td>5.43</td><td>2</td><td>1</td></tr>
+                        <tr><td>20</td><td>남구</td><td>동해면</td><td>5.09</td><td>2</td><td>1</td></tr>
+                        <tr><td>21</td><td>북구</td><td>송라면</td><td>4.38</td><td>0.5</td><td>1</td></tr>
+                        <tr><td>22</td><td>남구</td><td>대송면</td><td>3.5</td><td>1</td><td>1</td></tr>
+                        <tr><td>23</td><td>남구</td><td>장기면</td><td>1.76</td><td>1</td><td>1</td></tr>
+                        <tr><td>24</td><td>북구</td><td>기계면</td><td>1.68</td><td>1</td><td>1</td></tr>
+                        <tr><td>25</td><td>북구</td><td>청하면</td><td>1.65</td><td>0.7</td><td>1</td></tr>
+                        <tr><td>26</td><td>북구</td><td>기북면</td><td>1.19</td><td>0.2</td><td>1</td></tr>
+                        <tr><td>27</td><td>북구</td><td>신광면</td><td>1.17</td><td>0.7</td><td>1</td></tr>
+                        <tr><td>28</td><td>남구</td><td>호미곶면</td><td>0.95</td><td>0.3</td><td>1</td></tr>
+                        <tr><td>29</td><td>북구</td><td>죽장면</td><td>0.34</td><td>0.3</td><td>1</td></tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </li>
+              </ul>
+            </section>
+            <section class="section2">
+              <h2 id="3-3">환산 데이터를 사용한 방법</h2>
+              <p>환산 데이터를 사용하는 이유는 각 위험도의 계산 방법을 통해 도출된 결과가 가장 정확하지만, 점수 척도가 서로 달라 가중치 적용이 필요할 수 있기 때문이다. 따라서 일반 데이터를 사용한 방법과 환산 데이터를 사용한 방법을 함께 비교하면 종합위험도 결과를 보다 효과적으로 분석하는 데 도움을 준다.</p>
+              <ul class="lst_default">
+                <li>
+                  <strong>① 지역별로 각 위험도에 대한 점수와 등급 데이터를 불러오기</strong>
+                  <p>각 위험도에 대한 데이터를 불러오는 과정은 일반 데이터를 사용한 방법과 동일하다. [표 3.2-1]에 제시된 바와 같이, 각 위험도에 대해 도출된 결과값을 데이터로 불러와야 한다.</p>
+                </li>
+                <li>
+                  <strong>② 각 위험도 데이터의 최대값 확인하기</strong>
+                  <p>데이터를 환산하기 위해 리커트 척도 방식을 활용한다. 리커트 척도는 척도의 최대값을 기준으로 데이터를 쉽게 환산할 수 있으며, 다양한 주제와 정량적 설문조사에 널리 사용된다. 일반적으로 5점 척도와 7점 척도가 많이 활용되지만, 해당 데이터는 수치형 데이터이므로 척도의 최대값을 각 위험도의 최대값으로 설정하여 데이터 환산을 진행한다.</p>
+                  <div class="tbl_wrap">
+                    <table class="tbl_method">
+                      <caption>[표 3.2-2] 종합위험도 계산 결과(일반 데이터)</caption>
+                      <thead>
+                        <tr>
+                          <th scope="col" colspan="2">건축물 피해위험도</th>
+                          <th scope="col" colspan="2">지진화재위험도</th>
+                          <th scope="col" colspan="2">긴급대응 난이도</th>
+                        </tr>
+                        <tr>
+                          <th scope="col">행정동</th> <th scope="col">최대값</th>
+                          <th scope="col">행정동</th> <th scope="col">최대값</th>
+                          <th scope="col">행정동</th> <th scope="col">최대값</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>두호동</td> <td>16.31</td>
+                          <td>제철동</td> <td>80.2</td>
+                          <td>기북면</td> <td>98.2</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </li>
+                <li>
+                  <strong>③ 각 위험도 데이터를 환산하기</strong>
+                  <p>환산 결과에 0이 포함되지 않도록 하기 위해 식 (3.3-1)에 제시된 방법을 사용하여 데이터를 환산한다. 포항시 각 위험도의 최대값을 기반으로 계산한 결과는 [표 3.3-2]에 나타나 있으며, 최대값을 가진 행정동의 점수가 100점으로 설정된 것을 확인할 수 있다.</p>
+                  <div class="equation">
+                    <dl>
+                      <dt>(3.2-2)</dt>
+                      <dd><img src="../images/intro/totalRisk/img_method3.3-1.gif" alt=""></dd>
+                      <dd>T=환산 데이터, X=각 위험도에 해당하는 행정동의 점수,  X<sub>max</sub>=각 위험도의 최대값</dd>
+                    </dl>
+                  </div>
+                  <div class="tbl_wrap">
+                    <table class="tbl_method">
+                      <caption>[표 3.3-2] 각 위험도의 환산 데이터</caption>
+                      <thead>
+                        <tr>
+                          <th scope="col" colspan="2">&nbsp;</th>
+                          <th scope="col" colspan="2">건축물 피해위험도</th>
+                          <th scope="col" colspan="2">지진화재위험도</th>
+                          <th scope="col" colspan="2">긴급대응 난이도</th>
+                        </tr>
+                        <tr>
+                          <th scope="col">시군구</th> <th scope="col">행정동</th>
+                          <th scope="col">점수</th> <th scope="col">등급</th> <th scope="col">점수</th> <th scope="col">등급</th> <th scope="col">점수</th> <th scope="col">등급</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr><td>남구</td><td>구룡포읍</td><td>3.07</td><td>1</td><td>82.8</td><td>3</td><td>62.1</td><td>2</td></tr>
+                        <tr><td>남구</td><td>대송면</td><td>4.17</td><td>1</td><td>41.4</td><td>2</td><td>65.6</td><td>2</td></tr>
+                        <tr><td>남구</td><td>대이동</td><td>59.66</td><td>2</td><td>10.3</td><td>1</td><td>99.3</td><td>1</td></tr>
+                        <tr><td>남구</td><td>동해면</td><td>4.72</td><td>2</td><td>58.6</td><td>2</td><td>72.4</td><td>2</td></tr>
+                        <tr><td>남구</td><td>상대동</td><td>78.48</td><td>3</td><td>55.2</td><td>2</td><td>89.6</td><td>1</td></tr>
+                        <tr><td>남구</td><td>송도동</td><td>59.78</td><td>3</td><td>31</td><td>1</td><td>76.6</td><td>2</td></tr>
+                        <tr><td>남구</td><td>연일읍</td><td>20.97</td><td>2</td><td>86.2</td><td>3</td><td>95.3</td><td>1</td></tr>
+                        <tr><td>남구</td><td>오천읍</td><td>19.68</td><td>2</td><td>89.7</td><td>4</td><td>96.2</td><td>1</td></tr>
+                        <tr><td>남구</td><td>장기면</td><td>0.8</td><td>1</td><td>72.4</td><td>3</td><td>43.7</td><td>3</td></tr>
+                        <tr><td>남구</td><td>제철동</td><td>1.84</td><td>1</td><td>100</td><td>5</td><td>35.3</td><td>4</td></tr>
+                        <tr><td>남구</td><td>청림동</td><td>7.54</td><td>2</td><td>75.9</td><td>3</td><td>37.4</td><td>4</td></tr>
+                        <tr><td>남구</td><td>해도동</td><td>75.11</td><td>3</td><td>20.7</td><td>1</td><td>87.6</td><td>1</td></tr>
+                        <tr><td>남구</td><td>호미곶면</td><td>3.07</td><td>1</td><td>13.8</td><td>1</td><td>59.3</td><td>3</td></tr>
+                        <tr><td>남구</td><td>효곡동</td><td>57.33</td><td>2</td><td>34.5</td><td>1</td><td>78.2</td><td>2</td></tr>
+                        <tr><td>북구</td><td>기계면</td><td>1.59</td><td>1</td><td>51.7</td><td>2</td><td>65.4</td><td>2</td></tr>
+                        <tr><td>북구</td><td>기북면</td><td>1.66</td><td>1</td><td>6.9</td><td>1</td><td>12.8</td><td>5</td></tr>
+                        <tr><td>북구</td><td>두호동</td><td>100</td><td>5</td><td>27.6</td><td>1</td><td>87</td><td>1</td></tr>
+                        <tr><td>북구</td><td>송라면</td><td>1.78</td><td>1</td><td>44.8</td><td>2</td><td>24.2</td><td>4</td></tr>
+                        <tr><td>북구</td><td>신광면</td><td>0.8</td><td>1</td><td>62.1</td><td>2</td><td>56.1</td><td>3</td></tr>
+                        <tr><td>북구</td><td>양학동</td><td>93.26</td><td>4</td><td>3.4</td><td>1</td><td>78.9</td><td>2</td></tr>
+                        <tr><td>북구</td><td>용흥동</td><td>92.27</td><td>4</td><td>65.5</td><td>2</td><td>82.7</td><td>1</td></tr>
+                        <tr><td>북구</td><td>우창동</td><td>58.74</td><td>2</td><td>17.2</td><td>1</td><td>78.8</td><td>2</td></tr>
+                        <tr><td>북구</td><td>장량동</td><td>63.64</td><td>3</td><td>69</td><td>2</td><td>97.9</td><td>1</td></tr>
+                        <tr><td>북구</td><td>죽도동</td><td>92.21</td><td>4</td><td>79.3</td><td>3</td><td>94.7</td><td>1</td></tr>
+                        <tr><td>북구</td><td>죽장면</td><td>0.49</td><td>1</td><td>24.1</td><td>1</td><td>46.2</td><td>3</td></tr>
+                        <tr><td>북구</td><td>중앙동</td><td>70.94</td><td>3</td><td>96.6</td><td>4</td><td>83</td><td>1</td></tr>
+                        <tr><td>북구</td><td>청하면</td><td>1.41</td><td>1</td><td>48.3</td><td>2</td><td>54.9</td><td>3</td></tr>
+                        <tr><td>북구</td><td>환여동</td><td>49.17</td><td>2</td><td>37.9</td><td>1</td><td>71.7</td><td>2</td></tr>
+                        <tr><td>북구</td><td>흥해읍</td><td>5.7</td><td>2</td><td>93.1</td><td>4</td><td>100</td><td>1</td></tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </li>
+                <li>
+                  <strong>④ 각 위험도에 대한 중요도 선정 및 적용</strong>
+                  <p>일반 데이터를 사용한 방법과 마찬가지로, 실제 데이터를 기반으로 각 위험도의 중요도를 선정한 후 식 (3.2-2)과 식 (3.2-3)을 사용하여 가중치를 적용한다.</p>
+                </li>
+                <li>
+                  <strong>⑤ 계산 결과 확인 및 등급 재분류</strong>
+                  <p>식 (3.2-2) 또는 식 (3.2-3)을 적용하여 지역별 종합위험도 결과를 도출할 수 있다. 점수와 등급을 계산한 순서대로 내림차순으로 정렬한 뒤, 평균값에 2.5σ를 적용하여 5개 등급으로 재분류한다. 포항시의 29개 행정동은 1등급 11개, 2등급 9개, 3등급 5개, 4등급 3개, 5등급 1개로 분류되며, [표 3.3-3]에 환산 데이터를 사용한 결과가 제시되어 있다. 순위는 위험도가 높은 순서대로 나타내었다.</p>
+                  <div class="tbl_wrap">
+                    <table class="tbl_method">
+                      <caption>[표 3.3-3] 각 위험도의 환산 데이터</caption>
+                      <thead>
+                        <tr>
+                          <th scope="col">순위</th> <th scope="col">시군구</th> <th scope="col">행정동</th>
+                          <th scope="col">점수</th> <th scope="col">등급</th> <th scope="col">등급(재)</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr><td>1</td><td>북구</td><td>중앙동</td><td>82.53</td><td>12</td><td>5</td></tr>
+                        <tr><td>2</td><td>북구</td><td>죽도동</td><td>77.22</td><td>12</td><td>4</td></tr>
+                        <tr><td>3</td><td>북구</td><td>용흥동</td><td>73.11</td><td>8</td><td>4</td></tr>
+                        <tr><td>4</td><td>남구</td><td>상대동</td><td>48.32</td><td>6</td><td>4</td></tr>
+                        <tr><td>5</td><td>북구</td><td>장량동</td><td>44.85</td><td>6</td><td>3</td></tr>
+                        <tr><td>6</td><td>북구</td><td>두호동</td><td>31.72</td><td>5</td><td>3</td></tr>
+                        <tr><td>7</td><td>북구</td><td>환여동</td><td>26.02</td><td>1</td><td>3</td></tr>
+                        <tr><td>8</td><td>남구</td><td>효곡동</td><td>25.28</td><td>1</td><td>3</td></tr>
+                        <tr><td>9</td><td>남구</td><td>송도동</td><td>24.23</td><td>1.5</td><td>3</td></tr>
+                        <tr><td>10</td><td>남구</td><td>연일읍</td><td>18.96</td><td>6</td><td>2</td></tr>
+                        <tr><td>11</td><td>남구</td><td>오천읍</td><td>18.34</td><td>8</td><td>2</td></tr>
+                        <tr><td>12</td><td>남구</td><td>해도동</td><td>17.74</td><td>3</td><td>2</td></tr>
+                        <tr><td>13</td><td>남구</td><td>청림동</td><td>15.31</td><td>1.5</td><td>2</td></tr>
+                        <tr><td>14</td><td>북구</td><td>우창동</td><td>12.85</td><td>1</td><td>2</td></tr>
+                        <tr><td>15</td><td>남구</td><td>대이동</td><td>6.22</td><td>2</td><td>2</td></tr>
+                        <tr><td>16</td><td>북구</td><td>흥해읍</td><td>5.31</td><td>8</td><td>2</td></tr>
+                        <tr><td>17</td><td>남구</td><td>제철동</td><td>5.21</td><td>1.3</td><td>2</td></tr>
+                        <tr><td>18</td><td>남구</td><td>구룡포읍</td><td>4.08</td><td>1.5</td><td>2</td></tr>
+                        <tr><td>19</td><td>북구</td><td>양학동</td><td>4.07</td><td>2</td><td>1</td></tr>
+                        <tr><td>20</td><td>남구</td><td>동해면</td><td>3.82</td><td>2</td><td>1</td></tr>
+                        <tr><td>21</td><td>북구</td><td>송라면</td><td>3.29</td><td>0.5</td><td>1</td></tr>
+                        <tr><td>22</td><td>남구</td><td>대송면</td><td>2.63</td><td>1</td><td>1</td></tr>
+                        <tr><td>23</td><td>남구</td><td>장기면</td><td>1.32</td><td>1</td><td>1</td></tr>
+                        <tr><td>24</td><td>북구</td><td>기계면</td><td>1.26</td><td>1</td><td>1</td></tr>
+                        <tr><td>25</td><td>북구</td><td>청하면</td><td>1.24</td><td>0.7</td><td>1</td></tr>
+                        <tr><td>26</td><td>북구</td><td>기북면</td><td>0.89</td><td>0.2</td><td>1</td></tr>
+                        <tr><td>27</td><td>북구</td><td>신광면</td><td>0.88</td><td>0.7</td><td>1</td></tr>
+                        <tr><td>28</td><td>남구</td><td>호미곶면</td><td>0.71</td><td>0.3</td><td>1</td></tr>
+                        <tr><td>29</td><td>북구</td><td>죽장면</td><td>0.26</td><td>0.3</td><td>1</td></tr>
+                      </tbody>
+                    </table>
+                  </div>                  
+                </li>
+              </ul>
+            </section>
+          </article>
+          <article>
+            <h1 id="4">종합위험도 평가 결과</h1>
+            <section class="section2">
+              <h2 id="4-1">종합위험도 평가 결과 확인 및 분석</h2>
+              <p>종합위험도 평가를 수행한 결과, 일반 데이터와 환산 데이터를 사용하여 [표 4.1-1]과 [표 4.1-2]에 상·하위 5개 행정동을 나타내었다. 각 위험도에서 5등급으로 평가된 행정동 중 두호동을 제외한 대부분의 행정동은 비교적 낮은 위험도를 보이는 것으로 분석되었다. 또한, 각 위험도 데이터를 비교한 결과, 하나의 위험도에서만 높은 위험성을 가진 행정동보다 모든 위험도에서 전반적으로 높은 위험성을 가진 행정동이 더 위험한 것으로 나타났다. 이를 통해 각 위험도별로 지역의 위험한 정도 파악할 수 있으며, 전반적인 위험 정도는 종합위험도 평가 방식을 통해 효과적으로 확인할 수 있음을 알 수 있다.</p>
+              <div class="tbl_wrap">
+                <table class="tbl_method">
+                  <caption>[표 4.1-1] 종합위험도 계산 결과(일반 데이터)</caption>
+                  <thead>
+                    <tr>
+                      <th scope="col">순위</th> <th scope="col">시군구</th> <th scope="col">행정동</th>
+                      <th scope="col">점수</th> <th scope="col">등급</th> <th scope="col">등급(재)</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr><td>1</td> <td>북구</td> <td>중앙동</td> <td>109.92</td> <td>12</td> <td>5</td></tr>
+                    <tr><td>2</td> <td>북구</td> <td>죽도동</td> <td>102.85</td> <td>12</td> <td>4</td></tr>
+                    <tr><td>3</td> <td>북구</td> <td>용흥동</td> <td>97.38</td> <td>8</td> <td>4</td></tr>
+                    <tr><td>4</td> <td>남구</td> <td>상대동</td> <td>64.35</td> <td>6</td> <td>4</td></tr>
+                    <tr><td>5</td> <td>북구</td> <td>장량동</td> <td>59.74</td> <td>6</td> <td>3</td></tr>
+                    <tr><td colspan="6">…</td></tr>
+                    <tr><td>25</td> <td>북구</td> <td>청하면</td> <td>1.65</td> <td>0.7</td> <td>1</td></tr>
+                    <tr><td>26</td> <td>북구</td> <td>기북면</td> <td>1.19</td> <td>0.2</td> <td>1</td></tr>
+                    <tr><td>27</td> <td>북구</td> <td>신광면</td> <td>1.17</td> <td>0.7</td> <td>1</td></tr>
+                    <tr><td>28</td> <td>남구</td> <td>호미곶면</td> <td>0.95</td> <td>0.3</td> <td>1</td></tr>
+                    <tr><td>29</td> <td>북구</td> <td>죽장면</td> <td>0.34</td> <td>0.3</td> <td>1</td></tr>
+                  </tbody>
+                </table>
+              </div>
+              <div class="tbl_wrap">
+                <table class="tbl_method">
+                  <caption>[표 4.1-2] 종합위험도 계산 결과(환산 데이터)</caption>
+                  <thead>
+                    <tr>
+                      <th scope="col">순위</th> <th scope="col">시군구</th> <th scope="col">행정동</th>
+                      <th scope="col">점수</th> <th scope="col">등급</th> <th scope="col">등급(재)</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr><td>1</td> <td>북구</td> <td>중앙동</td> <td>82.53</td> <td>12</td> <td>5</td></tr>
+                    <tr><td>2</td> <td>북구</td> <td>죽도동</td> <td>77.22</td> <td>12</td> <td>4</td></tr>
+                    <tr><td>3</td> <td>북구</td> <td>용흥동</td> <td>73.11</td> <td>8</td> <td>4</td></tr>
+                    <tr><td>4</td> <td>남구</td> <td>상대동</td> <td>48.32</td> <td>6</td> <td>4</td></tr>
+                    <tr><td>5</td> <td>북구</td> <td>장량동</td> <td>44.85</td> <td>6</td> <td>3</td></tr>
+                    <tr><td colspan="6">…</td></tr>
+                    <tr><td>25</td> <td>북구</td> <td>청하면</td> <td>1.24</td> <td>0.7</td> <td>1</td></tr>
+                    <tr><td>26</td> <td>북구</td> <td>기북면</td> <td>0.89</td> <td>0.2</td> <td>1</td></tr>
+                    <tr><td>27</td> <td>북구</td> <td>신광면</td> <td>0.88</td> <td>0.7</td> <td>1</td></tr>
+                    <tr><td>28</td> <td>남구</td> <td>호미곶면</td> <td>0.71</td> <td>0.3</td> <td>1</td></tr>
+                    <tr><td>29</td> <td>북구</td> <td>죽장면</td> <td>0.26</td> <td>0.3</td> <td>1</td></tr>
+                  </tbody>
+                </table>
+              </div>
+            </section>
+          </article>
+        </section>
+      </div>  
+    </div>      
+  </main>
+  @@include('../inc/footer.html')
+</div>
+@@include('../inc/script.html')
+</body>
+</html>
