@@ -43,7 +43,7 @@
       </li>
       <li><a href="../html/set_order.html">환경 설정</a>
         <ul class="sub">
-          <li><a href="#">지역위험도 평가 가중치 설정/시뮬레이션</a></li>
+          <li><a href="../html/simulation.html">종합위험도 시뮬레이션</a></li>
           <li><a href="../html/set_order.html">시스템 DB관리</a></li>
         </ul>
       </li>
@@ -157,7 +157,7 @@
         <li><a href="../html/risk_recovery.html">복구역량위험도</a></li>
         <li><a href="../html/risk_sheltering.html">대피위험도</a></li>
         <li><a href="../html/risk_space_securing.html">긴급대응위험도</a></li>
-        <li><a href="../html/risk_total.html">종합안전위험도</a></li>
+        <!-- <li><a href="../html/risk_total.html">종합안전위험도</a></li> -->
       </ul>
     </li>
   </ul>
@@ -189,7 +189,7 @@
           <li><a href="#step02"><i class="step_ing">진행중</i> 건축물대장 매핑</a></li>
           <li><a href="#step03"><i class="step_wait">진행대기</i> 자료보정</a></li>
           <li><a href="#step04">내진구조 분류</a></li>
-          <li><a href="#step05">완료</a></li>
+          <li><a href="#step05">건축물 DB 구축결과</a></li>
         </ul>
       </div>
       <div class="tab_container">
@@ -393,17 +393,18 @@
               <thead>
                 <tr>
                   <th scope="col" rowspan="2">파일구분</th>
-                  <th scope="col" rowspan="2">원시자료 구축일</th>
-                  <th scope="col" rowspan="2">지역</th>
-                  <th scope="col" colspan="3">원시 파일 업로드</th>
-                  <th scope="col" colspan="3">DB저장</th>
+                  <th scope="col" colspan="5">원시 파일 업로드</th>
+                  <th scope="col" colspan="4">DB저장</th>
                   <th scope="col" rowspan="2">관리</th>
                 </tr>
                 <tr>
-                  <th scope="col">상태</th>
-                  <th scope="col">최종일시</th>
-                  <th scope="col">비고</th>
+                  <th scope="col">파일명</th>
+                  <th scope="col">원시자료 구축일</th>
                   <th scope="col">지역</th>
+                  <th scope="col">상태</th>
+                  <th scope="col">업로드 일시</th>
+                  <th scope="col">대상지역</th>
+                  <th scope="col">상태</th>
                   <th scope="col">건 수</th>
                   <th scope="col">작업일시</th>
                 </tr>
@@ -411,6 +412,7 @@
               <tbody>
                 <tr>
                   <td>건축물대장(표제부)</td>
+                  <td>-</td>
                   <td>24-02</td>
                   <td>전국</td>
                   <td><span class="status_fin">완료</span></td>
@@ -426,6 +428,7 @@
                 </tr>            
                 <tr>
                   <td>건축물대장(층별개요)</td>
+                  <td>-</td>
                   <td>24-02-23</td>
                   <td>전국</td>
                   <td><span class="status_fin">완료</span></td>
@@ -441,6 +444,7 @@
                 </tr>            
                 <tr>
                   <td rowspan="5">토지대장</td>
+                  <td>-</td>
                   <td>24-02-23</td>
                   <td>부산</td>
                   <td><span class="status_ing">업로드중</span></td>
@@ -455,6 +459,7 @@
                   </td>
                 </tr>            
                 <tr>
+                  <td>-</td>
                   <td>24-02-23</td>
                   <td>울산</td>
                   <td><span class="status_wait">대기중</span></td>
@@ -469,6 +474,7 @@
                   </td>
                 </tr>
                 <tr>
+                  <td>-</td>
                   <td>24-02-23</td>
                   <td>경북 포함</td>
                   <td><span class="status_fin">완료</span></td>
@@ -483,6 +489,7 @@
                   </td>
                 </tr>
                 <tr>
+                  <td>-</td>
                   <td>24-02-23</td>
                   <td>경북 경주</td>
                   <td><span class="status_fin">완료</span></td>
@@ -497,6 +504,7 @@
                   </td>     
                 </tr>
                 <tr>
+                  <td>-</td>
                   <td>24-02-23</td>
                   <td>경남 창원</td>
                   <td><span class="status_fin">완료</span></td>
@@ -512,6 +520,7 @@
                 </tr>
                 <tr>
                   <td rowspan="5">GIS건물일반집합정보</td>
+                  <td>-</td>
                   <td>24-02-23</td>
                   <td>부산</td>
                   <td>
@@ -531,6 +540,7 @@
                   </td>    
                 </tr>            
                 <tr>
+                  <td>-</td>
                   <td>24-02-23</td>
                   <td>울산</td>
                   <td>
@@ -550,6 +560,7 @@
                   </td>     
                 </tr>
                 <tr>
+                  <td>-</td>
                   <td>24-02-23</td>
                   <td>경북 포함</td>
                   <td>
@@ -569,6 +580,7 @@
                   </td>              
                 </tr>
                 <tr>
+                  <td>-</td>
                   <td>24-02-23</td>
                   <td>경북 경주</td>
                   <td>
@@ -588,6 +600,7 @@
                   </td>              
                 </tr>
                 <tr>
+                  <td>-</td>
                   <td>24-02-23</td>
                   <td>경남 창원</td>
                   <td>
@@ -617,12 +630,21 @@
             <h1 class="arrow">건축물대장 매핑</h1>
             <div class="tool_wrap">
               <p class="info">본 작업은 건축물 (표제부,층별개요), 와 GIS일반집합건물정보를 매핑하고, 개별 건축물의 행정구역과 격자를 반영한다.</p>
-              <button type="button" class="btn_blue">다운로드</button>
               <button type="button" class="btn_orange">매핑시작</button>
               <button type="button" class="btn_orange blink" disabled>매핑중</button>
               <button type="button" class="btn_gray" disabled>매핑완료</button>
             </div>
           </header>
+          <div class="tbl_top">
+            <ul class="search_lst">
+              <li>
+                <select name="" id=""><option value="">시도</option></select>
+                <select name="" id=""><option value="">시군구</option></select>
+                <select name="" id=""><option value="">읍면동</option></select>
+              </li>
+            </ul>
+            <button type="button" class="btn_gray">적용</button>
+          </div>
           <div class="tbl_wrap tbl_scroll_x">
             <table class="tbl_set">
               <caption>건축물대장 매핑</caption>
@@ -709,12 +731,21 @@
             <h1 class="arrow">자료보정</h1>
             <div class="tool_wrap">
               <p class="info">본 작업은 건축물의 대지면적을 토재대장과 매핑하고 각종 속성들을 규칙에 의거 보정하는 작업을 진행 한다.</p>
-              <button type="button" class="btn_blue">다운로드</button>
               <button type="button" class="btn_orange">자료보정</button>
               <button type="button" class="btn_orange blink" disabled>진행중</button>
               <button type="button" class="btn_gray" disabled>보정완료</button>
             </div>
           </header>
+          <div class="tbl_top">
+            <ul class="search_lst">
+              <li>
+                <select name="" id=""><option value="">시도</option></select>
+                <select name="" id=""><option value="">시군구</option></select>
+                <select name="" id=""><option value="">읍면동</option></select>
+              </li>
+            </ul>
+            <button type="button" class="btn_gray">적용</button>
+          </div>
           <div class="tbl_wrap tbl_scroll_x">
             <table class="tbl_set">
               <caption>자료보정</caption>
@@ -765,12 +796,21 @@
             <h1 class="arrow">내진구조 분류</h1>
             <div class="tool_wrap">
               <p class="info">본 작업은 건축물의 대지면적을 토재대장과 매핑하고 각종 속성들을 규칙에 의거 보정하는 작업을 진행 한다.</p>
-              <button type="button" class="btn_blue">다운로드</button>
               <button type="button" class="btn_orange">내진구조 분류</button>
               <button type="button" class="btn_orange blink" disabled>진행중</button>
               <button type="button" class="btn_gray" disabled>분류완료</button>
             </div>
           </header>
+          <div class="tbl_top">
+            <ul class="search_lst">
+              <li>
+                <select name="" id=""><option value="">시도</option></select>
+                <select name="" id=""><option value="">시군구</option></select>
+                <select name="" id=""><option value="">읍면동</option></select>
+              </li>
+            </ul>
+            <button type="button" class="btn_gray">적용</button>
+          </div>
           <div class="tbl_wrap tbl_scroll_x">
             <table class="tbl_set">
               <caption>내진구조 분류</caption>
@@ -815,18 +855,28 @@
 </div>
         </section>
         <!-- 내진구조 분류__e -->
-        <!-- 완료 -->
+        <!-- 건축물 DB 구축결과 -->
         <section id="step05" class="tab_contents">
           <header class="tit">
-            <h1 class="arrow">완료</h1>
+            <h1 class="arrow">건축물 DB 구축결과</h1>
             <div class="tool_wrap">
               <p class="info">본 페이지는 건축물 DB 구축을 완료한 내역을 조회 및 다운로드하여 점검을 하기위한 페이지다.</p>
               <button type="button" class="btn_blue">다운로드</button>
             </div>
           </header>
+          <div class="tbl_top">
+            <ul class="search_lst">
+              <li>
+                <select name="" id=""><option value="">시도</option></select>
+                <select name="" id=""><option value="">시군구</option></select>
+                <select name="" id=""><option value="">읍면동</option></select>
+              </li>
+            </ul>
+            <button type="button" class="btn_gray">적용</button>
+          </div>
           <div class="tbl_wrap tbl_scroll_x">
             <table class="tbl_set">
-              <caption>완료</caption>
+              <caption>건축물 DB 구축결과</caption>
               <colgroup><col style="width:50px;" span="50"/></colgroup>
               <thead>             
                 <tr>
@@ -867,14 +917,14 @@
   </a>
 </div>
         </section>
-        <!-- 완료__e -->
+        <!-- 건축물 DB 구축결과__e -->
       </div>
     </div>
   </main>
   <footer class="footer">
 Copyright © 2024 국립재난안전연구원. All rights reserved.
 </footer>
-  <dialog id="p_regist_upload" class="p_regist_upload line_style" style="--width:600px" popover="manual">
+  <dialog id="p_regist_upload" class="p_regist_upload line_style" style="--width:600px" popover="manual" open>
   <form method="dialog">
     <header class="p_header tit">
       <h1>건축물대장(표제부) 업로드</h1>
@@ -887,18 +937,28 @@ Copyright © 2024 국립재난안전연구원. All rights reserved.
         <li><label for="">원시자료 구축일</label><input type="text" placeholder="연월일 or 연월 직접입력" /></li>
         <li><label for="">파일</label>
           <div class="file_ipt">
-            <input type="text" id="" name="" class="file_text" readonly="" role="filePath" title="첨부폴더 경로" placeholder="사진파일 첨부">              
             <span class="file_wrap btn_blue_line">파일선택</span>
-            <input type="file" role="fileAdd" class="file_add">
-          </div>          
-          <div class="file_lst"> 
+            <input type="file" id="atchmnfl" role="fileAdd" class="file_add" multiple="" onchange="drawFiles()">
+          </div>
+          <div class="file_lst" id="dropArea">
             <ul id="doc" class="attach_list ">
-              <li id="fItem_0"><a href="" download="">아빠.png</a><button type="button" class="file_del" title="삭제">삭제</button></li>
-              <li id="fItem_1"><a href="" download="">엄마.png</a><button type="button" class="file_del" title="삭제">삭제</button></li>
+              <li>
+                <strong>2023년도 컨텐츠팀 주간보고 정산.cell</strong>
+                <div class="progress_wrap">
+                  <progress id="load" class="loading_progress" value="50" max="100"></progress>
+                  <label for="load"><strong>50%</strong></label>
+                </div>
+              </li>
             </ul>
           </div>
         </li>
       </ul>
+      <strong>파일을 업로드 중 입니다. 잠시만 기다려주세요.</strong>
+      <p>업로드 중 브라우저를 종료하시면 처음부터 다시 시작해야합니다.</p>
+      <div class="progress_wrap">
+        <progress id="load" class="loading_progress" value="3" max="5"></progress>
+        <label for="load"><strong>25%</strong></label>
+      </div>
     </section>
     <section class="p_foot">
       <button type="submit" class="btn_foot_blue">업로드</button>
@@ -965,10 +1025,25 @@ Copyright © 2024 국립재난안전연구원. All rights reserved.
       </div>
     </section>
   </form>
-</dialog>  
+</dialog>
+<dialog id="pop_loading" class="p_regist_upload line_style" style="--width:600px" popover>
+  <form method="dialog">
+    <header class="p_header tit">
+      <h1>건축물대장(표제부) 업로드</h1>
+      <div class="tool_wrap">
+        <button type="button" class="btn_close" popovertarget="p_regist_upload" popvertargetaction="hide">닫기</button>
+      </div>
+    </header>
+    <section class="p_body">
+      업로드 중입니다.
+    </section>    
+  </form>
+</dialog>
+<script>
+// document.querySelector('#pop_loading').showPopover();
+</script>  
 </div>
 <script src="../plugins/jquery.min.js"></script>
-<script src="../plugins/chart.js/dist/chart.umd.js"></script>
 <script src="../js/ui_cmmn.js"></script>
 <script>
   commonInit();

@@ -369,8 +369,8 @@ function commonInit() {
     e.stopPropagation();
     const getTarget = e.target.dataset.toggle
     target = $('#' + getTarget)
-    target.show()
-    $(this).closest('[data-tglwrap]').hide()
+    target.show();
+    $(this).closest('[data-tglwrap]').hide();
   })
 
   const getYear = new Date()
@@ -442,8 +442,7 @@ function commonInit() {
 }
 
   function grade(){
-    if(!window.location.pathname.startsWith('/m1'))
-      return;
+    // if(!window.location.pathname.startsWith('/m1')) return;
     const loc = window.location.href.split("index=")[1].split(',')[1];
     const meters = $('.meter_wrap').find('meter');
     const pies = $('.pie_graphwrap').find('.pie');

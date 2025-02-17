@@ -88,3 +88,8 @@ dialog,:modal {margin:auto;padding:20px;border:none;box-shadow: 1.4px 1.4px 29px
 .tbl_preview{margin-top:20px;
   &.tbl_scroll_x table{width:auto;}
 }
+.p_simulation{
+  .flex_wrap{align-items:stretch;gap:25px;height:579px;}
+  .tbl_wrap_scroll{flex:.8;}
+  .map{position:relative;flex:1 0 auto;overflow:hidden;} 
+}

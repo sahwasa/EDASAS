@@ -128,3 +128,15 @@ border:1px solid transparent;}
   position:relative;display:inline-flex;align-items:center;vertical-align:middle;
   &::#{$target}{@include shape(1px,$h);background-color:$gray;margin:0 15px 0 #{15 - $gap};}
 }
+@mixin label_item($hideIpt: false, $onBg: $blue, $color: #333, $onColor: #fff, $onBorder:#c5c9d0){display:inline-flex;gap:12px;color:$color;border:1px solid #c5c9d0;border-radius:3px;padding:5px 7px;outline:1px solid transparent;cursor:pointer;
+  input{width:18px;aspect-ratio:1;}
+  &:has(:checked){border-color:$onBg;}
+  @if($hideIpt){
+    &{justify-content:center;gap:0;}
+    input{position:absolute;opacity:0;width:0;height:0;
+        :not(&:disabled),
+        :not(&:read-only){&:hover+label{cursor:pointer;}}
+    }
+    &:has(:checked){background-color:$onBg;color:$onColor;border-color:$onBorder;}
+  }  
+}

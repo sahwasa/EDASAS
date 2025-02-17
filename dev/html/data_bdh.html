@@ -30,7 +30,7 @@
           <li><a href="#step02"><i class="step_ing">진행중</i> 건축물대장 매핑</a></li>
           <li><a href="#step03"><i class="step_wait">진행대기</i> 자료보정</a></li>
           <li><a href="#step04">내진구조 분류</a></li>
-          <li><a href="#step05">완료</a></li>
+          <li><a href="#step05">건축물 DB 구축결과</a></li>
         </ul>
       </div>
       <div class="tab_container">
@@ -234,17 +234,18 @@
               <thead>
                 <tr>
                   <th scope="col" rowspan="2">파일구분</th>
-                  <th scope="col" rowspan="2">원시자료 구축일</th>
-                  <th scope="col" rowspan="2">지역</th>
-                  <th scope="col" colspan="3">원시 파일 업로드</th>
-                  <th scope="col" colspan="3">DB저장</th>
+                  <th scope="col" colspan="5">원시 파일 업로드</th>
+                  <th scope="col" colspan="4">DB저장</th>
                   <th scope="col" rowspan="2">관리</th>
                 </tr>
                 <tr>
-                  <th scope="col">상태</th>
-                  <th scope="col">최종일시</th>
-                  <th scope="col">비고</th>
+                  <th scope="col">파일명</th>
+                  <th scope="col">원시자료 구축일</th>
                   <th scope="col">지역</th>
+                  <th scope="col">상태</th>
+                  <th scope="col">업로드 일시</th>
+                  <th scope="col">대상지역</th>
+                  <th scope="col">상태</th>
                   <th scope="col">건 수</th>
                   <th scope="col">작업일시</th>
                 </tr>
@@ -252,6 +253,7 @@
               <tbody>
                 <tr>
                   <td>건축물대장(표제부)</td>
+                  <td>-</td>
                   <td>24-02</td>
                   <td>전국</td>
                   <td><span class="status_fin">완료</span></td>
@@ -267,6 +269,7 @@
                 </tr>            
                 <tr>
                   <td>건축물대장(층별개요)</td>
+                  <td>-</td>
                   <td>24-02-23</td>
                   <td>전국</td>
                   <td><span class="status_fin">완료</span></td>
@@ -282,6 +285,7 @@
                 </tr>            
                 <tr>
                   <td rowspan="5">토지대장</td>
+                  <td>-</td>
                   <td>24-02-23</td>
                   <td>부산</td>
                   <td><span class="status_ing">업로드중</span></td>
@@ -296,6 +300,7 @@
                   </td>
                 </tr>            
                 <tr>
+                  <td>-</td>
                   <td>24-02-23</td>
                   <td>울산</td>
                   <td><span class="status_wait">대기중</span></td>
@@ -310,6 +315,7 @@
                   </td>
                 </tr>
                 <tr>
+                  <td>-</td>
                   <td>24-02-23</td>
                   <td>경북 포함</td>
                   <td><span class="status_fin">완료</span></td>
@@ -324,6 +330,7 @@
                   </td>
                 </tr>
                 <tr>
+                  <td>-</td>
                   <td>24-02-23</td>
                   <td>경북 경주</td>
                   <td><span class="status_fin">완료</span></td>
@@ -338,6 +345,7 @@
                   </td>     
                 </tr>
                 <tr>
+                  <td>-</td>
                   <td>24-02-23</td>
                   <td>경남 창원</td>
                   <td><span class="status_fin">완료</span></td>
@@ -353,6 +361,7 @@
                 </tr>
                 <tr>
                   <td rowspan="5">GIS건물일반집합정보</td>
+                  <td>-</td>
                   <td>24-02-23</td>
                   <td>부산</td>
                   <td>
@@ -372,6 +381,7 @@
                   </td>    
                 </tr>            
                 <tr>
+                  <td>-</td>
                   <td>24-02-23</td>
                   <td>울산</td>
                   <td>
@@ -391,6 +401,7 @@
                   </td>     
                 </tr>
                 <tr>
+                  <td>-</td>
                   <td>24-02-23</td>
                   <td>경북 포함</td>
                   <td>
@@ -410,6 +421,7 @@
                   </td>              
                 </tr>
                 <tr>
+                  <td>-</td>
                   <td>24-02-23</td>
                   <td>경북 경주</td>
                   <td>
@@ -429,6 +441,7 @@
                   </td>              
                 </tr>
                 <tr>
+                  <td>-</td>
                   <td>24-02-23</td>
                   <td>경남 창원</td>
                   <td>
@@ -458,12 +471,21 @@
             <h1 class="arrow">건축물대장 매핑</h1>
             <div class="tool_wrap">
               <p class="info">본 작업은 건축물 (표제부,층별개요), 와 GIS일반집합건물정보를 매핑하고, 개별 건축물의 행정구역과 격자를 반영한다.</p>
-              <button type="button" class="btn_blue">다운로드</button>
               <button type="button" class="btn_orange">매핑시작</button>
               <button type="button" class="btn_orange blink" disabled>매핑중</button>
               <button type="button" class="btn_gray" disabled>매핑완료</button>
             </div>
           </header>
+          <div class="tbl_top">
+            <ul class="search_lst">
+              <li>
+                <select name="" id=""><option value="">시도</option></select>
+                <select name="" id=""><option value="">시군구</option></select>
+                <select name="" id=""><option value="">읍면동</option></select>
+              </li>
+            </ul>
+            <button type="button" class="btn_gray">적용</button>
+          </div>
           <div class="tbl_wrap tbl_scroll_x">
             <table class="tbl_set">
               <caption>건축물대장 매핑</caption>
@@ -535,12 +557,21 @@
             <h1 class="arrow">자료보정</h1>
             <div class="tool_wrap">
               <p class="info">본 작업은 건축물의 대지면적을 토재대장과 매핑하고 각종 속성들을 규칙에 의거 보정하는 작업을 진행 한다.</p>
-              <button type="button" class="btn_blue">다운로드</button>
               <button type="button" class="btn_orange">자료보정</button>
               <button type="button" class="btn_orange blink" disabled>진행중</button>
               <button type="button" class="btn_gray" disabled>보정완료</button>
             </div>
           </header>
+          <div class="tbl_top">
+            <ul class="search_lst">
+              <li>
+                <select name="" id=""><option value="">시도</option></select>
+                <select name="" id=""><option value="">시군구</option></select>
+                <select name="" id=""><option value="">읍면동</option></select>
+              </li>
+            </ul>
+            <button type="button" class="btn_gray">적용</button>
+          </div>
           <div class="tbl_wrap tbl_scroll_x">
             <table class="tbl_set">
               <caption>자료보정</caption>
@@ -576,12 +607,21 @@
             <h1 class="arrow">내진구조 분류</h1>
             <div class="tool_wrap">
               <p class="info">본 작업은 건축물의 대지면적을 토재대장과 매핑하고 각종 속성들을 규칙에 의거 보정하는 작업을 진행 한다.</p>
-              <button type="button" class="btn_blue">다운로드</button>
               <button type="button" class="btn_orange">내진구조 분류</button>
               <button type="button" class="btn_orange blink" disabled>진행중</button>
               <button type="button" class="btn_gray" disabled>분류완료</button>
             </div>
           </header>
+          <div class="tbl_top">
+            <ul class="search_lst">
+              <li>
+                <select name="" id=""><option value="">시도</option></select>
+                <select name="" id=""><option value="">시군구</option></select>
+                <select name="" id=""><option value="">읍면동</option></select>
+              </li>
+            </ul>
+            <button type="button" class="btn_gray">적용</button>
+          </div>
           <div class="tbl_wrap tbl_scroll_x">
             <table class="tbl_set">
               <caption>내진구조 분류</caption>
@@ -611,18 +651,28 @@
           @@include('../inc/paginate.html')
         </section>
         <!-- 내진구조 분류__e -->
-        <!-- 완료 -->
+        <!-- 건축물 DB 구축결과 -->
         <section id="step05" class="tab_contents">
           <header class="tit">
-            <h1 class="arrow">완료</h1>
+            <h1 class="arrow">건축물 DB 구축결과</h1>
             <div class="tool_wrap">
               <p class="info">본 페이지는 건축물 DB 구축을 완료한 내역을 조회 및 다운로드하여 점검을 하기위한 페이지다.</p>
               <button type="button" class="btn_blue">다운로드</button>
             </div>
           </header>
+          <div class="tbl_top">
+            <ul class="search_lst">
+              <li>
+                <select name="" id=""><option value="">시도</option></select>
+                <select name="" id=""><option value="">시군구</option></select>
+                <select name="" id=""><option value="">읍면동</option></select>
+              </li>
+            </ul>
+            <button type="button" class="btn_gray">적용</button>
+          </div>
           <div class="tbl_wrap tbl_scroll_x">
             <table class="tbl_set">
-              <caption>완료</caption>
+              <caption>건축물 DB 구축결과</caption>
               <colgroup><col style="width:50px;" span="50"/></colgroup>
               <thead>             
                 <tr>
@@ -648,7 +698,7 @@
           </div>
           @@include('../inc/paginate.html')
         </section>
-        <!-- 완료__e -->
+        <!-- 건축물 DB 구축결과__e -->
       </div>
     </div>
   </main>

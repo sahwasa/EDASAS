@@ -1,4 +1,4 @@
-<dialog id="p_regist_upload" class="p_regist_upload line_style" style="--width:600px" popover="manual">
+<dialog id="p_regist_upload" class="p_regist_upload line_style" style="--width:600px" popover="manual" open>
   <form method="dialog">
     <header class="p_header tit">
       <h1>건축물대장(표제부) 업로드</h1>
@@ -11,18 +11,28 @@
         <li><label for="">원시자료 구축일</label><input type="text" placeholder="연월일 or 연월 직접입력" /></li>
         <li><label for="">파일</label>
           <div class="file_ipt">
-            <input type="text" id="" name="" class="file_text" readonly="" role="filePath" title="첨부폴더 경로" placeholder="사진파일 첨부">              
             <span class="file_wrap btn_blue_line">파일선택</span>
-            <input type="file" role="fileAdd" class="file_add">
-          </div>          
-          <div class="file_lst"> 
+            <input type="file" id="atchmnfl" role="fileAdd" class="file_add" multiple="" onchange="drawFiles()">
+          </div>
+          <div class="file_lst" id="dropArea">
             <ul id="doc" class="attach_list ">
-              <li id="fItem_0"><a href="" download="">아빠.png</a><button type="button" class="file_del" title="삭제">삭제</button></li>
-              <li id="fItem_1"><a href="" download="">엄마.png</a><button type="button" class="file_del" title="삭제">삭제</button></li>
+              <li>
+                <strong>2023년도 컨텐츠팀 주간보고 정산.cell</strong>
+                <div class="progress_wrap">
+                  <progress id="load" class="loading_progress" value="50" max="100"></progress>
+                  <label for="load"><strong>50%</strong></label>
+                </div>
+              </li>
             </ul>
           </div>
         </li>
       </ul>
+      <strong>파일을 업로드 중 입니다. 잠시만 기다려주세요.</strong>
+      <p>업로드 중 브라우저를 종료하시면 처음부터 다시 시작해야합니다.</p>
+      <div class="progress_wrap">
+        <progress id="load" class="loading_progress" value="3" max="5"></progress>
+        <label for="load"><strong>25%</strong></label>
+      </div>
     </section>
     <section class="p_foot">
       <button type="submit" class="btn_foot_blue">업로드</button>
@@ -90,3 +100,19 @@
     </section>
   </form>
 </dialog>
+<dialog id="pop_loading" class="p_regist_upload line_style" style="--width:600px" popover>
+  <form method="dialog">
+    <header class="p_header tit">
+      <h1>건축물대장(표제부) 업로드</h1>
+      <div class="tool_wrap">
+        <button type="button" class="btn_close" popovertarget="p_regist_upload" popvertargetaction="hide">닫기</button>
+      </div>
+    </header>
+    <section class="p_body">
+      업로드 중입니다.
+    </section>    
+  </form>
+</dialog>
+<script>
+// document.querySelector('#pop_loading').showPopover();
+</script>
