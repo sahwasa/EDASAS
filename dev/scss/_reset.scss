@@ -42,4 +42,4 @@ $bggray:#f2f2f2;
 $green:#3eb156;
 $border:#e2e2e2;
 $_safetyGrade:('grade1':#57C90D,'grade2':#73DFFF,'grade3':#FFFF00,'grade4':#FFAA00,'grade5':#E64C00,'grade0':#b1b1b1);
-$_safetyColor:map-get($_safetyGrade, grade1),map-get($_safetyGrade, grade2),map-get($_safetyGrade, grade3),map-get($_safetyGrade, grade4),map-get($_safetyGrade, grade5);
+$_safetyColor:map-get($_safetyGrade, grade1),map-get($_safetyGrade, grade2),lighten(map-get($_safetyGrade, grade3), 20),map-get($_safetyGrade, grade3),map-get($_safetyGrade, grade4),map-get($_safetyGrade, grade5);
