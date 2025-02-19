@@ -866,7 +866,9 @@ details[open]>summary::after{margin:0 2px;content:'\e86a';}
   .meter_area{display:none;}
   &:has(.tgl_viewType :checked){
     .heatmap_wrap{display:none;}
-    .meter_area{display:block;}
+    .meter_area{display:block;
+      label:hover{cursor:pointer;color:$blue;}
+    }
   }
 }
 .chart_total{display:flex;flex-direction:column;justify-content:center;align-items:center;width:90px;font-weight:800;letter-spacing:-1px;word-break:break-word;margin-top:5px;
