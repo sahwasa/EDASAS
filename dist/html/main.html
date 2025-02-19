@@ -22,10 +22,10 @@
           <li><a href="../html/main.html">종합위험도 평가</a></li>
           <li><a href="../html/bdh.html">건축물피해위험도 평가</a></li>
           <li><a href="../html/eq_fire.html">지진화재위험도 평가</a></li>
+          <li><a href="../html/space_securing.html">긴급대응 활동난이도 평가</a></li>
           <li><a href="../html/recovery_capability.html">재산피해 위험도 평가</a></li>
           <li><a href="../html/sheltering.html">대피시설 확보율 평가</a></li>
-          <!-- <li><a href="../html/dis_prevention.html">방재위험도 평가</a></li> -->
-          <li><a href="../html/space_securing.html">긴급대응 활동난이도 평가</a></li>
+          <li><a href="../html/dis_prevention.html">방재위험도 평가</a></li>
         </ul>
       </li>
       <li><a href="../html/sys_purpose.html">시스템 소개</a>
@@ -142,10 +142,10 @@
     <li><a href="../html/main.html"><span>종합위험도 평가</span></a></li>
     <li><a href="../html/bdh.html"><span>건축물피해위험도 평가</span></a></li>
     <li><a href="../html/eq_fire.html"><span>지진화재위험도 평가</span></a></li>
-    <li><a href="../html/recovery_capability.html"><span>복구역량도 평가</span></a></li>
-    <li><a href="../html/sheltering.html"><span>대피위험도 평가</span></a></li>
-    <!-- <li><a href="../html/dis_prevention.html"><span>방재위험도 평가</span></a></li> -->
-    <li><a href="../html/space_securing.html"><span>긴급대응 도로·공간 확보계수 평가</span></a></li>
+    <li><a href="../html/space_securing.html"><span>긴급대응 활동난이도 평가</span></a></li>
+    <li><a href="../html/recovery_capability.html"><span>재산피해위험도 평가</span></a></li>
+    <li><a href="../html/sheltering.html"><span>대피시설 확보율 평가</span></a></li>
+    <li><a href="../html/dis_prevention.html"><span>방재위험도 평가</span></a></li>
   </ul>
 </nav>
     <div class="cont_body comp">
@@ -263,7 +263,7 @@
                     </ul>
                   </div>
                   <ul class="area_lst">    
-                    <li><label for="area1-1"> 기계면</label><meter id="area1-1"  value="0.092" min="0" max="0.1"></meter></li>
+                    <li><label for="area1-1">야음장생포동</label><meter id="area1-1"  value="0.092" min="0" max="0.1"></meter></li>
                     <li><label for="area1-2"> 기북면</label><meter id="area1-2"  value="87.5" min="0" max="100"></meter></li>
                     <li><label for="area1-3"> 두호동</label><meter id="area1-3"  value="76.1" min="0" max="100"></meter></li>
                     <li><label for="area1-4"> 송라면</label><meter id="area1-4"  value="89.4" min="0" max="100"></meter></li>
@@ -452,7 +452,7 @@
           <li class="grade5">5등급</li>
         </ul>
       </section>
-      <section class="distribution_legend">                
+      <!-- <section class="distribution_legend">                
         <strong>지반 분류</strong>
         <ul>
           <li class="s1"><i>S1</i>암반 지반</li>
@@ -460,7 +460,7 @@
           <li class="s3"><i>S3</i>얕고 연약한 지반</li>
           <li class="s4"><i>S4</i>깊고 단단한 지반</li>
         </ul>
-      </section>
+      </section> -->
     </div>
   </details>
 </div>
@@ -777,7 +777,7 @@ Copyright © 2024 국립재난안전연구원. All rights reserved.
     </section>
   </form>
 </dialog>
-  <dialog id="p_simulation" class="p_simulation line_style" style="--width:1280px" popover="manual">
+  <dialog id="p_simulation" class="p_simulation line_style" style="--width:1280px"  popover="manual">
   <form method="dialog">
     <header class="p_header tit">
       <h1>시뮬레이션</h1>
@@ -797,7 +797,7 @@ Copyright © 2024 국립재난안전연구원. All rights reserved.
         <p class="info">가중치의 총합은 1이 되어야 합니다.</p>
       </div>
       <section class="tit">
-        <h2>포항</h2>
+        <h2>포항 ( 지진 재현주기 : 2400년 )</h2>
         <div class="tbl_filter">
           <ul class="search_lst">         
             <li>
@@ -814,15 +814,19 @@ Copyright © 2024 국립재난안전연구원. All rights reserved.
             <caption>종합안전위험도</caption>     
             <thead>
               <tr>
-                <th scope="col">지진주기</th>
-                <th scope="col">행정구역코드</th>
-                <th scope="col">행정구역명</th>            
-                <th scope="col">점수</th>
-                <th scope="col">등급</th>
-              </tr>
+              <th scope="col" rowspan="2">행정구역명</th>        
+              <th scope="col" rowspan="2">건축물피해<br/>위험도 점수</th>
+              <th scope="col" rowspan="2">지진화재<br/>위험도 점수</th>
+              <th scope="col" rowspan="2">긴급대응<br/>활동난이도 점수</th>
+              <th scope="col" colspan="2">종합위험도</th>
+            </tr>
+            <tr>
+              <th scope="col">점수</th>
+              <th scope="col">등급</th>
+            </tr>
             </thead>
             <tbody>
-              <tr> <td></td> <td></td> <td></td> <td></td> <td></td> </tr>   
+              <tr> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> </tr>   
             </tbody>
           </table>      
         </div>
