@@ -1,7 +1,7 @@
 <dialog id="p_report" class="p_report" style="--width:870px" popover="manual">
   <form method="dialog">
     <header class="p_header tit">
-      <h1 class="blind">종합 안전도 평가결과</h1>
+      <h1 class="blind">종합위험도 평가결과</h1>
       <div class="tool_wrap">
         <!-- <button type="button" class="btn_pdf">PDF저장</button> -->
         <button type="button" class="btn_print" onclick="printElement('printArea')">인쇄</button>
@@ -11,17 +11,20 @@
     <section class="p_body">
       <article id="printArea" class="report_wrap">
         <header>
-          <h1>종합 안전도 평가결과</h1>
+          <h1>종합위험도 평가결과</h1>
           <span class="date">평가일 2023-10-10</span>
         </header>
         <div class="report_body">
           <section>
-            <h2>대상지역</h2>
+            <div class="tit inline">
+              <h2>평가 대상 지역</h2>
+            </div>
             <p>포항</p>
           </section>         
           <section>
-            <!-- (읍면동단위 고정) -->
-            <h2>지역별 평가결과</h2>
+            <div class="tit">
+              <h2>지역별 평가결과</h2>
+            </div>
             <div id="" class="meter_area">
               <div class="meter_wrap">
                 <strong class="chart_total">포항시 북구<span class="score">63</span></strong>

@@ -138,28 +138,10 @@
 </dialog>    
   <main id="content" class="main_container">
     <nav class="snb sub_default">
-  <h1>시스템 DB관리</h1>
+  <h1>종합위험도 관리</h1>
   <ul class="snb_lst">
-    <li><a href="../html/set_order.html">차수 관리</a></li>
-    <li><a href="../html/data_area.html">기초데이터 관리</a>
-      <ul>
-        <li><a href="../html/data_area.html">행정구역</a></li>
-        <li><a href="../html/data_grid.html">격자정보</a></li>
-        <li><a href="../html/data_geotech.html">지반정보</a></li>
-        <li><a href="../html/data_bdh.html">건축물 DB</a></li>
-        <li><a href="../html/data_fire.html">화재 DB</a></li>
-      </ul>
-    </li>
-    <li><a href="../html/risk_bdh.html">지역위험도 관리</a>
-      <ul>
-        <li><a href="../html/risk_bdh.html">건축물피해 위험도</a></li>
-        <li><a href="../html/risk_fire.html">지진화재위험도</a></li>
-        <li><a href="../html/risk_recovery.html">복구역량위험도</a></li>
-        <li><a href="../html/risk_sheltering.html">대피위험도</a></li>
-        <li><a href="../html/risk_space_securing.html">긴급대응위험도</a></li>
-        <!-- <li><a href="../html/risk_total.html">종합안전위험도</a></li> -->
-      </ul>
-    </li>
+    <li><a href="../html/total_result.html">종합위험도 평가결과</a></li>
+    <li><a href="../html/simulation.html">종합위험도 시뮬레이션</a></li>
   </ul>
 </nav>
     <div class="flex_body">
@@ -168,80 +150,73 @@
           <ul>
             <li><a href="#">Home</a></li>
             <li>환경 설정</li>
-            <li>시스템 DB관리</li>
-            <li>지역위험도 관리</li>
-            <li>대피위험도</li>
+            <li>종합위험도</li>
+            <li>종합위험도 평가결과</li>
           </ul>
         </section>
-        <h1>대피위험도 <strong>지역위험도 관리</strong></h1>
-      </header>
-      <div class="search">
-        <ul class="search_lst">         
+        <h1>종합위험도 평가결과 </h1>
+      </header>      
+       <div class="search">
+        <ul class="search_lst">
           <li>
             <label for="">차수</label>
-            <select name="" id=""><option value="">차수</option></select>
+            <select id="ver"><option value="1">2024년</option><option value="2">2025년</option></select>
           </li>
           <li>
             <label for="">대상지역</label>
-            <select name="" id=""><option value="">부산</option></select>
+            <select name="" id="target"><option value="0000000000">전체</option><option value="3100000000">울산</option><option value="4711000000">포항</option><option value="4713000000">경주</option></select>
           </li>
           <li>
             <label for="">지진 재현주기</label>
-            <select name="" id="">
-              <option value="">2400년</option>
-              <option value="">1000년</option>
-              <option value="">500년</option>
+            <select name="" id="p_erthqk_cycle_cd">
+              <option value="0">전체</option>
+              <option value="3">2400년</option>
+              <option value="2">1000년</option>
+              <option value="1">500년</option>
             </select>
           </li>
         </ul>
-        <button type="button" class="btn_blue_line">검색</button>
+        <button type="button" class="btn_blue_line" onclick="getData()">검색</button>
         <div class="tool_wrap">
-          <button type="button" class="btn_blue">다운로드</button>
-          <button type="button" class="btn_blue" popovertarget="p_upload">업로드</button>
+          <button type="button" class="btn_blue" onclick="excelDown()">다운로드</button>
+          <button type="button" class="btn_blue" popovertarget="p_upload" onclick="initializeUploadPopup()">업로드</button>
         </div>
       </div>
-      <div class="tbl_wrap">
+      <div class="tbl_wrap_scroll">
         <table class="tbl_set">
-          <caption>대피위험도</caption>     
+          <caption>종합안전위험도</caption>     
           <thead>
             <tr>
               <th scope="col">차수</th>
               <th scope="col">지진주기</th>
               <th scope="col">행정구역코드</th>
-              <th scope="col">행정구역명</th>
+              <th scope="col">행정구역명</th>            
               <th scope="col">점수</th>
               <th scope="col">등급</th>
               <th scope="col">갱신일시</th>
             </tr>
           </thead>
           <tbody>
-            <tr>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-            </tr>            
+            <tr> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> </tr>            
+            <tr> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> </tr>            
+            <tr> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> </tr>            
+            <tr> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> </tr>            
+            <tr> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> </tr>            
+            <tr> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> </tr>            
+            <tr> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> </tr>            
+            <tr> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> </tr>            
+            <tr> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> </tr>            
+            <tr> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> </tr>            
+            <tr> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> </tr>            
+            <tr> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> </tr>            
+            <tr> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> </tr>            
+            <tr> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> </tr>            
+            <tr> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> </tr>            
+            <tr> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> </tr>            
+            <tr> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> </tr>            
+            <tr> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> </tr>            
           </tbody>
-        </table>       
-        <div class="paginate tui-pagination" id="pagination">
-  <span class="tui-page-btn tui-is-disabled tui-first">
-    <span class="tui-ico-first">first</span>
-  </span>
-  <span class="tui-page-btn tui-is-disabled tui-prev">
-    <span class="tui-ico-prev">prev</span>
-  </span>
-  <strong class="tui-page-btn tui-is-selected tui-first-child">1</strong>
-  <a href="#" class="tui-page-btn tui-last-child">2</a>
-  <a href="#" class="tui-page-btn tui-next">
-    <span class="tui-ico-next">next</span>
-  </a>
-  <a href="#" class="tui-page-btn tui-last">
-    <span class="tui-ico-last">last</span>
-  </a>
-</div>
+        </table>      
       </div>
     </div>
   </main>
@@ -252,15 +227,18 @@ Copyright © 2024 국립재난안전연구원. All rights reserved.
 <dialog id="p_upload" class="p_upload line_style" style="--width:900px" popover="manual">
   <form method="dialog">
     <header class="p_header tit">
-      <h1>대피위험도 업로드</h1>
+      <h1>종합위험도 업로드</h1>
       <div class="tool_wrap">
         <button type="button" class="btn_close" popovertarget="p_upload" popvertargetaction="hide">닫기</button>
       </div>
     </header>
     <section class="p_body">
       <ul class="ipt_lst inline">          
-        <li><strong class="label">대상지역</strong>
-          <select name="" id=""><option value="">시도</option></select>
+        <li>
+          <strong class="label">차수</strong>
+          <select name="" id=""><option value="">2024년</option></select>
+          <strong class="label">대상지역</strong>
+          <select name="" id=""><option value="">전체</option></select>
         </li>
         <li><strong class="label">지진 재현주기</strong>
           <ul class="check_lst">
@@ -276,11 +254,16 @@ Copyright © 2024 국립재난안전연구원. All rights reserved.
             <input type="file" role="fileAdd" class="file_add">
           </div>
           <button type="button" class="btn_gray_line">미리보기</button>
+          <div class="info">양식에 맞는 파일을 업로드해주시길 바랍니다. 처음 작성 시 양식을 다운받아 진행해주세요.
+            <button type="button" class="btn_gray" onclick="window.location.href='/excel/긴급대응위험도업로드양식.xlsx'">
+              파일양식 다운로드
+            </button>
+          </div>
         </li>         
       </ul>
       <div class="tbl_wrap tbl_preview">
         <table class="tbl_set">
-          <caption>지진화재 위험도</caption>     
+          <caption>복구역량 위험도</caption>     
           <thead>
             <tr>
               <th scope="col">차수</th>
@@ -289,12 +272,10 @@ Copyright © 2024 국립재난안전연구원. All rights reserved.
               <th scope="col">행정구역명</th>
               <th scope="col">점수</th>
               <th scope="col">등급</th>
-              <th scope="col">갱신일시</th>
             </tr>
           </thead>
           <tbody>
             <tr>
-              <td></td>
               <td></td>
               <td></td>
               <td></td>

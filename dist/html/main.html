@@ -14,7 +14,7 @@
 
 <div id="wrap" class="wrap">
   <header class="header">  
-  <h1 class="main_logo"><a href="">지진재해 지역위험도 평가 시스템</a></h1>
+  <h1 class="main_logo"><a href="../html/main.html?index=1,1">지진재해 지역위험도 평가 시스템</a></h1>
   <nav class="nav">
     <ul class="nav_lst">
       <li><a href="../html/main.html">지역위험도 평가</a>
@@ -43,7 +43,7 @@
       </li>
       <li><a href="../html/set_order.html">환경 설정</a>
         <ul class="sub">
-          <li><a href="../html/simulation.html">종합위험도 시뮬레이션</a></li>
+          <li><a href="../html/total_result.html">종합위험도 관리</a></li>
           <li><a href="../html/set_order.html">시스템 DB관리</a></li>
         </ul>
       </li>
@@ -153,21 +153,26 @@
       <section class="pannel sidePannel_wrap">
         <div class="pannel_wrap">
           <header>
-            <h1>종합안전도 평가</h1>
+            <div class="tit">
+              <h1>종합위험도 평가</h1>
+              <div class="tool_wrap">
+                <button type="button" class="btn_gray_line" popovertarget="p_simulation">시뮬레이션</button>
+              </div>
+            </div>
             <section class="filter">
               <ul class="areaLst btn_switch">
-                <li><input type="radio" id="area1" name="area" checked><label for="area1">부산</label></li>
-                <li><input type="radio" id="area2" name="area"><label for="area2">울산</label></li>
-                <li><input type="radio" id="area3" name="area"><label for="area3">경북 포항</label></li>
-                <li><input type="radio" id="area4" name="area"><label for="area4">경북 경주</label></li>
-                <li><input type="radio" id="area5" name="area"><label for="area5">경남 창원</label></li>
+                <li><input type="radio" id="area_1" name="area" checked><label for="area_1">부산</label></li>
+                <li><input type="radio" id="area_3100000000" name="area"><label for="area_3100000000">울산</label></li>
+                <li><input type="radio" id="area_4711000000" name="area"><label for="area_4711000000">경북 포항</label></li>
+                <li><input type="radio" id="area_4713000000" name="area"><label for="area_4713000000">경북 경주</label></li>
+                <li><input type="radio" id="area_5" name="area"><label for="area_5">경남 창원</label></li>
               </ul>
               <dl class="filterLst">
-                <dt>표출형식</dt>
+                <!-- <dt>표출형식</dt>
                 <dd>
                   <label for="areaUnit1"><input type="radio" id="areaUnit1" name="areaUnit" checked>시군구</label>
                   <label for="areaUnit2"><input type="radio" id="areaUnit2" name="areaUnit">읍면동</label>
-                </dd>
+                </dd> -->
                 <dt>지진 재현주기</dt>
                 <dd>
                   <label for="returnPeriod1"><input type="radio" id="returnPeriod1" name="returnPeriod">500년</label>
@@ -179,8 +184,7 @@
             </section>
           </header>
           
-          <article class="pannel_body">
-            
+          <article class="pannel_body">            
             <section>
               <div class="tit">
                 <h1>평가결과</h1>
@@ -192,8 +196,7 @@
               </div>
             </section>
             <section class="total_results">
-              <button type="button" class="btn_gray_line" popovertarget="p_report">종합안전도 평가결과 보고서</button>
-              <button type="button" class="btn_gray_line" popovertarget="p_simulation">가중치 조정 시뮬레이션</button>
+              <button type="button" class="btn_gray_line" popovertarget="p_report">종합위험도 평가결과 보고서</button>              
             </section>
             <section class="results_region">
               <div class="tit">
@@ -319,8 +322,8 @@
                   <thead>
                     <tr>
                       <th scope="col" rowspan="2">구분</th>
-                      <th scope="col" colspan="2">종합 안전도</th>
-                      <th scope="col" colspan="2">건축물 피해 위험도</th>
+                      <th scope="col" colspan="2">종합위험도</th>
+                      <th scope="col" colspan="2">건축물피해 위험도</th>
                       <th scope="col" colspan="2">지진화재 위험도</th>
                       <th scope="col" colspan="2">재산피해 위험도</th>
                       <th scope="col" colspan="2">대피시설 확보율</th>
@@ -630,7 +633,7 @@ Copyright © 2024 국립재난안전연구원. All rights reserved.
   <dialog id="p_report" class="p_report" style="--width:870px" popover="manual">
   <form method="dialog">
     <header class="p_header tit">
-      <h1 class="blind">종합 안전도 평가결과</h1>
+      <h1 class="blind">종합위험도 평가결과</h1>
       <div class="tool_wrap">
         <!-- <button type="button" class="btn_pdf">PDF저장</button> -->
         <button type="button" class="btn_print" onclick="printElement('printArea')">인쇄</button>
@@ -640,17 +643,20 @@ Copyright © 2024 국립재난안전연구원. All rights reserved.
     <section class="p_body">
       <article id="printArea" class="report_wrap">
         <header>
-          <h1>종합 안전도 평가결과</h1>
+          <h1>종합위험도 평가결과</h1>
           <span class="date">평가일 2023-10-10</span>
         </header>
         <div class="report_body">
           <section>
-            <h2>대상지역</h2>
+            <div class="tit inline">
+              <h2>평가 대상 지역</h2>
+            </div>
             <p>포항</p>
           </section>         
           <section>
-            <!-- (읍면동단위 고정) -->
-            <h2>지역별 평가결과</h2>
+            <div class="tit">
+              <h2>지역별 평가결과</h2>
+            </div>
             <div id="" class="meter_area">
               <div class="meter_wrap">
                 <strong class="chart_total">포항시 북구<span class="score">63</span></strong>
@@ -771,25 +777,36 @@ Copyright © 2024 국립재난안전연구원. All rights reserved.
     </section>
   </form>
 </dialog>
-  <dialog id="p_simulation" class="p_simulation" style="--width:1280px" popover="manual">
+  <dialog id="p_simulation" class="p_simulation line_style" style="--width:1280px" popover="manual">
   <form method="dialog">
     <header class="p_header tit">
-      <h1>가중치 조정 시뮬레이션</h1>
+      <h1>시뮬레이션</h1>
       <div class="tool_wrap">
         <button type="button" class="btn_close" popovertarget="p_simulation" popvertargetaction="hide">닫기</button>
       </div>
     </header>
     <section class="p_body">
-      <div class="search">
-        <div class="formula">
-          ( 건축물피해위험도 × <input type="text" title="가중치" size="5" placeholder="가중치" /> &percnt; ) +
-          ( 지진화재위험도 × <input type="text" title="가중치" size="5" placeholder="가중치"> &percnt; ) × 긴급대응 활동난이도
-        </div>
-          <button type="button" class="btn_blue_line">시뮬레이션 시작</button>
+      <div class="top_area">
+        <div class="search">
+          <div class="formula">
+            ( 건축물피해위험도 × <input type="text" title="가중치" size="5" placeholder="가중치" /> ) +
+            ( 지진화재위험도 × <input type="text" title="가중치" size="5" placeholder="가중치"> ) × 긴급대응 활동난이도
+          </div>
+          <button type="button" class="btn_blue">시뮬레이션 실행</button>
+        </div>        
+        <p class="info">가중치의 총합은 1이 되어야 합니다.</p>
       </div>
       <section class="tit">
         <h2>포항</h2>
-        <span class="renewal">( 평가일자 : 2024-05-06 )</span>
+        <div class="tbl_filter">
+          <ul class="search_lst">         
+            <li>
+              <select name="" id=""><option value="">시군구 전체</option></select>
+              <select name="" id=""><option value="">읍면동 전체</option></select>
+            </li>
+          </ul>
+          <button type="button" class="btn_blue_line">검색</button>          
+        </div>
       </section>
       <div class="flex_wrap">
         <div class="tbl_wrap_scroll">
@@ -797,7 +814,6 @@ Copyright © 2024 국립재난안전연구원. All rights reserved.
             <caption>종합안전위험도</caption>     
             <thead>
               <tr>
-                <th scope="col">차수</th>
                 <th scope="col">지진주기</th>
                 <th scope="col">행정구역코드</th>
                 <th scope="col">행정구역명</th>            
@@ -806,34 +822,7 @@ Copyright © 2024 국립재난안전연구원. All rights reserved.
               </tr>
             </thead>
             <tbody>
-              <tr> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> </tr>            
-              <tr> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> </tr>            
-              <tr> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> </tr>            
-              <tr> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> </tr>            
-              <tr> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> </tr>            
-              <tr> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> </tr>            
-              <tr> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> </tr>            
-              <tr> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> </tr>            
-              <tr> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> </tr>            
-              <tr> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> </tr>            
-              <tr> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> </tr>            
-              <tr> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> </tr>            
-              <tr> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> </tr>            
-              <tr> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> </tr>            
-              <tr> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> </tr>            
-              <tr> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> </tr>            
-              <tr> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> </tr>            
-              <tr> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> </tr>            
-              <tr> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> </tr>            
-              <tr> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> </tr>            
-              <tr> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> </tr>            
-              <tr> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> </tr>            
-              <tr> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> </tr>            
-              <tr> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> </tr>            
-              <tr> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> </tr>            
-              <tr> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> </tr>            
-              <tr> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> </tr>            
-              <tr> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> </tr>            
+              <tr> <td></td> <td></td> <td></td> <td></td> <td></td> </tr>   
             </tbody>
           </table>      
         </div>

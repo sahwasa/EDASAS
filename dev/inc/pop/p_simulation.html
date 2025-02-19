@@ -1,22 +1,33 @@
-<dialog id="p_simulation" class="p_simulation" style="--width:1280px" popover="manual">
+<dialog id="p_simulation" class="p_simulation line_style" style="--width:1280px" popover="manual">
   <form method="dialog">
     <header class="p_header tit">
-      <h1>가중치 조정 시뮬레이션</h1>
+      <h1>시뮬레이션</h1>
       <div class="tool_wrap">
         <button type="button" class="btn_close" popovertarget="p_simulation" popvertargetaction="hide">닫기</button>
       </div>
     </header>
     <section class="p_body">
-      <div class="search">
-        <div class="formula">
-          ( 건축물피해위험도 × <input type="text" title="가중치" size="5" placeholder="가중치" /> &percnt; ) +
-          ( 지진화재위험도 × <input type="text" title="가중치" size="5" placeholder="가중치"> &percnt; ) × 긴급대응 활동난이도
-        </div>
-          <button type="button" class="btn_blue_line">시뮬레이션 시작</button>
+      <div class="top_area">
+        <div class="search">
+          <div class="formula">
+            ( 건축물피해위험도 × <input type="text" title="가중치" size="5" placeholder="가중치" /> ) +
+            ( 지진화재위험도 × <input type="text" title="가중치" size="5" placeholder="가중치"> ) × 긴급대응 활동난이도
+          </div>
+          <button type="button" class="btn_blue">시뮬레이션 실행</button>
+        </div>        
+        <p class="info">가중치의 총합은 1이 되어야 합니다.</p>
       </div>
       <section class="tit">
         <h2>포항</h2>
-        <span class="renewal">( 평가일자 : 2024-05-06 )</span>
+        <div class="tbl_filter">
+          <ul class="search_lst">         
+            <li>
+              <select name="" id=""><option value="">시군구 전체</option></select>
+              <select name="" id=""><option value="">읍면동 전체</option></select>
+            </li>
+          </ul>
+          <button type="button" class="btn_blue_line">검색</button>          
+        </div>
       </section>
       <div class="flex_wrap">
         <div class="tbl_wrap_scroll">
@@ -24,7 +35,6 @@
             <caption>종합안전위험도</caption>     
             <thead>
               <tr>
-                <th scope="col">차수</th>
                 <th scope="col">지진주기</th>
                 <th scope="col">행정구역코드</th>
                 <th scope="col">행정구역명</th>            
@@ -33,34 +43,7 @@
               </tr>
             </thead>
             <tbody>
-              <tr> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> </tr>            
-              <tr> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> </tr>            
-              <tr> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> </tr>            
-              <tr> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> </tr>            
-              <tr> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> </tr>            
-              <tr> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> </tr>            
-              <tr> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> </tr>            
-              <tr> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> </tr>            
-              <tr> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> </tr>            
-              <tr> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> </tr>            
-              <tr> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> </tr>            
-              <tr> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> </tr>            
-              <tr> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> </tr>            
-              <tr> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> </tr>            
-              <tr> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> </tr>            
-              <tr> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> </tr>            
-              <tr> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> </tr>            
-              <tr> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> </tr>            
-              <tr> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> </tr>            
-              <tr> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> </tr>            
-              <tr> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> </tr>            
-              <tr> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> </tr>            
-              <tr> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> </tr>            
-              <tr> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> </tr>            
-              <tr> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> </tr>            
-              <tr> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> </tr>            
-              <tr> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> </tr>            
-              <tr> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> </tr>            
+              <tr> <td></td> <td></td> <td></td> <td></td> <td></td> </tr>   
             </tbody>
           </table>      
         </div>

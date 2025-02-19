@@ -50,6 +50,7 @@ dialog,:modal {margin:auto;padding:20px;border:none;box-shadow: 1.4px 1.4px 29px
   }
   .report_body{display:flex;flex-direction:column;gap:25px;counter-reset:report_tit;color:#555;
     & > section{@include tit(h2);padding-left:15px;
+      &:has(.tit.inline){display:grid;grid-template-columns:100px 1fr;column-gap:15px;margin-bottom:0;}
       h2{font-size:14px;counter-increment:report_tit;margin-bottom:10px;}
     }
     .flex_wrap{gap:20px;margin-top:20px;}
@@ -89,8 +90,8 @@ dialog,:modal {margin:auto;padding:20px;border:none;box-shadow: 1.4px 1.4px 29px
   &.tbl_scroll_x table{width:auto;}
 }
 .p_simulation{
-  .flex_wrap{align-items:stretch;gap:25px;height:579px;}
-  .tbl_wrap_scroll{flex:.8;}
+  .flex_wrap{align-items:stretch;gap:25px;height:532px;}
+  .tbl_wrap_scroll{flex:.8;height:100%;}
   .map{position:relative;flex:1 0 auto;overflow:hidden;} 
 }
 .file_uploading{display: flex;flex-direction:column;justify-content:center;align-items:center;

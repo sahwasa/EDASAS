@@ -8,21 +8,26 @@
       <section class="pannel sidePannel_wrap">
         <div class="pannel_wrap">
           <header>
-            <h1>종합안전도 평가</h1>
+            <div class="tit">
+              <h1>종합위험도 평가</h1>
+              <div class="tool_wrap">
+                <button type="button" class="btn_gray_line" popovertarget="p_simulation">시뮬레이션</button>
+              </div>
+            </div>
             <section class="filter">
               <ul class="areaLst btn_switch">
-                <li><input type="radio" id="area1" name="area" checked><label for="area1">부산</label></li>
-                <li><input type="radio" id="area2" name="area"><label for="area2">울산</label></li>
-                <li><input type="radio" id="area3" name="area"><label for="area3">경북 포항</label></li>
-                <li><input type="radio" id="area4" name="area"><label for="area4">경북 경주</label></li>
-                <li><input type="radio" id="area5" name="area"><label for="area5">경남 창원</label></li>
+                <li><input type="radio" id="area_1" name="area" checked><label for="area_1">부산</label></li>
+                <li><input type="radio" id="area_3100000000" name="area"><label for="area_3100000000">울산</label></li>
+                <li><input type="radio" id="area_4711000000" name="area"><label for="area_4711000000">경북 포항</label></li>
+                <li><input type="radio" id="area_4713000000" name="area"><label for="area_4713000000">경북 경주</label></li>
+                <li><input type="radio" id="area_5" name="area"><label for="area_5">경남 창원</label></li>
               </ul>
               <dl class="filterLst">
-                <dt>표출형식</dt>
+                <!-- <dt>표출형식</dt>
                 <dd>
                   <label for="areaUnit1"><input type="radio" id="areaUnit1" name="areaUnit" checked>시군구</label>
                   <label for="areaUnit2"><input type="radio" id="areaUnit2" name="areaUnit">읍면동</label>
-                </dd>
+                </dd> -->
                 <dt>지진 재현주기</dt>
                 <dd>
                   <label for="returnPeriod1"><input type="radio" id="returnPeriod1" name="returnPeriod">500년</label>
@@ -34,8 +39,7 @@
             </section>
           </header>
           
-          <article class="pannel_body">
-            
+          <article class="pannel_body">            
             <section>
               <div class="tit">
                 <h1>평가결과</h1>
@@ -47,8 +51,7 @@
               </div>
             </section>
             <section class="total_results">
-              <button type="button" class="btn_gray_line" popovertarget="p_report">종합안전도 평가결과 보고서</button>
-              <button type="button" class="btn_gray_line" popovertarget="p_simulation">가중치 조정 시뮬레이션</button>
+              <button type="button" class="btn_gray_line" popovertarget="p_report">종합위험도 평가결과 보고서</button>              
             </section>
             <section class="results_region">
               <div class="tit">
@@ -174,8 +177,8 @@
                   <thead>
                     <tr>
                       <th scope="col" rowspan="2">구분</th>
-                      <th scope="col" colspan="2">종합 안전도</th>
-                      <th scope="col" colspan="2">건축물 피해 위험도</th>
+                      <th scope="col" colspan="2">종합위험도</th>
+                      <th scope="col" colspan="2">건축물피해 위험도</th>
                       <th scope="col" colspan="2">지진화재 위험도</th>
                       <th scope="col" colspan="2">재산피해 위험도</th>
                       <th scope="col" colspan="2">대피시설 확보율</th>

@@ -1,0 +1,155 @@
+@@include('../inc/top.html')
+<div id="wrap" class="wrap">
+  @@include('../inc/header.html')    
+  <main id="content" class="main_container">
+    @@include('../inc/sub_simul.html')
+    <div class="flex_body">
+      <header>
+        <section class="bredcrumb">
+          <ul>
+            <li><a href="#">Home</a></li>
+            <li>환경 설정</li>
+            <li>종합위험도</li>
+            <li>종합위험도 평가결과</li>
+          </ul>
+        </section>
+        <h1>종합위험도 평가결과 </h1>
+      </header>      
+       <div class="search">
+        <ul class="search_lst">
+          <li>
+            <label for="">차수</label>
+            <select id="ver"><option value="1">2024년</option><option value="2">2025년</option></select>
+          </li>
+          <li>
+            <label for="">대상지역</label>
+            <select name="" id="target"><option value="0000000000">전체</option><option value="3100000000">울산</option><option value="4711000000">포항</option><option value="4713000000">경주</option></select>
+          </li>
+          <li>
+            <label for="">지진 재현주기</label>
+            <select name="" id="p_erthqk_cycle_cd">
+              <option value="0">전체</option>
+              <option value="3">2400년</option>
+              <option value="2">1000년</option>
+              <option value="1">500년</option>
+            </select>
+          </li>
+        </ul>
+        <button type="button" class="btn_blue_line" onclick="getData()">검색</button>
+        <div class="tool_wrap">
+          <button type="button" class="btn_blue" onclick="excelDown()">다운로드</button>
+          <button type="button" class="btn_blue" popovertarget="p_upload" onclick="initializeUploadPopup()">업로드</button>
+        </div>
+      </div>
+      <div class="tbl_wrap_scroll">
+        <table class="tbl_set">
+          <caption>종합안전위험도</caption>     
+          <thead>
+            <tr>
+              <th scope="col">차수</th>
+              <th scope="col">지진주기</th>
+              <th scope="col">행정구역코드</th>
+              <th scope="col">행정구역명</th>            
+              <th scope="col">점수</th>
+              <th scope="col">등급</th>
+              <th scope="col">갱신일시</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> </tr>            
+            <tr> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> </tr>            
+            <tr> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> </tr>            
+            <tr> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> </tr>            
+            <tr> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> </tr>            
+            <tr> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> </tr>            
+            <tr> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> </tr>            
+            <tr> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> </tr>            
+            <tr> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> </tr>            
+            <tr> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> </tr>            
+            <tr> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> </tr>            
+            <tr> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> </tr>            
+            <tr> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> </tr>            
+            <tr> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> </tr>            
+            <tr> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> </tr>            
+            <tr> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> </tr>            
+            <tr> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> </tr>            
+            <tr> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> </tr>            
+          </tbody>
+        </table>      
+      </div>
+    </div>
+  </main>
+  @@include('../inc/footer.html')
+</div>
+<dialog id="p_upload" class="p_upload line_style" style="--width:900px" popover="manual">
+  <form method="dialog">
+    <header class="p_header tit">
+      <h1>종합위험도 업로드</h1>
+      <div class="tool_wrap">
+        <button type="button" class="btn_close" popovertarget="p_upload" popvertargetaction="hide">닫기</button>
+      </div>
+    </header>
+    <section class="p_body">
+      <ul class="ipt_lst inline">          
+        <li>
+          <strong class="label">차수</strong>
+          <select name="" id=""><option value="">2024년</option></select>
+          <strong class="label">대상지역</strong>
+          <select name="" id=""><option value="">전체</option></select>
+        </li>
+        <li><strong class="label">지진 재현주기</strong>
+          <ul class="check_lst">
+            <li><label for=""><input type="checkbox">2400년</label></li>
+            <li><label for=""><input type="checkbox">1000년</label></li>
+            <li><label for=""><input type="checkbox">500년</label></li>
+          </ul>
+        </li>
+        <li><label for="">파일</label>
+          <div class="file_ipt">
+            <input type="text" id="" name="" class="file_text" readonly="" role="filePath" title="첨부폴더 경로" placeholder="사진파일 첨부">              
+            <span class="file_wrap btn_blue_line">파일선택</span>
+            <input type="file" role="fileAdd" class="file_add">
+          </div>
+          <button type="button" class="btn_gray_line">미리보기</button>
+          <div class="info">양식에 맞는 파일을 업로드해주시길 바랍니다. 처음 작성 시 양식을 다운받아 진행해주세요.
+            <button type="button" class="btn_gray" onclick="window.location.href='/excel/긴급대응위험도업로드양식.xlsx'">
+              파일양식 다운로드
+            </button>
+          </div>
+        </li>         
+      </ul>
+      <div class="tbl_wrap tbl_preview">
+        <table class="tbl_set">
+          <caption>복구역량 위험도</caption>     
+          <thead>
+            <tr>
+              <th scope="col">차수</th>
+              <th scope="col">지진주기</th>
+              <th scope="col">행정구역코드</th>
+              <th scope="col">행정구역명</th>
+              <th scope="col">점수</th>
+              <th scope="col">등급</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>            
+          </tbody>
+        </table>      
+      </div>
+    </section>
+    <section class="p_foot">
+      <button type="submit" class="btn_foot_blue">적용</button>
+      <button type="button" class="btn_foot_gray" popovertarget="p_upload" popvertargetaction="hide">취소</button>
+    </section>
+  </form>
+</dialog>
+@@include('../inc/script.html')
+</body>
+</html>
