@@ -948,8 +948,8 @@ details[open]>summary::after{margin:0 2px;content:'\e86a';}
   }  
 }
 .area_lst{display:flex;flex-direction:column;padding:3px 0;
-  li{position:relative;display:flex;gap:11px;align-items:center;padding-left:100px;
-    label{flex:0 0 42px;font-size:12px;text-align:right;line-height:1.2;}
+  li{position:relative;display:flex;gap:11px;align-items:center;padding-left:80px;
+    label{flex:0 0 62px;font-size:12px;text-align:right;line-height:1.2;}
     meter{position:relative;flex:1;height:23px;
       &::-webkit-meter-bar{border:none;background-color:transparent;border-radius:0;}
       &::-webkit-meter-optimum-value{border-radius:0 3px 3px 0;}
