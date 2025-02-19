@@ -451,7 +451,7 @@ function commonInit() {
     meters.each(function(idx,el){
       let targetval = $(this).val();
       addGrade(targetval, $(this), loc);
-      if(targetval < 10) targetval += 5;
+      if(targetval < 10) targetval += 12;
       $(this).attr('style',`--val:${targetval}%`)
     })
     pies.each(function(idx,el){

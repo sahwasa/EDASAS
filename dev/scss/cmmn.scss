@@ -948,15 +948,16 @@ details[open]>summary::after{margin:0 2px;content:'\e86a';}
   }  
 }
 .area_lst{display:flex;flex-direction:column;padding:3px 0;
-  li{position:relative;display:flex;gap:11px;align-items:center;    
-    label{flex:0 0 142px;font-size:12px;text-align:right;line-height:1.2;}
+  li{position:relative;display:flex;gap:11px;align-items:center;padding-left:100px;
+    label{flex:0 0 42px;font-size:12px;text-align:right;line-height:1.2;}
     meter{position:relative;flex:1;height:23px;
       &::-webkit-meter-bar{border:none;background-color:transparent;border-radius:0;}
       &::-webkit-meter-optimum-value{border-radius:0 3px 3px 0;}
       @each $type, $val in $_safetyGrade{
         &.#{$type}::-webkit-meter-optimum-value{background-color:$val;}
       }
-      &::after{line-height:23px;content:attr(value);position:absolute;right:calc(100% - var(--val,0) + 3px);top:50%;transform:translateY(-51%);font-size:11px;font-weight:700;letter-spacing:-.5px;@include textStroke();}
+      &::after{line-height:23px;content:attr(value);position:absolute;right:calc(100% - var(--val,0) + 3px);top:50%;transform:translateY(-51%);font-size:11px;font-weight:700;letter-spacing:-.5px;@include textStroke();  
+      }
     }
   }
   .average{label{color:#8b8b8b;}}
