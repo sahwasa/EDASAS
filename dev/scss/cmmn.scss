@@ -1134,7 +1134,7 @@ details[open]>summary::after{margin-left:auto;content:'\e86a';}
     .pie_txt em{font-size: 20px;}
   }
   .box_wrap{display:flex;flex-direction:column;gap:5px;}
-  .box_lst{background-color:#f5f5f5;border-radius:5px;padding:2px 5px;font-size:12px;
+  .box_lst{background-color:#f5f5f5;border-radius:5px;padding:2px 5px;font-size:12px;white-space:nowrap;
     em{margin-left:20px;}
     dt{display:flex;align-items:center;justify-content:space-between;padding:3px;}
     dd{font-size:12px;border-top:1px solid #fff;padding:3px;color:#888;
