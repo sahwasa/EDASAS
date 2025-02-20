@@ -1135,10 +1135,8 @@ details[open]>summary::after{margin-left:auto;content:'\e86a';}
   }
   .box_wrap{display:flex;flex-direction:column;gap:5px;}
   .box_lst{background-color:#f5f5f5;border-radius:5px;padding:2px 5px;font-size:12px;
-    dt{display:flex;align-items:center;padding:3px;
-      em{margin-left:auto;}
-    }
-
+    em{margin-left:20px;}
+    dt{display:flex;align-items:center;justify-content:space-between;padding:3px;}
     dd{font-size:11px;border-top:1px solid #fff;padding:3px;color:#666;
       &:first-child{border-top-width:0;}
     }
