@@ -91,7 +91,7 @@ dialog,:modal {margin:auto;padding:20px;border:none;box-shadow: 1.4px 1.4px 29px
 }
 .p_simulation{
   .flex_wrap{align-items:stretch;gap:25px;height:532px;}
-  .tbl_wrap_scroll{flex:.8;height:100%;
+  .tbl_wrap_scroll{flex:.45 0 auto;height:100%;
     td:not(:first-child){width:15%;}
   }  
   .map{position:relative;flex:1 0 auto;overflow:hidden;} 
@@ -104,5 +104,4 @@ dialog,:modal {margin:auto;padding:20px;border:none;box-shadow: 1.4px 1.4px 29px
   .progress_wrap{flex-direction:column;width:100%;margin:50px 0 30px;
     .progress_bar{flex:1 0 15px;width:80%;}
   }
-
 }
