@@ -555,7 +555,9 @@ border:1px solid $border;border-left-width:0;border-radius:0 3px 3px 0;font-size
     strong{color:$blue;white-space:nowrap;}
   }
 }
-.formula{flex:1; display:flex;align-items:center;justify-content: center;gap:10px;font-size:16px;font-weight:600;}
+.formula{flex:1; display:flex;align-items:center;justify-content: center;gap:10px;font-size:16px;font-weight:600;
+  input{text-align:center;}
+}
      
 .faq{
   %ico{@include shape(30px,30px);flex-shrink:0;border-radius:50%;color:#fff;font-size:20px;font-weight:800;text-align: center;line-height:30px;vertical-align:middle;margin-right:20px}

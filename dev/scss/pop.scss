@@ -90,11 +90,16 @@ dialog,:modal {margin:auto;padding:20px;border:none;box-shadow: 1.4px 1.4px 29px
   &.tbl_scroll_x table{width:auto;}
 }
 .p_simulation{
-  .flex_wrap{align-items:stretch;gap:25px;height:532px;}
-  .tbl_wrap_scroll{flex:.45 0 auto;height:100%;
-    td:not(:first-child){width:15%;}
+  .p_body > .flex_wrap{align-items:stretch;gap:25px;height:532px;}
+  .tbl_wrap_scroll{flex:.35 0 auto;height:100%;
+    td{
+      &:not(:first-child){width:17%;}
+      &:last-child,
+      &:nth-last-child(2){width:12%;}
+    }
+
   }  
-  .map{position:relative;flex:1 0 auto;overflow:hidden;} 
+  .map{position:relative;flex:1;overflow:hidden;} 
 }
 .file_uploading{display: flex;flex-direction:column;justify-content:center;align-items:center;
   .tit{font-size:16px;color:$blue;
