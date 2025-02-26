@@ -416,37 +416,7 @@
 <i class="symbol ico_3" style="--left:1450px;--top:850px;">병원</i>
 <div class="map_scale">
   <em>10㎞</em>
-</div>
-            <dl class="layer" style="display:block;left:1300px;top:400px">
-              <button type="button" class="btn_del">close</button>
-              <strong>부산 해운대구 반송동</strong>
-              <div class="desc">
-                건축물피해 위험도 평가<span>용도별 &sol; 근린생활시설</span>
-              </div>
-              <div class="flex_wrap">
-                <div class="pie_graphwrap">
-                  <div class="pie grade2" style="--val:78;">
-                    <div class="pie_txt">
-                      <span><em>2</em>등급</span>
-                      <p class="score">(7.59)</p>
-                    </div>
-                  </div>
-                </div>
-                <div class="box_wrap">
-                  <dl class="box_lst">
-                    <dt>연면적 기준 피해율 <em>14.3%</em></dt>
-                    <dd>건축물 피해 연면적<em>172,680㎡</em></dd>               
-                    <dd>유효토지면적<em>1,082,730㎡</em></dd>
-                    <dd>건축물 연면적<em>1,211,522㎡</em></dd>               
-                  </dl>
-                  <dl class="box_lst">
-                    <dt>동수 기준 피해율<em>9.7％</em></dt>
-                    <dd>건축물 피해<em>85동</em></dd>
-                    <dd>건축물 수량<em>877동</em></dd>
-                  </dl>
-                </div>
-              </div>             
-            </dl>
+</div>            
           </div>
           <div class="map_ctrl">            
             <ul class="map_tool">
@@ -801,7 +771,7 @@ Copyright © 2024 국립재난안전연구원. All rights reserved.
     </section>
   </form>
 </dialog>
-  <dialog id="p_simulation" class="p_simulation line_style" style="--width:1280px"  popover="manual">
+  <dialog id="p_simulation" class="p_simulation line_style" style="--width:1280px"  popover="manual" open>
   <form method="dialog">
     <header class="p_header tit">
       <h1>시뮬레이션</h1>
@@ -834,7 +804,7 @@ Copyright © 2024 국립재난안전연구원. All rights reserved.
       </section>
       <div class="flex_wrap">
         <div class="tbl_wrap_scroll">
-          <table class="tbl_set">
+          <table class="tbl_set tbl_hover">
             <caption>종합안전위험도</caption>     
             <thead>
               <tr>
@@ -851,6 +821,7 @@ Copyright © 2024 국립재난안전연구원. All rights reserved.
             </thead>
             <tbody>
               <tr> <td></td> <td></td> <td></td> <td></td> <td>369.8</td> <td></td> </tr>   
+              <tr class="highlight"> <td></td> <td></td> <td></td> <td></td> <td>369.8</td> <td></td> </tr>   
             </tbody>
           </table>      
         </div>
