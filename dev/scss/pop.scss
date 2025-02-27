@@ -91,11 +91,11 @@ dialog,:modal {margin:auto;padding:20px;border:none;box-shadow: 1.4px 1.4px 29px
 }
 .p_simulation{
   .p_body > .flex_wrap{align-items:stretch;gap:25px;height:532px;}
-  .tbl_wrap_scroll{flex:.35 0 auto;height:100%;
+  .tbl_wrap_scroll{flex:.2 0 auto;height:100%;
     td{
-      &:not(:first-child){width:17%;}
+      &:not(:first-child){width:18%;}
       &:last-child,
-      &:nth-last-child(2){width:12%;}
+      &:nth-last-child(2){width:11%;}
     }
 
   }  
