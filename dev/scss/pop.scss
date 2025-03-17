@@ -93,7 +93,7 @@ dialog,:modal {margin:auto;padding:20px;border:none;box-shadow: 1.4px 1.4px 29px
   .p_body > .flex_wrap{align-items:stretch;gap:25px;height:532px;}
   .tbl_wrap_scroll{flex:.2 0 auto;height:100%;
     td{
-      &:not(:first-child){width:18%;}
+      &:not(:first-child){width:19%;}
       &:last-child,
       &:nth-last-child(2){width:11%;}
     }
