@@ -23,9 +23,9 @@
           <li><a href="../html/bdh.html">건축물피해위험도 평가</a></li>
           <li><a href="../html/eq_fire.html">지진화재위험도 평가</a></li>
           <li><a href="../html/space_securing.html">긴급대응 활동난이도 평가</a></li>
-          <li><a href="../html/recovery_capability.html">재산피해 위험도 평가</a></li>
-          <li><a href="../html/sheltering.html">대피시설 확보율 평가</a></li>
-          <li><a href="../html/dis_prevention.html">방재위험도 평가</a></li>
+          <li><a href="../html/recovery_capability.html">건축물 피해 복구비용 평가</a></li>
+          <li><a href="../html/sheltering.html">재난관리 위험도 평가</a></li>
+          <!-- <li><a href="../html/dis_prevention.html">방재위험도 평가</a></li> -->
         </ul>
       </li>
       <li><a href="../html/sys_purpose.html">시스템 소개</a>
@@ -143,9 +143,9 @@
     <li><a href="../html/bdh.html"><span>건축물피해위험도 평가</span></a></li>
     <li><a href="../html/eq_fire.html"><span>지진화재위험도 평가</span></a></li>
     <li><a href="../html/space_securing.html"><span>긴급대응 활동난이도 평가</span></a></li>
-    <li><a href="../html/recovery_capability.html"><span>재산피해위험도 평가</span></a></li>
-    <li><a href="../html/sheltering.html"><span>대피시설 확보율 평가</span></a></li>
-    <li><a href="../html/dis_prevention.html"><span>방재위험도 평가</span></a></li>
+    <li><a href="../html/recovery_capability.html"><span>건축물 피해 복구비용 평가</span></a></li>
+    <li><a href="../html/sheltering.html"><span>재난관리 위험도 평가</span></a></li>
+    <!-- <li><a href="../html/dis_prevention.html"><span>방재위험도 평가</span></a></li> -->
   </ul>
 </nav>
     <div class="cont_body bdh">
@@ -608,42 +608,11 @@
                 <div class="box_wrap">
                   <dl class="box_lst">
                     <dd>위험도 등급<em>172,680㎡</em></dd>               
-                    <dd>평가지수<em>1,082,730㎡</em></dd>
+                    <dd>위험지수<em>1,082,730㎡</em></dd>
                   </dl>                  
                 </div>
               </div>             
-            </dl>
-            <dl class="layer" style="display:block;left:1500px;top:700px">
-              <button type="button" class="btn_del">close</button>
-              <strong>부산 해운대구 반송동</strong>
-              <div class="desc">
-                종합위험도 평가
-              </div>
-              <div class="flex_wrap">
-                <div class="pie_graphwrap">
-                  <div class="pie grade4" style="--val:68;">
-                    <div class="pie_txt">
-                      <span><em>4</em>등급</span>
-                      <p class="score">(7.59)</p>
-                    </div>
-                  </div>
-                </div>
-                <div class="box_wrap">
-                  <dl class="box_lst">
-                    <dt>건축물피해 위험도 <em>2등급</em></dt>
-                    <dd>평가점수<em>2.6점</em></dd>
-                  </dl>
-                  <dl class="box_lst">
-                    <dt>지진화재 위험도<em>2등급</em></dt>               
-                    <dd>평가점수<em>2.6점</em></dd>
-                  </dl>
-                  <dl class="box_lst">
-                    <dt>긴급대응 활동난이도<em>2등급</em></dt>               
-                    <dd>평가점수<em>2.6점</em></dd>
-                  </dl>
-                </div>
-              </div>             
-            </dl>
+            </dl>            
           </div>
             <div class="map_scale">
               <em>10㎞</em>
@@ -726,6 +695,9 @@
           <em class="label">기초데이터</em>
           <div class="tool_wrap">
             <label for="all_area"><input type="checkbox" id="all_area">전체 지역</label>
+            <span class="division">
+              <button type="button" class="btn_popup"  onclick="window.open('baseData_map.html','_blank','width=1240, height=600, top=50, left=50, location=no, scrollbars=yes');">새창</button>
+            </span>
           </div>
         </header>   
         <ul class="map_type">

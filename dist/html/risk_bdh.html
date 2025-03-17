@@ -23,9 +23,9 @@
           <li><a href="../html/bdh.html">건축물피해위험도 평가</a></li>
           <li><a href="../html/eq_fire.html">지진화재위험도 평가</a></li>
           <li><a href="../html/space_securing.html">긴급대응 활동난이도 평가</a></li>
-          <li><a href="../html/recovery_capability.html">재산피해 위험도 평가</a></li>
-          <li><a href="../html/sheltering.html">대피시설 확보율 평가</a></li>
-          <li><a href="../html/dis_prevention.html">방재위험도 평가</a></li>
+          <li><a href="../html/recovery_capability.html">건축물 피해 복구비용 평가</a></li>
+          <li><a href="../html/sheltering.html">재난관리 위험도 평가</a></li>
+          <!-- <li><a href="../html/dis_prevention.html">방재위험도 평가</a></li> -->
         </ul>
       </li>
       <li><a href="../html/sys_purpose.html">시스템 소개</a>
@@ -152,11 +152,11 @@
     </li>
     <li><a href="../html/risk_bdh.html">지역위험도 관리</a>
       <ul>
-        <li><a href="../html/risk_bdh.html">건축물피해 위험도</a></li>
+        <li><a href="../html/risk_bdh.html">건축물피해위험도</a></li>
         <li><a href="../html/risk_fire.html">지진화재위험도</a></li>
-        <li><a href="../html/risk_recovery.html">복구역량위험도</a></li>
-        <li><a href="../html/risk_sheltering.html">대피위험도</a></li>
-        <li><a href="../html/risk_space_securing.html">긴급대응위험도</a></li>
+        <li><a href="../html/risk_space_securing.html">긴급대응 활동난이도</a></li>
+        <li><a href="../html/risk_recovery.html">건축물 피해 복구비용</a></li>
+        <li><a href="../html/risk_sheltering.html">재난관리위험도</a></li>
         <!-- <li><a href="../html/risk_total.html">종합안전위험도</a></li> -->
       </ul>
     </li>
@@ -196,50 +196,49 @@
         </ul>
         <button type="button" class="btn_blue_line">검색</button>        
       </div>
-      <ul class="tab tab_wrap">
-        <li class="on"><a href="#risk">위험도</a></li>
-        <li><a href="#simulation">시뮬레이션</a></li>
-      </ul>
-      <div class="tab_container">
-        <section class="tab_contents" id="risk">
-          <div class="tbl_top">
-            <div class="tool_wrap">
-              <button type="button" class="btn_blue">다운로드</button>
-              <button type="button" class="btn_blue" popovertarget="p_upload">업로드</button>
-            </div>
-          </div>
-          <div class="tbl_wrap">
-            <table class="tbl_set">           
-              <thead>
-                <tr>
-                  <th scope="col">차수</th>
-                  <th scope="col">지진주기</th>
-                  <th scope="col">행정구역명</th>
-                  <th scope="col">연면적</th>
-                  <th scope="col">피해면적</th>
-                  <th scope="col">전체 동 수</th>
-                  <th scope="col">피해 동 수</th>
-                  <th scope="col">피해율(반파)</th>
-                  <th scope="col">점수</th>
-                  <th scope="col">등급</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                </tr>            
-              </tbody>
-            </table>       
-            <div class="paginate tui-pagination" id="pagination">
+      <div class="tbl_top">
+        <div class="tool_wrap">
+          <span class="renewal">갱신일자 (2024-05-06)</span>
+          <span class="divide">
+            <button type="button" class="btn_blue">다운로드</button>
+            <button type="button" class="btn_orange">시뮬레이션</button>
+            <button type="button" class="btn_orange blink" disabled="">진행중 ( 30% )</button>
+            <button type="button" class="btn_gray" disabled="">시뮬레이션 완료</button>
+          </span>
+        </div>
+      </div>
+      <div class="tbl_wrap">
+        <table class="tbl_set">           
+          <thead>
+            <tr>
+              <th scope="col">차수</th>
+              <th scope="col">지진주기</th>
+              <th scope="col">행정구역명</th>
+              <th scope="col">연면적</th>
+              <th scope="col">피해면적</th>
+              <th scope="col">전체 동 수</th>
+              <th scope="col">피해 동 수</th>
+              <th scope="col">피해율(반파)</th>
+              <th scope="col">위험 지수</th>
+              <th scope="col">등급</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>            
+          </tbody>
+        </table>       
+        <div class="paginate tui-pagination" id="pagination">
   <span class="tui-page-btn tui-is-disabled tui-first">
     <span class="tui-ico-first">first</span>
   </span>
@@ -255,9 +254,11 @@
     <span class="tui-ico-last">last</span>
   </a>
 </div>
-          </div>
-        </section>
-        <section class="tab_contents" id="simulation">
+      </div>
+      <div class="tab_container">
+        <!-- <section class="tab_contents" id="risk">
+        </section> -->
+        <!-- <section class="tab_contents" id="simulation">
           <div class="tbl_wrap">
             <table class="tbl_set">           
               <thead>
@@ -306,7 +307,7 @@
   </a>
 </div>
           </div>
-        </section>
+        </section> -->
       </div>
     </div>
   </main>
@@ -359,7 +360,7 @@ Copyright © 2024 국립재난안전연구원. All rights reserved.
               <th scope="col">전체 동 수</th>
               <th scope="col">피해 동 수</th>
               <th scope="col">피해율(반파)</th>
-              <th scope="col">점수</th>
+              <th scope="col">위험 지수</th>
               <th scope="col">등급</th>
             </tr>
           </thead>

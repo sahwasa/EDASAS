@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0">
+  <link rel="icon" href="../images/favicon.png" type="image/x-icon" />
+  <title>지진재해 지역안전도 평가 시스템</title>
+  <link rel="stylesheet" href="../font/fontello/css/fontello.css">
+  <link rel="stylesheet" href="../css/cmmn.css">
+  <link rel="stylesheet" href="../css/pop.css">
+</head>
+<body>
+
+<script src="../plugins/jquery.min.js"></script>
+<script src="../js/ui_cmmn.js"></script>
+<script>
+  commonInit();
+</script>
+<div id="wrap" class="wrap window_pop">
+  <header class="tit blind">
+    <h1>기초데이터 새창 지도</h1>      
+  </header>
+  <main id="content" class="main_container">
+    <!-- 중앙 -->
+    <section class="contents">        
+      <button type="button" class="evt_tgl sidePannel_fold right_pannel" data-value="off" data-foldtarget="dtlPannel_wrap" data-on="오른쪽패널 열기" data-off="오른쪽패널 닫기" title="오른쪽패널 열기">오른쪽패널 열기</button>
+      <div class="map_wrap">
+        <div class="temp_map">
+          <img src="../images/temp/temp_map_default.png" id="temp_map" class="temp_map" alt="임시 지도배경">
+        </div>
+        <div class="map_ctrl">            
+          <ul class="map_tool">
+            <li><button type="button" class="btn_refresh_square">새로고침</button></li>
+            <li>
+              <div class="vertical_group">
+                <button type="button" class="btn_zoomin_square">확대</button>
+                <button type="button" class="btn_zoomout_square">축소</button>
+              </div>
+            </li>
+          </ul>
+          <div class="map_legend">
+  <details open>
+    <summary>
+      <h1>범례</h1>
+      <label for="opacity" class="blind">투명도</label>
+      <input type="range" id="opacity" name="opacity" min="0" max="100" title="투명도" />
+    </summary>
+    <div class="legend_body">     
+      <section class="safety_grade">                
+        <strong>위험도 등급</strong>
+        <ul>
+          <li class="grade1">1등급</li>
+          <li class="grade2">2등급</li>
+          <li class="grade3">3등급</li>
+          <li class="grade4">4등급</li>
+          <li class="grade5">5등급</li>
+          <!-- <li class="grade0">자료없음</li> -->
+        </ul>
+      </section>
+      <section class="distribution_legend">                
+        <strong>지반 분류</strong>
+        <ul>
+          <li class="s1"><i>S1</i>암반 지반</li>
+          <li class="s2"><i>S1</i>얕고 단단한 지반</li>
+          <li class="s3"><i>S3</i>얕고 연약한 지반</li>
+          <li class="s4"><i>S4</i>깊고 단단한 지반</li>
+        </ul>
+      </section>
+      <section class="bdh_legend">                
+        <strong>건축물피해위험도 평가</strong>
+        <ul>
+          <li class="grade1" id="grade1">63,798.04~16,946,013.75</li>
+          <li class="grade2" id="grade2">16,946,013.76~33,828,229.45</li>
+          <li class="grade3" id="grade3">33,828,229.46~50,710,445.15</li>
+          <li class="grade4" id="grade4">50,710,445.16~67,592,660.85</li>
+          <li class="grade5" id="grade5">67,592,660.86~84,474,876.56</li>
+        </ul>
+      </section>
+    </div>
+  </details>
+</div>
+      
+          <div class="map_style">
+  <div class="divide">
+    <button type="button" class="btn_img">지도 이미지</button>
+    <button type="button" class="btn_excel">데이터</button>
+  </div>
+  <ul class="btn_switch">
+    <li><label for="area_name"><input type="checkbox" id="area_name" name="area_name">배경지도</label></li>
+    <li><label for="default_view"><input type="radio" id="default_view" name="map_style" checked>일반지도</label></li>
+    <li><label for="sky_view"><input type="radio" id="sky_view" name="map_style">위성지도</label></li>
+    <li><label for="2d_view"><input type="radio" id="2d_view" name="map_style">2D지도</label></li>
+  </ul>
+</div>    
+        </div>
+      </div>
+    </section>
+    <!-- 중앙__e -->
+    <!-- right_pannel -->
+    <section class="pannel dtl_contents dtlPannel_wrap">
+      <div class="pannel_wrap">          
+        <article class="pannel_body">          
+          <section>
+            <header class="sub_tit">
+              <em class="label">기초데이터</em>
+              <div class="tool_wrap">
+                <label for="all_area"><input type="checkbox" id="all_area">전체 지역</label>                
+              </div>
+            </header>   
+            <ul class="map_type">
+              <li><strong>지반특성 및 지반분류정보</strong>
+                <ul class="sub_type">
+                  <li><label for="map_type2_1"><input type="radio" id="map_type2_1" name="layer">기반암 심도 (H)</label></li>
+                  <li><label for="map_type2_2"><input type="radio" id="map_type2_2" name="layer">토층 평균 전단파속도 (VS,Soil)</label></li>
+                  <li><label for="map_type2_3"><input type="radio" id="map_type2_3" name="layer">심도 30m까지 평균 전단파속도 (VS30)</label></li>
+                  <li><label for="map_type2_5"><input type="radio" id="map_type2_5" name="layer">건축물 내진설계기준(KDS 41 17 00)</label></li>
+                </ul>
+              </li>
+              <li><strong>건축물 위험도 평가</strong>
+                <ul class="sub_type">
+                  <li><label for=""><input type="radio" id="" name="layer">건축물 분포(동)</label>
+                    <button type="button" class="btn_help" title="도움말" >도움말</button>
+                    <div class="layer">
+                      <p class="desc">건축물 분포란 어떤 것인지 어쩌고 저쩌고 설명을 써주세요.</p>
+                      <button type="button" class="btn_del">도움말 닫기</button>
+                    </div>
+                  </li>
+                  <li><label for=""><input type="radio" id="" name="layer">건축물 분포(연면적)</label></li>
+                  <li><label for=""><input type="radio" id="" name="layer">취약건축물 분포(동)</label></li>
+                  <li><label for=""><input type="radio" id="" name="layer">취약건축물 분포(연면적)</label></li>
+                  <li><label for=""><input type="radio" id="" name="layer">비내진 건축물 분포(동)</label></li>
+                  <li><label for=""><input type="radio" id="" name="layer">비내진 건축물 분포(연면적)</label></li>
+                  <li><label for=""><input type="radio" id="" name="layer">인구</label></li>
+                  <li><label for=""><input type="radio" id="" name="layer">인구밀집도</label></li>
+                  <li><label for=""><input type="radio" id="" name="layer">노후건축물 분포(동)</label></li>
+                  <li><label for=""><input type="radio" id="" name="layer">노후건축물 분포(연면적)</label></li>
+                  <li><label for=""><input type="radio" id="" name="layer">소방시설 분포</label></li>
+                  <li><label for=""><input type="radio" id="" name="layer">의료시설 분포</label></li>
+                  <li><label for=""><input type="radio" id="" name="layer">재난안전대책본부 분포</label></li>
+                </ul>
+              </li>
+              <li><strong>지진화재 위험도 평가</strong>
+                <ul class="sub_type">
+                  <li><label for="map_type4_1"><input type="radio" id="map_type4_1" name="layer">건물 밀집도</label></li>
+                  <li><label for="map_type4_2"><input type="radio" id="map_type4_2" name="layer">건물 내화조 구성비율</label></li>
+                  <li><label for="map_type4_3"><input type="radio" id="map_type4_3" name="layer">건물 목조 구성비율</label></li>
+                  <li><label for="map_type4_4"><input type="radio" id="map_type4_4" name="layer">지진화재 소실율</label></li>
+                </ul>
+              </li>
+              <li><strong>복구 및 대피 평가</strong>
+                <ul class="sub_type">
+                  <li><label for="map_type5_1"><input type="radio" id="map_type5_1" name="layer">물적피해 분포율</label></li>
+                  <li><label for="map_type5_2"><input type="radio" id="map_type5_2" name="layer">건물가치평가 분포율</label></li>
+                  <li><label for="map_type5_3"><input type="radio" id="map_type5_3" name="layer">복구능력 분포율</label></li>
+                  <li><label for="map_type5_4"><input type="radio" id="map_type5_4" name="layer">긴급대피 수용능력</label></li>
+                  <li><label for="map_type5_5"><input type="radio" id="map_type5_5" name="layer">주거밀집도</label></li>
+                </ul>
+              </li>
+              <li><strong>긴급대응 도로·공간 평가</strong>
+                <ul class="sub_type">
+                  <li><label for=""><input type="radio" id="" name="layer">활동공간 확보율</label></li>
+                  <li><label for=""><input type="radio" id="" name="layer">지역 도로망 접근 계수</label></li>
+                  <li><label for=""><input type="radio" id="" name="layer">광역 도로망 접근 계수</label></li>
+                </ul>
+              </li>
+            </ul>
+            </section>
+            <section>
+              <header class="sub_tit">
+                <em class="label">주요시설 분포도</em>
+              </header>  
+              <ul class="symbols">
+                <li><label for="fac1"><input type="checkbox" id="fac1" name="" />소방서</label></li>
+                <li><label for="fac2"><input type="checkbox" id="fac2" name="" />임시대피시설</label></li>
+                <li><label for="fac3"><input type="checkbox" id="fac3" name="" />병원</label></li>
+              </ul>
+          </section>
+        </article>
+      </div>
+    </section>
+    <!-- right_pannel__e -->
+  </main>   
+</div>
+<script src="../plugins/jquery.min.js"></script>
+<script src="../js/ui_cmmn.js"></script>
+<script>
+  commonInit();
+</script>
+<script>
+document.title = '지진재해 지역안전도 평가시스템 ::: 기초데이터 새창 지도';
+</script>
+</body>
+</html>

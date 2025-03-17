@@ -11,10 +11,10 @@
             <li>환경 설정</li>
             <li>시스템 DB관리</li>
             <li>지역위험도 관리</li>
-            <li>대피위험도</li>
+            <li>재난관리위험도</li>
           </ul>
         </section>
-        <h1>대피위험도 <strong>지역위험도 관리</strong></h1>
+        <h1>재난관리위험도 <strong>지역위험도 관리</strong></h1>
       </header>
       <div class="search">
         <ul class="search_lst">         
@@ -35,15 +35,22 @@
             </select>
           </li>
         </ul>
-        <button type="button" class="btn_blue_line">검색</button>
+        <button type="button" class="btn_blue_line">검색</button>        
+      </div>
+      <div class="tbl_top">
         <div class="tool_wrap">
-          <button type="button" class="btn_blue">다운로드</button>
-          <button type="button" class="btn_blue" popovertarget="p_upload">업로드</button>
+          <span class="renewal">갱신일자 (2024-05-06)</span>
+          <span class="divide">
+            <button type="button" class="btn_blue">다운로드</button>
+            <button type="button" class="btn_orange">시뮬레이션</button>
+            <button type="button" class="btn_orange blink" disabled="">진행중 ( 30% )</button>
+            <button type="button" class="btn_gray" disabled="">시뮬레이션 완료</button>
+          </span>
         </div>
       </div>
       <div class="tbl_wrap">
         <table class="tbl_set">
-          <caption>대피위험도</caption>     
+          <caption>대피시설 확보율</caption>     
           <thead>
             <tr>
               <th scope="col">차수</th>

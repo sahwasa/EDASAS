@@ -126,7 +126,7 @@ border:1px solid transparent;}
 }
 @mixin divide($h:10px,$gap:5px,$target:'before'){
   position:relative;display:inline-flex;align-items:center;vertical-align:middle;
-  &::#{$target}{@include shape(1px,$h);background-color:$gray;margin:0 15px 0 #{15 - $gap};}
+  &::#{$target}{@include shape(1px,$h);background-color:$gray;margin:0 15px 0 #{15 - $gap};flex-shrink:0;}
 }
 @mixin label_item($hideIpt: false, $onBg: $blue, $color: #333, $onColor: #fff, $onBorder:#c5c9d0){display:inline-flex;gap:12px;color:$color;border:1px solid #c5c9d0;border-radius:3px;padding:5px 7px;outline:1px solid transparent;cursor:pointer;
   input{width:18px;aspect-ratio:1;}
