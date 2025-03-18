@@ -1110,8 +1110,8 @@ details[open]>summary::after{margin-left:auto;content:'\e86a';}
       }
     } 
     label:hover{cursor:pointer;font-weight:600;color:#000;}
-    .sub_tit:has(:checked),
-    section:has(:checked) .sub_tit{background-color:$blue;
+    .sub_tit:has([type="radio"]:checked),
+    section:has([type="radio"]:checked) .sub_tit{background-color:$blue;
       .label,label,button{color:#fff;
         &:hover{color:#fff;border-color:#fff;}
       }
