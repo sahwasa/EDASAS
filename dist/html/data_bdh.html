@@ -189,7 +189,8 @@
           <li><a href="#step02"><i class="step_ing">진행중</i> 건축물대장 매핑</a></li>
           <li><a href="#step03"><i class="step_wait">진행대기</i> 자료보정</a></li>
           <li><a href="#step04">내진구조 분류</a></li>
-          <li><a href="#step05">건축물 DB 구축결과</a></li>
+          <li><a href="#step05">유효면적 산정</a></li>
+          <li><a href="#step06">건축물 DB 구축결과</a></li>
         </ul>
       </div>
       <div class="tab_container">
@@ -385,8 +386,32 @@
           <header class="tit">
             <h1 class="arrow">DB업로드</h1>
             <div class="tool_wrap">
-              <p class="info">본 작업은 건축물 기초 DB를 구축하기 위하여 건축물대장(표제부,층별개요), 토지대장,  GIS(일반집합건물정보)의 파일을 업로드 한다</p>
-              <button type="button" class="btn_orange">DB다운로드 링크</button>
+              <p class="info">본 작업은 건축물 기초 DB를 구축하기 위하여 건축물대장(표제부,층별개요), 토지대장,  GIS(일반집합건물정보)의 파일을 업로드 한다.</p>
+              <div class="link_layer">
+                <button type="button" class="btn_orange">DB다운로드 링크</button>
+                <div class="layer">
+                  <dl class="link_lst">
+                    <dt>GIS건축물정보</dt>
+                    <dd><a href="https://www.vworld.kr/dtmk/dtmk_ntads_s002.do?svcCde=NA&dsId=5" target="_blank">https://www.vworld.kr/</a></dd>
+                    <dd><small>GIS건물일반집합정보, 국토교통부</small></dd>
+                    <dt>건축물대장</dt>
+                    <dd><a href="https://www.hub.go.kr/portal/psg/idx-arch-data-sub.do" target="_blank">https://www.hub.go.kr</a></dd>
+                    <dd><small>건축물대장, 국토교통부</small></dd>
+                    <dt>유효토지면적</dt>
+                    <dd><a href="https://www.vworld.kr/dtmk/dtmk_ntads_s002.do?svcCde=NA&dsId=4" target="_blank">https://www.vworld.kr/</a></dd>
+                    <dd><small>토지특성정보, 국토교통부</small></dd>
+                    <dt>하천</dt>
+                    <dd><a href="https://www.vworld.kr/dtmk/dtmk_ntads_s002.do?svcCde=MK&dsId=30441" target="_blank">https://www.vworld.kr/</a></dd>
+                    <dd><small>(연속주제)_하천/용도구역, 국토교통부</small></dd>
+                    <dt>취락지구</dt>
+                    <dd><a href="https://www.vworld.kr/dtmk/dtmk_ntads_s002.do?svcCde=MK&dsId=30311o" target="_blank">https://www.vworld.kr/</a></dd>
+                    <dd><small>(연속주제)_국토계획/취락지구, 국토교통부</small></dd>
+                    <dt>공원</dt>
+                    <dd><a href="https://www.vworld.kr/dtmk/dtmk_ntads_s002.do?svcCde=MK&dsId=30068" target="_blank">https://www.vworld.kr/</a></dd>
+                    <dd><small>공간시설(현황)_공원, 국토교통부</small></dd>
+                  </dl>
+                </div>
+              </div>             
             </div>
           </header>
           <div class="tbl_wrap">
@@ -856,8 +881,70 @@
 </div>
         </section>
         <!-- 내진구조 분류__e -->
-        <!-- 건축물 DB 구축결과 -->
+        <!-- 유효면적 산정 -->
         <section id="step05" class="tab_contents">
+          <header class="tit">
+            <h1 class="arrow">유효면적 산정</h1>
+            <div class="tool_wrap">
+              <p class="info">유효면적 = 총 면적 - 제외면적 + 추가면적 (단위 : ㎡)</p>
+              <button type="button" class="btn_blue">다운로드</button>
+            </div>
+          </header>
+          <div class="tbl_top">
+            <ul class="search_lst">
+              <li>
+                <select name="" id=""><option value="">시도</option></select>
+                <select name="" id=""><option value="">시군구</option></select>
+                <select name="" id=""><option value="">읍면동</option></select>
+              </li>
+            </ul>
+            <button type="button" class="btn_gray">적용</button>
+          </div>
+          <div class="tbl_wrap">
+            <table class="tbl_set">
+              <caption>건축물 DB 구축결과</caption>
+              <thead>             
+                <tr>
+                  <th scope="col" rowspan="2">행정구역 코드</th>
+                  <th scope="col" rowspan="2">행정구역명</th>
+                  <th scope="col" rowspan="2">총 면적(A)</th>                  
+                  <th scope="col" rowspan="2">제외 면적(B)</th>                  
+                  <th scope="col" colspan="3">추가 면적</th>                  
+                  <th scope="col" rowspan="2">유효면적(A-B+C+D+E)</th>                  
+                </tr>
+                <tr>
+                  <th scope="col">공원(C)</th>                  
+                  <th scope="col">하천부지(D)</th>                  
+                  <th scope="col">취락지구(E)</th>                  
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="paginate tui-pagination" id="pagination">
+  <span class="tui-page-btn tui-is-disabled tui-first">
+    <span class="tui-ico-first">first</span>
+  </span>
+  <span class="tui-page-btn tui-is-disabled tui-prev">
+    <span class="tui-ico-prev">prev</span>
+  </span>
+  <strong class="tui-page-btn tui-is-selected tui-first-child">1</strong>
+  <a href="#" class="tui-page-btn tui-last-child">2</a>
+  <a href="#" class="tui-page-btn tui-next">
+    <span class="tui-ico-next">next</span>
+  </a>
+  <a href="#" class="tui-page-btn tui-last">
+    <span class="tui-ico-last">last</span>
+  </a>
+</div>
+        </section>
+        <!-- 유효면적 산정__e -->
+        <!-- 건축물 DB 구축결과 -->
+        <section id="step06" class="tab_contents">
           <header class="tit">
             <h1 class="arrow">건축물 DB 구축결과</h1>
             <div class="tool_wrap">

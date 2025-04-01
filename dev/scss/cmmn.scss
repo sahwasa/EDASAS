@@ -402,10 +402,24 @@ border:1px solid #ccc;border-radius:5px;background-color: #fff; z-index:100;box-
   h2{display:flex;align-items:center;gap:5px;font-size:15px;color:#545f6b;
     &::before{@include shape(5px,5px);background-color:#89A6D6;border-radius:50%;}
   }
-  .tool_wrap{margin-left:auto;
+  .tool_wrap{position:relative;margin-left:auto;
     select{border:1px solid #000;border-radius:3px;min-width:var(--w);line-height:34px;}
+    &:has(.link_layer){display:flex;gap:5px;}
   }
   .unit{font-size:11px;color:#838383;}
+}
+.link_layer{position: relative;
+  &:focus-within .layer{display:block;}
+  .layer{position: absolute;top:30px;right:0;z-index:10;}
+}
+.link_lst{display:grid;grid-template-columns:100px 1fr;row-gap:2px;column-gap:10px;line-height:1.2;
+  a:hover{color:$blue;}
+  small{font-size:11px;color:$gray;
+    &::before{content:"("}
+    &::after{content:")"}
+  }
+  dt{grid-row:auto / span 2;display:flex;align-items:center;border-left:2px solid $blue;}
+  dd{grid-column-start:2;}
 }
 .info{display:inline-flex;align-items:center;gap:5px;color:#555;font-size:14px;
   &::before{@include fontello('\e877');color:#89A6D6;}
@@ -589,8 +603,14 @@ border:1px solid $border;border-left-width:0;border-radius:0 3px 3px 0;font-size
 .ico_word{@extend %attach;background-position-y:-112px;}
 .ico_etc{@extend %attach;background-position-y:-150px;}
 .tbl_comprehensive_safety{
-  td{width:calc((100% - 80px) / 6);white-space:10px;letter-spacing:0.05em;}
-  td:first-child{width:80px;letter-spacing:-.05em;}
+  td{width:calc((100% - 80px) / 6);white-space:10px;letter-spacing:0.05em;
+    &:first-child{width:80px;letter-spacing:-.05em;
+      &[rowspan]{border-right-width:1px;
+        &+td{border-left-width:0;}
+      }
+    }
+  }
+  tr:nth-last-of-type(2) td[rowspan]{border-bottom-width:1px;}
 }
 
 //lst
@@ -701,7 +721,7 @@ border:1px solid $border;border-left-width:0;border-radius:0 3px 3px 0;font-size
 .tab{display: flex;gap:4px;border-bottom:1px solid #a8a8a8;
   li{flex:1 0 auto;border:1px solid #e4e4e4;border-bottom-width:0;border-radius:3px 3px 0 0;
   }
-  a{width:100%;font-size:16px;color:#888;text-align:center;line-height:40px;}
+  a{width:100%;font-size:14px;color:#888;text-align:center;line-height:40px;}
   .on{border-color:#a8a8a8;
     a{color:$blue;font-weight:700;}
   }
@@ -715,7 +735,7 @@ border:1px solid $border;border-left-width:0;border-radius:0 3px 3px 0;font-size
   li{flex:0 0 auto;
     &.on a{border-color:#fff;}
   }
-  a{position:relative;bottom:-1px;border-bottom:1px solid #a8a8a8;line-height:30px;padding:0 15px;}
+  a{position:relative;bottom:-1px;border-bottom:1px solid #a8a8a8;line-height:30px;padding:0 10px;}
   & + .tab_container{margin-top:5px;
     .tab_contents{display:flex;flex-direction:column;gap:25px;}
   }
@@ -1209,8 +1229,8 @@ details[open]>summary::after{margin-left:auto;content:'\e86a';}
 }
 .step_lst{position:relative;display:flex;margin-bottom:50px;
   li{position:relative;flex:1 1 20%;padding:10px 0;border:1px solid #b4b9c2;
-    @for $i from 1 through 5{
-      $col:darken(#e5e8ed, $i * 2.5);
+    @for $i from 1 through 6{
+      $col:darken(#e5e8ed, $i * 3);
       &:nth-child(#{$i}){background-color:$col;
         &::after{background-color:$col;}
       }
@@ -1235,7 +1255,7 @@ details[open]>summary::after{margin-left:auto;content:'\e86a';}
 .step_bdh{margin-bottom:70px;
   &::before,
   &::after{position:absolute;left:50%;transform:translateX(-50%);border:1px dashed #9ca9bd;}
-  &::before{bottom:-20px;border-top-width:0;border-radius:0 0 20px 20px;@include shape(60%, 20px);}
+  &::before{bottom:-20px;border-top-width:0;border-radius:0 0 20px 20px;@include shape(66.5%, 20px);}
   &::after{width:20%;bottom:-37px;background-color:#fff;content:'DB가공';font-style:16px;padding:5px 0;text-align:center;border-radius:15px;font-weight:600;color:#9ca9bd;}  
 }
 .step_content{display:flex;flex-direction:column;gap:50px;}

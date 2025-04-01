@@ -9,29 +9,7 @@
         <div class="pannel_wrap">
           <header>
             <h1>건축물피해위험도 평가</h1>
-            <section class="filter">
-              <ul class="areaLst btn_switch">
-                <li><input type="radio" id="area1" name="area" checked><label for="area1">부산</label></li>
-                <li><input type="radio" id="area2" name="area"><label for="area2">울산</label></li>
-                <li><input type="radio" id="area3" name="area"><label for="area3">경북 포항</label></li>
-                <li><input type="radio" id="area4" name="area"><label for="area4">경북 경주</label></li>
-                <li><input type="radio" id="area5" name="area"><label for="area5">경남 창원</label></li>
-              </ul>
-              <dl class="filterLst">
-                <!-- <dt>표출형식</dt>
-                <dd>
-                  <label for="areaUnit1"><input type="radio" id="areaUnit1" name="areaUnit" checked>시군구</label>
-                  <label for="areaUnit2"><input type="radio" id="areaUnit2" name="areaUnit">읍면동</label>
-                </dd> -->
-                <dt>지진 재현주기</dt>
-                <dd>
-                  <label for="returnPeriod1"><input type="radio" id="returnPeriod1" name="returnPeriod">500년</label>
-                  <label for="returnPeriod2"><input type="radio" id="returnPeriod2" name="returnPeriod">1000년</label>
-                  <label for="returnPeriod3"><input type="radio" id="returnPeriod3" name="returnPeriod" checked>2400년</label>
-                </dd>
-              </dl>              
-              <button type="button" class="btn_search">검색</button>
-            </section>
+            @@include('../inc/module/main_filter.html')
           </header>
           <article class="pannel_body">
             <div class="tit">

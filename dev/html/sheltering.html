@@ -8,145 +8,290 @@
       <section class="pannel sidePannel_wrap">
         <div class="pannel_wrap">
           <header>
-            <h1>대피안전도 평가</h1>
-            <section class="filter">
-              <div class="flex_wrap">
-                <select name="" id="" title="시군구" class="sigungu"><option value="">포항시</option></select>
-                <span class="ipt_wrap">
-                  <input type="text" id="form_referrer" placeholder="지역검색" list="areaLst" autocomplete="off">
-                  <button type="button" class="btn_add" popovertarget="p_areaSelect">추가</button>
-                </span>
-                <datalist id="areaLst">
-                  <optgroup label="포항시">
-                    <option value="북구">포항시 북구</option>
-                    <option value="남구">포항시 남구</option>
-                  </optgroup>
-                </datalist>
-              </div>
-              <ul class="select_lst">
-                <li class="user_area"><p>포항시 북구</p><button type="button" title="삭제">삭제</button></li>
-                <li><p>포항시 남구</p><button type="button" title="삭제">삭제</button></li>
-              </ul>
-            </section>
+            <h1>재난관리 위험도평가</h1>
+            @@include('../inc/module/main_filter.html')
           </header>
           <article class="pannel_body">
-            <section>
-              <div class="tit">
-                <h1>평가결과</h1>
-                <div class="tool_wrap">
-                  <button type="button" class="btn_gray" popovertarget="p_report">평가보고서</button>
-                  <button type="button" class="btn_pdf">PDF저장</button>
-                  <button type="button" class="btn_print">인쇄</button>
-                </div>
-              </div>
-              <div class="summary">
-                <span class="date">평가일 2023-10-10</span>
-                <ul class="eval_result_lst">
-                  <li class="grade1"><strong>안전</strong>
-                    <p>포항시 전체적으로 대피안전도는 1등급으로 매우 높은 수준입니다. 이는 현 민방위기준의 1인당 점유면적을 기초로 할 경우 포항시내의 옥외대피시설은 예상되는 대피자를 모두 수용할 수 있을 정도로 충분히 확보되어 있습니다.</p>
-                  </li>                
-                </ul>
-                <p>포항시 북구와 포항시 남구의 대피안전도 평가지수 등급은 <b>1등급(안전)</b> 입니다.</p>
-              </div>
-              <div class="pie_graphwrap">
-                <div class="pie" style="--val:100;">
-                  <strong>포항시 북구</strong>
-                  <div class="pie_txt">
-                    <span><em>1</em>등급</span>
-                    <p class="score">(100점)</p>
+            <div class="tit">
+              <h1>평가결과</h1>
+              <span class="date">평가일 2023-10-10</span>
+            </div>
+            <ul class="tab tab_wrap tab_m">               
+              <li class="on"><a href="#shelter_outdoor">대피장소</a></li>
+              <li><a href="#shelter_indoor">임시거주시설</a></li>
+              <li><a href="#fire_facility">소방시설</a></li>
+              <li><a href="#medical_facility">의료시설</a></li>
+              <li><a href="#emergency_headquarters">재난안전대책본부</a></li>
+            </ul>
+            <div class="tab_container">
+              <section class="tab_contents" id="shelter_outdoor">
+                <section class="results_region">
+                  <div class="tit">
+                    <h2>지역별 평가결과</h2>
+                    <span class="tool_wrap">
+                      <div class="tgl_viewType">
+                        <label class="tgl_viewType" for="tgl_viewType"><input type="checkbox" id="tgl_viewType">지역별 평가결과 보기형식 변경(체크 시 히트맵 형식, 해제 시 가로 막대그래프 형식)</label>
+                      </div>                  
+                    </span>
                   </div>
-                </div>
-                <div class="pie" style="--val:100;">
-                  <strong>포항시 남구</strong>
-                  <div class="pie_txt">
-                    <span><em>1</em>등급</span>
-                    <p class="score">(100점)</p>
+                  <div class="heatmap_wrap">
+                    <div class="heatmap">
+                      <strong class="chart_total">부산<span class="score">81</span></strong>
+                      <ul>                    
+                        <li>중구<span class="score">85</span></li>
+                        <li>해운대구<span class="score">88</span></li>
+                        <li>수영구<span class="score">76</span></li>
+                        <li>기장군<span class="score">89</span></li>                        
+                        <li>기장군<span class="score">89</span></li>                        
+                        <li>기장군<span class="score">89</span></li>                        
+                      </ul>
+                    </div>                    
                   </div>
-                </div>
-              </div>
-              <div class="meter_wrap">
-                <div class="meter_unit">
-                  <strong>(점수)</strong>
-                  <ul>
-                    <li><span>0</span></li>
-                    <li><span>20</span></li>
-                    <li><span>40</span></li>
-                    <li><span>60</span></li>
-                    <li><span>80</span></li>
-                    <li><span>100</span></li>
-                  </ul>
-                </div>
-                <ul class="area_lst meter_wrap">
-                  <li class="average">
-                    <label for="average">평균</label>
-                    <meter id="average" value="99.75" min="0" max="100"></meter>
-                  </li>
-                  <li>
-                    <label for="area1">포항시 북구</label>
-                    <meter id="area1" value="99.5" min="0" max="100"></meter>
-                  </li>
-                  <li>
-                    <label for="area2">포항시 남구</label>
-                    <meter id="area2" value="100" min="0" max="100"></meter>
-                  </li>
-                </ul>                
-              </div>             
-            </section>
-            <section>
-              <div class="tit">
-                <h2>세부결과</h2>
-                <span class="tool_wrap unit">(점수)</span>
-              </div>
-              <div class="heatmap_wrap">
-                <div class="heatmap">
-                  <strong>포항시 북구<span class="score">100</span></strong>
-                  <ul>                    
-                    <li>기계면<span class="score">100</span></li>
-                    <li>기북면<span class="score">100</span></li>
-                    <li>두호동<span class="score">100</span></li>
-                    <li>송라면<span class="score">100</span></li>
-                    <li>신광면<span class="score">100</span></li>
-                    <li>양학동<span class="score">100</span></li>
-                    <li>용흥동<span class="score">100</span></li>
-                    <li>우창동<span class="score">100</span></li>
-                    <li>장량동<span class="score"> 93</span></li>
-                    <li>죽도동<span class="score">100</span></li>
-                    <li>죽장면<span class="score">100</span></li>
-                    <li>중앙동<span class="score">100</span></li>
-                    <li>청하면<span class="score">100</span></li>
-                    <li>환여동<span class="score">100</span></li>
-                    <li>흥해읍<span class="score">100</span></li>
-                  </ul>
-                </div>
-                <div class="heatmap">
-                  <strong>포항시 남구<span class="score">100</span></strong>
-                  <ul>
-                    <li>구룡포읍<span class="score">100</span></li>
-                    <li>대송면<span class="score">100</span></li>
-                    <li>대이동<span class="score">100</span></li>
-                    <li>동해면<span class="score">100</span></li>
-                    <li>상대동<span class="score">100</span></li>
-                    <li>송도동<span class="score">100</span></li>
-                    <li>연일읍<span class="score">100</span></li>
-                    <li>오천읍<span class="score">100</span></li>
-                    <li>장기면<span class="score">100</span></li>
-                    <li>제철동<span class="score">100</span></li>
-                    <li>청림동<span class="score">100</span></li>
-                    <li>해도동<span class="score">100</span></li>
-                    <li>호미곶면<span class="score">100</span></li>
-                    <li>효곡동<span class="score">100</span></li>
-                  </ul>
-                </div>
-              </div>
-            </section>
-            <section class="conclusion divide">
-              <div class="tit">
-                <h2>결과 요약 및 행동방안</h2>
-              </div>
-              <ul class="action_plan">
-                <li>인구밀집지역의 경우 대피자가 집중적으로 빌생하므로 인근 옥외대피소의 수용여부를 검토할 필요가 있습니다.</li>
-              </ul>
-            </section>
+                  <div id="" class="meter_area">
+                    <div class="meter_wrap">
+                      <strong class="chart_total">부산<span class="score">63</span></strong>
+                      <div class="meter_unit">
+                        <strong>(평가지수)</strong>
+                        <ul>
+                          <li><span>0</span></li>
+                          <li><span>20</span></li>
+                          <li><span>40</span></li>
+                          <li><span>60</span></li>
+                          <li><span>80</span></li>
+                          <li><span>100</span></li>
+                        </ul>
+                      </div>
+                      <ul class="area_lst">    
+                        <li><label for="area1-1"> 기계면</label><meter id="area1-1"  value="85.3" min="0" max="100"></meter></li>
+                        <li><label for="area1-2"> 기북면</label><meter id="area1-2"  value="87.5" min="0" max="100"></meter></li>
+                        <li><label for="area1-3"> 두호동</label><meter id="area1-3"  value="76.1" min="0" max="100"></meter></li>
+                        <li><label for="area1-4"> 송라면</label><meter id="area1-4"  value="89.4" min="0" max="100"></meter></li>
+                        <li><label for="area1-5"> 신광면</label><meter id="area1-5"  value="90.0" min="0" max="100"></meter></li>
+                        <li><label for="area1-6"> 양학동</label><meter id="area1-6"  value="64.8" min="0" max="100"></meter></li>
+                        <li><label for="area1-7"> 용흥동</label><meter id="area1-7"  value="74.9" min="0" max="100"></meter></li>
+                        <li><label for="area1-8"> 우창동</label><meter id="area1-8"  value="72.2" min="0" max="100"></meter></li>
+                        <li><label for="area1-9"> 장량동</label><meter id="area1-9"  value="73.2" min="0" max="100"></meter></li>
+                        <li><label for="area1-10">죽도동</label><meter id="area1-10" value="76.6" min="0" max="100"></meter></li>
+                        <li><label for="area1-11">죽장면</label><meter id="area1-11" value="93.9" min="0" max="100"></meter></li>
+                        <li><label for="area1-12">중앙동</label><meter id="area1-12" value="78.0" min="0" max="100"></meter></li>
+                        <li><label for="area1-13">청하면</label><meter id="area1-13" value="90.4" min="0" max="100"></meter></li>
+                        <li><label for="area1-14">환여동</label><meter id="area1-14" value="75.1" min="0" max="100"></meter></li>
+                        <li><label for="area1-15">흥해읍</label><meter id="area1-15" value="81.5" min="0" max="100"></meter></li>          
+                      </ul>
+                    </div>                  
+                  </div>
+                </section>
+                <section>
+                  <div class="tit">
+                    <h2>대피장소 확보율 상세정보</h2>
+                    <div class="tool_wrap unit">
+                      (대피장소 확보율 평가지수 = 수용률)
+                    </div>
+                  </div>
+                  <div class="tbl_wrap">
+                  <table class="tbl_default">
+                    <thead>
+                      <tr>
+                        <th scope="col">지역</th>
+                        <th scope="col">전체 인구</th>
+                        <th scope="col">수용능력</th>
+                        <th scope="col">갈곳없음</th>
+                        <th scope="col">못들어감</th>
+                        <th scope="col">등급</th>
+                        <th scope="col">평가지수</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr class="rowgroup">
+                        <td>부산 해운대구</td>
+                        <td>13450</td>
+                        <td>54418</td>
+                        <td>19</td>
+                        <td>732</td>
+                        <td>2</td>
+                        <td>0.92</td>
+                      </tr>
+                      <tr>
+                        <td>반송동</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>2</td>
+                        <td>0.92</td>                        
+                      </tr>
+                      <tr>
+                        <td>석대동</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>2</td>
+                        <td>0.92</td> 
+                      </tr>
+                      <tr>
+                        <td>우동</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>2</td>
+                        <td>0.92</td> 
+                      </tr>
+                      <tr>
+                        <td>재송동</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>2</td>
+                        <td>0.92</td> 
+                      </tr>
+                    </tbody>
+                  </table>
+                  </div>
+                </section>               
+              </section>
+              <section class="tab_contents" id="shelter_indoor">
+                <section class="select_structure">
+                  <div class="tit blind">
+                    <h2>설계구조 및 용도 선택</h2>
+                  </div>
+                  <dl>
+                    <dt>건축 설계구조</dt>
+                    <dd>
+                      <label for="C1"><input type="checkbox" id="C1">콘크리트모멘트골조</label>
+                      <label for="C2"><input type="checkbox" id="C2">무보강조적채움벽이 있는 콘크리트모멘트골조</label>
+                      <label for="C3"><input type="checkbox" id="C3">콘크리트전단벽</label>
+                      <label for="C4"><input type="checkbox" id="C4">콘크리트전단벽이 있는 콘크리트모멘트골조</label>
+                      <label for="PC1"><input type="checkbox" id="PC1">프리캐스트 콘크리트전단벽</label>
+                      <label for="PC2"><input type="checkbox" id="PC2">콘크리트전단벽이 있는 프리캐스트콘크리트모멘트골조</label>
+                      <label for="S1"><input type="checkbox" id="S1">철골모멘트골조</label>
+                      <label for="S2"><input type="checkbox" id="S2">철골가새가 있는 철골모멘트골조</label>
+                      <label for="S3"><input type="checkbox" id="S3">콘크리트전단벽이 있는 철골모멘트골조</label>
+                      <label for="S4"><input type="checkbox" id="S4">철골철근콘크리트구조</label>
+                      <label for="C5"><input type="checkbox" id="C5">필로티형 콘크리트전단벽</label>
+                      <label for="URM"><input type="checkbox" id="URM">무보강조적전단벽</label>
+                      <label for="W1"><input type="checkbox" id="W1">전통목구조</label>
+                      <label for="W2"><input type="checkbox" id="W2">서양식목구조</label>
+                    </dd>
+                    <dt>건축물 용도</dt>
+                    <dd>
+                      <label for="" title="자동차 관련 시설군"><input type="checkbox" id="">자동차 관련 시설</label>
+                      <label for="" title="산업 등의 시설군"><input type="checkbox" id="">운수 시설</label>
+                      <label for="" title="산업 등의 시설군"><input type="checkbox" id="">창고 시설</label>
+                      <label for="" title="산업 등의 시설군"><input type="checkbox" id="">공장</label>
+                      <label for="" title="산업 등의 시설군"><input type="checkbox" id="">위험물저장 및 처리 시설</label>
+                      <label for="" title="산업 등의 시설군"><input type="checkbox" id="">자원 순환 관련 시설</label>
+                      <label for="" title="산업 등의 시설군"><input type="checkbox" id="">묘지 관련 시설</label>
+                      <label for="" title="산업 등의 시설군"><input type="checkbox" id="">장례시설</label>
+                      <label for="" title="전기통신시설군"><input type="checkbox" id="">방송 통신 시설</label>
+                      <label for="" title="전기통신시설군"><input type="checkbox" id="">발전 시설</label>
+                      <label for="" title="문화 및 집회시설군"><input type="checkbox" id="">문화 및 집회 시설</label>
+                      <label for="" title="문화 및 집회시설군"><input type="checkbox" id="">종교 시설</label>
+                      <label for="" title="문화 및 집회시설군"><input type="checkbox" id="">위락 시설</label>
+                      <label for="" title="문화 및 집회시설군"><input type="checkbox" id="">관공휴계시설</label>
+                      <label for="" title="영업시설군"><input type="checkbox" id="">판매 시설</label>
+                      <label for="" title="영업시설군"><input type="checkbox" id="">운동 시설</label>
+                      <label for="" title="영업시설군"><input type="checkbox" id="">숙박 시설</label>
+                      <label for="" title="영업시설군"><input type="checkbox" id="">제2종 근린생활시설 중<br /> 다중생활시설</label>
+                      <label for="" title="교육 및 복지시설군"><input type="checkbox" id="">의료 시설</label>
+                      <label for="" title="교육 및 복지시설군"><input type="checkbox" id="">교육연구시설</label>
+                      <label for="" title="교육 및 복지시설군"><input type="checkbox" id="">노유자시설</label>
+                      <label for="" title="교육 및 복지시설군"><input type="checkbox" id="">수련 시설</label>
+                      <label for="" title="교육 및 복지시설군"><input type="checkbox" id="">야영장 시설</label>
+                      <label for="" title="근린생활시설군"><input type="checkbox" id="">제1종 근린생활시설</label>
+                      <label for="" title="근린생활시설군"><input type="checkbox" id="">제2종 근린생활시설<br />(대중생활시설은 제외함)</label>
+                      <label for="" title="주거업무시설군"><input type="checkbox" id="">단독주택</label>
+                      <label for="" title="주거업무시설군"><input type="checkbox" id="">공동주택</label>
+                      <label for="" title="주거업무시설군"><input type="checkbox" id="">업무 시설</label>
+                      <label for="" title="주거업무시설군"><input type="checkbox" id="">교정 및 군사시설</label>
+                      <label for="" title="그 밖의 시설군"><input type="checkbox" id="">동물 및 식물 관련 시설</label>
+                    </dd>
+                  </dl>
+                  <div class="btn_area">
+                    <button type="button" class="btn_blue_line">선택 적용</button>
+                  </div>
+                </section>
+                <section>
+                </section>
+                <section>
+                  <div class="tit">
+                    <h2>지역별 평가결과</h2>
+                  </div>
+                  <div class="heatmap_wrap">
+                    <!-- 표출형식 시군구일때 -->
+                    <div class="heatmap">
+                      <strong>부산<span class="score">81</span></strong>
+                      <ul>                    
+                        <li>중구<span class="score">85</span></li>
+                        <li>해운대구<span class="score">88</span></li>
+                        <li>수영구<span class="score">76</span></li>
+                        <li>기장군<span class="score">89</span></li>                        
+                      </ul>
+                    </div>                    
+                  </div>
+                </section>
+                <section>
+                  <div class="tit">
+                    <h2>건축물 피해 상세정보</h2>
+                    <div class="tool_wrap unit">
+                      (피해율 = 피해면적 / 총 유효면적)
+                    </div>
+                  </div>
+                  <div class="tbl_wrap">
+                  <table class="tbl_default">
+                    <thead>
+                      <tr>
+                        <th scope="col">지역</th>
+                        <th scope="col">피해수량 &sol; 전체(동)</th>
+                        <th scope="col">피해면적(㎢) &sol; 피해율(%)</th>
+                        <th scope="col">등급</th>
+                        <th scope="col">점수</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr class="rowgroup">
+                        <td>부산 해운대구</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>1(99)</td>
+                      </tr>
+                      <tr>
+                        <td>반송동</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>1(99)</td>
+                      </tr>
+                      <tr>
+                        <td>석대동</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>1(99)</td>
+                      </tr>
+                      <tr>
+                        <td>우동</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>1(99)</td>
+                      </tr>
+                      <tr>
+                        <td>재송동</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>1(99)</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                  </div>
+                </section>
+              </section>
+            </div>
           </article>
         </div>
       </section>
