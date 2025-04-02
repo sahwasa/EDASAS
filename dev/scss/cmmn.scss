@@ -1228,7 +1228,7 @@ details[open]>summary::after{margin-left:auto;content:'\e86a';}
   }
 }
 .step_lst{position:relative;display:flex;margin-bottom:50px;
-  li{position:relative;flex:1 1 20%;padding:10px 0;border:1px solid #b4b9c2;
+  li{position:relative;flex:1 1 auto;padding:10px 0 10px 20px;border:1px solid #b4b9c2;
     @for $i from 1 through 6{
       $col:darken(#e5e8ed, $i * 3);
       &:nth-child(#{$i}){background-color:$col;
@@ -1242,9 +1242,9 @@ details[open]>summary::after{margin-left:auto;content:'\e86a';}
       a{color:#fff;}
     }
   }
-  a{display:flex;align-items:center;justify-content:center;gap:10px;color:#777;font-weight:600;font-size:16px;
+  a{display:flex;align-items:center;justify-content:center;gap:5px;color:#777;font-weight:600;font-size:16px;
   }
-  i{display:inline-block;width:62px;color:#fff;border:1px solid #fff;border-radius:13px;font-size:12px;padding:1px 0 2px;text-align:center;margin-left:-31px;
+  i{display:inline-block;width:56px;color:#fff;border:1px solid #fff;border-radius:13px;font-size:11px;line-height:1.8;text-align:center;margin-left:-31px;
     &.step_fin{color:#555;}  
   }
   $status:('fin':#EEF0F1,'ing':#66BD43,'wait':#F2661C);
@@ -1254,8 +1254,8 @@ details[open]>summary::after{margin-left:auto;content:'\e86a';}
 }
 .step_bdh{margin-bottom:70px;
   &::before,
-  &::after{position:absolute;left:50%;transform:translateX(-50%);border:1px dashed #9ca9bd;}
-  &::before{bottom:-20px;border-top-width:0;border-radius:0 0 20px 20px;@include shape(66.5%, 20px);}
+  &::after{position:absolute;left:calc(50% - 20px);transform:translateX(-50%);border:1px dashed #9ca9bd;}
+  &::before{bottom:-20px;border-top-width:0;border-radius:0 0 20px 20px;@include shape(calc((100% / 6) * 4 - 16px), 20px);}
   &::after{width:20%;bottom:-37px;background-color:#fff;content:'DB가공';font-style:16px;padding:5px 0;text-align:center;border-radius:15px;font-weight:600;color:#9ca9bd;}  
 }
 .step_content{display:flex;flex-direction:column;gap:50px;}
