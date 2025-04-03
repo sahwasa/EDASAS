@@ -196,7 +196,16 @@
         </ul>
         <button type="button" class="btn_blue_line">검색</button>        
       </div>
-      <div class="tbl_top">
+      <ul class="tab tab_wrap">
+        <li><a href="#shelter_outdoor">대피장소</a></li>
+        <li><a href="#shelter_indoor">임시거주시설</a></li>
+        <li><a href="#fire_facility">소방시설</a></li>
+        <li><a href="#medical_facility">의료시설</a></li>
+        <li><a href="#emergency_headquarters">재난안전대책본부</a></li>
+      </ul>
+      <div class="tab_container">
+        <section class="tab_contents" id="shelter_outdoor">
+          <div class="tbl_top">
         <div class="tool_wrap">
           <span class="renewal">갱신일자 (2024-05-06)</span>
           <span class="divide">
@@ -250,6 +259,16 @@
   </a>
 </div>
       </div>
+        </section>
+        <section class="tab_contents" id="shelter_indoor">
+        </section>
+        <section class="tab_contents" id="fire_facility">
+        </section>
+        <section class="tab_contents" id="medical_facility">
+        </section>
+        <section class="tab_contents" id="emergency_headquarters">
+        </section>
+      </div>      
     </div>
   </main>
   <footer class="footer">
@@ -294,9 +313,8 @@ Copyright © 2024 국립재난안전연구원. All rights reserved.
               <th scope="col">지진주기</th>
               <th scope="col">행정구역코드</th>
               <th scope="col">행정구역명</th>
-              <th scope="col">점수</th>
+              <th scope="col">위험지수</th>
               <th scope="col">등급</th>
-              <th scope="col">갱신일시</th>
             </tr>
           </thead>
           <tbody>
