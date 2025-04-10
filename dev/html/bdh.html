@@ -379,7 +379,8 @@
                     <dd>건축물 수량<em>877동</em></dd>
                   </dl>
                 </div>
-              </div>             
+              </div>  
+              @@include('../inc/module/lst_public_fac.html')           
             </dl>            
                        
           </div>
@@ -411,6 +412,24 @@
 @@include('../inc/script.html')
 <script>
   mapTgl('temp_map_2_2.png');
+  const $tbl_public_facility = $('.tbl_public_facility');
+  const $desc = $('.layer .desc');
+  const originTit =  $desc.html();
+  $tbl_public_facility.hide();
+  $('.public_facility .lst_type').on('click','button',function(){
+    // console.log($(this));
+    let $layer = $(this).parents('.layer')  
+    let tit = $(this).html().replace(/<em>.*?<\/em>/, '').trim()
+    $tbl_public_facility.show()
+    $layer.find('.lst_public_facility, .flex_wrap, .desc').hide()
+
+    $tbl_public_facility.find('.tbl_top h3').html(tit)
+  })
+  function back(btn){
+    let $layer = $(btn).parents('.layer')
+    $tbl_public_facility.hide();
+    $layer.find('.lst_public_facility, .flex_wrap, .desc').show()
+  }
 </script>
 </body>
 </html>
