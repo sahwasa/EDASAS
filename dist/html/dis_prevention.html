@@ -629,8 +629,8 @@
       <section class="sub_tit">
         <label for="safety"><input type="radio" name="layer" id="safety" checked>지역안전도</label>
       </section>
-      <section>
-        <header class="sub_tit">
+      <details>
+        <summary class="sub_tit">
           <em class="label">기초데이터</em>
           <div class="tool_wrap">
             <label for="all_area"><input type="checkbox" id="all_area">전체 지역</label>
@@ -638,7 +638,7 @@
               <button type="button" class="btn_popup"  onclick="window.open('baseData_map.html','_blank','width=1240, height=600, top=50, left=50, location=no, scrollbars=yes');">새창</button>
             </span>
           </div>
-        </header>   
+        </summary>   
         <ul class="map_type">
           <li><strong>지반특성 및 지반분류정보</strong>
             <ul class="sub_type">
@@ -695,15 +695,58 @@
               <li><label for=""><input type="radio" id="" name="layer">광역 도로망 접근 계수</label></li>
             </ul>
           </li>         
-          <li><strong>주요시설 분포도</strong>
-            <ul class="symbols">
-              <li><label for="fac1"><input type="checkbox" id="fac1" name="" />소방서</label></li>
-              <li><label for="fac2"><input type="checkbox" id="fac2" name="" />임시대피시설</label></li>
-              <li><label for="fac3"><input type="checkbox" id="fac3" name="" />병원</label></li>
-            </ul>
-          </li>
         </ul>
-      </section>
+      </details>
+      <details>
+        <summary class="sub_tit">
+          <em class="label">주요시설 분포도</em>         
+        </summary>
+        <ul class="symbols">
+          <li><label for="fac1"><input type="checkbox" id="fac1" name="" />소방서</label></li>
+          <li><label for="fac2"><input type="checkbox" id="fac2" name="" />임시대피시설</label></li>
+          <li><label for="fac3"><input type="checkbox" id="fac3" name="" />병원</label></li>
+        </ul>
+      </details>
+      <details open>
+        <summary class="sub_tit">
+          <em class="label">공공시설물 분포도</em>         
+        </summary>
+        <ul class="sub_type public_facility">
+          <li><label for=""><input type="checkbox" id="" name="public_facility">공공시설물</label></li>
+          <li><label for=""><input type="checkbox" id="" name="public_facility">방조제</label></li>
+          <li><label for=""><input type="checkbox" id="" name="public_facility">공항시설</label></li>
+          <li><label for=""><input type="checkbox" id="" name="public_facility">수문</label></li>
+          <li><label for=""><input type="checkbox" id="" name="public_facility">농업생산기반시설</label></li>
+          <li><label for=""><input type="checkbox" id="" name="public_facility">다목적댐</label></li>
+          <li><label for=""><input type="checkbox" id="" name="public_facility">일반댐</label></li>
+          <li><label for=""><input type="checkbox" id="" name="public_facility">도로시설물</label></li>
+          <li><label for=""><input type="checkbox" id="" name="public_facility">가스공급, 액화가스 저장시설</label></li>
+          <li><label for=""><input type="checkbox" id="" name="public_facility">도시철도</label></li>
+          <li><label for=""><input type="checkbox" id="" name="public_facility">압력용기</label></li>
+          <li><label for=""><input type="checkbox" id="" name="public_facility">크레인</label></li>
+          <li><label for=""><input type="checkbox" id="" name="public_facility">리프트</label></li>
+          <li><label for=""><input type="checkbox" id="" name="public_facility">석유 정제·비축 및 저장시설</label></li>
+          <li><label for=""><input type="checkbox" id="" name="public_facility">송유관</label></li>
+          <li><label for=""><input type="checkbox" id="" name="public_facility">산업단지 공공폐수처리시설</label></li>
+          <li><label for=""><input type="checkbox" id="" name="public_facility">수도시설</label></li>
+          <li><label for=""><input type="checkbox" id="" name="public_facility">어항시설</label></li>
+          <li><label for=""><input type="checkbox" id="" name="public_facility">원자로 및 관계시설</label></li>
+          <li><label for=""><input type="checkbox" id="" name="public_facility">전력시설</label></li>
+          <li><label for=""><input type="checkbox" id="" name="public_facility">철도시설</label></li>
+          <li><label for=""><input type="checkbox" id="" name="public_facility">폐기물매립시설</label></li>
+          <li><label for=""><input type="checkbox" id="" name="public_facility">공공하수처리시설</label></li>
+          <li><label for=""><input type="checkbox" id="" name="public_facility">고속철도</label></li>
+          <li><label for=""><input type="checkbox" id="" name="public_facility">항만시설</label></li>
+          <li><label for=""><input type="checkbox" id="" name="public_facility">공동구</label></li>
+          <li><label for=""><input type="checkbox" id="" name="public_facility">학교시설</label></li>
+          <li><label for=""><input type="checkbox" id="" name="public_facility">궤도</label></li>
+          <li><label for=""><input type="checkbox" id="" name="public_facility">유기시설</label></li>
+          <li><label for=""><input type="checkbox" id="" name="public_facility">병원시설</label></li>
+          <li><label for=""><input type="checkbox" id="" name="public_facility">방송통신설비</label></li>
+          <li><label for=""><input type="checkbox" id="" name="public_facility">물류시설</label></li>
+          <li><label for=""><input type="checkbox" id="" name="public_facility">공급시설</label></li>
+        </ul>
+      </details>
     </article>
   </div>
 </section>
@@ -711,7 +754,7 @@
     </div>  
   </main>
   <footer class="footer">
-Copyright © 2024 국립재난안전연구원. All rights reserved.
+Copyright © 2025 국립재난안전연구원. All rights reserved.
 </footer>
   <dialog id="p_areaSelect" class="p_areaSelect" style="--width:512px" popover="manual">
   <form method="dialog">
