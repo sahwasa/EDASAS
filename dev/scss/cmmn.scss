@@ -1165,7 +1165,7 @@ details[open]>summary::after{margin-left:auto;content:'\e86a';}
     li{line-height:1.2;
       input{order:-1;margin-top:1px;}
       label{gap:3px;align-items:flex-start;padding:5px 0;letter-spacing:-.07em;word-break:keep-all;
-        &::before{@include shape(15px, 15px);flex-shrink:0;text-align:center;counter-increment:symbolNum;content:counter(symbolNum);font-size:10px;background-color:$green;color:#fff;border-radius:50%;line-height:15px;text-indent:-1px;}
+        &::before{@include shape(15px, 15px);flex-shrink:0;text-align:center;counter-increment:symbolNum;content:counter(symbolNum);font-size:10px;background-color:#cd00c7;color:#fff;border-radius:50%;line-height:15px;text-indent:-1px;}
       }
     }
   }
