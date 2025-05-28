@@ -781,7 +781,7 @@ border:1px solid $border;border-left-width:0;border-radius:0 3px 3px 0;font-size
 .symbol{--l:var(--left);--t:var(--top);
   position:absolute;left:var(--l);top:var(--t);@include f_blind;
   &::before{@include shape(16px,16px);vertical-align:middle;background:url(../images/map_symbol.png) 0 0 no-repeat;}
-  @for $i from 1 to 4{
+  @for $i from 1 through 5{
     &.ico_#{$i}::before{background-position-y:-26px * ($i - 1);}
   }
   &.public_facility{border-radius:50%;border:1px solid #fff;box-shadow:2px 1px 1px rgba(0, 0, 0, .5);
@@ -855,7 +855,7 @@ details[open]>summary::after{margin-left:auto;content:'\e86a';}
     input{order:-1;}
     &::before{@include shape(16px,16px);vertical-align:middle;background:url(../images/map_symbol.png) 0 0 no-repeat;}          
   }
-  @for $i from 1 to 4{
+  @for $i from 1 through 5{
     &:nth-child(#{$i}) label::before{background-position-y:-26px * ($i - 1);}
   }
 }
