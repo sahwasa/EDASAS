@@ -507,6 +507,7 @@ border:1px solid $border;border-left-width:0;border-radius:0 3px 3px 0;font-size
   th,td{white-space:nowrap;padding:3px;}
 }
 .tbl_hover tbody tr:hover{cursor:pointer;background-color:#f6f6f6;}
+tr.empty{background-color:$bg_empty;}
 .tbl_default{width:100%;border-collapse:separate;background-color:#fff;
   th,td{border:1px solid $lightgray;border-width:1px 0 0 1px;padding:3px;letter-spacing:-.6px;
     word-break: keep-all;text-align:center;line-height:1.3;height:26px;
