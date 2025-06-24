@@ -480,13 +480,13 @@ border:1px solid $border;border-left-width:0;border-radius:0 3px 3px 0;font-size
 // table
 .tbl_top{display:flex;align-items:center;gap:5px;margin-bottom:10px;
   .tool_wrap{margin-left:auto;}
-  .renewal{display:inline-flex;align-items:center;gap:5px;margin-left:auto;color:#555;
-    &::before{@include shape(3px, 3px);background-color:#777;border-radius:50%;}
-  }
   .search_lst{display:flex;align-items:center;gap:10px;
     &::before{@include fontello('\f0b0');border-right:1px solid $lightgray;padding:6px 12px 7px 8px;line-height:3px;}
   }
   .divide{@include divide;gap:5px;}
+  .renewal{display:inline-flex;align-items:center;gap:5px;margin-left:auto;color:#555;
+    &::before{@include shape(3px, 3px);background-color:#777;border-radius:50%;}
+  }
 }
 .tbl_filter{@include divide;gap:5px;}
 .tit + .tbl_top:has(.search_lst){border-top: 1px solid $lightgray;padding-top:10px;}
@@ -728,7 +728,11 @@ tr.empty{background-color:$bg_empty;}
 #dropArea.dragover{background-color: #eaf4ff; }
 
 // tab
-.tab{display: flex;gap:4px;border-bottom:1px solid #a8a8a8;
+.tab_wrap{border-bottom:1px solid #a8a8a8;
+  &:has(.tool_wrap){@extend .tbl_top;}
+  .tool_wrap{align-self:flex-start;}
+}
+.tab{display: flex;gap:4px;
   li{flex:1 0 auto;border:1px solid #e4e4e4;border-bottom-width:0;border-radius:3px 3px 0 0;
   }
   a{width:100%;font-size:14px;color:#888;text-align:center;line-height:40px;}
