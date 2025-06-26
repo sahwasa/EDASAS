@@ -777,6 +777,7 @@
   </main>
   @@include('../inc/footer.html')
   @@include('../inc/pop/p_data_bdh.html')  
+  @@include('../inc/pop/p_download.html')  
 </div>
 @@include('../inc/script.html')
 <script>
@@ -788,6 +789,7 @@ $('.step_lst li').off('click').on('click', function (e) {
   findTarget.find('.tab_contents').hide()
   $(link).show();
 });
+document.querySelector('#p_download').showPopover();
 </script>
 </body>
 </html>

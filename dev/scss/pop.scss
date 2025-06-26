@@ -1,7 +1,7 @@
 @import "./reset";
 $maingap:20px;
 dialog{width:var(--width);z-index:200;}
-dialog,:modal {margin:auto;padding:20px;border:none;box-shadow: 1.4px 1.4px 29px 0 rgba(0, 0, 0, 0.08);font-size:13px;
+dialog,:modal{margin:auto;padding:20px;border:none;box-shadow: 1.4px 1.4px 29px 0 rgba(0, 0, 0, 0.08);font-size:13px;
   .p_header{@include tit(){h1{font-size:15px;}};
     .btn_close{@include ico_only('\eb2e');cursor:pointer;margin-left:$maingap;
       &::before{font-size:16px;color:#000;};
@@ -101,7 +101,7 @@ dialog,:modal {margin:auto;padding:20px;border:none;box-shadow: 1.4px 1.4px 29px
   }  
   .map{position:relative;flex:1;overflow:hidden;} 
 }
-.file_uploading{display: flex;flex-direction:column;justify-content:center;align-items:center;
+.file_uploading{display:flex;flex-direction:column;justify-content:center;align-items:center;
   .tit{font-size:16px;color:$blue;
     &::before{@include fontello('\ece7');margin-right:5px;animation: spin 2s infinite linear;;}
   }

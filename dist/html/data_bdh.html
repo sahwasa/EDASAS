@@ -1124,6 +1124,25 @@ Copyright © 2025 국립재난안전연구원. All rights reserved.
 <script>
 // document.querySelector('#pop_loading').showPopover();
 </script>  
+  <dialog id="p_download" class="p_download line_style" style="--width:600px" popover="manual">
+  <form method="dialog">
+    <header class="p_header tit blind">
+      <h1>파일 다운로드</h1>      
+    </header>
+    <section class="p_body">
+      <div class="file_uploading">
+        <div class="progress_wrap">
+          <progress id="load" class="progress_bar" value="25" max="100"></progress>
+          <label for="load"><strong>25%</strong></label>
+        </div>
+        <strong class="tit">파일을 다운로드 중 입니다.</strong>
+      </div>
+    </section>
+    <section class="p_foot">
+      <button type="button" class="btn_foot_gray" popovertarget="p_download" popvertargetaction="hide">중지 및 닫기??</button>
+    </section>
+  </form>
+</dialog>  
 </div>
 <script src="../plugins/jquery.min.js"></script>
 <script src="../js/ui_cmmn.js"></script>
@@ -1139,6 +1158,7 @@ $('.step_lst li').off('click').on('click', function (e) {
   findTarget.find('.tab_contents').hide()
   $(link).show();
 });
+document.querySelector('#p_download').showPopover();
 </script>
 </body>
 </html>
