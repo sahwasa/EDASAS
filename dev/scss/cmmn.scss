@@ -661,6 +661,7 @@ tr.empty{background-color:$bg_empty;}
     label{width:100%;min-width:auto;white-space:nowrap;padding:0 10px;}
   }
   .select_lst{padding-left:125px;}
+  .inline_item{display:flex;gap:5px;}
   .label + .select_lst{padding-left:0;}
   li:has(.info){flex-wrap:wrap;
     .info{flex:1 0 100%;display:flex;align-items:center;gap:5px;color:#555;font-size:14px;padding-left:125px;
