@@ -148,6 +148,19 @@
         </section>
         <h1>FAQ</h1>
       </header>
+      <div class="search">
+        <ul class="search_lst">         
+          <li>
+            <label for="">분류</label>
+            <select name="" id=""><option value="">전체</option></select>
+          </li>
+        </ul>
+        <button type="button" class="btn_blue_line">검색</button>
+        <div class="tool">
+          <button type="button" class="btn_blue" popovertarget="p_addFAQ" onclick="initializePopup();">추가</button>
+          <button type="button" class="btn_blue_line" onclick="deleteFaq();">선택삭제</button>
+        </div>
+      </div>
       <div class="tbl_wrap">
         <table class="tbl_notice faq">          
           <thead>
