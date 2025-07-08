@@ -1218,6 +1218,7 @@ details[open]>summary::after{margin-left:auto;content:'\e86a';}
   }
   .dot_lst{gap:5px;padding-bottom:5px;}
   .flex_wrap{gap:15px;max-width:$maxW;}
+  &:has(.lst_public_facility) .flex_wrap{margin-bottom:10px;}
   .pie_graphwrap{flex:1;}
   .pie{--w:100px;--b:10px;margin:0 0 10px;
     .pie_txt em{font-size: 20px;}
