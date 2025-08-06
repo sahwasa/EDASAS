@@ -160,7 +160,7 @@ $navH:315px;
   &:has(.static_contents) + footer{position:static;transform:translate(0);text-align:center;margin-top:30px;padding:5px 0;background-color:#e4e4e4;}
   &:has(.flex_body) + footer{margin-top:0;}
 }
-.static_contents{width:1200px;margin:30px auto 0;
+.static_contents{width:1300px;margin:30px auto 0;
   & > header{@include tit(h1);margin-bottom:30px;
     h1{font-size:30px;}
     strong{color:#555;font-size:16px;font-weight:normal;@include divide;
@@ -524,7 +524,7 @@ border:1px solid $border;border-left-width:0;border-radius:0 3px 3px 0;font-size
   }
 }
 .tbl_wrap_scroll{@extend .tbl_wrap;height:calc(100vh - 297px);overflow-y:auto;background-color:$lightgray;border-top:2px solid $blue;border-bottom:1px solid $lightgray;
-  table thead{position:sticky;left:0;top:0;
+  table thead{position:sticky;left:0;top:0;z-index:10;
     th{border-top:2px solid $lightgray;}
     tr:first-of-type th{border-top-width:0;}
     &::before{position:absolute;left:0;bottom:0;@include shape(100%, 0);border-bottom:1px solid $blue;}
@@ -1200,7 +1200,7 @@ details[open]>summary::after{margin-left:auto;content:'\e86a';}
     li{line-height:1.2;
       input{order:-1;margin-top:1px;}
       label{gap:3px;align-items:flex-start;padding:5px 0;letter-spacing:-.07em;word-break:keep-all;
-        &::before{@include shape(15px, 15px);flex-shrink:0;text-align:center;counter-increment:symbolNum;content:counter(symbolNum);font-size:10px;background-color:#cd00c7;color:#fff;border-radius:50%;line-height:15px;text-indent:-1px;}
+        &::before{@include shape(15px, 15px);flex-shrink:0;text-align:center;counter-increment:symbolNum;content:counter(symbolNum);font-size:10px;background-color:#666;color:#fff;border-radius:50%;line-height:15px;text-indent:-1px;}
       }
     }
   }
@@ -1237,7 +1237,7 @@ details[open]>summary::after{margin-left:auto;content:'\e86a';}
   }  
   .total{
     .box_lst{display:grid;grid-template-columns:80px 1fr;column-gap:8px;}
-    dt{grid-row:1 / span 10; white-space:initial;word-break:keep-all;text-align:left;@include divide($h:25px,$target:'after');
+    dt{grid-row:1 / span 10; white-space:initial;word-break:keep-all;text-align:center;@include divide($h:25px,$target:'after');gap:5px;
       &::after{border-left:1px solid #bbb;border-right:1px solid #fff;margin:0;}
     }
     dd{grid-column-start:2;border-top-width:0;}
@@ -1361,4 +1361,54 @@ details[open]>summary::after{margin-left:auto;content:'\e86a';}
 }
 .tbl_simul{
   td{width:10%;}
+}
+// sys_dbInfo
+.sys_db_info{
+  .article{
+    &:not(:first-of-type){margin-top:70px;}
+    header{display:flex;align-items:center;gap:18px;}
+    h1{font-size:22px;font-weight:700;margin-bottom:0;line-height:1;}
+    h2{font-size:16px;margin-bottom:0;}
+    & > header{gap:16px;margin-bottom:20px;
+      h1{font-size:20px;}
+      p{color:#000;}
+      &::before{@include shape(50px,50px);background-image:url(../images/ico_db.png);}
+    }
+  }
+}
+.sys_lst_container{border-bottom:1px solid $blue;
+  li{border-top:1px solid $blue;
+    & > header{background-color:#f5f8fe;border-bottom:1px solid $lightgray;}
+  }
+    h1{position:relative;min-width:170px;padding:20px 13px;color:$blue;letter-spacing:-.05em;
+      &::before,&::after{@include shape(4px,4px);background-color:$blue;}
+      &::before{border-radius:50%;vertical-align:middle;margin-right:15px;}
+      &::after{position:absolute;top:0;right:0;; width:1px;height:20px;}
+  }
+}
+.data_contents{color:#555;
+  &:not(:last-of-type){border-bottom:1px solid $lightgray;}
+  header{padding:12px 25px;background:url(../images/bg_dashline.png) 0 100% repeat-x;}
+  h2{min-width:225px;}
+  dl{display:grid;align-items:stretch;grid-template-columns:auto 1fr;width:100%;row-gap:18px;column-gap:75px;padding:20px 25px;}
+  dd{grid-column-start:2;display:flex;justify-content:flex-end;align-items:flex-start;gap:30px;
+    strong{display:block;font-size:13px;}
+    span{flex:1;max-width:180px;font-size:16px;}
+    p{width:500px;word-break:keep-all;}
+  }
+  .btn_wrap{display:flex;justify-content:flex-end;gap:12px;width:272px;align-self:center;
+    button{flex:0 1 130px;background:url(../images/ico_download.png) right 9px top 50% no-repeat, $blue;color:#fff;font-size:18px;border-radius:5px;padding-right:25px;}
+  }
+  blockquote{padding:12px 25px;background:url(../images/bg_dashline.png) 0 0 repeat-x;color:#555;text-align:right;}
+}
+.sys_dbInfo_result{
+  & > header::before{background-position-y:-60px;}
+  .sys_lst_container h1{min-width:220px;}
+  .data_contents{
+    dd{
+      span{max-width:125px;}
+      p{width:230px;}
+    }
+  }
+  .btn_wrap{width:130px;}
 }

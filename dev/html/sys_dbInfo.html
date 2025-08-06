@@ -1,0 +1,522 @@
+@@include('../inc/top.html')
+<div id="wrap" class="wrap">
+  @@include('../inc/header.html')    
+  <main id="content" class="main_container">
+    <div class="static_contents">
+      <header>
+        <section class="bredcrumb">
+          <ul>
+            <li><a href="#">Home</a></li>
+            <li>시스템 소개</li>
+            <li>시스템 DB현황</li>
+          </ul>
+        </section>
+        <h1>시스템 DB현황</h1>
+      </header>
+      <div class="sys_db_info">
+        <article class="article">
+          <header>
+            <h1>기초데이터</h1>
+          </header>
+          <ul class="sys_lst_container">
+            <li>
+              <header>
+                <h1>행정구역</h1>
+                <p>행정구역코드 및 GIS 행정경계도 제공</p>
+              </header>
+              <div class="data_contents">
+                <dl>
+                  <dt>
+                    <strong>데이터명</strong>
+                    <p>행정표준코드 및 행정경계도 제공 (행정동 기준)</p>
+                  </dt>
+                  <dd>
+                    <span><strong>단위</strong>시도</span>
+                    <span><strong>구축일자</strong>2025.01</span>
+                    <div class="btn_wrap">
+                      <button type="button">XLSX</button>
+                      <button type="button">SHP</button>
+                    </div>                  
+                  </dd>
+                  <dd>
+                    <span><strong>단위</strong>시군구</span>
+                    <span><strong>구축일자</strong>2025.01</span>
+                    <div class="btn_wrap">
+                      <button type="button">XLSX</button>
+                      <button type="button">SHP</button>
+                    </div>
+                  </dd>
+                  <dd>
+                    <span><strong>단위</strong>읍면동</span>
+                    <span><strong>구축일자</strong>2025.01</span>
+                    <div class="btn_wrap">
+                      <button type="button">XLSX</button>
+                      <button type="button">SHP</button>
+                    </div>
+                  </dd>
+                </dl>
+                <blockquote cite="">
+                  출처  :  행정표준코드관리시스템 &sol; 브이월드
+                </blockquote>
+              </div>                
+            </li>
+            <li>
+              <header>
+                <h1>격자정보</h1>
+                <p>격자정보는 공간을 동일한 크기의 셀(cell)로 나눈 자료로, 공간정보에 지반정보 등을 결합하여 활용</p>
+              </header>
+              <div class="data_contents">
+                <dl>
+                  <dt>
+                    <strong>데이터명</strong>
+                    <p>500m 단위 격자정보</p>
+                  </dt>
+                  <dd>
+                    <span><strong>단위</strong>전국 격자(500m*500m)</span>
+                    <span><strong>구축일자</strong>2025.01</span>
+                    <div class="btn_wrap">
+                      <button type="button">XLSX</button>
+                      <button type="button">SHP</button>
+                    </div>                  
+                  </dd>
+                </dl>
+              </div>                
+            </li>
+            <li>
+              <header>
+                <h1>지반정보</h1>
+                <p>지반정보는 토양, 암석 등 지반의 물리적 특성에 대한 자료를 의미하며, 건축물의 위험성 분석을 위해 지진 재현주기별(500년, 1000년, 2400년) 수집</p>
+              </header>
+              <div class="data_contents">
+                <dl>
+                  <dt>
+                    <strong>데이터명</strong>
+                    <p>재현주기별 격자 단위 지반정보</p>
+                  </dt>
+                  <dd>
+                    <span><strong>단위</strong>격자(500m*500m)</span>
+                    <span><strong>구축일자</strong>2025.01</span>
+                    <div class="btn_wrap">
+                      <button type="button">XLSX</button>
+                    </div>                  
+                  </dd>
+                </dl>
+              </div>                
+            </li>
+            <li>
+              <header>
+                <h1>인구정보</h1>
+                <p>주민등록을 기반한 인구이고 행정동별 총인구, 세대수, 성별·연령별 인구 등의 정보 포함</p>
+              </header>
+              <div class="data_contents">
+                <dl>
+                  <dt>
+                    <strong>데이터명</strong>
+                    <p>행정동별 주민등록인구</p>
+                  </dt>
+                  <dd>
+                    <span><strong>단위</strong>행정동</span>
+                    <span><strong>구축일자</strong>2025.01</span>
+                    <div class="btn_wrap">
+                      <button type="button">XLSX</button>
+                    </div>                  
+                  </dd>
+                </dl>
+                <blockquote cite="">
+                  출처  :  주민등록 인구통계
+                </blockquote>               
+              </div>
+            </li>
+            <li>
+              <header>
+                <h1>임시주거시설</h1>
+                <p>재난, 대피, 비상상황 발생 시 주민들이 일시 거주할 수 있도록 지정된 시설에 대한 정보</p>
+              </header>
+              <div class="data_contents">
+                <dl>
+                  <dt>
+                    <strong>데이터명</strong>
+                    <p>임시주거시설 및 이재민 정보</p>
+                  </dt>
+                  <dd>
+                    <span><strong>단위</strong>개별 시설물</span>
+                    <span><strong>구축일자</strong>2025.01</span>
+                    <div class="btn_wrap">
+                      <button type="button">XLSX</button>
+                    </div>                  
+                  </dd>
+                </dl>
+                <blockquote cite="">
+                  출처  :  재난안전데이터공유플랫폼
+                </blockquote>        
+              </div>
+            </li>
+            <li>
+              <header>
+                <h1>옥외대피시설</h1>
+                <p>재난 발생 시 야외에서 안전하게 대피할 수 있도록 지정된 공개된 개방 공간시설에 대한 정보</p>
+              </header>
+              <div class="data_contents">
+                <dl>
+                  <dt>
+                    <strong>데이터명</strong>
+                    <p>지진 옥외대피장소</p>
+                  </dt>
+                  <dd>
+                    <span><strong>단위</strong>개별 시설물</span>
+                    <span><strong>구축일자</strong>2025.01</span>
+                    <div class="btn_wrap">
+                      <button type="button">XLSX</button>
+                    </div>                  
+                  </dd>
+                </dl>
+                <blockquote cite="">
+                  출처  :  재난안전데이터공유플랫폼
+                </blockquote>                
+              </div>
+            </li>
+            <li>
+              <header>
+                <h1>건축물 DB</h1>
+                <p>GIS건물일반집합정보를 기반으로 건축물대장 정보와 매핑하여 지진피해추정을 위한 기초데이터를 생성함(내진설계여부 판단, 구조시스템 분류, 유효면적 산정)</p>
+              </header>
+              <div class="data_contents">
+                <dl>
+                  <dt>
+                    <strong>데이터명</strong>
+                    <p>건축물 정보</p>
+                  </dt>
+                  <dd>
+                    <p><strong>주요내용</strong>건축물대장 매핑, 건축물 기초정보 보정 및 내진설계 여부 판단 등 수행</p>
+                    <span><strong>단위</strong>개별 건축물</span>
+                    <span><strong>구축일자</strong>2025.01</span>
+                    <div class="btn_wrap">
+                      <button type="button">XLSX</button>
+                    </div>                  
+                  </dd>
+                  <dt>
+                    <strong>데이터명</strong>
+                    <p>유효토지면적</p>
+                  </dt>
+                  <dd>
+                    <p><strong>주요내용</strong>
+                    토지특성, 공원, 하천, 취락지구 정보를 활용하여 유효한 토지의 면적을 산정</p>
+                    <span><strong>단위</strong>행정동(읍면동)</span>
+                    <span><strong>구축일자</strong>2025.01</span>
+                    <div class="btn_wrap">
+                      <button type="button">XLSX</button>
+                      <button type="button">SHP</button>
+                    </div>                  
+                  </dd>
+                </dl>
+              </div>
+            <li>
+              <header>
+                <h1>화재 DB</h1>
+                <p>개별 건물에 대한 내화구조 분류 및 방화구조분류를 진행하고 클러스터를 구성하여 화재 정보 생성</p>
+              </header>
+              <div class="data_contents">
+                <dl>
+                  <dt>
+                    <strong>데이터명</strong>
+                    <p>클러스터 DB</p>
+                  </dt>
+                  <dd>
+                    <p><strong>주요내용</strong>방화구조분류와 클러스터를 구성하여 구축된 화재 정보</p>
+                    <span><strong>단위</strong>클러스터</span>
+                    <span><strong>구축일자</strong>2025.01</span>
+                    <div class="btn_wrap">
+                      <button type="button">XLSX</button>
+                    </div>                  
+                  </dd>
+                </dl>
+              </div>                
+            </li>
+          </ul>           
+        </article>
+
+        <article class="article sys_dbInfo_result">
+          <header>
+            <h1>지역위험도 평가결과</h1>
+          </header>
+          <ul class="sys_lst_container">
+            <li>
+              <header>
+                <h1>종합위험도</h1>
+                <p>종합위험도는 지진재해 발생 시 특정 행정구역의 위험성을 쉽게 파악하기 위해 고안된 평가지표이며 건축물피해, 지진화재, 긴급대응과 관련된 각 위험도를 종합하여 평가</p>
+              </header>
+              <div class="data_contents">
+                <dl>
+                  <dt>
+                    <strong>데이터명</strong>
+                    <p>재난안전대책본부위험도 평가결과</p>
+                  </dt>
+                  <dd>
+                    <span><strong>단위</strong>행정동</span>
+                    <span><strong>차수</strong>차수명(년도 기재)</span>
+                    <p><strong>지역</strong>포항, 경주, 울산, 부산, 창원, 포항, 경주, 울산, 부산, 창원</p>
+                    <span><strong>구축일자</strong>2025.01</span>
+                    <div class="btn_wrap">
+                      <button type="button">XLSX</button>
+                    </div>                  
+                  </dd>
+                  <dd>
+                    <span><strong>단위</strong>행정동</span>
+                    <span><strong>차수</strong>차수명(년도 기재)</span>
+                    <p><strong>지역</strong>포항, 경주, 울산</p>
+                    <span><strong>구축일자</strong>2025.01</span>
+                    <div class="btn_wrap">
+                      <button type="button">XLSX</button>
+                    </div>                  
+                  </dd>
+                </dl>
+              </div>
+            </li>
+            <li>
+              <header>
+                <h1>건축물피해위험도</h1>
+                <p>건축물정보를 기반으로 지진취약도 함수를 활용하여 건축물피해위험도를 평가</p>
+              </header>
+              <div class="data_contents">
+                <dl>
+                  <dt>
+                    <strong>데이터명</strong>
+                    <p>건축물피해위험도 평가결과</p>
+                  </dt>
+                  <dd>
+                    <span><strong>단위</strong>행정동</span>
+                    <span><strong>차수</strong>차수명(년도 기재)</span>
+                    <p><strong>지역</strong>포항, 경주, 울산, 부산, 창원</p>
+                    <span><strong>구축일자</strong>2025.01</span>
+                    <div class="btn_wrap">
+                      <button type="button">XLSX</button>
+                    </div>                  
+                  </dd>
+                  <dd>
+                    <span><strong>단위</strong>행정동</span>
+                    <span><strong>차수</strong>차수명(년도 기재)</span>
+                    <p><strong>지역</strong>포항, 경주, 울산</p>
+                    <span><strong>구축일자</strong>2025.01</span>
+                    <div class="btn_wrap">
+                      <button type="button">XLSX</button>
+                    </div>                  
+                  </dd>
+                </dl>
+              </div>                
+            </li>
+            <li>
+              <header>
+                <h1>지진화재위험도</h1>
+                <p>화재정보를 기반으로 출화 발생율(출화율). 화재확산 정도(소실율)을 산정하여 지진화재위험도를 평가</p>
+              </header>
+              <div class="data_contents">
+                <dl>
+                  <dt>
+                    <strong>데이터명</strong>
+                    <p>지진화재위험도 평가결과</p>
+                  </dt>
+                  <dd>
+                    <span><strong>단위</strong>행정동</span>
+                    <span><strong>차수</strong>차수명(년도 기재)</span>
+                    <p><strong>지역</strong>포항, 경주, 울산, 부산, 창원</p>
+                    <span><strong>구축일자</strong>2025.01</span>
+                    <div class="btn_wrap">
+                      <button type="button">XLSX</button>
+                    </div>                  
+                  </dd>
+                  <dd>
+                    <span><strong>단위</strong>행정동</span>
+                    <span><strong>차수</strong>차수명(년도 기재)</span>
+                    <p><strong>지역</strong>포항, 경주, 울산</p>
+                    <span><strong>구축일자</strong>2025.01</span>
+                    <div class="btn_wrap">
+                      <button type="button">XLSX</button>
+                    </div>                  
+                  </dd>
+                </dl>
+              </div>                
+            </li>
+            <li>
+              <header>
+                <h1>긴급대응난이도</h1>
+                <p>지진 발생 직후 긴급 대응 활동의 수월한 정도를 '대응 공간 확보'와 '도로망 접근'의 관점에서 평가</p>
+              </header>
+              <div class="data_contents">
+                <dl>
+                  <dt>
+                    <strong>데이터명</strong>
+                    <p>긴급대응난이도 평가결과</p>
+                  </dt>
+                  <dd>
+                    <span><strong>단위</strong>행정동</span>
+                    <span><strong>차수</strong>차수명(년도 기재)</span>
+                    <p><strong>지역</strong>포항, 경주, 울산, 부산, 창원</p>
+                    <span><strong>구축일자</strong>2025.01</span>
+                    <div class="btn_wrap">
+                      <button type="button">XLSX</button>
+                    </div>                  
+                  </dd>
+                  <dd>
+                    <span><strong>단위</strong>행정동</span>
+                    <span><strong>차수</strong>차수명(년도 기재)</span>
+                    <p><strong>지역</strong>포항, 경주, 울산</p>
+                    <span><strong>구축일자</strong>2025.01</span>
+                    <div class="btn_wrap">
+                      <button type="button">XLSX</button>
+                    </div>                  
+                  </dd>
+                </dl>
+              </div>                
+            </li>
+            <li>
+              <header>
+                <h1>건축물피해복구비용</h1>
+                <p>건축물이 지진으로 인해 구조적 또는 비구조적 손상을 입었을 때, 원래 상태로 복구하거나 보강하기 위해 소요되는 총비용 평가</p>
+              </header>
+              <div class="data_contents">
+                <dl>
+                  <dt>
+                    <strong>데이터명</strong>
+                    <p>건축물 피해복구비용</p>
+                  </dt>
+                  <dd>
+                    <span><strong>단위</strong>행정동</span>
+                    <span><strong>차수</strong>차수명(년도 기재)</span>
+                    <p><strong>지역</strong>포항, 경주, 울산, 부산, 창원</p>
+                    <span><strong>구축일자</strong>2025.01</span>
+                    <div class="btn_wrap">
+                      <button type="button">XLSX</button>
+                    </div>                  
+                  </dd>
+                  <dd>
+                    <span><strong>단위</strong>행정동</span>
+                    <span><strong>차수</strong>차수명(년도 기재)</span>
+                    <p><strong>지역</strong>포항, 경주, 울산</p>
+                    <span><strong>구축일자</strong>2025.01</span>
+                    <div class="btn_wrap">
+                      <button type="button">XLSX</button>
+                    </div>                  
+                  </dd>
+                </dl>
+              </div>                
+            </li>
+            <li>
+              <header>
+                <h1>재난관리위험도</h1>
+              </header>
+              <div class="data_contents">
+                <header>
+                  <h2>대피장소 확보율 평가결과</h2>
+                  <p>지진 발생시 건물 붕괴, 화재 등 2차 피해로부터 안전을 확보하기 위해 일시적인 대피장소로 사용할 수 있도록 지정된 옥외공간의 확보율을 평가</p>
+                </header>
+                <dl>
+                  <dt>
+                    <strong>데이터명</strong>
+                    <p>대피장소 확보율 평가결과</p>
+                  </dt>
+                  <dd>
+                    <span><strong>단위</strong>행정동</span>
+                    <span><strong>차수</strong>차수명(년도 기재)</span>
+                    <p><strong>지역</strong>포항, 경주, 울산, 부산, 창원</p>
+                    <span><strong>구축일자</strong>2025.01</span>
+                    <div class="btn_wrap">
+                      <button type="button">XLSX</button>
+                    </div>                  
+                  </dd>
+                </dl>
+              </div>                
+              <div class="data_contents">
+                <header>
+                  <h2>임시주거 확보율 평가결과</h2>
+                  <p>지진·화재·홍수 등 재난 발생 시 거주지를 잃은 이재민이 일정 기간 머물 수 있도록 마련된 임시 생활공간의 확보율을 평가</p>
+                </header>
+                <dl>
+                  <dt>
+                    <strong>데이터명</strong>
+                    <p>임시주거 확보율 평가결과</p>
+                  </dt>
+                  <dd>
+                    <span><strong>단위</strong>행정동</span>
+                    <span><strong>차수</strong>차수명(년도 기재)</span>
+                    <p><strong>지역</strong>포항, 경주, 울산, 부산, 창원</p>
+                    <span><strong>구축일자</strong>2025.01</span>
+                    <div class="btn_wrap">
+                      <button type="button">XLSX</button>
+                    </div>                  
+                  </dd>
+                </dl>
+              </div>                
+              <div class="data_contents">
+                <header>
+                  <h2>소방시설위험도 평가결과</h2>
+                  <p>소방시설의 지진 후 수요 대비 공급량을 지역단위로 비교하여 행정구역별 방재역량 확보율을 평가</p>
+                </header>
+                <dl>
+                  <dt>
+                    <strong>데이터명</strong>
+                    <p>소방시설위험도 평가결과</p>
+                  </dt>
+                  <dd>
+                    <span><strong>단위</strong>행정동</span>
+                    <span><strong>차수</strong>차수명(년도 기재)</span>
+                    <p><strong>지역</strong>포항, 경주, 울산, 부산, 창원</p>
+                    <span><strong>구축일자</strong>2025.01</span>
+                    <div class="btn_wrap">
+                      <button type="button">XLSX</button>
+                    </div>                  
+                  </dd>
+                </dl>
+              </div>                
+              <div class="data_contents">
+                <header>
+                  <h2>의료시설위험도 평가결과</h2>
+                  <p>의료시설의 지진 후 수요 대비 공급량을 지역단위로 비교하여 행정구역별 방재역량 확보율을 평가</p>
+                </header>
+                <dl>
+                  <dt>
+                    <strong>데이터명</strong>
+                    <p>의료시설위험도 평가결과</p>
+                  </dt>
+                  <dd>
+                    <span><strong>단위</strong>행정동</span>
+                    <span><strong>차수</strong>차수명(년도 기재)</span>
+                    <p><strong>지역</strong>포항, 경주, 울산, 부산, 창원</p>
+                    <span><strong>구축일자</strong>2025.01</span>
+                    <div class="btn_wrap">
+                      <button type="button">XLSX</button>
+                    </div>                  
+                  </dd>
+                </dl>
+              </div>                
+              <div class="data_contents">
+                <header>
+                  <h2>재난안전대책본부위험도 평가결과</h2>
+                  <p>관할 행정구역별로 지정된 재난안전대책본부의 평가 결과를 관내 행정동에 동일하게 할당하여 평가</p>
+                </header>
+                <dl>
+                  <dt>
+                    <strong>데이터명</strong>
+                    <p>재난안전대책본부위험도 평가결과</p>
+                  </dt>
+                  <dd>
+                    <span><strong>단위</strong>행정동</span>
+                    <span><strong>차수</strong>차수명(년도 기재)</span>
+                    <p><strong>지역</strong>포항, 경주, 울산, 부산, 창원</p>
+                    <span><strong>구축일자</strong>2025.01</span>
+                    <div class="btn_wrap">
+                      <button type="button">XLSX</button>
+                    </div>                  
+                  </dd>
+                </dl>
+              </div>                
+            </li>
+          </ul>          
+        </article>
+      </div>  
+    </div>      
+  </main>
+  @@include('../inc/footer.html')
+</div>
+@@include('../inc/script.html')
+</body>
+</html>
