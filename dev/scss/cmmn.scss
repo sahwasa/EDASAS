@@ -436,14 +436,14 @@ border:1px solid #ccc;border-radius:5px;background-color: #fff; z-index:100;box-
 }
 .link_layer{position: relative;
   &:focus-within .layer{display:block;}
-  .layer{position:absolute;top:30px;right:0;width:850px;z-index:10;}
-  .tbl_wrap_scroll{max-height:calc(100vh - 475px);
+  .layer{position:absolute;top:30px;right:0;width:820px;z-index:10;}
+  .tbl_wrap_scroll{height:calc(100vh - 550px);min-height:210px;
     a{color:$blue;
       &:hover{text-decoration:underline;}
     }
   }
   .dash_lst{margin-top:3px;
-    li{font-size:12px;
+    li{font-size:12px;word-break:keep-all;
       &::before{top:50%;left:3px;margin-top:-1px;}
     }
   }
