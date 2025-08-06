@@ -388,28 +388,113 @@
             <div class="tool_wrap">
               <p class="info">본 작업은 건축물 기초 DB를 구축하기 위하여 건축물대장(표제부,층별개요), 토지대장,  GIS(일반집합건물정보)의 파일을 업로드 한다.</p>
               <div class="link_layer">
-                <button type="button" class="btn_orange">DB다운로드 링크</button>
+                <button type="button" class="btn_orange">데이터 다운로드 참고</button>
                 <div class="layer">
-                  <dl class="link_lst">
-                    <dt>GIS건축물정보</dt>
-                    <dd><a href="https://www.vworld.kr/dtmk/dtmk_ntads_s002.do?svcCde=NA&dsId=5" target="_blank">https://www.vworld.kr/</a></dd>
-                    <dd><small>GIS건물일반집합정보, 국토교통부</small></dd>
-                    <dt>건축물대장</dt>
-                    <dd><a href="https://www.hub.go.kr/portal/psg/idx-arch-data-sub.do" target="_blank">https://www.hub.go.kr</a></dd>
-                    <dd><small>건축물대장, 국토교통부</small></dd>
-                    <dt>유효토지면적</dt>
-                    <dd><a href="https://www.vworld.kr/dtmk/dtmk_ntads_s002.do?svcCde=NA&dsId=4" target="_blank">https://www.vworld.kr/</a></dd>
-                    <dd><small>토지특성정보, 국토교통부</small></dd>
-                    <dt>하천</dt>
-                    <dd><a href="https://www.vworld.kr/dtmk/dtmk_ntads_s002.do?svcCde=MK&dsId=30441" target="_blank">https://www.vworld.kr/</a></dd>
-                    <dd><small>(연속주제)_하천/용도구역, 국토교통부</small></dd>
-                    <dt>취락지구</dt>
-                    <dd><a href="https://www.vworld.kr/dtmk/dtmk_ntads_s002.do?svcCde=MK&dsId=30311o" target="_blank">https://www.vworld.kr/</a></dd>
-                    <dd><small>(연속주제)_국토계획/취락지구, 국토교통부</small></dd>
-                    <dt>공원</dt>
-                    <dd><a href="https://www.vworld.kr/dtmk/dtmk_ntads_s002.do?svcCde=MK&dsId=30068" target="_blank">https://www.vworld.kr/</a></dd>
-                    <dd><small>공간시설(현황)_공원, 국토교통부</small></dd>
-                  </dl>
+                  <div class="tbl_wrap tbl_wrap_scroll">
+                    <table class="tbl_default">
+                      <thead>
+                        <tr>
+                          <th scope="col">데이터명</th>
+                          <th scope="col">단위</th>
+                          <th scope="col">데이터포맷</th>
+                          <th scope="col">주요 내용</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <th scope="row">건축물대장(표제부)</th>
+                          <td>전국</td>
+                          <td>TXT</td>
+                          <td>
+                            <blockquote cite="https://www.hub.go.kr/">                
+                            (국토교통부 건축HUB) <a href="https://www.hub.go.kr/portal/psg/idx-arch-data-sub.do" target="_blank">https://www.hub.go.kr</a></blockquote>
+                            <ul class="dash_lst">
+                              <li>경로 : 홈 > 원하는대로 건축데이터 > 대용량 데이터 제공 > 건축물대장 ’표제부(00년 00월)’ > 전체 다운로드</li>
+                              <li>다운로드 파일 : 국토교통부_건축물대장_표제부+(0000년+00월).zip</li>
+                            </ul>                          
+                          </td>
+                        </tr>
+                        <tr>
+                          <th scope="row">건축물대장(층별개요)</th>
+                          <td>전국</td>
+                          <td>TXT</td>
+                          <td>
+                            <blockquote cite="https://www.hub.go.kr/">                
+                            (국토교통부 건축HUB) <a href="https://www.hub.go.kr/portal/psg/idx-arch-data-sub.do" target="_blank">https://www.hub.go.kr</a></blockquote>
+                            <ul class="dash_lst">
+                              <li>경로 : 홈 > 원하는대로 건축데이터 > 대용량 데이터 제공 > 건축물대장 ’층별개요(00년 00월)’ > 전체 다운로드</li>
+                              <li>다운로드 파일 : 국토교통부_건축물대장_층별개요+(0000년+00월).zip</li>
+                            </ul>                          
+                          </td>
+                        </tr>
+                        <tr>
+                          <th scope="row">GIS건물일반집합정보</th>
+                          <td>시도별</td>
+                          <td>SHP</td>
+                          <td>
+                            <blockquote cite="https://www.vworld.kr/">                
+                            (국토교통부 브이월드) <a href="https://www.vworld.kr/" target="_blank">https://www.vworld.kr/</a></blockquote>
+                            <ul class="dash_lst">
+                              <li>경로 : 홈 > 다운로드 > 공간정보 다운로드 > 국토관리 지역개발-건물시설 ‘GIS건물일반집합정보’ > 다운로드</li>
+                              <li>다운로드 파일 : GIS건물일반공간정보(AL_D162_시도코드*.zip), GIS건물집합공간정보(AL_D164_시도코드*.zip)</li>
+                            </ul>                          
+                          </td>
+                        </tr>
+                        <tr>
+                          <th scope="row">토지특성정보</th>
+                          <td>시군구별</td>
+                          <td>SHP</td>
+                          <td>
+                            <blockquote cite="https://www.vworld.kr/">                
+                            (국토교통부 브이월드) <a href="https://www.vworld.kr/" target="_blank">https://www.vworld.kr/</a></blockquote>
+                            <ul class="dash_lst">
+                              <li>경로 : 홈 > 다운로드 > 공간정보 다운로드 > 국토관리 지역개발-토지 ‘토지특성공간정보’ > 다운로드</li>
+                              <li>다운로드 파일 : AL_D194_시군구코드*.zip</li>
+                            </ul>                          
+                          </td>
+                        </tr>
+                        <tr>
+                          <th scope="row">공원정보</th>
+                          <td>전국</td>
+                          <td>SHP</td>
+                          <td>
+                            <blockquote cite="https://www.vworld.kr/">                
+                            (국토교통부 브이월드) <a href="https://www.vworld.kr/" target="_blank">https://www.vworld.kr/</a></blockquote>
+                            <ul class="dash_lst">
+                              <li>경로 : 홈 > 다운로드 > 공간정보 다운로드 > 국토관리 지역개발-건물시설 ‘공간시설(현황)(shp)’ > 다운로드</li>
+                              <li>다운로드 파일 : Z_UPIS_C_UQ153.zip</li>
+                            </ul>                          
+                          </td>
+                        </tr>
+                        <tr>
+                          <th scope="row">하천정보</th>
+                          <td>시도별</td>
+                          <td>SHP</td>
+                          <td>
+                            <blockquote cite="https://www.vworld.kr/">                
+                            (국토교통부 브이월드) <a href="https://www.vworld.kr/" target="_blank">https://www.vworld.kr/</a></blockquote>
+                            <ul class="dash_lst">
+                              <li>경로 : 홈 > 다운로드 > 공간정보 다운로드 > 국토관리 지역개발-용도지역지구 ‘(연속주제)_소하천/소하천구역’ > 다운로드</li>
+                              <li>다운로드 파일 : LSMD_CONT_UJ301_시도명.zip</li>
+                            </ul>                          
+                          </td>
+                        </tr>
+                        <tr>
+                          <th scope="row">취락지구</th>
+                          <td>시도별</td>
+                          <td>SHP</td>
+                          <td>
+                            <blockquote cite="https://www.vworld.kr/">                
+                            (국토교통부 브이월드) <a href="https://www.vworld.kr/" target="_blank">https://www.vworld.kr/</a></blockquote>
+                            <ul class="dash_lst">
+                              <li>홈 > 다운로드 > 공간정보 다운로드 > 국토관리 지역개발-용도지역지구 ‘(연속주제)_국토계획/취락지구’ > 다운로드</li>
+                              <li>다운로드 파일 : LSMD_CONT_UQ128_시도명.zip</li>
+                            </ul>                          
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>                  
                 </div>
               </div>             
             </div>
@@ -1158,7 +1243,7 @@ $('.step_lst li').off('click').on('click', function (e) {
   findTarget.find('.tab_contents').hide()
   $(link).show();
 });
-document.querySelector('#p_download').showPopover();
+// document.querySelector('#p_download').showPopover();
 </script>
 </body>
 </html>
