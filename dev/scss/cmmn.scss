@@ -1390,7 +1390,7 @@ details[open]>summary::after{margin-left:auto;content:'\e86a';}
   &:not(:last-of-type){border-bottom:1px solid $lightgray;}
   header{padding:12px 25px;background:url(../images/bg_dashline.png) 0 100% repeat-x;}
   h2{min-width:225px;}
-  dl{display:grid;align-items:stretch;grid-template-columns:auto 1fr;width:100%;row-gap:18px;column-gap:75px;padding:20px 25px;}
+  dl{display:grid;align-items:stretch;grid-template-columns:auto 1fr;width:100%;row-gap:18px;column-gap:80px;padding:20px 25px;}
   dd{grid-column-start:2;display:flex;justify-content:flex-end;align-items:flex-start;gap:30px;
     strong{display:block;font-size:13px;}
     span{flex:1;max-width:180px;font-size:16px;}
