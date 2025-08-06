@@ -1262,6 +1262,7 @@ details[open]>summary::after{margin-left:auto;content:'\e86a';}
       h2{font-size:13px;}
     }
   }
+  &:has(.public_facility){min-width:430px;}
   .lst_public_facility{max-width:$maxW;
     .lst_type{display:grid;grid-template-columns:repeat(3, 1fr);flex-wrap:wrap;gap:3px;
       li{background-color:$bggray;border-radius:5px;font-size:12px;
@@ -1281,7 +1282,7 @@ details[open]>summary::after{margin-left:auto;content:'\e86a';}
         strong{margin:-2px 0 0 3px}
       }
     }
-    .tbl_wrap_scroll{height:314px;border-top-width:1px;
+    .tbl_wrap_scroll{max-height:314px;height:auto;border-top-width:1px;
       tbody tr:first-of-type td{border-top-width:0;}
     }
   }
