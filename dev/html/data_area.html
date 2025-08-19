@@ -26,6 +26,7 @@
         </ul>
         <button type="button" class="btn_blue_line">검색</button>
         <div class="tool">
+          <button type="button" class="btn_blue" popovertarget="p_addArea">추가</button>
           <button type="button" class="btn_blue">다운로드</button>
         </div>
       </div>
@@ -43,6 +44,7 @@
               <th scope="col">위도</th>
               <th scope="col">경도</th>
               <th scope="col">사용여부</th>
+              <th scope="col">수정</th>
             </tr>
           </thead>
           <tbody>
@@ -53,6 +55,7 @@
               <td></td>
               <td></td>
               <td>Y</td>
+              <td><button type="button" class="btn_gray_line">수정</button></td>
             </tr>            
             <tr>             
               <td>시군구</td>
@@ -61,6 +64,7 @@
               <td></td>
               <td></td>
               <td>Y</td>
+              <td><button type="button" class="btn_gray_line">수정</button></td>
             </tr>            
             <tr>             
               <td>읍면동</td>
@@ -69,6 +73,7 @@
               <td></td>
               <td></td>
               <td>N</td>
+              <td><button type="button" class="btn_gray_line">수정</button></td>
             </tr>            
           </tbody>
         </table>       
@@ -78,6 +83,43 @@
   </main>
   @@include('../inc/footer.html')
 </div>
+<dialog id="p_addArea" class="p_addArea line_style" style="--width:600px" popover="manual">
+  <form method="dialog">
+    <header class="p_header tit">
+      <h1>행정구역 추가 및 수정</h1>
+      <div class="tool_wrap">
+        <button type="button" class="btn_close" popovertarget="p_addArea" popvertargetaction="hide">닫기</button>
+      </div>
+    </header>
+    <section class="p_body">
+      <ul class="ipt_lst inline">
+        <li><label for="">레벨</label>
+          <select name="" id="">
+            <option value="">시도</option>
+            <option value="">시군구</option>
+            <option value="">읍면동</option>
+          </select>
+        </li>
+        <li><label for="">코드</label><input type="text"></li>
+        <li><label for="">행정구역명</label><input type="text"></li>
+        <li><label for="">위도</label><input type="text"></li>
+        <li><label for="">경도</label><input type="text"></li>
+        <li><strong class="label">사용여부</strong>
+          <ul class="btn_switch useYN">
+            <li><input type="radio" id="use" name="useYN" checked><label for="use">사용</label></li>
+            <li><input type="radio" id="notuse" name="useYN"><label for="notuse">사용안함</label></li>
+          </ul>
+        </li>
+      </ul>
+    </section>
+    <section class="p_foot">
+      <button type="submit" class="btn_foot_blue">저장</button>
+      <!-- 마지막 차수만 수정가능 -->
+      <button type="submit" class="btn_foot_blue">수정</button>
+      <button type="button" class="btn_foot_gray" popovertarget="p_addArea" popvertargetaction="hide">닫기</button>
+    </section>
+  </form>
+</dialog>
 @@include('../inc/script.html')
 </body>
 </html>
