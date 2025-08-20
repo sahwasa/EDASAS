@@ -83,7 +83,7 @@
   </main>
   @@include('../inc/footer.html')
 </div>
-<dialog id="p_addArea" class="p_addArea line_style" style="--width:600px" popover="manual">
+<dialog id="p_addArea" class="p_addArea line_style" style="--width:650px" popover="manual" open>
   <form method="dialog">
     <header class="p_header tit">
       <h1>행정구역 추가 및 수정</h1>
@@ -91,25 +91,38 @@
         <button type="button" class="btn_close" popovertarget="p_addArea" popvertargetaction="hide">닫기</button>
       </div>
     </header>
-    <section class="p_body">
-      <ul class="ipt_lst inline">
-        <li><label for="">레벨</label>
+    <section class="p_body layout_vertical">
+      <ul class="ipt_grid inline">
+        <li><label for="">시도</label>
           <select name="" id="">
-            <option value="">시도</option>
-            <option value="">시군구</option>
-            <option value="">읍면동</option>
+            <option value="">부산</option>
           </select>
         </li>
-        <li><label for="">코드</label><input type="text"></li>
+        <li><label for="">시군구</label>
+          <select name="" id="">
+            <option value="">시군구</option>
+          </select>
+        </li>
+        <li><label for="">행정구역코드</label><input type="text"></li>
         <li><label for="">행정구역명</label><input type="text"></li>
-        <li><label for="">위도</label><input type="text"></li>
-        <li><label for="">경도</label><input type="text"></li>
+        <li><label for="">생성일자</label><input type="date"></li>
+        <li><label for="">폐기일자</label><input type="date"></li>
+        <li class="grid_full">
+          <label for="">GEOMATRY ( 좌표계 5186 텍스트 좌표 )</label>
+          <button type="button" class="btn_gray_line">GEO 검증</button>
+          <textarea name="" id="" wrap="soft" class="full"></textarea>
+          <p class="info">좌표계는 반드시 5186 좌표계를 사용하여야 합니다.</p>
+        </li>
         <li><strong class="label">사용여부</strong>
           <ul class="btn_switch useYN">
             <li><input type="radio" id="use" name="useYN" checked><label for="use">사용</label></li>
             <li><input type="radio" id="notuse" name="useYN"><label for="notuse">사용안함</label></li>
           </ul>
         </li>
+      </ul>      
+      <ul class="renewal_lst">
+        <li><em>등록일시 :</em> 2025-05-04 12:34:45 (관리자)</li>
+        <li><em>갱신일시 :</em> 2025-05-04 12:34:45 (관리자)</li>
       </ul>
     </section>
     <section class="p_foot">

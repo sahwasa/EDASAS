@@ -23,6 +23,8 @@ b,em,strong{display:inline-block;font-weight:700;color:#000;}
 
 //func
 .blind{@include blind;}
+.full{@include full;}
+.layout_vertical{display:flex;flex-direction:column;gap:20px;}
 
 body.wait-cursor * {cursor:wait!important;}
 // color

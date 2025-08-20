@@ -8,7 +8,7 @@ dialog,:modal{margin:auto;padding:20px;border:none;box-shadow: 1.4px 1.4px 29px 
     }
   }
   .p_body{max-height:calc(100vh - 240px);overflow-y:auto;font-size:13px;letter-spacing:-0.33px;}
-  .p_foot{display: flex;justify-content: flex-end;align-items: center;gap:3px;margin-top:8px;}
+  .p_foot{display:flex;justify-content:flex-end;align-items:center;gap:3px;margin-top:8px;}
   &::backdrop{background:rgb(190 190 190 / 50%);}  
 }
 .line_style{
@@ -16,7 +16,9 @@ dialog,:modal{margin:auto;padding:20px;border:none;box-shadow: 1.4px 1.4px 29px 
     h1{font-size:22px;}
     .btn_close::before{font-size:20px;}
   }
-  .p_foot{margin-top:40px;}
+  .p_foot{margin-top:40px;
+    .renewal{font-size:11px;color:$gray;}
+  }
 }
 .p_areaSelect{$border_color:#cbcbcb;
   %tit{background-color:#f9fafc;border-bottom:1px solid $border_color;line-height:37px;font-weight:700;color:#000;padding:0 15px;margin-bottom:0;}
@@ -61,7 +63,6 @@ dialog,:modal{margin:auto;padding:20px;border:none;box-shadow: 1.4px 1.4px 29px 
   .legend_body{grid-area:legend;justify-self: center;}
   .pie_graphwrap{grid-area:pie;.pie{--w:100px}}
   .meter_wrap{grid-area:meter;}
-
   .heatmap_wrap{display:grid;grid-template-columns:1fr 1fr;gap:$maingap;margin-top:40px;}
   .tbl_wrap{margin-top:$maingap;}
   .tit + .tbl_wrap{margin-top:0;}
