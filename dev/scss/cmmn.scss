@@ -1265,20 +1265,22 @@ details[open]>summary::after{margin-left:auto;content:'\e86a';}
   &:has(.area_lst) .dot_lst{border-bottom:1px solid #ccc;}
   .area_lst{margin:10px 0 40px;gap:30px;
     label{flex:0 0 105px;text-align:left;}
-    meter{position:relative;height:20px;z-index:10;
+    meter{position:relative;height:20px;
       &::before{position:absolute;top:50%;left:0;@include shape(100%, 15px);border:1px solid $lightgray;border-width:0 1px;margin-top:-7px;}
+      &::-webkit-meter-optimum-value{background-color:#0078D7;border-radius:0;}
+      &::-webkit-meter-bar{background-color:$gray;}
+      &::before{width:0;left:auto;right:calc(100% - var(--val, 0) - 2px);border-left-width:0;border-left:2px solid $red;border-right:1px solid #00000050;height:20px;margin-top:-10px;z-index:50;}
+      &::after{padding-right:3px;font-size:12px;color:#fff;@include textStroke($color:#000);}
     }
     li{gap:5px;padding-left:0;
-      &::after{position:absolute;top:50%;right:0;@include shape(calc(100% - 111px), 0);border-top:1px solid $lightgray;}
+      // &::after{position:absolute;top:50%;right:0;@include shape(calc(100% - 111px), 0);border-top:1px solid $lightgray;}
     }
-    span{position:absolute;margin-left:110px;top:18px;font-size:11px;z-index:20;
-      b{display:block;line-height:1;}
+    span{position:absolute;margin-left:110px;top:20px;font-size:11px;z-index:20;
+      b{display:block;line-height:1.2;color:$black;}
     }
     .max{right:0;text-align:right;}
-    .avg{left: calc((100% - 110px) * var(--avg, 0));
-    }
-    .mid,.avg{
-      &::before{@include shape(0,15px);border-left:1px solid $lightgray;position:absolute;top:-15px;}
+    .mid,.avg{left: calc((100% - 110px) * var(--avg, 0));transform:translateX(-50%);text-align:center;
+      &::before{@include shape(0,20px);border-left:1px solid $black;border-right:1px solid #ffffff80;position:absolute;top:-20px;left:50%;}
     }
   }
   .btn_del{position:absolute;right:10px;top:14px;
