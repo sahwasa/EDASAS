@@ -1295,14 +1295,14 @@ details[open]>summary::after{margin-left:auto;content:'\e86a';}
     .max{right:0;text-align:right;}
     .area,.mid,.avg{left: calc((100% - $labelW) * (var(--avg, 0) / 100));transform:translateX(-50%);text-align:center;z-index:10;
       &::before{position:absolute;top:-20px;@include shape(0,20px);border-left:1px solid #000;border-right:1px solid rgba(255,255,255,.8);}
-    }
-    .mid{left: calc((100% - $labelW) * (var(--mid, 0) / 100));
-      &::before{height:10px;top:-15px;border-left-color:#fff;border-right-width:0;}
-    }
-    .area{left: calc((100% - $labelW) * (var(--val, 0) / 100) - 7px);
+    }   
+    .mid,.area{left: calc((100% - $labelW) * (var(--val, 0) / 100) - 7px);
       &::before{top:-24px;width:14px;height:14px;background-color:$red;border-radius:0 95% 45% 50% / 0 50% 45% 95%;transform: rotate(-135deg);
       box-shadow:-1px 1px 0px 0 rgba(0, 0, 0, .5), 0 0 2px 1px rgba(255, 255, 255, .5) inset;cursor:pointer;z-index:50;}
       b{@include f-blind;}
+    }
+    .mid{left: calc((100% - $labelW) * (var(--mid, 0) / 100));
+      &::before{background-color:$blue;}
     }
   }
   .btn_del{position:absolute;right:10px;top:14px;
