@@ -1235,8 +1235,7 @@ details[open]>summary::after{margin-left:auto;content:'\e86a';}
   &.align_r + .layer{left:auto;right:0;}
   &:focus-within + .layer{display:block;}
 }
-.layer{display:none;position:absolute;min-width:230px;background-color:#fff;border-radius:5px;padding:10px;border:1px solid #b4b4b4;box-shadow:0 2px 9px rgba(0, 0, 0, .22);z-index:80;
-  $maxW : 400px;
+.layer{display:none;position:absolute;min-width:420px;background-color:#fff;border-radius:5px;padding:10px;border:1px solid #b4b4b4;box-shadow:0 2px 9px rgba(0, 0, 0, .22);z-index:80;
   & > strong{color:$blue;margin-bottom:5px;font-size:16px;}
   .desc{display:flex;align-items:center;gap:5px;font-size:11px;color:$gray;margin-bottom:10px;line-height:1;}
   dt{text-align:right;background-color:#f5f5f5;padding:5px;
@@ -1246,7 +1245,7 @@ details[open]>summary::after{margin-left:auto;content:'\e86a';}
     em{flex:1;text-align:right;margin-left:25px;}
   }
   .dot_lst{gap:5px;padding-bottom:5px;}
-  .flex_wrap{gap:15px;max-width:$maxW;}
+  .flex_wrap{gap:15px;}
   &:has(.lst_public_facility) .flex_wrap{margin-bottom:10px;}
   .pie_graphwrap{flex:1;}
   .pie{--w:100px;--b:10px;margin:0 0 10px;
@@ -1264,7 +1263,8 @@ details[open]>summary::after{margin-left:auto;content:'\e86a';}
   }
   &:has(.area_lst) .dot_lst{border-bottom:1px solid #ccc;}
   .area_lst{margin:10px 0 40px;gap:35px;
-    label{flex:0 0 105px;text-align:left;}
+    $labelW:120px;
+    label{flex:0 0 calc($labelW - 5px);text-align:left;}
     $meterColor:$blue;
     $q1:calc(var(--q1) * 1%);
     meter{position:relative;height:20px;appearance:none;border:1px solid $gray;border-width:0 1px;
@@ -1275,17 +1275,17 @@ details[open]>summary::after{margin-left:auto;content:'\e86a';}
       &::after{display:none;}
     }
     li{gap:5px;padding-left:0;}
-    span{position:absolute;margin-left:110px;top:20px;font-size:11px;
+    span{position:absolute;margin-left:$labelW;top:20px;font-size:11px;
       b{display:block;line-height:1.2;color:$black;}
     }
     .max{right:0;text-align:right;}
-    .area,.mid,.avg{left: calc((100% - 110px) * (var(--avg, 0) / 100));transform:translateX(-50%);text-align:center;z-index:10;
+    .area,.mid,.avg{left: calc((100% - $labelW) * (var(--avg, 0) / 100));transform:translateX(-50%);text-align:center;z-index:10;
       &::before{position:absolute;top:-20px;@include shape(0,20px);border-left:1px solid #000;border-right:1px solid rgba(255,255,255,.8);}
     }
-    .mid{left: calc((100% - 110px) * (var(--mid, 0) / 100));
+    .mid{left: calc((100% - $labelW) * (var(--mid, 0) / 100));
       &::before{height:10px;top:-15px;border-left-color:#fff;border-right-width:0;}
     }
-    .area{left: calc((100% - 110px) * (var(--val, 0) / 100) - 7px);
+    .area{left: calc((100% - $labelW) * (var(--val, 0) / 100) - 7px);
       &::before{top:-24px;width:14px;height:14px;background-color:$red;border-radius:0 95% 45% 50% / 0 50% 45% 95%;transform: rotate(-135deg);
       box-shadow:-1px 1px 0px 0 rgba(0, 0, 0, .5), 0 0 2px 1px rgba(255, 255, 255, .5) inset;cursor:pointer;z-index:50;}
       b{@include f-blind;}
@@ -1299,8 +1299,7 @@ details[open]>summary::after{margin-left:auto;content:'\e86a';}
       h2{font-size:13px;}
     }
   }
-  &:has(.public_facility){min-width:420px;}
-  .lst_public_facility{max-width:$maxW;
+  .lst_public_facility{
     .lst_type{display:grid;grid-template-columns:repeat(3, 1fr);flex-wrap:wrap;gap:3px;
       li{background-color:$bggray;border-radius:5px;font-size:12px;
         button{display:flex;align-items:flex-start;gap:5px;width:100%;height:100%;padding:2px 3px;text-align:left;word-break:keep-all;line-height:1.2;}
