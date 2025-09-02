@@ -1218,13 +1218,27 @@ details[open]>summary::after{margin-left:auto;content:'\e86a';}
     li{display:flex;align-items:center;gap:8px;position:relative;font-weight:normal;font-size:12px;}
   }
   .symbols li{line-height:2.2;}
-  .public_facility{counter-reset:symbolNum;column-count:2;column-gap:8px;
+  .public_facility{counter-reset:symbolNum;column-count:2;column-gap:8px;border-radius:5px 5px 0 0;
     li{line-height:1.2;
       input{order:-1;margin-top:1px;}
       label{gap:3px;align-items:flex-start;padding:5px 0;letter-spacing:-.07em;word-break:keep-all;
         &::before{@include shape(15px, 15px);flex-shrink:0;text-align:center;counter-increment:symbolNum;content:counter(symbolNum);font-size:10px;background-color:#666;color:#fff;border-radius:50%;line-height:15px;text-indent:-1px;}
       }
     }
+  }
+  .sub_type:has(.seismic_legend){border-top:1px dashed #d3d3d3;border-radius:0 0 5px 5px;
+    strong{background-color:#89A6D6;border-radius:10px;padding:0 10px;color:#fff;}
+  }
+  .seismic_legend{padding-left:5px;color:#545f6b;
+    dt{display:flex;gap:3px;align-items:center;font-weight:600;margin-top:5px;
+      &::before{@include shape(15px, 15px);border-radius:50%;content:"n";font-size:10px;color:#fff;text-align:center;border:1px solid #fff;box-shadow: 2px 1px 1px rgba(0, 0, 0, 0.5);line-height:1.2;}
+      &:first-of-type::before{background-color:$green;}
+      &:last-of-type::before{background-color:$orange;}
+    }
+    dd{padding-left:12px;font-size:12px;
+      &::before{content:"-";margin-right:3px;}
+    }
+
   }
   .lst_ctrl{padding:0 10px;}  
   .layer{right:0;top:25px;width:100%;}
