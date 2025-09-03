@@ -141,7 +141,7 @@ $navH:315px;
 }
 .nav{height:100%;}
 .nav_lst{display:flex;height:100%;align-items:center;
-  & > li{width:180px;position:relative;height:100%;z-index:300;
+  & > li{min-width:190px;position:relative;height:100%;z-index:300;
     &:first-child .sub{border-left:1px solid #e4e5e9;}
     & > a{position:relative;top:1px;display:flex;align-items:center;justify-content:center;height:100%;font-weight:700;font-size:18px;padding:0 15px;border-bottom:3px solid transparent;
       &.on{color:$blue;border-color:$blue;}
@@ -1229,13 +1229,15 @@ details[open]>summary::after{margin-left:auto;content:'\e86a';}
   .sub_type:has(.seismic_legend){border-top:1px dashed #d3d3d3;border-radius:0 0 5px 5px;
     strong{background-color:#89A6D6;border-radius:10px;padding:0 10px;color:#fff;}
   }
-  .seismic_legend{padding-left:5px;color:#545f6b;
-    dt{display:flex;gap:3px;align-items:center;font-weight:600;margin-top:5px;
-      &::before{@include shape(15px, 15px);border-radius:50%;content:"n";font-size:10px;color:#fff;text-align:center;border:1px solid #fff;box-shadow: 2px 1px 1px rgba(0, 0, 0, 0.5);line-height:1.2;}
+  .seismic_legend{display:grid;grid-template-columns:70px 1fr;column-gap:15px; padding-left:5px;color:#545f6b;margin-top:5px;
+    dt{display:flex;gap:5px;font-weight:600;line-height:1.2;margin-top:2px;
+      &::before{@include shape(15px, 15px);flex-shrink:0;border-radius:50%;content:"n";font-size:10px;color:#fff;text-align:center;border:1px solid #fff;box-shadow: 2px 1px 1px rgba(0, 0, 0, 0.5);line-height:1.2;vertical-align:middle;}
       &:first-of-type::before{background-color:$green;}
-      &:last-of-type::before{background-color:$orange;}
+      &:last-of-type{grid-row:4 / 2 span;
+        &::before{background-color:$orange;}
+      }
     }
-    dd{padding-left:12px;font-size:12px;
+    dd{grid-column-start:2;font-size:12px;
       &::before{content:"-";margin-right:3px;}
     }
 

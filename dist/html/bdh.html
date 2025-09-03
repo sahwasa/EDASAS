@@ -17,7 +17,7 @@
   <h1 class="main_logo"><a href="../html/main.html?index=1,1">지진재해 지역위험도 평가 시스템</a></h1>
   <nav class="nav">
     <ul class="nav_lst">
-      <li><a href="../html/main.html">지역위험도 평가</a>
+      <li><a href="../html/main.html">지진재해 지역위험도</a>
         <ul class="sub">
           <li><a href="../html/main.html">종합위험도 평가</a></li>
           <li><a href="../html/bdh.html">건축물피해위험도 평가</a></li>
@@ -359,14 +359,14 @@
                   <dl>
                     <dt>건축 설계구조</dt>
                     <dd>
-                      <label for="C1"><input type="checkbox" id="C1">콘크리트모멘트골조</label>
+                      <label for="C1"><input type="checkbox" id="C1">콘크리트모멘트골조<b>(C2)</b></label>
                       <label for="C2"><input type="checkbox" id="C2">무보강조적채움벽이 있는 콘크리트모멘트골조</label>
                       <label for="C3"><input type="checkbox" id="C3">콘크리트전단벽</label>
                       <label for="C4"><input type="checkbox" id="C4">콘크리트전단벽이 있는 콘크리트모멘트골조</label>
                       <label for="PC1"><input type="checkbox" id="PC1">프리캐스트 콘크리트전단벽</label>
-                      <label for="PC2"><input type="checkbox" id="PC2">콘크리트전단벽이 있는 프리캐스트콘크리트모멘트골조</label>
+                      <label for="PC2"><input type="checkbox" id="PC2"><span>콘크리트전단벽이 있는 프리캐스트콘크리트모멘트골조<b>(C2)</b></span></label>
                       <label for="S1"><input type="checkbox" id="S1">철골모멘트골조</label>
-                      <label for="S2"><input type="checkbox" id="S2">철골가새가 있는 철골모멘트골조</label>
+                      <label for="S2"><input type="checkbox" id="S2">철골가새가 있는 철골모멘트골조(C2)</label>
                       <label for="S3"><input type="checkbox" id="S3">콘크리트전단벽이 있는 철골모멘트골조</label>
                       <label for="S4"><input type="checkbox" id="S4">철골철근콘크리트구조</label>
                       <label for="C5"><input type="checkbox" id="C5">필로티형 콘크리트전단벽</label>
@@ -565,14 +565,13 @@
                   <span class="avg" style="--avg:20.7559">
                     <b>평균</b>6.8
                   </span>                  
+                  <span class="mid" style="--mid:12.46" title="중앙값:50">
+                    <b>중앙값 : 50</b>
+                  </span>                  
                   <span class="area" style="--val:12.46" title="다운동 :3.91">
                     <b>다운동 : 3.91</b>
                   </span>                  
-                  <span class="mid" style="--mid:50" title="중앙값:50">
-                    <b>중앙값 : 50</b>
-                  </span>                  
-                </li>          
-                
+                </li>
               </ul>              
 
               <section class="public_facility">
@@ -858,7 +857,7 @@
           <li><label for=""><input type="checkbox" id="" name="public_facility">공급시설</label></li>
         </ul>
         <div class="sub_type">
-          <strong>내진판정결과</strong>
+          <strong class="blind">내진판정결과</strong>
           <dl class="seismic_legend">
             <dt>내진양호</dt>
             <dd>내진설계적용</dd>
