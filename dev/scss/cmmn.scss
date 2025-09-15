@@ -1035,28 +1035,35 @@ details[open]>summary::after{margin-left:auto;content:'\e86a';}
 @keyframes p{from{--p:0}}
 .meter_area{display:flex;flex-direction:column;}
 .meter_wrap{position:relative;margin:20px 0 44px;
+  &:has(.chart_total){
+    .area_lst li{padding-left:90px;}
+    label{flex:0 0 70px;}
+    meter{
+      @each $type, $val in $_safetyGrade{
+        &.#{$type}::-webkit-meter-optimum-value{background-color:$val;}
+      }
+    }
+    .meter_unit{width:calc(100% - 165px);}
+  }
   .chart_total{position:absolute;left:0;}
   &.dtl{
     li:not(.sigungu) label{color:#8b8b8b;}
   }  
 }
 .area_lst{display:flex;flex-direction:column;padding:3px 0;
-  li{position:relative;display:flex;gap:5px;align-items:center;padding-left:90px;
-    label{flex:0 0 70px;font-size:12px;text-align:right;line-height:1.2;}
+  li{position:relative;display:flex;gap:5px;align-items:center;
+    label{flex:0 0 120px;font-size:12px;text-align:right;line-height:1.2;}
     meter{position:relative;flex:1;height:23px;
       &::-webkit-meter-bar{border:none;background-color:transparent;border-radius:0;}
-      &::-webkit-meter-optimum-value{border-radius:0 3px 3px 0;}
-      @each $type, $val in $_safetyGrade{
-        &.#{$type}::-webkit-meter-optimum-value{background-color:$val;}
+      &::-webkit-meter-optimum-value{border-radius:0 3px 3px 0;}      
+      &::after{line-height:23px;content:attr(value);position:absolute;right:calc(100% - max(var(--val, 0), 6%) + 3px);top:50%;transform:translateY(-51%);font-size:11px;font-weight:700;letter-spacing:-.5px;@include textStroke();  
       }
-      &::after{line-height:23px;content:attr(value);position:absolute;right:calc(100% - max(var(--val,0), 6%) + 3px);top:50%;transform:translateY(-51%);font-size:11px;font-weight:700;letter-spacing:-.5px;@include textStroke();  
-      }
-    }
-  }
+    }    
+  } 
   .average{label{color:#8b8b8b;}}
 }
 .meter_unit{$border_color:$lightgray;
-  position:absolute;right:0;top:0;width:calc(100% - 165px);height:100%;border-bottom:1px solid $border_color;color:#8b8b8b;font-size:11px;
+  position:absolute;right:0;top:0;width:calc(100% - 124px);height:100%;border-bottom:1px solid $border_color;color:#8b8b8b;font-size:11px;
   strong{position:absolute;bottom:-44px;left:50%;transform: translateX(-50%);}
   ul{display:flex;justify-content:space-between;align-items:stretch;height:calc(100% + 4px);}
   li{display:flex;justify-content:center; position:relative;flex:1;border-left:1px solid $border_color;
@@ -1064,7 +1071,52 @@ details[open]>summary::after{margin-left:auto;content:'\e86a';}
     &:not(:last-child)::after{@include shape(0, 100%);border-right:1px dashed $border_color;}
     span{position:absolute;bottom:-20px;left:-11px;width:20px;white-space:nowrap;font-weight:700;text-align:center;}
   }
+  .avg{position:absolute;left:var(--avg);top:-3px;text-align:center;width:0;height:calc(100% + 8px);border-left:1px dashed $red;border-right:1px dashed #fff;z-index:500;
+    span{display:block;width:fit-content;transform:translate(-50%, -30px);white-space:nowrap;}
+    b{display:block;line-height:1.2;}
+  }
 }
+.base_data{
+  .meter_wrap{margin:50px 10px 44px 0;}
+  .area_lst{
+    label strong{min-width:48px;background-color:#8890a3;color:#fff;float:left;padding:1px 3px;border-radius:3px;font-size:11px;text-align:center;font-weight:normal;}
+  }
+  meter{
+    &.self::-webkit-meter-optimum-value{background-color:#85b0ff;}
+    &.min::-webkit-meter-optimum-value{background-color:#89e9cb;}
+    &.max::-webkit-meter-optimum-value{background-color:#da9dff;}
+  }
+}
+.boxplot{margin:10px 0 40px;gap:35px;
+  $labelW:120px;
+  li label{flex:0 0 calc($labelW - 5px);text-align:left;}
+  $meterColor:$blue;
+  $q1:calc(var(--q1) * 1%);
+  meter{position:relative;height:20px;appearance:none;border:1px solid $gray;border-width:0 1px;
+    &::-webkit-meter-optimum-value{background-size:100%;border-radius:0;
+    background-image:linear-gradient(90deg, transparent $q1, $meterColor $q1, $meterColor 100%);}
+    &::-webkit-meter-bar{background:transparent;}
+    &::before{position:absolute;left:0;right:0;top:50%;@include shape(100%, 0);border-top:1px solid $gray;}
+    &::after{display:none;}
+  }
+  li{gap:5px;}
+  span{position:absolute;margin-left:$labelW;top:20px;font-size:11px;
+    b{display:block;line-height:1.2;color:$black;}
+  }
+  .max{right:0;text-align:right;}
+  .area,.mid,.avg{left: calc((100% - $labelW) * (var(--avg, 0) / 100));transform:translateX(-50%);text-align:center;z-index:10;
+    &::before{position:absolute;top:-20px;@include shape(0,20px);border-left:1px solid #000;border-right:1px solid rgba(255,255,255,.8);}
+  }   
+  .mid,.area{left: calc((100% - $labelW) * (var(--val, 0) / 100) - 7px);
+    &::before{top:-24px;width:14px;height:14px;background-color:$red;border-radius:0 95% 45% 50% / 0 50% 45% 95%;transform: rotate(-135deg);
+    box-shadow:-1px 1px 0px 0 rgba(0, 0, 0, .5), 0 0 2px 1px rgba(255, 255, 255, .5) inset;cursor:pointer;z-index:50;}
+    b{@include f-blind;}
+  }
+  .mid{left: calc((100% - $labelW) * (var(--mid, 0) / 100));
+    &::before{background-color:$blue;}
+  }
+}
+
 .pyramidwrap{position:relative;padding:0 10px;margin-top:40px;
   .txt_lst{position:absolute;left:0;top:0;display:flex;width:50%;height:100%;flex-direction:column;padding-top:30px;
     li{position:relative;flex:1;text-align:right;font-size:12px;color:#818181;line-height:1.2;letter-spacing:-.08em;word-break:keep-all;background:url('../images/red-line.png') 100% -12px no-repeat;padding-right:23px;
@@ -1277,36 +1329,7 @@ details[open]>summary::after{margin-left:auto;content:'\e86a';}
     }
     dd{grid-column-start:2;border-top-width:0;}
   }
-  &:has(.area_lst) .dot_lst{border-bottom:1px solid #ccc;}
-  .area_lst{margin:10px 0 40px;gap:35px;
-    $labelW:120px;
-    label{flex:0 0 calc($labelW - 5px);text-align:left;}
-    $meterColor:$blue;
-    $q1:calc(var(--q1) * 1%);
-    meter{position:relative;height:20px;appearance:none;border:1px solid $gray;border-width:0 1px;
-      &::-webkit-meter-optimum-value{background-size:100%;border-radius:0;
-      background-image:linear-gradient(90deg, transparent $q1, $meterColor $q1, $meterColor 100%);}
-      &::-webkit-meter-bar{background:transparent;}
-      &::before{position:absolute;left:0;right:0;top:50%;@include shape(100%, 0);border-top:1px solid $gray;}
-      &::after{display:none;}
-    }
-    li{gap:5px;padding-left:0;}
-    span{position:absolute;margin-left:$labelW;top:20px;font-size:11px;
-      b{display:block;line-height:1.2;color:$black;}
-    }
-    .max{right:0;text-align:right;}
-    .area,.mid,.avg{left: calc((100% - $labelW) * (var(--avg, 0) / 100));transform:translateX(-50%);text-align:center;z-index:10;
-      &::before{position:absolute;top:-20px;@include shape(0,20px);border-left:1px solid #000;border-right:1px solid rgba(255,255,255,.8);}
-    }   
-    .mid,.area{left: calc((100% - $labelW) * (var(--val, 0) / 100) - 7px);
-      &::before{top:-24px;width:14px;height:14px;background-color:$red;border-radius:0 95% 45% 50% / 0 50% 45% 95%;transform: rotate(-135deg);
-      box-shadow:-1px 1px 0px 0 rgba(0, 0, 0, .5), 0 0 2px 1px rgba(255, 255, 255, .5) inset;cursor:pointer;z-index:50;}
-      b{@include f-blind;}
-    }
-    .mid{left: calc((100% - $labelW) * (var(--mid, 0) / 100));
-      &::before{background-color:$blue;}
-    }
-  }
+  &:has(.boxplot) .dot_lst{border-bottom:1px solid #ccc;}
   .btn_del{position:absolute;right:10px;top:14px;
     &::before{color:#555;font-size:14px;}
   }
