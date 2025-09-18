@@ -432,7 +432,8 @@ border:1px solid #ccc;border-radius:5px;background-color: #fff; z-index:100;box-
     select{border:1px solid #000;border-radius:3px;min-width:var(--w);line-height:34px;}
     &:has(.link_layer){display:flex;gap:5px;}
   }
-  .unit{font-size:11px;color:#838383;}
+  .unit,.desc{font-size:11px;color:#838383;font-weight:normal;}
+  .desc{align-self:flex-end;letter-spacing:0;}
 }
 .link_layer{position: relative;
   &:focus-within .layer{display:block;}
