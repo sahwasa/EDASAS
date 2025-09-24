@@ -433,7 +433,7 @@ border:1px solid #ccc;border-radius:5px;background-color: #fff; z-index:100;box-
     &:has(.link_layer){display:flex;gap:5px;}
   }
   .unit,.desc{font-size:11px;color:#838383;font-weight:normal;}
-  .desc{align-self:flex-end;letter-spacing:0;}
+  .desc{align-self:flex-end;letter-spacing:0;margin-left:auto;}
 }
 .link_layer{position: relative;
   &:focus-within .layer{display:block;}
@@ -1296,7 +1296,7 @@ details[open]>summary::after{margin-left:auto;content:'\e86a';}
 
   }
   .lst_ctrl{padding:0 10px;}  
-  .layer{right:0;top:25px;width:100%;}
+  .layer{right:0;top:25px;width:100%;min-width:auto;}
   .desc{word-break:keep-all;white-space:initial;line-height:1.5;margin:2px 20px 0 0;}
 }
 .btn_help{
