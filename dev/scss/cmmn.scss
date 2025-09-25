@@ -892,11 +892,11 @@ tr.empty{background-color:$bg_empty;}
 summary{display:inline-block;cursor:pointer;
   &::-webkit-details-marker,
   &::marker{display:none;content:'';}
-  &::after{font-family:'fontello';content:'\e86b';font-size:14px;color:#555;}
+  &::after{font-family:'fontello';content:'\e86a';font-size:14px;color:#555;}
 }
 .opacity,
 summary{display:flex;align-items:center;overflow:hidden;}
-details[open]>summary::after{margin-left:auto;content:'\e86a';}
+details[open]>summary::after{margin-left:auto;content:'\e86b';}
 .map_legend{bottom:15px;background-color:#fff;border-radius:3px;border:1px solid #ccc;
   .opacity label{font-weight:700;color:#000;}
   input[type="range"]{flex:1;width:80px;height:2px;padding:0;margin:0 10px;}
