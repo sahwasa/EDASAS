@@ -410,16 +410,17 @@ function commonInit() {
       }
     })
 
-  $('.sidePannel_fold').on('click', function (e) {
+$('.sidePannel_fold').on('click', function (e) {
     var snbBtn = e.target.dataset,
-      fold_wrap = $('.' + snbBtn.foldtarget),
-      snbWidth = fold_wrap.children('.pannel_wrap').width(),
-      speed = 500;
-    snbBtn.value == 'on'
-      ? fold_wrap.animate({ width: 0 }, speed)
-      : fold_wrap.animate({ width: snbWidth }, speed)
-  })
+        fold_wrap = $('.' + snbBtn.foldtarget),
+        snbWidth = fold_wrap.children('.pannel_wrap').width(),
+        speed = 400,
+        type = $(this).hasClass('right_pannel') ? 'right' : 'left';
 
+    var animProp = {};
+    animProp[type] = (snbBtn.value == 'on') ? - snbWidth : 0;
+    fold_wrap.animate(animProp, speed);
+});
   const select_custom = $('.select_custom')
   const label = select_custom.find('.label')
   const options = select_custom.find('.optionItem')
