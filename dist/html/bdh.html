@@ -525,7 +525,6 @@
             <i class="symbol public_facility" data-type="27" style="--left:950px;--top:420px;">학교시설</i>
             <i class="symbol public_facility" data-type="27" style="--left:1350px;--top:850px;">학교시설</i>
             <i class="symbol public_facility" data-type="27" style="--left:1350px;--top:650px;">학교시설</i>
-
             <dl class="layer base_data" style="display:block;left:800px;top:200px">
               <button type="button" class="btn_del">close</button>
               <strong>부산 해운대구 반송동</strong>
@@ -585,27 +584,43 @@
                   </dl>
                 </div>
               </div>
-              <ul class="area_lst boxplot">                
-                <li><label for="area0">연면적 기준 피해율</label>
-                  <!-- --q1=q1값, value = q3값 -->
-                  <meter id="area0" value="10.15" min="0.1" max="32.38" style="--q1:1.76;"></meter>
-                  <span class="min" title="최소값">
-                    <b>삼동면</b>0.1
-                  </span>
-                  <span class="max" title="죽장면">
-                    <b>남목2동</b>32.38
-                  </span>
-                  <span class="avg" style="--avg:20.7559">
-                    <b>평균</b>6.8
-                  </span>                  
-                  <span class="mid" style="--mid:12.46" title="중앙값:50">
-                    <b>중앙값 : 50</b>
-                  </span>                  
-                  <span class="area" style="--val:12.46" title="다운동 :3.91">
-                    <b>다운동 : 3.91</b>
-                  </span>                  
-                </li>
-              </ul>             
+              <div class="boxplot_wrap">
+                <header class="tit">
+                  <h2 class="blind">boxplot 차트 설명</h2>
+                  <div class="tool_wrap">
+                    <button type="button" class="btn_help" title="도움말">도움말</button>
+                    <div class="layer" style="width:100px;">
+                      <figure>
+                        <img src="../images/help_boxplot.png" alt="박스플롯 설명">
+                        <figcaption>boxplot 차트 설명</figcaption>
+                      </figure>
+                      <p class="info">각 심벌에 마우스오버 시 상세 값 및 지역정보 확인 가능.</p>            
+                      <button type="button" class="btn_del">도움말 닫기</button>
+                    </div>
+                  </div>
+                </header>
+                <ul class="area_lst boxplot">                
+                  <li>
+                    <label for="area0">이상치 있을 때</label>
+                    <meter class="quater" id="area0" value="56.16166335708446" min="0" max="100" style="--q1:26.93610559514076"></meter>
+                    <span class="min" title="범위 내 최소값">0.00</span>
+                    <span class="mid" style="--mid:34.6834832379395" title="중앙값 0.18"></span>
+                    <span class="max" title="범위 내 최고값">0.43</span>
+                    <span class="area" style="--val:24.58941712416774" title="중앙동 0.12"><b>0.12</b></span>
+                    <span class="min_val" title="가덕도동 0.00"></span>
+                    <span class="outlier" title="이상치:재송1동 7.71"></span>
+                  </li>                  
+                  <li>
+                    <label for="area0">이상치 없을 때</label>                    
+                    <meter class="quater" id="area0" value="56.16166335708446" min="0" max="100" style="--q1:26.93610559514076"></meter>
+                    <span class="min" title="범위 내 최소값">0.00</span>
+                    <span class="mid" style="--mid:34.6834832379395" title="중앙값 0.18"></span>
+                    <span class="max" title="범위 내 최고값">0.43</span>
+                    <span class="area" style="--val:24.58941712416774" title="중앙동 0.12"><b>0.12</b></span>
+                    <span class="min_val" title="가덕도동 0.00"></span>
+                  </li>                  
+                </ul>             
+              </div>
               <section class="public_facility">
   <header class="tit">
     <h2>공공시설물 내진보강 DB현황</h2>

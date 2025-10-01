@@ -1091,32 +1091,46 @@ details[open]>summary::after{margin-left:auto;content:'\e86b';}
 }
 .boxplot{margin:10px 0 40px;gap:35px;
   $labelW:120px;
-  li label{flex:0 0 calc($labelW - 5px);text-align:left;}
+  li{gap:0;padding-right:2px;
+    &:has(.outlier){
+      &:after{content:"";display:block;flex:1;}
+      .max{right:10%;transform:translateX(50%);}
+    }
+    label{flex:0 0 calc($labelW - 5px);text-align:left;margin-right:5px;}
+  }
   $meterColor:$blue;
   $q1:calc(var(--q1) * 1%);
-  meter{position:relative;height:20px;appearance:none;border:1px solid $gray;border-width:0 1px;
+  .chart_box{flex:1;display:flex;}
+  .quater{position:relative;height:20px;flex:9;appearance:none;border:1px solid $gray;border-width:0 1px;
     &::-webkit-meter-optimum-value{background-size:100%;border-radius:0;
     background-image:linear-gradient(90deg, transparent $q1, $meterColor $q1, $meterColor 100%);}
     &::-webkit-meter-bar{background:transparent;}
     &::before{position:absolute;left:0;right:0;top:50%;@include shape(100%, 0);border-top:1px solid $gray;}
     &::after{display:none;}
   }
-  li{gap:5px;}
+  .outlier{flex:1;}
   span{position:absolute;margin-left:$labelW;top:20px;font-size:11px;
     b{display:block;line-height:1.2;color:$black;}
   }
-  .max{right:0;text-align:right;}
+  .max{right:0;}
   .area,.mid,.avg{left: calc((100% - $labelW) * (var(--avg, 0) / 100));transform:translateX(-50%);text-align:center;z-index:10;
-    &::before{position:absolute;top:-20px;@include shape(0,20px);border-left:1px solid #000;border-right:1px solid rgba(255,255,255,.8);}
+    &::before{position:absolute;top:-17px;@include shape(0,14px);border-left:1px solid #000;border-right:1px solid rgba(255,255,255,.8);}
   }   
-  .mid,.area{left: calc((100% - $labelW) * (var(--val, 0) / 100) - 7px);
+ .area{left: calc((100% - $labelW) * (var(--val, 0) / 100) - 7px);
     &::before{top:-24px;width:14px;height:14px;background-color:$red;border-radius:0 95% 45% 50% / 0 50% 45% 95%;transform: rotate(-135deg);
     box-shadow:-1px 1px 0px 0 rgba(0, 0, 0, .5), 0 0 2px 1px rgba(255, 255, 255, .5) inset;cursor:pointer;z-index:50;}
     b{@include f-blind;}
   }
   .mid{left: calc((100% - $labelW) * (var(--mid, 0) / 100));
-    &::before{background-color:$blue;}
+    &::before{border-left:2px solid $red;}
   }
+  .min_val,.outlier{@include shape(8px,8px);position:absolute;top:calc(50% - 1px);transform:translateY(-50%);border-radius:50%;z-index:10;}
+  .min_val{left:-3px;background-color:$blue;}
+  .outlier{right:2px;border:2px solid #000;background-color:#fff;}
+}
+.boxplot_wrap .layer{min-width:300px;right:0;
+  figcaption{@include f-blind;}
+  .info{width:100%;padding:5px 10px;font-size:11px;letter-spacing:-.05em;background-color:$bggray;}
 }
 
 .pyramidwrap{position:relative;padding:0 10px;margin-top:40px;
