@@ -1054,7 +1054,7 @@ details[open]>summary::after{margin-left:auto;content:'\e86b';}
 }
 .area_lst{display:flex;flex-direction:column;padding:3px 0;
   li{position:relative;display:flex;gap:5px;align-items:center;
-    label{flex:0 0 120px;font-size:12px;text-align:right;line-height:1.2;}
+    label{flex:0 0 100px;font-size:12px;text-align:right;line-height:1.2;}
     meter{position:relative;flex:1;height:23px;
       &::-webkit-meter-bar{border:none;background-color:transparent;border-radius:0;}
       &::-webkit-meter-optimum-value{border-radius:0 3px 3px 0;}      
@@ -1065,7 +1065,7 @@ details[open]>summary::after{margin-left:auto;content:'\e86b';}
   .average{label{color:#8b8b8b;}}
 }
 .meter_unit{$border_color:$lightgray;
-  position:absolute;right:0;top:0;width:calc(100% - 124px);height:100%;border-bottom:1px solid $border_color;color:#8b8b8b;font-size:11px;
+  position:absolute;right:0;top:0;width:calc(100% - 104px);height:100%;border-bottom:1px solid $border_color;color:#8b8b8b;font-size:11px;
   strong{position:absolute;bottom:-44px;left:50%;transform: translateX(-50%);}
   ul{display:flex;justify-content:space-between;align-items:stretch;height:calc(100% + 4px);}
   li{display:flex;justify-content:center; position:relative;flex:1;border-left:1px solid $border_color;
