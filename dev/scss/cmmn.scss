@@ -1058,7 +1058,7 @@ details[open]>summary::after{margin-left:auto;content:'\e86b';}
     meter{position:relative;flex:1;height:23px;
       &::-webkit-meter-bar{border:none;background-color:transparent;border-radius:0;}
       &::-webkit-meter-optimum-value{border-radius:0 3px 3px 0;}      
-      &::after{line-height:23px;content:attr(value);position:absolute;right:calc(100% - max(var(--val, 0), 6%) + 3px);top:50%;transform:translateY(-51%);font-size:11px;font-weight:700;letter-spacing:-.5px;@include textStroke();  
+      &::after{line-height:23px;content:attr(value);position:absolute;right:calc(100% - max(var(--val, 0), 25%) + 3px);top:50%;transform:translateY(-51%);font-size:11px;font-weight:700;letter-spacing:-.5px;@include textStroke();  
       }
     }    
   } 
@@ -1091,7 +1091,7 @@ details[open]>summary::after{margin-left:auto;content:'\e86b';}
 }
 .boxplot{margin:10px 0 40px;gap:35px;
   $labelW:120px;
-  li{gap:0;padding-right:2px;
+  li{gap:0;
     &:has(.outlier){
       &:after{content:"";display:block;flex:1;}
       .max{right:10%;transform:translateX(50%);}
