@@ -24,7 +24,7 @@
           <li><a href="../html/eq_fire.html">지진화재위험도 평가</a></li>
           <li><a href="../html/space_securing.html">긴급대응 활동난이도 평가</a></li>
           <li><a href="../html/recovery_capability.html">건축물 피해 복구비용 평가</a></li>
-          <li><a href="../html/sheltering.html">재난관리 위험도 평가</a></li>
+          <li><a href="../html/sheltering.html">재난관리위험도 평가</a></li>
           <!-- <li><a href="../html/dis_prevention.html">방재위험도 평가</a></li> -->
         </ul>
       </li>
@@ -156,7 +156,7 @@
         <li><a href="../html/risk_fire.html">지진화재위험도</a></li>
         <li><a href="../html/risk_space_securing.html">긴급대응 활동난이도</a></li>
         <li><a href="../html/risk_recovery.html">건축물 피해 복구비용</a></li>
-        <li><a href="../html/risk_sheltering.html">재난관리위험도</a></li>
+        <li><a href="../html/risk_sheltering.html">재난관리위험도 평가</a></li>
         <!-- <li><a href="../html/risk_total.html">종합안전위험도</a></li> -->
       </ul>
     </li>
@@ -170,10 +170,10 @@
             <li>환경 설정</li>
             <li>시스템 DB관리</li>
             <li>지역위험도 관리</li>
-            <li>재난관리위험도</li>
+            <li>재난관리위험도 평가</li>
           </ul>
         </section>
-        <h1>재난관리위험도 <strong>지역위험도 관리</strong></h1>
+        <h1>재난관리위험도 평가<strong>지역위험도 관리</strong></h1>
       </header>
       <div class="search">
         <ul class="search_lst">         
@@ -206,43 +206,43 @@
       <div class="tab_container">
         <section class="tab_contents" id="shelter_outdoor">
           <div class="tbl_top">
-        <div class="tool_wrap">
-          <span class="renewal">갱신일자 (2024-05-06)</span>
-          <span class="divide">
-            <button type="button" class="btn_blue">다운로드</button>
-            <button type="button" class="btn_orange">시뮬레이션</button>
-            <button type="button" class="btn_orange blink" disabled="">진행중 ( 30% )</button>
-            <button type="button" class="btn_gray" disabled="">시뮬레이션 완료</button>
-          </span>
-        </div>
-      </div>
-      <div class="tbl_wrap">
-        <table class="tbl_set">
-          <caption>대피시설 확보율</caption>     
-          <thead>
-            <tr>
-              <th scope="col">차수</th>
-              <th scope="col">지진주기</th>
-              <th scope="col">행정구역코드</th>
-              <th scope="col">행정구역명</th>
-              <th scope="col">점수</th>
-              <th scope="col">등급</th>
-              <th scope="col">갱신일시</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-            </tr>            
-          </tbody>
-        </table>       
-        <div class="paginate tui-pagination" id="pagination">
+            <div class="tool_wrap">
+              <span class="renewal">갱신일자 (2024-05-06)</span>
+              <span class="divide">
+                <button type="button" class="btn_blue">다운로드</button>
+                <button type="button" class="btn_orange">시뮬레이션</button>
+                <button type="button" class="btn_orange blink" disabled="">진행중 ( 30% )</button>
+                <button type="button" class="btn_gray" disabled="">시뮬레이션 완료</button>
+              </span>
+            </div>
+          </div>
+          <div class="tbl_wrap">
+            <table class="tbl_set">
+              <caption>대피시설 확보율</caption>     
+              <thead>
+                <tr>
+                  <th scope="col">차수</th>
+                  <th scope="col">지진주기</th>
+                  <th scope="col">행정구역코드</th>
+                  <th scope="col">행정구역명</th>
+                  <th scope="col">점수</th>
+                  <th scope="col">등급</th>
+                  <th scope="col">갱신일시</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>            
+              </tbody>
+            </table>       
+            <div class="paginate tui-pagination" id="pagination">
   <span class="tui-page-btn tui-is-disabled tui-first">
     <span class="tui-ico-first">first</span>
   </span>
@@ -258,13 +258,149 @@
     <span class="tui-ico-last">last</span>
   </a>
 </div>
-      </div>
+          </div>
         </section>
         <section class="tab_contents" id="shelter_indoor">
         </section>
         <section class="tab_contents" id="fire_facility">
+          <div class="tbl_top">
+            <div class="tool_wrap">
+              <span class="renewal">갱신일자 (2024-05-06)</span>
+              <span class="divide">
+                <button type="button" class="btn_blue">다운로드</button>
+                <button type="button" class="btn_orange" popovertarget="p_simulset">시뮬레이션</button>
+                <button type="button" class="btn_orange blink" disabled="">진행중 ( 30% )</button>
+                <button type="button" class="btn_gray" disabled="">시뮬레이션 완료</button>
+              </span>
+            </div>
+          </div>
+          <div class="tbl_wrap">
+            <table class="tbl_set">
+              <caption>소방시설 확보율</caption>     
+              <thead>
+                <tr>
+                  <th scope="col" rowspan="2">차수</th>
+                  <th scope="col" rowspan="2">지진주기</th>
+                  <th scope="col" rowspan="2">행정동명</th>
+                  <th scope="colgroup" colspan="2">건 수</th>
+                  <th scope="colgroup" colspan="2">필요 차량 수</th>
+                  <th scope="colgroup" colspan="2">수요 &sol; 공급 차량 수</th>
+                  <th scope="col" rowspan="2">위험지수</th>
+                </tr>
+                <tr>
+                  <th scope="col">지진 출화</th>
+                  <th scope="col">일상 화재</th>
+                  <th scope="col">소방차</th>
+                  <th scope="col">물탱크</th>
+                  <th scope="col">펌프차</th>
+                  <th scope="col">물탱크</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>            
+              </tbody>
+            </table>       
+            <div class="paginate tui-pagination" id="pagination">
+  <span class="tui-page-btn tui-is-disabled tui-first">
+    <span class="tui-ico-first">first</span>
+  </span>
+  <span class="tui-page-btn tui-is-disabled tui-prev">
+    <span class="tui-ico-prev">prev</span>
+  </span>
+  <strong class="tui-page-btn tui-is-selected tui-first-child">1</strong>
+  <a href="#" class="tui-page-btn tui-last-child">2</a>
+  <a href="#" class="tui-page-btn tui-next">
+    <span class="tui-ico-next">next</span>
+  </a>
+  <a href="#" class="tui-page-btn tui-last">
+    <span class="tui-ico-last">last</span>
+  </a>
+</div>
+          </div>
         </section>
         <section class="tab_contents" id="medical_facility">
+          <div class="tbl_top">
+            <div class="tool_wrap">
+              <span class="renewal">갱신일자 (2024-05-06)</span>
+              <span class="divide">
+                <button type="button" class="btn_blue">다운로드</button>
+                <button type="button" class="btn_orange" popovertarget="p_simulset">시뮬레이션</button>
+                <button type="button" class="btn_orange blink" disabled="">진행중 ( 30% )</button>
+                <button type="button" class="btn_gray" disabled="">시뮬레이션 완료</button>
+              </span>
+            </div>
+          </div>
+          <div class="tbl_wrap">
+            <table class="tbl_set">
+              <caption>의료시설 확보율</caption>     
+              <thead>
+                <tr>
+                  <th scope="col" rowspan="2">차수</th>
+                  <th scope="col" rowspan="2">지진주기</th>
+                  <th scope="col" rowspan="2">행정구역</th>
+                  <th scope="colgroup" colspan="2">인구</th>
+                  <th scope="colgroup" colspan="2">건축물 연면적(㎡)</th>
+                  <th scope="colgroup" colspan="5">병상 수</th>
+                  <th scope="col" rowspan="2">위험지수</th>
+                </tr>
+                <tr>
+                  <th scope="col">상주</th>
+                  <th scope="col">활동</th>
+                  <th scope="col">주거용</th>
+                  <th scope="col">기타</th>
+                  <th scope="col">야간</th>
+                  <th scope="col">주간</th>
+                  <th scope="col">종합</th>
+                  <th scope="col">평상시 사용</th>
+                  <th scope="col">가용 합계</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>            
+              </tbody>
+            </table>       
+            <div class="paginate tui-pagination" id="pagination">
+  <span class="tui-page-btn tui-is-disabled tui-first">
+    <span class="tui-ico-first">first</span>
+  </span>
+  <span class="tui-page-btn tui-is-disabled tui-prev">
+    <span class="tui-ico-prev">prev</span>
+  </span>
+  <strong class="tui-page-btn tui-is-selected tui-first-child">1</strong>
+  <a href="#" class="tui-page-btn tui-last-child">2</a>
+  <a href="#" class="tui-page-btn tui-next">
+    <span class="tui-ico-next">next</span>
+  </a>
+  <a href="#" class="tui-page-btn tui-last">
+    <span class="tui-ico-last">last</span>
+  </a>
+</div>
+          </div>
         </section>
         <section class="tab_contents" id="emergency_headquarters">
         </section>
@@ -275,65 +411,56 @@
 Copyright © 2025 국립재난안전연구원. All rights reserved.
 </footer>
 </div>
-<dialog id="p_upload" class="p_upload line_style" style="--width:900px" popover="manual">
+<dialog id="p_simulset" class="p_simulset" style="--width:900px" popover="manual" open>
   <form method="dialog">
     <header class="p_header tit">
-      <h1>대피위험도 업로드</h1>
+      <h1>소방or의료 시설 시뮬레이션</h1>
       <div class="tool_wrap">
-        <button type="button" class="btn_close" popovertarget="p_upload" popvertargetaction="hide">닫기</button>
+        <button type="button" class="btn_close" popovertarget="p_simulset" popvertargetaction="hide">닫기</button>
       </div>
     </header>
     <section class="p_body">
-      <ul class="ipt_lst inline">          
-        <li><strong class="label">대상지역</strong>
-          <select name="" id=""><option value="">시도</option></select>
-        </li>
-        <li><strong class="label">지진 재현주기</strong>
-          <ul class="check_lst">
-            <li><label for=""><input type="checkbox">2400년</label></li>
-            <li><label for=""><input type="checkbox">1000년</label></li>
-            <li><label for=""><input type="checkbox">500년</label></li>
-          </ul>
-        </li>
-        <li><label for="">파일</label>
-          <div class="file_ipt">
-            <input type="text" id="" name="" class="file_text" readonly="" role="filePath" title="첨부폴더 경로" placeholder="사진파일 첨부">              
-            <span class="file_wrap btn_blue_line">파일선택</span>
-            <input type="file" role="fileAdd" class="file_add">
-          </div>
-          <button type="button" class="btn_gray_line">미리보기</button>
-        </li>         
-      </ul>
-      <div class="tbl_wrap tbl_preview">
-        <table class="tbl_set">
-          <caption>지진화재 위험도</caption>     
+      <div class="tbl_top">
+        <div class="tool_wrap">
+          <span class="info_ipt">입력항목</span>          
+        </div>
+      </div>      
+      <div class="tbl_wrap">
+        <table class="tbl_set tbl_simulset">
+          <caption>소방 시설 시뮬레이션 정보 입력</caption>
+          <colgroup>
+            <col span="3">
+            <col span="3" class="highlight">
+          </colgroup>     
           <thead>
             <tr>
-              <th scope="col">차수</th>
-              <th scope="col">지진주기</th>
-              <th scope="col">행정구역코드</th>
-              <th scope="col">행정구역명</th>
-              <th scope="col">위험지수</th>
-              <th scope="col">등급</th>
+              <th scope="colgroup" colspan="2">대상지역</th>
+              <th scope="col" rowspan="2">관할구역명</th>
+              <th scope="col" rowspan="2" class="highlight">연평균 화재 발생 건 수</th>
+              <th scope="colgroup" colspan="2" class="highlight">가용 차 수</th>
+            </tr>
+            <tr>
+              <th scope="col">코드</th>
+              <th scope="col">코드명</th>
+              <th scope="col" class="highlight">펌프</th>
+              <th scope="col" class="highlight">물탱크</th>
             </tr>
           </thead>
           <tbody>
             <tr>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
+              <td>4713000000</td>
+              <td>경주</td>
+              <td>경주</td>
+              <td><input type="text" title="연평균 화재 발생 건 수" /></td>
+              <td><input type="text" title="펌프" /></td>
+              <td><input type="text" title="물탱크" /></td>
             </tr>            
           </tbody>
         </table>      
       </div>
     </section>
     <section class="p_foot">
-      <button type="submit" class="btn_foot_blue">적용</button>
-      <button type="button" class="btn_foot_gray" popovertarget="p_upload" popvertargetaction="hide">취소</button>
+      <button type="button" class="btn_orange">시뮬레이션 실행</button>
     </section>
   </form>
 </dialog>

@@ -24,7 +24,7 @@
           <li><a href="../html/eq_fire.html">지진화재위험도 평가</a></li>
           <li><a href="../html/space_securing.html">긴급대응 활동난이도 평가</a></li>
           <li><a href="../html/recovery_capability.html">건축물 피해 복구비용 평가</a></li>
-          <li><a href="../html/sheltering.html">재난관리 위험도 평가</a></li>
+          <li><a href="../html/sheltering.html">재난관리위험도 평가</a></li>
           <!-- <li><a href="../html/dis_prevention.html">방재위험도 평가</a></li> -->
         </ul>
       </li>
@@ -144,7 +144,7 @@
     <li><a href="../html/eq_fire.html"><span>지진화재위험도 평가</span></a></li>
     <li><a href="../html/space_securing.html"><span>긴급대응 활동난이도 평가</span></a></li>
     <li><a href="../html/recovery_capability.html"><span>건축물 피해 복구비용 평가</span></a></li>
-    <li><a href="../html/sheltering.html"><span>재난관리 위험도 평가</span></a></li>
+    <li><a href="../html/sheltering.html"><span>재난관리위험도 평가</span></a></li>
     <!-- <li><a href="../html/dis_prevention.html"><span>방재위험도 평가</span></a></li> -->
   </ul>
 </nav>
@@ -153,45 +153,32 @@
       <section class="pannel sidePannel_wrap">
         <div class="pannel_wrap">
           <header>
-            <h1>재난관리 위험도평가</h1>
-            <section class="filter">
-  <ul class="areaLst btn_switch">
-    <li><input type="radio" id="area1" name="area" checked><label for="area1">부산</label></li>
-    <li><input type="radio" id="area2" name="area"><label for="area2">울산</label></li>
-    <li><input type="radio" id="area3" name="area"><label for="area3">경북 포항</label></li>
-    <li><input type="radio" id="area4" name="area"><label for="area4">경북 경주</label></li>
-    <li><input type="radio" id="area5" name="area"><label for="area5">경남 창원</label></li>
-  </ul>
-  <dl class="filterLst">
-    <!-- <dt>표출형식</dt>
-    <dd>
-      <label for="areaUnit1"><input type="radio" id="areaUnit1" name="areaUnit" checked>시군구</label>
-      <label for="areaUnit2"><input type="radio" id="areaUnit2" name="areaUnit">읍면동</label>
-    </dd> -->
-    <dt>지진 재현주기</dt>
-    <dd>
-      <label for="returnPeriod1"><input type="radio" id="returnPeriod1" name="returnPeriod">500년</label>
-      <label for="returnPeriod2"><input type="radio" id="returnPeriod2" name="returnPeriod">1000년</label>
-      <label for="returnPeriod3"><input type="radio" id="returnPeriod3" name="returnPeriod" checked>2400년</label>
-    </dd>
-  </dl>              
-  <button type="button" class="btn_search">검색</button>
-</section>
+            <h1>재난관리위험도 평가</h1>
           </header>
           <article class="pannel_body">
-            <div class="tit">
-              <h1>평가결과</h1>
-              <span class="date">평가일 2023-10-10</span>
-            </div>
-            <ul class="tab tab_wrap tab_m">               
-              <li class="on"><a href="#shelter_outdoor">대피장소</a></li>
-              <li><a href="#shelter_indoor">임시거주시설</a></li>
+            <ul class="tab tab_wrap">               
+              <li class="on"><a href="#shelter_outdoor">옥외대피장소</a></li>
+              <li><a href="#shelter_indoor">임시주거시설</a></li>
               <li><a href="#fire_facility">소방시설</a></li>
               <li><a href="#medical_facility">의료시설</a></li>
               <li><a href="#emergency_headquarters">재난안전대책본부</a></li>
             </ul>
-            <div class="tab_container">
+            <div class="tab_container mt0">
               <section class="tab_contents" id="shelter_outdoor">
+                <section class="filter">
+                  <ul class="areaLst btn_switch">
+                    <li><input type="radio" id="area1" name="area" checked><label for="area1">부산</label></li>
+                    <li><input type="radio" id="area2" name="area"><label for="area2">울산</label></li>
+                    <li><input type="radio" id="area3" name="area"><label for="area3">경북 포항</label></li>
+                    <li><input type="radio" id="area4" name="area"><label for="area4">경북 경주</label></li>
+                    <li><input type="radio" id="area5" name="area"><label for="area5">경남 창원</label></li>
+                  </ul>
+                  <button type="button" class="btn_search">검색</button>
+                </section>              
+                <div class="top_area">
+                  <h1>평가결과</h1>
+                  <span class="date">평가일 2023-10-10</span>
+                </div>                
                 <section class="results_region">
                   <div class="tit">
                     <h2>지역별 평가결과</h2>
@@ -320,145 +307,18 @@
                 </section>               
               </section>
               <section class="tab_contents" id="shelter_indoor">
-                <section class="select_structure">
-                  <div class="tit blind">
-                    <h2>설계구조 및 용도 선택</h2>
-                  </div>
-                  <dl>
-                    <dt>건축 설계구조</dt>
-                    <dd>
-                      <label for="C1"><input type="checkbox" id="C1">콘크리트모멘트골조</label>
-                      <label for="C2"><input type="checkbox" id="C2">무보강조적채움벽이 있는 콘크리트모멘트골조</label>
-                      <label for="C3"><input type="checkbox" id="C3">콘크리트전단벽</label>
-                      <label for="C4"><input type="checkbox" id="C4">콘크리트전단벽이 있는 콘크리트모멘트골조</label>
-                      <label for="PC1"><input type="checkbox" id="PC1">프리캐스트 콘크리트전단벽</label>
-                      <label for="PC2"><input type="checkbox" id="PC2">콘크리트전단벽이 있는 프리캐스트콘크리트모멘트골조</label>
-                      <label for="S1"><input type="checkbox" id="S1">철골모멘트골조</label>
-                      <label for="S2"><input type="checkbox" id="S2">철골가새가 있는 철골모멘트골조</label>
-                      <label for="S3"><input type="checkbox" id="S3">콘크리트전단벽이 있는 철골모멘트골조</label>
-                      <label for="S4"><input type="checkbox" id="S4">철골철근콘크리트구조</label>
-                      <label for="C5"><input type="checkbox" id="C5">필로티형 콘크리트전단벽</label>
-                      <label for="URM"><input type="checkbox" id="URM">무보강조적전단벽</label>
-                      <label for="W1"><input type="checkbox" id="W1">전통목구조</label>
-                      <label for="W2"><input type="checkbox" id="W2">서양식목구조</label>
-                    </dd>
-                    <dt>건축물 용도</dt>
-                    <dd>
-                      <label for="" title="자동차 관련 시설군"><input type="checkbox" id="">자동차 관련 시설</label>
-                      <label for="" title="산업 등의 시설군"><input type="checkbox" id="">운수 시설</label>
-                      <label for="" title="산업 등의 시설군"><input type="checkbox" id="">창고 시설</label>
-                      <label for="" title="산업 등의 시설군"><input type="checkbox" id="">공장</label>
-                      <label for="" title="산업 등의 시설군"><input type="checkbox" id="">위험물저장 및 처리 시설</label>
-                      <label for="" title="산업 등의 시설군"><input type="checkbox" id="">자원 순환 관련 시설</label>
-                      <label for="" title="산업 등의 시설군"><input type="checkbox" id="">묘지 관련 시설</label>
-                      <label for="" title="산업 등의 시설군"><input type="checkbox" id="">장례시설</label>
-                      <label for="" title="전기통신시설군"><input type="checkbox" id="">방송 통신 시설</label>
-                      <label for="" title="전기통신시설군"><input type="checkbox" id="">발전 시설</label>
-                      <label for="" title="문화 및 집회시설군"><input type="checkbox" id="">문화 및 집회 시설</label>
-                      <label for="" title="문화 및 집회시설군"><input type="checkbox" id="">종교 시설</label>
-                      <label for="" title="문화 및 집회시설군"><input type="checkbox" id="">위락 시설</label>
-                      <label for="" title="문화 및 집회시설군"><input type="checkbox" id="">관공휴계시설</label>
-                      <label for="" title="영업시설군"><input type="checkbox" id="">판매 시설</label>
-                      <label for="" title="영업시설군"><input type="checkbox" id="">운동 시설</label>
-                      <label for="" title="영업시설군"><input type="checkbox" id="">숙박 시설</label>
-                      <label for="" title="영업시설군"><input type="checkbox" id="">제2종 근린생활시설 중<br /> 다중생활시설</label>
-                      <label for="" title="교육 및 복지시설군"><input type="checkbox" id="">의료 시설</label>
-                      <label for="" title="교육 및 복지시설군"><input type="checkbox" id="">교육연구시설</label>
-                      <label for="" title="교육 및 복지시설군"><input type="checkbox" id="">노유자시설</label>
-                      <label for="" title="교육 및 복지시설군"><input type="checkbox" id="">수련 시설</label>
-                      <label for="" title="교육 및 복지시설군"><input type="checkbox" id="">야영장 시설</label>
-                      <label for="" title="근린생활시설군"><input type="checkbox" id="">제1종 근린생활시설</label>
-                      <label for="" title="근린생활시설군"><input type="checkbox" id="">제2종 근린생활시설<br />(대중생활시설은 제외함)</label>
-                      <label for="" title="주거업무시설군"><input type="checkbox" id="">단독주택</label>
-                      <label for="" title="주거업무시설군"><input type="checkbox" id="">공동주택</label>
-                      <label for="" title="주거업무시설군"><input type="checkbox" id="">업무 시설</label>
-                      <label for="" title="주거업무시설군"><input type="checkbox" id="">교정 및 군사시설</label>
-                      <label for="" title="그 밖의 시설군"><input type="checkbox" id="">동물 및 식물 관련 시설</label>
-                    </dd>
-                  </dl>
-                  <div class="btn_area">
-                    <button type="button" class="btn_blue_line">선택 적용</button>
-                  </div>
-                </section>
-                <section>
-                </section>
-                <section>
-                  <div class="tit">
-                    <h2>지역별 평가결과</h2>
-                  </div>
-                  <div class="heatmap_wrap">
-                    <!-- 표출형식 시군구일때 -->
-                    <div class="heatmap">
-                      <strong>부산<span class="score">81</span></strong>
-                      <ul>                    
-                        <li>중구<span class="score">85</span></li>
-                        <li>해운대구<span class="score">88</span></li>
-                        <li>수영구<span class="score">76</span></li>
-                        <li>기장군<span class="score">89</span></li>                        
-                      </ul>
-                    </div>                    
-                  </div>
-                </section>
-                <section>
-                  <div class="tit">
-                    <h2>건축물 피해 상세정보</h2>
-                    <div class="tool_wrap unit">
-                      (피해율 = 피해면적 / 총 유효면적)
-                    </div>
-                  </div>
-                  <div class="tbl_wrap">
-                  <table class="tbl_default">
-                    <thead>
-                      <tr>
-                        <th scope="col">지역</th>
-                        <th scope="col">피해수량 &sol; 전체(동)</th>
-                        <th scope="col">피해면적(㎢) &sol; 피해율(%)</th>
-                        <th scope="col">등급</th>
-                        <th scope="col">점수</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr class="rowgroup">
-                        <td>부산 해운대구</td>
-                        <td>-</td>
-                        <td>-</td>
-                        <td>-</td>
-                        <td>1(99)</td>
-                      </tr>
-                      <tr>
-                        <td>반송동</td>
-                        <td>-</td>
-                        <td>-</td>
-                        <td>-</td>
-                        <td>1(99)</td>
-                      </tr>
-                      <tr>
-                        <td>석대동</td>
-                        <td>-</td>
-                        <td>-</td>
-                        <td>-</td>
-                        <td>1(99)</td>
-                      </tr>
-                      <tr>
-                        <td>우동</td>
-                        <td>-</td>
-                        <td>-</td>
-                        <td>-</td>
-                        <td>1(99)</td>
-                      </tr>
-                      <tr>
-                        <td>재송동</td>
-                        <td>-</td>
-                        <td>-</td>
-                        <td>-</td>
-                        <td>1(99)</td>
-                      </tr>
-                    </tbody>
-                  </table>
-                  </div>
-                </section>
+                임시주거시설
               </section>
-            </div>
+              <section class="tab_contents" id="fire_facility">
+                소방시설
+              </section>
+              <section class="tab_contents" id="medical_facility">
+                의료시설
+              </section>
+              <section class="tab_contents" id="emergency_headquarters">
+                재난안전대책본부
+              </section>
+            </div>            
           </article>
         </div>
       </section>
@@ -466,7 +326,7 @@
       <!-- 중앙 -->
       <section class="contents">
         <button type="button" class="evt_tgl sidePannel_fold" data-value="off" data-foldtarget="sidePannel_wrap" data-on="왼쪽패널 열기" data-off="왼쪽패널 닫기" title="왼쪽패널 닫기">왼쪽패널 닫기</button>
-        <!-- <button type="button" class="evt_tgl sidePannel_fold right_pannel" data-value="off" data-foldtarget="dtlPannel_wrap" data-on="오른쪽패널 열기" data-off="오른쪽패널 닫기" title="오른쪽패널 열기">오른쪽패널 열기</button> -->
+        <button type="button" class="evt_tgl sidePannel_fold right_pannel" data-value="off" data-foldtarget="dtlPannel_wrap" data-on="오른쪽패널 열기" data-off="오른쪽패널 닫기" title="오른쪽패널 열기">오른쪽패널 열기</button>
         <div class="map_wrap">
           <div class="temp_map">
             <img src="../images/temp/temp_map_1_1.png" class="temp_map" alt="임시 지도배경">
@@ -553,7 +413,150 @@
         </div>             
       </section>
       <!-- 중앙__e -->
-      
+      <!-- 오른쪽패널 -->
+      <section class="pannel dtl_contents dtlPannel_wrap">
+  <div class="pannel_wrap">          
+    <article class="pannel_body">
+      <section class="sub_tit">
+        <label for="safety"><input type="radio" name="layer" id="safety" checked>지역안전도</label>
+      </section>
+      <details>
+        <summary class="sub_tit">
+          <em class="label">기초데이터</em>
+          <div class="tool_wrap">
+            <label for="all_area"><input type="checkbox" id="all_area">전체 지역</label>
+            <span class="division">
+              <button type="button" class="btn_popup"  onclick="window.open('baseData_map.html','_blank','width=1240, height=600, top=50, left=50, location=no, scrollbars=yes');">새창</button>
+            </span>
+          </div>
+        </summary>   
+        <ul class="map_type">
+          <li><strong>지반특성 및 지반분류정보</strong>
+            <ul class="sub_type">
+              <li><label for="map_type2_1"><input type="radio" id="map_type2_1" name="layer">기반암 심도 (H)</label></li>
+              <li><label for="map_type2_2"><input type="radio" id="map_type2_2" name="layer">토층 평균 전단파속도 (VS,Soil)</label></li>
+              <li><label for="map_type2_3"><input type="radio" id="map_type2_3" name="layer">심도 30m까지 평균 전단파속도 (VS30)</label></li>
+              <li><label for="map_type2_5"><input type="radio" id="map_type2_5" name="layer">건축물 내진설계기준(KDS 41 17 00)</label></li>
+            </ul>
+          </li>
+          <li><strong>건축물 위험도 평가</strong>
+            <ul class="sub_type">
+              <li><label for=""><input type="radio" id="" name="layer">건축물 분포(동)</label>
+                <button type="button" class="btn_help" title="도움말" >도움말</button>
+                <div class="layer">
+                  <p class="desc">건축물 분포란 어떤 것인지 어쩌고 저쩌고 설명을 써주세요.</p>
+                  <button type="button" class="btn_del">도움말 닫기</button>
+                </div>
+              </li>
+              <li><label for=""><input type="radio" id="" name="layer">건축물 분포(연면적)</label></li>
+              <li><label for=""><input type="radio" id="" name="layer">취약건축물 분포(동)</label></li>
+              <li><label for=""><input type="radio" id="" name="layer">취약건축물 분포(연면적)</label></li>
+              <li><label for=""><input type="radio" id="" name="layer">비내진 건축물 분포(동)</label></li>
+              <li><label for=""><input type="radio" id="" name="layer">비내진 건축물 분포(연면적)</label></li>
+              <li><label for=""><input type="radio" id="" name="layer">인구</label></li>
+              <li><label for=""><input type="radio" id="" name="layer">인구밀집도</label></li>
+              <li><label for=""><input type="radio" id="" name="layer">노후건축물 분포(동)</label></li>
+              <li><label for=""><input type="radio" id="" name="layer">노후건축물 분포(연면적)</label></li>
+              <li><label for=""><input type="radio" id="" name="layer">소방시설 분포</label></li>
+              <li><label for=""><input type="radio" id="" name="layer">의료시설 분포</label></li>
+              <li><label for=""><input type="radio" id="" name="layer">재난안전대책본부 분포</label></li>
+            </ul>
+          </li>
+          <li><strong>지진화재 위험도 평가</strong>
+            <ul class="sub_type">
+              <li><label for="map_type4_1"><input type="radio" id="map_type4_1" name="layer">건축물 밀집도</label></li>
+              <li><label for="map_type4_2"><input type="radio" id="map_type4_2" name="layer">건축물 내화조 구성비율</label></li>
+              <li><label for="map_type4_3"><input type="radio" id="map_type4_3" name="layer">건축물 목조 구성비율</label></li>
+              <li><label for="map_type4_4"><input type="radio" id="map_type4_4" name="layer">화재로 인한 취약건축물 분포(동)</label></li>
+              <li><label for="map_type4_5"><input type="radio" id="map_type4_5" name="layer">화재로 인한 취약건축물 분포(연면적)</label></li>
+            </ul>
+          </li>
+          <li><strong>복구 및 대피 평가</strong>
+            <ul class="sub_type">
+              <li><label for="map_type5_1"><input type="radio" id="map_type5_1" name="layer">물적피해 분포율</label></li>
+              <li><label for="map_type5_2"><input type="radio" id="map_type5_2" name="layer">건물가치평가 분포율</label></li>
+              <li><label for="map_type5_3"><input type="radio" id="map_type5_3" name="layer">복구능력 분포율</label></li>
+              <li><label for="map_type5_4"><input type="radio" id="map_type5_4" name="layer">긴급대피 수용능력</label></li>
+              <li><label for="map_type5_5"><input type="radio" id="map_type5_5" name="layer">주거밀집도</label></li>
+            </ul>
+          </li>
+          <li><strong>긴급대응 도로·공간 평가</strong>
+            <ul class="sub_type">
+              <li><label for=""><input type="radio" id="" name="layer">활동공간 확보율</label></li>
+              <li><label for=""><input type="radio" id="" name="layer">지역 도로망 접근 계수</label></li>
+              <li><label for=""><input type="radio" id="" name="layer">광역 도로망 접근 계수</label></li>
+            </ul>
+          </li>         
+        </ul>
+      </details>
+      <details>
+        <summary class="sub_tit">
+          <em class="label">주요시설 분포도</em>         
+        </summary>
+        <ul class="symbols">
+          <li><label for="fac1"><input type="checkbox" id="fac1" name="" />소방서</label></li>
+          <li><label for="fac2"><input type="checkbox" id="fac2" name="" />임시대피시설</label></li>
+          <li><label for="fac3"><input type="checkbox" id="fac3" name="" />병원</label></li>
+          <li><label for="fac4"><input type="checkbox" id="fac4" name="" />옥외대피시설</label></li>
+          <li><label for="fac5"><input type="checkbox" id="fac5" name="" />임시거주시설</label></li>
+        </ul>
+      </details>
+      <details>
+        <summary class="sub_tit">
+          <em class="label">공공시설물 분포도</em>         
+        </summary>
+        <ul class="sub_type public_facility">
+          <li><label for=""><input type="checkbox" id="" name="public_facility">공공건축물</label></li>
+          <li><label for=""><input type="checkbox" id="" name="public_facility">방조제</label></li>
+          <li><label for=""><input type="checkbox" id="" name="public_facility">공항시설</label></li>
+          <li><label for=""><input type="checkbox" id="" name="public_facility">수문</label></li>
+          <li><label for=""><input type="checkbox" id="" name="public_facility">농업생산기반시설</label></li>
+          <li><label for=""><input type="checkbox" id="" name="public_facility">다목적댐</label></li>
+          <li><label for=""><input type="checkbox" id="" name="public_facility">일반댐</label></li>
+          <li><label for=""><input type="checkbox" id="" name="public_facility">도로시설물</label></li>
+          <li><label for=""><input type="checkbox" id="" name="public_facility">가스공급, 액화가스 저장시설</label></li>
+          <li><label for=""><input type="checkbox" id="" name="public_facility">도시철도</label></li>
+          <li><label for=""><input type="checkbox" id="" name="public_facility">압력용기</label></li>
+          <li><label for=""><input type="checkbox" id="" name="public_facility">크레인</label></li>
+          <li><label for=""><input type="checkbox" id="" name="public_facility">리프트</label></li>
+          <li><label for=""><input type="checkbox" id="" name="public_facility">석유 정제·비축 및 저장시설</label></li>
+          <li><label for=""><input type="checkbox" id="" name="public_facility">송유관</label></li>
+          <li><label for=""><input type="checkbox" id="" name="public_facility">산업단지 공공폐수처리시설</label></li>
+          <li><label for=""><input type="checkbox" id="" name="public_facility">수도시설</label></li>
+          <li><label for=""><input type="checkbox" id="" name="public_facility">어항시설</label></li>
+          <li><label for=""><input type="checkbox" id="" name="public_facility">원자로 및 관계시설</label></li>
+          <li><label for=""><input type="checkbox" id="" name="public_facility">전력시설</label></li>
+          <li><label for=""><input type="checkbox" id="" name="public_facility">철도시설</label></li>
+          <li><label for=""><input type="checkbox" id="" name="public_facility">폐기물매립시설</label></li>
+          <li><label for=""><input type="checkbox" id="" name="public_facility">공공하수처리시설</label></li>
+          <li><label for=""><input type="checkbox" id="" name="public_facility">고속철도</label></li>
+          <li><label for=""><input type="checkbox" id="" name="public_facility">항만시설</label></li>
+          <li><label for=""><input type="checkbox" id="" name="public_facility">공동구</label></li>
+          <li><label for=""><input type="checkbox" id="" name="public_facility">학교시설</label></li>
+          <li><label for=""><input type="checkbox" id="" name="public_facility">궤도</label></li>
+          <li><label for=""><input type="checkbox" id="" name="public_facility">유기시설</label></li>
+          <li><label for=""><input type="checkbox" id="" name="public_facility">병원시설</label></li>
+          <li><label for=""><input type="checkbox" id="" name="public_facility">방송통신설비</label></li>
+          <li><label for=""><input type="checkbox" id="" name="public_facility">물류시설</label></li>
+          <li><label for=""><input type="checkbox" id="" name="public_facility">공급시설</label></li>
+        </ul>
+        <div class="sub_type">
+          <strong class="blind">내진판정결과</strong>
+          <dl class="seismic_legend">
+            <dt>내진양호</dt>
+            <dd>내진설계적용</dd>
+            <dd>내진양호(내진성능평가)</dd>
+            <dd>내진보강실시</dd>
+            <dt>내진보강필요</dt>
+            <dd>내진성능평가 미시행</dd>
+            <dd>내진보강필요(내진성능평가)</dd>
+          </dl>
+        </div>
+      </details>
+    </article>
+  </div>
+</section>
+      <!-- 오른쪽패널__e -->
     </div>  
   </main>
   <footer class="footer">
