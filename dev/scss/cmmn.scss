@@ -1447,7 +1447,6 @@ details[open]>summary::after{margin-left:auto;content:'\e86b';}
     .box_dotted{border-radius:3px;}
     .box_white{text-align:center;background-color:#fff;padding:10px;border-radius:3px;box-shadow:1px 1px 1px rgba(0, 0, 0, .2);}
     .info{margin-top:-5px;font-size:12px;}
-    .btn_start{@extend .btn_gra;padding:8px;}  
     .tool_wrap{text-align:center;
       &::before{@include shape(100px, 0);border-top:1px solid $gray;padding-top:19px;margin-top:10px;}
     }
@@ -1455,6 +1454,7 @@ details[open]>summary::after{margin-left:auto;content:'\e86b';}
   .result{flex:1;}
   .divide{@include divide;}
 }
+.btn_start{@extend .btn_gra;padding:8px;}  
 // sys_dbInfo
 .sys_db_info{
   .article{

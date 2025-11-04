@@ -114,6 +114,10 @@ dialog,:modal{margin:auto;padding:20px;border:none;box-shadow: 1.4px 1.4px 29px 
   .pannel, .map_wrap, .map_ctrl{max-height:100vh;height:100vh;}
   .temp_map{width:100%;height:100vh;top:0;overflow:hidden;}
 }
+.p_simulset{
+  .p_foot{justify-content:center;margin-top:25px;}
+  .btn_start{width:28%;padding:0;}
+}
 .tbl_simulset{
   thead tr:last-child th:first-child{border-left-width:0;}
   td{width:calc(100% / 6);padding:1px 3px;}
