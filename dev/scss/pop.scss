@@ -124,5 +124,5 @@ dialog,:modal{margin:auto;padding:20px;border:none;box-shadow: 1.4px 1.4px 29px 
   input{width:100%;text-align:right;background-color:#ffffff95;}
 }
 .info_ipt{color:#555;
-  &::before{@include shape(15px,15px);border:1px solid #d6d6d6;background-color:#fffbe4;margin-right:5px;vertical-align:middle;}
+  &::before{@include shape(15px,15px);border:1px solid #d6d6d6;background-color:#fffbe4;margin-right:5px;vertical-align:text-bottom;}
 }
