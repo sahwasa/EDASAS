@@ -259,7 +259,18 @@
                   </section>               
                 </div>             
               </section>
-              <section class="tab_contents" id="shelter_indoor">                               
+              <section class="tab_contents" id="shelter_indoor">
+                <section class="filter">
+                  <dl class="filterLst">
+                    <dt>지진 재현주기</dt>
+                    <dd>
+                      <label for="returnPeriod1"><input type="radio" id="returnPeriod1" name="returnPeriod">500년</label>
+                      <label for="returnPeriod2"><input type="radio" id="returnPeriod2" name="returnPeriod">1000년</label>
+                      <label for="returnPeriod3"><input type="radio" id="returnPeriod3" name="returnPeriod" checked="">2400년</label>
+                    </dd>
+                  </dl>
+                  <button type="button" class="btn_search">검색</button>
+                </section>                         
                 <div class="tit">
                   <h1>평가결과</h1>
                   <span class="date">평가일 2023-10-10</span>
