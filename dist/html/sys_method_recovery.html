@@ -1,0 +1,935 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0">
+  <link rel="icon" href="../images/favicon.png" type="image/x-icon" />
+  <title>지진재해 지역안전도 평가 시스템</title>
+  <link rel="stylesheet" href="../font/fontello/css/fontello.css">
+  <link rel="stylesheet" href="../css/cmmn.css">
+  <link rel="stylesheet" href="../css/pop.css">
+</head>
+<body>
+
+<div id="wrap" class="wrap">
+  <header class="header">  
+  <h1 class="main_logo"><a href="../html/main.html?index=1,1">지진재해 지역위험도 평가 시스템</a></h1>
+  <nav class="nav">
+    <ul class="nav_lst">
+      <li><a href="../html/main.html">지진재해 지역위험도</a>
+        <ul class="sub">
+          <li><a href="../html/main.html">종합위험도 평가</a></li>
+          <li><a href="../html/bdh.html">건축물피해위험도 평가</a></li>
+          <li><a href="../html/eq_fire.html">지진화재위험도 평가</a></li>
+          <li><a href="../html/space_securing.html">긴급대응난이도 평가</a></li>
+          <li><a href="../html/recovery_capability.html">건축물 피해 복구비용 평가</a></li>
+          <li><a href="../html/sheltering.html">재난관리위험도 평가</a></li>
+          <!-- <li><a href="../html/dis_prevention.html">방재위험도 평가</a></li> -->
+        </ul>
+      </li>
+      <li><a href="../html/sys_purpose.html">시스템 소개</a>
+        <ul class="sub">
+          <li><a href="../html/sys_purpose.html">시스템 평가 목적</a></li>
+          <li><a href="../html/sys_method_bdh.html">시스템 평가 방법</a></li>
+          <li><a href="../html/sys_dbInfo.html">시스템 DB현황</a></li>
+        </ul>
+      </li>     
+      <li><a href="../html/faq.html">자료실</a>
+        <ul class="sub">
+          <li><a href="../html/faq.html">FAQ</a></li>
+          <li><a href="../html/manual.html">매뉴얼 게시판</a></li>
+        </ul>
+      </li>
+      <li><a href="../html/set_order.html">환경 설정</a>
+        <ul class="sub">
+          <li><a href="../html/set_order.html">시스템 DB관리</a></li>
+          <li><a href="../html/total_result.html">종합위험도 관리</a></li>
+        </ul>
+      </li>
+      <li><a href="../html/admin_user.html">시스템 설정</a>
+        <ul class="sub">
+          <li><a href="../html/admin_user.html">사용자관리</a></li>
+          <li><a href="../html/admin_code.html">코드 관리</a></li>
+        </ul>
+      </li>
+    </ul>
+  </nav>
+  <div class="util">
+    <div class="profile">
+      <button type="button" class="account">
+        <img src="../images/ico_user.png" width="32px" height="32px" alt="프로필사진">
+        <b>시스템 운영자님</b>
+      </button>
+      <div class="my_layer">
+        <ul class="my_svc">
+          <li><button type="button" popovertarget="p_userInfo">내 정보</button></li>
+          <li><a href="javascript:(console.log('logout'));">로그아웃</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</header>
+<dialog id="p_userInfo" class="p_userInfo line_style" style="--width:450px" popover="manual">
+  <form method="dialog">
+    <header class="p_header tit">
+      <h1>내정보</h1>
+      <div class="tool_wrap">
+        <button type="button" class="btn_close" popovertarget="p_userInfo" popvertargetaction="hide">닫기</button>
+      </div>
+    </header>
+    <section class="p_body">
+      <ul class="ipt_lst inline">
+        <li>
+          <strong class="label">사용자ID</strong>
+          <span>사용자ID</span>
+        </li>
+        <li>
+          <strong class="label">비밀번호</strong>
+          <span>******</span>
+          <button type="button" class="btn btn_gray">변경</button>
+        </li>
+        <li>
+          <strong class="label">사용자명</strong>
+          <span>홍길동</span>
+        </li>
+        <li>
+          <strong class="label">소속기관</strong>
+          <span>케이아이티밸리</span>
+        </li>
+        <li>
+          <strong class="label">직급</strong>
+          <span>연구원</span>
+        </li>
+        <li>
+          <strong class="label">담당지역</strong>
+          <ul class="select_lst">
+            <li><p>부산</p></li>
+          </ul>
+        </li>
+        <!-- ---------------수정시------------------ -->
+        <li class="required"><label for="">비밀번호</label><input type="password" placeholder="비밀번호"></li>
+        <li class="required">
+          <label for="">비밀번호 확인</label><input type="password" placeholder="비밀번호 확인">
+          <p class="invalid">비밀번호가 일치하지 않습니다.</p>
+        </li>
+        <li class="required"><label for="">사용자명</label><input type="text" placeholder="사용자명"></li>
+        <li class="required"><label for="">소속기관</label><input type="text" placeholder="소속기관"></li>
+        <li><label for="">직급</label><input type="text" placeholder="직급"></li>
+        <li class="required"><label for="">담당지역</label>
+          <!-- 한개만 선택되도록 -->
+          <ul class="areaUnit btn_switch">
+            <li><input type="checkbox" id="area1" name="area" checked><label for="area1">부산</label></li>
+            <li><input type="checkbox" id="area2" name="area"><label for="area2">울산</label></li>
+            <li><input type="checkbox" id="area3" name="area"><label for="area3">경주</label></li>
+            <li><input type="checkbox" id="area4" name="area"><label for="area4">포항</label></li>
+            <li><input type="checkbox" id="area5" name="area"><label for="area5">창원</label></li>
+          </ul>
+        </li>       
+        <li><strong class="label">권한</strong><span>관리자</span></li>
+      </ul>
+    </section>
+    <section class="p_foot">
+      <button type="submit" class="btn_foot_blue">저장</button>
+      <button type="submit" class="btn_foot_blue">수정</button>
+      <button type="button" class="btn_foot_gray" popovertarget="p_userInfo" popvertargetaction="hide">닫기</button>
+    </section>
+  </form>
+</dialog>    
+  <main id="content" class="main_container">
+    <nav class="snb sub_default">
+  <h1>시스템 평가 방법</h1>
+  <ul class="snb_lst">
+    <li><a href="../html/sys_method_geotechnical.html">지반정보분류</a></li>
+    <li><a href="../html/sys_method_bdh.html">건축물피해위험도</a></li>
+    <li><a href="../html/sys_method_fire.html">지진화재위험도</a></li>
+    <li><a href="../html/sys_method_securing.html">긴급대응난이도</a></li>
+    <li><a href="../html/sys_method_totalRisk.html">종합위험도</a></li>
+    <li><a href="../html/sys_method_recovery.html">건축물 피해복구비용</a></li>
+    <li><a href="../html/sys_method_sheltering.html">옥외대피장소 확보율</a></li>
+    <li><a href="../html/sys_method_temp_housing.html">임시주거 확보율</a></li>
+  </ul>
+</nav>
+    <div class="flex_body">
+      <header>
+        <section class="bredcrumb">
+          <ul>
+            <li><a href="#">Home</a></li>
+            <li>시스템 소개</li>
+            <li>시스템 평가 방법</li>
+            <li>건축물 피해복구비용</li>
+          </ul>
+        </section>
+        <h1>건축물 피해복구비용</h1>
+      </header>
+      <div class="sys_method">
+        <section class="chapter">
+          <h2>절차서 목차</h2>
+          <ol class="num_lst">
+            <li><a href="#1">개요</a></li>
+            <li><a href="#2">HAZUS의 평가절차</a></li>
+            <li><a href="#3">건축물 피해 복구금액 평가절차</a>
+              <ol>
+                <li><a href="#3-1">지진진동에 의한 피해복구비용</a></li>
+                <li><a href="#3-2">지진화재에 의한 피해복구비용</a></li>
+                <li><a href="#3-3">피해 및 피해복구비용 산정을 위한 테이블</a></li>
+              </ol>
+            </li>
+          </ol>
+        </section>
+        <section class="chapter_body">
+          <article>
+            <h1 id="1">개요</h1>
+            <section class="section2">
+              <p>지진발생시 경제적 피해액은 크게 건축물과 사회기반시설, 산업시설 등의 물리적인 자산의 파괴 및 손상에 의한 직접 피해액과 이러한 건물 및 시설의 사용중단으로 인한 생산중단, 고용손실, 영업손실비용, 임시주거시설 확보 및 잔해처리에 소요되는 비용 등을 포함한 간접피해액으로 나누어 생각할 수 있다. 간접적인 피해액의 경우 피해를 입은 지역의 생산 및 영업의 중단이 타 지역으로의 공급망 차질로 이어지며 이에 따라 전체적으로 물가와 투자에 영향을 미쳐 단기적인 피해 뿐 아니라 장기적인 성장저하로 이어질수 있다. 이처럼 간접피해는 직접피해의 여파가 복잡한 상호 연관성을 가지면서 확산되므로 지진에 의한 경제적 피해액 산정을 위해서는 직접적인 피해액의 정확한 산정이 중요하다.</p>
+              <p>본 연구에서는 이중 가장 기초적인 요소인 건축물 피해금액의 산정 절차를 다루고 있다. 즉, 지진 혹은 지진화재로 인해 구조요소 및 비구조요소에 손상이 발생한 경우 이를 원래 상태로 복구하거나 보강하기 위해 소요되는 총비용을 의미하며, 다음과 같이 정의하였다.</p>
+              <strong>■ 건축물 피해복구비용의 정의</strong>
+              <ul class="dot_lst">
+                <li>지진진동에 의한 건물 피해와 지진화재에 의한 피해를 포함</li>
+                <li>복구비용 기반으로 평가. 즉, 신축단가적용 (피해액과 달리 감가상각에 의한 잔존가치 고려 않음)</li>
+                <li>일반 건축물의 손실액만으로 한정 (상업시설과 공장의 설비 및 부품의 피해는 제외)</li>
+              </ul>
+              <p>본 연구에서 고려하는 지진의 크기는 건축물 피해위험도와 지진화재위험도에서와 동일하다. 즉, 평가단위 행정구역 간의 상대비교를 위해 모든 지역에서 동일한 유효지반가속도가 작용한다고 가정하고 이 때 발생하는 붕괴 및 지진화재에 의한 건물피해액을 금액으로 환산한 것이다. 고려하는 지진의 재현주기는 2400년, 1000년, 500년의 3종류이며, 각 경우 유효지반가속도는 지진구역 1로 가정하여 0.22g, 0.154g, 0.11g를 사용하였다. 유효지반가속도는 기반암의 지진가속도이므로 각 건물에 작용하는 지진력은 해당건물의 지반조건에 따른 지반증폭계수를 고려하여 산정된다. 건물별로 작용하는 스펙트럼 가속도의 산정절차는 건축물 피해위험도 및 지진화재위험도 평가시 산정절차와 동일하다. (건축물 피해위험도 및 재난관리위험도 절차서 참조)</p>
+              <p>지진진동에 의한 피해, 즉 흔들림에 의한 건물의 손상에 대한 피해복구비용의 산정절차는 기본적으로 복구비용은 HAZUS의 개념을 따랐다. 하지만, HAZUS에 제시된 절차에 따를 경우 여러 단계의 복잡한 계산이 요구되므로 이를 간략화하여 반파이상의 손상 발생확률에 미리 계산된 피해금액환산계수를 곱하여 산정하도록 계산절차를 단순화하였다.</p>
+              <p>지진화재에 의한 피해복구비용은 지진재현주기별 출화건수가 1.0 이상인 건물에 대해서만 평가하는데, 지진화재 피해복구비용은 지진화재위험도 산정결과인 소실연면적비율에 해당건물의 신축단가와 손해율을 곱하여 산정한다. 지진시 흔들림에 의한 피해와 지진화재에 의한 피해가 동시에 발생할 경우 두 값중 큰 값에 작은 값의 절반을 더한 값으로 최종 피해복구금액을 산정하였다.</p>
+              <p>2절에서는 HAZUS에 제시된 건축물 손상피해액 산정절차는 요약하였으며 1.3절에는 본 연구에서 사용한 건축물 피해복구비용절차 및 지진화재피해복구비용의 산정절차를 기술하였다.</p>
+            </section>
+          </article>
+          <article>
+            <h1 id="#2">HAZUS의 평가절차</h1>
+            <section class="section2">
+              <p>HAZUS에서는 건물의 지진피해액(진동에 의한 손상 혹은 붕괴)을 지진에 의한 건축물 손상상태를 5단계로 구분하고 각 단계별 발생확률에 손상정도에 따른 복구비용을 곱한 값을 합산하여 산정한다. 건축물의 손상은 구조체와 가속도 민감형 비구조요소, 변위민감형 비구조요소로 나누어 고려한다. 구조체 혹은 비구조요소의 손상은 구조형식에 따라 달라지며, 가격(신축비용 혹은 설치비용)은 건물의 용도에 따라 달라진다. 따라서 구조형식이 이고 용도가 인 건축물의 지진피해액은 식 (1.2-1)과 같이 나타낼 수 있다.</p>
+              <div class="equation">
+                <dl>
+                  <dt>식 (2-1)</dt>
+                  <dd><img src="../images/intro/recovery/img_method2-1.gif" alt="식 (2-1)"></dd>
+                </dl>
+              </div>
+              <p>여기서, <img src="../images/intro/recovery/img_method_CSTR.gif" alt="CSTR">, <img src="../images/intro/recovery/img_method_CNSA.gif" alt="CNSA">, <img src="../images/intro/recovery/img_method_CNSD.gif" alt="CNSD">는 각각 구조물, 가속도민감형 비구조요소, 변위민감형 비구조요소의 피해액을 나타내며, <img src="../images/intro/recovery/img_method_st.gif" alt="st">는 구조형식, <img src="../images/intro/img_method__i.gif" alt="i">는 건축물의 용도를 나타낸다. HAZUS에서는 전체건물을 36종의 구조형식과 33종의 용도로 분류한다. </p>
+              <p>식 (1.2-2)는 구조형식이 <img src="../images/intro/recovery/img_method_st.gif" alt="st">이고 용도분류가 <img src="../images/intro/img_method__i.gif" alt="i">인 건축물의 구조적 피해액 산정식을 나타낸다. 즉, 주어진 지진동에 의해 예상되는 구조체의 손상정도별 발생확률에 손상단계별 감가율과 건물의 신축단가를 곱하여 산정한다. 구조체의 손상은 취약도함수를 통해 산정되는 4단계의 손상에 손상이 없음(No damage)을 추가한 5단계, 즉 No damage, Slight, Moderate, Extensive, Complete의 5단계별 발생확률을 구조형식별 취약도 함수를 사용하여 구한다. 앞서 언급한 바와 같이 본 연구에서는 지진에 의해 발생한 손실을 원상태로 복구하기 위한 비용을 의미하므로 감가상각을 고려하지 않았다.</p>
+              <div class="equation">
+                <dl>
+                  <dt>식 (2-2)</dt>
+                  <dd><img src="../images/intro/recovery/img_method2-2.gif" alt="식 (2-2)"></dd>
+                  <dd>여기서,</dd>
+                  <dd><strong><img src="../images/intro/recovery/img_method_BSTRi.gif" alt=""> :</strong> 용도 <img src="../images/intro/img_method__i.gif" alt="i">에 해당하는 건물의 구조체 신축단가</dd>
+                  <dd><strong><img src="../images/intro/recovery/img_method_PDSTRstds.gif" alt=""> :</strong> 구조형식 <img src="../images/intro/recovery/img_method_st.gif" alt="st">인 건물의 구조체에 <img src="../images/intro/recovery/img_method_ds.gif" alt="ds">의 손상이 발생할 확률. 구조형식별 구조체 취약도 함수를 통해 산정</dd>
+                  <dd><strong><img src="../images/intro/recovery/img_method_BSTRi.gif" alt=""> :</strong> 용도 <img src="../images/intro/img_method__i.gif" alt="i">에 해당하는 건물의 구조체에 <img src="../images/intro/recovery/img_method_ds.gif" alt="ds">의 손상이 발생할 경우 가치감소율(감가율)</dd>
+                  <dd><strong><img src="../images/intro/recovery/img_method_BSTRi.gif" alt=""> :</strong> 손상단계. (No damage, Slight, Moderate, Extensive, Complete) 에 해당하는 5단계로 나뉨</dd>
+                </dl>
+              </div>
+              <p>가속도민감형 비구조요소의 지진피해금액도 구조체와 유사한 절차로 산정한다.</p>
+              <div class="equation">
+                <dl>
+                  <dt>식 (2-3)</dt>
+                  <dd><img src="../images/intro/recovery/img_method2-3.gif" alt="식 (2-3)"></dd>
+                  <dd>여기서,</dd>
+                  <dd><strong><img src="../images/intro/recovery/img_method_BNSAi.gif" alt=""> :</strong> 용도 <img src="../images/intro/img_method__i.gif" alt="i">에 해당하는 건물의 가속도민감형 비구조요소의 신규설치비용</dd>
+                  <dd><strong><img src="../images/intro/recovery/img_method_PDNSAstds.gif" alt=""> :</strong> 구조형식 <img src="../images/intro/recovery/img_method_st.gif" alt="st">인 건물의 가속도민감형 비구조요소에 <img src="../images/intro/recovery/img_method_ds.gif" alt="ds">의 손상이 발생할 확률. 구조형식별 가속도민감형 비구조요소 취약도 함수를 통해 산정</dd>
+                  <dd><strong><img src="../images/intro/recovery/img_method_RNSAdsi.gif" alt=""> :</strong> 용도 <img src="../images/intro/img_method__i.gif" alt="i">에 건물의 가속도민감형 비구조요소에 <img src="../images/intro/recovery/img_method_ds.gif" alt="ds">의 손상이 발생할 경우 가치감소율(감가율)</dd>                  
+                </dl>
+              </div>
+              <p>변위민감형 비구조요소의 지진피해금액의 산정절차도 동일하다.</p>
+              <div class="equation">
+                <dl>
+                  <dt>식 (2-4)</dt>
+                  <dd><img src="../images/intro/recovery/img_method2-4.gif" alt="식 (2-4)"></dd>
+                  <dd>여기서,</dd>
+                  <dd><strong><img src="../images/intro/recovery/img_method_BNSDi.gif" alt=""> :</strong> 용도 <img src="../images/intro/img_method__i.gif" alt="i">에 해당하는 건물의 변위민감형 비구조요소의 신규설치비용</dd>
+                  <dd><strong><img src="../images/intro/recovery/img_method_PDNSDstds.gif" alt=""> :</strong> 구조형식 <img src="../images/intro/recovery/img_method_st.gif" alt="st">건물의 변위민감형 비구조요소에 <img src="../images/intro/recovery/img_method_ds.gif" alt="ds">의 손상이 발생할 확률. 구조형식별 변위민감형 비구조요소 취약도 함수를 통해 산정</dd>
+                  <dd><strong><img src="../images/intro/recovery/img_method_RNSDdsi.gif" alt=""> :</strong> 용도 <img src="../images/intro/img_method__i.gif" alt="i">해당하는 건물의 변위민감형 비구조요소에 <img src="../images/intro/recovery/img_method_ds.gif" alt="ds">의 손상이 발생할 경우 가치감소율(감가율)</dd>                  
+                </dl>
+              </div>
+              <p>이상과 같이 HAZUS에서 제시한 절차를 통해 피해액을 산정하기 위해서는 구조형식별 구조체, 가속도민감형 비구조요소, 변위민감형 비구조요소의 취약도함수와 건물 용도별 단위면적당 신축비용에 관한 정보, 그리고 용도와 손상정도별 가치감소율에 대한 정보가 필요하다. 또한 이러한 절차를 통해 어떤 지역의 지진피해를 산정하기 위해서는 구조형식, 용도 및 연면적 정보를 가진 건축물 목록이 필요하며 지반증폭을 고려하기 위해서는 지반정보도 요구된다.</p>
+            </section>            
+          </article>
+          <article>
+            <h1 id="3">건축물 피해 복구금액 평가절차</h1>
+            <section class="section2">
+              <h2 id="3-1">지진피해복구금액 (진동에 의한 손상)</h2>
+              <p>HAZUS에서는 구조형식을 33종으로 분류하고 각 형식별로 구조체, 가속도민감형 비구조요소, 변위민감형 비구조요소의 취약도함수를 제공하고 있다. 건물용도는 36종으로 분류하고 있다. 또한 36종의 건물용도별로 Slight, Moderate, Extensive, Complete의 각 손상단계별 감가율도 제공하고 있다. 하지만 HAZUS의 건축물 구조유형과 건물 용도분류, 그리고 용도별 신축단가는 우리나라에 맞지 않으므로 우리나라 건물을 대상으로 개발된 데이터를 적용하여 피해액을 산정하였다.</p>
+              <strong>- 건축물 취약도 함수</strong>
+              <p>본 연구에서는 건축물 피해위험도 산정시와 동일한 구조형식 분류 및 취약도 함수를 사용하였다. 국내 건축물의 지진취약도함수는 2009년 소방방재청에 의해 최초 개발되었으며 이후, 2021년 국립재난안전연구원의 연구를 통해 구조물의 구조형식분류 및 취약도 함수의 산정절차가 개선되었다. (건축물 피해위험도 및 재난관리위험도 평가절차서 참조)</p>
+              <p>본 연구에서 사용한 국내건물의 취약도함수는 내진설계수준에 따라 구분된다. 구조체의 경우 비내진건물을 의미하는 Precode, 2000년 내진설계기준을 적용한 M00, 2009년 내진설계기준을 적용한 M09로 나뉘어지며, 비구조요소의 경우 가속도민감형, 변위민감형으로 나뉘어 서로 다른 취약도함수가 사용되며 각 경우 구조물의 내진설계 수준에 따라 Precode (비내진건물), Moderate code (내진설계된 건물)로 나뉜다.</p>
+              <strong>- 건축물 용도별 신축단가</strong>
+              <p>건축물의 용도분류 및 각 용도별 신축단가는 한국부동산원에서 작성한 건물신축단가표를 참고하여 작성하였다. 한국부동산원의 건물신축단가표에서는 건축물의 용도를 크게 18종으로 분류하고 좀 더 세부적으로 46종의 대표건축물을 정의하고 있다. 또한 전기설비, 위생설비, 급배수-급탕설비등의 부대설비 11종에 대해서도 단위면적당 단가를 수록하고 있다.</p>
+              <p>본 절차서에서는 건축물대장에 수록된 세부용도코드와 의 정보에서 분류한 건축용도별 건축물을 한국부동산원에서 분류한 46종의 대표건축물 중 어디에 속하는지 판단하였고, 신축건물단가표의 단위면적당 표준단가를 DB화하여 단가를 산정하였다. 부대설비의 경우 특성을 고려하여 가속도민감형 비구조요소와 변위민감형 비구조요소로 구분하고, 비구조요소의 취약도함수로부터 손상단계별 확률을 구한 후 손상단계별로 감가 비용을 산정하였다. 즉, 전기설비는 변위민감형, 냉난방설비는 가속도민감형, 급배수급탕설비는 변위민감형과 가속도민감형 취약도함수의 평균값을 가지는 것으로 가정하였다.</p>
+              <div class="figure_wrap flex_figure">                 
+                <figure>
+                  <img src="../images/intro/img_sys3_01.jpg" alt="[그림 2-3] 한국부동산원의 신축건물 단가표">
+                  <figcaption>[그림 2-3] 한국부동산원의 신축건물 단가표</figcaption>
+                </figure>
+              </div>
+              <strong>- 피해액 평가절차의 개선</strong>
+              <p>국내 건축물의 구조형식별 취약도 함수와 용도별 신축단가를 사용하여 지진피해복구비용을 산정할 경우 구체적인 수행 순서는 다음과 같다.</p>
+              <ul class="lst_default">
+                <li>① 지진동의 재현주기 결정: 본 연구에서 지진동의 재현주기는 2400년, 1000년, 500년을 고려하며 각 경우 지반가속도는 0.22g, 0.154g, 0.11g를 사용한다. 이 지반가속도는 고려하는 모든 지역에 동일한 값을 적용한다.</li>
+                <li>② 대상지역의 건축물 목록 준비: 평가대상지역의 건축물 대장으로부터 건축물 목록을 작성하고 각 건물별 정보로로부터 평가에 필요한 정보를 결정한다. 즉, 각 건물의 위치(위도 및 경도 좌표로부터 지반조건(~)을 결정하고, 구조재료 및 용도로부터 41종의 구조형식을 결정한다. 또한 건축일자를 기준으로 판단한 내진설계수준를 결정하며, 건축물 대장의 세부용도로부터 46종의 부동산원 용도로 변환한다.</li>
+                <li>③ 손상단계별 발생확률 산정: 각 건물별로 지반조건에 해당하는 지반증폭을 고려하여 지진하중을 산정하고, 4단계의 손상 (Slight, Moderate, Extensive, Complete)별 발생확률을 구한다. 취약도함수는 내진설계수준에 따라 구분된다. 구조체의 경우 비내진건물을 의미하는 Precode, 2000년 내진설계기준을 적용한 M00, 2009년 내진설계기준을 적용한 M09로 나뉘어지며, 비구조요소의 경우 가속도민감형, 변위민감형으로 나뉘어 서로 다른 취약도함수가 사용되며 각 경우 구조물의 내진설계 수준에 따라 Precode (비내진건물), Moderate code (내진설계된 건물)로 나뉜다.</li>
+                <li>④ 피해복구비용 산정: 건축물 목록(건축물 대장)내의 개별건물별 구조체 및 비구조요소의 피해액을 산정하고 전체 피해액을 합산한다. 즉, 식 (2-2)~(2-4)에 따라 개별 건물의 구조형식과 용도에 따라 구조체 및 비구조요소의 손상단계별 발생확률에 각 용도 및 손상단계별 피해율를 곱하고 다시 신축단가를 곱하여 피해복구비용 산정한다. 구조체의 신축단가는 한국부동산원의 건물신축단가표로부터 결정하였다. 비구조요소의 경우 신축건물단가표에서 비구조요소는 전기설비, 급배수급탕성비, 냉난방설비으로 구분하여 단가를 제시하고 있다. 전기설비는 변위민감형, 냉난방설비는 가속도민감형, 급배수급탕설비는 변위민감형과 가속도민감형 취약도함수의 평균값을 가지는 것으로 가정하였다.</li>
+              </ul>
+              <p>식 (2-2)~(2-4)의 피해복구금액의 계산과정을 풀어서 표현하면 모두 동일하게  다음의 식(3-1)와 같은 구조를 가지고 있다.</p>
+              <div class="equation">
+                <dl>
+                  <dt>식 (3-1)</dt>
+                  <dd><img src="../images/intro/recovery/img_method3-1.gif" alt="식 (3-1)"></dd>                        
+                </dl>
+              </div>
+              <p>여기서, <img src="../images/intro/recovery/img_method_Bi.gif" alt="Bi">는 건물용도별 신축단가(신규설치비용)이며 <img src="../images/intro/recovery/img_method_Pst(S).gif" alt="Pst(S)">, <img src="../images/intro/recovery/img_method_Pst(M).gif" alt="Pst(M)">, <img src="../images/intro/recovery/img_method_Pst(E).gif" alt="Pst(E)">, <img src="../images/intro/recovery/img_method_Pst(C).gif" alt="Pst(C)">는 각각 구조형식이 인 건축물에서 구조체에 Slight, Moderate, Extensive, Complete에 해당하는 손상의 발생확률을 의미하며, <img src="../images/intro/recovery/img_method_Rsti(S).gif" alt="Rsti(S)">, <img src="../images/intro/recovery/img_method_Rsti(M).gif" alt="Rsti(M)">, <img src="../images/intro/recovery/img_method_Rsti(E).gif" alt="Rsti(E)">, <img src="../images/intro/recovery/img_method_Rsti(C).gif" alt="Rsti(C)">는 구조형식이 이고 용도가 인 건축물에서 각 단계별 손상단계별 가치감소율(감가율)을 의미한다.</p>
+              <p>개별건물의 전체 피해금액 산정을 위해서는 위와 유사한 계산을 구조체 뿐 아니라 전기설비, 기계설비 및 냉난방설비에 대해서도 수행하여야 하므로 계산이 복잡해진다. 하지만 계산에 사용되는 구조체, 전기설비, 기계설비, 냉난방설비의 <img src="../images/intro/recovery/img_method_Bi.gif" alt="Bi">, <img src="../images/intro/recovery/img_method_Pst.gif" alt="Pst">,  <img src="../images/intro/recovery/img_method_Rsti.gif" alt="Rsti">의 조합은 한정된다. 즉, 단위면적당 피해금액은 지반가속도의 크기, 지반조건, 구조형식, 건축물의 용도에 따라 결정되므로 식 (3-1)의 손상단계별 확률중 하나의 수치를 기준으로 환산계수 테이블을 작성하여 계산과정을 단순화할 수 있다. 본 연구에서는 식 (3-2)과 같이 환산계수 를 반파이상의 손상발생 확률을 기준으로 정의하였다.</p>
+              <div class="equation">
+                <dl>
+                  <dt>식 (3-2)</dt>
+                  <dd><img src="../images/intro/recovery/img_method3-2.gif" alt="식 (3-2)"></dd>                        
+                </dl>
+              </div>
+              <p>따라서 전체 피해금액은 식 (3-3)과 같은 계산을 통해 산정가능하다. 이 값은 단위면적당의 피해금액이므로 개별 건물의 피해금액은 건물별 연면적을 곱하여 산정한다.</p>
+              <div class="equation box_dotted">
+                <dl>
+                  <dt>식 (3-3)</dt>
+                  <dd><img src="../images/intro/recovery/img_method3-3.gif" alt="식 (3-3)"></dd>                        
+                </dl>
+              </div>
+              <p>피해복구금액 환산계수는 전체피해복구비용을 반파이상의 손상발생확률로 나누어 구하게 되므로 지반가속도의 크기 3종(0.22g, 0.154g, 0.11g), 지반조건(<img src="../images/intro/recovery/img_method_S1.gif" alt="S1">~<img src="../images/intro/recovery/img_method_S4.gif" alt="S4">), 구조형식 41종, 부동산원 용도 46종에 따라 다른 값을 가진다. [표 1.3-7]은 환산계수의 예시로 지반가속도 0.22g, <img src="../images/intro/recovery/img_method_S2.gif" alt="S2">지반, 내진설계수진의 Precode인 경우를 나타낸 것이다.</p>
+            </section>
+            <section class="section2">
+              <h2 id="3-2">지진화재에 의한 피해복구비용 산정절차</h2>
+              <p>지진화재 발생시 건물의 피해액 산정절차는 소방청의 ‘화재피해액 산정절차’를 참고하였다. 소방청의 경우 화재로 인한 건물의 피해액은 화재피해 대상건물과 동일한 구조, 용도, 질, 규모의 건물을 재건축하는데 소요되는 금액(재건축비)에서 사용손모 및 경과년수에 대응한 감가공제를 한 다음 손해율을 곱한 금액으로 산정하고 있다. 소방청의 화재피해액 산정식은 식 (3-4)과 같다.</p>              
+              <div class="equation">
+                <dl>
+                  <dt>식 (3-4)</dt>
+                  <dd>화재피해액 = (소실면적의 재건축비)×(잔가율)×(손해율)</dd>                        
+                  <dd>여기서,</dd>
+                  <dd><img src="../images/intro/recovery/img_method3-4.gif" alt="">이다.</dd>
+                </dl>
+              </div>
+              <p>하지만 본 연구에서는 복구비용기반으로 평가하므로 잔가율은 고려하지 않는다. 소방청의 ‘화재피해액 산정절차’에서 손해율은 재사용이 불가능한 경우 90~100%, 부분적을 재사용이 가능한 경우 35~60%, 마감재가 소실된 경우 20% 이하로 보고 있다. 또한, 화재조사 및 보고규정 (소방청 훈령 제 304호)에서 전소, 반소, 부분소를 다음과 같이 규정하고 있다.</p>
+              <ul class="lst_default">
+                <li><strong>전소</strong>
+                  <p>건물의 70%이상이 소실되었거나 또는 그 미만이라도 잔존부분을 보수하여도 재사용이 불가능 한 것</p>
+                </li>
+                <li><strong>반소</strong>
+                  <p>건물의 30%이상 70%미만이 소실된 것</p>
+                </li>
+                <li><strong>부분소</strong>
+                  <p>전소, 반소화재에 해당되지 아니하는 것</p>
+                </li>
+              </ul>
+              <p>본 연구에서는 위의 규정을 참고하여 다음과 같이 소실연면적비율당 손해율을 설정하고 이를 지진화재 피해복구비용 산정시 사용하였다.</p>
+              <div class="tbl_wrap">
+                <table class="tbl_method">
+                  <caption>[표 3-1] 소실연면적비율당 손해율</caption>
+                  <thead>
+                    <tr>
+                      <th scope="col" colspan="2">소실정도(소실연면적비율)</th>
+                      <th scope="col" colspan="2">피해정도</th>
+                      <th scope="col">손해율(%)</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td colspan="2">전소 (70% 이상)</td>
+                      <td colspan="2">주요구조체의 재사용이 불가능한 경우</td>
+                      <td>90</td>
+                    </tr>
+                    <tr>
+                      <td rowspan="5">반소</td>
+                      <td rowspan="3">70% 미만<br />50% 이상</td>
+                      <td rowspan="3">주요구조체는 재사용 가능하나 기타 부분의 재사용이 불가능한 경우</td>
+                      <td>공동주택 호텔 병원</td>
+                      <td>65</td>
+                    </tr>
+                    <tr>
+                      <td>일반주택, 사무실, 점포</td>
+                      <td>60</td>
+                    </tr>
+                    <tr>
+                      <td>공장, 창고</td>
+                      <td>55</td>
+                    </tr>
+                    <tr>
+                      <td rowspan="2">50% 미만<br />30% 이상</td>
+                      <td rowspan="2">천장 벽 바닥 등 내부마감재 등이 소실된 경우</td>
+                      <td>공장, 창고 제외</td>
+                      <td>40</td>
+                    </tr>
+                    <tr>
+                      <td>공장, 창고</td>
+                      <td>35</td>
+                    </tr>
+                    <tr>
+                      <td rowspan="3">부분소</td>
+                      <td rowspan="2">30% 미만<br />10% 이상</td>
+                      <td rowspan="2">지붕 외벽 등 외부마감재 등이 소실된 경우</td>
+                      <td>공장 및 창고</td>
+                      <td>30</td>
+                    </tr>
+                    <tr>
+                      <td>위의 경우 제외</td>
+                      <td>20</td>
+                    </tr>
+                    <tr>
+                      <td>10% 미만<br />0% 이상</td>
+                      <td colspan="2">화재로 인한 수손 시 또는 그을음만 입은 경우</td>
+                      <td>10</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <p>지진화재위험도는 해당건물이 내화구조여부 및 인접건물과의 거리를 고려하여 소실연면적비와 출화건수를 산출하여 산정한다. 따라서, 지진화재피해복구금액도 지진화재위험도 산정 절차와 유사하게 식 (3-5) 식에 따라 산정한다.</p>
+              <div class="equation  box_dotted">
+                <dl>
+                  <dt>식 (3-5)</dt>
+                  <dd>지진화재피해복구금액 = (소실연면적비)×(손해율)</dd>
+                  <dd>단, 출화건수가 1.0이상인 경우만 고려</dd>
+                </dl>
+              </div>
+            </section>
+            <section class="section2">
+              <h2 id="3-3">피해복구비용 산정을 위한 테이블</h2>
+              <div class="tbl_wrap">
+                <table class="tbl_method">
+                  <caption>[표 3-2] 신축건물단가표 (천원/㎡)</caption>
+                    <thead>
+                      <tr>
+                        <th scope="col"></th>
+                        <th scope="col">대표건축물</th>
+                        <th scope="col">건물 단가</th>
+                        <th scope="col">전기설비</th>
+                        <th scope="col">위생설비</th>
+                        <th scope="col">냉난방 설비</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr> <td>1</td> <td>일반주택</td> <td>209</td> <td>24</td> <td>84.5</td> <td>100.5</td> </tr>
+                      <tr> <td>2</td> <td>고급주택</td> <td>271</td> <td>24</td> <td>127.5</td> <td>119.5</td> </tr>
+                      <tr> <td>3</td> <td>다가구주택</td> <td>209</td> <td>24</td> <td>84.5</td> <td>100.5</td> </tr>
+                      <tr> <td>4</td> <td>다중주택</td> <td>209</td> <td>24</td> <td>84.5</td> <td>100.5</td> </tr>
+                      <tr> <td>5</td> <td>아파트</td> <td>227.5</td> <td>61</td> <td>94</td> <td>72.5</td> </tr>
+                      <tr> <td>6</td> <td>연립주택</td> <td>162.5</td> <td>24</td> <td>70.5</td> <td>68</td> </tr>
+                      <tr> <td>7</td> <td>다세대주택</td> <td>162.5</td> <td>24</td> <td>70.5</td> <td>68</td> </tr>
+                      <tr> <td>8</td> <td>도시형생활주택(원룸형)</td> <td>162.5</td> <td>24</td> <td>70.5</td> <td>68</td> </tr>
+                      <tr> <td>9</td> <td>기숙사</td> <td>301</td> <td>47.5</td> <td>70.5</td> <td>183</td> </tr>
+                      <tr> <td>10</td> <td>점포 및 상가</td> <td>262.5</td> <td>28</td> <td>60.5</td> <td>174</td> </tr>
+                      <tr> <td>11</td> <td>목욕장</td> <td>314.25</td> <td>20.75</td> <td>123.5</td> <td>170</td> </tr>
+                      <tr> <td>12</td> <td>목욕장(사우나시설포함)</td> <td>323.25</td> <td>20.75</td> <td>123.5</td> <td>179</td> </tr>
+                      <tr> <td>13</td> <td>고급목욕장(사우나시설포함)</td> <td>304.25</td> <td>20.75</td> <td>113.5</td> <td>170</td> </tr>
+                      <tr> <td>14</td> <td>일반창고</td> <td>238.5</td> <td>24.5</td> <td>35</td> <td>179</td> </tr>
+                      <tr> <td>15</td> <td>저온창고</td> <td>288.25</td> <td>9.75</td> <td>25.5</td> <td>253</td> </tr>
+                      <tr> <td>16</td> <td>냉동창고</td> <td>288.25</td> <td>9.75</td> <td>25.5</td> <td>253</td> </tr>
+                      <tr> <td>17</td> <td>일반공장</td> <td>240</td> <td>26</td> <td>35</td> <td>179</td> </tr>
+                      <tr> <td>18</td> <td>냉동공장</td> <td>304.5</td> <td>26</td> <td>25.5</td> <td>253</td> </tr>
+                      <tr> <td>19</td> <td>반도체공장</td> <td>265</td> <td>51</td> <td>35</td> <td>179</td> </tr>
+                      <tr> <td>20</td> <td>아파트형공장</td> <td>231.25</td> <td>17.25</td> <td>35</td> <td>179</td> </tr>
+                      <tr> <td>21</td> <td>여관</td> <td>292.5</td> <td>39</td> <td>70.5</td> <td>183</td> </tr>
+                      <tr> <td>22</td> <td>호텔</td> <td>387</td> <td>74</td> <td>105.5</td> <td>207.5</td> </tr>
+                      <tr> <td>23</td> <td>콘도미니엄</td> <td>312.5</td> <td>34.5</td> <td>70.5</td> <td>207.5</td> </tr>
+                      <tr> <td>24</td> <td>생활형 숙박시설</td> <td>162.5</td> <td>24</td> <td>70.5</td> <td>68</td> </tr>
+                      <tr> <td>25</td> <td>일반업무시설</td> <td>312</td> <td>65.5</td> <td>60.5</td> <td>186</td> </tr>
+                      <tr> <td>26</td> <td>오피스텔</td> <td>342.5</td> <td>65.5</td> <td>69.5</td> <td>207.5</td> </tr>
+                      <tr> <td>27</td> <td>공공업무시설</td> <td>283.5</td> <td>55.5</td> <td>42</td> <td>186</td> </tr>
+                      <tr> <td>28</td> <td>소주거용 오피스텔</td> <td>162.5</td> <td>24</td> <td>70.5</td> <td>68</td> </tr>
+                      <tr> <td>29</td> <td>백화점</td> <td>293.5</td> <td>31</td> <td>63.5</td> <td>199</td> </tr>
+                      <tr> <td>30</td> <td>대형할인점</td> <td>293.5</td> <td>31</td> <td>63.5</td> <td>199</td> </tr>
+                      <tr> <td>31</td> <td>수영장</td> <td>310</td> <td>14</td> <td>126</td> <td>170</td> </tr>
+                      <tr> <td>32</td> <td>볼링장</td> <td>311</td> <td>15</td> <td>126</td> <td>170</td> </tr>
+                      <tr> <td>33</td> <td>체육관</td> <td>333</td> <td>37</td> <td>126</td> <td>170</td> </tr>
+                      <tr> <td>34</td> <td>레저시설</td> <td>331.5</td> <td>35.5</td> <td>126</td> <td>170</td> </tr>
+                      <tr> <td>35</td> <td>병원</td> <td>408</td> <td>40</td> <td>162.5</td> <td>205.5</td> </tr>
+                      <tr> <td>36</td> <td>장례식장</td> <td>292.5</td> <td>38</td> <td>84.5</td> <td>170</td> </tr>
+                      <tr> <td>37</td> <td>예식장</td> <td>269.5</td> <td>35</td> <td>60.5</td> <td>174</td> </tr>
+                      <tr> <td>38</td> <td>영화관</td> <td>300</td> <td>20.5</td> <td>109.5</td> <td>170</td> </tr>
+                      <tr> <td>39</td> <td>학교</td> <td>255</td> <td>45</td> <td>36</td> <td>174</td> </tr>
+                      <tr> <td>40</td> <td>주유소</td> <td>38.75</td> <td>18.25</td> <td>20.5</td> <td>　-</td> </tr>
+                      <tr> <td>41</td> <td>위험물저장창고</td> <td>203.5</td> <td>24.5</td> <td>-　</td> <td>179</td> </tr>
+                      <tr> <td>42</td> <td>주차빌딩</td> <td>26.5</td> <td>26.5</td> <td>　-</td> <td>　-</td> </tr>
+                      <tr> <td>43</td> <td>교회</td> <td>308</td> <td>43</td> <td>79</td> <td>186</td> </tr>
+                      <tr> <td>44</td> <td>재실</td> <td>0</td> <td>-　</td> <td>　-</td> <td>　-</td> </tr>
+                      <tr> <td>45</td> <td>유치원</td> <td>279</td> <td>30</td> <td>75.5</td> <td>173.5</td> </tr>
+                      <tr> <td>46</td> <td>축사</td> <td>0</td> <td>-</td> <td>0</td> <td>-</td> </tr>
+                    </tbody>
+                </table>
+              </div>
+              <div class="tbl_wrap">
+                <table class="tbl_method">
+                  <caption>[표 3-3] 용도코드 환산표</caption>
+                    <thead>
+                      <tr>
+                        <th scope="col">세부용도 코드번호</th>
+                        <th scope="col">건축물대장 세부용도명</th>
+                        <th scope="col">부동산원 코드번호</th>
+                        <th scope="col">부동산원 용도명</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr><td>1000</td><td>단독주택</td><td>1</td><td>일반주택 </td></tr>
+                      <tr><td>1001</td><td>단독주택</td><td>2</td><td>고급주택</td></tr>
+                      <tr><td>1002</td><td>다중주택</td><td>4</td><td>다중주택</td></tr>
+                      <tr><td>1003</td><td>다가구주택</td><td>3</td><td>다가구주택</td></tr>
+                      <tr><td>1004</td><td>공관</td><td>2</td><td>고급주택</td></tr>
+                      <tr><td>2000</td><td>공동주택</td><td>7</td><td>다세대주택</td></tr>
+                      <tr><td>2001</td><td>아파트</td><td>5</td><td>아파트</td></tr>
+                      <tr><td>2002</td><td>연립주택</td><td>6</td><td>연립주택</td></tr>
+                      <tr><td>2003</td><td>다세대주택</td><td>7</td><td>다세대주택</td></tr>
+                      <tr><td>2004</td><td>생활편익시설</td><td>5</td><td>아파트</td></tr>
+                      <tr><td>2005</td><td>부대시설</td><td>5</td><td>아파트</td></tr>
+                      <tr><td>2006</td><td>복리시설</td><td>5</td><td>아파트</td></tr>
+                      <tr><td>2007</td><td>기숙사</td><td>9</td><td>기숙사</td></tr>
+                      <tr><td>2008</td><td>도시형생활주택(원룸형)</td><td>8</td><td>도시형생활주택(원룸형)</td></tr>
+                      <tr><td>3000</td><td>제1종근린생활시설</td><td>10</td><td>점포 및 상가</td></tr>
+                      <tr><td>∫</td><td>...</td><td>∫</td><td>∫</td></tr>
+                      <tr><td>3024</td><td>지역아동센터</td><td>10</td><td>점포 및 상가</td></tr>
+                      <tr><td>3025</td><td>목욕장</td><td>13</td><td>고급목욕장(사우나시설포함)</td></tr>
+                      <tr><td>3026</td><td>이용원</td><td>10</td><td>점포 및 상가</td></tr>
+                      <tr><td>∫</td><td>...</td><td>∫</td><td>∫</td></tr>
+                      <tr><td>3032</td><td>산후조리원</td><td>10</td><td>점포 및 상가</td></tr>
+                      <tr><td>3033</td><td>가스배관시설</td><td>17</td><td>일반공장</td></tr>
+                      <tr><td>∫</td><td>...</td><td>∫</td><td>∫</td></tr>
+                      <tr><td>3035</td><td>통신용 시설</td><td>17</td><td>일반공장</td></tr>
+                      <tr><td>3100</td><td>공공시설</td><td>10</td><td>점포 및 상가</td></tr>
+                      <tr><td>∫</td><td>...</td><td>∫</td><td>∫</td></tr>
+                      <tr><td>4999</td><td>기타제2종근린생활시설</td><td>10</td><td>점포 및 상가</td></tr>
+                      <tr><td>5000</td><td>문화및집회시설</td><td>37</td><td>예식장</td></tr>
+                      <tr><td>5100</td><td>공연장</td><td>38</td><td>영화관</td></tr>
+                      <tr><td>∫</td><td>...</td><td>∫</td><td>∫</td></tr>
+                      <tr><td>5104</td><td>서커스장</td><td>38</td><td>영화관</td></tr>
+                      <tr><td>5105</td><td>비디오물감상실</td><td>10</td><td>점포 및 상가</td></tr>
+                      <tr><td>5106</td><td>비디오물소극장</td><td>10</td><td>점포 및 상가</td></tr>
+                      <tr><td>5107</td><td>극장</td><td>38</td><td>영화관</td></tr>
+                      <tr><td>5108</td><td>영화관</td><td>38</td><td>영화관</td></tr>
+                      <tr><td>5199</td><td>기타공연장</td><td>10</td><td>점포 및 상가</td></tr>
+                      <tr><td>5200</td><td>집회장</td><td>10</td><td>점포 및 상가</td></tr>
+                      <tr><td>5201</td><td>예식장</td><td>37</td><td>예식장</td></tr>
+                      <tr><td>∫</td><td>...</td><td>∫</td><td>∫</td></tr>
+                      <tr><td>5203</td><td>공회당</td><td>37</td><td>예식장</td></tr>
+                      <tr><td>5204</td><td>마권장외발매소</td><td>10</td><td>점포 및 상가</td></tr>
+                      <tr><td>5399</td><td>기타관람장</td><td>10</td><td>점포 및 상가</td></tr>
+                      <tr><td>5400</td><td>전시장</td><td>37</td><td>예식장</td></tr>
+                      <tr><td>∫</td><td>...</td><td>∫</td><td>∫</td></tr>
+                      <tr><td>5402</td><td>미술관</td><td>37</td><td>예식장</td></tr>
+                      <tr><td>5403</td><td>과학관</td><td>10</td><td>점포 및 상가</td></tr>
+                      <tr><td>5404</td><td>기념관</td><td>10</td><td>점포 및 상가</td></tr>
+                      <tr><td>5405</td><td>산업전시장</td><td>37</td><td>예식장</td></tr>
+                      <tr><td>∫</td><td>...</td><td>∫</td><td>∫</td></tr>
+                      <tr><td>5408</td><td>체험관</td><td>37</td><td>예식장</td></tr>
+                      <tr><td>5499</td><td>기타전시장</td><td>10</td><td>점포 및 상가</td></tr>
+                      <tr><td>∫</td><td>...</td><td>∫</td><td>∫</td></tr>
+                      <tr><td>5999</td><td>기타문화및집회시설</td><td>10</td><td>점포 및 상가</td></tr>
+                      <tr><td>6000</td><td>종교시설</td><td>43</td><td>교회</td></tr>
+                      <tr><td>∫</td><td>...</td><td>∫</td><td>∫</td></tr>
+                      <tr><td>6999</td><td>기타종교시설</td><td>43</td><td>교회</td></tr>
+                      <tr><td>7000</td><td>판매시설</td><td>30</td><td>대형할인점</td></tr>
+                      <tr><td>7001</td><td>도매시장</td><td>10</td><td>점포 및 상가</td></tr>
+                      <tr><td>∫</td><td>...</td><td>∫</td><td>∫</td></tr>
+                      <tr><td>7101</td><td>시장</td><td>10</td><td>점포 및 상가</td></tr>
+                      <tr><td>7102</td><td>백화점</td><td>29</td><td>백화점</td></tr>
+                      <tr><td>7103</td><td>대형백화점</td><td>29</td><td>백화점</td></tr>
+                      <tr><td>7104</td><td>대형점</td><td>30</td><td>대형할인점</td></tr>
+                      <tr><td>7105</td><td>쇼핑센터</td><td>30</td><td>대형할인점</td></tr>
+                      <tr><td>7199</td><td>기타소매시장</td><td>10</td><td>점포 및 상가</td></tr>
+                      <tr><td>7999</td><td>기타판매시설</td><td>10</td><td>점포 및 상가</td></tr>
+                      <tr><td>∫</td><td>...</td><td>∫</td><td>∫</td></tr>
+                      <tr><td>8000</td><td>운수시설</td><td>37</td><td>예식장</td></tr>
+                      <tr><td>∫</td><td>...</td><td>∫</td><td>∫</td></tr>
+                      <tr><td>8999</td><td>기타운수시설</td><td>37</td><td>예식장</td></tr>
+                      <tr><td>9000</td><td>의료시설</td><td>35</td><td>병원</td></tr>
+                      <tr><td>∫</td><td>...</td><td>∫</td><td>∫</td></tr>
+                      <tr><td>9999</td><td>기타의료시설</td><td>35</td><td>병원</td></tr>
+                      <tr><td>10000</td><td>교육연구시설</td><td>39</td><td>학교</td></tr>
+                      <tr><td>∫</td><td>...</td><td>∫</td><td>∫</td></tr>
+                      <tr><td>10999</td><td>기타교육연구시설</td><td>39</td><td>학교</td></tr>
+                      <tr><td>11000</td><td>노유자시설</td><td>45</td><td>유치원</td></tr>
+                      <tr><td>∫</td><td>...</td><td>∫</td><td>∫</td></tr>
+                      <tr><td>11999</td><td>기타노유자시설</td><td>45</td><td>유치원</td></tr>
+                      <tr><td>12000</td><td>수련시설</td><td>39</td><td>학교</td></tr>
+                      <tr><td>∫</td><td>...</td><td>∫</td><td>∫</td></tr>
+                      <tr><td>12999</td><td>기타수련시설</td><td>39</td><td>학교</td></tr>
+                      <tr><td>13000</td><td>운동시설</td><td>34</td><td>레저시설</td></tr>
+                      <tr><td>13001</td><td>체육관</td><td>33</td><td>체육관</td></tr>
+                      <tr><td>13002</td><td>운동장시설</td><td>34</td><td>레저시설</td></tr>
+                      <tr><td>∫</td><td>...</td><td>∫</td><td>∫</td></tr>
+                      <tr><td>13102</td><td>구기장</td><td>34</td><td>레저시설</td></tr>
+                      <tr><td>13103</td><td>볼링장</td><td>32</td><td>볼링장</td></tr>
+                      <tr><td>13104</td><td>수영장</td><td>31</td><td>수영장</td></tr>
+                      <tr><td>13105</td><td>스케이트장</td><td>34</td><td>레저시설</td></tr>
+                      <tr><td>∫</td><td>...</td><td>∫</td><td>∫</td></tr>
+                      <tr><td>13999</td><td>기타 운동시설</td><td>34</td><td>레저시설</td></tr>
+                      <tr><td>14000</td><td>업무시설</td><td>25</td><td>일반업무시설</td></tr>
+                      <tr><td>14100</td><td>공공업무시설</td><td>27</td><td>공공업무시설</td></tr>
+                      <tr><td>∫</td><td>...</td><td>∫</td><td>∫</td></tr>
+                      <tr><td>14199</td><td>기타공공업무시설</td><td>27</td><td>공공업무시설</td></tr>
+                      <tr><td>14200</td><td>일반업무시설</td><td>25</td><td>일반업무시설</td></tr>
+                      <tr><td>14201</td><td>금융업소</td><td>25</td><td>일반업무시설</td></tr>
+                      <tr><td>14202</td><td>오피스텔</td><td>26</td><td>오피스텔</td></tr>
+                      <tr><td>14203</td><td>신문사</td><td>25</td><td>일반업무시설</td></tr>
+                      <tr><td>∫</td><td>...</td><td>∫</td><td>∫</td></tr>
+                      <tr><td>14299</td><td>기타일반업무시설</td><td>25</td><td>일반업무시설</td></tr>
+                      <tr><td>15000</td><td>숙박시설</td><td>21</td><td>여관</td></tr>
+                      <tr><td>15001</td><td>고시원</td><td>24</td><td>생활형 숙박시설</td></tr>
+                      <tr><td>∫</td><td>...</td><td>∫</td><td>∫</td></tr>
+                      <tr><td>15003</td><td>다중생활시설</td><td>24</td><td>생활형 숙박시설</td></tr>
+                      <tr><td>15100</td><td>일반숙박시설</td><td>21</td><td>여관</td></tr>
+                      <tr><td>15101</td><td>호텔</td><td>22</td><td>호텔</td></tr>
+                      <tr><td>15102</td><td>여관</td><td>21</td><td>여관</td></tr>
+                      <tr><td>∫</td><td>...</td><td>∫</td><td>∫</td></tr>
+                      <tr><td>15200</td><td>관광숙박시설</td><td>21</td><td>여관</td></tr>
+                      <tr><td>15201</td><td>관광호텔</td><td>22</td><td>호텔</td></tr>
+                      <tr><td>∫</td><td>...</td><td>∫</td><td>∫</td></tr>
+                      <tr><td>15204</td><td>가족호텔</td><td>22</td><td>호텔</td></tr>
+                      <tr><td>15205</td><td>휴양콘도미니엄</td><td>21</td><td>여관</td></tr>
+                      <tr><td>15206</td><td>호스텔</td><td>21</td><td>여관</td></tr>
+                      <tr><td>15207</td><td>소형호텔</td><td>22</td><td>호텔</td></tr>
+                      <tr><td>15208</td><td>의료관광호텔</td><td>22</td><td>호텔</td></tr>
+                      <tr><td>15299</td><td>기타관광숙박시설</td><td>21</td><td>여관</td></tr>
+                      <tr><td>∫</td><td>...</td><td>∫</td><td>∫</td></tr>
+                      <tr><td>15999</td><td>기타숙박시설</td><td>21</td><td>여관</td></tr>
+                      <tr><td>16000</td><td>위락시설</td><td>10</td><td>점포 및 상가</td></tr>
+                      <tr><td>∫</td><td>...</td><td>∫</td><td>∫</td></tr>
+                      <tr><td>16999</td><td>기타위락시설</td><td>10</td><td>점포 및 상가</td></tr>
+                      <tr><td>17000</td><td>공장</td><td>17</td><td>일반공장</td></tr>
+                      <tr><td>∫</td><td>...</td><td>∫</td><td>∫</td></tr>
+                      <tr><td>17999</td><td>기타공장</td><td>17</td><td>일반공장</td></tr>
+                      <tr><td>18000</td><td>창고시설</td><td>14</td><td>일반창고</td></tr>
+                      <tr><td>∫</td><td>...</td><td>∫</td><td>∫</td></tr>
+                      <tr><td>18101</td><td>일반창고</td><td>14</td><td>일반창고</td></tr>
+                      <tr><td>18102</td><td>냉장창고</td><td>15</td><td>저온창고</td></tr>
+                      <tr><td>18103</td><td>냉동창고</td><td>16</td><td>냉동창고</td></tr>
+                      <tr><td>18999</td><td>기타창고시설</td><td>14</td><td>일반창고</td></tr>
+                      <tr><td>19000</td><td>위험물저장및처리시설</td><td>41</td><td>위험물저장창고</td></tr>
+                      <tr><td>∫</td><td>...</td><td>∫</td><td>∫</td></tr>
+                      <tr><td>19999</td><td>기타위험물저장처리시설</td><td>41</td><td>위험물저장창고</td></tr>
+                      <tr><td>20000</td><td>자동차관련시설</td><td>17</td><td>일반공장</td></tr>
+                      <tr><td>20001</td><td>주차장</td><td>42</td><td>주차빌딩</td></tr>
+                      <tr><td>20002</td><td>세차장</td><td>17</td><td>일반공장</td></tr>
+                      <tr><td>∫</td><td>...</td><td>∫</td><td>∫</td></tr>
+                      <tr><td>20999</td><td>기타자동차관련시설</td><td>17</td><td>일반공장</td></tr>
+                      <tr><td>21000</td><td>동.식물관련시설</td><td>46</td><td>축사</td></tr>
+                      <tr><td>∫</td><td>...</td><td>∫</td><td>∫</td></tr>
+                      <tr><td>21200</td><td>가축시설</td><td>46</td><td>축사</td></tr>
+                      <tr><td>21201</td><td>가축용운동시설</td><td>10</td><td>점포 및 상가</td></tr>
+                      <tr><td>∫</td><td>...</td><td>∫</td><td>∫</td></tr>
+                      <tr><td>21203</td><td>관리사</td><td>10</td><td>점포 및 상가</td></tr>
+                      <tr><td>21204</td><td>가축용창고</td><td>46</td><td>축사</td></tr>
+                      <tr><td>21205</td><td>가축시장</td><td>46</td><td>축사</td></tr>
+                      <tr><td>21206</td><td>동물검역소</td><td>10</td><td>점포 및 상가</td></tr>
+                      <tr><td>∫</td><td>...</td><td>∫</td><td>∫</td></tr>
+                      <tr><td>21999</td><td>기타동식물관련시설</td><td>10</td><td>점포 및 상가</td></tr>
+                      <tr><td>22000</td><td>분뇨.쓰레기처리시설</td><td>17</td><td>일반공장</td></tr>
+                      <tr><td>∫</td><td>...</td><td>∫</td><td>∫</td></tr>
+                      <tr><td>22999</td><td>기타분뇨쓰레기처리시설</td><td>17</td><td>일반공장</td></tr>
+                      <tr><td>23000</td><td>교정및군사시설</td><td>39</td><td>학교</td></tr>
+                      <tr><td>∫</td><td>...</td><td>∫</td><td>∫</td></tr>
+                      <tr><td>23999</td><td>기타교정및군사시설</td><td>39</td><td>학교</td></tr>
+                      <tr><td>24000</td><td>방송통신시설</td><td>27</td><td>공공업무시설</td></tr>
+                      <tr><td>∫</td><td>...</td><td>∫</td><td>∫</td></tr>
+                      <tr><td>24999</td><td>기타방송통신시설</td><td>27</td><td>공공업무시설</td></tr>
+                      <tr><td>25000</td><td>발전시설</td><td>19</td><td>반도체공장</td></tr>
+                      <tr><td>∫</td><td>...</td><td>∫</td><td>∫</td></tr>
+                      <tr><td>25999</td><td>기타발전시설</td><td>19</td><td>반도체공장</td></tr>
+                      <tr><td>26000</td><td>묘지관련시설</td><td>36</td><td>장례식장</td></tr>
+                      <tr><td>∫</td><td>...</td><td>∫</td><td>∫</td></tr>
+                      <tr><td>26999</td><td>기타묘지관련시설</td><td>36</td><td>장례식장</td></tr>
+                      <tr><td>27000</td><td>관광휴게시설</td><td>38</td><td>영화관</td></tr>
+                      <tr><td>∫</td><td>...</td><td>∫</td><td>∫</td></tr>
+                      <tr><td>27003</td><td>어린이회관</td><td>38</td><td>영화관</td></tr>
+                      <tr><td>27004</td><td>관망탑</td><td>25</td><td>일반업무시설</td></tr>
+                      <tr><td>27005</td><td>휴게소</td><td>38</td><td>영화관</td></tr>
+                      <tr><td>27006</td><td>관광지시설</td><td>25</td><td>일반업무시설</td></tr>
+                      <tr><td>∫</td><td>...</td><td>∫</td><td>∫</td></tr>
+                      <tr><td>27999</td><td>기타관광휴게시설</td><td>25</td><td>일반업무시설</td></tr>
+                      <tr><td>28000</td><td>가설건축물</td><td>14</td><td>일반창고</td></tr>
+                      <tr><td>∫</td><td>...</td><td>∫</td><td>∫</td></tr>
+                      <tr><td>28999</td><td>기타가설건축물</td><td>14</td><td>일반창고</td></tr>
+                      <tr><td>29000</td><td>장례식장</td><td>36</td><td>장례식장</td></tr>
+                      <tr><td>29001</td><td>장례식장</td><td>36</td><td>장례식장</td></tr>
+                      <tr><td>30000</td><td>자원순환관련시설</td><td>14</td><td>일반창고</td></tr>
+                      <tr><td>∫</td><td>...</td><td>∫</td><td>∫</td></tr>
+                      <tr><td>30999</td><td>기타자원순환관련시설</td><td>14</td><td>일반창고</td></tr>
+                      <tr><td>31000</td><td>야영장시설</td><td>39</td><td>학교</td></tr>
+                      <tr><td>31999</td><td>기타야영장시설</td><td>39</td><td>학교</td></tr>
+                      <tr><td>99999</td><td></td><td>10</td><td>점포 및 상가</td></tr>
+                      <tr><td>Z0000</td><td>기타</td><td>10</td><td>점포 및 상가</td></tr>
+                      <tr><td>∫</td><td>...</td><td>∫</td><td>∫</td></tr>
+                      <tr><td>Z9999</td><td>기타공공용시설</td><td>10</td><td>점포 및 상가</td></tr>                      
+                    </tbody>
+                  </table>
+              </div>
+              <div class="tbl_wrap">
+                <table class="tbl_method">
+                  <caption>[표 3-4] 손상단계별 감가율 (구조체)</caption>
+                    <thead>
+                      <tr>
+                        <th scope="col" rowspan="2">번호</th>
+                        <th scope="col" rowspan="2">분류</th>
+                        <th scope="colgroup" colspan="4">감가율 (신축단가 대비 %)</th>
+                      </tr>
+                      <tr>
+                        <th scope="col">S</th>
+                        <th scope="col">M</th>
+                        <th scope="col">E</th>
+                        <th scope="col">C</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr><td>1</td><td>일반주택</td><td>0.5</td><td>2.3</td><td>11.7</td><td>23.4</td></tr>
+                      <tr><td>2</td><td>고급주택</td><td>0.5</td><td>2.3</td><td>11.7</td><td>23.4</td></tr>
+                      <tr><td>3</td><td>다가구주택</td><td>0.3</td><td>1.4</td><td>6.9</td><td>13.8</td></tr>
+                      <tr><td>4</td><td>다중주택</td><td>0.3</td><td>1.4</td><td>6.9</td><td>13.8</td></tr>
+                      <tr><td>5</td><td>아파트</td><td>0.3</td><td>1.4</td><td>6.9</td><td>13.8</td></tr>
+                      <tr><td>6</td><td>연립주택</td><td>0.3</td><td>1.4</td><td>6.9</td><td>13.8</td></tr>
+                      <tr><td>7</td><td>다세대주택</td><td>0.3</td><td>1.4</td><td>6.9</td><td>13.8</td></tr>
+                      <tr><td>8</td><td>도시형생활주택(원룸형)</td><td>0.3</td><td>1.4</td><td>6.9</td><td>13.8</td></tr>
+                      <tr><td>9</td><td>기숙사</td><td>0.4</td><td>1.9</td><td>9.4</td><td>18.8</td></tr>
+                      <tr><td>10</td><td>점포 및 상가</td><td>0.6</td><td>2.9</td><td>14.7</td><td>29.4</td></tr>
+                      <tr><td>11</td><td>목욕장</td><td>0.3</td><td>1.6</td><td>8.1</td><td>16.2</td></tr>
+                      <tr><td>12</td><td>목욕장(사우나시설포함)</td><td>0.3</td><td>1.6</td><td>8.1</td><td>16.2</td></tr>
+                      <tr><td>13</td><td>고급목욕장(사우나시설포함)</td><td>0.3</td><td>1.6</td><td>8.1</td><td>16.2</td></tr>
+                      <tr><td>14</td><td>일반창고</td><td>0.4</td><td>1.6</td><td>7.8</td><td>15.7</td></tr>
+                      <tr><td>15</td><td>저온창고</td><td>0.4</td><td>1.6</td><td>7.8</td><td>15.7</td></tr>
+                      <tr><td>16</td><td>냉동창고</td><td>0.4</td><td>1.6</td><td>7.8</td><td>15.7</td></tr>
+                      <tr><td>17</td><td>일반공장</td><td>0.4</td><td>1.6</td><td>7.8</td><td>15.7</td></tr>
+                      <tr><td>18</td><td>냉동공장</td><td>0.4</td><td>1.6</td><td>7.8</td><td>15.7</td></tr>
+                      <tr><td>19</td><td>반도체공장</td><td>0.4</td><td>1.6</td><td>7.8</td><td>15.7</td></tr>
+                      <tr><td>20</td><td>아파트형공장</td><td>0.4</td><td>1.6</td><td>7.8</td><td>15.7</td></tr>
+                      <tr><td>21</td><td>여관</td><td>0.2</td><td>1.4</td><td>6.8</td><td>13.6</td></tr>
+                      <tr><td>22</td><td>호텔</td><td>0.2</td><td>1.4</td><td>6.8</td><td>13.6</td></tr>
+                      <tr><td>23</td><td>콘도미니엄</td><td>0.3</td><td>1.6</td><td>8.1</td><td>16.2</td></tr>
+                      <tr><td>24</td><td>생활형 숙박시설</td><td>0.3</td><td>1.6</td><td>8.1</td><td>16.2</td></tr>
+                      <tr><td>25</td><td>일반업무시설</td><td>0.4</td><td>1.9</td><td>9.6</td><td>19.2</td></tr>
+                      <tr><td>26</td><td>오피스텔</td><td>0.4</td><td>1.9</td><td>9.6</td><td>19.2</td></tr>
+                      <tr><td>27</td><td>공공업무시설</td><td>0.3</td><td>1.8</td><td>9</td><td>17.9</td></tr>
+                      <tr><td>28</td><td>소주거용 오피스텔</td><td>0.3</td><td>1.4</td><td>6.9</td><td>13.8</td></tr>
+                      <tr><td>29</td><td>백화점</td><td>0.6</td><td>2.9</td><td>14.7</td><td>29.4</td></tr>
+                      <tr><td>30</td><td>대형할인점</td><td>0.6</td><td>3.2</td><td>16.2</td><td>32.4</td></tr>
+                      <tr><td>31</td><td>수영장</td><td>0.2</td><td>1</td><td>5</td><td>10</td></tr>
+                      <tr><td>32</td><td>볼링장</td><td>0.2</td><td>1</td><td>5</td><td>10</td></tr>
+                      <tr><td>33</td><td>체육관</td><td>0.2</td><td>1</td><td>5</td><td>10</td></tr>
+                      <tr><td>34</td><td>레저시설</td><td>0.2</td><td>1</td><td>5</td><td>10</td></tr>
+                      <tr><td>35</td><td>병원</td><td>0.2</td><td>1.4</td><td>7</td><td>14</td></tr>
+                      <tr><td>36</td><td>장례식장</td><td>0.3</td><td>1.4</td><td>7.2</td><td>14.4</td></tr>
+                      <tr><td>37</td><td>예식장</td><td>0.2</td><td>1</td><td>5</td><td>10</td></tr>
+                      <tr><td>38</td><td>영화관</td><td>0.3</td><td>1.2</td><td>6.1</td><td>12.2</td></tr>
+                      <tr><td>39</td><td>학교</td><td>0.4</td><td>1.9</td><td>9.5</td><td>18.9</td></tr>
+                      <tr><td>40</td><td>주유소</td><td>1.3</td><td>6.1</td><td>30.4</td><td>60.9</td></tr>
+                      <tr><td>41</td><td>위험물저장창고</td><td>0.4</td><td>1.6</td><td>7.8</td><td>15.7</td></tr>
+                      <tr><td>42</td><td>주차빌딩</td><td>1.3</td><td>6.1</td><td>30.4</td><td>60.9</td></tr>
+                      <tr><td>43</td><td>교회</td><td>0.3</td><td>2</td><td>9.9</td><td>19.8</td></tr>
+                      <tr><td>44</td><td>재실</td><td>0.3</td><td>2</td><td>9.9</td><td>19.8</td></tr>
+                      <tr><td>45</td><td>유치원</td><td>0.4</td><td>1.9</td><td>9.5</td><td>18.9</td></tr>
+                      <tr><td>46</td><td>축사</td><td>0.8</td><td>4.6</td><td>23.1</td><td>46.2</td></tr>
+                    </tbody>
+                </table>
+              </div>
+              <div class="tbl_wrap">
+                <table class="tbl_method">
+                  <caption>[표 3-5] 손상단계별 감가율 (가속도민감형 비구조요소)</caption>
+                  <thead>
+                    <tr>
+                      <th scope="col" rowspan="2">번호</th>
+                      <th scope="col" rowspan="2">분류</th>
+                      <th scope="colgroup" colspan="4">감가율 (신설단가 대비 %)</th>
+                    </tr>
+                    <tr>
+                      <th scope="col">S</th>
+                      <th scope="col">M</th>
+                      <th scope="col">E</th>
+                      <th scope="col">C</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr><td>1</td><td>일반주택</td><td>0.5</td><td>2.7</td><td>8</td><td>26.6</td></tr>
+                    <tr><td>2</td><td>고급주택</td><td>0.5</td><td>2.7</td><td>8</td><td>26.6</td></tr>
+                    <tr><td>3</td><td>다가구주택</td><td>0.8</td><td>3.8</td><td>11.3</td><td>37.8</td></tr>
+                    <tr><td>4</td><td>다중주택</td><td>0.8</td><td>3.8</td><td>11.3</td><td>37.8</td></tr>
+                    <tr><td>5</td><td>아파트</td><td>0.8</td><td>3.8</td><td>11.3</td><td>37.8</td></tr>
+                    <tr><td>6</td><td>연립주택</td><td>0.8</td><td>3.8</td><td>11.3</td><td>37.8</td></tr>
+                    <tr><td>7</td><td>다세대주택</td><td>0.8</td><td>3.8</td><td>11.3</td><td>37.8</td></tr>
+                    <tr><td>8</td><td>도시형생활주택(원룸형)</td><td>0.8</td><td>3.8</td><td>11.3</td><td>37.8</td></tr>
+                    <tr><td>9</td><td>기숙사</td><td>0.8</td><td>4.1</td><td>12.4</td><td>41.2</td></tr>
+                    <tr><td>10</td><td>점포 및 상가</td><td>0.8</td><td>4.4</td><td>12.9</td><td>43.1</td></tr>
+                    <tr><td>11</td><td>목욕장</td><td>1</td><td>5</td><td>15</td><td>50</td></tr>
+                    <tr><td>12</td><td>목욕장(사우나시설포함)</td><td>1</td><td>5</td><td>15</td><td>50</td></tr>
+                    <tr><td>13</td><td>고급목욕장(사우나시설포함)</td><td>1</td><td>5</td><td>15</td><td>50</td></tr>
+                    <tr><td>14</td><td>일반창고</td><td>1.4</td><td>7.2</td><td>21.8</td><td>72.5</td></tr>
+                    <tr><td>15</td><td>저온창고</td><td>1.4</td><td>7.2</td><td>21.8</td><td>72.5</td></tr>
+                    <tr><td>16</td><td>냉동창고</td><td>1.4</td><td>7.2</td><td>21.8</td><td>72.5</td></tr>
+                    <tr><td>17</td><td>일반공장</td><td>1.4</td><td>7.2</td><td>21.8</td><td>72.5</td></tr>
+                    <tr><td>18</td><td>냉동공장</td><td>1.4</td><td>7.2</td><td>21.8</td><td>72.5</td></tr>
+                    <tr><td>19</td><td>반도체공장</td><td>1.4</td><td>7.2</td><td>21.8</td><td>72.5</td></tr>
+                    <tr><td>20</td><td>아파트형공장</td><td>1.4</td><td>7.2</td><td>21.8</td><td>72.5</td></tr>
+                    <tr><td>21</td><td>여관</td><td>0.9</td><td>4.3</td><td>13</td><td>43.2</td></tr>
+                    <tr><td>22</td><td>호텔</td><td>0.9</td><td>4.3</td><td>13</td><td>43.2</td></tr>
+                    <tr><td>23</td><td>콘도미니엄</td><td>1</td><td>5</td><td>15</td><td>50</td></tr>
+                    <tr><td>24</td><td>생활형 숙박시설</td><td>1</td><td>5</td><td>15</td><td>50</td></tr>
+                    <tr><td>25</td><td>일반업무시설</td><td>0.9</td><td>4.8</td><td>14.4</td><td>47.9</td></tr>
+                    <tr><td>26</td><td>오피스텔</td><td>0.9</td><td>4.8</td><td>14.4</td><td>47.9</td></tr>
+                    <tr><td>27</td><td>공공업무시설</td><td>1</td><td>4.9</td><td>14.8</td><td>49.3</td></tr>
+                    <tr><td>28</td><td>소주거용 오피스텔</td><td>0.8</td><td>3.8</td><td>11.3</td><td>37.8</td></tr>
+                    <tr><td>29</td><td>백화점</td><td>0.8</td><td>4.4</td><td>12.9</td><td>43.1</td></tr>
+                    <tr><td>30</td><td>대형할인점</td><td>0.8</td><td>4.2</td><td>12.4</td><td>41.1</td></tr>
+                    <tr><td>31</td><td>수영장</td><td>1.1</td><td>5.4</td><td>16.3</td><td>54.4</td></tr>
+                    <tr><td>32</td><td>볼링장</td><td>1.1</td><td>5.4</td><td>16.3</td><td>54.4</td></tr>
+                    <tr><td>33</td><td>체육관</td><td>1.1</td><td>5.4</td><td>16.3</td><td>54.4</td></tr>
+                    <tr><td>34</td><td>레저시설</td><td>1.1</td><td>5.4</td><td>16.3</td><td>54.4</td></tr>
+                    <tr><td>35</td><td>병원</td><td>1</td><td>5.1</td><td>15.4</td><td>51.3</td></tr>
+                    <tr><td>36</td><td>장례식장</td><td>1</td><td>5.2</td><td>15.3</td><td>51.2</td></tr>
+                    <tr><td>37</td><td>예식장</td><td>1.1</td><td>5.4</td><td>16.3</td><td>54.4</td></tr>
+                    <tr><td>38</td><td>영화관</td><td>1</td><td>5.3</td><td>15.8</td><td>52.7</td></tr>
+                    <tr><td>39</td><td>학교</td><td>0.7</td><td>3.2</td><td>9.7</td><td>32.4</td></tr>
+                    <tr><td>40</td><td>주유소</td><td>0.3</td><td>2.2</td><td>6.5</td><td>21.7</td></tr>
+                    <tr><td>41</td><td>위험물저장창고</td><td>1.4</td><td>7.2</td><td>21.8</td><td>72.5</td></tr>
+                    <tr><td>42</td><td>주차빌딩</td><td>0.3</td><td>2.2</td><td>6.5</td><td>21.7</td></tr>
+                    <tr><td>43</td><td>교회</td><td>0.9</td><td>4.7</td><td>14.3</td><td>47.6</td></tr>
+                    <tr><td>44</td><td>재실</td><td>0.9</td><td>4.7</td><td>14.3</td><td>47.6</td></tr>
+                    <tr><td>45</td><td>유치원</td><td>0.7</td><td>3.2</td><td>9.7</td><td>32.4</td></tr>
+                    <tr><td>46</td><td>축사</td><td>0.8</td><td>4.6</td><td>13.8</td><td>46.1</td></tr>
+                  </tbody>
+                </table>
+              </div>
+              <div class="tbl_wrap">
+                <table class="tbl_method">
+                  <caption>[표 3-6] 손상단계별 감가율 (변위민감형 비구조요소)</caption>
+                  <thead>
+                    <tr>
+                      <th scope="col" rowspan="2">번호</th>
+                      <th scope="col" rowspan="2">분류</th>
+                      <th scope="colgroup" colspan="4">감가율 (신설단가 대비 %)</th>
+                    </tr>
+                    <tr>
+                      <th scope="col">S</th>
+                      <th scope="col">M</th>
+                      <th scope="col">E</th>
+                      <th scope="col">C</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr><td>1</td><td>일반주택</td><td>1</td><td>5</td><td>25</td><td>50</td></tr>
+                    <tr><td>2</td><td>고급주택</td><td>1</td><td>5</td><td>25</td><td>50</td></tr>
+                    <tr><td>3</td><td>다가구주택</td><td>0.8</td><td>3.8</td><td>18.9</td><td>37.8</td></tr>
+                    <tr><td>4</td><td>다중주택</td><td>0.8</td><td>3.8</td><td>18.9</td><td>37.8</td></tr>
+                    <tr><td>5</td><td>아파트</td><td>0.8</td><td>3.8</td><td>18.9</td><td>37.8</td></tr>
+                    <tr><td>6</td><td>연립주택</td><td>0.8</td><td>3.8</td><td>18.9</td><td>37.8</td></tr>
+                    <tr><td>7</td><td>다세대주택</td><td>0.8</td><td>3.8</td><td>18.9</td><td>37.8</td></tr>
+                    <tr><td>8</td><td>도시형생활주택(원룸형)</td><td>0.8</td><td>3.8</td><td>18.9</td><td>37.8</td></tr>
+                    <tr><td>9</td><td>기숙사</td><td>0.8</td><td>4</td><td>20</td><td>40</td></tr>
+                    <tr><td>10</td><td>점포 및 상가</td><td>0.6</td><td>2.7</td><td>13.8</td><td>27.5</td></tr>
+                    <tr><td>11</td><td>목욕장</td><td>0.7</td><td>3.4</td><td>16.9</td><td>33.8</td></tr>
+                    <tr><td>12</td><td>목욕장(사우나시설포함)</td><td>0.7</td><td>3.4</td><td>16.9</td><td>33.8</td></tr>
+                    <tr><td>13</td><td>고급목욕장(사우나시설포함)</td><td>0.7</td><td>3.4</td><td>16.9</td><td>33.8</td></tr>
+                    <tr><td>14</td><td>일반창고</td><td>0.2</td><td>1.2</td><td>5.9</td><td>11.8</td></tr>
+                    <tr><td>15</td><td>저온창고</td><td>0.2</td><td>1.2</td><td>5.9</td><td>11.8</td></tr>
+                    <tr><td>16</td><td>냉동창고</td><td>0.2</td><td>1.2</td><td>5.9</td><td>11.8</td></tr>
+                    <tr><td>17</td><td>일반공장</td><td>0.2</td><td>1.2</td><td>5.9</td><td>11.8</td></tr>
+                    <tr><td>18</td><td>냉동공장</td><td>0.2</td><td>1.2</td><td>5.9</td><td>11.8</td></tr>
+                    <tr><td>19</td><td>반도체공장</td><td>0.2</td><td>1.2</td><td>5.9</td><td>11.8</td></tr>
+                    <tr><td>20</td><td>아파트형공장</td><td>0.2</td><td>1.2</td><td>5.9</td><td>11.8</td></tr>
+                    <tr><td>21</td><td>여관</td><td>0.9</td><td>4.3</td><td>21.6</td><td>43.2</td></tr>
+                    <tr><td>22</td><td>호텔</td><td>0.9</td><td>4.3</td><td>21.6</td><td>43.2</td></tr>
+                    <tr><td>23</td><td>콘도미니엄</td><td>0.7</td><td>3.4</td><td>16.9</td><td>33.8</td></tr>
+                    <tr><td>24</td><td>생활형 숙박시설</td><td>0.7</td><td>3.4</td><td>16.9</td><td>33.8</td></tr>
+                    <tr><td>25</td><td>일반업무시설</td><td>0.7</td><td>3.3</td><td>16.4</td><td>32.9</td></tr>
+                    <tr><td>26</td><td>오피스텔</td><td>0.7</td><td>3.3</td><td>16.4</td><td>32.9</td></tr>
+                    <tr><td>27</td><td>공공업무시설</td><td>0.7</td><td>3.3</td><td>16.4</td><td>32.8</td></tr>
+                    <tr><td>28</td><td>소주거용 오피스텔</td><td>0.8</td><td>3.8</td><td>18.9</td><td>37.8</td></tr>
+                    <tr><td>29</td><td>백화점</td><td>0.6</td><td>2.7</td><td>13.8</td><td>27.5</td></tr>
+                    <tr><td>30</td><td>대형할인점</td><td>0.6</td><td>2.6</td><td>13.2</td><td>26.5</td></tr>
+                    <tr><td>31</td><td>수영장</td><td>0.7</td><td>3.6</td><td>17.8</td><td>35.6</td></tr>
+                    <tr><td>32</td><td>볼링장</td><td>0.7</td><td>3.6</td><td>17.8</td><td>35.6</td></tr>
+                    <tr><td>33</td><td>체육관</td><td>0.7</td><td>3.6</td><td>17.8</td><td>35.6</td></tr>
+                    <tr><td>34</td><td>레저시설</td><td>0.7</td><td>3.6</td><td>17.8</td><td>35.6</td></tr>
+                    <tr><td>35</td><td>병원</td><td>0.8</td><td>3.5</td><td>17.4</td><td>34.7</td></tr>
+                    <tr><td>36</td><td>장례식장</td><td>0.7</td><td>3.4</td><td>17.2</td><td>34.4</td></tr>
+                    <tr><td>37</td><td>예식장</td><td>0.7</td><td>3.6</td><td>17.8</td><td>35.6</td></tr>
+                    <tr><td>38</td><td>영화관</td><td>0.7</td><td>3.5</td><td>17.6</td><td>35.1</td></tr>
+                    <tr><td>39</td><td>학교</td><td>0.9</td><td>4.9</td><td>24.3</td><td>48.7</td></tr>
+                    <tr><td>40</td><td>주유소</td><td>0.4</td><td>1.7</td><td>8.7</td><td>17.4</td></tr>
+                    <tr><td>41</td><td>위험물저장창고</td><td>0.2</td><td>1.2</td><td>5.9</td><td>11.8</td></tr>
+                    <tr><td>42</td><td>주차빌딩</td><td>0.4</td><td>1.7</td><td>8.7</td><td>17.4</td></tr>
+                    <tr><td>43</td><td>교회</td><td>0.8</td><td>3.3</td><td>16.3</td><td>32.6</td></tr>
+                    <tr><td>44</td><td>재실</td><td>0.8</td><td>3.3</td><td>16.3</td><td>32.6</td></tr>
+                    <tr><td>45</td><td>유치원</td><td>0.9</td><td>4.9</td><td>24.3</td><td>48.7</td></tr>
+                    <tr><td>46</td><td>축사</td><td>0</td><td>0.8</td><td>3.8</td><td>7.7</td></tr>
+                  </tbody>
+                </table>
+              </div>
+              <div class="tbl_wrap">
+                <table class="tbl_method">
+                  <caption>[표 3-6] 손상단계별 감가율 (변위민감형 비구조요소)</caption>
+                  <thead>
+                    <tr>
+                      <th scope="col">&nbsp;</th>
+                      <th scope="col">일반 주택</th>
+                      <th scope="col">고급 주택</th>
+                      <th scope="col">다가구주택</th>
+                      <th scope="col">다중 주택</th>
+                      <th scope="col">아파트</th>
+                      <th scope="col">다세대주택</th>
+                      <th scope="col">도시형생활 주택</th>
+                      <th scope="col">기숙사</th>
+                      <th scope="col">점포 및 상가</th>
+                      <th scope="col">&nbsp;</th>
+                      <th scope="col">축사</th>
+                    </tr>                  
+                  </thead>
+                  <tbody>
+                    <tr><td>W1</td><td>0.5217</td><td>0.4792</td><td>0.4503</td><td>0.4459</td><td>0.4221</td><td>0.4185</td><td>0.4075</td><td>0.3831</td><td>0.686</td><td>&nbsp;</td><td>0.7608</td><tr>
+                    <tr><td>W2</td><td>0.2573</td><td>0.2466</td><td>0.2006</td><td>0.1992</td><td>0.1899</td><td>0.1902</td><td>0.1868</td><td>0.1792</td><td>0.2935</td><td>&nbsp;</td><td>0.3112</td><tr>
+                    <tr><td>S1L</td><td>0.2173</td><td>0.2226</td><td>0.1425</td><td>0.1424</td><td>0.1436</td><td>0.1424</td><td>0.1422</td><td>0.1418</td><td>0.1864</td><td>&nbsp;</td><td>0.1717</td><tr>
+                    <tr><td>S1M</td><td>0.42</td><td>0.4203</td><td>0.2975</td><td>0.2966</td><td>0.2909</td><td>0.2908</td><td>0.2886</td><td>0.2836</td><td>0.4064</td><td>&nbsp;</td><td>0.3967</td><tr>
+                    <tr><td>S1H</td><td>0.443</td><td>0.4412</td><td>0.3181</td><td>0.317</td><td>0.3069</td><td>0.309</td><td>0.3063</td><td>0.3003</td><td>0.4389</td><td>&nbsp;</td><td>0.4336</td><tr>
+                    <tr><td>S2L</td><td>0.2037</td><td>0.211</td><td>0.1287</td><td>0.1288</td><td>0.1278</td><td>0.1291</td><td>0.1294</td><td>0.1301</td><td>0.1659</td><td>&nbsp;</td><td>0.1487</td><tr>
+                    <tr><td>S2M</td><td>0.2831</td><td>0.2878</td><td>0.1905</td><td>0.1902</td><td>0.1842</td><td>0.1875</td><td>0.1869</td><td>0.1857</td><td>0.255</td><td>&nbsp;</td><td>0.2408</td><tr>
+                    <tr><td>S2H</td><td>0.2485</td><td>0.2546</td><td>0.1627</td><td>0.1626</td><td>0.1581</td><td>0.1612</td><td>0.1611</td><td>0.1609</td><td>0.2148</td><td>&nbsp;</td><td>0.1991</td><tr>
+                    <tr><td>S3L</td><td>0.2236</td><td>0.2086</td><td>0.1855</td><td>0.1839</td><td>0.1722</td><td>0.173</td><td>0.1689</td><td>0.16</td><td>0.2801</td><td>&nbsp;</td><td>0.3077</td><tr>
+                    <tr><td>S3M</td><td>0.1733</td><td>0.1779</td><td>0.1125</td><td>0.1124</td><td>0.1095</td><td>0.1116</td><td>0.1116</td><td>0.1115</td><td>0.1482</td><td>&nbsp;</td><td>0.1371</td><tr>
+                    <tr><td>S3H</td><td>0.1783</td><td>0.1826</td><td>0.1167</td><td>0.1166</td><td>0.113</td><td>0.1154</td><td>0.1153</td><td>0.1151</td><td>0.1545</td><td>&nbsp;</td><td>0.1439</td><tr>
+                    <tr><td>S4L</td><td>0.2144</td><td>0.2163</td><td>0.1473</td><td>0.1469</td><td>0.1474</td><td>0.1454</td><td>0.1446</td><td>0.1427</td><td>0.1978</td><td>&nbsp;</td><td>0.1897</td><tr>
+                    <tr><td>S4M</td><td>0.1745</td><td>0.1793</td><td>0.1129</td><td>0.1129</td><td>0.11</td><td>0.1121</td><td>0.1121</td><td>0.1122</td><td>0.1485</td><td>&nbsp;</td><td>0.137</td><tr>
+                    <tr><td>S4H</td><td>0.1748</td><td>0.1793</td><td>0.1136</td><td>0.1136</td><td>0.1101</td><td>0.1126</td><td>0.1125</td><td>0.1125</td><td>0.1499</td><td>&nbsp;</td><td>0.1389</td><tr>
+                    <tr><td>C1L1</td><td>0.3019</td><td>0.2645</td><td>0.284</td><td>0.2805</td><td>0.2599</td><td>0.2581</td><td>0.2493</td><td>0.2298</td><td>0.4507</td><td>&nbsp;</td><td>0.5222</td><tr>
+                    <tr><td>C1L2</td><td>0.1901</td><td>0.1931</td><td>0.1279</td><td>0.1277</td><td>0.1279</td><td>0.1268</td><td>0.1263</td><td>0.1252</td><td>0.1702</td><td>&nbsp;</td><td>0.1609</td><tr>
+                    <tr><td>C1M</td><td>0.2203</td><td>0.2178</td><td>0.1599</td><td>0.1593</td><td>0.1551</td><td>0.1549</td><td>0.1533</td><td>0.1495</td><td>0.2227</td><td>&nbsp;</td><td>0.2241</td><tr>
+                    <tr><td>C1H</td><td>0.2627</td><td>0.258</td><td>0.1948</td><td>0.1939</td><td>0.1862</td><td>0.1873</td><td>0.185</td><td>0.1799</td><td>0.2746</td><td>&nbsp;</td><td>0.2802</td><tr>
+                    <tr><td>C2L1</td><td>0.3342</td><td>0.3207</td><td>0.2608</td><td>0.259</td><td>0.2447</td><td>0.2469</td><td>0.2426</td><td>0.233</td><td>0.3818</td><td>&nbsp;</td><td>0.4043</td><tr>
+                    <tr><td>C2L2</td><td>0.2585</td><td>0.2527</td><td>0.1924</td><td>0.1914</td><td>0.1815</td><td>0.1841</td><td>0.1816</td><td>0.1762</td><td>0.2755</td><td>&nbsp;</td><td>0.284</td><tr>
+                    <tr><td>C2M</td><td>1.1987</td><td>1.1135</td><td>1.0135</td><td>1.0044</td><td>0.9568</td><td>0.9479</td><td>0.925</td><td>0.8744</td><td>1.5254</td><td>&nbsp;</td><td>1.6697</td><tr>
+                    <tr><td>C2H</td><td>0.9027</td><td>0.9171</td><td>0.6139</td><td>0.6131</td><td>0.5911</td><td>0.6037</td><td>0.6019</td><td>0.598</td><td>0.8221</td><td>&nbsp;</td><td>0.7714</td><tr>
+                    <tr><td>C3L1</td><td>0.1705</td><td>0.172</td><td>0.116</td><td>0.1158</td><td>0.1125</td><td>0.1137</td><td>0.1131</td><td>0.1118</td><td>0.1581</td><td>&nbsp;</td><td>0.1534</td><tr>
+                    <tr><td>C3L2</td><td>0.1601</td><td>0.1664</td><td>0.0996</td><td>0.0997</td><td>0.099</td><td>0.1002</td><td>0.1006</td><td>0.1014</td><td>0.1275</td><td>&nbsp;</td><td>0.1132</td><tr>
+                    <tr><td>C3M</td><td>0.1912</td><td>0.2001</td><td>0.1158</td><td>0.116</td><td>0.1137</td><td>0.1168</td><td>0.1175</td><td>0.1192</td><td>0.1468</td><td>&nbsp;</td><td>0.1277</td><tr>
+                    <tr><td>C3H</td><td>0.1911</td><td>0.2</td><td>0.1156</td><td>0.1159</td><td>0.1135</td><td>0.1166</td><td>0.1174</td><td>0.119</td><td>0.1465</td><td>&nbsp;</td><td>0.1274</td><tr>
+                    <tr><td>C4L1</td><td>0.2524</td><td>0.2401</td><td>0.2007</td><td>0.1992</td><td>0.187</td><td>0.1889</td><td>0.1852</td><td>0.177</td><td>0.2972</td><td>&nbsp;</td><td>0.3191</td><tr>
+                    <tr><td>C4L2</td><td>0.3853</td><td>0.338</td><td>0.3617</td><td>0.3572</td><td>0.3274</td><td>0.328</td><td>0.3169</td><td>0.2924</td><td>0.5746</td><td>&nbsp;</td><td>0.6639</td><tr>
+                    <tr><td>C4M</td><td>0.1807</td><td>0.1858</td><td>0.1168</td><td>0.1168</td><td>0.1138</td><td>0.1161</td><td>0.1162</td><td>0.1163</td><td>0.1533</td><td>&nbsp;</td><td>0.1404</td><tr>
+                    <tr><td>C4H</td><td>0.1749</td><td>0.18</td><td>0.1126</td><td>0.1126</td><td>0.1094</td><td>0.1118</td><td>0.1119</td><td>0.1121</td><td>0.1476</td><td>&nbsp;</td><td>0.1351</td><tr>
+                    <tr><td>C5L</td><td>0.2025</td><td>0.2022</td><td>0.1419</td><td>0.1415</td><td>0.1352</td><td>0.1377</td><td>0.1366</td><td>0.1343</td><td>0.1972</td><td>&nbsp;</td><td>0.1958</td><tr>
+                    <tr><td>C5M</td><td>0.1657</td><td>0.1698</td><td>0.1082</td><td>0.1081</td><td>0.1052</td><td>0.1072</td><td>0.1071</td><td>0.1069</td><td>0.1428</td><td>&nbsp;</td><td>0.1323</td><tr>
+                    <tr><td>C5H</td><td>0.1685</td><td>0.1723</td><td>0.1106</td><td>0.1105</td><td>0.107</td><td>0.1093</td><td>0.1092</td><td>0.1088</td><td>0.1469</td><td>&nbsp;</td><td>0.1373</td><tr>
+                    <tr><td>PC1L1</td><td>0.1604</td><td>0.1631</td><td>0.1064</td><td>0.1063</td><td>0.1037</td><td>0.105</td><td>0.1047</td><td>0.104</td><td>0.143</td><td>&nbsp;</td><td>0.1361</td><tr>
+                    <tr><td>PC1L2</td><td>0.168</td><td>0.1756</td><td>0.1021</td><td>0.1023</td><td>0.101</td><td>0.1031</td><td>0.1037</td><td>0.105</td><td>0.1295</td><td>&nbsp;</td><td>0.113</td><tr>
+                    <tr><td>PC1M</td><td>0.1484</td><td>0.1546</td><td>0.0913</td><td>0.0914</td><td>0.0897</td><td>0.0918</td><td>0.0922</td><td>0.0932</td><td>0.1166</td><td>&nbsp;</td><td>0.1028</td><tr>
+                    <tr><td>PC2L1</td><td>0.257</td><td>0.235</td><td>0.2224</td><td>0.2201</td><td>0.2041</td><td>0.2052</td><td>0.1996</td><td>0.1873</td><td>0.3423</td><td>&nbsp;</td><td>0.3833</td><tr>
+                    <tr><td>PC2L2</td><td>0.1608</td><td>0.1662</td><td>0.1019</td><td>0.102</td><td>0.0995</td><td>0.1017</td><td>0.1019</td><td>0.1024</td><td>0.1324</td><td>&nbsp;</td><td>0.1197</td><tr>
+                    <tr><td>PC2M</td><td>0.1619</td><td>0.1674</td><td>0.1024</td><td>0.1025</td><td>0.0998</td><td>0.1022</td><td>0.1024</td><td>0.1029</td><td>0.1331</td><td>&nbsp;</td><td>0.1203</td><tr>
+                    <tr><td>URML</td><td>0.2407</td><td>0.2402</td><td>0.1693</td><td>0.1688</td><td>0.1618</td><td>0.1643</td><td>0.163</td><td>0.16</td><td>0.2354</td><td>&nbsp;</td><td>0.2342</td><tr>
+                    <tr><td>URMM</td><td>0.2442</td><td>0.2427</td><td>0.1739</td><td>0.1733</td><td>0.1741</td><td>0.1703</td><td>0.1686</td><td>0.1648</td><td>0.2402</td><td>&nbsp;</td><td>0.2392</td><tr>
+                  </tbody>
+                </table>
+              </div>
+            </section>
+          </article>          
+        </section>
+      </div>  
+    </div>      
+  </main>
+  <footer class="footer">
+Copyright © 2025 국립재난안전연구원. All rights reserved.
+</footer>
+</div>
+<script src="../plugins/jquery.min.js"></script>
+<script src="../js/ui_cmmn.js"></script>
+<script>
+  commonInit();
+</script>
+</body>
+</html>

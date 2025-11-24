@@ -1,0 +1,147 @@
+@@include('../inc/top.html')
+<div id="wrap" class="wrap">
+  @@include('../inc/header.html')    
+  <main id="content" class="main_container">
+    @@include('../inc/sub_method.html')
+    <div class="flex_body">
+      <header>
+        <section class="bredcrumb">
+          <ul>
+            <li><a href="#">Home</a></li>
+            <li>시스템 소개</li>
+            <li>시스템 평가 방법</li>
+            <li>임시주거 확보율</li>
+          </ul>
+        </section>
+        <h1>임시주거 확보율</h1>
+      </header>
+      <div class="sys_method">
+        <section class="chapter">
+          <h2>절차서 목차</h2>
+          <ol class="num_lst">
+            <li><a href="#1">개요</a></li>
+            <li><a href="#2">평가절차</a></li>
+          </ol>
+        </section>
+        <section class="chapter_body">
+          <article>
+            <h1 id="1">개요</h1>
+            <section class="section2">
+              <p>임시주거시설은 지진·화재·홍수 등 재난 발생 시 거주지를 잃은 이재민이 일정 기간 머물 수 있도록 마련된 임시 생활공간으로 재난 및 안전관리 기본법에 의해 설치된다. 관리주체는 지방자치단체 (시·군·구) 또는 중앙정부이며 재난 발생 직후부터 보통 6개월 정도까지 운영한다. 수용대상은 주택 전파, 반파, 붕괴 위험 또는 긴급 대피자를 포함안 이재민이며 이들이 생활할 수 있도록 임시주거시설의 수용능력은 1인당 면적기준에 따라 1인당 2.6를 점유하는 것으로 가정하였다.</p>
+              <p>임시주거시설 목록은 옥외대피장소와 유사하게 재난안전데이터 공유플랫폼(https://www.safetydata.go.kr) 혹은 공공데이터포털(https://www.data.go.kr/) 에서 open API 형태로 조회가능하다. 2025년 7월 현재 전국에서 6179곳의 임시주거시설이 준비되어 있다.</p>
+            </section>
+          </article>
+          <article>
+            <h1 id="2">평가절차</h1>
+            <section class="section2">
+              <p>임시주거시설의 확보율도 옥외대피장소 확보율과 유사하게 이재민의 수와 미수용인원을 비교하여 평가한다. 다만, 긴급대피가 필요한 옥외대피의 경우와 달리 임시주거시설은 주택의 손상으로 인해 주거가 불가능한 이재민을 대상으로 하여 거주지에서 멀리 떨어진 장소도 제공가능하므로 거리에 대한 고려는 필요치 않다.</p>
+              <p>임시주거시설 확보율의 정의는 다음과 같다.</p>
+              <div class="equation box_dotted">
+                <dl>
+                  <dt>식 (1-1)</dt>
+                  <dd><img src="../images/intro/temp_housing/img_method1-1.gif" alt="식 (1-1)"></dd>
+                </dl>
+              </div>
+              <p>이재민수의 추정은 최근 수행된 연구(국립재난안전연구원, 대규모 지진으로 인한 사회/경제적 영향분석 추정기술 개발, 2021)의 결과물을 활용하였다. 이를 간단히 요약하면 다음과 같다.</p>
+              <div class="box_dotted">
+                <strong class="box_tit">[표 2-1] 이재민 수 추정 알고리즘</strong>
+                <ul class="lst_default">
+                  <li><strong>대피인구의 유형 분류</strong>
+                    <ul class="lst_default">
+                      <li>* 유형1: 건물피해로 인한 대피인구</li>
+                      <li>* 유형2: 건물피해에 해당하지 않으며, 단수로 인한 대피인구</li>
+                      <li>* 유형3: 건물피해나 단수에 해당하지 않으며, 심리적 불안으로 인한 대피인구</li>
+                      <li>* 유형4: 건물피해, 단수, 또는 심리적 불안 이외의 기타 요인에 의한 대피인구, 건축물대장에 포함되지 않는 주거 시설의 유실로 인한 대피인구</li>
+                    </ul>
+                  </li>
+                  <li><strong>● 유형1 대피인구 수</strong>
+                    <ul class="lst_default">
+                      <li>= 상주인구×(전파주택 연면적+반파주택 연면적×0.5) / 전체주택 연면적</li>
+                      <li>근거자료: 일본 군마현대피인구 수 산정(1996년 고베지진 조사결과)방법</li>
+                    </ul>
+                  </li>
+                  <li><strong>● 유형2 대피인구 수 : 고려하지 않음</strong>
+                    <ul class="lst_default">
+                      <li>* 근거자료: 2017년 포항 지진의 피해 집계에 따르면, 상수도파손으로 인한 단수는 지진 후 48시간 이내 100% 복구됨. 따라서, 단수로 인한 생활 곤궁도가 대피인구 발생에 미치는 영향이 적음.</li>
+                    </ul>
+                  </li>
+                  <li><strong>● 유형3 + 유형4 </strong>
+                    <ul class="lst_default">
+                      <li>= 최대지반가속도 0.2g 이상 행정구역 상주인구×0.0053</li>
+                      <li>* 근거자료: 2016년 경주 912지진, 2017년 포항 흥해지진 대피인구 집계</li>
+                    </ul>
+                  </li>                  
+                </ul>               
+              </div>
+              <p>유형 1의 경우 건물피해로 인한 이재민을 나타내며, 유형 2의 경우는 건물보다는 라이프라인의 파손에 의한 이재민이나 표에서 언급한 바와 같이 빠른 시간내에 복구되므로 고려하지 않는다. 유형3과 4는 심리적 불안에 의한 이재민을 나타낸다. 하지만 본 연구에서는 0.22g, 0.154g, 혹은 0.11g에 해당하는 지진이 모든 지역에서 동일한 크기로 발생하는 상황을 가정하는 것으로 진앙지 주변에서만 큰 지진가속도가 나타나는 실제의 지진발생상황과는 큰 차이가 있어 유형3과 4에 의한 이재민을 산정하기 곤란하다. 따라서 본 연구에서는 유형3+4도 고려하지 않고 유형 1의 이재민만을 고려하여 임시주거 확보율을 산정하였다. 이때 ‘전파’는 지진진동의 경우 Complete에 대항하는 손상단계와 지진화재의 경우 전소에 해당하는 피해로, ‘반파’는 지진진동의 경우 Extensive의 손상단계와 지진화재의 경우 반소에 해당하는 피해로 가정하였다. 지진진동 및 지진화재에 의한 건물피해 산정절차는 건축물 피해위험도 평가, 지진화재 위험도 평가의 절차와 동일하다.</p>
+              <p>옥외대피장소의 경우 빠른 시간내에 대피가 이루어져야 하므로 사람이 머무르는 건물 인근에 충분히 분포되어야 하나, 임시거주시시설의 경우 주거지에서 멀리 떨어진 시설의 이용도 가능하다. 따라서 대피인구산정시 야간인구를 적용하며 행정동단위보다는 시군구단위의 평가가 적절할 것으로 판단된다. [표 1-1]은 임시주거 확보율의 산정 예시이다.</p>
+              <div class="tbl_wrap">
+                <table class="tbl_method">
+                  <caption>[표 1-1] 임시주거 확보율의 계산과정</caption>
+                  <thead>
+                    <tr>
+                      <th scope="col" rowspan="2">시군구명</th>
+                      <th scope="col" rowspan="2">수용능력 합계</th>
+                      <th scope="colgroup" colspan="2">2400년 지진</th>
+                      <th scope="colgroup" colspan="2">1000년 지진</th>
+                      <th scope="colgroup" colspan="2">500년 지진</th>
+                    </tr>
+                    <tr>
+                      <th scope="col">이재민 수</th>
+                      <th scope="col">임시주거 확보율</th>
+                      <th scope="col">이재민 수</th>
+                      <th scope="col">임시주거 확보율</th>
+                      <th scope="col">이재민 수</th>
+                      <th scope="col">임시주거 확보율</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr><td>AAA</td> <td>12,285</td> <td>22,191</td> <td>55%</td> <td>11,380</td> <td>108%</td> <td>5,369</td> <td>229%</td></tr>
+                    <tr><td>BBB</td> <td>17,210</td> <td>27,217</td> <td>63%</td> <td>13,584</td> <td>127%</td> <td>6,374</td> <td>270%</td></tr>
+                    <tr><td>CCC</td> <td>4,040</td> <td>17,185</td> <td>24%</td> <td>8,177</td> <td>49%</td> <td>3,460</td> <td>117%</td></tr>
+                    <tr><td>DDD</td> <td>10,305</td> <td>16,677</td> <td>62%</td> <td>7,852</td> <td>131%</td> <td>3,406</td> <td>303%</td></tr>
+                    <tr><td>EEE</td> <td>11,871</td> <td>19,435</td> <td>61%</td> <td>9,058</td> <td>131%</td> <td>3,799</td> <td>312%</td></tr>
+                  </tbody>
+                </table>
+              </div>
+              <p>앞서 언급한 바와 같이 본 연구에서는 모든 지역에서 동일한 규모의 지진동(유효지반가속도)을 가정할 경우 건물의 피해 및 그에 따른 이재민 발생을 기준으로 임시주거확보율을 산정하였다. 하지만, 지진 발생 시 규모가 작은 단위 행정구역 내에서는 지반운동의 세기가 동일하다고 가정할 수 있으나 면적이 넓은 광역행정동의 경우 전체 평가대상 지역에서 동일한 세기의 지반운동이 작용한다고 보기 어렵다. 즉 진앙에서 가까울수록 진도가 높고 멀어질수록 낮아지므로 동일한 지진동을 가정할 경우 실제에 비해 매우 과대평가하게 된다. 본 연구에서는 이러한 진도분포 차이를 고려하기 위해 의료시설 및 소방시설의 수요량 산정시와 동일하게 재현주기별 지진의 감쇄현상을 고려한 기여도를 곱하여 이재민수를 보정하였다. 적용된 기여도는 건축물피해위험도 및 재난관리위험도 평가절차서의 5.3절에 나타낸 바와 같이 500년 지진의 경우 0.429, 100년 지진의 경우 0.311, 2400년 지진의 경우 0.260이다. 이를 고려한 최종 임시주거확보율은 [표 1-2]와 같다.</p>
+              <div class="tbl_wrap">
+                <table class="tbl_method">
+                  <caption>[표 1-2] 임시주거 확보율의 계산과정</caption>
+                  <thead>
+                    <tr>
+                      <th scope="col" rowspan="2">시군구명</th>
+                      <th scope="col" rowspan="2">수용능력 합계</th>
+                      <th scope="colgroup" colspan="2">2400년 지진</th>
+                      <th scope="colgroup" colspan="2">1000년 지진</th>
+                      <th scope="colgroup" colspan="2">500년 지진</th>
+                    </tr>
+                    <tr>
+                      <th scope="col">이재민 수</th>
+                      <th scope="col">임시주거 확보율</th>
+                      <th scope="col">이재민 수</th>
+                      <th scope="col">임시주거 확보율</th>
+                      <th scope="col">이재민 수</th>
+                      <th scope="col">임시주거 확보율</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr> <td>AAA</td> <td>12,285</td> <td>5,770</td> <td>213%</td> <td>2,959</td> <td>415%</td> <td>1,396</td> <td>880%</td> </tr>
+                    <tr> <td>BBB</td> <td>17,210</td> <td>7,076</td> <td>174%</td> <td>3,532</td> <td>348%</td> <td>1,657</td> <td>741%</td> </tr>
+                    <tr> <td>CCC</td> <td>4,040</td> <td>4,468</td> <td>275%</td> <td>2,126</td> <td>578%</td> <td>900</td> <td>1366%</td> </tr>
+                    <tr> <td>DDD</td> <td>10,305</td> <td>4,336</td> <td>283%</td> <td>2,042</td> <td>602%</td> <td>886</td> <td>1387%</td> </tr>
+                    <tr> <td>EEE</td> <td>11,871</td> <td>5,053</td> <td>243%</td> <td>2,355</td> <td>522%</td> <td>988</td> <td>1244%</td> </tr>
+                  </tbody>
+                </table>
+              </div>
+            </section>
+          </article>
+        </section>
+      </div>  
+    </div>      
+  </main>
+  @@include('../inc/footer.html')
+</div>
+@@include('../inc/script.html')
+</body>
+</html>
