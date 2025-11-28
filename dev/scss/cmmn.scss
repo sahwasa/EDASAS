@@ -199,6 +199,7 @@ $navH:315px;
     &:has(.inner_wrap){flex-wrap:wrap;gap:10px;
       .inner_wrap{gap:25px;justify-content:center;
         & + figcaption{flex:1 0 100%;}
+        &.gap80{column-gap:80px;}
       }
       em{display:block;}
     }
