@@ -940,10 +940,10 @@ details[open]>summary::after{margin-left:auto;content:'\e86b';}
   }
 }
 .safety_grade li{position:relative;
-  &::before{@include shape(30px,10px);vertical-align:middle;margin-right:10px;}
-  @each $type, $val in $_safetyGrade{
-    &.#{$type}::before{background-color:$val;}
-  }
+  // &::before{@include shape(30px,10px);vertical-align:middle;margin-right:10px;}
+  // @each $type, $val in $_safetyGrade{
+  //   &.#{$type}::before{background-color:$val;}
+  // }
   &:is(:first-child,:last-child)::after{position:absolute;left:-65px;top:10px;font-size:11px; content:"안전";}
   &:last-child::after{content:"위험";top:0;}
 }
