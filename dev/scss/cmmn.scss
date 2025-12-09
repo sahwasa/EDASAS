@@ -118,6 +118,7 @@ label:has(input){display:inline-flex;align-items:center;gap:5px;}
     figure{flex:1 1 auto;margin:0;img{display:block;}}
     figcaption{display:inline-block;font-size:12px;color:#000;background-color:#ebebeb;margin-top:5px;padding:3px 7px;border-radius:5px;}
   }
+  em{display:block;}
 }
 // layout
 $maingap:20px;
